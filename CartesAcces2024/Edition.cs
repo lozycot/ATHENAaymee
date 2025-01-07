@@ -1,26 +1,6 @@
 /**
- * MIT License
- * 
- * Copyright (c) 2023, 2024 Collège Caroline Aigle
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
+ * Ce fichier contient la classe Edition qui gère l'édition des cartes d'élèves.
+ * Elle inclut des méthodes pour dessiner du texte, gérer les QR codes, et manipuler les images.
  */
 
 using System;
@@ -60,8 +40,8 @@ namespace CartesAcces2024
         public static string CheminFichier { get; set; }
         public static string CheminImpressionFinal { get; set; }
 
-        // -- Dessine le rectangle de couleur derrière le texte pour une meilleurs visibilité de celui ci --
-        public static void fondTexteCarteFace(Graphics objGraphique, string texte, Font police, int posX, int posY,ComboBox cbbSection)
+        // -- Dessine le rectangle de couleur derrière le texte pour une meilleure visibilité de celui-ci --
+        public static void fondTexteCarteFace(Graphics objGraphique, string texte, Font police, int posX, int posY, ComboBox cbbSection)
         {
             List<Color> couleurs = new List<Color> { };
             couleurs = OperationsDb.GetColors();
@@ -183,20 +163,20 @@ namespace CartesAcces2024
         public static void dessineTexteCarteFace(Font police, int posX, int posY, string text, PictureBox pbCarteFace,
             ComboBox cbbSection)
         {
-            //Pinceaux et graphique
+            // Pinceaux et graphique
             var objetGraphique = Graphics.FromImage(pbCarteFace.Image);
             Brush pinceauNoir = new SolidBrush(Color.Black);
 
-            //Dessine et rempli le fond pour l'écriture
+            // Dessine et rempli le fond pour l'écriture
             fondTexteCarteFace(objetGraphique, text, police, posX, posY, cbbSection);
 
-            //Dessine la saisie en textbox
+            // Dessine la saisie en textbox
             objetGraphique.DrawString(text, police, pinceauNoir, posX,
                 posY); // Dessine le texte sur l'image à la position X et Y + couleur
             objetGraphique.Dispose(); // Libère les ressources
         }
 
-        // -- Récupère et place le qr code sur la face de la carte
+        // -- Récupère et place le QR code sur la face de la carte
         public static void qrCodeFace(PictureBox pbCarteFace)
         {
             List<string> Etablissement = new List<string>(OperationsDb.GetEtablissement());
@@ -206,9 +186,8 @@ namespace CartesAcces2024
             var objGraphique = Graphics.FromImage(pbCarteFace.Image);
             objGraphique.DrawImage(bmpFinal, new Point(1350, 80));
         }
-        
 
-        //Preview carteProvisoire si la carte n'a pas d'infos
+        // Preview carte provisoire si la carte n'a pas d'infos
         public static void fondCarteNiveau(PictureBox pbCarteFace, ComboBox cbbSection, string nomEleve, string prenomEleve, string classe)
         {
             var police = new Font("Calibri", 45, FontStyle.Bold);
@@ -252,8 +231,6 @@ namespace CartesAcces2024
             {
                 police = new Font("Calibri", 40, FontStyle.Bold);
             }
-
-            
 
             Brush pinceauNoir = new SolidBrush(Color.Black);
 
@@ -315,9 +292,7 @@ namespace CartesAcces2024
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1165);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1165);
 
-
             pbCarteFace.Refresh();
-
 
             objGraphique.Dispose(); // Libère les ressources
         }
@@ -337,7 +312,6 @@ namespace CartesAcces2024
                 bmp.SetResolution(150, 150);
                 pbCarteFace.Image = bmp;
             }
-
 
             var police = new Font("Calibri", 20, FontStyle.Bold);
             var police2 = new Font("Calibri", 22, FontStyle.Bold);
@@ -496,8 +470,6 @@ namespace CartesAcces2024
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1165);
 
             objGraphique.Dispose(); // Libère les ressources
-
-
 
             return image;
         }

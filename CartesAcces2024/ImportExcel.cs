@@ -1,4 +1,54 @@
 ﻿/**
+ * Ce fichier contient la classe ImportExcel qui permet à l'utilisateur de sélectionner un fichier Excel à importer.
+ * Elle implémente l'interface I_ImportService.
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CartesAcces2024
+{
+    // -- Permet à l'utilisateur de donner le chemin du fichier Excel à importer --
+    public class ImportExcel : I_ImportService
+    {
+        /// <summary>
+        /// Ouvre un dialogue pour sélectionner un fichier Excel.
+        /// </summary>
+        /// <returns>Le chemin du fichier sélectionné ou "failed" en cas d'échec.</returns>
+        string I_ImportService.setCheminImportation()
+        {
+            using (var ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "XLSX or XLS Files Only | *.xlsx, *.xls";
+                ofd.Title = "Choose the File";
+                if (ofd.ShowDialog() == DialogResult.OK) return ofd.FileName;
+                return "failed";
+            }
+        }
+
+        /// <summary>
+        /// Ouvre un dialogue pour sélectionner un fichier Excel avec un titre personnalisé.
+        /// </summary>
+        /// <param name="title">Titre du dialogue d'ouverture de fichier.</param>
+        /// <returns>Le chemin du fichier sélectionné ou "failed" en cas d'échec.</returns>
+        string I_ImportService.setCheminImportation(string title)
+        {
+            using (var ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "XLSX or XLS Files Only | *.xlsx, *.xls";
+                ofd.Title = title;
+                if (ofd.ShowDialog() == DialogResult.OK) return ofd.FileName;
+                return "failed";
+            }
+        }
+    }
+}
+
+/**
  * MIT License
  * 
  * Copyright (c) 2023, 2024 Collège Caroline Aigle
@@ -20,42 +70,5 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
  */
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace CartesAcces2024
-// -- Permet a l'utilisateur de donner le chemin du fichier excel a importer --
-{
-    public class ImportExcel : I_ImportService
-    {
-        string I_ImportService.setCheminImportation()
-        {
-            using (var ofd = new OpenFileDialog())
-            {
-                ofd.Filter = "XLSX or XLS Files Only | *.xlsx, *.xls";
-                ofd.Title = "Choose the File";
-                if (ofd.ShowDialog() == DialogResult.OK) return ofd.FileName;
-                return "failed";
-            }
-        }
-
-        string I_ImportService.setCheminImportation(string title)
-        {
-            using (var ofd = new OpenFileDialog())
-            {
-                ofd.Filter = "XLSX or XLS Files Only | *.xlsx, *.xls";
-                ofd.Title = title;
-                if (ofd.ShowDialog() == DialogResult.OK) return ofd.FileName;
-                return "failed";
-            }
-        }
-    }
-}
 

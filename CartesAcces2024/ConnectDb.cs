@@ -1,26 +1,6 @@
 ﻿/**
- * MIT License
- * 
- * Copyright (c) 2023, 2024 Collège Caroline Aigle
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
+ * Ce fichier contient la classe ConnectDb qui gère la connexion à la base de données SQLite.
+ * Il inclut des méthodes pour établir la connexion, créer la base de données et exécuter des requêtes.
  */
 
 using System;
@@ -42,11 +22,10 @@ namespace CartesAcces2024
         [STAThread]
         static void Main()
         {
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Si aucun user n'existe dans la bdd, on affiche frmCreerUser pour lui demander 
+            // Si aucun utilisateur n'existe dans la base de données, on affiche frmCreerUser pour lui demander 
             // d'en créer un d'abord
             while (!ConnectDb.DbConnect.DbData("Connection;"))
             {
@@ -67,13 +46,11 @@ namespace CartesAcces2024
 
             // on entre dans la fenêtre principale de l'application
             Application.Run(new frmAccueil());
-            
-            
         }
 
         public static class DbConnect
-
         {
+            // Méthode pour établir une connexion à la base de données
             public static SQLiteConnection connect()
             {
                 string dbPath = Chemin.CheminBdd;
@@ -81,6 +58,7 @@ namespace CartesAcces2024
                 return connection;
             }
 
+            // Méthode pour créer la base de données
             public static void CreerDb()
             {
                 try
@@ -105,6 +83,7 @@ namespace CartesAcces2024
                 }
             }
 
+            // Méthode pour sélectionner une ligne dans la base de données
             public static string SelectRow()
             {
                 try
@@ -139,6 +118,7 @@ namespace CartesAcces2024
                 }
             }
 
+            // Méthode pour vérifier si des données existent dans la base de données
             public static bool DbData(string db)
             {
                 if (!File.Exists(Chemin.CheminBdd))
@@ -169,6 +149,7 @@ namespace CartesAcces2024
                 }
             }
 
+            // Script SQL pour créer les tables de la base de données
             public const string scriptSQL = "BEGIN TRANSACTION;\n" +
                 "CREATE TABLE IF NOT EXISTS 'Connection' (\n" +
                 "	'nomUtilisateur'	TEXT,\n" +
@@ -231,3 +212,27 @@ namespace CartesAcces2024
         }
     }
 }
+
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2023, 2024 Collège Caroline Aigle
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */

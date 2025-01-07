@@ -1,26 +1,6 @@
 ﻿/**
- * MIT License
- * 
- * Copyright (c) 2023, 2024 Collège Caroline Aigle
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
+ * Ce fichier contient la classe UsersOperations qui gère les opérations liées aux utilisateurs dans la base de données.
+ * Elle inclut des méthodes pour insérer et supprimer des utilisateurs.
  */
 
 using System;
@@ -33,8 +13,17 @@ using System.Windows.Forms;
 
 namespace CartesAcces2024
 {
+    /// <summary>
+    /// Classe pour gérer les opérations des utilisateurs dans la base de données.
+    /// </summary>
     class UsersOperations
     {
+        /// <summary>
+        /// Insère un utilisateur dans la base de données.
+        /// </summary>
+        /// <param name="id">Nom de l'utilisateur.</param>
+        /// <param name="mdp">Mot de passe de l'utilisateur.</param>
+        /// <returns>True si l'insertion a réussi, sinon false.</returns>
         public static bool InsertUnUtilisateurDansBdd(string id, string mdp)
         {
             using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
@@ -60,6 +49,10 @@ namespace CartesAcces2024
             return true;
         }
 
+        /// <summary>
+        /// Supprime un utilisateur de la base de données.
+        /// </summary>
+        /// <returns>True si la suppression a réussi, sinon false.</returns>
         public static bool DeleteUtilisateurDansBdd()
         {
             using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
@@ -86,3 +79,27 @@ namespace CartesAcces2024
         }
     }
 }
+
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2023, 2024 Collège Caroline Aigle
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */

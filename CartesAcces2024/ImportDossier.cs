@@ -1,4 +1,52 @@
 ﻿/**
+ * Ce fichier contient la classe ImportDossier qui permet à l'utilisateur de sélectionner un dossier à importer.
+ * Elle implémente l'interface I_ImportService.
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CartesAcces2024
+{
+    // -- Permet à l'utilisateur de donner le chemin du dossier de photo à importer --
+    public class ImportDossier : I_ImportService
+    {
+        /// <summary>
+        /// Ouvre un dialogue pour sélectionner un dossier.
+        /// </summary>
+        /// <returns>Le chemin du dossier sélectionné ou "failed" en cas d'échec.</returns>
+        string I_ImportService.setCheminImportation()
+        {
+            var diag = new FolderBrowserDialog();
+            if (diag.ShowDialog() == DialogResult.OK) return diag.SelectedPath;
+            return "failed";
+        }
+
+        /// <summary>
+        /// Ouvre un dialogue pour sélectionner un dossier avec un titre personnalisé.
+        /// </summary>
+        /// <param name="title">Titre du dialogue de sélection de dossier.</param>
+        /// <returns>Le chemin du dossier sélectionné ou "failed" en cas d'échec.</returns>
+        string I_ImportService.setCheminImportation(string title)
+        {
+            var diag = new FolderBrowserDialog();
+            if (Globale.presetPath == true)
+            {
+                diag.RootFolder = Environment.SpecialFolder.Desktop;
+                diag.SelectedPath = Globale.folderPath;
+            }
+            diag.Description = title;
+            if (diag.ShowDialog() == DialogResult.OK) return diag.SelectedPath;
+            return "failed";
+        }
+    }
+}
+
+/**
  * MIT License
  * 
  * Copyright (c) 2023, 2024 Collège Caroline Aigle
@@ -20,38 +68,4 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
  */
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace CartesAcces2024
-{
-    // -- Permet a l'utilisateur de donner le chemin du dossier de photo a importer
-    public class ImportDossier : I_ImportService
-    {
-        string I_ImportService.setCheminImportation()
-        {
-            var diag = new FolderBrowserDialog();
-            if (diag.ShowDialog() == DialogResult.OK) return diag.SelectedPath;
-            return "failed";
-        }
-        string I_ImportService.setCheminImportation(string title)
-        {
-            var diag = new FolderBrowserDialog();
-            if (Globale.presetPath == true)
-            {
-                diag.RootFolder = Environment.SpecialFolder.Desktop;
-                diag.SelectedPath = Globale.folderPath;
-            }
-            diag.Description = title;
-            if (diag.ShowDialog() == DialogResult.OK) return diag.SelectedPath;
-            return "failed";
-        }
-    }
-}

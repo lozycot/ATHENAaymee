@@ -1,4 +1,35 @@
 ﻿/**
+ * Ce fichier contient la classe QrCode qui permet de créer des QR codes à partir d'URLs.
+ * Elle inclut une méthode pour générer un QR code et le retourner sous forme d'image.
+ */
+
+using System.Drawing;
+using QRCoder;
+
+namespace CartesAcces2024
+{
+    /// <summary>
+    /// Classe pour générer des QR codes.
+    /// </summary>
+    public static class QrCode
+    {
+        /// <summary>
+        /// Crée un QR code à partir d'une URL.
+        /// </summary>
+        /// <param name="url">L'URL à encoder dans le QR code.</param>
+        /// <returns>Une image Bitmap représentant le QR code.</returns>
+        public static Bitmap CreationQrCode(string url)
+        {
+            var qrGenerator = new QRCodeGenerator();
+            var qrCodeData = qrGenerator.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
+            var qrCode = new QRCode(qrCodeData);
+            var qrCodeImage = qrCode.GetGraphic(20);
+            return qrCodeImage;
+        }
+    }
+}
+
+/**
  * MIT License
  * 
  * Copyright (c) 2023, 2024 Collège Caroline Aigle
@@ -20,31 +51,4 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
  */
-
-using System.Drawing;
-using QRCoder;
-
-namespace CartesAcces2024
-{
-    /// <summary>
-    /// Cette classe permet de créer un QRCode
-    /// </summary>
-    public static class QrCode
-    {
-        /// <summary>
-        /// Cette fonction permet de créer un QRCode à partir d'une url
-        /// </summary>
-        /// <param name="url"></param>
-        /// <returns></returns>
-        public static Bitmap CreationQrCode(string url)
-        {
-            var qrGenerator = new QRCodeGenerator();
-            var qrCodeData = qrGenerator.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
-            var qrCode = new QRCode(qrCodeData);
-            var qrCodeImage = qrCode.GetGraphic(20);
-            return qrCodeImage;
-        }
-    }
-}

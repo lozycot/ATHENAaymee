@@ -1,26 +1,6 @@
 ﻿/**
- * MIT License
- * 
- * Copyright (c) 2023, 2024 Collège Caroline Aigle
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
+ * Ce fichier définit la classe Eleve qui représente un élève.
+ * Elle contient des propriétés pour les informations de l'élève, y compris son nom, prénom, classe, et d'autres attributs.
  */
 
 using System.Collections.Generic;
@@ -31,7 +11,7 @@ using CartesAcces2024;
 namespace CartesAcces2024
 {
     /// <summary>
-    /// 
+    /// Classe représentant un élève.
     /// </summary>
     public class Eleve
     {
@@ -45,7 +25,7 @@ namespace CartesAcces2024
         }
 
         /// <summary>
-        /// 
+        /// Constructeur par défaut pour initialiser un élève.
         /// </summary>
         public Eleve()
         {
@@ -189,38 +169,32 @@ namespace CartesAcces2024
         }
 
         /// <summary>
-        /// 
+        /// Méthode pour créer une clé unique pour un élève.
         /// </summary>
-        /// <param name="eleve"></param>
-        /// <returns></returns>
+        /// <param name="eleve">L'élève pour lequel créer la clé.</param>
+        /// <returns>La clé unique sous forme de chaîne.</returns>
         public static string CreeCleEleve(Eleve eleve)
         {
             var cle = eleve.NomEleve + eleve.PrenomEleve + eleve.ClasseEleve;
 
-            // Correction sur le regime
+            // Correction sur le régime
             if (eleve.RegimeEleve == "EXTERN")
                 cle += "Externe";
             else if (eleve.RegimeEleve.Substring(0, 2) == "DP") cle += "12P";
 
-            // Option 1
+            // Ajout des options
             cle += eleve.OptionUnEleve;
-
-            // Option 2
             if (eleve.OptionDeuxEleve != "") cle += eleve.OptionDeuxEleve;
-
-            // Option 3
             if (eleve.OptionTroisEleve != "") cle += eleve.OptionTroisEleve;
-
-            // Option 4
             if (eleve.OptionQuatreEleve != "") cle += eleve.OptionQuatreEleve;
 
             return cle;
         }
 
         /// <summary>
-        /// 
+        /// Vérifie si les élèves possèdent un emploi du temps.
         /// </summary>
-        /// <param name="listeEleve"></param>
+        /// <param name="listeEleve">Liste des élèves à vérifier.</param>
         public static void PossedeEdt(List<Eleve> listeEleve)
         {
             foreach (var eleve in listeEleve)
@@ -229,3 +203,27 @@ namespace CartesAcces2024
         }
     }
 }
+
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2023, 2024 Collège Caroline Aigle
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */

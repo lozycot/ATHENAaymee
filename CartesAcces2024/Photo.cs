@@ -1,27 +1,8 @@
 ﻿/**
- * MIT License
- * 
- * Copyright (c) 2023, 2024 Collège Caroline Aigle
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
+ * Ce fichier contient la classe Photo qui gère les opérations liées aux photos des élèves.
+ * Elle inclut des méthodes pour vérifier l'existence d'une photo et pour obtenir la date de la dernière importation.
  */
+
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Globalization;
@@ -33,15 +14,15 @@ using System;
 namespace CartesAcces2024
 {
     /// <summary>
-    /// Cette classe permet de gérer les photos
+    /// Classe pour gérer les photos des élèves.
     /// </summary>
     public static class Photo
     {
         /// <summary>
-        /// Cette fonction permet de vérifier si une photo existe pour un élève
+        /// Vérifie si une photo existe pour un élève.
         /// </summary>
-        /// <param name="eleve"></param>
-        /// <param name="pbPhoto"></param>
+        /// <param name="eleve">L'élève dont on vérifie la photo.</param>
+        /// <param name="pbPhoto">PictureBox pour afficher la photo.</param>
         public static void VerifPhotoEleve(Eleve eleve, PictureBox pbPhoto)
         {
             var nomFichierJpg = eleve.NomEleve + " " + eleve.PrenomEleve + ".jpg";
@@ -73,7 +54,7 @@ namespace CartesAcces2024
         }
 
         /// <summary>
-        /// Cette fonction permet de d'afficher une photo provisoire
+        /// Obtient la date de la dernière importation des photos.
         /// </summary>
         /// <param name="chemin"></param>
         /// <param name="pbPhoto"></param>
@@ -155,3 +136,27 @@ namespace CartesAcces2024
         }
     }
 }
+
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2023, 2024 Collège Caroline Aigle
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
