@@ -1,26 +1,6 @@
 /**
- * MIT License
- * 
- * Copyright (c) 2023, 2024 Collège Caroline Aigle
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
+ * Ce fichier contient la classe PdfGs qui permet de récupérer des images d'un PDF.
+ * Elle inclut des méthodes pour importer des emplois du temps à partir de fichiers PDF.
  */
 
 using System;
@@ -37,14 +17,15 @@ using System.ComponentModel;
 namespace CartesAcces2024
 {
     /// <summary>
-    /// Cette classe permet de récupérer des images d'un pdf
+    /// Classe pour gérer l'importation d'images à partir de fichiers PDF.
     /// </summary>
     public static class PdfGs
     {
         //private static string _outputPath = Chemin.CheminEdtClassique;
         public static string trombiOutputPath = Chemin.DossierTrombi + "temp/";
+
         /// <summary>
-        ///  Cette fonction permet de récupérer les images (emplois du temps) d'un pdf
+        /// Récupère les images (emplois du temps) d'un PDF.
         /// </summary>
         /// <param name="path"></param>
         /// <param name="classe"></param>
@@ -166,7 +147,7 @@ namespace CartesAcces2024
 
 
         /// <summary>
-        /// Cette fonction permet de récupérer les images (trombinoscopes) d'un pdf
+        /// Permet d'importer les emplois du temps PDF des classes, sans les noms des élèves.
         /// </summary>
         /// <param name="path"></param>
         /// <param name="classe"></param>
@@ -995,3 +976,27 @@ namespace CartesAcces2024
         }
     }
 }
+
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2023, 2024 Collège Caroline Aigle
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */

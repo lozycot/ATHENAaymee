@@ -1,4 +1,35 @@
 ﻿/**
+ * Ce fichier définit l'interface I_ImportService qui spécifie les méthodes pour gérer les importations de fichiers.
+ * Elle inclut des méthodes pour définir le chemin d'importation.
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CartesAcces2024
+{
+    // Interface pour les Imports
+    interface I_ImportService
+    {
+        /// <summary>
+        /// Définit le chemin d'importation.
+        /// </summary>
+        /// <returns>Le chemin d'importation sous forme de chaîne.</returns>
+        string setCheminImportation();
+
+        /// <summary>
+        /// Définit le chemin d'importation avec un titre personnalisé.
+        /// </summary>
+        /// <param name="title">Titre du dialogue d'ouverture de fichier.</param>
+        /// <returns>Le chemin d'importation sous forme de chaîne.</returns>
+        string setCheminImportation(string title);
+    }
+}
+
+/**
  * MIT License
  * 
  * Copyright (c) 2023, 2024 Collège Caroline Aigle
@@ -20,22 +51,4 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
  */
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-// interface pour les Imports --
-
-namespace CartesAcces2024
-{
-    interface I_ImportService
-    {
-        string setCheminImportation();
-        string setCheminImportation(string title);
-    }
-}

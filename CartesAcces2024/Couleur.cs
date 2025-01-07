@@ -1,26 +1,6 @@
 /**
- * MIT License
- * 
- * Copyright (c) 2023, 2024 Coll�ge Caroline Aigle
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
+ * Ce fichier contient la classe Couleur qui gère les couleurs des contrôles dans l'application.
+ * Elle inclut des méthodes pour définir les couleurs des fenêtres, des boutons, des panneaux, etc.
  */
 
 using System;
@@ -31,38 +11,40 @@ namespace CartesAcces2024
 {
     public static class Couleur
     {
-        //public static void setCouleurFenetre(Form fenetre)
-        //{
-        //    if (Globale.EstEnModeSombre)
-        //        fenetre.BackColor = Color.FromArgb(255, Globale.CouleurDeFondSombre[0],
-        //            Globale.CouleurDeFondSombre[1], Globale.CouleurDeFondSombre[2]);
-        //    else
-        //        fenetre.BackColor = Color.FromArgb(255, Globale.CouleurDeFondClaire[0],
-        //            Globale.CouleurDeFondClaire[1], Globale.CouleurDeFondClaire[2]);
+        // Méthode pour définir la couleur de la fenêtre
+        // public static void setCouleurFenetre(Form fenetre)
+        // {
+        //     if (Globale.EstEnModeSombre)
+        //         fenetre.BackColor = Color.FromArgb(255, Globale.CouleurDeFondSombre[0],
+        //             Globale.CouleurDeFondSombre[1], Globale.CouleurDeFondSombre[2]);
+        //     else
+        //         fenetre.BackColor = Color.FromArgb(255, Globale.CouleurDeFondClaire[0],
+        //             Globale.CouleurDeFondClaire[1], Globale.CouleurDeFondClaire[2]);
 
-        //    foreach (Control controle in fenetre.Controls)
-        //    {
-        //        var panel = controle as Panel;
-        //        var groupBox = controle as GroupBox;
-        //        var button = controle as Button;
-        //        var textBox = controle as TextBox;
-        //        var listBox = controle as ListBox;
-        //        if (panel != null)
-        //            setCouleurPanel((Panel) controle);
-        //        else if (groupBox != null)
-        //            setCouleurGroupeBox((GroupBox) controle);
+        //     foreach (Control controle in fenetre.Controls)
+        //     {
+        //         var panel = controle as Panel;
+        //         var groupBox = controle as GroupBox;
+        //         var button = controle as Button;
+        //         var textBox = controle as TextBox;
+        //         var listBox = controle as ListBox;
+        //         if (panel != null)
+        //             setCouleurPanel((Panel) controle);
+        //         else if (groupBox != null)
+        //             setCouleurGroupeBox((GroupBox) controle);
 
-        //        else if (button != null)
-        //            setCouleurBouton((Button) controle);
-        //        else if (textBox != null)
-        //            setCouleurTextBox((TextBox) controle);
-        //        else if (listBox != null)
-        //            setCouleurListBox((ListBox) controle);
-        //        else
-        //            setCouleurAutre(controle);
-        //    }
-        //}
+        //         else if (button != null)
+        //             setCouleurBouton((Button) controle);
+        //         else if (textBox != null)
+        //             setCouleurTextBox((TextBox) controle);
+        //         else if (listBox != null)
+        //             setCouleurListBox((ListBox) controle);
+        //         else
+        //             setCouleurAutre(controle);
+        //     }
+        // }
 
+        // Méthode pour définir la couleur d'un panneau
         public static void setCouleurPanel(Panel panel)
         {
             foreach (Control controle in panel.Controls)
@@ -88,6 +70,7 @@ namespace CartesAcces2024
             }
         }
 
+        // Méthode pour définir la couleur d'un groupe de contrôles
         public static void setCouleurGroupeBox(GroupBox groupeBox)
         {
             foreach (Control controle in groupeBox.Controls)
@@ -113,6 +96,7 @@ namespace CartesAcces2024
             }
         }
 
+        // Méthode pour définir la couleur d'un bouton
         public static void setCouleurBouton(Button btn)
         {
             if (Globale.EstEnModeSombre)
@@ -143,6 +127,7 @@ namespace CartesAcces2024
             }
         }
 
+        // Méthode pour définir la couleur d'autres contrôles
         public static void setCouleurAutre(Control controle)
         {
             if (Globale.EstEnModeSombre)
@@ -153,6 +138,7 @@ namespace CartesAcces2024
                     Globale.CouleurDuTexteclaire[1], Globale.CouleurDuTexteclaire[2]);
         }
 
+        // Méthode pour définir la couleur d'une zone de texte
         public static void setCouleurTextBox(TextBox txt)
         {
             txt.BorderStyle = BorderStyle.None;
@@ -172,6 +158,7 @@ namespace CartesAcces2024
             }
         }
 
+        // Méthode pour définir la couleur d'une liste
         public static void setCouleurListBox(ListBox lst)
         {
             lst.BorderStyle = BorderStyle.None;
@@ -191,6 +178,7 @@ namespace CartesAcces2024
             }
         }
 
+        // Méthode pour gérer le changement d'état d'un bouton
         public static void changement_state_btn(object sender, EventArgs e)
         {
             Button btn;
@@ -207,3 +195,27 @@ namespace CartesAcces2024
         }
     }
 }
+
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2023, 2024 Collège Caroline Aigle
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */

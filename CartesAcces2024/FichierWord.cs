@@ -1,26 +1,6 @@
 ﻿/**
- * MIT License
- * 
- * Copyright (c) 2023, 2024 Collège Caroline Aigle
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
+ * Ce fichier contient la classe FichierWord qui gère la création et la manipulation de documents Word.
+ * Elle inclut des méthodes pour initialiser un fichier Word, ajouter des images, et sauvegarder le document.
  */
 
 using System;
@@ -39,18 +19,18 @@ using System.ComponentModel;
 namespace CartesAcces2024
 {
     /// <summary>
-    /// 
+    /// Classe pour gérer les opérations sur les fichiers Word.
     /// </summary>
     public static class FichierWord
     {
         /// <summary>
-        /// 
+        /// Initialise un fichier Word avec des marges spécifiées.
         /// </summary>
-        /// <param name="margeHaute"></param>
-        /// <param name="margeDroite"></param>
-        /// <param name="margeGauche"></param>
-        /// <param name="margeBasse"></param>
-        /// <returns></returns>
+        /// <param name="margeHaute">Marge haute en points.</param>
+        /// <param name="margeDroite">Marge droite en points.</param>
+        /// <param name="margeGauche">Marge gauche en points.</param>
+        /// <param name="margeBasse">Marge basse en points.</param>
+        /// <returns>Une instance de l'application Word.</returns>
         public static Application InitWordFile(int margeHaute, int margeDroite, int margeGauche, int margeBasse)
         {
             //FermerWord();
@@ -73,7 +53,7 @@ namespace CartesAcces2024
         }
 
         /// <summary>
-        /// 
+        /// Sauvegarde une planche de photos au format PDF.
         /// </summary>
         /// <param name="margeHaute"></param>
         /// <param name="margeDroite"></param>
@@ -609,7 +589,7 @@ namespace CartesAcces2024
                         break;
                 }
                 double nb = nomsFichiersPlanches.Count;
-                for(var compt = 0; compt < nomsFichiersPlanches.Count; compt++)
+                for (var compt = 0; compt < nomsFichiersPlanches.Count; compt++)
                 {
                     string imgPath = dossierPlanches + nomsFichiersPlanches[compt] + ".jpg"; 
                     var shape = fichierWord.ActiveDocument.Shapes.AddPicture(imgPath, Type.Missing, Type.Missing, Type.Missing);
@@ -642,3 +622,27 @@ namespace CartesAcces2024
         }
     }
 }
+
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2023, 2024 Collège Caroline Aigle
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */

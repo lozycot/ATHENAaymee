@@ -1,4 +1,54 @@
 ﻿/**
+ * Ce fichier contient la classe ImportCsv qui permet à l'utilisateur de sélectionner un fichier CSV à importer.
+ * Elle implémente l'interface I_ImportService.
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CartesAcces2024
+{
+    // -- Permet à l'utilisateur de donner le chemin du fichier CSV à importer --
+    public class ImportCsv : I_ImportService
+    {
+        /// <summary>
+        /// Ouvre un dialogue pour sélectionner un fichier CSV.
+        /// </summary>
+        /// <returns>Le chemin du fichier sélectionné ou "failed" en cas d'échec.</returns>
+        string I_ImportService.setCheminImportation()
+        {
+            using (var ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "CSV Files Only | *.csv";
+                ofd.Title = "Choose the File";
+                if (ofd.ShowDialog() == DialogResult.OK) return ofd.FileName;
+                return "failed";
+            }
+        }
+
+        /// <summary>
+        /// Ouvre un dialogue pour sélectionner un fichier CSV avec un titre personnalisé.
+        /// </summary>
+        /// <param name="title">Titre du dialogue d'ouverture de fichier.</param>
+        /// <returns>Le chemin du fichier sélectionné ou "failed" en cas d'échec.</returns>
+        string I_ImportService.setCheminImportation(string title)
+        {
+            using (var ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "CSV Files Only | *.csv";
+                ofd.Title = title;
+                if (ofd.ShowDialog() == DialogResult.OK) return ofd.FileName;
+                return "failed";
+            }
+        }
+    }
+}
+
+/**
  * MIT License
  * 
  * Copyright (c) 2023, 2024 Collège Caroline Aigle
@@ -20,41 +70,4 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
  */
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace CartesAcces2024
-// -- Permet a l'utilisateur de donner le chemin du fichier excel a importer --
-{
-    public class ImportCsv : I_ImportService
-    {
-        string I_ImportService.setCheminImportation()
-        {
-            using (var ofd = new OpenFileDialog())
-            {
-                ofd.Filter = "CSV Files Only | *.csv";
-                ofd.Title = "Choose the File";
-                if (ofd.ShowDialog() == DialogResult.OK) return ofd.FileName;
-                return "failed";
-            }
-        }
-
-        string I_ImportService.setCheminImportation(string title)
-        {
-            using (var ofd = new OpenFileDialog())
-            {
-                ofd.Filter = "CSV Files Only | *.csv";
-                ofd.Title = title;
-                if (ofd.ShowDialog() == DialogResult.OK) return ofd.FileName;
-                return "failed";
-            }
-        }
-    }
-}

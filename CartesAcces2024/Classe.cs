@@ -1,4 +1,32 @@
 ﻿/**
+ * Ce fichier définit la classe Classe qui représente une classe d'élèves.
+ * Elle contient des propriétés pour le nom de la classe et des constructeurs pour initialiser ces propriétés.
+ */
+
+using System;
+
+namespace CartesAcces2024
+{
+    public class Classe
+    {
+        // Propriété pour le nom de la classe
+        public string Classes { get; set; }
+
+        // Constructeur par défaut
+        public Classe()
+        {
+            Classes = "null"; // Initialisation par défaut
+        }
+
+        // Constructeur avec un paramètre pour le nom de la classe
+        public Classe(string nomClasse)
+        {
+            Classes = nomClasse; // Initialisation avec le nom de la classe fourni
+        }
+    }
+}
+
+/**
  * MIT License
  * 
  * Copyright (c) 2023, 2024 Collège Caroline Aigle
@@ -20,28 +48,4 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
  */
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CartesAcces2024
-{
-    public class Classe
-    {
-        public string Classes { get; set; }
-        public Classe()
-        {
-            Classes = "null";
-        }
-
-        public Classe(string nomClasse)
-        {
-            Classes = nomClasse;
-        }
-    }
-}
