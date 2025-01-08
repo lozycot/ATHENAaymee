@@ -86,11 +86,11 @@ namespace CartesAcces2024
             this.groupBox1.Controls.Add(this.Seme);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(516, 62);
+            this.groupBox1.Location = new System.Drawing.Point(17, 75);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(471, 103);
+            this.groupBox1.Size = new System.Drawing.Size(407, 324);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtre de recherche par niveau";
@@ -98,7 +98,7 @@ namespace CartesAcces2024
             // Ceme
             // 
             this.Ceme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ceme.Location = new System.Drawing.Point(176, 20);
+            this.Ceme.Location = new System.Drawing.Point(31, 88);
             this.Ceme.Margin = new System.Windows.Forms.Padding(4);
             this.Ceme.Name = "Ceme";
             this.Ceme.Size = new System.Drawing.Size(125, 27);
@@ -110,7 +110,7 @@ namespace CartesAcces2024
             // 
             this.tout.Checked = true;
             this.tout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tout.Location = new System.Drawing.Point(176, 54);
+            this.tout.Location = new System.Drawing.Point(31, 223);
             this.tout.Margin = new System.Windows.Forms.Padding(4);
             this.tout.Name = "tout";
             this.tout.Size = new System.Drawing.Size(169, 27);
@@ -122,7 +122,7 @@ namespace CartesAcces2024
             // Teme
             // 
             this.Teme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Teme.Location = new System.Drawing.Point(27, 54);
+            this.Teme.Location = new System.Drawing.Point(31, 178);
             this.Teme.Margin = new System.Windows.Forms.Padding(4);
             this.Teme.Name = "Teme";
             this.Teme.Size = new System.Drawing.Size(125, 27);
@@ -133,7 +133,7 @@ namespace CartesAcces2024
             // Qeme
             // 
             this.Qeme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Qeme.Location = new System.Drawing.Point(324, 20);
+            this.Qeme.Location = new System.Drawing.Point(31, 133);
             this.Qeme.Margin = new System.Windows.Forms.Padding(4);
             this.Qeme.Name = "Qeme";
             this.Qeme.Size = new System.Drawing.Size(125, 27);
@@ -144,7 +144,7 @@ namespace CartesAcces2024
             // Seme
             // 
             this.Seme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Seme.Location = new System.Drawing.Point(27, 20);
+            this.Seme.Location = new System.Drawing.Point(31, 43);
             this.Seme.Margin = new System.Windows.Forms.Padding(4);
             this.Seme.Name = "Seme";
             this.Seme.Size = new System.Drawing.Size(125, 27);
@@ -157,7 +157,7 @@ namespace CartesAcces2024
             this.txtRecherche.BackColor = System.Drawing.Color.White;
             this.txtRecherche.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRecherche.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecherche.Location = new System.Drawing.Point(218, 113);
+            this.txtRecherche.Location = new System.Drawing.Point(154, 41);
             this.txtRecherche.Margin = new System.Windows.Forms.Padding(4);
             this.txtRecherche.Name = "txtRecherche";
             this.txtRecherche.Size = new System.Drawing.Size(270, 26);
@@ -167,7 +167,7 @@ namespace CartesAcces2024
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(20, 113);
+            this.label3.Location = new System.Drawing.Point(13, 43);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 28);
@@ -178,7 +178,7 @@ namespace CartesAcces2024
             // 
             this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount.ForeColor = System.Drawing.Color.White;
-            this.lblCount.Location = new System.Drawing.Point(214, 62);
+            this.lblCount.Location = new System.Drawing.Point(182, 9);
             this.lblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(133, 28);
@@ -191,7 +191,7 @@ namespace CartesAcces2024
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValider.Location = new System.Drawing.Point(428, 766);
+            this.btnValider.Location = new System.Drawing.Point(1250, 588);
             this.btnValider.Margin = new System.Windows.Forms.Padding(4);
             this.btnValider.MaximumSize = new System.Drawing.Size(171, 55);
             this.btnValider.MinimumSize = new System.Drawing.Size(171, 55);
@@ -208,7 +208,7 @@ namespace CartesAcces2024
             this.btnRetirer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRetirer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetirer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnRetirer.Location = new System.Drawing.Point(428, 677);
+            this.btnRetirer.Location = new System.Drawing.Point(1250, 525);
             this.btnRetirer.Margin = new System.Windows.Forms.Padding(4);
             this.btnRetirer.MaximumSize = new System.Drawing.Size(171, 55);
             this.btnRetirer.MinimumSize = new System.Drawing.Size(171, 55);
@@ -224,7 +224,7 @@ namespace CartesAcces2024
             this.btnAjout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAjout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAjout.Location = new System.Drawing.Point(428, 581);
+            this.btnAjout.Location = new System.Drawing.Point(1250, 462);
             this.btnAjout.Margin = new System.Windows.Forms.Padding(4);
             this.btnAjout.MaximumSize = new System.Drawing.Size(171, 55);
             this.btnAjout.MinimumSize = new System.Drawing.Size(171, 55);
@@ -242,7 +242,7 @@ namespace CartesAcces2024
             this.Impression.ForeColor = System.Drawing.Color.White;
             this.Impression.FormattingEnabled = true;
             this.Impression.ItemHeight = 20;
-            this.Impression.Location = new System.Drawing.Point(607, 219);
+            this.Impression.Location = new System.Drawing.Point(843, 43);
             this.Impression.Margin = new System.Windows.Forms.Padding(4);
             this.Impression.MaximumSize = new System.Drawing.Size(399, 614);
             this.Impression.MinimumSize = new System.Drawing.Size(399, 614);
@@ -258,7 +258,7 @@ namespace CartesAcces2024
             this.Eleves.ForeColor = System.Drawing.Color.White;
             this.Eleves.FormattingEnabled = true;
             this.Eleves.ItemHeight = 20;
-            this.Eleves.Location = new System.Drawing.Point(16, 219);
+            this.Eleves.Location = new System.Drawing.Point(436, 41);
             this.Eleves.Margin = new System.Windows.Forms.Padding(4);
             this.Eleves.MaximumSize = new System.Drawing.Size(399, 614);
             this.Eleves.MinimumSize = new System.Drawing.Size(399, 614);
@@ -271,7 +271,7 @@ namespace CartesAcces2024
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(20, 62);
+            this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 28);
@@ -280,7 +280,7 @@ namespace CartesAcces2024
             // 
             // pbPhoto
             // 
-            this.pbPhoto.Location = new System.Drawing.Point(428, 219);
+            this.pbPhoto.Location = new System.Drawing.Point(1250, 57);
             this.pbPhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbPhoto.MaximumSize = new System.Drawing.Size(171, 223);
             this.pbPhoto.Name = "pbPhoto";
@@ -294,7 +294,7 @@ namespace CartesAcces2024
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(13, 177);
+            this.label2.Location = new System.Drawing.Point(432, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(317, 28);
@@ -305,7 +305,7 @@ namespace CartesAcces2024
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(603, 181);
+            this.label4.Location = new System.Drawing.Point(839, 11);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(287, 28);
@@ -319,7 +319,7 @@ namespace CartesAcces2024
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1284, 922);
+            this.ClientSize = new System.Drawing.Size(1439, 660);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbPhoto);

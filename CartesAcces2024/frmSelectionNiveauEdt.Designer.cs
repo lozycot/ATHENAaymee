@@ -77,7 +77,7 @@ namespace CartesAcces2024
             this.gpbClasse.Controls.Add(this.rdb5eme);
             this.gpbClasse.Controls.Add(this.rdb6eme);
             this.gpbClasse.ForeColor = System.Drawing.Color.White;
-            this.gpbClasse.Location = new System.Drawing.Point(29, 83);
+            this.gpbClasse.Location = new System.Drawing.Point(12, 29);
             this.gpbClasse.Name = "gpbClasse";
             this.gpbClasse.Size = new System.Drawing.Size(278, 283);
             this.gpbClasse.TabIndex = 0;
@@ -87,62 +87,58 @@ namespace CartesAcces2024
             // rdbTousEleves
             // 
             this.rdbTousEleves.AutoSize = true;
-            this.rdbTousEleves.Location = new System.Drawing.Point(6, 252);
+            this.rdbTousEleves.Location = new System.Drawing.Point(21, 226);
             this.rdbTousEleves.Name = "rdbTousEleves";
             this.rdbTousEleves.Size = new System.Drawing.Size(128, 21);
             this.rdbTousEleves.TabIndex = 5;
-            this.rdbTousEleves.TabStop = true;
             this.rdbTousEleves.Text = "Tous les élèves";
             this.rdbTousEleves.UseVisualStyleBackColor = true;
             // 
             // rdbClasses
             // 
             this.rdbClasses.AutoSize = true;
-            this.rdbClasses.Location = new System.Drawing.Point(6, 211);
+            this.rdbClasses.Location = new System.Drawing.Point(21, 188);
             this.rdbClasses.Name = "rdbClasses";
             this.rdbClasses.Size = new System.Drawing.Size(245, 21);
             this.rdbClasses.TabIndex = 4;
-            this.rdbClasses.TabStop = true;
             this.rdbClasses.Text = "Classes uniquement (sans élèves)";
             this.rdbClasses.UseVisualStyleBackColor = true;
             // 
             // rdb3eme
             // 
             this.rdb3eme.AutoSize = true;
-            this.rdb3eme.Location = new System.Drawing.Point(7, 169);
+            this.rdb3eme.Location = new System.Drawing.Point(21, 150);
             this.rdb3eme.Name = "rdb3eme";
             this.rdb3eme.Size = new System.Drawing.Size(64, 21);
             this.rdb3eme.TabIndex = 3;
-            this.rdb3eme.TabStop = true;
             this.rdb3eme.Text = "3ème";
             this.rdb3eme.UseVisualStyleBackColor = true;
             // 
             // rdb4eme
             // 
             this.rdb4eme.AutoSize = true;
-            this.rdb4eme.Location = new System.Drawing.Point(6, 124);
+            this.rdb4eme.Location = new System.Drawing.Point(21, 112);
             this.rdb4eme.Name = "rdb4eme";
             this.rdb4eme.Size = new System.Drawing.Size(64, 21);
             this.rdb4eme.TabIndex = 2;
-            this.rdb4eme.TabStop = true;
             this.rdb4eme.Text = "4ème";
             this.rdb4eme.UseVisualStyleBackColor = true;
             // 
             // rdb5eme
             // 
             this.rdb5eme.AutoSize = true;
-            this.rdb5eme.Location = new System.Drawing.Point(6, 81);
+            this.rdb5eme.Location = new System.Drawing.Point(21, 74);
             this.rdb5eme.Name = "rdb5eme";
             this.rdb5eme.Size = new System.Drawing.Size(64, 21);
             this.rdb5eme.TabIndex = 1;
-            this.rdb5eme.TabStop = true;
             this.rdb5eme.Text = "5ème";
             this.rdb5eme.UseVisualStyleBackColor = true;
             // 
             // rdb6eme
             // 
             this.rdb6eme.AutoSize = true;
-            this.rdb6eme.Location = new System.Drawing.Point(6, 39);
+            this.rdb6eme.Checked = true;
+            this.rdb6eme.Location = new System.Drawing.Point(21, 36);
             this.rdb6eme.Name = "rdb6eme";
             this.rdb6eme.Size = new System.Drawing.Size(64, 21);
             this.rdb6eme.TabIndex = 0;
@@ -154,7 +150,7 @@ namespace CartesAcces2024
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 32);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(268, 17);
             this.label1.TabIndex = 1;
@@ -165,7 +161,7 @@ namespace CartesAcces2024
             this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValider.Location = new System.Drawing.Point(167, 487);
+            this.btnValider.Location = new System.Drawing.Point(316, 263);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(140, 49);
             this.btnValider.TabIndex = 2;
@@ -175,10 +171,9 @@ namespace CartesAcces2024
             // 
             // frmSelectionNiveauEdt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(478, 567);
+            this.ClientSize = new System.Drawing.Size(466, 323);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gpbClasse);

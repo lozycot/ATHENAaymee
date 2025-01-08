@@ -71,7 +71,7 @@ namespace CartesAcces2024
             this.lblInfo.AutoSize = true;
             this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo.ForeColor = System.Drawing.Color.White;
-            this.lblInfo.Location = new System.Drawing.Point(55, 78);
+            this.lblInfo.Location = new System.Drawing.Point(12, 9);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(383, 25);
             this.lblInfo.TabIndex = 0;
@@ -81,7 +81,7 @@ namespace CartesAcces2024
             // 
             this.txtIdentifiant.BackColor = System.Drawing.Color.White;
             this.txtIdentifiant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdentifiant.Location = new System.Drawing.Point(58, 165);
+            this.txtIdentifiant.Location = new System.Drawing.Point(17, 82);
             this.txtIdentifiant.Name = "txtIdentifiant";
             this.txtIdentifiant.Size = new System.Drawing.Size(172, 22);
             this.txtIdentifiant.TabIndex = 1;
@@ -90,7 +90,7 @@ namespace CartesAcces2024
             // 
             this.txtMdp1.BackColor = System.Drawing.Color.White;
             this.txtMdp1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMdp1.Location = new System.Drawing.Point(58, 232);
+            this.txtMdp1.Location = new System.Drawing.Point(17, 150);
             this.txtMdp1.Name = "txtMdp1";
             this.txtMdp1.PasswordChar = '●';
             this.txtMdp1.Size = new System.Drawing.Size(172, 22);
@@ -101,7 +101,7 @@ namespace CartesAcces2024
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(55, 128);
+            this.label2.Location = new System.Drawing.Point(12, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 25);
             this.label2.TabIndex = 3;
@@ -112,7 +112,7 @@ namespace CartesAcces2024
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(55, 201);
+            this.label3.Location = new System.Drawing.Point(12, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 25);
             this.label3.TabIndex = 4;
@@ -124,7 +124,7 @@ namespace CartesAcces2024
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValider.Location = new System.Drawing.Point(58, 305);
+            this.btnValider.Location = new System.Drawing.Point(564, 128);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(143, 44);
             this.btnValider.TabIndex = 5;
@@ -137,7 +137,7 @@ namespace CartesAcces2024
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(291, 201);
+            this.label1.Location = new System.Drawing.Point(215, 122);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 25);
             this.label1.TabIndex = 7;
@@ -147,7 +147,7 @@ namespace CartesAcces2024
             // 
             this.txtMdp2.BackColor = System.Drawing.Color.White;
             this.txtMdp2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMdp2.Location = new System.Drawing.Point(296, 232);
+            this.txtMdp2.Location = new System.Drawing.Point(220, 150);
             this.txtMdp2.Name = "txtMdp2";
             this.txtMdp2.PasswordChar = '●';
             this.txtMdp2.Size = new System.Drawing.Size(172, 22);
@@ -159,7 +159,7 @@ namespace CartesAcces2024
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnQuitter.Location = new System.Drawing.Point(296, 305);
+            this.btnQuitter.Location = new System.Drawing.Point(565, 78);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(142, 44);
             this.btnQuitter.TabIndex = 8;
@@ -169,10 +169,9 @@ namespace CartesAcces2024
             // 
             // frmCreerUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(678, 398);
+            this.ClientSize = new System.Drawing.Size(720, 187);
             this.ControlBox = false;
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.label1);

@@ -73,7 +73,7 @@ namespace CartesAcces2024
             this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValider.Location = new System.Drawing.Point(181, 435);
+            this.btnValider.Location = new System.Drawing.Point(518, 169);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(140, 49);
             this.btnValider.TabIndex = 4;
@@ -88,9 +88,9 @@ namespace CartesAcces2024
             this.gpbClasse.Controls.Add(this.rdb5eme);
             this.gpbClasse.Controls.Add(this.rdb6eme);
             this.gpbClasse.ForeColor = System.Drawing.Color.White;
-            this.gpbClasse.Location = new System.Drawing.Point(43, 201);
+            this.gpbClasse.Location = new System.Drawing.Point(250, 12);
             this.gpbClasse.Name = "gpbClasse";
-            this.gpbClasse.Size = new System.Drawing.Size(278, 206);
+            this.gpbClasse.Size = new System.Drawing.Size(237, 206);
             this.gpbClasse.TabIndex = 3;
             this.gpbClasse.TabStop = false;
             this.gpbClasse.Text = "Classe";
@@ -98,7 +98,7 @@ namespace CartesAcces2024
             // rdb3eme
             // 
             this.rdb3eme.AutoSize = true;
-            this.rdb3eme.Location = new System.Drawing.Point(7, 169);
+            this.rdb3eme.Location = new System.Drawing.Point(21, 162);
             this.rdb3eme.Name = "rdb3eme";
             this.rdb3eme.Size = new System.Drawing.Size(64, 21);
             this.rdb3eme.TabIndex = 3;
@@ -108,7 +108,7 @@ namespace CartesAcces2024
             // rdb4eme
             // 
             this.rdb4eme.AutoSize = true;
-            this.rdb4eme.Location = new System.Drawing.Point(6, 124);
+            this.rdb4eme.Location = new System.Drawing.Point(21, 120);
             this.rdb4eme.Name = "rdb4eme";
             this.rdb4eme.Size = new System.Drawing.Size(64, 21);
             this.rdb4eme.TabIndex = 2;
@@ -118,7 +118,7 @@ namespace CartesAcces2024
             // rdb5eme
             // 
             this.rdb5eme.AutoSize = true;
-            this.rdb5eme.Location = new System.Drawing.Point(6, 81);
+            this.rdb5eme.Location = new System.Drawing.Point(21, 78);
             this.rdb5eme.Name = "rdb5eme";
             this.rdb5eme.Size = new System.Drawing.Size(64, 21);
             this.rdb5eme.TabIndex = 1;
@@ -129,7 +129,7 @@ namespace CartesAcces2024
             // 
             this.rdb6eme.AutoSize = true;
             this.rdb6eme.Checked = true;
-            this.rdb6eme.Location = new System.Drawing.Point(6, 39);
+            this.rdb6eme.Location = new System.Drawing.Point(21, 36);
             this.rdb6eme.Name = "rdb6eme";
             this.rdb6eme.Size = new System.Drawing.Size(64, 21);
             this.rdb6eme.TabIndex = 0;
@@ -142,9 +142,9 @@ namespace CartesAcces2024
             this.gpdChoixImage.Controls.Add(this.rdbDossier);
             this.gpdChoixImage.Controls.Add(this.rdbImage);
             this.gpdChoixImage.ForeColor = System.Drawing.Color.White;
-            this.gpdChoixImage.Location = new System.Drawing.Point(43, 30);
+            this.gpdChoixImage.Location = new System.Drawing.Point(12, 12);
             this.gpdChoixImage.Name = "gpdChoixImage";
-            this.gpdChoixImage.Size = new System.Drawing.Size(278, 149);
+            this.gpdChoixImage.Size = new System.Drawing.Size(232, 206);
             this.gpdChoixImage.TabIndex = 5;
             this.gpdChoixImage.TabStop = false;
             this.gpdChoixImage.Text = "Image";
@@ -154,7 +154,7 @@ namespace CartesAcces2024
             // 
             this.rdbDossier.AutoSize = true;
             this.rdbDossier.Checked = true;
-            this.rdbDossier.Location = new System.Drawing.Point(6, 48);
+            this.rdbDossier.Location = new System.Drawing.Point(21, 36);
             this.rdbDossier.Name = "rdbDossier";
             this.rdbDossier.Size = new System.Drawing.Size(154, 21);
             this.rdbDossier.TabIndex = 1;
@@ -165,7 +165,7 @@ namespace CartesAcces2024
             // rdbImage
             // 
             this.rdbImage.AutoSize = true;
-            this.rdbImage.Location = new System.Drawing.Point(7, 89);
+            this.rdbImage.Location = new System.Drawing.Point(21, 78);
             this.rdbImage.Name = "rdbImage";
             this.rdbImage.Size = new System.Drawing.Size(135, 21);
             this.rdbImage.TabIndex = 0;
@@ -175,10 +175,9 @@ namespace CartesAcces2024
             // 
             // frmSelectionNiveauPhoto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(370, 507);
+            this.ClientSize = new System.Drawing.Size(671, 235);
             this.Controls.Add(this.gpdChoixImage);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.gpbClasse);

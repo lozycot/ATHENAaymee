@@ -40,7 +40,7 @@ namespace CartesAcces2024
             this.btnCommencer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCommencer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCommencer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnCommencer.Location = new System.Drawing.Point(341, 657);
+            this.btnCommencer.Location = new System.Drawing.Point(281, 201);
             this.btnCommencer.Name = "btnCommencer";
             this.btnCommencer.Size = new System.Drawing.Size(359, 75);
             this.btnCommencer.TabIndex = 1;
@@ -54,7 +54,7 @@ namespace CartesAcces2024
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(76, 98);
+            this.richTextBox1.Location = new System.Drawing.Point(31, 31);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
@@ -67,7 +67,7 @@ namespace CartesAcces2024
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(990, 809);
+            this.ClientSize = new System.Drawing.Size(939, 288);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnCommencer);
             this.Name = "frmMonterNiveau";
