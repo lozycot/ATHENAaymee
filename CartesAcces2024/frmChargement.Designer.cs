@@ -63,7 +63,7 @@ namespace CartesAcces2024
             // progressBar1
             // 
             this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.progressBar1.Location = new System.Drawing.Point(28, 118);
+            this.progressBar1.Location = new System.Drawing.Point(12, 66);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(515, 41);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -73,7 +73,7 @@ namespace CartesAcces2024
             // 
             this.lblChargement.AutoSize = true;
             this.lblChargement.ForeColor = System.Drawing.Color.White;
-            this.lblChargement.Location = new System.Drawing.Point(25, 39);
+            this.lblChargement.Location = new System.Drawing.Point(12, 9);
             this.lblChargement.Name = "lblChargement";
             this.lblChargement.Size = new System.Drawing.Size(97, 17);
             this.lblChargement.TabIndex = 1;
@@ -89,7 +89,7 @@ namespace CartesAcces2024
             // 
             this.lblPourcentage.AutoSize = true;
             this.lblPourcentage.ForeColor = System.Drawing.Color.White;
-            this.lblPourcentage.Location = new System.Drawing.Point(25, 77);
+            this.lblPourcentage.Location = new System.Drawing.Point(12, 46);
             this.lblPourcentage.Name = "lblPourcentage";
             this.lblPourcentage.Size = new System.Drawing.Size(28, 17);
             this.lblPourcentage.TabIndex = 2;
@@ -100,7 +100,7 @@ namespace CartesAcces2024
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(574, 192);
+            this.ClientSize = new System.Drawing.Size(540, 123);
             this.ControlBox = false;
             this.Controls.Add(this.lblPourcentage);
             this.Controls.Add(this.lblChargement);

@@ -79,7 +79,7 @@ namespace CartesAcces2024
             this.btnEtab.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEtab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEtab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnEtab.Location = new System.Drawing.Point(118, 107);
+            this.btnEtab.Location = new System.Drawing.Point(52, 52);
             this.btnEtab.Name = "btnEtab";
             this.btnEtab.Size = new System.Drawing.Size(511, 69);
             this.btnEtab.TabIndex = 0;
@@ -96,7 +96,7 @@ namespace CartesAcces2024
             this.btnEdt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnEdt.Location = new System.Drawing.Point(118, 407);
+            this.btnEdt.Location = new System.Drawing.Point(52, 249);
             this.btnEdt.Name = "btnEdt";
             this.btnEdt.Size = new System.Drawing.Size(511, 56);
             this.btnEdt.TabIndex = 2;
@@ -112,7 +112,7 @@ namespace CartesAcces2024
             this.btnFaceCartes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFaceCartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFaceCartes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnFaceCartes.Location = new System.Drawing.Point(118, 182);
+            this.btnFaceCartes.Location = new System.Drawing.Point(52, 127);
             this.btnFaceCartes.Name = "btnFaceCartes";
             this.btnFaceCartes.Size = new System.Drawing.Size(511, 41);
             this.btnFaceCartes.TabIndex = 4;
@@ -127,7 +127,7 @@ namespace CartesAcces2024
             this.btnPhotos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhotos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnPhotos.Location = new System.Drawing.Point(118, 469);
+            this.btnPhotos.Location = new System.Drawing.Point(52, 311);
             this.btnPhotos.Name = "btnPhotos";
             this.btnPhotos.Size = new System.Drawing.Size(511, 57);
             this.btnPhotos.TabIndex = 3;
@@ -141,7 +141,7 @@ namespace CartesAcces2024
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(635, 424);
+            this.label2.Location = new System.Drawing.Point(569, 266);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 18);
             this.label2.TabIndex = 6;
@@ -152,7 +152,7 @@ namespace CartesAcces2024
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(635, 486);
+            this.label3.Location = new System.Drawing.Point(569, 328);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 18);
             this.label3.TabIndex = 7;
@@ -162,7 +162,7 @@ namespace CartesAcces2024
             // 
             this.lblImportEdt.AutoSize = true;
             this.lblImportEdt.ForeColor = System.Drawing.Color.White;
-            this.lblImportEdt.Location = new System.Drawing.Point(832, 424);
+            this.lblImportEdt.Location = new System.Drawing.Point(766, 266);
             this.lblImportEdt.Name = "lblImportEdt";
             this.lblImportEdt.Size = new System.Drawing.Size(130, 17);
             this.lblImportEdt.TabIndex = 9;
@@ -172,7 +172,7 @@ namespace CartesAcces2024
             // 
             this.lblImportPhotos.AutoSize = true;
             this.lblImportPhotos.ForeColor = System.Drawing.Color.White;
-            this.lblImportPhotos.Location = new System.Drawing.Point(832, 486);
+            this.lblImportPhotos.Location = new System.Drawing.Point(766, 328);
             this.lblImportPhotos.Name = "lblImportPhotos";
             this.lblImportPhotos.Size = new System.Drawing.Size(130, 17);
             this.lblImportPhotos.TabIndex = 10;
@@ -184,7 +184,7 @@ namespace CartesAcces2024
             this.btnImportPlanches.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImportPlanches.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportPlanches.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnImportPlanches.Location = new System.Drawing.Point(118, 532);
+            this.btnImportPlanches.Location = new System.Drawing.Point(52, 374);
             this.btnImportPlanches.Name = "btnImportPlanches";
             this.btnImportPlanches.Size = new System.Drawing.Size(511, 59);
             this.btnImportPlanches.TabIndex = 11;
@@ -223,7 +223,7 @@ namespace CartesAcces2024
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1284, 922);
+            this.ClientSize = new System.Drawing.Size(932, 464);
             this.Controls.Add(this.btnImportPlanches);
             this.Controls.Add(this.lblImportPhotos);
             this.Controls.Add(this.lblImportEdt);

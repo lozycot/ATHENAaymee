@@ -41,7 +41,7 @@ namespace CartesAcces2024
             this.btnModifMdp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModifMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnModifMdp.Location = new System.Drawing.Point(103, 131);
+            this.btnModifMdp.Location = new System.Drawing.Point(52, 52);
             this.btnModifMdp.Name = "btnModifMdp";
             this.btnModifMdp.Size = new System.Drawing.Size(359, 75);
             this.btnModifMdp.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace CartesAcces2024
             this.btnRepartir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRepartir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRepartir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnRepartir.Location = new System.Drawing.Point(103, 232);
+            this.btnRepartir.Location = new System.Drawing.Point(52, 133);
             this.btnRepartir.Name = "btnRepartir";
             this.btnRepartir.Size = new System.Drawing.Size(359, 75);
             this.btnRepartir.TabIndex = 1;
@@ -69,7 +69,7 @@ namespace CartesAcces2024
             this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.ForeColor = System.Drawing.Color.Red;
-            this.btnDel.Location = new System.Drawing.Point(103, 569);
+            this.btnDel.Location = new System.Drawing.Point(52, 340);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(359, 75);
             this.btnDel.TabIndex = 2;
@@ -83,7 +83,7 @@ namespace CartesAcces2024
             this.btnDossier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDossier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDossier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnDossier.Location = new System.Drawing.Point(103, 328);
+            this.btnDossier.Location = new System.Drawing.Point(52, 214);
             this.btnDossier.Name = "btnDossier";
             this.btnDossier.Size = new System.Drawing.Size(359, 75);
             this.btnDossier.TabIndex = 3;
@@ -96,7 +96,7 @@ namespace CartesAcces2024
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1057, 733);
+            this.ClientSize = new System.Drawing.Size(425, 429);
             this.Controls.Add(this.btnDossier);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnRepartir);
