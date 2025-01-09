@@ -131,6 +131,11 @@ namespace CartesAcces2024
             if (pbPhoto.Image != null)
                 pbPhoto.Image.Dispose();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

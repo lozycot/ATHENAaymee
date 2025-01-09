@@ -74,9 +74,9 @@ namespace CartesAcces2024
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 150);
+            this.label1.Location = new System.Drawing.Point(58, 119);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 20);
+            this.label1.Size = new System.Drawing.Size(242, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Imprimer une classe :";
             // 
@@ -85,11 +85,12 @@ namespace CartesAcces2024
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 216);
+            this.label2.Location = new System.Drawing.Point(58, 186);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 20);
+            this.label2.Size = new System.Drawing.Size(226, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Imprimer par niveau";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cbbImprSection
             // 
@@ -101,11 +102,11 @@ namespace CartesAcces2024
             "5eme",
             "4eme",
             "3eme"});
-            this.cbbImprSection.Location = new System.Drawing.Point(254, 208);
+            this.cbbImprSection.Location = new System.Drawing.Point(329, 186);
             this.cbbImprSection.MaximumSize = new System.Drawing.Size(180, 0);
             this.cbbImprSection.MinimumSize = new System.Drawing.Size(180, 0);
             this.cbbImprSection.Name = "cbbImprSection";
-            this.cbbImprSection.Size = new System.Drawing.Size(180, 28);
+            this.cbbImprSection.Size = new System.Drawing.Size(180, 37);
             this.cbbImprSection.TabIndex = 4;
             this.cbbImprSection.SelectionChangeCommitted += new System.EventHandler(this.cbbImprSection_SelectedIndexChanged);
             // 
@@ -116,11 +117,11 @@ namespace CartesAcces2024
             this.btnValiderImpr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValiderImpr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnValiderImpr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValiderImpr.Location = new System.Drawing.Point(544, 578);
-            this.btnValiderImpr.MaximumSize = new System.Drawing.Size(200, 65);
-            this.btnValiderImpr.MinimumSize = new System.Drawing.Size(200, 65);
+            this.btnValiderImpr.Location = new System.Drawing.Point(805, 588);
+            this.btnValiderImpr.MaximumSize = new System.Drawing.Size(300, 70);
+            this.btnValiderImpr.MinimumSize = new System.Drawing.Size(300, 70);
             this.btnValiderImpr.Name = "btnValiderImpr";
-            this.btnValiderImpr.Size = new System.Drawing.Size(200, 65);
+            this.btnValiderImpr.Size = new System.Drawing.Size(300, 70);
             this.btnValiderImpr.TabIndex = 6;
             this.btnValiderImpr.Text = "&Valider la liste à imprimer";
             this.btnValiderImpr.UseVisualStyleBackColor = false;
@@ -133,12 +134,12 @@ namespace CartesAcces2024
             this.lsbListeEleve.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lsbListeEleve.ForeColor = System.Drawing.Color.White;
             this.lsbListeEleve.FormattingEnabled = true;
-            this.lsbListeEleve.ItemHeight = 20;
-            this.lsbListeEleve.Location = new System.Drawing.Point(544, 150);
-            this.lsbListeEleve.MaximumSize = new System.Drawing.Size(350, 407);
-            this.lsbListeEleve.MinimumSize = new System.Drawing.Size(350, 407);
+            this.lsbListeEleve.ItemHeight = 29;
+            this.lsbListeEleve.Location = new System.Drawing.Point(805, 160);
+            this.lsbListeEleve.MaximumSize = new System.Drawing.Size(350, 410);
+            this.lsbListeEleve.MinimumSize = new System.Drawing.Size(350, 410);
             this.lsbListeEleve.Name = "lsbListeEleve";
-            this.lsbListeEleve.Size = new System.Drawing.Size(350, 402);
+            this.lsbListeEleve.Size = new System.Drawing.Size(350, 408);
             this.lsbListeEleve.TabIndex = 7;
             this.lsbListeEleve.SelectedIndexChanged += new System.EventHandler(this.lsbListeEleve_SelectedIndexChanged);
             // 
@@ -147,9 +148,9 @@ namespace CartesAcces2024
             this.NbComptageEleveCS.AutoSize = true;
             this.NbComptageEleveCS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.NbComptageEleveCS.ForeColor = System.Drawing.Color.White;
-            this.NbComptageEleveCS.Location = new System.Drawing.Point(12, 287);
+            this.NbComptageEleveCS.Location = new System.Drawing.Point(58, 266);
             this.NbComptageEleveCS.Name = "NbComptageEleveCS";
-            this.NbComptageEleveCS.Size = new System.Drawing.Size(389, 20);
+            this.NbComptageEleveCS.Size = new System.Drawing.Size(555, 29);
             this.NbComptageEleveCS.TabIndex = 25;
             this.NbComptageEleveCS.Text = "Nombre d\'élève de la liste de la classe ou section :";
             // 
@@ -157,9 +158,9 @@ namespace CartesAcces2024
             // 
             this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount.ForeColor = System.Drawing.Color.White;
-            this.lblCount.Location = new System.Drawing.Point(429, 287);
+            this.lblCount.Location = new System.Drawing.Point(619, 266);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(47, 23);
+            this.lblCount.Size = new System.Drawing.Size(112, 43);
             this.lblCount.TabIndex = 27;
             this.lblCount.Text = "None";
             // 
@@ -167,9 +168,9 @@ namespace CartesAcces2024
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(58, 182);
+            this.label3.Location = new System.Drawing.Point(58, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 24);
+            this.label3.Size = new System.Drawing.Size(63, 31);
             this.label3.TabIndex = 29;
             this.label3.Text = "OU";
             // 
@@ -184,20 +185,20 @@ namespace CartesAcces2024
             "5eme",
             "3eme",
             "test"});
-            this.cbbImprClasse.Location = new System.Drawing.Point(254, 150);
+            this.cbbImprClasse.Location = new System.Drawing.Point(329, 119);
             this.cbbImprClasse.MaximumSize = new System.Drawing.Size(180, 0);
             this.cbbImprClasse.MinimumSize = new System.Drawing.Size(180, 0);
             this.cbbImprClasse.Name = "cbbImprClasse";
-            this.cbbImprClasse.Size = new System.Drawing.Size(180, 28);
+            this.cbbImprClasse.Size = new System.Drawing.Size(180, 37);
             this.cbbImprClasse.TabIndex = 30;
             this.cbbImprClasse.SelectedIndexChanged += new System.EventHandler(this.cbbImprClasse_SelectedIndexChanged_1);
             // 
             // pbPhoto
             // 
-            this.pbPhoto.Location = new System.Drawing.Point(19, 330);
+            this.pbPhoto.Location = new System.Drawing.Point(63, 311);
             this.pbPhoto.Margin = new System.Windows.Forms.Padding(2);
             this.pbPhoto.Name = "pbPhoto";
-            this.pbPhoto.Size = new System.Drawing.Size(179, 222);
+            this.pbPhoto.Size = new System.Drawing.Size(652, 344);
             this.pbPhoto.TabIndex = 31;
             this.pbPhoto.TabStop = false;
             // 
@@ -206,9 +207,9 @@ namespace CartesAcces2024
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(540, 104);
+            this.label4.Location = new System.Drawing.Point(800, 119);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 20);
+            this.label4.Size = new System.Drawing.Size(197, 29);
             this.label4.TabIndex = 32;
             this.label4.Text = "Liste à imprimer :";
             // 
@@ -216,7 +217,7 @@ namespace CartesAcces2024
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(963, 749);
+            this.ClientSize = new System.Drawing.Size(1476, 936);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pbPhoto);
             this.Controls.Add(this.cbbImprClasse);
