@@ -71,9 +71,9 @@ namespace CartesAcces2024
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValider.Location = new System.Drawing.Point(691, 74);
+            this.btnValider.Location = new System.Drawing.Point(471, 146);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(138, 35);
+            this.btnValider.Size = new System.Drawing.Size(138, 52);
             this.btnValider.TabIndex = 11;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
@@ -84,9 +84,9 @@ namespace CartesAcces2024
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(230, 59);
+            this.label3.Location = new System.Drawing.Point(230, 108);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 25);
+            this.label3.Size = new System.Drawing.Size(199, 32);
             this.label3.TabIndex = 10;
             this.label3.Text = "Mot de passe :";
             // 
@@ -95,9 +95,9 @@ namespace CartesAcces2024
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 59);
+            this.label2.Location = new System.Drawing.Point(12, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 25);
+            this.label2.Size = new System.Drawing.Size(155, 32);
             this.label2.TabIndex = 9;
             this.label2.Text = "Identifiant :";
             // 
@@ -106,10 +106,10 @@ namespace CartesAcces2024
             this.txtMdp.BackColor = System.Drawing.Color.White;
             this.txtMdp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMdp.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMdp.Location = new System.Drawing.Point(235, 87);
+            this.txtMdp.Location = new System.Drawing.Point(235, 161);
             this.txtMdp.Name = "txtMdp";
             this.txtMdp.PasswordChar = '●';
-            this.txtMdp.Size = new System.Drawing.Size(172, 22);
+            this.txtMdp.Size = new System.Drawing.Size(172, 29);
             this.txtMdp.TabIndex = 8;
             // 
             // txtIdentifiant
@@ -117,9 +117,9 @@ namespace CartesAcces2024
             this.txtIdentifiant.BackColor = System.Drawing.Color.White;
             this.txtIdentifiant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdentifiant.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtIdentifiant.Location = new System.Drawing.Point(17, 87);
+            this.txtIdentifiant.Location = new System.Drawing.Point(17, 161);
             this.txtIdentifiant.Name = "txtIdentifiant";
-            this.txtIdentifiant.Size = new System.Drawing.Size(172, 22);
+            this.txtIdentifiant.Size = new System.Drawing.Size(172, 29);
             this.txtIdentifiant.TabIndex = 7;
             // 
             // lblInfo
@@ -127,9 +127,9 @@ namespace CartesAcces2024
             this.lblInfo.AutoSize = true;
             this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo.ForeColor = System.Drawing.Color.White;
-            this.lblInfo.Location = new System.Drawing.Point(12, 9);
+            this.lblInfo.Location = new System.Drawing.Point(12, 39);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(334, 25);
+            this.lblInfo.Size = new System.Drawing.Size(486, 32);
             this.lblInfo.TabIndex = 6;
             this.lblInfo.Text = "Entrez vos identifiants de connexion :";
             // 
@@ -139,9 +139,9 @@ namespace CartesAcces2024
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.button1.Location = new System.Drawing.Point(691, 33);
+            this.button1.Location = new System.Drawing.Point(471, 96);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 35);
+            this.button1.Size = new System.Drawing.Size(138, 44);
             this.button1.TabIndex = 12;
             this.button1.Text = "Quitter";
             this.button1.UseVisualStyleBackColor = false;
@@ -153,9 +153,9 @@ namespace CartesAcces2024
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnReset.Location = new System.Drawing.Point(453, 74);
+            this.btnReset.Location = new System.Drawing.Point(626, 96);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(232, 35);
+            this.btnReset.Size = new System.Drawing.Size(232, 102);
             this.btnReset.TabIndex = 13;
             this.btnReset.Text = "Mot de passe oublié";
             this.btnReset.UseVisualStyleBackColor = false;
@@ -165,7 +165,7 @@ namespace CartesAcces2024
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(843, 125);
+            this.ClientSize = new System.Drawing.Size(876, 236);
             this.ControlBox = false;
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.button1);
