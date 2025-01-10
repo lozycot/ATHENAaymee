@@ -60,19 +60,40 @@ namespace CartesAcces2024
             }
         }
 
+ //       private void frmcarteparclasseniveau_load(object sender, eventargs e)
+ //       {
+ //           list<string> listclasses = operationsdb.getclasses();
+ //           cbbimprclasse.items.clear();
+ //
+ //           foreach (var classe in listclasses)
+ //           {
+ //               cbbimprclasse.items.add(classe);
+ //           }
+ //           cbbimprclasse.selecteditem = null;
+ //           lblcount.text = "";
+ //       }
+        // tentative
         private void frmCarteParClasseNiveau_Load(object sender, EventArgs e)
         {
             List<string> ListClasses = OperationsDb.GetClasses();
-            cbbImprClasse.Items.Clear();
+            clbClasse3eme.Items.Clear();
+            clbClasse4eme.Items.Clear();
+            clbClasse5eme.Items.Clear();
+            clbClasses.Items.Clear();
 
             foreach (var classe in ListClasses)
             {
-                cbbImprClasse.Items.Add(classe);
+                while classe.Contains("3")
+                    clbClasse3eme.Items.Add(classe);
+                while classe.Contains("4")
+                    clbClasse4eme.Items.Add(classe);
+                while classe.Contains("5")
+                    clbClasse5eme.Items.Add(classe);
+                while classe.Contains("6")
+                    clbClasses.Items.Add(classe);
             }
-            cbbImprClasse.SelectedItem = null;
-            lblCount.Text = "";
         }
-
+        // fin tentative
         private void cbbImprClasse_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Globale.ListeEleveImpr.Clear();
@@ -133,6 +154,26 @@ namespace CartesAcces2024
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e) // groupbox type de filtrage classe ou niveau
+        {
+
+        }
+
+        private void lblCount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clbClasses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
