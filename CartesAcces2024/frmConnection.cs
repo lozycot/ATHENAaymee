@@ -101,6 +101,11 @@ namespace CartesAcces2024
                     break;
             }
         }
+
+        private void frmConnection_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
 
