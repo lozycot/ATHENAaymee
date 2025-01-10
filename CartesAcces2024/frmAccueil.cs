@@ -153,6 +153,11 @@ namespace CartesAcces2024
             Text = "ATHENA - A PROPOS";
             Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

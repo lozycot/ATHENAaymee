@@ -66,12 +66,13 @@ namespace CartesAcces2024
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnNouvelleAnnee = new System.Windows.Forms.Button();
             this.btnPlanche = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnAPropos = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.lblNom = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -84,10 +85,10 @@ namespace CartesAcces2024
             this.btnChangeMdp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChangeMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangeMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnChangeMdp.Location = new System.Drawing.Point(20, 868);
+            this.btnChangeMdp.Location = new System.Drawing.Point(13, 884);
             this.btnChangeMdp.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangeMdp.Name = "btnChangeMdp";
-            this.btnChangeMdp.Size = new System.Drawing.Size(212, 52);
+            this.btnChangeMdp.Size = new System.Drawing.Size(247, 52);
             this.btnChangeMdp.TabIndex = 25;
             this.btnChangeMdp.Text = "🛠 Options avancées";
             this.btnChangeMdp.UseVisualStyleBackColor = false;
@@ -100,12 +101,12 @@ namespace CartesAcces2024
             this.btnParametres.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnParametres.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParametres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnParametres.Location = new System.Drawing.Point(18, 306);
+            this.btnParametres.Location = new System.Drawing.Point(9, 358);
             this.btnParametres.Margin = new System.Windows.Forms.Padding(4);
             this.btnParametres.Name = "btnParametres";
-            this.btnParametres.Size = new System.Drawing.Size(212, 52);
+            this.btnParametres.Size = new System.Drawing.Size(249, 52);
             this.btnParametres.TabIndex = 24;
-            this.btnParametres.Text = "🗃 Importation";
+            this.btnParametres.Text = "Importer des informations";
             this.btnParametres.UseVisualStyleBackColor = false;
             this.btnParametres.Click += new System.EventHandler(this.btnParametres_Click);
             // 
@@ -114,13 +115,14 @@ namespace CartesAcces2024
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 270);
+            this.label1.Location = new System.Drawing.Point(62, 325);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 29);
+            this.label1.Size = new System.Drawing.Size(141, 29);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Import";
+            this.label1.Text = "Importation ⤵️";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnCreerCarte
             // 
@@ -129,12 +131,12 @@ namespace CartesAcces2024
             this.btnCreerCarte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCreerCarte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreerCarte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnCreerCarte.Location = new System.Drawing.Point(18, 539);
+            this.btnCreerCarte.Location = new System.Drawing.Point(11, 589);
             this.btnCreerCarte.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreerCarte.Name = "btnCreerCarte";
-            this.btnCreerCarte.Size = new System.Drawing.Size(212, 52);
+            this.btnCreerCarte.Size = new System.Drawing.Size(247, 52);
             this.btnCreerCarte.TabIndex = 22;
-            this.btnCreerCarte.Text = "✏ Carte Provisoire";
+            this.btnCreerCarte.Text = "Cartes provisoire";
             this.btnCreerCarte.UseVisualStyleBackColor = false;
             this.btnCreerCarte.Click += new System.EventHandler(this.btnCreerCarte_Click);
             // 
@@ -145,12 +147,12 @@ namespace CartesAcces2024
             this.btnAfficheListeEleve.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAfficheListeEleve.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAfficheListeEleve.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAfficheListeEleve.Location = new System.Drawing.Point(18, 478);
+            this.btnAfficheListeEleve.Location = new System.Drawing.Point(11, 529);
             this.btnAfficheListeEleve.Margin = new System.Windows.Forms.Padding(4);
             this.btnAfficheListeEleve.Name = "btnAfficheListeEleve";
-            this.btnAfficheListeEleve.Size = new System.Drawing.Size(212, 52);
+            this.btnAfficheListeEleve.Size = new System.Drawing.Size(247, 52);
             this.btnAfficheListeEleve.TabIndex = 21;
-            this.btnAfficheListeEleve.Text = "📜 Cartes par liste personnalisée";
+            this.btnAfficheListeEleve.Text = "Cartes par liste personnalisé";
             this.btnAfficheListeEleve.UseVisualStyleBackColor = false;
             this.btnAfficheListeEleve.Click += new System.EventHandler(this.btnAfficheListeEleve_Click);
             // 
@@ -161,19 +163,19 @@ namespace CartesAcces2024
             this.btnCarteParClasse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCarteParClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCarteParClasse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnCarteParClasse.Location = new System.Drawing.Point(18, 416);
+            this.btnCarteParClasse.Location = new System.Drawing.Point(9, 469);
             this.btnCarteParClasse.Margin = new System.Windows.Forms.Padding(4);
             this.btnCarteParClasse.Name = "btnCarteParClasse";
-            this.btnCarteParClasse.Size = new System.Drawing.Size(212, 52);
+            this.btnCarteParClasse.Size = new System.Drawing.Size(249, 52);
             this.btnCarteParClasse.TabIndex = 20;
-            this.btnCarteParClasse.Text = "📋 Cartes par classe / niveau";
+            this.btnCarteParClasse.Text = "Cartes par classe / niveau";
             this.btnCarteParClasse.UseVisualStyleBackColor = false;
             this.btnCarteParClasse.Click += new System.EventHandler(this.btnCarteParClasse_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-2, -2);
+            this.pictureBox3.Location = new System.Drawing.Point(9, 41);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(249, 261);
@@ -187,32 +189,32 @@ namespace CartesAcces2024
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 384);
+            this.label2.Location = new System.Drawing.Point(45, 436);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 29);
+            this.label2.Size = new System.Drawing.Size(175, 29);
             this.label2.TabIndex = 30;
-            this.label2.Text = "💳 Création carte accès";
+            this.label2.Text = "Cartes d\'accès 🪪";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btnCreerCarte);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.btnAfficheListeEleve);
-            this.panel1.Controls.Add(this.btnNouvelleAnnee);
-            this.panel1.Controls.Add(this.btnCarteParClasse);
+            this.panel1.Controls.Add(this.lblNom);
             this.panel1.Controls.Add(this.btnPlanche);
+            this.panel1.Controls.Add(this.btnCreerCarte);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnAfficheListeEleve);
             this.panel1.Controls.Add(this.btnParametres);
+            this.panel1.Controls.Add(this.btnCarteParClasse);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(246, 839);
+            this.panel1.Size = new System.Drawing.Size(270, 800);
             this.panel1.TabIndex = 31;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -221,29 +223,13 @@ namespace CartesAcces2024
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 608);
+            this.label3.Location = new System.Drawing.Point(35, 670);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 29);
+            this.label3.Size = new System.Drawing.Size(199, 29);
             this.label3.TabIndex = 35;
-            this.label3.Text = "Trombinoscopes";
+            this.label3.Text = "Trombinoscopes 🖼️";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnNouvelleAnnee
-            // 
-            this.btnNouvelleAnnee.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnNouvelleAnnee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.btnNouvelleAnnee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNouvelleAnnee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNouvelleAnnee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnNouvelleAnnee.Location = new System.Drawing.Point(18, 701);
-            this.btnNouvelleAnnee.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNouvelleAnnee.Name = "btnNouvelleAnnee";
-            this.btnNouvelleAnnee.Size = new System.Drawing.Size(212, 52);
-            this.btnNouvelleAnnee.TabIndex = 34;
-            this.btnNouvelleAnnee.Text = "👁‍🗨Trombinoscopes nouvelle année";
-            this.btnNouvelleAnnee.UseVisualStyleBackColor = false;
-            this.btnNouvelleAnnee.Click += new System.EventHandler(this.btnNouvelleAnnee_Click);
             // 
             // btnPlanche
             // 
@@ -252,34 +238,35 @@ namespace CartesAcces2024
             this.btnPlanche.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPlanche.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlanche.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnPlanche.Location = new System.Drawing.Point(18, 640);
+            this.btnPlanche.Location = new System.Drawing.Point(11, 703);
             this.btnPlanche.Margin = new System.Windows.Forms.Padding(4);
             this.btnPlanche.Name = "btnPlanche";
-            this.btnPlanche.Size = new System.Drawing.Size(212, 52);
+            this.btnPlanche.Size = new System.Drawing.Size(247, 52);
             this.btnPlanche.TabIndex = 33;
-            this.btnPlanche.Text = "👁‍🗨 Trombinoscopes";
+            this.btnPlanche.Text = "Planches par classe";
             this.btnPlanche.UseVisualStyleBackColor = false;
             this.btnPlanche.Click += new System.EventHandler(this.btnPlanche_Click);
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(250, 2);
+            this.panel2.Location = new System.Drawing.Point(278, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1326, 680);
+            this.panel2.Size = new System.Drawing.Size(1298, 680);
             this.panel2.TabIndex = 32;
             // 
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.pnlMenu.Controls.Add(this.label4);
+            this.pnlMenu.Controls.Add(this.btnChangeMdp);
             this.pnlMenu.Controls.Add(this.btnAPropos);
             this.pnlMenu.Controls.Add(this.panel1);
-            this.pnlMenu.Controls.Add(this.btnChangeMdp);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(249, 1009);
+            this.pnlMenu.Size = new System.Drawing.Size(272, 1009);
             this.pnlMenu.TabIndex = 32;
             // 
             // btnAPropos
@@ -289,10 +276,10 @@ namespace CartesAcces2024
             this.btnAPropos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAPropos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAPropos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAPropos.Location = new System.Drawing.Point(20, 929);
+            this.btnAPropos.Location = new System.Drawing.Point(13, 944);
             this.btnAPropos.Margin = new System.Windows.Forms.Padding(4);
             this.btnAPropos.Name = "btnAPropos";
-            this.btnAPropos.Size = new System.Drawing.Size(212, 52);
+            this.btnAPropos.Size = new System.Drawing.Size(247, 52);
             this.btnAPropos.TabIndex = 36;
             this.btnAPropos.Text = "ℹ À Propos";
             this.btnAPropos.UseVisualStyleBackColor = false;
@@ -304,12 +291,38 @@ namespace CartesAcces2024
             this.pnlContent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(249, 0);
+            this.pnlContent.Location = new System.Drawing.Point(272, 0);
             this.pnlContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(955, 1009);
+            this.pnlContent.Size = new System.Drawing.Size(932, 1009);
             this.pnlContent.TabIndex = 33;
             this.pnlContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContent_Paint_1);
+            // 
+            // lblNom
+            // 
+            this.lblNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.lblNom.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNom.Location = new System.Drawing.Point(47, 7);
+            this.lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(171, 29);
+            this.lblNom.TabIndex = 37;
+            this.lblNom.Text = "Athena";
+            this.lblNom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(82, 851);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 29);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Autre ℹ️";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmAccueil
             // 
@@ -322,7 +335,7 @@ namespace CartesAcces2024
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAccueil";
-            this.Text = "ATHENA - Accueil";
+            this.Text = "Athena";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmAcceuil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -347,8 +360,9 @@ namespace CartesAcces2024
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Button btnPlanche;
-        private System.Windows.Forms.Button btnNouvelleAnnee;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAPropos;
+        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.Label label4;
     }
 }
