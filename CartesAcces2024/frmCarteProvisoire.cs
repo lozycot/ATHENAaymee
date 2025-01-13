@@ -127,6 +127,10 @@ namespace CartesAcces2024
                     MessageBox.Show("Erreur : " + err.Message);
                 }
             }
+            else
+            {
+                MessageBox.Show("L'élève n'existe pas: " + nouvelle_eleve.NomEleve + " " + nouvelle_eleve.PrenomEleve);
+            }
         }
 
 
