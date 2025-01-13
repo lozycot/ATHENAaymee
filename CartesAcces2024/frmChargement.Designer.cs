@@ -105,6 +105,7 @@ namespace CartesAcces2024
             this.Controls.Add(this.lblPourcentage);
             this.Controls.Add(this.lblChargement);
             this.Controls.Add(this.progressBar1);
+            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.Name = "frmChargement";
             this.ShowInTaskbar = false;
             this.Text = "Chargement...";

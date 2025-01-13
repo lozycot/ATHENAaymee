@@ -102,7 +102,7 @@ namespace CartesAcces2024
             this.btnGenererVide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.btnGenererVide.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGenererVide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnGenererVide.Location = new System.Drawing.Point(21, 627);
+            this.btnGenererVide.Location = new System.Drawing.Point(48, 657);
             this.btnGenererVide.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenererVide.Name = "btnGenererVide";
             this.btnGenererVide.Size = new System.Drawing.Size(346, 32);
@@ -116,7 +116,7 @@ namespace CartesAcces2024
             this.btnTrombi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.btnTrombi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTrombi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnTrombi.Location = new System.Drawing.Point(21, 678);
+            this.btnTrombi.Location = new System.Drawing.Point(48, 708);
             this.btnTrombi.Margin = new System.Windows.Forms.Padding(2);
             this.btnTrombi.Name = "btnTrombi";
             this.btnTrombi.Size = new System.Drawing.Size(346, 32);
@@ -129,7 +129,7 @@ namespace CartesAcces2024
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.ForeColor = System.Drawing.Color.White;
-            this.lblTitre.Location = new System.Drawing.Point(19, 21);
+            this.lblTitre.Location = new System.Drawing.Point(46, 51);
             this.lblTitre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(37, 17);
@@ -140,7 +140,7 @@ namespace CartesAcces2024
             // 
             this.cbClasse.Enabled = false;
             this.cbClasse.FormattingEnabled = true;
-            this.cbClasse.Location = new System.Drawing.Point(120, 19);
+            this.cbClasse.Location = new System.Drawing.Point(147, 49);
             this.cbClasse.Margin = new System.Windows.Forms.Padding(2);
             this.cbClasse.Name = "cbClasse";
             this.cbClasse.Size = new System.Drawing.Size(269, 24);
@@ -152,7 +152,7 @@ namespace CartesAcces2024
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pbDocument);
-            this.panel1.Location = new System.Drawing.Point(21, 58);
+            this.panel1.Location = new System.Drawing.Point(48, 88);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(657, 502);
@@ -165,7 +165,7 @@ namespace CartesAcces2024
             0,
             0,
             0});
-            this.numZoom.Location = new System.Drawing.Point(574, 19);
+            this.numZoom.Location = new System.Drawing.Point(601, 49);
             this.numZoom.Margin = new System.Windows.Forms.Padding(2);
             this.numZoom.Minimum = new decimal(new int[] {
             30,
@@ -186,7 +186,7 @@ namespace CartesAcces2024
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(471, 20);
+            this.label3.Location = new System.Drawing.Point(498, 50);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 17);
@@ -199,7 +199,7 @@ namespace CartesAcces2024
             this.btnEnregistrer.Enabled = false;
             this.btnEnregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEnregistrer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnEnregistrer.Location = new System.Drawing.Point(412, 627);
+            this.btnEnregistrer.Location = new System.Drawing.Point(439, 657);
             this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(266, 32);
@@ -221,7 +221,7 @@ namespace CartesAcces2024
             this.panelBdd.Controls.Add(this.label1);
             this.panelBdd.Controls.Add(this.listBoxSel);
             this.panelBdd.Controls.Add(this.listBoxNonSel);
-            this.panelBdd.Location = new System.Drawing.Point(705, 61);
+            this.panelBdd.Location = new System.Drawing.Point(732, 91);
             this.panelBdd.Margin = new System.Windows.Forms.Padding(2);
             this.panelBdd.Name = "panelBdd";
             this.panelBdd.Size = new System.Drawing.Size(309, 649);
@@ -353,7 +353,7 @@ namespace CartesAcces2024
             this.cbSource.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.cbSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSource.FormattingEnabled = true;
-            this.cbSource.Location = new System.Drawing.Point(705, 24);
+            this.cbSource.Location = new System.Drawing.Point(732, 54);
             this.cbSource.Margin = new System.Windows.Forms.Padding(2);
             this.cbSource.Name = "cbSource";
             this.cbSource.Size = new System.Drawing.Size(309, 28);
@@ -365,7 +365,7 @@ namespace CartesAcces2024
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(703, 7);
+            this.label4.Location = new System.Drawing.Point(730, 37);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 17);
@@ -381,7 +381,7 @@ namespace CartesAcces2024
             // 
             this.cbFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFormat.FormattingEnabled = true;
-            this.cbFormat.Location = new System.Drawing.Point(172, 582);
+            this.cbFormat.Location = new System.Drawing.Point(199, 612);
             this.cbFormat.Margin = new System.Windows.Forms.Padding(2);
             this.cbFormat.Name = "cbFormat";
             this.cbFormat.Size = new System.Drawing.Size(61, 28);
@@ -392,7 +392,7 @@ namespace CartesAcces2024
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(22, 587);
+            this.label5.Location = new System.Drawing.Point(49, 617);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 17);
@@ -403,7 +403,7 @@ namespace CartesAcces2024
             // 
             this.cbProfils.AutoSize = true;
             this.cbProfils.ForeColor = System.Drawing.Color.White;
-            this.cbProfils.Location = new System.Drawing.Point(260, 587);
+            this.cbProfils.Location = new System.Drawing.Point(287, 617);
             this.cbProfils.Margin = new System.Windows.Forms.Padding(2);
             this.cbProfils.Name = "cbProfils";
             this.cbProfils.Size = new System.Drawing.Size(413, 21);
@@ -415,7 +415,7 @@ namespace CartesAcces2024
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1052, 817);
+            this.ClientSize = new System.Drawing.Size(1052, 760);
             this.Controls.Add(this.cbProfils);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbFormat);
