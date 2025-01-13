@@ -124,6 +124,10 @@ namespace CartesAcces2024
                 }
             }
         }
+
+        /// <summary>
+        /// Récupère le logiciel indiqué comme utilisé pour générer les emplois du temps.
+        /// </summary>
         public void GetLogicielEdt()
         {
             foreach(var variable in gpbLogicielEdt.Controls)
