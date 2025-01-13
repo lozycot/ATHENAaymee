@@ -20,7 +20,7 @@ namespace CartesAcces2024
         private void btnValider_Click(object sender, EventArgs e)
         {
             if (txtIdentifiant.Text == "" || txtMdp1.Text == "" || txtMdp2.Text == "")
-                MessageBox.Show("Tous les champs doivent être remplis !", "Erreur de saisie", 
+                MessageBox.Show("Tous les champs doivent être remplis !", "Erreur de saisie",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             else if (txtMdp1.Text != txtMdp2.Text)
@@ -30,28 +30,29 @@ namespace CartesAcces2024
                 txtMdp1.Text = "";
                 txtMdp2.Text = "";
             }
-            else if(txtIdentifiant.Text.Any(ch => ! char.IsLetterOrDigit(ch)))
+            else if (txtIdentifiant.Text.Any(ch => !char.IsLetterOrDigit(ch)))
             {
-                MessageBox.Show("Un nom d'utilisateur ne peut comporter que des chiffres et des lettres !",
-                    "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Un nom d'utilisateur ne peut comporter que des chiffres et des lettres !", "Erreur de saisie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtIdentifiant.Text = "";
             }
             else if (txtMdp1.Text.Contains("'") || txtMdp1.Text.Contains("\""))
             {
-                MessageBox.Show("Le mot de passe ne peut pas contenir de caractère « \" » ou « ' ».",
-                    "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Le mot de passe ne peut pas contenir de caractère « \" » ou « ' ».", "Erreur de saisie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMdp1.Text = "";
                 txtMdp2.Text = "";
             }
-            else if(ConnectDb.DbConnect.DbData("Connection WHERE Connection.nomUtilisateur = '" + txtIdentifiant.Text + "';"))
+            else if (ConnectDb.DbConnect.DbData("Connection WHERE Connection.nomUtilisateur = '" + txtIdentifiant.Text + "';"))
             {
-                MessageBox.Show("Un utilisateur portant cet identifiant existe déjà, veuillez en utiliser un autre !",
-                    "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Un utilisateur portant cet identifiant existe déjà, veuillez en utiliser un autre !", "Erreur de saisie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 if (UsersOperations.InsertUnUtilisateurDansBdd(txtIdentifiant.Text, txtMdp1.Text))
-                    MessageBox.Show("Utilisateur créé avec succès !");
+                    MessageBox.Show("Utilisateur créé avec succès !", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Hide();
                 //frmAcceuil ac = new frmAcceuil();
                 //ac.Show();
@@ -64,6 +65,11 @@ namespace CartesAcces2024
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void frmCreerUser_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -73,10 +73,10 @@ namespace CartesAcces2024
             this.btnCsvNouvelleAnnee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.btnCsvNouvelleAnnee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCsvNouvelleAnnee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnCsvNouvelleAnnee.Location = new System.Drawing.Point(503, 26);
+            this.btnCsvNouvelleAnnee.Location = new System.Drawing.Point(687, 705);
             this.btnCsvNouvelleAnnee.Margin = new System.Windows.Forms.Padding(2);
             this.btnCsvNouvelleAnnee.Name = "btnCsvNouvelleAnnee";
-            this.btnCsvNouvelleAnnee.Size = new System.Drawing.Size(268, 61);
+            this.btnCsvNouvelleAnnee.Size = new System.Drawing.Size(202, 61);
             this.btnCsvNouvelleAnnee.TabIndex = 20;
             this.btnCsvNouvelleAnnee.Text = "Importer un .csv pour les nouveaux 6ème";
             this.btnCsvNouvelleAnnee.UseVisualStyleBackColor = false;
@@ -87,10 +87,10 @@ namespace CartesAcces2024
             this.btnAddClasseTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.btnAddClasseTemp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddClasseTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAddClasseTemp.Location = new System.Drawing.Point(4, 47);
+            this.btnAddClasseTemp.Location = new System.Drawing.Point(4, 19);
             this.btnAddClasseTemp.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddClasseTemp.Name = "btnAddClasseTemp";
-            this.btnAddClasseTemp.Size = new System.Drawing.Size(183, 62);
+            this.btnAddClasseTemp.Size = new System.Drawing.Size(271, 62);
             this.btnAddClasseTemp.TabIndex = 17;
             this.btnAddClasseTemp.Text = "➕ Créer une classe temporaire";
             this.btnAddClasseTemp.UseVisualStyleBackColor = false;
@@ -102,11 +102,11 @@ namespace CartesAcces2024
             this.groupBox1.Controls.Add(this.btnAddClasseTemp);
             this.groupBox1.Controls.Add(this.listBoxClassesTemp);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(42, 26);
+            this.groupBox1.Location = new System.Drawing.Point(55, 59);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(193, 707);
+            this.groupBox1.Size = new System.Drawing.Size(279, 707);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Liste de classes nouvelle année";
@@ -117,10 +117,10 @@ namespace CartesAcces2024
             this.btnDelClasseTemp.Enabled = false;
             this.btnDelClasseTemp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelClasseTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnDelClasseTemp.Location = new System.Drawing.Point(6, 113);
+            this.btnDelClasseTemp.Location = new System.Drawing.Point(4, 85);
             this.btnDelClasseTemp.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelClasseTemp.Name = "btnDelClasseTemp";
-            this.btnDelClasseTemp.Size = new System.Drawing.Size(183, 64);
+            this.btnDelClasseTemp.Size = new System.Drawing.Size(271, 64);
             this.btnDelClasseTemp.TabIndex = 18;
             this.btnDelClasseTemp.Text = "🗑 Supprimer une classe temporaire";
             this.btnDelClasseTemp.UseVisualStyleBackColor = false;
@@ -132,10 +132,10 @@ namespace CartesAcces2024
             this.listBoxClassesTemp.ForeColor = System.Drawing.Color.White;
             this.listBoxClassesTemp.FormattingEnabled = true;
             this.listBoxClassesTemp.ItemHeight = 16;
-            this.listBoxClassesTemp.Location = new System.Drawing.Point(8, 181);
+            this.listBoxClassesTemp.Location = new System.Drawing.Point(4, 153);
             this.listBoxClassesTemp.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxClassesTemp.Name = "listBoxClassesTemp";
-            this.listBoxClassesTemp.Size = new System.Drawing.Size(181, 404);
+            this.listBoxClassesTemp.Size = new System.Drawing.Size(271, 548);
             this.listBoxClassesTemp.Sorted = true;
             this.listBoxClassesTemp.TabIndex = 12;
             this.listBoxClassesTemp.SelectedIndexChanged += new System.EventHandler(this.listBoxClassesTemp_SelectedIndexChanged);
@@ -148,11 +148,11 @@ namespace CartesAcces2024
             this.groupBox2.Controls.Add(this.listBoxElTemp);
             this.groupBox2.Controls.Add(this.btnDelElTemp);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(251, 26);
+            this.groupBox2.Location = new System.Drawing.Point(338, 59);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(195, 707);
+            this.groupBox2.Size = new System.Drawing.Size(279, 707);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Liste d\'élèves de la classe sélectionnée";
@@ -160,7 +160,7 @@ namespace CartesAcces2024
             // cbDeplacement
             // 
             this.cbDeplacement.FormattingEnabled = true;
-            this.cbDeplacement.Location = new System.Drawing.Point(7, 663);
+            this.cbDeplacement.Location = new System.Drawing.Point(4, 679);
             this.cbDeplacement.Margin = new System.Windows.Forms.Padding(2);
             this.cbDeplacement.Name = "cbDeplacement";
             this.cbDeplacement.Size = new System.Drawing.Size(184, 24);
@@ -171,7 +171,7 @@ namespace CartesAcces2024
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 595);
+            this.label7.Location = new System.Drawing.Point(1, 626);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.MaximumSize = new System.Drawing.Size(120, 0);
             this.label7.Name = "label7";
@@ -185,10 +185,10 @@ namespace CartesAcces2024
             this.btnAddElTemp.Enabled = false;
             this.btnAddElTemp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddElTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAddElTemp.Location = new System.Drawing.Point(8, 50);
+            this.btnAddElTemp.Location = new System.Drawing.Point(4, 19);
             this.btnAddElTemp.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddElTemp.Name = "btnAddElTemp";
-            this.btnAddElTemp.Size = new System.Drawing.Size(183, 59);
+            this.btnAddElTemp.Size = new System.Drawing.Size(271, 62);
             this.btnAddElTemp.TabIndex = 16;
             this.btnAddElTemp.Text = "➕ Créer un élève temporaire";
             this.btnAddElTemp.UseVisualStyleBackColor = false;
@@ -200,11 +200,11 @@ namespace CartesAcces2024
             this.listBoxElTemp.ForeColor = System.Drawing.Color.White;
             this.listBoxElTemp.FormattingEnabled = true;
             this.listBoxElTemp.ItemHeight = 16;
-            this.listBoxElTemp.Location = new System.Drawing.Point(8, 181);
+            this.listBoxElTemp.Location = new System.Drawing.Point(4, 153);
             this.listBoxElTemp.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxElTemp.Name = "listBoxElTemp";
             this.listBoxElTemp.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBoxElTemp.Size = new System.Drawing.Size(184, 404);
+            this.listBoxElTemp.Size = new System.Drawing.Size(271, 468);
             this.listBoxElTemp.Sorted = true;
             this.listBoxElTemp.TabIndex = 13;
             this.listBoxElTemp.SelectedIndexChanged += new System.EventHandler(this.listBoxElTemp_SelectedIndexChanged);
@@ -215,10 +215,10 @@ namespace CartesAcces2024
             this.btnDelElTemp.Enabled = false;
             this.btnDelElTemp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelElTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnDelElTemp.Location = new System.Drawing.Point(8, 113);
+            this.btnDelElTemp.Location = new System.Drawing.Point(4, 85);
             this.btnDelElTemp.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelElTemp.Name = "btnDelElTemp";
-            this.btnDelElTemp.Size = new System.Drawing.Size(183, 64);
+            this.btnDelElTemp.Size = new System.Drawing.Size(271, 64);
             this.btnDelElTemp.TabIndex = 19;
             this.btnDelElTemp.Text = "🗑 Suppr. un élève temporaire";
             this.btnDelElTemp.UseVisualStyleBackColor = false;
@@ -229,10 +229,10 @@ namespace CartesAcces2024
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.button1.Location = new System.Drawing.Point(503, 104);
+            this.button1.Location = new System.Drawing.Point(687, 59);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(268, 61);
+            this.button1.Size = new System.Drawing.Size(202, 61);
             this.button1.TabIndex = 27;
             this.button1.Text = "❌ Fermer";
             this.button1.UseVisualStyleBackColor = false;
@@ -242,14 +242,14 @@ namespace CartesAcces2024
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(857, 762);
+            this.ClientSize = new System.Drawing.Size(900, 777);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCsvNouvelleAnnee);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmModifClassesTemporaires";
-            this.Text = "Modifier les classes nouvelle année";
+            this.Text = "Athena - Modifier les classes nouvelle année";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

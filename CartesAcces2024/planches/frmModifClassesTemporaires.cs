@@ -69,9 +69,13 @@ namespace CartesAcces2024
                 btnDelElTemp.Enabled = false;
             }
 
-
-            if (listBoxClassesTemp.SelectedItem.ToString() == Globale.nom6emeSansClasse)
-                btnDelClasseTemp.Enabled = false;
+            if (listBoxClassesTemp.Items.Count > 0) // si il y as au moins une classes temporaires
+            {
+                if (listBoxClassesTemp.SelectedItem.ToString() == Globale.nom6emeSansClasse)
+                {
+                    btnDelClasseTemp.Enabled = false;
+                }
+            }
         }
 
         private void btnAddClasseTemp_Click(object sender, EventArgs e)

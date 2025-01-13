@@ -44,7 +44,10 @@ namespace CartesAcces2024
         //     }
         // }
 
-        // Méthode pour définir la couleur d'un panneau
+        /// <summary>
+        /// Méthode pour définir la couleur d'un panneau
+        /// </summary>
+        /// <param name="panel"></param>
         public static void setCouleurPanel(Panel panel)
         {
             foreach (Control controle in panel.Controls)
@@ -70,7 +73,10 @@ namespace CartesAcces2024
             }
         }
 
-        // Méthode pour définir la couleur d'un groupe de contrôles
+        /// <summary>
+        /// Méthode pour définir la couleur d'un groupe de contrôles
+        /// </summary>
+        /// <param name="groupeBox"></param>
         public static void setCouleurGroupeBox(GroupBox groupeBox)
         {
             foreach (Control controle in groupeBox.Controls)
@@ -96,7 +102,10 @@ namespace CartesAcces2024
             }
         }
 
-        // Méthode pour définir la couleur d'un bouton
+        /// <summary>
+        /// Méthode pour définir la couleur d'un bouton
+        /// </summary>
+        /// <param name="btn"></param>
         public static void setCouleurBouton(Button btn)
         {
             if (Globale.EstEnModeSombre)
@@ -127,7 +136,10 @@ namespace CartesAcces2024
             }
         }
 
-        // Méthode pour définir la couleur d'autres contrôles
+        /// <summary>
+        /// Méthode pour définir la couleur d'autres contrôles
+        /// </summary>
+        /// <param name="controle"></param>
         public static void setCouleurAutre(Control controle)
         {
             if (Globale.EstEnModeSombre)
@@ -138,7 +150,10 @@ namespace CartesAcces2024
                     Globale.CouleurDuTexteclaire[1], Globale.CouleurDuTexteclaire[2]);
         }
 
-        // Méthode pour définir la couleur d'une zone de texte
+        /// <summary>
+        /// Méthode pour définir la couleur d'une zone de texte
+        /// </summary>
+        /// <param name="txt"></param>
         public static void setCouleurTextBox(TextBox txt)
         {
             txt.BorderStyle = BorderStyle.None;
@@ -158,7 +173,10 @@ namespace CartesAcces2024
             }
         }
 
-        // Méthode pour définir la couleur d'une liste
+        /// <summary>
+        /// Méthode pour définir la couleur d'une liste
+        /// </summary>
+        /// <param name="lst"></param>
         public static void setCouleurListBox(ListBox lst)
         {
             lst.BorderStyle = BorderStyle.None;
@@ -178,7 +196,11 @@ namespace CartesAcces2024
             }
         }
 
-        // Méthode pour gérer le changement d'état d'un bouton
+        /// <summary>
+        /// Méthode pour gérer le changement d'état d'un bouton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public static void changement_state_btn(object sender, EventArgs e)
         {
             Button btn;

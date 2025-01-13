@@ -43,9 +43,19 @@ namespace CartesAcces2024
                 frmconn.TopMost = true;
                 Application.Run(frmconn);
             }
+            try
+            {
+                // on entre dans la fenêtre principale de l'application
+                Application.Run(new frmAccueil());
+            }
+            catch (System.Runtime.InteropServices.COMException e)
+            {
+                //========================== A TESTER
+                MessageBox.Show("Une erreur s'est produite. L'application vas se fermer.\n" +
+                    "Assurez-vous que Microsoft Word est installé sur votre ordinateur!");
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }
 
-            // on entre dans la fenêtre principale de l'application
-            Application.Run(new frmAccueil());
         }
 
         public static class DbConnect

@@ -26,25 +26,26 @@ namespace CartesAcces2024
 
             else if (txtIdentifiant.Text.Any(ch => !char.IsLetterOrDigit(ch)))
             {
-                MessageBox.Show("Un nom d'utilisateur ne peut comporter que des chiffres et des lettres !",
-                    "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Un nom d'utilisateur ne peut comporter que des chiffres et des lettres !", "Erreur de saisie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtIdentifiant.Text = "";
             }
             else if (txtMdp.Text.Contains("'") || txtMdp.Text.Contains("\""))
             {
-                MessageBox.Show("Le mot de passe ne peut pas contenir de caractère « \" » ou « ' ».",
-                    "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Le mot de passe ne peut pas contenir de caractère « \" » ou « ' ».", "Erreur de saisie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMdp.Text = "";
             }
             else if (!ConnectDb.DbConnect.DbData("Connection WHERE Connection.nomUtilisateur = '" + txtIdentifiant.Text + "' AND " +
                 "Connection.MotDePasse = '" + txtMdp.Text + "';"))
             {
-                MessageBox.Show("L'identifiant ou le mot de passe est incorrect. Réessayez.",
-                    "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("L'identifiant ou le mot de passe est incorrect. Réessayez.", "Erreur de saisie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("La connexion est établie !");
+                MessageBox.Show("La connexion est établie !", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Globale.EstConnecte = true;
                 Close();
             }
@@ -100,6 +101,11 @@ namespace CartesAcces2024
                 case DialogResult.No:
                     break;
             }
+        }
+
+        private void frmConnection_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
