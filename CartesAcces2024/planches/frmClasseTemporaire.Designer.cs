@@ -64,7 +64,7 @@ namespace CartesAcces2024
             // numNiveau
             // 
             this.numNiveau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numNiveau.Location = new System.Drawing.Point(49, 73);
+            this.numNiveau.Location = new System.Drawing.Point(95, 21);
             this.numNiveau.Margin = new System.Windows.Forms.Padding(2);
             this.numNiveau.Maximum = new decimal(new int[] {
             6,
@@ -88,10 +88,10 @@ namespace CartesAcces2024
             // txtNomClasse
             // 
             this.txtNomClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomClasse.Location = new System.Drawing.Point(170, 73);
+            this.txtNomClasse.Location = new System.Drawing.Point(25, 92);
             this.txtNomClasse.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomClasse.Name = "txtNomClasse";
-            this.txtNomClasse.Size = new System.Drawing.Size(150, 27);
+            this.txtNomClasse.Size = new System.Drawing.Size(165, 27);
             this.txtNomClasse.TabIndex = 1;
             // 
             // label1
@@ -99,7 +99,7 @@ namespace CartesAcces2024
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(46, 45);
+            this.label1.Location = new System.Drawing.Point(21, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 20);
@@ -111,7 +111,7 @@ namespace CartesAcces2024
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(168, 45);
+            this.label2.Location = new System.Drawing.Point(21, 70);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 20);
@@ -124,7 +124,7 @@ namespace CartesAcces2024
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValider.Location = new System.Drawing.Point(229, 141);
+            this.btnValider.Location = new System.Drawing.Point(318, 91);
             this.btnValider.Margin = new System.Windows.Forms.Padding(2);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(90, 28);
@@ -139,7 +139,7 @@ namespace CartesAcces2024
             this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnuler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAnnuler.Location = new System.Drawing.Point(49, 141);
+            this.btnAnnuler.Location = new System.Drawing.Point(224, 91);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(90, 28);
@@ -152,7 +152,7 @@ namespace CartesAcces2024
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(434, 216);
+            this.ClientSize = new System.Drawing.Size(436, 146);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.label2);
@@ -161,7 +161,7 @@ namespace CartesAcces2024
             this.Controls.Add(this.numNiveau);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmClasseTemporaire";
-            this.Text = "Classe temporaire";
+            this.Text = "Athena - Classe temporaire";
             ((System.ComponentModel.ISupportInitialize)(this.numNiveau)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -69,7 +69,7 @@ namespace CartesAcces2024
             this.lblExplications.AutoSize = true;
             this.lblExplications.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lblExplications.ForeColor = System.Drawing.Color.White;
-            this.lblExplications.Location = new System.Drawing.Point(40, 41);
+            this.lblExplications.Location = new System.Drawing.Point(41, 39);
             this.lblExplications.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExplications.MaximumSize = new System.Drawing.Size(600, 0);
             this.lblExplications.Name = "lblExplications";
@@ -84,7 +84,7 @@ namespace CartesAcces2024
             this.btnPdfNormal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPdfNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPdfNormal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnPdfNormal.Location = new System.Drawing.Point(24, 41);
+            this.btnPdfNormal.Location = new System.Drawing.Point(60, 56);
             this.btnPdfNormal.Margin = new System.Windows.Forms.Padding(2);
             this.btnPdfNormal.Name = "btnPdfNormal";
             this.btnPdfNormal.Size = new System.Drawing.Size(254, 72);
@@ -99,7 +99,7 @@ namespace CartesAcces2024
             this.groupBox1.Controls.Add(this.btnPdfNormal);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(43, 93);
+            this.groupBox1.Location = new System.Drawing.Point(44, 77);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -114,7 +114,7 @@ namespace CartesAcces2024
             this.btnJpeg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnJpeg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJpeg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnJpeg.Location = new System.Drawing.Point(24, 162);
+            this.btnJpeg.Location = new System.Drawing.Point(60, 168);
             this.btnJpeg.Margin = new System.Windows.Forms.Padding(2);
             this.btnJpeg.Name = "btnJpeg";
             this.btnJpeg.Size = new System.Drawing.Size(254, 72);
@@ -130,11 +130,11 @@ namespace CartesAcces2024
             this.groupBox2.Controls.Add(this.btnImporterPDFnA);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox2.Location = new System.Drawing.Point(435, 93);
+            this.groupBox2.Location = new System.Drawing.Point(422, 77);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(382, 286);
+            this.groupBox2.Size = new System.Drawing.Size(374, 286);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Classes de l\'année PROCHAINE";
@@ -144,7 +144,7 @@ namespace CartesAcces2024
             this.btnJpegNA.BackColor = System.Drawing.Color.Gold;
             this.btnJpegNA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnJpegNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJpegNA.Location = new System.Drawing.Point(28, 162);
+            this.btnJpegNA.Location = new System.Drawing.Point(60, 168);
             this.btnJpegNA.Margin = new System.Windows.Forms.Padding(2);
             this.btnJpegNA.Name = "btnJpegNA";
             this.btnJpegNA.Size = new System.Drawing.Size(254, 72);
@@ -158,7 +158,7 @@ namespace CartesAcces2024
             this.btnImporterPDFnA.BackColor = System.Drawing.Color.Gold;
             this.btnImporterPDFnA.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImporterPDFnA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImporterPDFnA.Location = new System.Drawing.Point(28, 41);
+            this.btnImporterPDFnA.Location = new System.Drawing.Point(60, 56);
             this.btnImporterPDFnA.Margin = new System.Windows.Forms.Padding(2);
             this.btnImporterPDFnA.Name = "btnImporterPDFnA";
             this.btnImporterPDFnA.Size = new System.Drawing.Size(254, 72);
@@ -171,13 +171,13 @@ namespace CartesAcces2024
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(840, 605);
+            this.ClientSize = new System.Drawing.Size(811, 378);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblExplications);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmImportPlanches";
-            this.Text = "Importation de planches";
+            this.Text = "Athena - Importation de planches";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);

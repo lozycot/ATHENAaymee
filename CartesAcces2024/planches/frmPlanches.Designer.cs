@@ -432,7 +432,7 @@ namespace CartesAcces2024
             this.Controls.Add(this.panelBdd);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPlanches";
-            this.Text = "Form1";
+            this.Text = "Athena - Creation de planches";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPlanches_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pbDocument)).EndInit();
             this.panel1.ResumeLayout(false);
