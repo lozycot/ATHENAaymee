@@ -33,23 +33,36 @@ namespace CartesAcces2024
         /// <returns>Une instance de l'application Word.</returns>
         public static Application InitWordFile(int margeHaute, int margeDroite, int margeGauche, int margeBasse)
         {
-            //FermerWord();
-            // -- Ouverture de l'applucation Word -- 
-            var applicationWord = new Application();
-
-            // -- Nouveau Document --
-            applicationWord.Documents.Add();
-
-            applicationWord.ActiveDocument.PageSetup.PaperSize = WdPaperSize.wdPaperA4;
-
-            // -- Marge à 0 pour éviter les espaces blancs entre la page et l'image sur le document --
-            applicationWord.ActiveDocument.PageSetup.TopMargin = margeHaute; // 15 points = env à 0.5 cm
-            applicationWord.ActiveDocument.PageSetup.RightMargin = margeDroite;
-            applicationWord.ActiveDocument.PageSetup.LeftMargin = margeGauche;
-            applicationWord.ActiveDocument.PageSetup.BottomMargin = margeBasse;
 
 
-            return applicationWord;
+            try
+            {
+                //FermerWord();
+                // -- Ouverture de l'applucation Word -- 
+                var applicationWord = new Application();
+
+                // -- Nouveau Document --
+                applicationWord.Documents.Add();
+
+                applicationWord.ActiveDocument.PageSetup.PaperSize = WdPaperSize.wdPaperA4;
+
+                // -- Marge à 0 pour éviter les espaces blancs entre la page et l'image sur le document --
+                applicationWord.ActiveDocument.PageSetup.TopMargin = margeHaute; // 15 points = env à 0.5 cm
+                applicationWord.ActiveDocument.PageSetup.RightMargin = margeDroite;
+                applicationWord.ActiveDocument.PageSetup.LeftMargin = margeGauche;
+                applicationWord.ActiveDocument.PageSetup.BottomMargin = margeBasse;
+
+
+                return applicationWord;
+            }
+            catch (System.Runtime.InteropServices.COMException e)
+            {
+                MessageBox.Show("Une erreur s'est produite. L'application vas se fermer.\n" +
+                    "Assurez-vous que Microsoft Word est installé sur votre ordinateur!");
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+                return null;
+            }
+
         }
 
         /// <summary>
