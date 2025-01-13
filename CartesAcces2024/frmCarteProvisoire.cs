@@ -96,7 +96,7 @@ namespace CartesAcces2024
             nouvelle_eleve.NiveauEleve = cbbSection.Text;
             if (rdbParN.Checked)
             {
-                if(cbbClasse.Text != "")
+                if (cbbClasse.Text != "")
                     nouvelle_eleve.ClasseEleve = cbbClasse.Text;
                 // si cbbClasse est vide, chercher la classe de l'élève dans la base de données
                 else
@@ -106,22 +106,26 @@ namespace CartesAcces2024
             {
                 nouvelle_eleve.ClasseEleve = "Profil particulier";
             }
-            Globale.ListeEleveImpr.Add(nouvelle_eleve);
 
-            try
+            if (nouvelle_eleve != null)
             {
-                Globale.carteProvisoire = true;
-                var frmMultiplesCartesEdition = new FrmMultiplesCartesEdition();
-                frmMultiplesCartesEdition.Show();
-                frmMultiplesCartesEdition.editPhotoDepuisCartesProvisoires((double)pbPhoto.Width / (double)pbCarteArriere.Width, 
-                    (double)pbPhoto.Height / (double)pbCarteArriere.Height, 
-                    (double)(pbPhoto.Location.X - pbCarteArriere.Location.X) / (double)pbCarteArriere.Width, 
-                    (double)(pbPhoto.Location.Y - pbCarteArriere.Location.Y) / (double)pbCarteArriere.Height,
-                    new Bitmap(pbPhoto.Image));
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Erreur : " + err.Message);
+                Globale.ListeEleveImpr.Add(nouvelle_eleve);
+
+                try
+                {
+                    Globale.carteProvisoire = true;
+                    var frmMultiplesCartesEdition = new FrmMultiplesCartesEdition();
+                    frmMultiplesCartesEdition.Show();
+                    frmMultiplesCartesEdition.editPhotoDepuisCartesProvisoires((double)pbPhoto.Width / (double)pbCarteArriere.Width,
+                        (double)pbPhoto.Height / (double)pbCarteArriere.Height,
+                        (double)(pbPhoto.Location.X - pbCarteArriere.Location.X) / (double)pbCarteArriere.Width,
+                        (double)(pbPhoto.Location.Y - pbCarteArriere.Location.Y) / (double)pbCarteArriere.Height,
+                        new Bitmap(pbPhoto.Image));
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show("Erreur : " + err.Message);
+                }
             }
         }
 
