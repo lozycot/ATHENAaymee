@@ -105,12 +105,19 @@ namespace CartesAcces2024
             this.gpbInfosEtab = new System.Windows.Forms.GroupBox();
             this.rdbNon = new System.Windows.Forms.RadioButton();
             this.rdbOui = new System.Windows.Forms.RadioButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAjouterPhoto = new System.Windows.Forms.Button();
+            this.btnAnnulerPhoto = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.gb6eme.SuspendLayout();
             this.gb5eme.SuspendLayout();
             this.gb4eme.SuspendLayout();
             this.gb3eme.SuspendLayout();
             this.gpbLogicielEdt.SuspendLayout();
             this.gpbInfosEtab.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gb6eme
@@ -121,7 +128,7 @@ namespace CartesAcces2024
             this.gb6eme.Controls.Add(this.rdbJaune6);
             this.gb6eme.Controls.Add(this.rdbRouge6);
             this.gb6eme.ForeColor = System.Drawing.Color.White;
-            this.gb6eme.Location = new System.Drawing.Point(549, 68);
+            this.gb6eme.Location = new System.Drawing.Point(592, 109);
             this.gb6eme.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gb6eme.Name = "gb6eme";
             this.gb6eme.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -192,7 +199,7 @@ namespace CartesAcces2024
             this.gb5eme.Controls.Add(this.rdbJaune5);
             this.gb5eme.Controls.Add(this.rdbRouge5);
             this.gb5eme.ForeColor = System.Drawing.Color.White;
-            this.gb5eme.Location = new System.Drawing.Point(549, 211);
+            this.gb5eme.Location = new System.Drawing.Point(1022, 109);
             this.gb5eme.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gb5eme.Name = "gb5eme";
             this.gb5eme.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -263,7 +270,7 @@ namespace CartesAcces2024
             this.gb4eme.Controls.Add(this.rdbJaune4);
             this.gb4eme.Controls.Add(this.rdbRouge4);
             this.gb4eme.ForeColor = System.Drawing.Color.White;
-            this.gb4eme.Location = new System.Drawing.Point(549, 342);
+            this.gb4eme.Location = new System.Drawing.Point(592, 239);
             this.gb4eme.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gb4eme.Name = "gb4eme";
             this.gb4eme.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -333,11 +340,11 @@ namespace CartesAcces2024
             this.gb3eme.Controls.Add(this.rdbJaune3);
             this.gb3eme.Controls.Add(this.rdbRouge3);
             this.gb3eme.ForeColor = System.Drawing.Color.White;
-            this.gb3eme.Location = new System.Drawing.Point(549, 478);
+            this.gb3eme.Location = new System.Drawing.Point(1022, 239);
             this.gb3eme.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gb3eme.Name = "gb3eme";
             this.gb3eme.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gb3eme.Size = new System.Drawing.Size(422, 130);
+            this.gb3eme.Size = new System.Drawing.Size(422, 129);
             this.gb3eme.TabIndex = 3;
             this.gb3eme.TabStop = false;
             this.gb3eme.Text = "Niveau : 3eme";
@@ -400,7 +407,7 @@ namespace CartesAcces2024
             this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValider.Location = new System.Drawing.Point(604, 656);
+            this.btnValider.Location = new System.Drawing.Point(1114, 697);
             this.btnValider.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(330, 63);
@@ -413,7 +420,7 @@ namespace CartesAcces2024
             // 
             this.txtEtab.BackColor = System.Drawing.Color.White;
             this.txtEtab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEtab.Location = new System.Drawing.Point(250, 62);
+            this.txtEtab.Location = new System.Drawing.Point(293, 74);
             this.txtEtab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEtab.Name = "txtEtab";
             this.txtEtab.Size = new System.Drawing.Size(269, 24);
@@ -424,7 +431,7 @@ namespace CartesAcces2024
             this.txtNumRue.BackColor = System.Drawing.Color.White;
             this.txtNumRue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumRue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumRue.Location = new System.Drawing.Point(223, 194);
+            this.txtNumRue.Location = new System.Drawing.Point(266, 177);
             this.txtNumRue.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNumRue.Name = "txtNumRue";
             this.txtNumRue.Size = new System.Drawing.Size(284, 24);
@@ -435,7 +442,7 @@ namespace CartesAcces2024
             this.txtNomRue.BackColor = System.Drawing.Color.White;
             this.txtNomRue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomRue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomRue.Location = new System.Drawing.Point(223, 224);
+            this.txtNomRue.Location = new System.Drawing.Point(266, 207);
             this.txtNomRue.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNomRue.Name = "txtNomRue";
             this.txtNomRue.Size = new System.Drawing.Size(284, 24);
@@ -446,7 +453,7 @@ namespace CartesAcces2024
             this.txtVille.BackColor = System.Drawing.Color.White;
             this.txtVille.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVille.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVille.Location = new System.Drawing.Point(223, 254);
+            this.txtVille.Location = new System.Drawing.Point(266, 237);
             this.txtVille.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtVille.Name = "txtVille";
             this.txtVille.Size = new System.Drawing.Size(284, 24);
@@ -457,7 +464,7 @@ namespace CartesAcces2024
             this.txtCodePostal.BackColor = System.Drawing.Color.White;
             this.txtCodePostal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodePostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodePostal.Location = new System.Drawing.Point(223, 284);
+            this.txtCodePostal.Location = new System.Drawing.Point(266, 267);
             this.txtCodePostal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCodePostal.Name = "txtCodePostal";
             this.txtCodePostal.Size = new System.Drawing.Size(284, 24);
@@ -468,7 +475,7 @@ namespace CartesAcces2024
             this.txtNumTel.BackColor = System.Drawing.Color.White;
             this.txtNumTel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumTel.Location = new System.Drawing.Point(223, 440);
+            this.txtNumTel.Location = new System.Drawing.Point(262, 356);
             this.txtNumTel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNumTel.Name = "txtNumTel";
             this.txtNumTel.Size = new System.Drawing.Size(284, 24);
@@ -479,7 +486,7 @@ namespace CartesAcces2024
             this.txtMail.BackColor = System.Drawing.Color.White;
             this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMail.Location = new System.Drawing.Point(223, 470);
+            this.txtMail.Location = new System.Drawing.Point(262, 386);
             this.txtMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(284, 24);
@@ -490,7 +497,7 @@ namespace CartesAcces2024
             this.txtUrl.BackColor = System.Drawing.Color.White;
             this.txtUrl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUrl.Location = new System.Drawing.Point(223, 500);
+            this.txtUrl.Location = new System.Drawing.Point(262, 416);
             this.txtUrl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(284, 24);
@@ -501,7 +508,7 @@ namespace CartesAcces2024
             this.lblEtab.AutoSize = true;
             this.lblEtab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEtab.ForeColor = System.Drawing.Color.White;
-            this.lblEtab.Location = new System.Drawing.Point(8, 62);
+            this.lblEtab.Location = new System.Drawing.Point(51, 74);
             this.lblEtab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEtab.Name = "lblEtab";
             this.lblEtab.Size = new System.Drawing.Size(234, 24);
@@ -513,7 +520,7 @@ namespace CartesAcces2024
             // 
             this.lblAdresse.AutoSize = true;
             this.lblAdresse.ForeColor = System.Drawing.Color.White;
-            this.lblAdresse.Location = new System.Drawing.Point(9, 142);
+            this.lblAdresse.Location = new System.Drawing.Point(52, 145);
             this.lblAdresse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAdresse.Name = "lblAdresse";
             this.lblAdresse.Size = new System.Drawing.Size(86, 18);
@@ -526,7 +533,7 @@ namespace CartesAcces2024
             this.lblNumRue.AutoSize = true;
             this.lblNumRue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumRue.ForeColor = System.Drawing.Color.White;
-            this.lblNumRue.Location = new System.Drawing.Point(53, 200);
+            this.lblNumRue.Location = new System.Drawing.Point(96, 183);
             this.lblNumRue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumRue.Name = "lblNumRue";
             this.lblNumRue.Size = new System.Drawing.Size(115, 18);
@@ -538,7 +545,7 @@ namespace CartesAcces2024
             this.lblNomRue.AutoSize = true;
             this.lblNomRue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomRue.ForeColor = System.Drawing.Color.White;
-            this.lblNomRue.Location = new System.Drawing.Point(53, 230);
+            this.lblNomRue.Location = new System.Drawing.Point(96, 213);
             this.lblNomRue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomRue.Name = "lblNomRue";
             this.lblNomRue.Size = new System.Drawing.Size(47, 18);
@@ -551,7 +558,7 @@ namespace CartesAcces2024
             this.lblVille.AutoSize = true;
             this.lblVille.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVille.ForeColor = System.Drawing.Color.White;
-            this.lblVille.Location = new System.Drawing.Point(54, 260);
+            this.lblVille.Location = new System.Drawing.Point(97, 243);
             this.lblVille.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVille.Name = "lblVille";
             this.lblVille.Size = new System.Drawing.Size(46, 18);
@@ -563,7 +570,7 @@ namespace CartesAcces2024
             this.lblCodePostal.AutoSize = true;
             this.lblCodePostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodePostal.ForeColor = System.Drawing.Color.White;
-            this.lblCodePostal.Location = new System.Drawing.Point(54, 290);
+            this.lblCodePostal.Location = new System.Drawing.Point(97, 273);
             this.lblCodePostal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodePostal.Name = "lblCodePostal";
             this.lblCodePostal.Size = new System.Drawing.Size(102, 18);
@@ -575,7 +582,7 @@ namespace CartesAcces2024
             this.lblNumTel.AutoSize = true;
             this.lblNumTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumTel.ForeColor = System.Drawing.Color.White;
-            this.lblNumTel.Location = new System.Drawing.Point(53, 443);
+            this.lblNumTel.Location = new System.Drawing.Point(92, 359);
             this.lblNumTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumTel.Name = "lblNumTel";
             this.lblNumTel.Size = new System.Drawing.Size(162, 18);
@@ -588,7 +595,7 @@ namespace CartesAcces2024
             this.lblMail.AutoSize = true;
             this.lblMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMail.ForeColor = System.Drawing.Color.White;
-            this.lblMail.Location = new System.Drawing.Point(54, 470);
+            this.lblMail.Location = new System.Drawing.Point(93, 386);
             this.lblMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(105, 18);
@@ -600,7 +607,7 @@ namespace CartesAcces2024
             this.lblUrl.AutoSize = true;
             this.lblUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUrl.ForeColor = System.Drawing.Color.White;
-            this.lblUrl.Location = new System.Drawing.Point(54, 500);
+            this.lblUrl.Location = new System.Drawing.Point(93, 416);
             this.lblUrl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUrl.Name = "lblUrl";
             this.lblUrl.Size = new System.Drawing.Size(79, 18);
@@ -611,7 +618,7 @@ namespace CartesAcces2024
             // 
             this.lblCoordonnees.AutoSize = true;
             this.lblCoordonnees.ForeColor = System.Drawing.Color.White;
-            this.lblCoordonnees.Location = new System.Drawing.Point(13, 397);
+            this.lblCoordonnees.Location = new System.Drawing.Point(52, 318);
             this.lblCoordonnees.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCoordonnees.Name = "lblCoordonnees";
             this.lblCoordonnees.Size = new System.Drawing.Size(140, 18);
@@ -622,7 +629,7 @@ namespace CartesAcces2024
             // 
             this.lblCouleurs.AutoSize = true;
             this.lblCouleurs.ForeColor = System.Drawing.Color.White;
-            this.lblCouleurs.Location = new System.Drawing.Point(537, 25);
+            this.lblCouleurs.Location = new System.Drawing.Point(589, 77);
             this.lblCouleurs.Name = "lblCouleurs";
             this.lblCouleurs.Size = new System.Drawing.Size(449, 18);
             this.lblCouleurs.TabIndex = 24;
@@ -634,7 +641,7 @@ namespace CartesAcces2024
             this.cbBordure.Checked = true;
             this.cbBordure.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbBordure.ForeColor = System.Drawing.Color.White;
-            this.cbBordure.Location = new System.Drawing.Point(604, 614);
+            this.cbBordure.Location = new System.Drawing.Point(1112, 76);
             this.cbBordure.Name = "cbBordure";
             this.cbBordure.Size = new System.Drawing.Size(332, 22);
             this.cbBordure.TabIndex = 25;
@@ -645,7 +652,7 @@ namespace CartesAcces2024
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 552);
+            this.label1.Location = new System.Drawing.Point(55, 473);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 18);
             this.label1.TabIndex = 26;
@@ -656,7 +663,7 @@ namespace CartesAcces2024
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(54, 590);
+            this.label2.Location = new System.Drawing.Point(93, 511);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(190, 18);
             this.label2.TabIndex = 27;
@@ -667,7 +674,7 @@ namespace CartesAcces2024
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(53, 661);
+            this.label3.Location = new System.Drawing.Point(92, 582);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(459, 18);
             this.label3.TabIndex = 28;
@@ -678,7 +685,7 @@ namespace CartesAcces2024
             this.gpbLogicielEdt.Controls.Add(this.rdbEDT);
             this.gpbLogicielEdt.Controls.Add(this.rdbUDT);
             this.gpbLogicielEdt.ForeColor = System.Drawing.Color.White;
-            this.gpbLogicielEdt.Location = new System.Drawing.Point(57, 611);
+            this.gpbLogicielEdt.Location = new System.Drawing.Point(96, 532);
             this.gpbLogicielEdt.Name = "gpbLogicielEdt";
             this.gpbLogicielEdt.Size = new System.Drawing.Size(288, 44);
             this.gpbLogicielEdt.TabIndex = 29;
@@ -710,7 +717,7 @@ namespace CartesAcces2024
             this.gpbInfosEtab.Controls.Add(this.rdbNon);
             this.gpbInfosEtab.Controls.Add(this.rdbOui);
             this.gpbInfosEtab.ForeColor = System.Drawing.Color.White;
-            this.gpbInfosEtab.Location = new System.Drawing.Point(57, 677);
+            this.gpbInfosEtab.Location = new System.Drawing.Point(96, 598);
             this.gpbInfosEtab.Name = "gpbInfosEtab";
             this.gpbInfosEtab.Size = new System.Drawing.Size(130, 42);
             this.gpbInfosEtab.TabIndex = 30;
@@ -736,12 +743,80 @@ namespace CartesAcces2024
             this.rdbOui.Text = "Oui";
             this.rdbOui.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Controls.Add(this.btnAjouterPhoto);
+            this.groupBox3.Controls.Add(this.btnAnnulerPhoto);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(592, 374);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(422, 386);
+            this.groupBox3.TabIndex = 31;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Ajout d\'un CodeQR personalisé";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(125, 42);
+            this.pictureBox1.MaximumSize = new System.Drawing.Size(173, 194);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 194);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnAjouterPhoto
+            // 
+            this.btnAjouterPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAjouterPhoto.Enabled = false;
+            this.btnAjouterPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAjouterPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAjouterPhoto.Location = new System.Drawing.Point(122, 262);
+            this.btnAjouterPhoto.MaximumSize = new System.Drawing.Size(180, 45);
+            this.btnAjouterPhoto.MinimumSize = new System.Drawing.Size(180, 45);
+            this.btnAjouterPhoto.Name = "btnAjouterPhoto";
+            this.btnAjouterPhoto.Size = new System.Drawing.Size(180, 45);
+            this.btnAjouterPhoto.TabIndex = 17;
+            this.btnAjouterPhoto.Text = "&Choisir une photo";
+            this.btnAjouterPhoto.UseVisualStyleBackColor = false;
+            // 
+            // btnAnnulerPhoto
+            // 
+            this.btnAnnulerPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAnnulerPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAnnulerPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAnnulerPhoto.Location = new System.Drawing.Point(122, 313);
+            this.btnAnnulerPhoto.MaximumSize = new System.Drawing.Size(160, 40);
+            this.btnAnnulerPhoto.MinimumSize = new System.Drawing.Size(180, 45);
+            this.btnAnnulerPhoto.Name = "btnAnnulerPhoto";
+            this.btnAnnulerPhoto.Size = new System.Drawing.Size(180, 45);
+            this.btnAnnulerPhoto.TabIndex = 14;
+            this.btnAnnulerPhoto.Text = "&Effacer la photo\r\n";
+            this.btnAnnulerPhoto.UseVisualStyleBackColor = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(1027, 388);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(368, 40);
+            this.checkBox1.TabIndex = 32;
+            this.checkBox1.Text = "Generer automatiquement un CodeQR\r\n(Si vous n\'avez pas de CodeQR personalisé)";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // frmEtablissement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1036, 756);
+            this.ClientSize = new System.Drawing.Size(1457, 772);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.gpbInfosEtab);
             this.Controls.Add(this.gpbLogicielEdt);
             this.Controls.Add(this.label3);
@@ -793,6 +868,8 @@ namespace CartesAcces2024
             this.gpbLogicielEdt.PerformLayout();
             this.gpbInfosEtab.ResumeLayout(false);
             this.gpbInfosEtab.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -850,5 +927,10 @@ namespace CartesAcces2024
         private System.Windows.Forms.GroupBox gpbInfosEtab;
         private System.Windows.Forms.RadioButton rdbNon;
         private System.Windows.Forms.RadioButton rdbOui;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAjouterPhoto;
+        private System.Windows.Forms.Button btnAnnulerPhoto;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

@@ -45,6 +45,12 @@ namespace CartesAcces2024
             etab.GetLogicielEdt();
             this.MaximizeBox = true;
             this.MinimizeBox = true;
+
+            if (Globale.Actuelle != null)
+                Globale.Actuelle.Close();
+            Globale.Actuelle = new frmImport();
+            Text = "ATHENA - IMPORTATION";
+            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
 
         private void pnlMenu_Paint(object sender, PaintEventArgs e)
@@ -67,9 +73,14 @@ namespace CartesAcces2024
 
         }
 
+        // A CHANGER
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-
+            if (Globale.Actuelle != null)
+                Globale.Actuelle.Close();
+            Globale.Actuelle = new frmImport();
+            Text = "ATHENA - Accueil";
+            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
 
 
