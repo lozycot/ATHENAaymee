@@ -60,37 +60,43 @@ namespace CartesAcces2024
             }
         }
 
- //       private void frmcarteparclasseniveau_load(object sender, eventargs e)
- //       {
- //           list<string> listclasses = operationsdb.getclasses();
- //           cbbimprclasse.items.clear();
- //
- //           foreach (var classe in listclasses)
- //           {
- //               cbbimprclasse.items.add(classe);
- //           }
- //           cbbimprclasse.selecteditem = null;
- //           lblcount.text = "";
- //       }
-        // tentative
+        //private void frmcarteparclasseniveau_load(object sender, eventargs e)
+        //{
+        //    list<string> listclasses = operationsdb.getclasses();
+        //    cbbimprclasse.items.clear();
+
+        //    foreach (var classe in listclasses)
+        //    {
+        //        cbbimprclasse.items.add(classe);
+        //    }
+        //    cbbimprclasse.selecteditem = null;
+        //    lblcount.text = "";
+        //}
+        //// tentative
+        private void clbClasse5eme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+        private void gpbTriParClasses_Enter(object sender, EventArgs e)
+        {
+        }
         private void frmCarteParClasseNiveau_Load(object sender, EventArgs e)
         {
             List<string> ListClasses = OperationsDb.GetClasses();
             clbClasse3eme.Items.Clear();
             clbClasse4eme.Items.Clear();
             clbClasse5eme.Items.Clear();
-            clbClasses.Items.Clear();
+            clbClasse6eme.Items.Clear();
 
             foreach (var classe in ListClasses)
             {
-                while classe.Contains("3")
+                while (classe.Contains("3"))
                     clbClasse3eme.Items.Add(classe);
-                while classe.Contains("4")
+                while (classe.Contains("4"))
                     clbClasse4eme.Items.Add(classe);
-                while classe.Contains("5")
-                    clbClasse5eme.Items.Add(classe);
-                while classe.Contains("6")
-                    clbClasses.Items.Add(classe);
+                while (classe.Contains("5"))
+                    clbClasse5eme.Items.Add(classe);    
+                while (classe.Contains("6"))
+                    clbClasse6eme.Items.Add(classe);
             }
         }
         // fin tentative
