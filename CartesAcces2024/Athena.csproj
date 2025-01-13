@@ -181,6 +181,12 @@
     <Compile Include="frmOptAvancees.Designer.cs">
       <DependentUpon>frmOptAvancees.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSuppressionDeDonnées.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuppressionDeDonnées.Designer.cs">
+      <DependentUpon>frmSuppressionDeDonnées.cs</DependentUpon>
+    </Compile>
     <Compile Include="planches\EditionPlanche.cs" />
     <Compile Include="planches\frmSelectionZone.cs">
       <SubType>Form</SubType>
@@ -327,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOptAvancees.resx">
       <DependentUpon>frmOptAvancees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuppressionDeDonnées.resx">
+      <DependentUpon>frmSuppressionDeDonnées.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="planches\frmClasseTemporaire.resx">
       <DependentUpon>frmClasseTemporaire.cs</DependentUpon>
