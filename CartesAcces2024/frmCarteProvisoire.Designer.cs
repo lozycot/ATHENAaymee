@@ -134,9 +134,9 @@ namespace CartesAcces2024
             // 
             // btnAnnulerPhoto
             // 
-            this.btnAnnulerPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAnnulerPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAnnulerPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAnnulerPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAnnulerPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnAnnulerPhoto.Location = new System.Drawing.Point(254, 277);
             this.btnAnnulerPhoto.MaximumSize = new System.Drawing.Size(160, 40);
             this.btnAnnulerPhoto.MinimumSize = new System.Drawing.Size(180, 45);
@@ -150,9 +150,9 @@ namespace CartesAcces2024
             // btnSave
             // 
             this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnSave.Location = new System.Drawing.Point(108, 328);
             this.btnSave.MinimumSize = new System.Drawing.Size(180, 40);
             this.btnSave.Name = "btnSave";
@@ -212,9 +212,9 @@ namespace CartesAcces2024
             // 
             // btnReset
             // 
-            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnReset.Location = new System.Drawing.Point(29, 234);
             this.btnReset.MinimumSize = new System.Drawing.Size(180, 45);
             this.btnReset.Name = "btnReset";
@@ -226,9 +226,9 @@ namespace CartesAcces2024
             // 
             // btnEdtPerso
             // 
-            this.btnEdtPerso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnEdtPerso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnEdtPerso.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEdtPerso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnEdtPerso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnEdtPerso.Location = new System.Drawing.Point(248, 234);
             this.btnEdtPerso.MinimumSize = new System.Drawing.Size(180, 45);
             this.btnEdtPerso.Name = "btnEdtPerso";
@@ -264,7 +264,7 @@ namespace CartesAcces2024
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox3.Controls.Add(this.pictureBox1);
             this.groupBox3.Controls.Add(this.btnAjouterPhoto);
             this.groupBox3.Controls.Add(this.btnAnnulerPhoto);
@@ -291,10 +291,10 @@ namespace CartesAcces2024
             // 
             // btnAjouterPhoto
             // 
-            this.btnAjouterPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAjouterPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAjouterPhoto.Enabled = false;
             this.btnAjouterPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAjouterPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAjouterPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnAjouterPhoto.Location = new System.Drawing.Point(19, 277);
             this.btnAjouterPhoto.MaximumSize = new System.Drawing.Size(180, 45);
             this.btnAjouterPhoto.MinimumSize = new System.Drawing.Size(180, 45);
@@ -331,7 +331,7 @@ namespace CartesAcces2024
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox1.Controls.Add(this.rdbParN);
             this.groupBox1.Controls.Add(this.rdbParO);
             this.groupBox1.Controls.Add(this.label8);
@@ -392,7 +392,7 @@ namespace CartesAcces2024
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.pbPhoto);
             this.panel1.Controls.Add(this.pbCarteFace);
@@ -420,14 +420,15 @@ namespace CartesAcces2024
             // 
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1475, 934);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1472, 862);
             this.Name = "frmCarteProvisoire";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Carte provisoire";
+            this.Text = "Athena - Carte provisoire";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCarteProvisoire_FormClosed);
             this.Load += new System.EventHandler(this.frmCarteProvisoire_Load);

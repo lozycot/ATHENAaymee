@@ -70,9 +70,9 @@ namespace CartesAcces2024
             // 
             // btnValider
             // 
-            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnValider.Location = new System.Drawing.Point(518, 169);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(140, 49);
@@ -83,6 +83,7 @@ namespace CartesAcces2024
             // 
             // gpbClasse
             // 
+            this.gpbClasse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.gpbClasse.Controls.Add(this.rdb3eme);
             this.gpbClasse.Controls.Add(this.rdb4eme);
             this.gpbClasse.Controls.Add(this.rdb5eme);
@@ -139,6 +140,7 @@ namespace CartesAcces2024
             // 
             // gpdChoixImage
             // 
+            this.gpdChoixImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.gpdChoixImage.Controls.Add(this.rdbDossier);
             this.gpdChoixImage.Controls.Add(this.rdbImage);
             this.gpdChoixImage.ForeColor = System.Drawing.Color.White;
@@ -176,7 +178,7 @@ namespace CartesAcces2024
             // frmSelectionNiveauPhoto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(671, 235);
             this.Controls.Add(this.gpdChoixImage);
             this.Controls.Add(this.btnValider);

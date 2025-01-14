@@ -467,13 +467,18 @@ namespace CartesAcces2024
 
         private void updateZoom()
         {
-            pbDoc.Size = new Size((int)(pbDoc.MaximumSize.Width * ((float)numZoom.Value / 100.0)),
-                (int)(pbDoc.MaximumSize.Height * ((float)numZoom.Value / 100.0)));
+            pbDoc.Size = new Size((int)(pbDoc.MaximumSize.Width * ((float)tkbZoom.Value / 100.0)),
+                (int)(pbDoc.MaximumSize.Height * ((float)tkbZoom.Value / 100.0)));
             pbDoc.Refresh();
-            pbOver.Size = new Size((int)(pbOver.MaximumSize.Width * ((float)numZoom.Value / 100.0)),
-                (int)(pbOver.MaximumSize.Height * ((float)numZoom.Value / 100.0)));
+            pbOver.Size = new Size((int)(pbOver.MaximumSize.Width * ((float)tkbZoom.Value / 100.0)),
+                (int)(pbOver.MaximumSize.Height * ((float)tkbZoom.Value / 100.0)));
             pbOver.Refresh();
 
+        }
+
+        private void tkbTaillePhoto_Scroll(object sender, EventArgs e)
+        {
+            updateZoom();
         }
     }
 }

@@ -77,7 +77,7 @@ namespace CartesAcces2024
             this.label9 = new System.Windows.Forms.Label();
             this.btnSupprPage = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.numZoom = new System.Windows.Forms.NumericUpDown();
+            this.tkbZoom = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pbDoc)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOver)).BeginInit();
@@ -86,7 +86,7 @@ namespace CartesAcces2024
             ((System.ComponentModel.ISupportInitialize)(this.numD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numZoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tkbZoom)).BeginInit();
             this.SuspendLayout();
             // 
             // pbDoc
@@ -113,7 +113,7 @@ namespace CartesAcces2024
             // 
             // pbOver
             // 
-            this.pbOver.BackColor = System.Drawing.Color.White;
+            this.pbOver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.pbOver.Location = new System.Drawing.Point(2, 2);
             this.pbOver.Margin = new System.Windows.Forms.Padding(2);
             this.pbOver.Name = "pbOver";
@@ -164,11 +164,11 @@ namespace CartesAcces2024
             // 
             // btnValider
             // 
-            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValider.Location = new System.Drawing.Point(1001, 939);
+            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnValider.Location = new System.Drawing.Point(1001, 969);
             this.btnValider.Margin = new System.Windows.Forms.Padding(2);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(174, 52);
@@ -179,11 +179,11 @@ namespace CartesAcces2024
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAnnuler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnnuler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAnnuler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnAnnuler.Location = new System.Drawing.Point(1037, 29);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnuler.Name = "btnAnnuler";
@@ -268,10 +268,10 @@ namespace CartesAcces2024
             // 
             // btnAntihoraire
             // 
-            this.btnAntihoraire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAntihoraire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAntihoraire.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAntihoraire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAntihoraire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAntihoraire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnAntihoraire.Location = new System.Drawing.Point(35, 91);
             this.btnAntihoraire.Margin = new System.Windows.Forms.Padding(2);
             this.btnAntihoraire.Name = "btnAntihoraire";
@@ -283,10 +283,10 @@ namespace CartesAcces2024
             // 
             // btnHoraire
             // 
-            this.btnHoraire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnHoraire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnHoraire.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHoraire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoraire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnHoraire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnHoraire.Location = new System.Drawing.Point(996, 91);
             this.btnHoraire.Margin = new System.Windows.Forms.Padding(2);
             this.btnHoraire.Name = "btnHoraire";
@@ -300,7 +300,7 @@ namespace CartesAcces2024
             // 
             this.cbClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbClasse.FormattingEnabled = true;
-            this.cbClasse.Location = new System.Drawing.Point(96, 952);
+            this.cbClasse.Location = new System.Drawing.Point(96, 982);
             this.cbClasse.Margin = new System.Windows.Forms.Padding(2);
             this.cbClasse.Name = "cbClasse";
             this.cbClasse.Size = new System.Drawing.Size(131, 28);
@@ -310,7 +310,7 @@ namespace CartesAcces2024
             // numPage
             // 
             this.numPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPage.Location = new System.Drawing.Point(322, 953);
+            this.numPage.Location = new System.Drawing.Point(322, 983);
             this.numPage.Margin = new System.Windows.Forms.Padding(2);
             this.numPage.Name = "numPage";
             this.numPage.Size = new System.Drawing.Size(94, 27);
@@ -322,7 +322,7 @@ namespace CartesAcces2024
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(31, 955);
+            this.label7.Location = new System.Drawing.Point(31, 985);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 20);
@@ -334,7 +334,7 @@ namespace CartesAcces2024
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(271, 955);
+            this.label8.Location = new System.Drawing.Point(271, 985);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 20);
@@ -356,12 +356,12 @@ namespace CartesAcces2024
             // 
             // btnSupprPage
             // 
-            this.btnSupprPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnSupprPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnSupprPage.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSupprPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSupprPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnSupprPage.Location = new System.Drawing.Point(805, 939);
+            this.btnSupprPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnSupprPage.Location = new System.Drawing.Point(805, 969);
             this.btnSupprPage.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupprPage.Name = "btnSupprPage";
             this.btnSupprPage.Size = new System.Drawing.Size(192, 52);
@@ -375,47 +375,37 @@ namespace CartesAcces2024
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(31, 900);
+            this.label10.Location = new System.Drawing.Point(31, 909);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(81, 20);
             this.label10.TabIndex = 23;
             this.label10.Text = "🔎 Zoom :";
             // 
-            // numZoom
+            // tkbZoom
             // 
-            this.numZoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numZoom.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numZoom.Location = new System.Drawing.Point(116, 898);
-            this.numZoom.Margin = new System.Windows.Forms.Padding(2);
-            this.numZoom.Minimum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.numZoom.Name = "numZoom";
-            this.numZoom.Size = new System.Drawing.Size(1059, 27);
-            this.numZoom.TabIndex = 22;
-            this.numZoom.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.numZoom.ValueChanged += new System.EventHandler(this.numZoom_ValueChanged);
+            this.tkbZoom.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.tkbZoom.Location = new System.Drawing.Point(118, 907);
+            this.tkbZoom.Margin = new System.Windows.Forms.Padding(4);
+            this.tkbZoom.Maximum = 100;
+            this.tkbZoom.Minimum = 30;
+            this.tkbZoom.Name = "tkbZoom";
+            this.tkbZoom.Size = new System.Drawing.Size(1057, 56);
+            this.tkbZoom.TabIndex = 24;
+            this.tkbZoom.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.tkbZoom.UseWaitCursor = true;
+            this.tkbZoom.Value = 50;
+            this.tkbZoom.Scroll += new System.EventHandler(this.tkbTaillePhoto_Scroll);
             // 
             // frmSelectionZone
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.CancelButton = this.btnAnnuler;
-            this.ClientSize = new System.Drawing.Size(1237, 1002);
+            this.ClientSize = new System.Drawing.Size(1237, 1032);
+            this.Controls.Add(this.tkbZoom);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.numZoom);
             this.Controls.Add(this.btnSupprPage);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -452,7 +442,7 @@ namespace CartesAcces2024
             ((System.ComponentModel.ISupportInitialize)(this.numD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numZoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tkbZoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,6 +474,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSupprPage;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numZoom;
+        private System.Windows.Forms.TrackBar tkbZoom;
     }
 }

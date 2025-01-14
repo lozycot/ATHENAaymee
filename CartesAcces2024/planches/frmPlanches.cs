@@ -149,8 +149,6 @@ namespace CartesAcces2024
             cbFormat.Items.Add("A4");
             cbFormat.Items.Add("A3");
             cbFormat.SelectedIndex = 0;
-
-            numZoom.Value = 50;
         }
 
         /// <summary>
@@ -348,21 +346,6 @@ namespace CartesAcces2024
             listBoxSel.Items.Clear();
         }
 
-        private void numZoom_ValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                // redimensionne le PictureBox
-                pbDocument.Size = new Size((int)(pbDocument.MaximumSize.Width * ((float)numZoom.Value / 100.0)),
-                    (int)(pbDocument.MaximumSize.Height * ((float)numZoom.Value / 100.0)));
-                pbDocument.Refresh();
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-        }
-
         private void btnTrombi_Click(object sender, EventArgs e)
         {
             GenererPlanches(EditionPlanche.typePlanche.trombinoscope);
@@ -446,6 +429,26 @@ namespace CartesAcces2024
                     pbDocument.Size = pbDocument.MaximumSize;
                     pbDocument.Refresh();
                     break;
+            }
+        }
+
+        private void tkbZoom_Scroll(object sender, EventArgs e)
+        {
+            try
+            {
+                if (pbDocument != null)
+                {
+                    // redimensionne le PictureBox
+                    pbDocument.Size = new Size(
+                        (int)(pbDocument.MaximumSize.Width * ((float)tkbZoom.Value / 100.0)),
+                        (int)(pbDocument.MaximumSize.Height * ((float)tkbZoom.Value / 100.0))
+                    );
+                    pbDocument.Refresh();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
             }
         }
     }
