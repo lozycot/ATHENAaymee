@@ -109,6 +109,7 @@ namespace CartesAcces2024
             this.btnAjouterChamp = new System.Windows.Forms.Button();
             this.txtNomDuNouveauChamp = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnReinitialiser = new System.Windows.Forms.Button();
             this.gb6eme.SuspendLayout();
             this.gb5eme.SuspendLayout();
             this.gb4eme.SuspendLayout();
@@ -744,6 +745,7 @@ namespace CartesAcces2024
             // pnlChampsPersonnalises
             // 
             this.pnlChampsPersonnalises.AutoScroll = true;
+            this.pnlChampsPersonnalises.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.pnlChampsPersonnalises.Location = new System.Drawing.Point(592, 375);
             this.pnlChampsPersonnalises.Name = "pnlChampsPersonnalises";
             this.pnlChampsPersonnalises.Size = new System.Drawing.Size(852, 249);
@@ -786,11 +788,26 @@ namespace CartesAcces2024
             this.label4.TabIndex = 34;
             this.label4.Text = "Ajouter un champ :";
             // 
+            // btnReinitialiser
+            // 
+            this.btnReinitialiser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnReinitialiser.Location = new System.Drawing.Point(1126, 630);
+            this.btnReinitialiser.Name = "btnReinitialiser";
+            this.btnReinitialiser.Size = new System.Drawing.Size(131, 38);
+            this.btnReinitialiser.TabIndex = 35;
+            this.btnReinitialiser.Text = "réinitialiser";
+            this.btnReinitialiser.UseVisualStyleBackColor = false;
+            this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
+            // 
             // frmEtablissement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1481, 797);
+            this.Controls.Add(this.btnReinitialiser);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNomDuNouveauChamp);
             this.Controls.Add(this.btnAjouterChamp);
@@ -907,5 +924,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.Button btnAjouterChamp;
         private System.Windows.Forms.TextBox txtNomDuNouveauChamp;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnReinitialiser;
     }
 }
