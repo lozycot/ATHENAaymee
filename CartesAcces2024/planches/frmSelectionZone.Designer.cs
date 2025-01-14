@@ -113,7 +113,7 @@ namespace CartesAcces2024
             // 
             // pbOver
             // 
-            this.pbOver.BackColor = System.Drawing.Color.White;
+            this.pbOver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.pbOver.Location = new System.Drawing.Point(2, 2);
             this.pbOver.Margin = new System.Windows.Forms.Padding(2);
             this.pbOver.Name = "pbOver";
@@ -164,10 +164,10 @@ namespace CartesAcces2024
             // 
             // btnValider
             // 
-            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnValider.Location = new System.Drawing.Point(1001, 969);
             this.btnValider.Margin = new System.Windows.Forms.Padding(2);
             this.btnValider.Name = "btnValider";
@@ -179,11 +179,11 @@ namespace CartesAcces2024
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAnnuler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnnuler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAnnuler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnAnnuler.Location = new System.Drawing.Point(1037, 29);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnuler.Name = "btnAnnuler";
@@ -268,10 +268,10 @@ namespace CartesAcces2024
             // 
             // btnAntihoraire
             // 
-            this.btnAntihoraire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAntihoraire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAntihoraire.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAntihoraire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAntihoraire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAntihoraire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnAntihoraire.Location = new System.Drawing.Point(35, 91);
             this.btnAntihoraire.Margin = new System.Windows.Forms.Padding(2);
             this.btnAntihoraire.Name = "btnAntihoraire";
@@ -283,10 +283,10 @@ namespace CartesAcces2024
             // 
             // btnHoraire
             // 
-            this.btnHoraire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnHoraire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnHoraire.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHoraire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoraire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnHoraire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnHoraire.Location = new System.Drawing.Point(996, 91);
             this.btnHoraire.Margin = new System.Windows.Forms.Padding(2);
             this.btnHoraire.Name = "btnHoraire";
@@ -356,11 +356,11 @@ namespace CartesAcces2024
             // 
             // btnSupprPage
             // 
-            this.btnSupprPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnSupprPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnSupprPage.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSupprPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSupprPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnSupprPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnSupprPage.Location = new System.Drawing.Point(805, 969);
             this.btnSupprPage.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupprPage.Name = "btnSupprPage";
@@ -401,7 +401,7 @@ namespace CartesAcces2024
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(1237, 1032);
             this.Controls.Add(this.tkbZoom);

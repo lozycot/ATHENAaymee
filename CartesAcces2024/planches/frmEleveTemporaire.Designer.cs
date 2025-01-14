@@ -52,6 +52,7 @@ namespace CartesAcces2024
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEleveTemporaire));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNom = new System.Windows.Forms.TextBox();
@@ -65,7 +66,7 @@ namespace CartesAcces2024
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 23);
+            this.label1.Location = new System.Drawing.Point(21, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 20);
@@ -77,7 +78,7 @@ namespace CartesAcces2024
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(21, 74);
+            this.label2.Location = new System.Drawing.Point(21, 75);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
@@ -87,7 +88,7 @@ namespace CartesAcces2024
             // txtNom
             // 
             this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(102, 20);
+            this.txtNom.Location = new System.Drawing.Point(102, 23);
             this.txtNom.Margin = new System.Windows.Forms.Padding(2);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(189, 27);
@@ -96,7 +97,7 @@ namespace CartesAcces2024
             // txtPrenom
             // 
             this.txtPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrenom.Location = new System.Drawing.Point(102, 71);
+            this.txtPrenom.Location = new System.Drawing.Point(102, 72);
             this.txtPrenom.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(189, 27);
@@ -104,14 +105,14 @@ namespace CartesAcces2024
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAnnuler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnnuler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAnnuler.Location = new System.Drawing.Point(335, 71);
+            this.btnAnnuler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnAnnuler.Location = new System.Drawing.Point(359, 60);
             this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(106, 26);
+            this.btnAnnuler.Size = new System.Drawing.Size(150, 50);
             this.btnAnnuler.TabIndex = 4;
             this.btnAnnuler.Text = "&Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = false;
@@ -119,14 +120,14 @@ namespace CartesAcces2024
             // 
             // btnValider
             // 
-            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValider.Location = new System.Drawing.Point(445, 71);
+            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnValider.Location = new System.Drawing.Point(513, 60);
             this.btnValider.Margin = new System.Windows.Forms.Padding(2);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(106, 26);
+            this.btnValider.Size = new System.Drawing.Size(150, 50);
             this.btnValider.TabIndex = 5;
             this.btnValider.Text = "&Valider";
             this.btnValider.UseVisualStyleBackColor = false;
@@ -135,8 +136,8 @@ namespace CartesAcces2024
             // frmEleveTemporaire
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(574, 121);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(680, 127);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.txtPrenom);
@@ -144,6 +145,7 @@ namespace CartesAcces2024
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmEleveTemporaire";
             this.Text = "Athena - Eleve temporaire";
