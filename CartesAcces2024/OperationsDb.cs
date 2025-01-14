@@ -621,5 +621,25 @@ namespace CartesAcces2024
                 }
             }
         }
+
+        /// <summary>
+        /// Supprime tout les élèves appartenant à une certaine classe.
+        /// </summary>
+        /// <param name="nomClasse"></param>
+        public static void deleteUneClasse(string nomClasse)
+        {
+            string txt = "DELETE FROM Eleve WHERE Classe = \"" + nomClasse + "\";";
+            InsertUpdateDeleteUnElement(txt);
+        }
+
+        /// <summary>
+        /// Supprime tout les élèves appartenant à un cerains niveau.
+        /// </summary>
+        /// <param name="niveau"></param>
+        public static void deleteUnNiveau(string niveau)
+        {
+            string txt = "DELETE FROM Eleve WHERE Niveau = \"" + niveau + "\";";
+            InsertUpdateDeleteUnElement(txt);
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace ATHENA
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSupprimerLesDonneesSelectionnees = new System.Windows.Forms.Button();
             this.btnToutSelectionner = new System.Windows.Forms.Button();
             this.btnSupprimerTouteLesDonnees = new System.Windows.Forms.Button();
             this.btnReinitialiser = new System.Windows.Forms.Button();
@@ -43,27 +43,32 @@ namespace ATHENA
             this.gbpFiltres.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnSupprimerLesDonneesSelectionnees
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(857, 250);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(436, 49);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "🗑 Supprimer les données sélectionnées";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSupprimerLesDonneesSelectionnees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSupprimerLesDonneesSelectionnees.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSupprimerLesDonneesSelectionnees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSupprimerLesDonneesSelectionnees.ForeColor = System.Drawing.Color.Red;
+            this.btnSupprimerLesDonneesSelectionnees.Location = new System.Drawing.Point(857, 226);
+            this.btnSupprimerLesDonneesSelectionnees.Name = "btnSupprimerLesDonneesSelectionnees";
+            this.btnSupprimerLesDonneesSelectionnees.Size = new System.Drawing.Size(374, 40);
+            this.btnSupprimerLesDonneesSelectionnees.TabIndex = 12;
+            this.btnSupprimerLesDonneesSelectionnees.Text = "🗑 Supprimer les données sélectionnées";
+            this.btnSupprimerLesDonneesSelectionnees.UseVisualStyleBackColor = false;
+            this.btnSupprimerLesDonneesSelectionnees.Click += new System.EventHandler(this.btnSupprimerLesDonneesSelectionnees_Click);
             // 
             // btnToutSelectionner
             // 
-            this.btnToutSelectionner.Location = new System.Drawing.Point(857, 204);
+            this.btnToutSelectionner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btnToutSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnToutSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnToutSelectionner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnToutSelectionner.Location = new System.Drawing.Point(857, 180);
             this.btnToutSelectionner.Name = "btnToutSelectionner";
-            this.btnToutSelectionner.Size = new System.Drawing.Size(198, 23);
+            this.btnToutSelectionner.Size = new System.Drawing.Size(374, 40);
             this.btnToutSelectionner.TabIndex = 11;
             this.btnToutSelectionner.Text = "Tout sélectionner";
-            this.btnToutSelectionner.UseVisualStyleBackColor = true;
+            this.btnToutSelectionner.UseVisualStyleBackColor = false;
             this.btnToutSelectionner.Click += new System.EventHandler(this.btnToutSelectionner_Click);
             // 
             // btnSupprimerTouteLesDonnees
@@ -74,7 +79,7 @@ namespace ATHENA
             this.btnSupprimerTouteLesDonnees.ForeColor = System.Drawing.Color.Red;
             this.btnSupprimerTouteLesDonnees.Location = new System.Drawing.Point(857, 134);
             this.btnSupprimerTouteLesDonnees.Name = "btnSupprimerTouteLesDonnees";
-            this.btnSupprimerTouteLesDonnees.Size = new System.Drawing.Size(341, 49);
+            this.btnSupprimerTouteLesDonnees.Size = new System.Drawing.Size(374, 40);
             this.btnSupprimerTouteLesDonnees.TabIndex = 10;
             this.btnSupprimerTouteLesDonnees.Text = "🗑 Supprimer toutes les données";
             this.btnSupprimerTouteLesDonnees.UseVisualStyleBackColor = false;
@@ -82,12 +87,17 @@ namespace ATHENA
             // 
             // btnReinitialiser
             // 
-            this.btnReinitialiser.Location = new System.Drawing.Point(857, 105);
+            this.btnReinitialiser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnReinitialiser.Location = new System.Drawing.Point(857, 88);
             this.btnReinitialiser.Name = "btnReinitialiser";
-            this.btnReinitialiser.Size = new System.Drawing.Size(89, 23);
+            this.btnReinitialiser.Size = new System.Drawing.Size(374, 40);
             this.btnReinitialiser.TabIndex = 9;
-            this.btnReinitialiser.Text = "Réinitialiser";
-            this.btnReinitialiser.UseVisualStyleBackColor = true;
+            this.btnReinitialiser.Text = "Réinitialiser la sélection";
+            this.btnReinitialiser.UseVisualStyleBackColor = false;
+            this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
             // 
             // gbpElements
             // 
@@ -102,6 +112,7 @@ namespace ATHENA
             // 
             // clbElements
             // 
+            this.clbElements.CheckOnClick = true;
             this.clbElements.FormattingEnabled = true;
             this.clbElements.Location = new System.Drawing.Point(6, 21);
             this.clbElements.Name = "clbElements";
@@ -124,11 +135,10 @@ namespace ATHENA
             // rdbNiveaux
             // 
             this.rdbNiveaux.AutoSize = true;
-            this.rdbNiveaux.Location = new System.Drawing.Point(181, 31);
+            this.rdbNiveaux.Location = new System.Drawing.Point(12, 31);
             this.rdbNiveaux.Name = "rdbNiveaux";
             this.rdbNiveaux.Size = new System.Drawing.Size(79, 21);
             this.rdbNiveaux.TabIndex = 2;
-            this.rdbNiveaux.TabStop = true;
             this.rdbNiveaux.Text = "Niveaux";
             this.rdbNiveaux.UseVisualStyleBackColor = true;
             this.rdbNiveaux.CheckedChanged += new System.EventHandler(this.rdbNiveaux_CheckedChanged);
@@ -140,7 +150,6 @@ namespace ATHENA
             this.rdbClasses.Name = "rdbClasses";
             this.rdbClasses.Size = new System.Drawing.Size(78, 21);
             this.rdbClasses.TabIndex = 1;
-            this.rdbClasses.TabStop = true;
             this.rdbClasses.Text = "Classes";
             this.rdbClasses.UseVisualStyleBackColor = true;
             this.rdbClasses.CheckedChanged += new System.EventHandler(this.rdbClasses_CheckedChanged);
@@ -148,7 +157,8 @@ namespace ATHENA
             // rdbEleve
             // 
             this.rdbEleve.AutoSize = true;
-            this.rdbEleve.Location = new System.Drawing.Point(20, 31);
+            this.rdbEleve.Checked = true;
+            this.rdbEleve.Location = new System.Drawing.Point(181, 31);
             this.rdbEleve.Name = "rdbEleve";
             this.rdbEleve.Size = new System.Drawing.Size(71, 21);
             this.rdbEleve.TabIndex = 0;
@@ -163,7 +173,7 @@ namespace ATHENA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1366, 541);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSupprimerLesDonneesSelectionnees);
             this.Controls.Add(this.btnToutSelectionner);
             this.Controls.Add(this.btnSupprimerTouteLesDonnees);
             this.Controls.Add(this.btnReinitialiser);
@@ -182,7 +192,7 @@ namespace ATHENA
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSupprimerLesDonneesSelectionnees;
         private System.Windows.Forms.Button btnToutSelectionner;
         private System.Windows.Forms.Button btnSupprimerTouteLesDonnees;
         private System.Windows.Forms.Button btnReinitialiser;

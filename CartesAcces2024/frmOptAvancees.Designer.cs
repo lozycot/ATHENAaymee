@@ -73,7 +73,7 @@ namespace CartesAcces2024
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(359, 75);
             this.btnDel.TabIndex = 2;
-            this.btnDel.Text = "🗑 Supprimer toutes les données";
+            this.btnDel.Text = "🗑 Suppression de données";
             this.btnDel.UseVisualStyleBackColor = false;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
