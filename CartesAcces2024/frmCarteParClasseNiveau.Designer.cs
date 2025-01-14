@@ -74,7 +74,7 @@ namespace CartesAcces2024
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 150);
+            this.label1.Location = new System.Drawing.Point(42, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 20);
             this.label1.TabIndex = 0;
@@ -85,7 +85,7 @@ namespace CartesAcces2024
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 216);
+            this.label2.Location = new System.Drawing.Point(42, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 20);
             this.label2.TabIndex = 1;
@@ -101,7 +101,7 @@ namespace CartesAcces2024
             "5eme",
             "4eme",
             "3eme"});
-            this.cbbImprSection.Location = new System.Drawing.Point(254, 208);
+            this.cbbImprSection.Location = new System.Drawing.Point(219, 146);
             this.cbbImprSection.MaximumSize = new System.Drawing.Size(180, 0);
             this.cbbImprSection.MinimumSize = new System.Drawing.Size(180, 0);
             this.cbbImprSection.Name = "cbbImprSection";
@@ -116,7 +116,7 @@ namespace CartesAcces2024
             this.btnValiderImpr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValiderImpr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnValiderImpr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValiderImpr.Location = new System.Drawing.Point(544, 578);
+            this.btnValiderImpr.Location = new System.Drawing.Point(422, 562);
             this.btnValiderImpr.MaximumSize = new System.Drawing.Size(200, 65);
             this.btnValiderImpr.MinimumSize = new System.Drawing.Size(200, 65);
             this.btnValiderImpr.Name = "btnValiderImpr";
@@ -134,7 +134,7 @@ namespace CartesAcces2024
             this.lsbListeEleve.ForeColor = System.Drawing.Color.White;
             this.lsbListeEleve.FormattingEnabled = true;
             this.lsbListeEleve.ItemHeight = 20;
-            this.lsbListeEleve.Location = new System.Drawing.Point(544, 150);
+            this.lsbListeEleve.Location = new System.Drawing.Point(46, 225);
             this.lsbListeEleve.MaximumSize = new System.Drawing.Size(350, 407);
             this.lsbListeEleve.MinimumSize = new System.Drawing.Size(350, 407);
             this.lsbListeEleve.Name = "lsbListeEleve";
@@ -147,17 +147,17 @@ namespace CartesAcces2024
             this.NbComptageEleveCS.AutoSize = true;
             this.NbComptageEleveCS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.NbComptageEleveCS.ForeColor = System.Drawing.Color.White;
-            this.NbComptageEleveCS.Location = new System.Drawing.Point(12, 287);
+            this.NbComptageEleveCS.Location = new System.Drawing.Point(42, 43);
             this.NbComptageEleveCS.Name = "NbComptageEleveCS";
-            this.NbComptageEleveCS.Size = new System.Drawing.Size(389, 20);
+            this.NbComptageEleveCS.Size = new System.Drawing.Size(229, 20);
             this.NbComptageEleveCS.TabIndex = 25;
-            this.NbComptageEleveCS.Text = "Nombre d\'élève de la liste de la classe ou section :";
+            this.NbComptageEleveCS.Text = "Nombre d\'élèves a imprimer :";
             // 
             // lblCount
             // 
             this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount.ForeColor = System.Drawing.Color.White;
-            this.lblCount.Location = new System.Drawing.Point(429, 287);
+            this.lblCount.Location = new System.Drawing.Point(277, 43);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(47, 23);
             this.lblCount.TabIndex = 27;
@@ -167,7 +167,7 @@ namespace CartesAcces2024
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(58, 182);
+            this.label3.Location = new System.Drawing.Point(42, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 24);
             this.label3.TabIndex = 29;
@@ -184,7 +184,7 @@ namespace CartesAcces2024
             "5eme",
             "3eme",
             "test"});
-            this.cbbImprClasse.Location = new System.Drawing.Point(254, 150);
+            this.cbbImprClasse.Location = new System.Drawing.Point(219, 97);
             this.cbbImprClasse.MaximumSize = new System.Drawing.Size(180, 0);
             this.cbbImprClasse.MinimumSize = new System.Drawing.Size(180, 0);
             this.cbbImprClasse.Name = "cbbImprClasse";
@@ -194,7 +194,7 @@ namespace CartesAcces2024
             // 
             // pbPhoto
             // 
-            this.pbPhoto.Location = new System.Drawing.Point(19, 330);
+            this.pbPhoto.Location = new System.Drawing.Point(443, 43);
             this.pbPhoto.Margin = new System.Windows.Forms.Padding(2);
             this.pbPhoto.Name = "pbPhoto";
             this.pbPhoto.Size = new System.Drawing.Size(179, 222);
@@ -206,7 +206,7 @@ namespace CartesAcces2024
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(540, 104);
+            this.label4.Location = new System.Drawing.Point(42, 202);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 20);
             this.label4.TabIndex = 32;
@@ -216,7 +216,7 @@ namespace CartesAcces2024
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(963, 749);
+            this.ClientSize = new System.Drawing.Size(661, 664);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pbPhoto);
             this.Controls.Add(this.cbbImprClasse);
