@@ -50,10 +50,10 @@ namespace CartesAcces2024
             }
             catch (System.Runtime.InteropServices.COMException e)
             {
-                //========================== A TESTER
                 MessageBox.Show("Une erreur s'est produite. L'application vas se fermer.\n" +
                     "Assurez-vous que Microsoft Word est installé sur votre ordinateur!");
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
+                MessageBox.Show(e.Message);
             }
 
         }

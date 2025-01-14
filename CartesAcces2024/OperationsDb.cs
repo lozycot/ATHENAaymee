@@ -371,13 +371,27 @@ namespace CartesAcces2024
             return results;
         }
 
+        /// <summary>
+        /// Récupère un élève de la base de donnée. Renvoie si l'élève n'existe pas.
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <returns></returns>
         public static Eleve GetUnEleve(string nom, string prenom)
         {
             string sql = "SELECT Classe, Nom, Prenom, Niveau FROM Eleve WHERE Nom = \"" + nom + "\" AND Prenom = \"" + prenom + "\";";
-            return GetEleveCommun(sql, false)[0];
+            List<Eleve> listeElve = GetEleveCommun(sql, false);
+            if (listeElve.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return GetEleveCommun(sql, false)[0];
+            }
         }
 
-        
+
         public static List<Eleve> GetEleve()
         {
             string sql = "SELECT Classe, Nom, Prenom, Niveau FROM Eleve";
@@ -606,6 +620,26 @@ namespace CartesAcces2024
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Supprime tout les élèves appartenant à une certaine classe.
+        /// </summary>
+        /// <param name="nomClasse"></param>
+        public static void deleteUneClasse(string nomClasse)
+        {
+            string txt = "DELETE FROM Eleve WHERE Classe = \"" + nomClasse + "\";";
+            InsertUpdateDeleteUnElement(txt);
+        }
+
+        /// <summary>
+        /// Supprime tout les élèves appartenant à un cerains niveau.
+        /// </summary>
+        /// <param name="niveau"></param>
+        public static void deleteUnNiveau(string niveau)
+        {
+            string txt = "DELETE FROM Eleve WHERE Niveau = \"" + niveau + "\";";
+            InsertUpdateDeleteUnElement(txt);
         }
     }
 }

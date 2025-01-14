@@ -246,6 +246,7 @@ namespace CartesAcces2024
                         OperationsDb.SetFolderPath(Globale.cheminImpressionFinal);
 
                         Globale.LblCount = lblCompteur;
+                        Globale.pgbCount = progressBar1_compteur;
 
                         pbPhoto.Visible = false;
                         FichierWord.SauvegardeCarteEnWord(Globale.cheminImpressionFinal, Globale.ListeEleveImpr, pbPhoto, pbCarteArriere);
@@ -270,6 +271,7 @@ namespace CartesAcces2024
                         OperationsDb.SetFolderPath(Globale.cheminImpressionFinal);
 
                         Globale.LblCount = lblCompteur;
+                        Globale.pgbCount = progressBar1_compteur;
 
                         pbPhoto.Visible = false;
                         FichierWord.SauvegardeCarteEnWord(Globale.cheminImpressionFinal, Globale.ListeEleveImpr, pbPhoto, pbCarteArriere);
@@ -326,6 +328,7 @@ namespace CartesAcces2024
                         OperationsDb.SetFolderPath(Globale.cheminImpressionFinal);
 
                         Globale.LblCount = lblCompteur;
+                        Globale.pgbCount = progressBar1_compteur;
 
                         pbPhoto.Visible = false;
                         FichierWord.SauvegardeCarteEnWordA5(Globale.cheminImpressionFinal, Globale.ListeEleveImpr, pbPhoto, pbCarteArriere);
@@ -350,6 +353,7 @@ namespace CartesAcces2024
             btnSelect.Enabled = true;
             btnCancel.Enabled = false;
             lblCompteur.Visible = false;
+            progressBar1_compteur.Visible = false;
             Eleve.PossedeEdt(Globale.ListeEleveImpr);
             try
             {

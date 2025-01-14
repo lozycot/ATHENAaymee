@@ -76,9 +76,13 @@ namespace CartesAcces2024
         /// </summary>
         public static Label LblDate { get; set; }
         /// <summary>
-        /// 
+        ///  Compteur pour suivre la progression des impression dans FichierWord.cs.
         /// </summary>
         public static Label LblCount { get; set; }
+        /// <summary>
+        /// Bar de progression pour suivre la progression des impression dans FichierWord.cs.
+        /// </summary>
+        public static ProgressBar pgbCount { get; set; }
 
         /// <summary>
         /// Utilisé pour frmChargement,

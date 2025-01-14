@@ -212,10 +212,14 @@ namespace CartesAcces2024
             }
 
             Globale.LblCount.Visible = true;
+            Globale.pgbCount.Visible = true;
             Globale.ListeEleveSansPhoto.Clear();
             for (var compt = 1; compt <= listeEleve.Count; compt += 2)
             {
-                Globale.LblCount.Text = compt + "/" + listeEleve.Count + " cartes réalisées";
+                //Globale.LblCount.Text = compt + "/" + listeEleve.Count + " cartes réalisées"; // met à jour le compteur de cartes
+                Globale.LblCount.Text = ((compt * 100) / listeEleve.Count) + "%";
+                Globale.pgbCount.Value = ((compt * 100) / listeEleve.Count); // met à jour la barre de progression
+
 
                 // -- Les élèves sont gérés deux par deux --
 
@@ -252,7 +256,10 @@ namespace CartesAcces2024
                 Photo.VerifPhotoEleve(listeEleve[compt - 1], pbPhoto);
                 Photo.ProportionPhotoMultiple(pbPhoto, pbCarteArriere, listeEleve[compt - 1], chemin);
 
-                Globale.LblCount.Text = compt + 1 + "/" + listeEleve.Count + " cartes réalisées";
+                //Globale.LblCount.Text = compt + 1 + "/" + listeEleve.Count + " cartes réalisées";
+                Globale.LblCount.Text = ((compt * 100) / listeEleve.Count) + "%";
+                Globale.pgbCount.Value = ((compt * 100) / listeEleve.Count); ;
+
 
                 // -- Ajout des deux fichier PNG au nouveau document Word --
                 var shapeCarteArriere1 = fichierWord.ActiveDocument.Shapes.AddPicture(
@@ -325,7 +332,11 @@ namespace CartesAcces2024
 
             // -- Message qui indique que nous sommes arrivé au bout --
             if (Globale.EleveImpr)
+            {
+                Globale.pgbCount.Value = 100;
+                Globale.LblCount.Text = 100 + "%";
                 MessageBox.Show(new Form { TopMost = true }, listeEleve.Count - 1 + " élèves ont été imprimés.");
+            }
             else
                 MessageBox.Show(new Form { TopMost = true }, listeEleve.Count + " élèves ont été imprimés.");
             //FermerWord();
@@ -368,10 +379,14 @@ namespace CartesAcces2024
             fichierWord.ActiveDocument.PageSetup.PaperSize = WdPaperSize.wdPaperA5;
 
             Globale.LblCount.Visible = true;
+            Globale.pgbCount.Visible = true;
             Globale.ListeEleveSansPhoto.Clear();
             for (var compt = 0; compt < listeEleve.Count; compt += 1)
             {
-                Globale.LblCount.Text = compt + "/" + listeEleve.Count + " cartes réalisées";
+                //Globale.LblCount.Text = compt + "/" + listeEleve.Count + " cartes réalisées";
+                Globale.LblCount.Text = ((compt * 100) / listeEleve.Count) + "%";
+                Globale.pgbCount.Value = ((compt * 100) / listeEleve.Count);
+
 
 
                 // -- Carte Face : 1 Eleve --
@@ -400,7 +415,9 @@ namespace CartesAcces2024
                 Photo.ProportionPhotoMultiple(pbPhoto, pbCarteArriere, listeEleve[compt], chemin);
 
 
-                Globale.LblCount.Text = compt + 1 + "/" + listeEleve.Count + " cartes réalisées";
+                //Globale.LblCount.Text = compt + 1 + "/" + listeEleve.Count + " cartes réalisées";
+                Globale.LblCount.Text = ((compt * 100) / listeEleve.Count) + "%";
+                Globale.pgbCount.Value = ((compt * 100) / listeEleve.Count); ;
 
                 // -- Ajout des deux fichier PNG au nouveau document Word --
                 var shapeCarteArriere1 = fichierWord.ActiveDocument.Shapes.AddPicture(
@@ -501,68 +518,80 @@ namespace CartesAcces2024
         public static void SauvegardeCarteProvisoireWord(PictureBox pbCarteArriere, PictureBox pbPhoto,
             PictureBox pbCarteFace, TextBox txtNom, TextBox txtPrenom)
         {
-            //FermerWord();
-            if (pbCarteArriere.Image != null && pbCarteFace.Image != null && pbPhoto.Image != null)
+            try
             {
-                double rLocX = pbPhoto.Location.X * pbCarteArriere.Image.Width / pbCarteArriere.Width;
-                double rLocY = pbPhoto.Location.Y * pbCarteArriere.Image.Height / pbCarteArriere.Height;
-                double rWidth = pbPhoto.Width * pbCarteArriere.Image.Width / pbCarteArriere.Width;
-                double rHeight = pbPhoto.Height * pbCarteArriere.Image.Height / pbCarteArriere.Height;
+                //FermerWord();
+                if (pbCarteArriere.Image != null && pbCarteFace.Image != null && pbPhoto.Image != null)
+                {
+                    double rLocX = pbPhoto.Location.X * pbCarteArriere.Image.Width / pbCarteArriere.Width;
+                    double rLocY = pbPhoto.Location.Y * pbCarteArriere.Image.Height / pbCarteArriere.Height;
+                    double rWidth = pbPhoto.Width * pbCarteArriere.Image.Width / pbCarteArriere.Width;
+                    double rHeight = pbPhoto.Height * pbCarteArriere.Image.Height / pbCarteArriere.Height;
 
-                // -- Rectifications des positions --
-                var realLocX = Convert.ToInt32(Math.Round(rLocX)) - 2;
-                var realLocY = Convert.ToInt32(Math.Round(rLocY)) + 3;
-                var realWidth = Convert.ToInt32(Math.Round(rWidth)) - 1;
-                var realHeight = Convert.ToInt32(Math.Round(rHeight)) - 1;
+                    // -- Rectifications des positions --
+                    var realLocX = Convert.ToInt32(Math.Round(rLocX)) - 2;
+                    var realLocY = Convert.ToInt32(Math.Round(rLocY)) + 3;
+                    var realWidth = Convert.ToInt32(Math.Round(rWidth)) - 1;
+                    var realHeight = Convert.ToInt32(Math.Round(rHeight)) - 1;
 
-                var ObjGraphics = Graphics.FromImage(pbCarteArriere.Image);
-                ObjGraphics.DrawImage(pbPhoto.Image, realLocX, realLocY, realWidth, realHeight);
+                    var ObjGraphics = Graphics.FromImage(pbCarteArriere.Image);
+                    ObjGraphics.DrawImage(pbPhoto.Image, realLocX, realLocY, realWidth, realHeight);
 
-                Edition.CheminImpressionFinal = Edition.CheminImpressionFinal + "\\";
+                    Edition.CheminImpressionFinal = Edition.CheminImpressionFinal + "\\";
 
-                pbCarteArriere.Image.Save(Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "EDT.png",
-                    ImageFormat.Png);
-                pbCarteFace.Image.Save(Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "Carte.png",
-                    ImageFormat.Png);
+                    pbCarteArriere.Image.Save(Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "EDT.png",
+                        ImageFormat.Png);
+                    pbCarteFace.Image.Save(Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "Carte.png",
+                        ImageFormat.Png);
 
-                var WordApp = new Application();
-                WordApp.Documents.Add();
-                WordApp.ActiveDocument.PageSetup.TopMargin = 15;
-                WordApp.ActiveDocument.PageSetup.RightMargin = 15;
-                WordApp.ActiveDocument.PageSetup.LeftMargin = 15;
-                WordApp.ActiveDocument.PageSetup.BottomMargin = 15;
+                    var WordApp = new Application();
+                    WordApp.Documents.Add();
+                    WordApp.ActiveDocument.PageSetup.TopMargin = 15;
+                    WordApp.ActiveDocument.PageSetup.RightMargin = 15;
+                    WordApp.ActiveDocument.PageSetup.LeftMargin = 15;
+                    WordApp.ActiveDocument.PageSetup.BottomMargin = 15;
 
-                var shapeCarte = WordApp.ActiveDocument.Shapes.AddPicture(
-                    Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "Carte.png", Type.Missing,
-                    Type.Missing, Type.Missing);
+                    var shapeCarte = WordApp.ActiveDocument.Shapes.AddPicture(
+                        Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "Carte.png", Type.Missing,
+                        Type.Missing, Type.Missing);
 
-                WordApp.Selection.EndKey();
-                WordApp.Selection.InsertNewPage();
+                    WordApp.Selection.EndKey();
+                    WordApp.Selection.InsertNewPage();
 
-                var shapeEDT = WordApp.ActiveDocument.Shapes.AddPicture(
-                    Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "EDT.png", Type.Missing,
-                    Type.Missing, Type.Missing);
+                    var shapeEDT = WordApp.ActiveDocument.Shapes.AddPicture(
+                        Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "EDT.png", Type.Missing,
+                        Type.Missing, Type.Missing);
 
-                shapeCarte.Top = 0;
-                shapeCarte.Left = 0;
+                    shapeCarte.Top = 0;
+                    shapeCarte.Left = 0;
 
-                shapeEDT.Top = 0;
-                shapeEDT.Height = shapeCarte.Height;
+                    shapeEDT.Top = 0;
+                    shapeEDT.Height = shapeCarte.Height;
 
-                File.Delete(Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "EDT.png");
-                File.Delete(Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "Carte.png");
+                    File.Delete(Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "EDT.png");
+                    File.Delete(Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + "Carte.png");
 
-                WordApp.ActiveDocument.SaveAs(
-                    Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + " Carte.doc", Type.Missing,
-                    Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                    Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-                WordApp.ActiveDocument.Close();
-                WordApp.Quit();
-                Marshal.FinalReleaseComObject(WordApp);
+                    WordApp.ActiveDocument.SaveAs(
+                        Edition.CheminImpressionFinal + txtNom.Text + txtPrenom.Text + " Carte.doc", Type.Missing,
+                        Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                        Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                    WordApp.ActiveDocument.Close();
+                    WordApp.Quit();
+                    Marshal.FinalReleaseComObject(WordApp);
 
-                GC.Collect();
+                    GC.Collect();
+                }
             }
+            catch (System.Runtime.InteropServices.COMException e)
+            {
+                MessageBox.Show("Une erreur s'est produite. \n" +
+                    "Assurez-vous que Microsoft Word est installé sur votre ordinateur!");
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }
+
+
         }
+    
 
         /// <summary>
         /// 
