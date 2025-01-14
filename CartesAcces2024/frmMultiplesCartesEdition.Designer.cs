@@ -181,6 +181,7 @@ namespace CartesAcces2024
             // 
             // tkbTaillePhoto
             // 
+            this.tkbTaillePhoto.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.tkbTaillePhoto.Location = new System.Drawing.Point(100, 58);
             this.tkbTaillePhoto.Margin = new System.Windows.Forms.Padding(4);
             this.tkbTaillePhoto.Maximum = 300;
