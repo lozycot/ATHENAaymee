@@ -67,6 +67,7 @@ namespace CartesAcces2024
             this.label5 = new System.Windows.Forms.Label();
             this.lblCompteur = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.progressBar1_compteur = new System.Windows.Forms.ProgressBar();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -217,16 +218,17 @@ namespace CartesAcces2024
             this.lblCompteur.AutoSize = true;
             this.lblCompteur.Enabled = false;
             this.lblCompteur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompteur.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCompteur.Location = new System.Drawing.Point(213, 35);
+            this.lblCompteur.ForeColor = System.Drawing.Color.White;
+            this.lblCompteur.Location = new System.Drawing.Point(213, 10);
             this.lblCompteur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCompteur.Name = "lblCompteur";
-            this.lblCompteur.Size = new System.Drawing.Size(47, 29);
+            this.lblCompteur.Size = new System.Drawing.Size(50, 29);
             this.lblCompteur.TabIndex = 18;
-            this.lblCompteur.Text = "0/x";
+            this.lblCompteur.Text = "0%";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.progressBar1_compteur);
             this.groupBox2.Controls.Add(this.lblCompteur);
             this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Controls.Add(this.btnSelect);
@@ -239,6 +241,15 @@ namespace CartesAcces2024
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Edition Emploi du Temps";
+            // 
+            // progressBar1_compteur
+            // 
+            this.progressBar1_compteur.Enabled = false;
+            this.progressBar1_compteur.Location = new System.Drawing.Point(212, 42);
+            this.progressBar1_compteur.Name = "progressBar1_compteur";
+            this.progressBar1_compteur.Size = new System.Drawing.Size(225, 23);
+            this.progressBar1_compteur.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1_compteur.TabIndex = 20;
             // 
             // btnCancel
             // 
@@ -287,13 +298,13 @@ namespace CartesAcces2024
             this.rdbA5.Name = "rdbA5";
             this.rdbA5.Size = new System.Drawing.Size(46, 21);
             this.rdbA5.TabIndex = 1;
-            this.rdbA5.TabStop = true;
             this.rdbA5.Text = "A5";
             this.rdbA5.UseVisualStyleBackColor = true;
             // 
             // rdbA4
             // 
             this.rdbA4.AutoSize = true;
+            this.rdbA4.Checked = true;
             this.rdbA4.Location = new System.Drawing.Point(179, 21);
             this.rdbA4.Name = "rdbA4";
             this.rdbA4.Size = new System.Drawing.Size(46, 21);
@@ -353,5 +364,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.RadioButton rdbA5;
         private System.Windows.Forms.RadioButton rdbA4;
         private System.Windows.Forms.Button btnOpenFolder;
+        private System.Windows.Forms.ProgressBar progressBar1_compteur;
     }
 }
