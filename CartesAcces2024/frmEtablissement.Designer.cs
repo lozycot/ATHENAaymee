@@ -108,6 +108,7 @@ namespace CartesAcces2024
             this.pnlChampsPersonnalises = new System.Windows.Forms.Panel();
             this.btnAjouterChamp = new System.Windows.Forms.Button();
             this.txtNomDuNouveauChamp = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.gb6eme.SuspendLayout();
             this.gb5eme.SuspendLayout();
             this.gb4eme.SuspendLayout();
@@ -118,7 +119,7 @@ namespace CartesAcces2024
             // 
             // gb6eme
             // 
-            this.gb6eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.gb6eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.gb6eme.Controls.Add(this.rdbBleu6);
             this.gb6eme.Controls.Add(this.rdbVert6);
             this.gb6eme.Controls.Add(this.rdbJaune6);
@@ -189,7 +190,7 @@ namespace CartesAcces2024
             // 
             // gb5eme
             // 
-            this.gb5eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.gb5eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.gb5eme.Controls.Add(this.rdbBleu5);
             this.gb5eme.Controls.Add(this.rdbVert5);
             this.gb5eme.Controls.Add(this.rdbJaune5);
@@ -260,7 +261,7 @@ namespace CartesAcces2024
             // 
             // gb4eme
             // 
-            this.gb4eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.gb4eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.gb4eme.Controls.Add(this.rdbBleu4);
             this.gb4eme.Controls.Add(this.rdbVert4);
             this.gb4eme.Controls.Add(this.rdbJaune4);
@@ -330,7 +331,7 @@ namespace CartesAcces2024
             // 
             // gb3eme
             // 
-            this.gb3eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.gb3eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.gb3eme.Controls.Add(this.rdbBleu3);
             this.gb3eme.Controls.Add(this.rdbVert3);
             this.gb3eme.Controls.Add(this.rdbJaune3);
@@ -400,14 +401,14 @@ namespace CartesAcces2024
             // 
             // btnValider
             // 
-            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValider.Location = new System.Drawing.Point(1114, 697);
+            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnValider.Location = new System.Drawing.Point(1197, 708);
             this.btnValider.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(330, 63);
+            this.btnValider.Size = new System.Drawing.Size(247, 52);
             this.btnValider.TabIndex = 5;
             this.btnValider.Text = "Valider l\'import";
             this.btnValider.UseVisualStyleBackColor = false;
@@ -745,20 +746,20 @@ namespace CartesAcces2024
             this.pnlChampsPersonnalises.AutoScroll = true;
             this.pnlChampsPersonnalises.Location = new System.Drawing.Point(592, 375);
             this.pnlChampsPersonnalises.Name = "pnlChampsPersonnalises";
-            this.pnlChampsPersonnalises.Size = new System.Drawing.Size(852, 225);
+            this.pnlChampsPersonnalises.Size = new System.Drawing.Size(852, 249);
             this.pnlChampsPersonnalises.TabIndex = 31;
             // 
             // btnAjouterChamp
             // 
-            this.btnAjouterChamp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAjouterChamp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAjouterChamp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAjouterChamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAjouterChamp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAjouterChamp.Location = new System.Drawing.Point(592, 610);
+            this.btnAjouterChamp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnAjouterChamp.Location = new System.Drawing.Point(1019, 630);
             this.btnAjouterChamp.Name = "btnAjouterChamp";
-            this.btnAjouterChamp.Size = new System.Drawing.Size(205, 38);
+            this.btnAjouterChamp.Size = new System.Drawing.Size(101, 38);
             this.btnAjouterChamp.TabIndex = 32;
-            this.btnAjouterChamp.Text = "ajouter un champ";
+            this.btnAjouterChamp.Text = "ajouter";
             this.btnAjouterChamp.UseVisualStyleBackColor = false;
             this.btnAjouterChamp.Click += new System.EventHandler(this.btnAjouterChamp_Click);
             // 
@@ -767,17 +768,30 @@ namespace CartesAcces2024
             this.txtNomDuNouveauChamp.BackColor = System.Drawing.Color.White;
             this.txtNomDuNouveauChamp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomDuNouveauChamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomDuNouveauChamp.Location = new System.Drawing.Point(818, 624);
+            this.txtNomDuNouveauChamp.Location = new System.Drawing.Point(728, 639);
             this.txtNomDuNouveauChamp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNomDuNouveauChamp.Name = "txtNomDuNouveauChamp";
             this.txtNomDuNouveauChamp.Size = new System.Drawing.Size(284, 24);
             this.txtNomDuNouveauChamp.TabIndex = 33;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(589, 641);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 18);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Ajouter un champ :";
+            // 
             // frmEtablissement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1457, 772);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(1481, 797);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNomDuNouveauChamp);
             this.Controls.Add(this.btnAjouterChamp);
             this.Controls.Add(this.pnlChampsPersonnalises);
@@ -892,5 +906,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.Panel pnlChampsPersonnalises;
         private System.Windows.Forms.Button btnAjouterChamp;
         private System.Windows.Forms.TextBox txtNomDuNouveauChamp;
+        private System.Windows.Forms.Label label4;
     }
 }

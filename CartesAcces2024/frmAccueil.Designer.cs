@@ -85,7 +85,7 @@ namespace CartesAcces2024
             this.btnChangeMdp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChangeMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangeMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnChangeMdp.Location = new System.Drawing.Point(8, 617);
+            this.btnChangeMdp.Location = new System.Drawing.Point(8, 641);
             this.btnChangeMdp.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangeMdp.Name = "btnChangeMdp";
             this.btnChangeMdp.Size = new System.Drawing.Size(247, 52);
@@ -211,10 +211,10 @@ namespace CartesAcces2024
             this.panel1.Controls.Add(this.btnPlanche);
             this.panel1.Controls.Add(this.btnParametres);
             this.panel1.Controls.Add(this.btnAfficheListeEleve);
-            this.panel1.Location = new System.Drawing.Point(2, 318);
+            this.panel1.Location = new System.Drawing.Point(2, 294);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(266, 733);
+            this.panel1.Size = new System.Drawing.Size(266, 757);
             this.panel1.TabIndex = 31;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -224,7 +224,7 @@ namespace CartesAcces2024
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(77, 584);
+            this.label4.Location = new System.Drawing.Point(77, 608);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 29);
@@ -239,7 +239,7 @@ namespace CartesAcces2024
             this.btnAPropos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAPropos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAPropos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnAPropos.Location = new System.Drawing.Point(8, 677);
+            this.btnAPropos.Location = new System.Drawing.Point(8, 701);
             this.btnAPropos.Margin = new System.Windows.Forms.Padding(4);
             this.btnAPropos.Name = "btnAPropos";
             this.btnAPropos.Size = new System.Drawing.Size(247, 52);

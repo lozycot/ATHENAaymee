@@ -60,7 +60,7 @@ namespace CartesAcces2024
             if (Globale.Actuelle != null)
                 Globale.Actuelle.Close();
             Globale.Actuelle = new frmImport();
-            Text = "ATHENA - IMPORTATION";
+            Text = "Athena - Importation";
             Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
 
@@ -90,7 +90,7 @@ namespace CartesAcces2024
             if (Globale.Actuelle != null)
                 Globale.Actuelle.Close();
             Globale.Actuelle = new frmImport();
-            Text = "ATHENA - Accueil";
+            Text = "Athena - Accueil";
             Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
 
@@ -100,7 +100,7 @@ namespace CartesAcces2024
             if (Globale.Actuelle != null)
                 Globale.Actuelle.Close();
             Globale.Actuelle = new frmCarteProvisoire();
-            Text = "ATHENA - CARTE PROVISOIRE";
+            Text = "Athena - Carte Provisoire";
             Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
 
@@ -109,7 +109,7 @@ namespace CartesAcces2024
             if (Globale.Actuelle != null)
                 Globale.Actuelle.Close();
             Globale.Actuelle = new frmImport();
-            Text = "ATHENA - IMPORTATION";
+            Text = "Athena - Importation";
             Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
 
@@ -123,7 +123,7 @@ namespace CartesAcces2024
             if (Globale.Actuelle != null)
                 Globale.Actuelle.Close();
             Globale.Actuelle = new frmCartesParListe();
-            Text = "ATHENA - CARTE PAR LISTE";
+            Text = "Athena - Carte Par Liste";
             Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
 
@@ -132,7 +132,7 @@ namespace CartesAcces2024
             if (Globale.Actuelle != null)
                 Globale.Actuelle.Close();
             Globale.Actuelle = new frmCarteParClasseNiveau();
-            Text = "ATHENA - CARTE PAR LISTE";
+            Text = "Athena - Carte Par Liste";
             Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
 
@@ -149,7 +149,7 @@ namespace CartesAcces2024
             if (Globale.Actuelle != null)
                 Globale.Actuelle.Close();
             Globale.Actuelle = new frmPlanches();
-            Text = "ATHENA - TROMBINOSCOPES PHOTOS";
+            Text = "Athena - Trombinoscopes Photos";
             Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
 
@@ -158,7 +158,7 @@ namespace CartesAcces2024
             if (Globale.Actuelle != null)
                 Globale.Actuelle.Close();
             Globale.Actuelle = new frmPlanches(frmPlanches.mode.classesNouvelleAnnee);
-            Text = "ATHENA - NOUVELLE ANNEE";
+            Text = "Athena - Nouvelle Annee";
             Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
 
@@ -172,7 +172,7 @@ namespace CartesAcces2024
             if (Globale.Actuelle != null)
                 Globale.Actuelle.Close();
             Globale.Actuelle = new frmAPropos();
-            Text = "ATHENA - A PROPOS";
+            Text = "Athena - A Propos";
             Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
         }
 
