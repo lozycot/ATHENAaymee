@@ -41,6 +41,15 @@ namespace CartesAcces2024
         public const string profilSegpa = "Segpa";
         public const string profilUlis = "Ulis";
 
+
+
+        //------------GENERIQUE------------
+
+
+        /// <summary>
+        /// Methode générique utilisé lors d'un INSERT, UPDATE ou DELETE sur la base de données.
+        /// </summary>
+        /// <param name="txt"></param>
         private static void InsertUpdateDeleteUnElement(string txt)
         {
             using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
@@ -64,125 +73,81 @@ namespace CartesAcces2024
             }
         }
 
-        public static void InsertUnEleveDansBdd(Eleve el)
-        {
-            string[] Eleve = el.ClasseEleve.Split(' ');
-            string txt = "INSERT INTO Eleve (Nom, Prenom, Classe, Niveau) VALUES (\"" + el.NomEleve + "\", \"" + el.PrenomEleve +
-                "\", \"" + Eleve[0] + "\", \"" + el.NiveauEleve + "eme\");";
-            InsertUpdateDeleteUnElement(txt);
-        }
 
-        public static void DeleteUnEleve(Eleve el)
-        {
-            string[] Eleve = el.ClasseEleve.Split(' ');
-            string txt = "DELETE FROM Eleve WHERE Nom = \"" + el.NomEleve + "\" AND Prenom = \"" + el.PrenomEleve +
-                "\" AND Classe = \"" + Eleve[0] + "\";";
-            InsertUpdateDeleteUnElement(txt);
-        }
 
-        public static void DeleteUnEleveNouvelleAnneeDansBdd(Eleve el)
-        {
-            string[] Eleve = el.ClasseEleve.Split(' ');
-            string txt = "DELETE FROM EleveNouvelleAnnee WHERE Nom = \"" + el.NomEleve + "\" AND Prenom = \"" + el.PrenomEleve +
-                "\" AND Classe = \"" + Eleve[0] + "\";";
-            InsertUpdateDeleteUnElement(txt);
-        }
-
-        public static void DeleteUneClasseNouvelleAnneeDansBdd(string classe)
-        {
-            string[] ClasseList = classe.Split(' ');
-            string txt = "DELETE FROM ClasseNouvelleAnnee WHERE Classe = \"" + ClasseList[0] + "\";";
-            InsertUpdateDeleteUnElement(txt);
-        }
-
-        public static void InsertUnEleveNouvelleAnneeDansBdd(Eleve el)
-        {
-            string profil = "";
-            switch (el.ProfilEleve)
-            {
-                case Eleve.profils.Allophone:
-                    profil = "Allophone";
-                    break;
-                case Eleve.profils.Bilingue:
-                    profil = "Bilingue";
-                    break;
-                case Eleve.profils.Segpa:
-                    profil = "Segpa";
-                    break;
-                case Eleve.profils.Ulis:
-                    profil = "Ulis";
-                    break;
-                default:
-                    profil = "Defaut";
-                    break;
-            }
-            string[] EleveList = el.ClasseEleve.Split(' ');
-            string txt = "INSERT INTO EleveNouvelleAnnee (Nom, Prenom, Classe, Niveau, Profil) VALUES (\"" + el.NomEleve + "\", \"" + el.PrenomEleve +
-                "\", \"" + EleveList[0] + "\", \"" + el.NiveauEleve + "eme\", \"" + profil + "\");";
-            InsertUpdateDeleteUnElement(txt);
-        }
 
         /// <summary>
-        /// Met à jour la classe d'un élève de la nouvelle année
+        /// Fonction commune pour toutes les fonctions de lecture élève.
         /// </summary>
-        /// <param name="el"></param>
-        public static void UpdateClasseUnEleveNouvelleAnneeDansBdd(Eleve el, string nouvelleClasse)
+        /// <param name="commande"></param>
+        /// <param name="lireProfil">Permet de savoir si on veut lire le profil de l'élève ou pas.</param>
+        /// <returns></returns>
+        private static List<Eleve> GetEleveCommun(string commande, bool lireProfil)
         {
-            string[] Eleve = el.ClasseEleve.Split(' ');
-            string txt = "UPDATE EleveNouvelleAnnee SET Classe = \"" + nouvelleClasse + "\" WHERE Classe = \"" + Eleve[0] +
-                "\" AND Nom = \"" + el.NomEleve + "\" AND Prenom = \"" + el.PrenomEleve + "\";";
-            InsertUpdateDeleteUnElement(txt);
-        }
+            List<Eleve> results = new List<Eleve> { };
 
-        public static void InsertUneClasseNouvelleAnneeDansBdd(string classe)
-        {
-            string[] ClasseList = classe.Split(' ');
-            string txt = "INSERT INTO ClasseNouvelleAnnee (Classe) VALUES (\"" + ClasseList[0] + "\");";
-            InsertUpdateDeleteUnElement(txt);
-        }
-
-        public static void InsertElevesDansBdd(BackgroundWorker worker)
-        {
-            int i = 0;
-            int l = Globale.ListeEleve.Count;
-            foreach (Eleve el in Globale.ListeEleve)
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
             {
-                // Si l'élève n'existe pas dans la bdd
-                if (!ConnectDb.DbConnect.DbData("Eleve WHERE Eleve.Nom = \"" + el.NomEleve + "\" AND " +
-                    "Eleve.Prenom = \"" + el.PrenomEleve + "\" AND Eleve.Classe = \"" + el.ClasseEleve + "\";"))
+                connection.Open();
                 {
-                    InsertUnEleveDansBdd(el);
+                    using (SQLiteCommand command = new SQLiteCommand(commande, connection))
+                    {
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Eleve el = new Eleve();
+                                el.ClasseEleve = reader.GetString(0);
+                                el.NomEleve = reader.GetString(1);
+                                el.PrenomEleve = reader.GetString(2);
+                                el.NiveauEleve = reader.GetString(3);
+
+                                if (lireProfil)
+                                {
+                                    switch (reader.GetString(4))
+                                    {
+                                        case profilAllophone:
+                                            el.ProfilEleve = Eleve.profils.Allophone;
+                                            break;
+                                        case profilBilingue:
+                                            el.ProfilEleve = Eleve.profils.Bilingue;
+                                            break;
+                                        case profilSegpa:
+                                            el.ProfilEleve = Eleve.profils.Segpa;
+                                            break;
+                                        case profilUlis:
+                                            el.ProfilEleve = Eleve.profils.Ulis;
+                                            break;
+                                        default:
+                                            el.ProfilEleve = Eleve.profils.Defaut;
+                                            break;
+                                    }
+                                }
+
+                                results.Add(el);
+                            }
+                        }
+                    }
                 }
-
-                double p = (double)i / (double)l * 100.0;
-                worker.ReportProgress((int)p);
-                i++;
             }
-            //chg.Close();
-            //MessageBox.Show("Données enregistrées");
-        }
 
-        public static void InsertElevesNouvelleAnneeDansBdd(BackgroundWorker worker)
-        {
-            int i = 0;
-            int l = Globale.ListeEleve.Count;
-            foreach (Eleve el in Globale.ListeEleve)
+            // Ranger par ordre alphabétique
+            results.Sort(delegate (Eleve x, Eleve y)
             {
-                string[] Elevelist = el.ClasseEleve.Split(' ');
-                // Si l'élève n'existe pas dans la bdd
-                if (!ConnectDb.DbConnect.DbData("EleveNouvelleAnnee WHERE EleveNouvelleAnnee.Nom = \"" + el.NomEleve + "\" AND " +
-                    "EleveNouvelleAnnee.Prenom = \"" + el.PrenomEleve + "\" AND EleveNouvelleAnnee.Classe = \"" + Elevelist[0] + "\";"))
-                {
-                    InsertUnEleveNouvelleAnneeDansBdd(el);
-                }
-
-                double p = (double)i / (double)l * 100.0;
-                worker.ReportProgress((int)p);
-                i++;
-            }
-            //chg.Close();
-            //MessageBox.Show("Données enregistrées");
+                int comparaison = String.Compare(x.NomEleve, y.NomEleve, false);
+                if (comparaison != 0)
+                    return comparaison;
+                else
+                    return String.Compare(x.PrenomEleve, y.PrenomEleve, false);
+            });
+            return results;
         }
+
+
+
+
+
+
 
         public static void ImportCsv()
         {
@@ -204,6 +169,9 @@ namespace CartesAcces2024
                     MessageBox.Show("Opération terminée !");
             }
         }
+
+
+
 
         public static List<Color> GetColors()
         {
@@ -261,6 +229,8 @@ namespace CartesAcces2024
         }
 
 
+
+
         public static List<string> GetEtablissement()
         {
             string etabName = "SELECT nomEtablissement FROM Etablissement";
@@ -304,191 +274,28 @@ namespace CartesAcces2024
             return results;
         }
 
-        /// <summary>
-        /// Fonction commune pour toutes les fonctions de lecture élève.
-        /// </summary>
-        /// <param name="commande"></param>
-        /// <param name="lireProfil">Permet de savoir si on veut lire le profil de l'élève ou pas.</param>
-        /// <returns></returns>
-        private static List<Eleve> GetEleveCommun(string commande, bool lireProfil)
-        {
-            List<Eleve> results = new List<Eleve> { };
 
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
-            {
-                connection.Open();
-                {
-                    using (SQLiteCommand command = new SQLiteCommand(commande, connection))
-                    {
-                        using (SQLiteDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                Eleve el = new Eleve();
-                                el.ClasseEleve = reader.GetString(0);
-                                el.NomEleve = reader.GetString(1);
-                                el.PrenomEleve = reader.GetString(2);
-                                el.NiveauEleve = reader.GetString(3);
+        
 
-                                if(lireProfil)
-                                {
-                                    switch(reader.GetString(4))
-                                    {
-                                        case profilAllophone:
-                                            el.ProfilEleve = Eleve.profils.Allophone;
-                                            break;
-                                        case profilBilingue:
-                                            el.ProfilEleve = Eleve.profils.Bilingue;
-                                            break;
-                                        case profilSegpa:
-                                            el.ProfilEleve = Eleve.profils.Segpa;
-                                            break;
-                                        case profilUlis:
-                                            el.ProfilEleve = Eleve.profils.Ulis;
-                                            break;
-                                        default:
-                                            el.ProfilEleve = Eleve.profils.Defaut;
-                                            break;
-                                    }
-                                }
+        
 
-                                results.Add(el);
-                            }
-                        }
-                    }
-                }
-            }
+        
 
-            // Ranger par ordre alphabétique
-            results.Sort(delegate (Eleve x, Eleve y)
-            {
-                int comparaison = String.Compare(x.NomEleve, y.NomEleve, false);
-                if (comparaison != 0)
-                    return comparaison;
-                else
-                    return String.Compare(x.PrenomEleve, y.PrenomEleve, false);
-            });
-            return results;
-        }
+
+
+
 
         /// <summary>
-        /// Récupère un élève de la base de donnée. Renvoie si l'élève n'existe pas.
+        /// Supprime les éléments de la table Eleve et Connection de la base de donnée. Met à jour les éléments de la table DatesImport à 'Aucune Importation' dans la base de données.
         /// </summary>
-        /// <param name="nom"></param>
-        /// <param name="prenom"></param>
-        /// <returns></returns>
-        public static Eleve GetUnEleve(string nom, string prenom)
+        public static void mdpOublié()
         {
-            string sql = "SELECT Classe, Nom, Prenom, Niveau FROM Eleve WHERE Nom = \"" + nom + "\" AND Prenom = \"" + prenom + "\";";
-            List<Eleve> listeElve = GetEleveCommun(sql, false);
-            if (listeElve.Count == 0)
-            {
-                return null;
-            }
-            else
-            {
-                return GetEleveCommun(sql, false)[0];
-            }
+            string sql = "DELETE FROM Eleve; DELETE FROM Connection; UPDATE DatesImport SET ImportPhoto = 'Aucune Importation'; UPDATE DatesImport SET ImportEleve = 'Aucune Importation'; UPDATE DatesImport SET ImportEdt = 'Aucune Importation';";
+            InsertUpdateDeleteUnElement(sql);
         }
 
 
-        public static List<Eleve> GetEleve()
-        {
-            string sql = "SELECT Classe, Nom, Prenom, Niveau FROM Eleve";
-            return GetEleveCommun(sql, false);
-        }
-
-        public static List<Eleve> GetEleve(string niveau)
-        {
-            string sql = "SELECT Classe, Nom, Prenom, Niveau FROM Eleve WHERE Classe LIKE '%" + niveau + "%'";
-            return GetEleveCommun(sql, false);
-        }
-
-        public static List<Eleve> GetEleveNouvelleAnnee()
-        {
-            string sql = "SELECT Classe, Nom, Prenom, Niveau, Profil FROM EleveNouvelleAnnee";
-            return GetEleveCommun(sql, true);
-        }
-
-        public static List<Eleve> GetEleveNouvelleAnnee(string niveau)
-        {
-            string sql = "SELECT Classe, Nom, Prenom, Niveau, Profil FROM EleveNouvelleAnnee WHERE Classe LIKE '%" + niveau + "%'";
-            return GetEleveCommun(sql, true);
-        }
-
-        public static List<Eleve> GetEleveNouvelleAnnee(Classe classe)
-        {
-            string sql = "SELECT Classe, Nom, Prenom, Niveau, Profil FROM EleveNouvelleAnnee WHERE Classe = '" + classe.Classes + "'";
-            return GetEleveCommun(sql, true);
-        }
-
-        public static List<string> GetClasses()
-        {
-            string sql = "SELECT Classe FROM Eleve";
-            List<string> results = new List<string> { };
-            HashSet<string> seenClasses = new HashSet<string>();
-
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
-            {
-                connection.Open();
-                {
-                    using (SQLiteCommand command = new SQLiteCommand(sql, connection))
-                    {
-                        using (SQLiteDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                
-                                string classe = reader.GetString(0);
-                                if (!seenClasses.Contains(classe))
-                                {
-                                    if (classe != null)
-                                    {
-                                        results.Add(classe);
-                                        seenClasses.Add(classe);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return results;
-        }
-
-        public static List<string> GetClassesNouvelleAnnee()
-        {
-            string sql = "SELECT Classe FROM ClasseNouvelleAnnee";
-            List<string> results = new List<string> { };
-            HashSet<string> seenClasses = new HashSet<string>();
-
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
-            {
-                connection.Open();
-                {
-                    using (SQLiteCommand command = new SQLiteCommand(sql, connection))
-                    {
-                        using (SQLiteDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-
-                                string classe = reader.GetString(0);
-                                if (!seenClasses.Contains(classe))
-                                {
-                                    if (classe != null)
-                                    {
-                                        results.Add(classe);
-                                        seenClasses.Add(classe);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return results;
-        }
+        //--------------------DATES IMPORTS--------------------
 
         public static void ImportDates(string import, string date)
         {
@@ -507,13 +314,13 @@ namespace CartesAcces2024
             }
             InsertUpdateDeleteUnElement(sql);
         }
-        
+
 
         public static string GetDates(string get)
         {
             string date = "";
             string sql = "";
-            if(get == "DateEDT")
+            if (get == "DateEDT")
             {
                 sql = "SELECT ImportEdt FROM DatesImport";
             }
@@ -551,18 +358,24 @@ namespace CartesAcces2024
             }
         }
 
-        public static void mdpOublié()
-        {
-            string sql = "DELETE FROM Eleve; DELETE FROM Connection; UPDATE DatesImport SET ImportPhoto = 'Aucune Importation'; UPDATE DatesImport SET ImportEleve = 'Aucune Importation'; UPDATE DatesImport SET ImportEdt = 'Aucune Importation';";
-            InsertUpdateDeleteUnElement(sql);
-        }
 
+
+        //----------------FOLDER PATH----------------
+
+        /// <summary>
+        /// Met à jour la table FolderPath de la base de données.
+        /// </summary>
+        /// <param name="path"></param>
         public static void SetFolderPath(string path)
         {
             string sql = "DELETE FROM FolderPath; INSERT INTO FolderPath (Path) VALUES (\"" + path + "\");";
             InsertUpdateDeleteUnElement(sql);
         }
 
+        /// <summary>
+        /// Vérifie si il existe un élément dans la table FolderPath de la base de données.
+        /// </summary>
+        /// <returns></returns>
         public static bool FolderPathExists()
         {
             string sql = "SELECT Path FROM FolderPath";
@@ -593,6 +406,10 @@ namespace CartesAcces2024
             }
         }
 
+        /// <summary>
+        /// Renvoie le premier éléments de la table FolderPath. Si la table est vide, renvoie 'empty'.
+        /// </summary>
+        /// <returns></returns>
         public static string GetFolderPath()
         {
             string sql = "SELECT Path FROM FolderPath";
@@ -622,6 +439,120 @@ namespace CartesAcces2024
             }
         }
 
+
+
+
+
+        //--------------------ELEVE----------------
+
+        /// <summary>
+        /// Insère un élève dans la base de données.
+        /// </summary>
+        /// <param name="el"></param>
+        public static void InsertUnEleveDansBdd(Eleve el)
+        {
+            string[] Eleve = el.ClasseEleve.Split(' ');
+            string txt = "INSERT INTO Eleve (Nom, Prenom, Classe, Niveau) VALUES (\"" + el.NomEleve + "\", \"" + el.PrenomEleve +
+                "\", \"" + Eleve[0] + "\", \"" + el.NiveauEleve + "eme\");";
+            InsertUpdateDeleteUnElement(txt);
+        }
+
+
+
+
+        /// <summary>
+        /// Supprime un élève de la base de données.
+        /// </summary>
+        /// <param name="el"></param>
+        public static void DeleteUnEleve(Eleve el)
+        {
+            string[] Eleve = el.ClasseEleve.Split(' ');
+            string txt = "DELETE FROM Eleve WHERE Nom = \"" + el.NomEleve + "\" AND Prenom = \"" + el.PrenomEleve +
+                "\" AND Classe = \"" + Eleve[0] + "\";";
+            InsertUpdateDeleteUnElement(txt);
+        }
+
+
+
+
+        /// <summary>
+        /// Insère les élèves de Globale.ListeEleve dans la base de données.
+        /// </summary>
+        /// <param name="worker"></param>
+        public static void InsertElevesDansBdd(BackgroundWorker worker)
+        {
+            int i = 0;
+            int l = Globale.ListeEleve.Count;
+            foreach (Eleve el in Globale.ListeEleve)
+            {
+                // Si l'élève n'existe pas dans la bdd
+                if (!ConnectDb.DbConnect.DbData("Eleve WHERE Eleve.Nom = \"" + el.NomEleve + "\" AND " +
+                    "Eleve.Prenom = \"" + el.PrenomEleve + "\" AND Eleve.Classe = \"" + el.ClasseEleve + "\";"))
+                {
+                    InsertUnEleveDansBdd(el);
+                }
+
+                double p = (double)i / (double)l * 100.0;
+                worker.ReportProgress((int)p);
+                i++;
+            }
+            //chg.Close();
+            //MessageBox.Show("Données enregistrées");
+        }
+
+
+
+
+        /// <summary>
+        /// Récupère un élève de la base de donnée. Return null si l'élève n'existe pas.
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <returns></returns>
+        public static Eleve GetUnEleve(string nom, string prenom)
+        {
+            string sql = "SELECT Classe, Nom, Prenom, Niveau FROM Eleve WHERE Nom = \"" + nom + "\" AND Prenom = \"" + prenom + "\";";
+            List<Eleve> listeElve = GetEleveCommun(sql, false);
+            if (listeElve.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return GetEleveCommun(sql, false)[0];
+            }
+        }
+
+
+
+
+        /// <summary>
+        /// Récupère tout les élèves de la base de données.
+        /// </summary>
+        /// <returns></returns>
+        public static List<Eleve> GetEleve()
+        {
+            string sql = "SELECT Classe, Nom, Prenom, Niveau FROM Eleve";
+            return GetEleveCommun(sql, false);
+        }
+
+
+
+
+        /// <summary>
+        /// Récupères tout les élèves d'un certain niveau de la base de données.
+        /// </summary>
+        /// <param name="niveau"></param>
+        /// <returns></returns>
+        public static List<Eleve> GetEleve(string niveau)
+        {
+            string sql = "SELECT Classe, Nom, Prenom, Niveau FROM Eleve WHERE Classe LIKE '%" + niveau + "%'";
+            return GetEleveCommun(sql, false);
+        }
+
+
+
+
         /// <summary>
         /// Supprime tout les élèves appartenant à une certaine classe.
         /// </summary>
@@ -632,6 +563,9 @@ namespace CartesAcces2024
             InsertUpdateDeleteUnElement(txt);
         }
 
+
+
+
         /// <summary>
         /// Supprime tout les élèves appartenant à un cerains niveau.
         /// </summary>
@@ -640,6 +574,262 @@ namespace CartesAcces2024
         {
             string txt = "DELETE FROM Eleve WHERE Niveau = \"" + niveau + "\";";
             InsertUpdateDeleteUnElement(txt);
+        }
+
+
+
+
+
+
+        //-------------CLASSES ELEVE NOUVELLE ANNEE--------------
+
+
+        /// <summary>
+        /// Récupère toute les classes des élèves de la base de donnée.
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetClasses()
+        {
+            string sql = "SELECT Classe FROM Eleve";
+            List<string> results = new List<string> { };
+            HashSet<string> seenClasses = new HashSet<string>();
+
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+            {
+                connection.Open();
+                {
+                    using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                    {
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                string classe = reader.GetString(0);
+                                if (!seenClasses.Contains(classe))
+                                {
+                                    if (classe != null)
+                                    {
+                                        results.Add(classe);
+                                        seenClasses.Add(classe);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return results;
+        }
+
+
+
+
+
+
+        //--------------------ELEVE NOUVELLE ANNEE----------------
+
+        /// <summary>
+        /// Supprime un élève nouvelle année de la base de données.
+        /// </summary>
+        /// <param name="el"></param>
+        public static void DeleteUnEleveNouvelleAnneeDansBdd(Eleve el)
+        {
+            string[] Eleve = el.ClasseEleve.Split(' ');
+            string txt = "DELETE FROM EleveNouvelleAnnee WHERE Nom = \"" + el.NomEleve + "\" AND Prenom = \"" + el.PrenomEleve +
+                "\" AND Classe = \"" + Eleve[0] + "\";";
+            InsertUpdateDeleteUnElement(txt);
+        }
+
+
+
+        /// <summary>
+        /// Met à jour la classe d'un élève de la nouvelle année
+        /// </summary>
+        /// <param name="el"></param>
+        public static void UpdateClasseUnEleveNouvelleAnneeDansBdd(Eleve el, string nouvelleClasse)
+        {
+            string[] Eleve = el.ClasseEleve.Split(' ');
+            string txt = "UPDATE EleveNouvelleAnnee SET Classe = \"" + nouvelleClasse + "\" WHERE Classe = \"" + Eleve[0] +
+                "\" AND Nom = \"" + el.NomEleve + "\" AND Prenom = \"" + el.PrenomEleve + "\";";
+            InsertUpdateDeleteUnElement(txt);
+        }
+
+
+
+
+        /// <summary>
+        /// Insère un élève nouvelle année dans la base de données.
+        /// </summary>
+        /// <param name="el"></param>
+        public static void InsertUnEleveNouvelleAnneeDansBdd(Eleve el)
+        {
+            string profil = "";
+            switch (el.ProfilEleve)
+            {
+                case Eleve.profils.Allophone:
+                    profil = "Allophone";
+                    break;
+                case Eleve.profils.Bilingue:
+                    profil = "Bilingue";
+                    break;
+                case Eleve.profils.Segpa:
+                    profil = "Segpa";
+                    break;
+                case Eleve.profils.Ulis:
+                    profil = "Ulis";
+                    break;
+                default:
+                    profil = "Defaut";
+                    break;
+            }
+            string[] EleveList = el.ClasseEleve.Split(' ');
+            string txt = "INSERT INTO EleveNouvelleAnnee (Nom, Prenom, Classe, Niveau, Profil) VALUES (\"" + el.NomEleve + "\", \"" + el.PrenomEleve +
+                "\", \"" + EleveList[0] + "\", \"" + el.NiveauEleve + "eme\", \"" + profil + "\");";
+            InsertUpdateDeleteUnElement(txt);
+        }
+
+
+
+
+        /// <summary>
+        /// Insère les élèves de Globale.ListeElve dans la table EleveNouvelleAnnee de la base de données.
+        /// </summary>
+        /// <param name="worker"></param>
+        public static void InsertElevesNouvelleAnneeDansBdd(BackgroundWorker worker)
+        {
+            int i = 0;
+            int l = Globale.ListeEleve.Count;
+            foreach (Eleve el in Globale.ListeEleve)
+            {
+                string[] Elevelist = el.ClasseEleve.Split(' ');
+                // Si l'élève n'existe pas dans la bdd
+                if (!ConnectDb.DbConnect.DbData("EleveNouvelleAnnee WHERE EleveNouvelleAnnee.Nom = \"" + el.NomEleve + "\" AND " +
+                    "EleveNouvelleAnnee.Prenom = \"" + el.PrenomEleve + "\" AND EleveNouvelleAnnee.Classe = \"" + Elevelist[0] + "\";"))
+                {
+                    InsertUnEleveNouvelleAnneeDansBdd(el);
+                }
+
+                double p = (double)i / (double)l * 100.0;
+                worker.ReportProgress((int)p);
+                i++;
+            }
+            //chg.Close();
+            //MessageBox.Show("Données enregistrées");
+        }
+
+
+
+
+        /// <summary>
+        /// Récupère tout les élèves de la nouvelle année de la base de données.
+        /// </summary>
+        /// <returns></returns>
+        public static List<Eleve> GetEleveNouvelleAnnee()
+        {
+            string sql = "SELECT Classe, Nom, Prenom, Niveau, Profil FROM EleveNouvelleAnnee";
+            return GetEleveCommun(sql, true);
+        }
+
+
+
+
+        /// <summary>
+        /// Récupères tout les élèves de la nouvelle année d'un certain niveau de la base de données.
+        /// </summary>
+        /// <param name="niveau"></param>
+        /// <returns></returns>
+        public static List<Eleve> GetEleveNouvelleAnnee(string niveau)
+        {
+            string sql = "SELECT Classe, Nom, Prenom, Niveau, Profil FROM EleveNouvelleAnnee WHERE Classe LIKE '%" + niveau + "%'";
+            return GetEleveCommun(sql, true);
+        }
+
+
+
+
+        /// <summary>
+        /// Récupères tout les élèves de la nouvelle année d'une certaine classe de la base de données.
+        /// </summary>
+        /// <param name="niveau"></param>
+        /// <returns></returns>
+        public static List<Eleve> GetEleveNouvelleAnnee(Classe classe)
+        {
+            string sql = "SELECT Classe, Nom, Prenom, Niveau, Profil FROM EleveNouvelleAnnee WHERE Classe = '" + classe.Classes + "'";
+            return GetEleveCommun(sql, true);
+        }
+
+
+
+
+
+
+
+        // ----------------CLASSE NOUVELLE ANNEE--------------
+
+        /// <summary>
+        /// Supprime une classe de la nouvelle année de la base de données. Ne supprime pas les élèves de cette classe nouvelle année.
+        /// </summary>
+        /// <param name="classe"></param>
+        public static void DeleteUneClasseNouvelleAnneeDansBdd(string classe)
+        {
+            string[] ClasseList = classe.Split(' ');
+            string txt = "DELETE FROM ClasseNouvelleAnnee WHERE Classe = \"" + ClasseList[0] + "\";";
+            InsertUpdateDeleteUnElement(txt);
+        }
+
+
+
+
+        /// <summary>
+        /// Insère une classe nouvelle année dans la base de données.
+        /// </summary>
+        /// <param name="classe"></param>
+        public static void InsertUneClasseNouvelleAnneeDansBdd(string classe)
+        {
+            string[] ClasseList = classe.Split(' ');
+            string txt = "INSERT INTO ClasseNouvelleAnnee (Classe) VALUES (\"" + ClasseList[0] + "\");";
+            InsertUpdateDeleteUnElement(txt);
+        }
+
+
+
+        /// <summary>
+        /// Récupère toute les classes de la nouvelle année de la base de donnée.
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetClassesNouvelleAnnee()
+        {
+            string sql = "SELECT Classe FROM ClasseNouvelleAnnee";
+            List<string> results = new List<string> { };
+            HashSet<string> seenClasses = new HashSet<string>();
+
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+            {
+                connection.Open();
+                {
+                    using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                    {
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                string classe = reader.GetString(0);
+                                if (!seenClasses.Contains(classe))
+                                {
+                                    if (classe != null)
+                                    {
+                                        results.Add(classe);
+                                        seenClasses.Add(classe);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return results;
         }
     }
 }
