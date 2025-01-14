@@ -212,10 +212,14 @@ namespace CartesAcces2024
             }
 
             Globale.LblCount.Visible = true;
+            Globale.pgbCount.Visible = true;
             Globale.ListeEleveSansPhoto.Clear();
             for (var compt = 1; compt <= listeEleve.Count; compt += 2)
             {
-                Globale.LblCount.Text = compt + "/" + listeEleve.Count + " cartes réalisées";
+                //Globale.LblCount.Text = compt + "/" + listeEleve.Count + " cartes réalisées"; // met à jour le compteur de cartes
+                Globale.LblCount.Text = ((compt * 100) / listeEleve.Count) + "%";
+                Globale.pgbCount.Value = ((compt * 100) / listeEleve.Count); // met à jour la barre de progression
+
 
                 // -- Les élèves sont gérés deux par deux --
 
@@ -252,7 +256,10 @@ namespace CartesAcces2024
                 Photo.VerifPhotoEleve(listeEleve[compt - 1], pbPhoto);
                 Photo.ProportionPhotoMultiple(pbPhoto, pbCarteArriere, listeEleve[compt - 1], chemin);
 
-                Globale.LblCount.Text = compt + 1 + "/" + listeEleve.Count + " cartes réalisées";
+                //Globale.LblCount.Text = compt + 1 + "/" + listeEleve.Count + " cartes réalisées";
+                Globale.LblCount.Text = ((compt * 100) / listeEleve.Count) + "%";
+                Globale.pgbCount.Value = ((compt * 100) / listeEleve.Count); ;
+
 
                 // -- Ajout des deux fichier PNG au nouveau document Word --
                 var shapeCarteArriere1 = fichierWord.ActiveDocument.Shapes.AddPicture(
@@ -325,7 +332,11 @@ namespace CartesAcces2024
 
             // -- Message qui indique que nous sommes arrivé au bout --
             if (Globale.EleveImpr)
+            {
+                Globale.pgbCount.Value = 100;
+                Globale.LblCount.Text = 100 + "%";
                 MessageBox.Show(new Form { TopMost = true }, listeEleve.Count - 1 + " élèves ont été imprimés.");
+            }
             else
                 MessageBox.Show(new Form { TopMost = true }, listeEleve.Count + " élèves ont été imprimés.");
             //FermerWord();
@@ -368,10 +379,14 @@ namespace CartesAcces2024
             fichierWord.ActiveDocument.PageSetup.PaperSize = WdPaperSize.wdPaperA5;
 
             Globale.LblCount.Visible = true;
+            Globale.pgbCount.Visible = true;
             Globale.ListeEleveSansPhoto.Clear();
             for (var compt = 0; compt < listeEleve.Count; compt += 1)
             {
-                Globale.LblCount.Text = compt + "/" + listeEleve.Count + " cartes réalisées";
+                //Globale.LblCount.Text = compt + "/" + listeEleve.Count + " cartes réalisées";
+                Globale.LblCount.Text = ((compt * 100) / listeEleve.Count) + "%";
+                Globale.pgbCount.Value = ((compt * 100) / listeEleve.Count);
+
 
 
                 // -- Carte Face : 1 Eleve --
@@ -400,7 +415,9 @@ namespace CartesAcces2024
                 Photo.ProportionPhotoMultiple(pbPhoto, pbCarteArriere, listeEleve[compt], chemin);
 
 
-                Globale.LblCount.Text = compt + 1 + "/" + listeEleve.Count + " cartes réalisées";
+                //Globale.LblCount.Text = compt + 1 + "/" + listeEleve.Count + " cartes réalisées";
+                Globale.LblCount.Text = ((compt * 100) / listeEleve.Count) + "%";
+                Globale.pgbCount.Value = ((compt * 100) / listeEleve.Count); ;
 
                 // -- Ajout des deux fichier PNG au nouveau document Word --
                 var shapeCarteArriere1 = fichierWord.ActiveDocument.Shapes.AddPicture(
