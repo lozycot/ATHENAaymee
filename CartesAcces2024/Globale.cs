@@ -31,10 +31,7 @@ namespace CartesAcces2024
 {
     public static class Globale
     {
-        /// <summary>
-        ///  
-        /// </summary>
-        /// 
+        
         public static string outputPath { get; set; } = "";
         public static bool wokerFinished { get; set; }
         public static string cheminImpressionFinal { get; set; }
