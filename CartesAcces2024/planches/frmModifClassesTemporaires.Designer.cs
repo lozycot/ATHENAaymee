@@ -52,6 +52,7 @@ namespace CartesAcces2024
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModifClassesTemporaires));
             this.btnCsvNouvelleAnnee = new System.Windows.Forms.Button();
             this.btnAddClasseTemp = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -70,9 +71,9 @@ namespace CartesAcces2024
             // 
             // btnCsvNouvelleAnnee
             // 
-            this.btnCsvNouvelleAnnee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnCsvNouvelleAnnee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnCsvNouvelleAnnee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCsvNouvelleAnnee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnCsvNouvelleAnnee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnCsvNouvelleAnnee.Location = new System.Drawing.Point(687, 705);
             this.btnCsvNouvelleAnnee.Margin = new System.Windows.Forms.Padding(2);
             this.btnCsvNouvelleAnnee.Name = "btnCsvNouvelleAnnee";
@@ -84,9 +85,9 @@ namespace CartesAcces2024
             // 
             // btnAddClasseTemp
             // 
-            this.btnAddClasseTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAddClasseTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAddClasseTemp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddClasseTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAddClasseTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnAddClasseTemp.Location = new System.Drawing.Point(4, 19);
             this.btnAddClasseTemp.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddClasseTemp.Name = "btnAddClasseTemp";
@@ -113,10 +114,10 @@ namespace CartesAcces2024
             // 
             // btnDelClasseTemp
             // 
-            this.btnDelClasseTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnDelClasseTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnDelClasseTemp.Enabled = false;
             this.btnDelClasseTemp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelClasseTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnDelClasseTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnDelClasseTemp.Location = new System.Drawing.Point(4, 85);
             this.btnDelClasseTemp.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelClasseTemp.Name = "btnDelClasseTemp";
@@ -128,7 +129,7 @@ namespace CartesAcces2024
             // 
             // listBoxClassesTemp
             // 
-            this.listBoxClassesTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.listBoxClassesTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.listBoxClassesTemp.ForeColor = System.Drawing.Color.White;
             this.listBoxClassesTemp.FormattingEnabled = true;
             this.listBoxClassesTemp.ItemHeight = 16;
@@ -181,10 +182,10 @@ namespace CartesAcces2024
             // 
             // btnAddElTemp
             // 
-            this.btnAddElTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAddElTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAddElTemp.Enabled = false;
             this.btnAddElTemp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddElTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAddElTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnAddElTemp.Location = new System.Drawing.Point(4, 19);
             this.btnAddElTemp.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddElTemp.Name = "btnAddElTemp";
@@ -196,7 +197,7 @@ namespace CartesAcces2024
             // 
             // listBoxElTemp
             // 
-            this.listBoxElTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.listBoxElTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.listBoxElTemp.ForeColor = System.Drawing.Color.White;
             this.listBoxElTemp.FormattingEnabled = true;
             this.listBoxElTemp.ItemHeight = 16;
@@ -211,10 +212,10 @@ namespace CartesAcces2024
             // 
             // btnDelElTemp
             // 
-            this.btnDelElTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnDelElTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnDelElTemp.Enabled = false;
             this.btnDelElTemp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelElTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnDelElTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnDelElTemp.Location = new System.Drawing.Point(4, 85);
             this.btnDelElTemp.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelElTemp.Name = "btnDelElTemp";
@@ -226,9 +227,9 @@ namespace CartesAcces2024
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.button1.Location = new System.Drawing.Point(687, 59);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
@@ -241,12 +242,13 @@ namespace CartesAcces2024
             // frmModifClassesTemporaires
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(900, 777);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(953, 817);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCsvNouvelleAnnee);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmModifClassesTemporaires";
             this.Text = "Athena - Modifier les classes nouvelle année";

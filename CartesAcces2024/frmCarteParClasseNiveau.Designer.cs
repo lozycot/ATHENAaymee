@@ -87,9 +87,9 @@ namespace CartesAcces2024
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(42, 149);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 20);
+            this.label2.Size = new System.Drawing.Size(167, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Imprimer par niveau";
+            this.label2.Text = "Imprimer par niveau :";
             // 
             // cbbImprSection
             // 
@@ -111,11 +111,11 @@ namespace CartesAcces2024
             // 
             // btnValiderImpr
             // 
-            this.btnValiderImpr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnValiderImpr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnValiderImpr.Enabled = false;
             this.btnValiderImpr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValiderImpr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.btnValiderImpr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnValiderImpr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnValiderImpr.Location = new System.Drawing.Point(422, 562);
             this.btnValiderImpr.MaximumSize = new System.Drawing.Size(200, 65);
             this.btnValiderImpr.MinimumSize = new System.Drawing.Size(200, 65);
@@ -128,7 +128,7 @@ namespace CartesAcces2024
             // 
             // lsbListeEleve
             // 
-            this.lsbListeEleve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.lsbListeEleve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.lsbListeEleve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lsbListeEleve.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lsbListeEleve.ForeColor = System.Drawing.Color.White;
@@ -167,7 +167,7 @@ namespace CartesAcces2024
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(42, 125);
+            this.label3.Location = new System.Drawing.Point(55, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 24);
             this.label3.TabIndex = 29;
@@ -194,6 +194,7 @@ namespace CartesAcces2024
             // 
             // pbPhoto
             // 
+            this.pbPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.pbPhoto.Location = new System.Drawing.Point(443, 43);
             this.pbPhoto.Margin = new System.Windows.Forms.Padding(2);
             this.pbPhoto.Name = "pbPhoto";
@@ -215,7 +216,7 @@ namespace CartesAcces2024
             // frmCarteParClasseNiveau
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(661, 664);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pbPhoto);
@@ -231,7 +232,7 @@ namespace CartesAcces2024
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCarteParClasseNiveau";
-            this.Text = "frmCreationCarteParClasse";
+            this.Text = "Athena - Carte par classe / niveau";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCarteParClasseNiveau_FormClosed);
             this.Load += new System.EventHandler(this.frmCarteParClasseNiveau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
