@@ -62,7 +62,7 @@ namespace CartesAcces2024
             // 
             // progressBar1
             // 
-            this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.progressBar1.Location = new System.Drawing.Point(12, 66);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(515, 41);
@@ -73,7 +73,7 @@ namespace CartesAcces2024
             // 
             this.lblChargement.AutoSize = true;
             this.lblChargement.ForeColor = System.Drawing.Color.White;
-            this.lblChargement.Location = new System.Drawing.Point(12, 9);
+            this.lblChargement.Location = new System.Drawing.Point(12, 12);
             this.lblChargement.Name = "lblChargement";
             this.lblChargement.Size = new System.Drawing.Size(97, 17);
             this.lblChargement.TabIndex = 1;
@@ -99,7 +99,7 @@ namespace CartesAcces2024
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(540, 123);
             this.ControlBox = false;
             this.Controls.Add(this.lblPourcentage);

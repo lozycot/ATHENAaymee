@@ -60,10 +60,10 @@ namespace ATHENA
             // 
             // btnToutSelectionner
             // 
-            this.btnToutSelectionner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btnToutSelectionner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnToutSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnToutSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnToutSelectionner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnToutSelectionner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnToutSelectionner.Location = new System.Drawing.Point(632, 342);
             this.btnToutSelectionner.Name = "btnToutSelectionner";
             this.btnToutSelectionner.Size = new System.Drawing.Size(374, 40);
@@ -88,10 +88,10 @@ namespace ATHENA
             // 
             // btnReinitialiser
             // 
-            this.btnReinitialiser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btnReinitialiser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnReinitialiser.Location = new System.Drawing.Point(632, 296);
             this.btnReinitialiser.Name = "btnReinitialiser";
             this.btnReinitialiser.Size = new System.Drawing.Size(374, 40);
@@ -102,6 +102,7 @@ namespace ATHENA
             // 
             // gbpElements
             // 
+            this.gbpElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.gbpElements.Controls.Add(this.clbElements);
             this.gbpElements.ForeColor = System.Drawing.Color.White;
             this.gbpElements.Location = new System.Drawing.Point(41, 169);
@@ -113,7 +114,7 @@ namespace ATHENA
             // 
             // clbElements
             // 
-            this.clbElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.clbElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.clbElements.CheckOnClick = true;
             this.clbElements.ForeColor = System.Drawing.Color.White;
             this.clbElements.FormattingEnabled = true;
@@ -124,6 +125,7 @@ namespace ATHENA
             // 
             // gbpFiltres
             // 
+            this.gbpFiltres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.gbpFiltres.Controls.Add(this.rdbNiveaux);
             this.gbpFiltres.Controls.Add(this.rdbClasses);
             this.gbpFiltres.Controls.Add(this.rdbEleve);
@@ -174,7 +176,7 @@ namespace ATHENA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1044, 512);
             this.Controls.Add(this.btnSupprimerLesDonneesSelectionnees);
             this.Controls.Add(this.btnToutSelectionner);

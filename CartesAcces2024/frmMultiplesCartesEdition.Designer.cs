@@ -122,6 +122,7 @@ namespace CartesAcces2024
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox3.Controls.Add(this.btnOpenFolder);
             this.groupBox3.Controls.Add(this.labelEnCoursValidation);
             this.groupBox3.Controls.Add(this.btnValiderImpr);
@@ -140,9 +141,9 @@ namespace CartesAcces2024
             // 
             // btnOpenFolder
             // 
-            this.btnOpenFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnOpenFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnOpenFolder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOpenFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnOpenFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnOpenFolder.Location = new System.Drawing.Point(390, 225);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(141, 67);
@@ -167,9 +168,9 @@ namespace CartesAcces2024
             // 
             // btnValiderImpr
             // 
-            this.btnValiderImpr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnValiderImpr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnValiderImpr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnValiderImpr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnValiderImpr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnValiderImpr.Location = new System.Drawing.Point(538, 225);
             this.btnValiderImpr.Margin = new System.Windows.Forms.Padding(4);
             this.btnValiderImpr.Name = "btnValiderImpr";
@@ -229,6 +230,7 @@ namespace CartesAcces2024
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox2.Controls.Add(this.progressBar1_compteur);
             this.groupBox2.Controls.Add(this.lblCompteur);
             this.groupBox2.Controls.Add(this.btnCancel);
@@ -254,9 +256,9 @@ namespace CartesAcces2024
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnCancel.Location = new System.Drawing.Point(450, 23);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
@@ -268,9 +270,9 @@ namespace CartesAcces2024
             // 
             // btnSelect
             // 
-            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnSelect.Location = new System.Drawing.Point(8, 23);
             this.btnSelect.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelect.Name = "btnSelect";
@@ -282,6 +284,7 @@ namespace CartesAcces2024
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox1.Controls.Add(this.rdbA5);
             this.groupBox1.Controls.Add(this.rdbA4);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -317,7 +320,7 @@ namespace CartesAcces2024
             // FrmMultiplesCartesEdition
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1446, 492);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlEdtPhoto);
@@ -327,7 +330,7 @@ namespace CartesAcces2024
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmMultiplesCartesEdition";
-            this.Text = "ATHENA - Création des fichier a imprimer";
+            this.Text = "Athena - Création des fichier a imprimer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMultipleCartesEdition_FormClosed);
             this.Load += new System.EventHandler(this.frmMultiplesCartesEdition_Load);
             this.pnlEdtPhoto.ResumeLayout(false);
