@@ -406,6 +406,12 @@ namespace CartesAcces2024
                 this.nbChampsPersonnalises++;
             }
         }
+
+        private void btnReinitialiser_Click(object sender, EventArgs e)
+        {
+            pnlChampsPersonnalises.Controls.Clear();
+            nbChampsPersonnalises = 0;
+        }
     }
 }
 
