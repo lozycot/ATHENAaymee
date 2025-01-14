@@ -113,7 +113,9 @@ namespace ATHENA
             // 
             // clbElements
             // 
+            this.clbElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.clbElements.CheckOnClick = true;
+            this.clbElements.ForeColor = System.Drawing.Color.White;
             this.clbElements.FormattingEnabled = true;
             this.clbElements.Location = new System.Drawing.Point(6, 21);
             this.clbElements.Name = "clbElements";
@@ -136,7 +138,7 @@ namespace ATHENA
             // rdbNiveaux
             // 
             this.rdbNiveaux.AutoSize = true;
-            this.rdbNiveaux.Location = new System.Drawing.Point(37, 58);
+            this.rdbNiveaux.Location = new System.Drawing.Point(102, 55);
             this.rdbNiveaux.Name = "rdbNiveaux";
             this.rdbNiveaux.Size = new System.Drawing.Size(79, 21);
             this.rdbNiveaux.TabIndex = 2;
@@ -147,7 +149,7 @@ namespace ATHENA
             // rdbClasses
             // 
             this.rdbClasses.AutoSize = true;
-            this.rdbClasses.Location = new System.Drawing.Point(167, 58);
+            this.rdbClasses.Location = new System.Drawing.Point(252, 55);
             this.rdbClasses.Name = "rdbClasses";
             this.rdbClasses.Size = new System.Drawing.Size(78, 21);
             this.rdbClasses.TabIndex = 1;
@@ -159,7 +161,7 @@ namespace ATHENA
             // 
             this.rdbEleve.AutoSize = true;
             this.rdbEleve.Checked = true;
-            this.rdbEleve.Location = new System.Drawing.Point(295, 58);
+            this.rdbEleve.Location = new System.Drawing.Point(400, 55);
             this.rdbEleve.Name = "rdbEleve";
             this.rdbEleve.Size = new System.Drawing.Size(71, 21);
             this.rdbEleve.TabIndex = 0;

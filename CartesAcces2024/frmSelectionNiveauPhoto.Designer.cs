@@ -83,6 +83,7 @@ namespace CartesAcces2024
             // 
             // gpbClasse
             // 
+            this.gpbClasse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.gpbClasse.Controls.Add(this.rdb3eme);
             this.gpbClasse.Controls.Add(this.rdb4eme);
             this.gpbClasse.Controls.Add(this.rdb5eme);
@@ -139,6 +140,7 @@ namespace CartesAcces2024
             // 
             // gpdChoixImage
             // 
+            this.gpdChoixImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.gpdChoixImage.Controls.Add(this.rdbDossier);
             this.gpdChoixImage.Controls.Add(this.rdbImage);
             this.gpdChoixImage.ForeColor = System.Drawing.Color.White;
