@@ -61,7 +61,6 @@ namespace CartesAcces2024
             this.lblTitre = new System.Windows.Forms.Label();
             this.cbClasse = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.numZoom = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.panelBdd = new System.Windows.Forms.Panel();
@@ -80,15 +79,16 @@ namespace CartesAcces2024
             this.cbFormat = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbProfils = new System.Windows.Forms.CheckBox();
+            this.tkbZoom = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pbDocument)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numZoom)).BeginInit();
             this.panelBdd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tkbZoom)).BeginInit();
             this.SuspendLayout();
             // 
             // pbDocument
             // 
-            this.pbDocument.BackColor = System.Drawing.Color.White;
+            this.pbDocument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.pbDocument.Location = new System.Drawing.Point(2, 2);
             this.pbDocument.Margin = new System.Windows.Forms.Padding(2);
             this.pbDocument.Name = "pbDocument";
@@ -99,10 +99,10 @@ namespace CartesAcces2024
             // 
             // btnGenererVide
             // 
-            this.btnGenererVide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnGenererVide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnGenererVide.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGenererVide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnGenererVide.Location = new System.Drawing.Point(48, 657);
+            this.btnGenererVide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnGenererVide.Location = new System.Drawing.Point(372, 660);
             this.btnGenererVide.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenererVide.Name = "btnGenererVide";
             this.btnGenererVide.Size = new System.Drawing.Size(346, 32);
@@ -113,10 +113,10 @@ namespace CartesAcces2024
             // 
             // btnTrombi
             // 
-            this.btnTrombi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnTrombi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnTrombi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTrombi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnTrombi.Location = new System.Drawing.Point(48, 708);
+            this.btnTrombi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnTrombi.Location = new System.Drawing.Point(372, 711);
             this.btnTrombi.Margin = new System.Windows.Forms.Padding(2);
             this.btnTrombi.Name = "btnTrombi";
             this.btnTrombi.Size = new System.Drawing.Size(346, 32);
@@ -129,7 +129,7 @@ namespace CartesAcces2024
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.ForeColor = System.Drawing.Color.White;
-            this.lblTitre.Location = new System.Drawing.Point(46, 51);
+            this.lblTitre.Location = new System.Drawing.Point(369, 32);
             this.lblTitre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(37, 17);
@@ -140,7 +140,7 @@ namespace CartesAcces2024
             // 
             this.cbClasse.Enabled = false;
             this.cbClasse.FormattingEnabled = true;
-            this.cbClasse.Location = new System.Drawing.Point(147, 49);
+            this.cbClasse.Location = new System.Drawing.Point(410, 28);
             this.cbClasse.Margin = new System.Windows.Forms.Padding(2);
             this.cbClasse.Name = "cbClasse";
             this.cbClasse.Size = new System.Drawing.Size(269, 24);
@@ -152,41 +152,17 @@ namespace CartesAcces2024
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pbDocument);
-            this.panel1.Location = new System.Drawing.Point(48, 88);
+            this.panel1.Location = new System.Drawing.Point(372, 91);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(657, 502);
             this.panel1.TabIndex = 15;
             // 
-            // numZoom
-            // 
-            this.numZoom.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numZoom.Location = new System.Drawing.Point(601, 49);
-            this.numZoom.Margin = new System.Windows.Forms.Padding(2);
-            this.numZoom.Minimum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.numZoom.Name = "numZoom";
-            this.numZoom.Size = new System.Drawing.Size(90, 22);
-            this.numZoom.TabIndex = 16;
-            this.numZoom.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.numZoom.ValueChanged += new System.EventHandler(this.numZoom_ValueChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(498, 50);
+            this.label3.Location = new System.Drawing.Point(704, 32);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 17);
@@ -195,11 +171,11 @@ namespace CartesAcces2024
             // 
             // btnEnregistrer
             // 
-            this.btnEnregistrer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnEnregistrer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnEnregistrer.Enabled = false;
             this.btnEnregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEnregistrer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnEnregistrer.Location = new System.Drawing.Point(439, 657);
+            this.btnEnregistrer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnEnregistrer.Location = new System.Drawing.Point(763, 660);
             this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(266, 32);
@@ -210,7 +186,7 @@ namespace CartesAcces2024
             // 
             // panelBdd
             // 
-            this.panelBdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.panelBdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.panelBdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBdd.Controls.Add(this.btnGererClassesTemp);
             this.panelBdd.Controls.Add(this.btnToutAjouter);
@@ -221,17 +197,17 @@ namespace CartesAcces2024
             this.panelBdd.Controls.Add(this.label1);
             this.panelBdd.Controls.Add(this.listBoxSel);
             this.panelBdd.Controls.Add(this.listBoxNonSel);
-            this.panelBdd.Location = new System.Drawing.Point(732, 91);
+            this.panelBdd.Location = new System.Drawing.Point(41, 58);
             this.panelBdd.Margin = new System.Windows.Forms.Padding(2);
             this.panelBdd.Name = "panelBdd";
-            this.panelBdd.Size = new System.Drawing.Size(309, 649);
+            this.panelBdd.Size = new System.Drawing.Size(309, 685);
             this.panelBdd.TabIndex = 19;
             // 
             // btnGererClassesTemp
             // 
-            this.btnGererClassesTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnGererClassesTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnGererClassesTemp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGererClassesTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnGererClassesTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnGererClassesTemp.Location = new System.Drawing.Point(30, 529);
             this.btnGererClassesTemp.Margin = new System.Windows.Forms.Padding(2);
             this.btnGererClassesTemp.Name = "btnGererClassesTemp";
@@ -243,9 +219,9 @@ namespace CartesAcces2024
             // 
             // btnToutAjouter
             // 
-            this.btnToutAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnToutAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnToutAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnToutAjouter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnToutAjouter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnToutAjouter.Location = new System.Drawing.Point(161, 479);
             this.btnToutAjouter.Margin = new System.Windows.Forms.Padding(2);
             this.btnToutAjouter.Name = "btnToutAjouter";
@@ -257,9 +233,9 @@ namespace CartesAcces2024
             // 
             // btnToutRetirer
             // 
-            this.btnToutRetirer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnToutRetirer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnToutRetirer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnToutRetirer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnToutRetirer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnToutRetirer.Location = new System.Drawing.Point(30, 479);
             this.btnToutRetirer.Margin = new System.Windows.Forms.Padding(2);
             this.btnToutRetirer.Name = "btnToutRetirer";
@@ -271,9 +247,9 @@ namespace CartesAcces2024
             // 
             // btnRetirer
             // 
-            this.btnRetirer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnRetirer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnRetirer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRetirer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnRetirer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnRetirer.Location = new System.Drawing.Point(30, 428);
             this.btnRetirer.Margin = new System.Windows.Forms.Padding(2);
             this.btnRetirer.Name = "btnRetirer";
@@ -285,9 +261,9 @@ namespace CartesAcces2024
             // 
             // btnAjouter
             // 
-            this.btnAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAjouter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAjouter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnAjouter.Location = new System.Drawing.Point(161, 428);
             this.btnAjouter.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjouter.Name = "btnAjouter";
@@ -322,7 +298,7 @@ namespace CartesAcces2024
             // 
             // listBoxSel
             // 
-            this.listBoxSel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.listBoxSel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.listBoxSel.ForeColor = System.Drawing.Color.White;
             this.listBoxSel.FormattingEnabled = true;
             this.listBoxSel.ItemHeight = 16;
@@ -336,7 +312,7 @@ namespace CartesAcces2024
             // 
             // listBoxNonSel
             // 
-            this.listBoxNonSel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.listBoxNonSel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.listBoxNonSel.ForeColor = System.Drawing.Color.White;
             this.listBoxNonSel.FormattingEnabled = true;
             this.listBoxNonSel.ItemHeight = 16;
@@ -353,7 +329,7 @@ namespace CartesAcces2024
             this.cbSource.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.cbSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSource.FormattingEnabled = true;
-            this.cbSource.Location = new System.Drawing.Point(732, 54);
+            this.cbSource.Location = new System.Drawing.Point(40, 26);
             this.cbSource.Margin = new System.Windows.Forms.Padding(2);
             this.cbSource.Name = "cbSource";
             this.cbSource.Size = new System.Drawing.Size(309, 28);
@@ -365,7 +341,7 @@ namespace CartesAcces2024
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(730, 37);
+            this.label4.Location = new System.Drawing.Point(38, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 17);
@@ -381,7 +357,7 @@ namespace CartesAcces2024
             // 
             this.cbFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFormat.FormattingEnabled = true;
-            this.cbFormat.Location = new System.Drawing.Point(199, 612);
+            this.cbFormat.Location = new System.Drawing.Point(523, 615);
             this.cbFormat.Margin = new System.Windows.Forms.Padding(2);
             this.cbFormat.Name = "cbFormat";
             this.cbFormat.Size = new System.Drawing.Size(61, 28);
@@ -392,7 +368,7 @@ namespace CartesAcces2024
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(49, 617);
+            this.label5.Location = new System.Drawing.Point(373, 620);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 17);
@@ -403,7 +379,7 @@ namespace CartesAcces2024
             // 
             this.cbProfils.AutoSize = true;
             this.cbProfils.ForeColor = System.Drawing.Color.White;
-            this.cbProfils.Location = new System.Drawing.Point(287, 617);
+            this.cbProfils.Location = new System.Drawing.Point(611, 620);
             this.cbProfils.Margin = new System.Windows.Forms.Padding(2);
             this.cbProfils.Name = "cbProfils";
             this.cbProfils.Size = new System.Drawing.Size(413, 21);
@@ -411,11 +387,27 @@ namespace CartesAcces2024
             this.cbProfils.Text = "Colorier différemment les noms en fonction des profils élèves";
             this.cbProfils.UseVisualStyleBackColor = true;
             // 
+            // tkbZoom
+            // 
+            this.tkbZoom.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.tkbZoom.Location = new System.Drawing.Point(782, 30);
+            this.tkbZoom.Margin = new System.Windows.Forms.Padding(4);
+            this.tkbZoom.Maximum = 100;
+            this.tkbZoom.Minimum = 30;
+            this.tkbZoom.Name = "tkbZoom";
+            this.tkbZoom.Size = new System.Drawing.Size(247, 56);
+            this.tkbZoom.TabIndex = 25;
+            this.tkbZoom.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.tkbZoom.UseWaitCursor = true;
+            this.tkbZoom.Value = 50;
+            this.tkbZoom.Scroll += new System.EventHandler(this.tkbZoom_Scroll);
+            // 
             // frmPlanches
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1052, 760);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(1074, 779);
+            this.Controls.Add(this.tkbZoom);
             this.Controls.Add(this.cbProfils);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbFormat);
@@ -423,22 +415,22 @@ namespace CartesAcces2024
             this.Controls.Add(this.cbSource);
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.numZoom);
             this.Controls.Add(this.cbClasse);
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.btnTrombi);
             this.Controls.Add(this.btnGenererVide);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelBdd);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPlanches";
             this.Text = "Athena - Creation de planches";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPlanches_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pbDocument)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numZoom)).EndInit();
             this.panelBdd.ResumeLayout(false);
             this.panelBdd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tkbZoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,7 +444,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.ComboBox cbClasse;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.NumericUpDown numZoom;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.Panel panelBdd;
@@ -471,5 +462,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.ComboBox cbFormat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbProfils;
+        private System.Windows.Forms.TrackBar tkbZoom;
     }
 }

@@ -29,6 +29,7 @@ namespace CartesAcces2024
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOptAvancees));
             this.btnModifMdp = new System.Windows.Forms.Button();
             this.btnRepartir = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -37,10 +38,10 @@ namespace CartesAcces2024
             // 
             // btnModifMdp
             // 
-            this.btnModifMdp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btnModifMdp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnModifMdp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModifMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnModifMdp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnModifMdp.Location = new System.Drawing.Point(52, 52);
             this.btnModifMdp.Name = "btnModifMdp";
             this.btnModifMdp.Size = new System.Drawing.Size(359, 75);
@@ -51,10 +52,10 @@ namespace CartesAcces2024
             // 
             // btnRepartir
             // 
-            this.btnRepartir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btnRepartir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnRepartir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRepartir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRepartir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnRepartir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnRepartir.Location = new System.Drawing.Point(52, 133);
             this.btnRepartir.Name = "btnRepartir";
             this.btnRepartir.Size = new System.Drawing.Size(359, 75);
@@ -65,24 +66,24 @@ namespace CartesAcces2024
             // 
             // btnDel
             // 
-            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnDel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnDel.Location = new System.Drawing.Point(52, 340);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(359, 75);
             this.btnDel.TabIndex = 2;
-            this.btnDel.Text = "🗑 Supprimer toutes les données";
+            this.btnDel.Text = "🗑 Suppression de données";
             this.btnDel.UseVisualStyleBackColor = false;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnDossier
             // 
-            this.btnDossier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btnDossier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnDossier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDossier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDossier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnDossier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnDossier.Location = new System.Drawing.Point(52, 214);
             this.btnDossier.Name = "btnDossier";
             this.btnDossier.Size = new System.Drawing.Size(359, 75);
@@ -95,14 +96,15 @@ namespace CartesAcces2024
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(425, 429);
             this.Controls.Add(this.btnDossier);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnRepartir);
             this.Controls.Add(this.btnModifMdp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmOptAvancees";
-            this.Text = "frmOptAvancees";
+            this.Text = "Athena - Options avancees";
             this.ResumeLayout(false);
 
         }

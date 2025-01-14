@@ -75,13 +75,13 @@ namespace CartesAcces2024
             // 
             // btnEtab
             // 
-            this.btnEtab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnEtab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnEtab.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEtab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEtab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnEtab.Location = new System.Drawing.Point(52, 52);
+            this.btnEtab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnEtab.Location = new System.Drawing.Point(47, 49);
             this.btnEtab.Name = "btnEtab";
-            this.btnEtab.Size = new System.Drawing.Size(511, 69);
+            this.btnEtab.Size = new System.Drawing.Size(500, 80);
             this.btnEtab.TabIndex = 0;
             this.btnEtab.Text = "🏫 Ajouter les informations sur l\'etablissement et changement des couleurs de la " +
     "carte d\'accès\r\n";
@@ -92,13 +92,13 @@ namespace CartesAcces2024
             // 
             // btnEdt
             // 
-            this.btnEdt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnEdt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnEdt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnEdt.Location = new System.Drawing.Point(52, 249);
+            this.btnEdt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnEdt.Location = new System.Drawing.Point(47, 236);
             this.btnEdt.Name = "btnEdt";
-            this.btnEdt.Size = new System.Drawing.Size(511, 56);
+            this.btnEdt.Size = new System.Drawing.Size(500, 55);
             this.btnEdt.TabIndex = 2;
             this.btnEdt.Text = "📆 Importer des &emplois du temps (PDF)\r\n";
             this.toolTipPdf.SetToolTip(this.btnEdt, "Importer des emplois du temps élèves au format PDF pour récupérer leurs noms, pré" +
@@ -108,13 +108,13 @@ namespace CartesAcces2024
             // 
             // btnFaceCartes
             // 
-            this.btnFaceCartes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnFaceCartes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnFaceCartes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFaceCartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFaceCartes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnFaceCartes.Location = new System.Drawing.Point(52, 127);
+            this.btnFaceCartes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnFaceCartes.Location = new System.Drawing.Point(47, 135);
             this.btnFaceCartes.Name = "btnFaceCartes";
-            this.btnFaceCartes.Size = new System.Drawing.Size(511, 41);
+            this.btnFaceCartes.Size = new System.Drawing.Size(500, 55);
             this.btnFaceCartes.TabIndex = 4;
             this.btnFaceCartes.Text = "💳 Importer des faces pour les cartes";
             this.toolTipFaces.SetToolTip(this.btnFaceCartes, "Importer les images à imprimer sur les faces des cartes.");
@@ -123,13 +123,13 @@ namespace CartesAcces2024
             // 
             // btnPhotos
             // 
-            this.btnPhotos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnPhotos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnPhotos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhotos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnPhotos.Location = new System.Drawing.Point(52, 311);
+            this.btnPhotos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnPhotos.Location = new System.Drawing.Point(47, 297);
             this.btnPhotos.Name = "btnPhotos";
-            this.btnPhotos.Size = new System.Drawing.Size(511, 57);
+            this.btnPhotos.Size = new System.Drawing.Size(500, 55);
             this.btnPhotos.TabIndex = 3;
             this.btnPhotos.Text = "📸 Importer les &photos des élèves\r\n";
             this.toolTipPhotos.SetToolTip(this.btnPhotos, "Importer les photos individuelles des élèves.");
@@ -141,7 +141,7 @@ namespace CartesAcces2024
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(569, 266);
+            this.label2.Location = new System.Drawing.Point(553, 256);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 18);
             this.label2.TabIndex = 6;
@@ -152,7 +152,7 @@ namespace CartesAcces2024
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(569, 328);
+            this.label3.Location = new System.Drawing.Point(553, 317);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 18);
             this.label3.TabIndex = 7;
@@ -162,7 +162,7 @@ namespace CartesAcces2024
             // 
             this.lblImportEdt.AutoSize = true;
             this.lblImportEdt.ForeColor = System.Drawing.Color.White;
-            this.lblImportEdt.Location = new System.Drawing.Point(766, 266);
+            this.lblImportEdt.Location = new System.Drawing.Point(709, 256);
             this.lblImportEdt.Name = "lblImportEdt";
             this.lblImportEdt.Size = new System.Drawing.Size(130, 17);
             this.lblImportEdt.TabIndex = 9;
@@ -172,7 +172,7 @@ namespace CartesAcces2024
             // 
             this.lblImportPhotos.AutoSize = true;
             this.lblImportPhotos.ForeColor = System.Drawing.Color.White;
-            this.lblImportPhotos.Location = new System.Drawing.Point(766, 328);
+            this.lblImportPhotos.Location = new System.Drawing.Point(709, 317);
             this.lblImportPhotos.Name = "lblImportPhotos";
             this.lblImportPhotos.Size = new System.Drawing.Size(130, 17);
             this.lblImportPhotos.TabIndex = 10;
@@ -180,13 +180,13 @@ namespace CartesAcces2024
             // 
             // btnImportPlanches
             // 
-            this.btnImportPlanches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnImportPlanches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnImportPlanches.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImportPlanches.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportPlanches.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnImportPlanches.Location = new System.Drawing.Point(52, 374);
+            this.btnImportPlanches.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnImportPlanches.Location = new System.Drawing.Point(47, 358);
             this.btnImportPlanches.Name = "btnImportPlanches";
-            this.btnImportPlanches.Size = new System.Drawing.Size(511, 59);
+            this.btnImportPlanches.Size = new System.Drawing.Size(500, 55);
             this.btnImportPlanches.TabIndex = 11;
             this.btnImportPlanches.Text = "👁‍🗨 Importer des trombinoscopes scannés";
             this.toolTipTrombis.SetToolTip(this.btnImportPlanches, "Importer des photos d\'élèves à partir de trombinoscopes scannés.");
@@ -222,8 +222,8 @@ namespace CartesAcces2024
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(932, 464);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(882, 463);
             this.Controls.Add(this.btnImportPlanches);
             this.Controls.Add(this.lblImportPhotos);
             this.Controls.Add(this.lblImportEdt);
@@ -236,7 +236,7 @@ namespace CartesAcces2024
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmImport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = " Imports";
+            this.Text = "Athena - Importation";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();

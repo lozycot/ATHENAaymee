@@ -67,6 +67,7 @@ namespace CartesAcces2024
             this.label5 = new System.Windows.Forms.Label();
             this.lblCompteur = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.progressBar1_compteur = new System.Windows.Forms.ProgressBar();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -121,6 +122,7 @@ namespace CartesAcces2024
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox3.Controls.Add(this.btnOpenFolder);
             this.groupBox3.Controls.Add(this.labelEnCoursValidation);
             this.groupBox3.Controls.Add(this.btnValiderImpr);
@@ -139,9 +141,9 @@ namespace CartesAcces2024
             // 
             // btnOpenFolder
             // 
-            this.btnOpenFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnOpenFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnOpenFolder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOpenFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnOpenFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnOpenFolder.Location = new System.Drawing.Point(390, 225);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(141, 67);
@@ -166,9 +168,9 @@ namespace CartesAcces2024
             // 
             // btnValiderImpr
             // 
-            this.btnValiderImpr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnValiderImpr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnValiderImpr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnValiderImpr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnValiderImpr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnValiderImpr.Location = new System.Drawing.Point(538, 225);
             this.btnValiderImpr.Margin = new System.Windows.Forms.Padding(4);
             this.btnValiderImpr.Name = "btnValiderImpr";
@@ -180,6 +182,7 @@ namespace CartesAcces2024
             // 
             // tkbTaillePhoto
             // 
+            this.tkbTaillePhoto.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.tkbTaillePhoto.Location = new System.Drawing.Point(100, 58);
             this.tkbTaillePhoto.Margin = new System.Windows.Forms.Padding(4);
             this.tkbTaillePhoto.Maximum = 300;
@@ -217,16 +220,18 @@ namespace CartesAcces2024
             this.lblCompteur.AutoSize = true;
             this.lblCompteur.Enabled = false;
             this.lblCompteur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompteur.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCompteur.Location = new System.Drawing.Point(213, 35);
+            this.lblCompteur.ForeColor = System.Drawing.Color.White;
+            this.lblCompteur.Location = new System.Drawing.Point(213, 10);
             this.lblCompteur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCompteur.Name = "lblCompteur";
-            this.lblCompteur.Size = new System.Drawing.Size(47, 29);
+            this.lblCompteur.Size = new System.Drawing.Size(50, 29);
             this.lblCompteur.TabIndex = 18;
-            this.lblCompteur.Text = "0/x";
+            this.lblCompteur.Text = "0%";
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.groupBox2.Controls.Add(this.progressBar1_compteur);
             this.groupBox2.Controls.Add(this.lblCompteur);
             this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Controls.Add(this.btnSelect);
@@ -240,11 +245,20 @@ namespace CartesAcces2024
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Edition Emploi du Temps";
             // 
+            // progressBar1_compteur
+            // 
+            this.progressBar1_compteur.Enabled = false;
+            this.progressBar1_compteur.Location = new System.Drawing.Point(212, 42);
+            this.progressBar1_compteur.Name = "progressBar1_compteur";
+            this.progressBar1_compteur.Size = new System.Drawing.Size(225, 23);
+            this.progressBar1_compteur.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1_compteur.TabIndex = 20;
+            // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnCancel.Location = new System.Drawing.Point(450, 23);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
@@ -256,9 +270,9 @@ namespace CartesAcces2024
             // 
             // btnSelect
             // 
-            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
             this.btnSelect.Location = new System.Drawing.Point(8, 23);
             this.btnSelect.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelect.Name = "btnSelect";
@@ -270,6 +284,7 @@ namespace CartesAcces2024
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox1.Controls.Add(this.rdbA5);
             this.groupBox1.Controls.Add(this.rdbA4);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -287,13 +302,13 @@ namespace CartesAcces2024
             this.rdbA5.Name = "rdbA5";
             this.rdbA5.Size = new System.Drawing.Size(46, 21);
             this.rdbA5.TabIndex = 1;
-            this.rdbA5.TabStop = true;
             this.rdbA5.Text = "A5";
             this.rdbA5.UseVisualStyleBackColor = true;
             // 
             // rdbA4
             // 
             this.rdbA4.AutoSize = true;
+            this.rdbA4.Checked = true;
             this.rdbA4.Location = new System.Drawing.Point(179, 21);
             this.rdbA4.Name = "rdbA4";
             this.rdbA4.Size = new System.Drawing.Size(46, 21);
@@ -305,7 +320,7 @@ namespace CartesAcces2024
             // FrmMultiplesCartesEdition
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1446, 492);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlEdtPhoto);
@@ -315,7 +330,7 @@ namespace CartesAcces2024
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmMultiplesCartesEdition";
-            this.Text = "ATHENA - Création des fichier a imprimer";
+            this.Text = "Athena - Création des fichier a imprimer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMultipleCartesEdition_FormClosed);
             this.Load += new System.EventHandler(this.frmMultiplesCartesEdition_Load);
             this.pnlEdtPhoto.ResumeLayout(false);
@@ -353,5 +368,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.RadioButton rdbA5;
         private System.Windows.Forms.RadioButton rdbA4;
         private System.Windows.Forms.Button btnOpenFolder;
+        private System.Windows.Forms.ProgressBar progressBar1_compteur;
     }
 }
