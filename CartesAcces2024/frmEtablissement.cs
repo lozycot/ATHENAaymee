@@ -402,7 +402,7 @@ namespace CartesAcces2024
                 pnlChampsPersonnalises.Controls.Add(txtBox);
                 pnlChampsPersonnalises.Controls.Add(lbl);
 
-                //txtNomDuNouveauChamp.Text = ""; // on efface le texte du champs remplissable, pour plus facilement créer plusieurs champs aux nom différents
+                txtNomDuNouveauChamp.Text = ""; // on efface le texte du champs remplissable, pour plus facilement créer plusieurs champs aux nom différents
                 this.nbChampsPersonnalises++;
             }
         }
