@@ -105,19 +105,15 @@ namespace CartesAcces2024
             this.gpbInfosEtab = new System.Windows.Forms.GroupBox();
             this.rdbNon = new System.Windows.Forms.RadioButton();
             this.rdbOui = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAjouterPhoto = new System.Windows.Forms.Button();
-            this.btnAnnulerPhoto = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.pnlChampsPersonnalises = new System.Windows.Forms.Panel();
+            this.btnAjouterChamp = new System.Windows.Forms.Button();
+            this.txtNomDuNouveauChamp = new System.Windows.Forms.TextBox();
             this.gb6eme.SuspendLayout();
             this.gb5eme.SuspendLayout();
             this.gb4eme.SuspendLayout();
             this.gb3eme.SuspendLayout();
             this.gpbLogicielEdt.SuspendLayout();
             this.gpbInfosEtab.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gb6eme
@@ -406,6 +402,7 @@ namespace CartesAcces2024
             // 
             this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
             this.btnValider.Location = new System.Drawing.Point(1114, 697);
             this.btnValider.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -743,80 +740,47 @@ namespace CartesAcces2024
             this.rdbOui.Text = "Oui";
             this.rdbOui.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // pnlChampsPersonnalises
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.groupBox3.Controls.Add(this.pictureBox1);
-            this.groupBox3.Controls.Add(this.btnAjouterPhoto);
-            this.groupBox3.Controls.Add(this.btnAnnulerPhoto);
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(592, 374);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(422, 386);
-            this.groupBox3.TabIndex = 31;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Ajout d\'un CodeQR personalisé";
+            this.pnlChampsPersonnalises.AutoScroll = true;
+            this.pnlChampsPersonnalises.Location = new System.Drawing.Point(592, 375);
+            this.pnlChampsPersonnalises.Name = "pnlChampsPersonnalises";
+            this.pnlChampsPersonnalises.Size = new System.Drawing.Size(852, 225);
+            this.pnlChampsPersonnalises.TabIndex = 31;
             // 
-            // pictureBox1
+            // btnAjouterChamp
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(125, 42);
-            this.pictureBox1.MaximumSize = new System.Drawing.Size(173, 194);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 194);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.btnAjouterChamp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnAjouterChamp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAjouterChamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAjouterChamp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
+            this.btnAjouterChamp.Location = new System.Drawing.Point(592, 610);
+            this.btnAjouterChamp.Name = "btnAjouterChamp";
+            this.btnAjouterChamp.Size = new System.Drawing.Size(205, 38);
+            this.btnAjouterChamp.TabIndex = 32;
+            this.btnAjouterChamp.Text = "ajouter un champ";
+            this.btnAjouterChamp.UseVisualStyleBackColor = false;
+            this.btnAjouterChamp.Click += new System.EventHandler(this.btnAjouterChamp_Click);
             // 
-            // btnAjouterPhoto
+            // txtNomDuNouveauChamp
             // 
-            this.btnAjouterPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.btnAjouterPhoto.Enabled = false;
-            this.btnAjouterPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAjouterPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAjouterPhoto.Location = new System.Drawing.Point(122, 262);
-            this.btnAjouterPhoto.MaximumSize = new System.Drawing.Size(180, 45);
-            this.btnAjouterPhoto.MinimumSize = new System.Drawing.Size(180, 45);
-            this.btnAjouterPhoto.Name = "btnAjouterPhoto";
-            this.btnAjouterPhoto.Size = new System.Drawing.Size(180, 45);
-            this.btnAjouterPhoto.TabIndex = 17;
-            this.btnAjouterPhoto.Text = "&Choisir une photo";
-            this.btnAjouterPhoto.UseVisualStyleBackColor = false;
-            // 
-            // btnAnnulerPhoto
-            // 
-            this.btnAnnulerPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.btnAnnulerPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAnnulerPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAnnulerPhoto.Location = new System.Drawing.Point(122, 313);
-            this.btnAnnulerPhoto.MaximumSize = new System.Drawing.Size(160, 40);
-            this.btnAnnulerPhoto.MinimumSize = new System.Drawing.Size(180, 45);
-            this.btnAnnulerPhoto.Name = "btnAnnulerPhoto";
-            this.btnAnnulerPhoto.Size = new System.Drawing.Size(180, 45);
-            this.btnAnnulerPhoto.TabIndex = 14;
-            this.btnAnnulerPhoto.Text = "&Effacer la photo\r\n";
-            this.btnAnnulerPhoto.UseVisualStyleBackColor = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(1027, 388);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(368, 40);
-            this.checkBox1.TabIndex = 32;
-            this.checkBox1.Text = "Generer automatiquement un CodeQR\r\n(Si vous n\'avez pas de CodeQR personalisé)";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.txtNomDuNouveauChamp.BackColor = System.Drawing.Color.White;
+            this.txtNomDuNouveauChamp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNomDuNouveauChamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomDuNouveauChamp.Location = new System.Drawing.Point(818, 624);
+            this.txtNomDuNouveauChamp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNomDuNouveauChamp.Name = "txtNomDuNouveauChamp";
+            this.txtNomDuNouveauChamp.Size = new System.Drawing.Size(284, 24);
+            this.txtNomDuNouveauChamp.TabIndex = 33;
             // 
             // frmEtablissement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1457, 772);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.txtNomDuNouveauChamp);
+            this.Controls.Add(this.btnAjouterChamp);
+            this.Controls.Add(this.pnlChampsPersonnalises);
             this.Controls.Add(this.gpbInfosEtab);
             this.Controls.Add(this.gpbLogicielEdt);
             this.Controls.Add(this.label3);
@@ -868,8 +832,6 @@ namespace CartesAcces2024
             this.gpbLogicielEdt.PerformLayout();
             this.gpbInfosEtab.ResumeLayout(false);
             this.gpbInfosEtab.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -927,10 +889,8 @@ namespace CartesAcces2024
         private System.Windows.Forms.GroupBox gpbInfosEtab;
         private System.Windows.Forms.RadioButton rdbNon;
         private System.Windows.Forms.RadioButton rdbOui;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnAjouterPhoto;
-        private System.Windows.Forms.Button btnAnnulerPhoto;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Panel pnlChampsPersonnalises;
+        private System.Windows.Forms.Button btnAjouterChamp;
+        private System.Windows.Forms.TextBox txtNomDuNouveauChamp;
     }
 }

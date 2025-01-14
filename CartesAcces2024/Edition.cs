@@ -40,7 +40,15 @@ namespace CartesAcces2024
         public static string CheminFichier { get; set; }
         public static string CheminImpressionFinal { get; set; }
 
-        // -- Dessine le rectangle de couleur derrière le texte pour une meilleure visibilité de celui-ci --
+        /// <summary>
+        /// Dessine le rectangle de couleur derrière le texte pour une meilleure visibilité de celui-ci
+        /// </summary>
+        /// <param name="objGraphique"></param>
+        /// <param name="texte"></param>
+        /// <param name="police"></param>
+        /// <param name="posX"></param>
+        /// <param name="posY"></param>
+        /// <param name="cbbSection"></param>
         public static void fondTexteCarteFace(Graphics objGraphique, string texte, Font police, int posX, int posY, ComboBox cbbSection)
         {
             List<Color> couleurs = new List<Color> { };
@@ -159,7 +167,15 @@ namespace CartesAcces2024
             }
         }
 
-        // -- Dessine le texte des cases sur la carte --
+        /// <summary>
+        /// Dessine le texte des cases sur la carte
+        /// </summary>
+        /// <param name="police"></param>
+        /// <param name="posX"></param>
+        /// <param name="posY"></param>
+        /// <param name="text"></param>
+        /// <param name="pbCarteFace"></param>
+        /// <param name="cbbSection"></param>
         public static void dessineTexteCarteFace(Font police, int posX, int posY, string text, PictureBox pbCarteFace,
             ComboBox cbbSection)
         {
@@ -176,7 +192,10 @@ namespace CartesAcces2024
             objetGraphique.Dispose(); // Libère les ressources
         }
 
-        // -- Récupère et place le QR code sur la face de la carte
+        /// <summary>
+        /// Récupère et place le QR code sur la face de la carte
+        /// </summary>
+        /// <param name="pbCarteFace"></param>
         public static void qrCodeFace(PictureBox pbCarteFace)
         {
             List<string> Etablissement = new List<string>(OperationsDb.GetEtablissement());
@@ -187,7 +206,14 @@ namespace CartesAcces2024
             objGraphique.DrawImage(bmpFinal, new Point(1350, 80));
         }
 
-        // Preview carte provisoire si la carte n'a pas d'infos
+        /// <summary>
+        ///Preview carte provisoire si la carte n'a pas d'infos
+        /// </summary>
+        /// <param name="pbCarteFace"></param>
+        /// <param name="cbbSection"></param>
+        /// <param name="nomEleve"></param>
+        /// <param name="prenomEleve"></param>
+        /// <param name="classe"></param>
         public static void fondCarteNiveau(PictureBox pbCarteFace, ComboBox cbbSection, string nomEleve, string prenomEleve, string classe)
         {
             var police = new Font("Calibri", 45, FontStyle.Bold);
@@ -297,7 +323,14 @@ namespace CartesAcces2024
             objGraphique.Dispose(); // Libère les ressources
         }
 
-        //Preview carteProvisoire si la carte a des infos
+        /// <summary>
+        /// Preview carteProvisoire si la carte a des infos
+        /// </summary>
+        /// <param name="pbCarteFace"></param>
+        /// <param name="cbbSection"></param>
+        /// <param name="nomEleve"></param>
+        /// <param name="prenomEleve"></param>
+        /// <param name="classe"></param>
         public static void FondCarteNiveauInfos(PictureBox pbCarteFace, ComboBox cbbSection, string nomEleve, string prenomEleve, string classe)
         {
             if (File.Exists(Chemin.DossierCartesFace + Globale.CheminFaceCarte + "Face.png"))
@@ -473,7 +506,13 @@ namespace CartesAcces2024
 
             return image;
         }
-        //Création de la carte Face si elle a déja des infos dessus
+        /// <summary>
+        /// Création de la carte Face si elle a déja des infos dessus
+        /// </summary>
+        /// <param name="eleve"></param>
+        /// <param name="policenom"></param>
+        /// <param name="policeprenom"></param>
+        /// <returns></returns>
         public static Image imageCarteFaceInfos(Eleve eleve, Font policenom, Font policeprenom)
         {
             var image = Image.FromFile(Chemin.CheminFaceDefault);
@@ -634,7 +673,10 @@ namespace CartesAcces2024
             return objgraph;
         }
 
-        // -- Importation des photo des élèves --
+        /// <summary>
+        /// Importation des photo des élèves
+        /// </summary>
+        /// <param name="chemin"></param>
         public static void importPhoto(string chemin)
         {
             var cheminSource = chemin;

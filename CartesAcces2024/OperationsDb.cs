@@ -260,9 +260,14 @@ namespace CartesAcces2024
             return couleurs;
         }
 
-
+        /// <summary>
+        /// Renvoie une liste comprenant les informations de l'établissement.
+        /// Cette liste comprend: le nom de l'établissement, le nom de la rue, le numero de la rue, le code postal, la ville, l'adresse mail, l'url et la bordure.
+        /// </summary>
+        /// <returns></returns>
         public static List<string> GetEtablissement()
         {
+            // requête pour récupérer les informations de l'établissement.
             string etabName = "SELECT nomEtablissement FROM Etablissement";
             string rueName = "SELECT nomRueEtablissement FROM Etablissement";
             string numRue = "SELECT numeroRueEtablissement FROM Etablissement";
@@ -272,6 +277,7 @@ namespace CartesAcces2024
             string email = "SELECT emailEtablissement FROM Etablissement";
             string url = "SELECT urlEtablissement FROM Etablissement";
             string bordure = "SELECT bordure FROM Etablissement";
+            // informations de l'établissement récupérées dans la BDD.
             string NomEtablissement = "";
             string NomRueEtablissement = "";
             string NumeroRueEtablissement = "";
