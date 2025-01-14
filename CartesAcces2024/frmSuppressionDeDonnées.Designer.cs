@@ -29,6 +29,7 @@ namespace ATHENA
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSuppressionDeDonnées));
             this.btnSupprimerLesDonneesSelectionnees = new System.Windows.Forms.Button();
             this.btnToutSelectionner = new System.Windows.Forms.Button();
             this.btnSupprimerTouteLesDonnees = new System.Windows.Forms.Button();
@@ -179,6 +180,7 @@ namespace ATHENA
             this.Controls.Add(this.btnReinitialiser);
             this.Controls.Add(this.gbpElements);
             this.Controls.Add(this.gbpFiltres);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSuppressionDeDonnées";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Athena - Suppression de données";
