@@ -110,12 +110,14 @@ namespace CartesAcces2024
             this.txtNomDuNouveauChamp = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnReinitialiser = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gb6eme.SuspendLayout();
             this.gb5eme.SuspendLayout();
             this.gb4eme.SuspendLayout();
             this.gb3eme.SuspendLayout();
             this.gpbLogicielEdt.SuspendLayout();
             this.gpbInfosEtab.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb6eme
@@ -746,9 +748,9 @@ namespace CartesAcces2024
             // 
             this.pnlChampsPersonnalises.AutoScroll = true;
             this.pnlChampsPersonnalises.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.pnlChampsPersonnalises.Location = new System.Drawing.Point(592, 375);
+            this.pnlChampsPersonnalises.Location = new System.Drawing.Point(7, 23);
             this.pnlChampsPersonnalises.Name = "pnlChampsPersonnalises";
-            this.pnlChampsPersonnalises.Size = new System.Drawing.Size(852, 249);
+            this.pnlChampsPersonnalises.Size = new System.Drawing.Size(834, 221);
             this.pnlChampsPersonnalises.TabIndex = 31;
             // 
             // btnAjouterChamp
@@ -757,7 +759,7 @@ namespace CartesAcces2024
             this.btnAjouterChamp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAjouterChamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnAjouterChamp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnAjouterChamp.Location = new System.Drawing.Point(1019, 630);
+            this.btnAjouterChamp.Location = new System.Drawing.Point(603, 250);
             this.btnAjouterChamp.Name = "btnAjouterChamp";
             this.btnAjouterChamp.Size = new System.Drawing.Size(101, 38);
             this.btnAjouterChamp.TabIndex = 32;
@@ -770,10 +772,10 @@ namespace CartesAcces2024
             this.txtNomDuNouveauChamp.BackColor = System.Drawing.Color.White;
             this.txtNomDuNouveauChamp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomDuNouveauChamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomDuNouveauChamp.Location = new System.Drawing.Point(728, 639);
+            this.txtNomDuNouveauChamp.Location = new System.Drawing.Point(149, 259);
             this.txtNomDuNouveauChamp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNomDuNouveauChamp.Name = "txtNomDuNouveauChamp";
-            this.txtNomDuNouveauChamp.Size = new System.Drawing.Size(284, 24);
+            this.txtNomDuNouveauChamp.Size = new System.Drawing.Size(379, 24);
             this.txtNomDuNouveauChamp.TabIndex = 33;
             // 
             // label4
@@ -781,7 +783,7 @@ namespace CartesAcces2024
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(589, 641);
+            this.label4.Location = new System.Drawing.Point(10, 261);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 18);
@@ -794,7 +796,7 @@ namespace CartesAcces2024
             this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnReinitialiser.Location = new System.Drawing.Point(1126, 630);
+            this.btnReinitialiser.Location = new System.Drawing.Point(710, 250);
             this.btnReinitialiser.Name = "btnReinitialiser";
             this.btnReinitialiser.Size = new System.Drawing.Size(131, 38);
             this.btnReinitialiser.TabIndex = 35;
@@ -802,16 +804,29 @@ namespace CartesAcces2024
             this.btnReinitialiser.UseVisualStyleBackColor = false;
             this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.groupBox1.Controls.Add(this.pnlChampsPersonnalises);
+            this.groupBox1.Controls.Add(this.btnReinitialiser);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.btnAjouterChamp);
+            this.groupBox1.Controls.Add(this.txtNomDuNouveauChamp);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(592, 374);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Size = new System.Drawing.Size(848, 294);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Urls de sites :";
+            // 
             // frmEtablissement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1481, 797);
-            this.Controls.Add(this.btnReinitialiser);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtNomDuNouveauChamp);
-            this.Controls.Add(this.btnAjouterChamp);
-            this.Controls.Add(this.pnlChampsPersonnalises);
             this.Controls.Add(this.gpbInfosEtab);
             this.Controls.Add(this.gpbLogicielEdt);
             this.Controls.Add(this.label3);
@@ -842,6 +857,7 @@ namespace CartesAcces2024
             this.Controls.Add(this.txtNumRue);
             this.Controls.Add(this.txtEtab);
             this.Controls.Add(this.btnValider);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -863,6 +879,8 @@ namespace CartesAcces2024
             this.gpbLogicielEdt.PerformLayout();
             this.gpbInfosEtab.ResumeLayout(false);
             this.gpbInfosEtab.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -925,5 +943,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.TextBox txtNomDuNouveauChamp;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnReinitialiser;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
