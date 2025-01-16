@@ -8,12 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace CartesAcces2024
 {
     public partial class frmEtablissement : Form
     {
+        /// <summary>
+        /// Sert à compter le nombre de champs personnalisés crées par l'utilisateur. Utilisé pou gérer leur coordonnées lors de leurs création.
+        /// </summary>
         private int nbChampsPersonnalises = 0;
+
+        /// <summary>
+        /// Contient en clé le Label d'un champ ajouté, et en valeur le TextBox associé.
+        /// </summary>
+        Dictionary<Label, TextBox> dictChampsPersonnalise = new Dictionary<Label, TextBox>();
 
         public frmEtablissement()
         {
@@ -87,46 +97,87 @@ namespace CartesAcces2024
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            GetLogicielEdt();
-            GetInfosCarte();
-            string InfosCarte = "";
-            if(Globale.InfosCarte == true)
+
+            if (validerChamps()==false)
             {
-                InfosCarte = "True";
+                MessageBox.Show("Veuillez remplir les champs obligatoires.");
             }
             else
             {
-                InfosCarte = "False";
-            }
-            if (ConnectDb.DbConnect.DbData("Etablissement"))
-            {
-                string sql = "DELETE FROM Etablissement";
-                using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+
+
+                // il faut re-créer la table Etablissement, pour détruire les champs personnalisés existants
+                // pour éviter de les cumuler
+
+                GetLogicielEdt();
+                GetInfosCarte();
+                string InfosCarte = "";
+                if (Globale.InfosCarte == true)
                 {
-                    connection.Open();
-                    using (SQLiteCommand command = new SQLiteCommand(sql, connection))
-                    {
-                        command.ExecuteNonQuery();
-                        connection.Close();
-                    }
+                    InfosCarte = "True";
                 }
-            }
-            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
-            {
-                string insert = "INSERT INTO Etablissement (nomEtablissement,nomRueEtablissement,numeroRueEtablissement,codePostalEtablissement,villeEtablissement,numeroTelephoneEtablissement," +
-                    "emailEtablissement,urlEtablissement,codeHexa6eme,codeHexa5eme,codeHexa4eme,codeHexa3eme,bordure,InfosCarte,LogicielEdt) VALUES ('" + txtEtab.Text + "','" + txtNomRue.Text + "','" + txtNumRue.Text + "','" + txtCodePostal.Text +
-                    "','" + txtVille.Text + "','" + txtNumTel.Text + "','" + txtMail.Text + "','" + txtUrl.Text + "','" + GetCodeHexa6Eme() + "','" + GetCodeHexa5Eme() + "','" + GetCodeHexa4Eme() + "','" + GetCodeHexa3Eme() + "','" + cbBordure.Checked + "','" + InfosCarte + "','" + Convert.ToString(Globale.LogicielEdt) +"')";
-                using (SQLiteCommand insertSQL = new SQLiteCommand(insert, connection))
+                else
                 {
-                    connection.Open();
-                    insertSQL.ExecuteNonQuery();
-                    connection.Close();
-                    MessageBox.Show("Données enregistrées");
-                    Close();
+                    InfosCarte = "False";
                 }
 
-                // alter table pour rajouter les champs personnalisés
-                // puis insert des valeurs associées à chaque champs
+                OperationsDb.supprimerEtablissement();
+
+                // On insère les nouvelles données dans établissement
+                using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+                {
+                    string insert = "INSERT INTO Etablissement (nomEtablissement,nomRueEtablissement,numeroRueEtablissement,codePostalEtablissement,villeEtablissement,numeroTelephoneEtablissement," +
+                        "emailEtablissement,urlEtablissement,codeHexa6eme,codeHexa5eme,codeHexa4eme,codeHexa3eme,bordure,InfosCarte,LogicielEdt) VALUES ('" + txtEtab.Text + "','" + txtNomRue.Text + "','" + txtNumRue.Text + "','" + txtCodePostal.Text +
+                        "','" + txtVille.Text + "','" + txtNumTel.Text + "','" + txtMail.Text + "','" + txtUrl.Text + "','" + GetCodeHexa6Eme() + "','" + GetCodeHexa5Eme() + "','" + GetCodeHexa4Eme() + "','" + GetCodeHexa3Eme() + "','" + cbBordure.Checked + "','" + InfosCarte + "','" + Convert.ToString(Globale.LogicielEdt) + "')";
+                    using (SQLiteCommand insertSQL = new SQLiteCommand(insert, connection))
+                    {
+                        connection.Open();
+                        insertSQL.ExecuteNonQuery();
+                        connection.Close();
+                    }
+
+                }
+
+
+
+
+
+
+
+                // pour chaque champ ajouté par l'utilisateur
+                foreach (Label lbl in pnlChampsPersonnalises.Controls.OfType<Label>())
+                {
+                    try
+                    {
+                        // on formate la chaine entrée par l'utilisateur
+                        string nomNouveauChamp = lbl.Text.Trim();
+                        nomNouveauChamp = Regex.Replace(nomNouveauChamp, @"[^a-zA-Z0-9_]", "");
+                        if (!Regex.IsMatch(nomNouveauChamp, @"^[a-zA-Z_]"))
+                        {
+                            nomNouveauChamp = "_" + nomNouveauChamp; // Add a leading underscore if it starts with a digit or invalid character
+                        }
+
+                        //on récupère le texte entré par l'utilisateur dans la TextBox correspondant
+                        string valeurNouveauChamp = dictChampsPersonnalise[lbl].Text;
+
+                        // On ajoute le champs dans Etablissement
+                        OperationsDb.ajouteChampDansTable("Etablissement", nomNouveauChamp);
+
+                        //On ajoute la valeur dans le nouvaux champs
+                        OperationsDb.insereValeurDansChampsPersonnaliseeEtablissement(nomNouveauChamp, valeurNouveauChamp);
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show("Erreur lors de l'enregistrement du champs " + lbl.Text + "\n"
+                            + "Message d'erreur : " + exc.Message + "\n"
+                            + "Stack trace : " + exc.StackTrace.ToString());
+                    }
+                }
+
+
+
+                MessageBox.Show("Données enregistrées");
+                //Close();
             }
         }
 
@@ -346,6 +397,15 @@ namespace CartesAcces2024
 
         private void frmEtablissement_Load(object sender, EventArgs e)
         {
+            // recharger les champs personnalisés qui se trouvent dans la base de données
+            Dictionary<string, string> tempChampsPeronnalisee = OperationsDb.getEtablissementChampsPersonnalisee();
+
+            foreach (string nomChamps in tempChampsPeronnalisee.Keys)
+            {
+                Label lbl = ajouterDansPnlChampsPersonnalisee(nomChamps);
+                // on ajoute le texte récupéré dans la base de données
+                dictChampsPersonnalise[lbl].Text = tempChampsPeronnalisee[nomChamps];
+            }
 
         }
 
@@ -371,39 +431,32 @@ namespace CartesAcces2024
 
         private void btnAjouterChamp_Click(object sender, EventArgs e)
         {
+            //On vérifie que la chaine n'as pas de charactères spéciaux, ou on empêche de les écrire?
+            // on verras si ça marhce plus tard
+
+            // On vérifie qu l'utilisateur n'ajoute pas le même champs deux fois
+            bool labelExists = false;
+            foreach (Label existingLabel in pnlChampsPersonnalises.Controls.OfType<Label>())
+            {
+                if (existingLabel.Text == txtNomDuNouveauChamp.Text)
+                {
+                    labelExists = true;
+                }
+            }
+
+
+
             if (txtNomDuNouveauChamp.Text == "")
             {
                 MessageBox.Show("Ecrivez le nom de votre nouveau champs personnalisé.");
             }
+            else if (labelExists)
+            {
+                MessageBox.Show("Ce champ existe déjà.");
+            }
             else
             {
-                Label lbl = new Label();
-                TextBox txtBox = new TextBox();
-
-                // paramètres du label
-                lbl.Width = 310;
-                lbl.ForeColor = Color.White;
-                lbl.Text = txtNomDuNouveauChamp.Text; // le texte du champs remplissable est utilisé comme label
-
-                //paramètres du textbox
-                txtBox.Width = 320; // pour ressembler aux autres textbox du formulaire, en plus long
-                txtBox.Height = 24;
-
-                // ces paramètre mettent le textbox juste à côté du label
-                //txtBox.Location = new Point(TextRenderer.MeasureText(lbl.Text, lbl.Font).Width + 5, (nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
-                //lbl.Location = new Point(0, (this.nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
-
-                // ces paramètres les ordonnent avec un espace à droite pré-déterminé
-                // coordonnées x sont nb de controls déjà créer * la taille du txt box + nb de controls créer * 5 pour laisser un espace entre chaque control - la valeur de scroll verticale du panel, car pour lui les coordonnées 0 ; 0 sont relatives à ce qui est actuellement affiché, pas ce qui existe
-                txtBox.Location = new Point(300, (nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
-                lbl.Location = new Point(0, (this.nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
-
-                // on les ajoutent au panel
-                pnlChampsPersonnalises.Controls.Add(txtBox);
-                pnlChampsPersonnalises.Controls.Add(lbl);
-
-                txtNomDuNouveauChamp.Text = ""; // on efface le texte du champs remplissable, pour plus facilement créer plusieurs champs aux nom différents
-                this.nbChampsPersonnalises++;
+                ajouterDansPnlChampsPersonnalisee(txtNomDuNouveauChamp.Text);
             }
         }
 
@@ -411,6 +464,133 @@ namespace CartesAcces2024
         {
             pnlChampsPersonnalises.Controls.Clear();
             nbChampsPersonnalises = 0;
+        }
+
+        private bool validerChamps()
+        {
+            if (txtEtab.Text == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void txtNomDuNouveauChamp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // On empêche les utilisateur d'utiliser des charactères spéciaux pour le nom de nouveaux champs
+
+            // Permet l'utilisation des combinaisons avec la touche Ctrl (Ctrl+C, Ctrl+V, Ctrl+A, etc.)
+            if (Control.ModifierKeys == Keys.Control)
+            {
+                return;
+            }
+
+            if (e.KeyChar == ' ')
+            {
+                e.KeyChar = '_';
+            }
+
+            // Empêche l'écriture si le champ est trop long
+            TextBox txtNomDuNouveauChamp = sender as TextBox;
+            if (txtNomDuNouveauChamp != null && txtNomDuNouveauChamp.Text.Length >= 64 && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // Vérifie que seuls les lettres ASCII non accentuées (A-Z, a-z), les chiffres (0-9) et '_' sont autorisés
+            if (!(e.KeyChar >= 'a' && e.KeyChar <= 'z') &&
+                !(e.KeyChar >= 'A' && e.KeyChar <= 'Z') &&
+                !(e.KeyChar >= '0' && e.KeyChar <= '9') &&
+                e.KeyChar != '_' &&
+                !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloque le caractère
+                return;
+            }
+
+            // Vérifie que le premier caractère est une lettre (A-Z, a-z) ou '_'
+            if (txtNomDuNouveauChamp != null && txtNomDuNouveauChamp.SelectionStart == 0 &&
+                !(e.KeyChar >= 'a' && e.KeyChar <= 'z') &&
+                !(e.KeyChar >= 'A' && e.KeyChar <= 'Z') &&
+                e.KeyChar != '_' &&
+                !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloque le caractère
+            }
+        }
+
+        private void txtNomDuNouveauChamp_TextChanged(object sender, EventArgs e)
+        {
+            // premet de s'assurer que le texte collé via le presse-papier respectent les règles de txtNomDuNouveauChamp_KeyPress
+
+
+            // Supprime les caractères non autorisés (conserve uniquement les lettres non accentuées, chiffres, et underscores)
+            string sanitizedText = Regex.Replace(txtNomDuNouveauChamp.Text, @"[^a-zA-Z0-9_]", "");
+
+            // Vérifie que le premier caractère est une lettre ou un underscore
+            if (sanitizedText.Length > 0 && !char.IsLetter(sanitizedText[0]) && sanitizedText[0] != '_')
+            {
+                sanitizedText = "_" + sanitizedText.Substring(1);
+            }
+
+            // Limite la longueur à 64 caractères
+            if (sanitizedText.Length > 64)
+            {
+                sanitizedText = sanitizedText.Substring(0, 64);
+            }
+
+            // Met à jour le texte uniquement s'il a changé (pour éviter une boucle infinie)
+            if (sanitizedText != txtNomDuNouveauChamp.Text)
+            {
+                txtNomDuNouveauChamp.Text = sanitizedText;
+                txtNomDuNouveauChamp.SelectionStart = sanitizedText.Length; // Replace le curseur à la fin
+            }
+            
+        }
+
+        /// <summary>
+        /// Ajoute un Label et un TextBox à la suite dans le Panel.
+        /// </summary>
+        /// <param name="nomDuNouveauChamp"></param>
+        /// <returns></returns>
+        private Label ajouterDansPnlChampsPersonnalisee(string nomDuNouveauChamp)
+        {
+            Label lbl = new Label();
+            TextBox txtBox = new TextBox();
+
+            // paramètres du label
+            lbl.Width = 310;
+            lbl.ForeColor = Color.White;
+            lbl.Text = nomDuNouveauChamp; // le texte du champs remplissable est utilisé comme label
+
+            //paramètres du textbox
+            txtBox.Width = 320; // pour ressembler aux autres textbox du formulaire, en plus long
+            txtBox.Height = 24;
+
+            // ces paramètre mettent le textbox juste à côté du label
+            //txtBox.Location = new Point(TextRenderer.MeasureText(lbl.Text, lbl.Font).Width + 5, (nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
+            //lbl.Location = new Point(0, (this.nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
+
+            // ces paramètres les ordonnent avec un espace à droite pré-déterminé
+            // coordonnées x sont nb de controls déjà créer * la taille du txt box + nb de controls créer * 5 pour laisser un espace entre chaque control - la valeur de scroll verticale du panel, car pour lui les coordonnées 0 ; 0 sont relatives à ce qui est actuellement affiché, pas ce qui existe
+            txtBox.Location = new Point(300, (nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
+            lbl.Location = new Point(0, (this.nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
+
+            // on les ajoutent au panel
+            pnlChampsPersonnalises.Controls.Add(txtBox);
+            pnlChampsPersonnalises.Controls.Add(lbl);
+
+            txtNomDuNouveauChamp.Text = ""; // on efface le texte du champs remplissable, pour plus facilement créer plusieurs champs aux nom différents
+            this.nbChampsPersonnalises++;
+
+            // on ajoute le label et le textboxdans le dictionnaire, pour pouvoir les retrouver facilement.
+            dictChampsPersonnalise.Add(lbl, txtBox);
+
+            return lbl;
         }
     }
 }

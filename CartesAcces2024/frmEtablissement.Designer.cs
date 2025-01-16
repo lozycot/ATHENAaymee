@@ -775,6 +775,8 @@ namespace CartesAcces2024
             this.txtNomDuNouveauChamp.Name = "txtNomDuNouveauChamp";
             this.txtNomDuNouveauChamp.Size = new System.Drawing.Size(284, 24);
             this.txtNomDuNouveauChamp.TabIndex = 33;
+            this.txtNomDuNouveauChamp.TextChanged += new System.EventHandler(this.txtNomDuNouveauChamp_TextChanged);
+            this.txtNomDuNouveauChamp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomDuNouveauChamp_KeyPress);
             // 
             // label4
             // 
