@@ -13,6 +13,8 @@ namespace CartesAcces2024
 {
     public partial class frmEtablissement : Form
     {
+        private int nbChampsPersonnalises = 0;
+
         public frmEtablissement()
         {
             InitializeComponent();
@@ -122,6 +124,9 @@ namespace CartesAcces2024
                     MessageBox.Show("Données enregistrées");
                     Close();
                 }
+
+                // alter table pour rajouter les champs personnalisés
+                // puis insert des valeurs associées à chaque champs
             }
         }
 
@@ -362,6 +367,50 @@ namespace CartesAcces2024
         private void rdbEDT_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAjouterChamp_Click(object sender, EventArgs e)
+        {
+            if (txtNomDuNouveauChamp.Text == "")
+            {
+                MessageBox.Show("Ecrivez le nom de votre nouveau champs personnalisé.");
+            }
+            else
+            {
+                Label lbl = new Label();
+                TextBox txtBox = new TextBox();
+
+                // paramètres du label
+                lbl.Width = 310;
+                lbl.ForeColor = Color.White;
+                lbl.Text = txtNomDuNouveauChamp.Text; // le texte du champs remplissable est utilisé comme label
+
+                //paramètres du textbox
+                txtBox.Width = 320; // pour ressembler aux autres textbox du formulaire, en plus long
+                txtBox.Height = 24;
+
+                // ces paramètre mettent le textbox juste à côté du label
+                //txtBox.Location = new Point(TextRenderer.MeasureText(lbl.Text, lbl.Font).Width + 5, (nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
+                //lbl.Location = new Point(0, (this.nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
+
+                // ces paramètres les ordonnent avec un espace à droite pré-déterminé
+                // coordonnées x sont nb de controls déjà créer * la taille du txt box + nb de controls créer * 5 pour laisser un espace entre chaque control - la valeur de scroll verticale du panel, car pour lui les coordonnées 0 ; 0 sont relatives à ce qui est actuellement affiché, pas ce qui existe
+                txtBox.Location = new Point(300, (nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
+                lbl.Location = new Point(0, (this.nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
+
+                // on les ajoutent au panel
+                pnlChampsPersonnalises.Controls.Add(txtBox);
+                pnlChampsPersonnalises.Controls.Add(lbl);
+
+                txtNomDuNouveauChamp.Text = ""; // on efface le texte du champs remplissable, pour plus facilement créer plusieurs champs aux nom différents
+                this.nbChampsPersonnalises++;
+            }
+        }
+
+        private void btnReinitialiser_Click(object sender, EventArgs e)
+        {
+            pnlChampsPersonnalises.Controls.Clear();
+            nbChampsPersonnalises = 0;
         }
     }
 }

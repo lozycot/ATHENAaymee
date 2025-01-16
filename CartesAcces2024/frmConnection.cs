@@ -44,8 +44,8 @@ namespace CartesAcces2024
             }
             else
             {
-                MessageBox.Show("La connexion est établie !", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("La connexion est établie !", "Information",
+                //    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Globale.EstConnecte = true;
                 Close();
             }

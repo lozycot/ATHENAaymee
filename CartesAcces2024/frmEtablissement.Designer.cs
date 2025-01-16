@@ -105,24 +105,24 @@ namespace CartesAcces2024
             this.gpbInfosEtab = new System.Windows.Forms.GroupBox();
             this.rdbNon = new System.Windows.Forms.RadioButton();
             this.rdbOui = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAjouterPhoto = new System.Windows.Forms.Button();
-            this.btnAnnulerPhoto = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.pnlChampsPersonnalises = new System.Windows.Forms.Panel();
+            this.btnAjouterChamp = new System.Windows.Forms.Button();
+            this.txtNomDuNouveauChamp = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnReinitialiser = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gb6eme.SuspendLayout();
             this.gb5eme.SuspendLayout();
             this.gb4eme.SuspendLayout();
             this.gb3eme.SuspendLayout();
             this.gpbLogicielEdt.SuspendLayout();
             this.gpbInfosEtab.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb6eme
             // 
-            this.gb6eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.gb6eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.gb6eme.Controls.Add(this.rdbBleu6);
             this.gb6eme.Controls.Add(this.rdbVert6);
             this.gb6eme.Controls.Add(this.rdbJaune6);
@@ -193,7 +193,7 @@ namespace CartesAcces2024
             // 
             // gb5eme
             // 
-            this.gb5eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.gb5eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.gb5eme.Controls.Add(this.rdbBleu5);
             this.gb5eme.Controls.Add(this.rdbVert5);
             this.gb5eme.Controls.Add(this.rdbJaune5);
@@ -264,7 +264,7 @@ namespace CartesAcces2024
             // 
             // gb4eme
             // 
-            this.gb4eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.gb4eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.gb4eme.Controls.Add(this.rdbBleu4);
             this.gb4eme.Controls.Add(this.rdbVert4);
             this.gb4eme.Controls.Add(this.rdbJaune4);
@@ -334,7 +334,7 @@ namespace CartesAcces2024
             // 
             // gb3eme
             // 
-            this.gb3eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.gb3eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.gb3eme.Controls.Add(this.rdbBleu3);
             this.gb3eme.Controls.Add(this.rdbVert3);
             this.gb3eme.Controls.Add(this.rdbJaune3);
@@ -404,13 +404,14 @@ namespace CartesAcces2024
             // 
             // btnValider
             // 
-            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValider.Location = new System.Drawing.Point(1114, 697);
+            this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnValider.Location = new System.Drawing.Point(1197, 708);
             this.btnValider.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(330, 63);
+            this.btnValider.Size = new System.Drawing.Size(247, 52);
             this.btnValider.TabIndex = 5;
             this.btnValider.Text = "Valider l\'import";
             this.btnValider.UseVisualStyleBackColor = false;
@@ -743,80 +744,89 @@ namespace CartesAcces2024
             this.rdbOui.Text = "Oui";
             this.rdbOui.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // pnlChampsPersonnalises
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.groupBox3.Controls.Add(this.pictureBox1);
-            this.groupBox3.Controls.Add(this.btnAjouterPhoto);
-            this.groupBox3.Controls.Add(this.btnAnnulerPhoto);
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(592, 374);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(422, 386);
-            this.groupBox3.TabIndex = 31;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Ajout d\'un CodeQR personalisé";
+            this.pnlChampsPersonnalises.AutoScroll = true;
+            this.pnlChampsPersonnalises.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.pnlChampsPersonnalises.Location = new System.Drawing.Point(7, 23);
+            this.pnlChampsPersonnalises.Name = "pnlChampsPersonnalises";
+            this.pnlChampsPersonnalises.Size = new System.Drawing.Size(834, 221);
+            this.pnlChampsPersonnalises.TabIndex = 31;
             // 
-            // pictureBox1
+            // btnAjouterChamp
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(125, 42);
-            this.pictureBox1.MaximumSize = new System.Drawing.Size(173, 194);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 194);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.btnAjouterChamp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnAjouterChamp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAjouterChamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAjouterChamp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnAjouterChamp.Location = new System.Drawing.Point(603, 250);
+            this.btnAjouterChamp.Name = "btnAjouterChamp";
+            this.btnAjouterChamp.Size = new System.Drawing.Size(101, 38);
+            this.btnAjouterChamp.TabIndex = 32;
+            this.btnAjouterChamp.Text = "ajouter";
+            this.btnAjouterChamp.UseVisualStyleBackColor = false;
+            this.btnAjouterChamp.Click += new System.EventHandler(this.btnAjouterChamp_Click);
             // 
-            // btnAjouterPhoto
+            // txtNomDuNouveauChamp
             // 
-            this.btnAjouterPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.btnAjouterPhoto.Enabled = false;
-            this.btnAjouterPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAjouterPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAjouterPhoto.Location = new System.Drawing.Point(122, 262);
-            this.btnAjouterPhoto.MaximumSize = new System.Drawing.Size(180, 45);
-            this.btnAjouterPhoto.MinimumSize = new System.Drawing.Size(180, 45);
-            this.btnAjouterPhoto.Name = "btnAjouterPhoto";
-            this.btnAjouterPhoto.Size = new System.Drawing.Size(180, 45);
-            this.btnAjouterPhoto.TabIndex = 17;
-            this.btnAjouterPhoto.Text = "&Choisir une photo";
-            this.btnAjouterPhoto.UseVisualStyleBackColor = false;
+            this.txtNomDuNouveauChamp.BackColor = System.Drawing.Color.White;
+            this.txtNomDuNouveauChamp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNomDuNouveauChamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomDuNouveauChamp.Location = new System.Drawing.Point(149, 259);
+            this.txtNomDuNouveauChamp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNomDuNouveauChamp.Name = "txtNomDuNouveauChamp";
+            this.txtNomDuNouveauChamp.Size = new System.Drawing.Size(379, 24);
+            this.txtNomDuNouveauChamp.TabIndex = 33;
             // 
-            // btnAnnulerPhoto
+            // label4
             // 
-            this.btnAnnulerPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.btnAnnulerPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAnnulerPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnAnnulerPhoto.Location = new System.Drawing.Point(122, 313);
-            this.btnAnnulerPhoto.MaximumSize = new System.Drawing.Size(160, 40);
-            this.btnAnnulerPhoto.MinimumSize = new System.Drawing.Size(180, 45);
-            this.btnAnnulerPhoto.Name = "btnAnnulerPhoto";
-            this.btnAnnulerPhoto.Size = new System.Drawing.Size(180, 45);
-            this.btnAnnulerPhoto.TabIndex = 14;
-            this.btnAnnulerPhoto.Text = "&Effacer la photo\r\n";
-            this.btnAnnulerPhoto.UseVisualStyleBackColor = false;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(10, 261);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 18);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Ajouter un champ :";
             // 
-            // checkBox1
+            // btnReinitialiser
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(1027, 388);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(368, 40);
-            this.checkBox1.TabIndex = 32;
-            this.checkBox1.Text = "Generer automatiquement un CodeQR\r\n(Si vous n\'avez pas de CodeQR personalisé)";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.btnReinitialiser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnReinitialiser.Location = new System.Drawing.Point(710, 250);
+            this.btnReinitialiser.Name = "btnReinitialiser";
+            this.btnReinitialiser.Size = new System.Drawing.Size(131, 38);
+            this.btnReinitialiser.TabIndex = 35;
+            this.btnReinitialiser.Text = "réinitialiser";
+            this.btnReinitialiser.UseVisualStyleBackColor = false;
+            this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.groupBox1.Controls.Add(this.pnlChampsPersonnalises);
+            this.groupBox1.Controls.Add(this.btnReinitialiser);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.btnAjouterChamp);
+            this.groupBox1.Controls.Add(this.txtNomDuNouveauChamp);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(592, 374);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Size = new System.Drawing.Size(848, 294);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Urls de sites :";
             // 
             // frmEtablissement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1457, 772);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.groupBox3);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(1481, 797);
             this.Controls.Add(this.gpbInfosEtab);
             this.Controls.Add(this.gpbLogicielEdt);
             this.Controls.Add(this.label3);
@@ -847,6 +857,7 @@ namespace CartesAcces2024
             this.Controls.Add(this.txtNumRue);
             this.Controls.Add(this.txtEtab);
             this.Controls.Add(this.btnValider);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -868,8 +879,8 @@ namespace CartesAcces2024
             this.gpbLogicielEdt.PerformLayout();
             this.gpbInfosEtab.ResumeLayout(false);
             this.gpbInfosEtab.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -927,10 +938,11 @@ namespace CartesAcces2024
         private System.Windows.Forms.GroupBox gpbInfosEtab;
         private System.Windows.Forms.RadioButton rdbNon;
         private System.Windows.Forms.RadioButton rdbOui;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnAjouterPhoto;
-        private System.Windows.Forms.Button btnAnnulerPhoto;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Panel pnlChampsPersonnalises;
+        private System.Windows.Forms.Button btnAjouterChamp;
+        private System.Windows.Forms.TextBox txtNomDuNouveauChamp;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnReinitialiser;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
