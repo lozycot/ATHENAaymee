@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DBD2D38B-F715-4407-BE3F-CF9BA8BE4EFB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ATHENA</RootNamespace>
-    <AssemblyName>ATHENA</AssemblyName>
+    <RootNamespace>Athena</RootNamespace>
+    <AssemblyName>Athena</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -99,7 +99,7 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>1 %281%29.ico</ApplicationIcon>
+    <ApplicationIcon>IconAthena2024.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
@@ -495,6 +495,7 @@
     <Content Include="Ghostscript\gswin32c.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="IconAthena2024.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
