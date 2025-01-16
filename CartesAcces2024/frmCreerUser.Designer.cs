@@ -230,6 +230,7 @@ namespace CartesAcces2024
             this.MinimizeBox = false;
             this.Name = "frmCreerUser";
             this.Text = "Athena - Création d\'utilisateurs";
+            this.Load += new System.EventHandler(this.frmCreerUser_Load_1);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);

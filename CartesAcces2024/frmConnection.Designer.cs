@@ -223,6 +223,7 @@ namespace CartesAcces2024
             this.MinimizeBox = false;
             this.Name = "frmConnection";
             this.Text = "Athena - Connexion";
+            this.Load += new System.EventHandler(this.frmConnection_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

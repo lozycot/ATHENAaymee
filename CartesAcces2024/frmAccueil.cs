@@ -71,7 +71,7 @@ namespace CartesAcces2024
             if (Globale.Actuelle != null)
                 Globale.Actuelle.Close(); // Ferme le formulaire actuel
             Globale.Actuelle = nouveauFormulaire; // Définit le nouveau formulaire comme actuel
-            Text = titre; // Définit le titre du formulaire
+            Text = Application.ProductName + " - " + titre; // Définit le titre du formulaire
             Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); })); // Ouvre le nouveau formulaire
         }
 
@@ -83,40 +83,40 @@ namespace CartesAcces2024
 
         private void btnImpInformations_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaire(new frmImport(), "Athena - Importation d'Informations");
+            OuvrirFormulaire(new frmImport(), "Importation d'Informations");
         }
 
         // Section Cartes d'accès : Gestionnaires d'événements pour les boutons de cartes
         private void btnCartesClasseNiveau_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaire(new frmCarteParClasseNiveau(), "Athena - Carte par Classe / Niveau");
+            OuvrirFormulaire(new frmCarteParClasseNiveau(), "Carte par Classe / Niveau");
         }
 
         private void btnCartesListePerso_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaire(new frmCartesParListe(), "Athena - Carte par Liste Personnalisée");
+            OuvrirFormulaire(new frmCartesParListe(), "Carte par Liste Personnalisée");
         }
 
         private void btnCarteProvisoire_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaire(new frmCarteProvisoire(), "Athena - Carte Provisoire");
+            OuvrirFormulaire(new frmCarteProvisoire(), "Carte Provisoire");
         }
 
         // Section Trombinoscopes : Gestionnaires d'événements pour les boutons de trombinoscopes
         private void btnPlancheClasse_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaire(new frmPlanches(), "Athena - Planches par Classe");
+            OuvrirFormulaire(new frmPlanches(), "Planches par Classe");
         }
 
         // Section Autre : Gestionnaires d'événements pour les autres options
         private void btnOptions_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaire(new frmOptAvancees(), "Athena - Options");
+            OuvrirFormulaire(new frmOptAvancees(), "Options");
         }
 
         private void btnAPropos_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaire(new frmAPropos(), "Athena - A Propos");
+            OuvrirFormulaire(new frmAPropos(), "A Propos");
         }
 
         // Méthodes vides : Gestionnaires d'événements non utilisés pour le moment
