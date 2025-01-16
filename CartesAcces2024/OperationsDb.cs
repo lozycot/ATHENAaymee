@@ -565,28 +565,32 @@ namespace CartesAcces2024
                 // dictionnaire temporaire pour ne pas modifier rtrn pendant qu'on le parcour
                 Dictionary<string, string> temp = new Dictionary<string, string>();
 
+                //pour chaque champ ajouté par l'utilisateur
                 foreach (string champ in rtrn.Keys)
                 {
                     sql = "SELECT " + champ + " FROM Etablissement";
-                    MessageBox.Show(sql);
+
                     using (SQLiteCommand command = new SQLiteCommand(sql, connection))
                     {
                         using (SQLiteDataReader reader = command.ExecuteReader())
                         {
+                            // on récupère la valeur dans ce champs
                             if (reader.Read())
                             {
-                                temp[champ] = reader.GetString(0);
+                                temp[champ] = reader.GetString(0); // on ajoute au dictionnaire temporaire
                                 reader.Close();
                             }
                         }
                     }
                 }
 
+                // on met temp dans rtrn
                 rtrn = temp;
 
                 connection.Close();
             }
 
+            // on renvoie rtrn
             return rtrn;
         }
 
