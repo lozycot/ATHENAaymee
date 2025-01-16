@@ -302,13 +302,13 @@
     <Compile Include="forms\autre\frmChargement.Designer.cs">
       <DependentUpon>frmChargement.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEtablissement.cs">
+    <Compile Include="forms\importation\frmEtablissement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frmAccueil.Designer.cs">
       <DependentUpon>frmAccueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEtablissement.Designer.cs">
+    <Compile Include="forms\importation\frmEtablissement.Designer.cs">
       <DependentUpon>frmEtablissement.cs</DependentUpon>
     </Compile>
     <Compile Include="Globale.cs" />
@@ -370,7 +370,7 @@
     <EmbeddedResource Include="forms\autre\frmChargement.resx">
       <DependentUpon>frmChargement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEtablissement.resx">
+    <EmbeddedResource Include="forms\importation\frmEtablissement.resx">
       <DependentUpon>frmEtablissement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmAccueil.resx">
