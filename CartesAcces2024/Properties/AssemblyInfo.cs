@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("CartesAcces2024")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Athena")]
+[assembly: AssemblyDescription("Une application open source conçue pour simplifier la gestion administrative des établissements scolaires.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CartesAcces2024")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
+[assembly: AssemblyCompany("College Caroline Aigle")]
+[assembly: AssemblyProduct("Athena")]
+[assembly: AssemblyCopyright("Copyright © 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
