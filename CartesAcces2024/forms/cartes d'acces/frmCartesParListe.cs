@@ -32,7 +32,6 @@ namespace CartesAcces2024
         public frmCartesParListe()
         {
             InitializeComponent();
-            //Couleur.setCouleurFenetre(this);
         }
 
         /// <summary>
@@ -72,99 +71,74 @@ namespace CartesAcces2024
 
         private void frmCartesParListe_Load(object sender, EventArgs e)
         {
-            try
-            {
-                EleveSelectionner = new List<string>();
-                NomPrenomEleve = new List<string>();
-                Globale.ListeEleve = OperationsDb.GetEleve();
-                ListeEleve = Globale.ListeEleve;
-                EleveEnString();
-                lblCount.Text = NomPrenomEleve.Count.ToString();
-                Eleves.DataSource = NomPrenomEleve;
-                btnAjout.Click += AjoutEleve;
-                btnRetirer.Click += RetirerEleve;
-                txtRecherche.TextChanged += Recheche;
-                Globale.ListeEleves6Eme = new List<Eleve>();
-                Globale.ListeEleves5Eme = new List<Eleve>();
-                Globale.ListeEleves4Eme = new List<Eleve>();
-                Globale.ListeEleves3Eme = new List<Eleve>();
-                foreach (Control VARIABLE in groupBox1.Controls) (VARIABLE as RadioButton).CheckedChanged += RbChanged;
-
-                Globale.ListeEleves6Eme = OperationsDb.GetEleve("6");
-                Globale.ListeEleves5Eme = OperationsDb.GetEleve("5");
-                Globale.ListeEleves4Eme = OperationsDb.GetEleve("4");
-                Globale.ListeEleves3Eme = OperationsDb.GetEleve("3");
-            }
-            catch
-            {
-            }
+            changeAffichage();
         }
 
-        private bool VerifDoublon(string ajout)
+        /// <summary>
+        /// rafraichit l'affichage selon les options cochées et les éléments présents dans la base de données.
+        /// </summary>
+        private void changeAffichage()
         {
-            foreach (string selectioner in Impression.Items)
-                if (selectioner == ajout)
-                    return false;
+            // On récupère tout les élèves
+            Globale.ListeEleve.Clear();
+            Globale.ListeEleve = OperationsDb.GetEleve();
 
-            return true;
-        }
+            // Pour les niveaux de base, on les ajoute manuellement
+            Globale.ListeEleves6Eme = OperationsDb.GetEleve("6");
+            Globale.ListeEleves5Eme = OperationsDb.GetEleve("5");
+            Globale.ListeEleves4Eme = OperationsDb.GetEleve("4");
+            Globale.ListeEleves3Eme = OperationsDb.GetEleve("3");
 
-        private void AjoutEleve(object sender, EventArgs e)
-        {
-            try
+            // Selon l'option sélectionnée
+            clbElements.Items.Clear();
+            List<Eleve> listeAUtiliser = rdbTout.Checked ? Globale.ListeEleve :
+                                          rdb6eme.Checked ? Globale.ListeEleves6Eme :
+                                          rdb5eme.Checked ? Globale.ListeEleves5Eme :
+                                          rdb4eme.Checked ? Globale.ListeEleves4Eme :
+                                          Globale.ListeEleves3Eme;
+
+            foreach (Eleve elv in listeAUtiliser)
             {
-                var eleve = Eleves.SelectedItem.ToString();
-                if (VerifDoublon(eleve))
+                string element = $"{elv.NomEleve} {elv.PrenomEleve} {elv.ClasseEleve}";
+                if (!string.IsNullOrWhiteSpace(element) && element.Split(' ').Length == 3)
                 {
-                    EleveSelectionner.Add(eleve);
-                    Impression.DataSource = null;
-                    Impression.DataSource = EleveSelectionner;
-                    Impression.Refresh();
+                    clbElements.Items.Add(element);
                 }
             }
-            catch
-            {
-            }
         }
 
-        private void RetirerEleve(object sender, EventArgs e)
-        {
-            try
-            {
-                EleveSelectionner.Remove(Impression.SelectedItem.ToString());
-                Impression.DataSource = null;
-                Impression.DataSource = EleveSelectionner;
-                Eleves.Refresh();
-                Impression.Refresh();
-                Impression.ClearSelected();
-            }
-            catch
-            {
-            }
-        }
+        //private bool VerifDoublon(string ajout)
+        //{
+        //    foreach (string selectioner in Impression.Items)
+        //        if (selectioner == ajout)
+        //            return false;
 
+        //    return true;
+        //}
+
+        // A FAIRE
         private void Recheche(object sender, EventArgs e)
         {
-            try
-            {
-                var pattern = ".*" + txtRecherche.Text + ".*";
-                var el = XTrie.Recherche(pattern, ListeEleve);
-                if (el != null)
-                {
-                    lblCount.Text = el.Count.ToString();
-                    Eleves.DataSource = el;
-                    Eleves.Refresh();
-                }
-                else
-                {
-                    lblCount.Text = ListeEleve.Count.ToString();
-                    Eleves.DataSource = NomPrenomEleve;
-                    Eleves.Refresh();
-                }
-            }
-            catch
-            {
-            }
+            //try
+            //{
+            //    var pattern = ".*" + txtRecherche.Text + ".*";
+            //    var el = XTrie.Recherche(pattern, ListeEleve);
+            //    if (el != null)
+            //    {
+            //        lblCount.Text = el.Count.ToString();
+            //        Eleves.DataSource = el;
+            //        Eleves.Refresh();
+            //    }
+            //    else
+            //    {
+            //        lblCount.Text = ListeEleve.Count.ToString();
+            //        Eleves.DataSource = NomPrenomEleve;
+            //        Eleves.Refresh();
+            //    }
+            //}
+            //catch
+            //{
+            //}
         }
 
         /// <summary>
@@ -174,13 +148,18 @@ namespace CartesAcces2024
         /// <returns></returns>
         public static List<Eleve> ConvertionListeStringEleveEnEleve(List<string> convertir)
         {
+            if (convertir == null)
+                return new List<Eleve>(); // Retourne une liste vide si convertir est null
+
             var e = new List<Eleve>();
             foreach (var ee in convertir)
+            {
                 foreach (var eee in Globale.ListeEleve)
                 {
-                    var eeee = eee.NomEleve + " " + eee.PrenomEleve + " " + eee.ClasseEleve;
+                    var eeee = $"{eee.NomEleve} {eee.PrenomEleve} {eee.ClasseEleve}";
                     if (ee == eeee) e.Add(eee);
                 }
+            }
 
             return e;
         }
@@ -198,74 +177,74 @@ namespace CartesAcces2024
             }
         }
 
-        private void RbChanged(object sender, EventArgs e)
-        {
-            if (sender is RadioButton)
-                if ((sender as RadioButton).Checked)
-                    switch ((sender as RadioButton).Name)
-                    {
-                        case "tout":
-                            ToutF();
-                            break;
-                        case "Seme":
-                            SemeF();
-                            break;
-                        case "Ceme":
-                            CemeF();
-                            break;
-                        case "Qeme":
-                            QemeF();
-                            break;
-                        case "Teme":
-                            TemeF();
-                            break;
-                    }
-        }
+        //private void RbChanged(object sender, EventArgs e)
+        //{
+        //    if (sender is RadioButton)
+        //        if ((sender as RadioButton).Checked)
+        //            switch ((sender as RadioButton).Name)
+        //            {
+        //                case "tout":
+        //                    ToutF();
+        //                    break;
+        //                case "Seme":
+        //                    SemeF();
+        //                    break;
+        //                case "Ceme":
+        //                    CemeF();
+        //                    break;
+        //                case "Qeme":
+        //                    QemeF();
+        //                    break;
+        //                case "Teme":
+        //                    TemeF();
+        //                    break;
+        //            }
+        //}
 
-        private void ToutF()
-        {
-            ListeEleve = Globale.ListeEleve;
-            NomPrenomEleve = new List<string>();
-            EleveEnString();
-            lblCount.Text = ListeEleve.Count.ToString();
-            Eleves.DataSource = NomPrenomEleve;
-        }
+        //private void ToutF()
+        //{
+        //    ListeEleve = Globale.ListeEleve;
+        //    NomPrenomEleve = new List<string>();
+        //    EleveEnString();
+        //    lblCount.Text = ListeEleve.Count.ToString();
+        //    Eleves.DataSource = NomPrenomEleve;
+        //}
 
-        private void SemeF()
-        {
-            ListeEleve = Globale.ListeEleves6Eme;
-            NomPrenomEleve = new List<string>();
-            EleveEnString();
-            lblCount.Text = ListeEleve.Count.ToString();
-            Eleves.DataSource = NomPrenomEleve;
-        }
+        //private void SemeF()
+        //{
+        //    ListeEleve = Globale.ListeEleves6Eme;
+        //    NomPrenomEleve = new List<string>();
+        //    EleveEnString();
+        //    lblCount.Text = ListeEleve.Count.ToString();
+        //    Eleves.DataSource = NomPrenomEleve;
+        //}
 
-        private void CemeF()
-        {
-            ListeEleve = Globale.ListeEleves5Eme;
-            NomPrenomEleve = new List<string>();
-            EleveEnString();
-            lblCount.Text = ListeEleve.Count.ToString();
-            Eleves.DataSource = NomPrenomEleve;
-        }
+        //private void CemeF()
+        //{
+        //    ListeEleve = Globale.ListeEleves5Eme;
+        //    NomPrenomEleve = new List<string>();
+        //    EleveEnString();
+        //    lblCount.Text = ListeEleve.Count.ToString();
+        //    Eleves.DataSource = NomPrenomEleve;
+        //}
 
-        private void QemeF()
-        {
-            ListeEleve = Globale.ListeEleves4Eme;
-            NomPrenomEleve = new List<string>();
-            EleveEnString();
-            lblCount.Text = ListeEleve.Count.ToString();
-            Eleves.DataSource = NomPrenomEleve;
-        }
+        //private void QemeF()
+        //{
+        //    ListeEleve = Globale.ListeEleves4Eme;
+        //    NomPrenomEleve = new List<string>();
+        //    EleveEnString();
+        //    lblCount.Text = ListeEleve.Count.ToString();
+        //    Eleves.DataSource = NomPrenomEleve;
+        //}
 
-        private void TemeF()
-        {
-            ListeEleve = Globale.ListeEleves3Eme;
-            NomPrenomEleve = new List<string>();
-            EleveEnString();
-            lblCount.Text = ListeEleve.Count.ToString();
-            Eleves.DataSource = NomPrenomEleve;
-        }
+        //private void TemeF()
+        //{
+        //    ListeEleve = Globale.ListeEleves3Eme;
+        //    NomPrenomEleve = new List<string>();
+        //    EleveEnString();
+        //    lblCount.Text = ListeEleve.Count.ToString();
+        //    Eleves.DataSource = NomPrenomEleve;
+        //}
 
         private void CheckedChanged(object sender, EventArgs e)
         {
@@ -276,44 +255,60 @@ namespace CartesAcces2024
         {
             try
             {
+                // Initialiser EleveSelectionner
+                EleveSelectionner = new List<string>();
+
+                // Récupérer les éléments sélectionnés dans clbElements
+                foreach (var item in clbElements.CheckedItems)
+                {
+                    EleveSelectionner.Add(item.ToString());
+                }
+
+                // Vérifiez si EleveSelectionner est null ou vide
+                if (EleveSelectionner == null || EleveSelectionner.Count == 0)
+                {
+                    MessageBox.Show("Aucun élève sélectionné. Veuillez sélectionner au moins un élève.");
+                    return; // Sortir de la méthode si aucun élève n'est sélectionné
+                }
+
                 Globale.ListeEleveImpr = ConvertionListeStringEleveEnEleve(EleveSelectionner);
-                Globale.carteParListe = true;
                 Form frmMultipleCarteEdi = new FrmMultiplesCartesEdition();
                 frmMultipleCarteEdi.Show();
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Erreur : " + ex.Message);
             }
         }
 
         private void pbPhoto_Click(object sender, EventArgs e)
         {
-
+            // Code pour gérer le clic sur l'image
         }
 
-        private void Eleves_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string path = "";
-            string Niveau = "";
-            string txt = Eleves.SelectedItem.ToString();
+        //private void Eleves_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    string path = "";
+        //    string Niveau = "";
+        //    string txt = Eleves.SelectedItem.ToString();
 
-            string[] eleve = txt.Split(' ');
-            Niveau = eleve[2].Substring(0, 1) + "eme";
+        //    string[] eleve = txt.Split(' ');
+        //    Niveau = eleve[2].Substring(0, 1) + "eme";
 
-            path = Chemin.DossierPhotoEleve + Niveau + "/" + eleve[0] + " " + eleve[1] + ".jpg";
-            pbPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
-            if (pbPhoto.Image != null)
-                pbPhoto.Image.Dispose();
-            try
-            {
-                pbPhoto.Image = Image.FromFile(path);
-                corrigeRatioPhoto();
-            }
-            catch
-            {
-                pbPhoto.Image = Image.FromFile(Chemin.CheminPhotoDefault);
-            }
-        }
+        //    path = Chemin.DossierPhotoEleve + Niveau + "/" + eleve[0] + " " + eleve[1] + ".jpg";
+        //    pbPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
+        //    if (pbPhoto.Image != null)
+        //        pbPhoto.Image.Dispose();
+        //    try
+        //    {
+        //        pbPhoto.Image = Image.FromFile(path);
+        //        corrigeRatioPhoto();
+        //    }
+        //    catch
+        //    {
+        //        pbPhoto.Image = Image.FromFile(Chemin.CheminPhotoDefault);
+        //    }
+        //}
 
         private void frmCartesParListe_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -332,6 +327,83 @@ namespace CartesAcces2024
                 {
                     pbPhoto.Height = pbPhoto.MaximumSize.Height;
                     pbPhoto.Width = (int)((double)pbPhoto.Height * ratio);
+                }
+            }
+        }
+
+        private void rdbTout_CheckedChanged(object sender, EventArgs e)
+        {
+            changeAffichage();
+        }
+
+        private void rdb6eme_CheckedChanged(object sender, EventArgs e)
+        {
+            changeAffichage();
+        }
+
+        private void rdb5eme_CheckedChanged(object sender, EventArgs e)
+        {
+            changeAffichage();
+        }
+
+        private void rdb4eme_CheckedChanged(object sender, EventArgs e)
+        {
+            changeAffichage();
+        }
+
+        private void rdb3eme_CheckedChanged(object sender, EventArgs e)
+        {
+            changeAffichage();
+        }
+
+        private void btnReinitialiser_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < clbElements.Items.Count - 1; i++) // déselectionné chque éléments de la liste
+            {
+                clbElements.SetItemChecked(i, false);
+            }
+        }
+
+        private void btnToutSelectionner_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < clbElements.Items.Count - 1; i++)   // sélectionner chaque éléments de la liste
+            {
+                clbElements.SetItemChecked(i, true);
+            }
+        }
+
+        private void clbElements_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (clbElements.SelectedItem != null)
+            {
+                string selectedText = clbElements.SelectedItem.ToString(); // Récupère le texte de l'élément sélectionné
+                string[] eleve = selectedText.Split(' '); // Supposons que le format soit "Nom Prenom Classe"
+
+                // Vérifiez que le tableau a au moins 3 éléments
+                if (eleve.Length >= 3)
+                {
+                    string niveau = eleve[2].Substring(0, 1) + "eme"; // Récupérer le niveau
+
+                    string path = Chemin.DossierPhotoEleve + niveau + "/" + eleve[0] + " " + eleve[1] + ".jpg"; // Construire le chemin de l'image
+                    pbPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    if (pbPhoto.Image != null)
+                        pbPhoto.Image.Dispose(); // Libérer l'ancienne image
+
+                    try
+                    {
+                        pbPhoto.Image = Image.FromFile(path); // Charger l'image
+                        corrigeRatioPhoto(); // Ajuster le ratio de l'image
+                    }
+                    catch
+                    {
+                        pbPhoto.Image = Image.FromFile(Chemin.CheminPhotoDefault); // Charger l'image par défaut si l'image n'est pas trouvée
+                    }
+                }
+                else
+                {
+                    // Gérer le cas où le format n'est pas correct
+                    MessageBox.Show("Le format de l'élément sélectionné est incorrect. Assurez-vous qu'il contient le nom, le prénom et la classe.");
                 }
             }
         }
