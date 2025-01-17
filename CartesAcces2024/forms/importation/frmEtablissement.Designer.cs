@@ -111,6 +111,8 @@ namespace CartesAcces2024
             this.label4 = new System.Windows.Forms.Label();
             this.btnReinitialiser = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.gb6eme.SuspendLayout();
             this.gb5eme.SuspendLayout();
             this.gb4eme.SuspendLayout();
@@ -824,11 +826,37 @@ namespace CartesAcces2024
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Urls de sites :";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(562, 73);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(18, 24);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "*";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(786, 724);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(403, 24);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Les champs avec un \" * \" sont obligatoires";
+            // 
             // frmEtablissement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1481, 797);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.gpbInfosEtab);
             this.Controls.Add(this.gpbLogicielEdt);
             this.Controls.Add(this.label3);
@@ -946,5 +974,7 @@ namespace CartesAcces2024
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnReinitialiser;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
