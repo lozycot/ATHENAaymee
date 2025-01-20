@@ -475,6 +475,7 @@
     <Content Include="data\FichierCartesFace\Face.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="data\FondAthena2024.png" />
     <Content Include="data\github.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
