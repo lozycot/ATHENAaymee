@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ATHENA.Properties {
+namespace Athena.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
