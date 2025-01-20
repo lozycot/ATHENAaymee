@@ -23,7 +23,7 @@ Pour contribuer, il faut suivre c'est étapes :
 - Installer Visual Studio 2029 ou plus
 - Cloner le dépôt en utilisant ce lien → ```https://github.com/College-Caroline-Aigle/Athena.git```
 - Démarré 1 fois en début après importation (erreur prévisible)
-- Aller dans ```[Athena/CarteDaces2024/bin/debug/database]``` et supprimer la database générer pendant le crash
+- Aller dans ```.../Athena/CarteDaces2024/bin/debug/database``` et supprimer la database générer pendant le crash
 
 Pour que les Code Barre fonctione pendant les tests il faudra installé cette extention :
 https://fr.activebarcode.com/download/
