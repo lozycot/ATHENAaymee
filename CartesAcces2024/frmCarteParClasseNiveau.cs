@@ -19,31 +19,31 @@ namespace CartesAcces2024
             //Couleur.setCouleurFenetre(this);
 
         }
-        // A ENLEVER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
         private void cbbImprSection_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Globale.ListeEleveImpr.Clear();
-            //Globale.ListeEleve = OperationsDb.GetEleve();
-            //var listeEleveParSection = new List<string>();
-            //foreach (var eleve in Globale.ListeEleve)
-            //{
-            //    if (eleve.NiveauEleve == cbbImprSection.Text)
-            //    {
-            //        listeEleveParSection.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-            //        Globale.ListeEleveImpr.Add(eleve);
-            //    }
-            //}
+            Globale.ListeEleveImpr.Clear();
+            Globale.ListeEleve = OperationsDb.GetEleve();
+            var listeEleveParSection = new List<string>();
+            foreach (var eleve in Globale.ListeEleve)
+            {
+                if (eleve.NiveauEleve == cbbImprSection.Text)
+                {
+                    listeEleveParSection.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
+                    Globale.ListeEleveImpr.Add(eleve);
+                }
+            }
 
 
-            //if (cbbImprSection.SelectedItem != null)
-            //{
-            //    listeEleveParSection.Sort();
-            //    Globale.ImprNiveau = true;
-            //    lblCount.Text = listeEleveParSection.Count.ToString();
-            //    cbbImprClasse.SelectedItem = null;
-            //    lsbListeEleve.DataSource = listeEleveParSection;
-            //    btnValiderImpr.Enabled = true;
-            //}
+            if (cbbImprSection.SelectedItem != null)
+            {
+                listeEleveParSection.Sort();
+                Globale.ImprNiveau = true;
+                lblCount.Text = listeEleveParSection.Count.ToString();
+                cbbImprClasse.SelectedItem = null;
+                lsbListeEleve.DataSource = listeEleveParSection;
+                btnValiderImpr.Enabled = true;
+            }
         }
 
         private void btnValiderImpr_Click(object sender, EventArgs e)
@@ -73,6 +73,9 @@ namespace CartesAcces2024
         //    lblcount.text = "";
         //}
         //// tentative
+        private void clbClasse5eme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
         private void gpbTriParClasses_Enter(object sender, EventArgs e)
         {
         }
@@ -86,40 +89,38 @@ namespace CartesAcces2024
 
             foreach (var classe in ListClasses)
             {
-                if (classe.StartsWith("3"))
+                while (classe.Contains("3"))
                     clbClasse3eme.Items.Add(classe);
-                else if (classe.StartsWith("4"))
+                while (classe.Contains("4"))
                     clbClasse4eme.Items.Add(classe);
-                else if (classe.StartsWith("5"))
-                    clbClasse5eme.Items.Add(classe);
-                else if (classe.StartsWith("6"))
+                while (classe.Contains("5"))
+                    clbClasse5eme.Items.Add(classe);    
+                while (classe.Contains("6"))
                     clbClasse6eme.Items.Add(classe);
             }
         }
         // fin tentative
-
-        // A ENLEVER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         private void cbbImprClasse_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //Globale.ListeEleveImpr.Clear();
-            //Globale.ListeEleve = OperationsDb.GetEleve();
-            //var listeEleveParClasse = new List<string>();
-            //foreach (var eleve in Globale.ListeEleve)
-            //    if (eleve.ClasseEleve == cbbImprClasse.Text)
-            //    {
-            //        listeEleveParClasse.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-            //        Globale.ListeEleveImpr.Add(eleve);
-            //    }
+            Globale.ListeEleveImpr.Clear();
+            Globale.ListeEleve = OperationsDb.GetEleve();
+            var listeEleveParClasse = new List<string>();
+            foreach (var eleve in Globale.ListeEleve)
+                if (eleve.ClasseEleve == cbbImprClasse.Text)
+                {
+                    listeEleveParClasse.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
+                    Globale.ListeEleveImpr.Add(eleve);
+                }
 
-            //if (cbbImprClasse.SelectedItem != null)
-            //{
-            //    cbbImprSection.SelectedItem = null;
-            //    listeEleveParClasse.Sort();
-            //    Globale.ImprNiveau = false;
-            //    lblCount.Text = listeEleveParClasse.Count.ToString();
-            //    lsbListeEleve.DataSource = listeEleveParClasse;
-            //    btnValiderImpr.Enabled = true;  
-            //}
+            if (cbbImprClasse.SelectedItem != null)
+            {
+                cbbImprSection.SelectedItem = null;
+                listeEleveParClasse.Sort();
+                Globale.ImprNiveau = false;
+                lblCount.Text = listeEleveParClasse.Count.ToString();
+                lsbListeEleve.DataSource = listeEleveParClasse;
+                btnValiderImpr.Enabled = true;
+            }
         }
 
         private void lsbListeEleve_SelectedIndexChanged(object sender, EventArgs e)
@@ -175,265 +176,12 @@ namespace CartesAcces2024
 
         private void clbClasses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Globale.ListeEleveImpr.Clear();
-            Globale.ListeEleve = OperationsDb.GetEleve();
-            var listeEleveParClasse = new List<string>();
-            foreach (var eleve in Globale.ListeEleve)
-                if (eleve.ClasseEleve == clbClasse6eme.Text)
-                {
-                    listeEleveParClasse.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-                    Globale.ListeEleveImpr.Add(eleve);
-                }
 
-            if (clbClasse6eme.SelectedItem != null)
-            {
-                cbbImprSection.SelectedItem = null;
-                listeEleveParClasse.Sort();
-                Globale.ImprNiveau = false;
-                lblCount.Text = listeEleveParClasse.Count.ToString();
-                lsbListeEleve.DataSource = listeEleveParClasse;
-                btnValiderImpr.Enabled = true;
-            }
-            while (clbClasse5eme.CheckedIndices.Count > 0)
-                clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-            while (clbClasse4eme.CheckedIndices.Count > 0)
-                clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-            while (clbClasse3eme.CheckedIndices.Count > 0)
-                clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-        }
-
-        private void clbClasse5eme_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Globale.ListeEleveImpr.Clear();
-            Globale.ListeEleve = OperationsDb.GetEleve();
-            var listeEleveParClasse = new List<string>();
-            foreach (var eleve in Globale.ListeEleve)
-                if (eleve.ClasseEleve == clbClasse5eme.Text)
-                {
-                    listeEleveParClasse.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-                    Globale.ListeEleveImpr.Add(eleve);
-                }
-
-            if (clbClasse5eme.SelectedItem != null)
-            {
-                cbbImprSection.SelectedItem = null;
-                listeEleveParClasse.Sort();
-                Globale.ImprNiveau = false;
-                lblCount.Text = listeEleveParClasse.Count.ToString();
-                lsbListeEleve.DataSource = listeEleveParClasse;
-                btnValiderImpr.Enabled = true;
-            }
-            while (clbClasse6eme.CheckedIndices.Count > 0)
-                clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-            while (clbClasse4eme.CheckedIndices.Count > 0)
-                clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-            while (clbClasse3eme.CheckedIndices.Count > 0)
-                clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-        }
-
-        private void clbClasse4eme_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Globale.ListeEleveImpr.Clear();
-            Globale.ListeEleve = OperationsDb.GetEleve();
-            var listeEleveParClasse = new List<string>();
-            foreach (var eleve in Globale.ListeEleve)
-                if (eleve.ClasseEleve == clbClasse4eme.Text)
-                {
-                    listeEleveParClasse.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-                    Globale.ListeEleveImpr.Add(eleve);
-                }
-
-            if (clbClasse4eme.SelectedItem != null)
-            {
-                cbbImprSection.SelectedItem = null;
-                listeEleveParClasse.Sort();
-                Globale.ImprNiveau = false;
-                lblCount.Text = listeEleveParClasse.Count.ToString();
-                lsbListeEleve.DataSource = listeEleveParClasse;
-                btnValiderImpr.Enabled = true;
-            }
-            while (clbClasse6eme.CheckedIndices.Count > 0)
-                clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-            while (clbClasse5eme.CheckedIndices.Count > 0)
-                clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-            while (clbClasse3eme.CheckedIndices.Count > 0)
-                clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-        }
-
-        private void clbClasse3eme_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Globale.ListeEleveImpr.Clear();
-            Globale.ListeEleve = OperationsDb.GetEleve();
-            var listeEleveParClasse = new List<string>();
-            foreach (var eleve in Globale.ListeEleve)
-                if (eleve.ClasseEleve == clbClasse3eme.Text)
-                {
-                    listeEleveParClasse.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-                    Globale.ListeEleveImpr.Add(eleve);
-                }
-
-            if (clbClasse3eme.SelectedItem != null)
-            {
-                cbbImprSection.SelectedItem = null;
-                listeEleveParClasse.Sort();
-                Globale.ImprNiveau = false;
-                lblCount.Text = listeEleveParClasse.Count.ToString();
-                lsbListeEleve.DataSource = listeEleveParClasse;
-                btnValiderImpr.Enabled = true;
-            }
-            while (clbClasse6eme.CheckedIndices.Count > 0)
-                clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-            while (clbClasse5eme.CheckedIndices.Count > 0)
-                clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-            while (clbClasse4eme.CheckedIndices.Count > 0)
-                clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void cbbImprSection_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NbComptageEleveCS_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbxNiveau6eme_CheckedChanged(object sender, EventArgs e)
-        {
-            Globale.ListeEleveImpr.Clear();
-            Globale.ListeEleve = OperationsDb.GetEleve();
-            var listeEleveParSection = new List<string>();
-            foreach (var eleve in Globale.ListeEleve)
-            {
-                if (eleve.NiveauEleve == cbxNiveau6eme.Text)
-                {
-                    listeEleveParSection.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-                    Globale.ListeEleveImpr.Add(eleve);
-                }
-            }
-
-
-            if (cbxNiveau6eme.Checked == true)
-            {
-                listeEleveParSection.Sort();
-                Globale.ImprNiveau = true;
-                lblCount.Text = listeEleveParSection.Count.ToString();
-                while (clbClasse6eme.CheckedIndices.Count > 0)
-                    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-                while (clbClasse5eme.CheckedIndices.Count > 0)
-                    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-                while (clbClasse4eme.CheckedIndices.Count > 0)
-                    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-                while (clbClasse3eme.CheckedIndices.Count > 0)
-                    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-                lsbListeEleve.DataSource = listeEleveParSection;
-                btnValiderImpr.Enabled = true;
-            }
-        }
-
-        private void cbxNiveau5eme_CheckedChanged(object sender, EventArgs e)
-        {
-            Globale.ListeEleveImpr.Clear();
-            Globale.ListeEleve = OperationsDb.GetEleve();
-            var listeEleveParSection = new List<string>();
-            foreach (var eleve in Globale.ListeEleve)
-            {
-                if (eleve.NiveauEleve == cbxNiveau5eme.Text)
-                {
-                    listeEleveParSection.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-                    Globale.ListeEleveImpr.Add(eleve);
-                }
-            }
-
-
-            if (cbxNiveau5eme.Checked == true)
-            {
-                listeEleveParSection.Sort();
-                Globale.ImprNiveau = true;
-                lblCount.Text = listeEleveParSection.Count.ToString();
-                while (clbClasse6eme.CheckedIndices.Count > 0)
-                    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-                while (clbClasse5eme.CheckedIndices.Count > 0)
-                    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-                while (clbClasse4eme.CheckedIndices.Count > 0)
-                    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-                while (clbClasse3eme.CheckedIndices.Count > 0)
-                    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-                lsbListeEleve.DataSource = listeEleveParSection;
-                btnValiderImpr.Enabled = true;
-            }
-        }
-
-        private void cbxNiveau4eme_CheckedChanged(object sender, EventArgs e)
-        {
-            Globale.ListeEleveImpr.Clear();
-            Globale.ListeEleve = OperationsDb.GetEleve();
-            var listeEleveParSection = new List<string>();
-            foreach (var eleve in Globale.ListeEleve)
-            {
-                if (eleve.NiveauEleve == cbxNiveau4eme.Text)
-                {
-                    listeEleveParSection.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-                    Globale.ListeEleveImpr.Add(eleve);
-                }
-            }
-
-
-            if (cbxNiveau4eme.Checked == true)
-            {
-                listeEleveParSection.Sort();
-                Globale.ImprNiveau = true;
-                lblCount.Text = listeEleveParSection.Count.ToString();
-                while (clbClasse6eme.CheckedIndices.Count > 0)
-                    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-                while (clbClasse5eme.CheckedIndices.Count > 0)
-                    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-                while (clbClasse4eme.CheckedIndices.Count > 0)
-                    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-                while (clbClasse3eme.CheckedIndices.Count > 0)
-                    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-                lsbListeEleve.DataSource = listeEleveParSection;
-                btnValiderImpr.Enabled = true;
-            }
-        }
-
-        private void cbxNiveau3eme_CheckedChanged(object sender, EventArgs e)
-        {
-            Globale.ListeEleveImpr.Clear();
-            Globale.ListeEleve = OperationsDb.GetEleve();
-            var listeEleveParSection = new List<string>();
-            foreach (var eleve in Globale.ListeEleve)
-            {
-                if (eleve.NiveauEleve == cbxNiveau3eme.Text)
-                {
-                    listeEleveParSection.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-                    Globale.ListeEleveImpr.Add(eleve);
-                }
-            }
-
-
-            if (cbxNiveau3eme.Checked == true)
-            {
-                listeEleveParSection.Sort();
-                Globale.ImprNiveau = true;
-                lblCount.Text = listeEleveParSection.Count.ToString();
-                while (clbClasse6eme.CheckedIndices.Count > 0)
-                    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-                while (clbClasse5eme.CheckedIndices.Count > 0)
-                    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-                while (clbClasse4eme.CheckedIndices.Count > 0)
-                    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-                while (clbClasse3eme.CheckedIndices.Count > 0)
-                    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-                lsbListeEleve.DataSource = listeEleveParSection;
-                btnValiderImpr.Enabled = true;
-            }
         }
     }
 }

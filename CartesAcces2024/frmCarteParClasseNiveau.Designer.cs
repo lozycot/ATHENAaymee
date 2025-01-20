@@ -66,18 +66,18 @@ namespace CartesAcces2024
             this.cbbImprClasse = new System.Windows.Forms.ComboBox();
             this.pbPhoto = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.gbxTriParNiveau = new System.Windows.Forms.GroupBox();
-            this.cbxNiveau3eme = new System.Windows.Forms.CheckBox();
-            this.cbxNiveau4eme = new System.Windows.Forms.CheckBox();
-            this.cbxNiveau5eme = new System.Windows.Forms.CheckBox();
-            this.cbxNiveau6eme = new System.Windows.Forms.CheckBox();
+            this.lblNombreEleveImpr = new System.Windows.Forms.Label();
+            this.lblAModifierNbrEleve = new System.Windows.Forms.Label();
+            this.gbxFiltreParClasses = new System.Windows.Forms.GroupBox();
+            this.rdbParNiveaux = new System.Windows.Forms.RadioButton();
+            this.rdbParClasses = new System.Windows.Forms.RadioButton();
             this.clbClasse6eme = new System.Windows.Forms.CheckedListBox();
             this.clbClasse5eme = new System.Windows.Forms.CheckedListBox();
             this.clbClasse4eme = new System.Windows.Forms.CheckedListBox();
             this.clbClasse3eme = new System.Windows.Forms.CheckedListBox();
             this.gpbTriParClasses = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
-            this.gbxTriParNiveau.SuspendLayout();
+            this.gbxFiltreParClasses.SuspendLayout();
             this.gpbTriParClasses.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,9 +86,9 @@ namespace CartesAcces2024
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1004, 21);
+            this.label1.Location = new System.Drawing.Point(596, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 29);
+            this.label1.Size = new System.Drawing.Size(134, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Imprimer une classe :";
             // 
@@ -97,9 +97,9 @@ namespace CartesAcces2024
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1004, 88);
+            this.label2.Location = new System.Drawing.Point(596, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(226, 29);
+            this.label2.Size = new System.Drawing.Size(126, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Imprimer par niveau";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -114,13 +114,12 @@ namespace CartesAcces2024
             "5eme",
             "4eme",
             "3eme"});
-            this.cbbImprSection.Location = new System.Drawing.Point(1275, 88);
+            this.cbbImprSection.Location = new System.Drawing.Point(867, 170);
             this.cbbImprSection.MaximumSize = new System.Drawing.Size(180, 0);
             this.cbbImprSection.MinimumSize = new System.Drawing.Size(180, 0);
             this.cbbImprSection.Name = "cbbImprSection";
-            this.cbbImprSection.Size = new System.Drawing.Size(180, 37);
+            this.cbbImprSection.Size = new System.Drawing.Size(180, 24);
             this.cbbImprSection.TabIndex = 4;
-            this.cbbImprSection.SelectedIndexChanged += new System.EventHandler(this.cbbImprSection_SelectedIndexChanged_1);
             this.cbbImprSection.SelectionChangeCommitted += new System.EventHandler(this.cbbImprSection_SelectedIndexChanged);
             // 
             // btnValiderImpr
@@ -130,7 +129,7 @@ namespace CartesAcces2024
             this.btnValiderImpr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValiderImpr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnValiderImpr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(202)))), ((int)(((byte)(131)))));
-            this.btnValiderImpr.Location = new System.Drawing.Point(1200, 818);
+            this.btnValiderImpr.Location = new System.Drawing.Point(1061, 810);
             this.btnValiderImpr.MaximumSize = new System.Drawing.Size(300, 70);
             this.btnValiderImpr.MinimumSize = new System.Drawing.Size(300, 70);
             this.btnValiderImpr.Name = "btnValiderImpr";
@@ -147,10 +146,12 @@ namespace CartesAcces2024
             this.lsbListeEleve.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lsbListeEleve.ForeColor = System.Drawing.Color.White;
             this.lsbListeEleve.FormattingEnabled = true;
-            this.lsbListeEleve.ItemHeight = 29;
-            this.lsbListeEleve.Location = new System.Drawing.Point(816, 306);
+            this.lsbListeEleve.ItemHeight = 16;
+            this.lsbListeEleve.Location = new System.Drawing.Point(1061, 382);
+            this.lsbListeEleve.MaximumSize = new System.Drawing.Size(350, 410);
+            this.lsbListeEleve.MinimumSize = new System.Drawing.Size(350, 410);
             this.lsbListeEleve.Name = "lsbListeEleve";
-            this.lsbListeEleve.Size = new System.Drawing.Size(350, 582);
+            this.lsbListeEleve.Size = new System.Drawing.Size(350, 402);
             this.lsbListeEleve.TabIndex = 7;
             this.lsbListeEleve.SelectedIndexChanged += new System.EventHandler(this.lsbListeEleve_SelectedIndexChanged);
             // 
@@ -159,18 +160,17 @@ namespace CartesAcces2024
             this.NbComptageEleveCS.AutoSize = true;
             this.NbComptageEleveCS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.NbComptageEleveCS.ForeColor = System.Drawing.Color.White;
-            this.NbComptageEleveCS.Location = new System.Drawing.Point(35, 254);
+            this.NbComptageEleveCS.Location = new System.Drawing.Point(35, 23);
             this.NbComptageEleveCS.Name = "NbComptageEleveCS";
-            this.NbComptageEleveCS.Size = new System.Drawing.Size(555, 29);
+            this.NbComptageEleveCS.Size = new System.Drawing.Size(311, 16);
             this.NbComptageEleveCS.TabIndex = 25;
             this.NbComptageEleveCS.Text = "Nombre d\'élève de la liste de la classe ou section :";
-            this.NbComptageEleveCS.Click += new System.EventHandler(this.NbComptageEleveCS_Click);
             // 
             // lblCount
             // 
             this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount.ForeColor = System.Drawing.Color.White;
-            this.lblCount.Location = new System.Drawing.Point(596, 254);
+            this.lblCount.Location = new System.Drawing.Point(596, 23);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(112, 43);
             this.lblCount.TabIndex = 27;
@@ -181,7 +181,7 @@ namespace CartesAcces2024
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1004, 57);
+            this.label3.Location = new System.Drawing.Point(596, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 31);
             this.label3.TabIndex = 29;
@@ -198,17 +198,17 @@ namespace CartesAcces2024
             "5eme",
             "3eme",
             "test"});
-            this.cbbImprClasse.Location = new System.Drawing.Point(1275, 21);
+            this.cbbImprClasse.Location = new System.Drawing.Point(867, 103);
             this.cbbImprClasse.MaximumSize = new System.Drawing.Size(180, 0);
             this.cbbImprClasse.MinimumSize = new System.Drawing.Size(180, 0);
             this.cbbImprClasse.Name = "cbbImprClasse";
-            this.cbbImprClasse.Size = new System.Drawing.Size(180, 37);
+            this.cbbImprClasse.Size = new System.Drawing.Size(180, 24);
             this.cbbImprClasse.TabIndex = 30;
             this.cbbImprClasse.SelectedIndexChanged += new System.EventHandler(this.cbbImprClasse_SelectedIndexChanged_1);
             // 
             // pbPhoto
             // 
-            this.pbPhoto.Location = new System.Drawing.Point(1222, 306);
+            this.pbPhoto.Location = new System.Drawing.Point(1128, 23);
             this.pbPhoto.Margin = new System.Windows.Forms.Padding(2);
             this.pbPhoto.Name = "pbPhoto";
             this.pbPhoto.Size = new System.Drawing.Size(233, 305);
@@ -220,71 +220,65 @@ namespace CartesAcces2024
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(811, 254);
+            this.label4.Location = new System.Drawing.Point(1056, 341);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(197, 29);
+            this.label4.Size = new System.Drawing.Size(108, 16);
             this.label4.TabIndex = 32;
             this.label4.Text = "Liste à imprimer :";
             // 
-            // gbxTriParNiveau
+            // lblNombreEleveImpr
             // 
-            this.gbxTriParNiveau.Controls.Add(this.cbxNiveau3eme);
-            this.gbxTriParNiveau.Controls.Add(this.cbxNiveau4eme);
-            this.gbxTriParNiveau.Controls.Add(this.cbxNiveau5eme);
-            this.gbxTriParNiveau.Controls.Add(this.cbxNiveau6eme);
-            this.gbxTriParNiveau.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxTriParNiveau.ForeColor = System.Drawing.Color.White;
-            this.gbxTriParNiveau.Location = new System.Drawing.Point(40, 306);
-            this.gbxTriParNiveau.Name = "gbxTriParNiveau";
-            this.gbxTriParNiveau.Size = new System.Drawing.Size(743, 123);
-            this.gbxTriParNiveau.TabIndex = 35;
-            this.gbxTriParNiveau.TabStop = false;
-            this.gbxTriParNiveau.Text = "Recherche par niveaux : ";
-            this.gbxTriParNiveau.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.lblNombreEleveImpr.AutoSize = true;
+            this.lblNombreEleveImpr.Location = new System.Drawing.Point(41, 81);
+            this.lblNombreEleveImpr.Name = "lblNombreEleveImpr";
+            this.lblNombreEleveImpr.Size = new System.Drawing.Size(145, 13);
+            this.lblNombreEleveImpr.TabIndex = 33;
+            this.lblNombreEleveImpr.Text = "Nombre d\'élèves à imprimer : ";
             // 
-            // cbxNiveau3eme
+            // lblAModifierNbrEleve
             // 
-            this.cbxNiveau3eme.AutoSize = true;
-            this.cbxNiveau3eme.Location = new System.Drawing.Point(546, 56);
-            this.cbxNiveau3eme.Name = "cbxNiveau3eme";
-            this.cbxNiveau3eme.Size = new System.Drawing.Size(87, 29);
-            this.cbxNiveau3eme.TabIndex = 3;
-            this.cbxNiveau3eme.Text = "3eme";
-            this.cbxNiveau3eme.UseVisualStyleBackColor = true;
-            this.cbxNiveau3eme.CheckedChanged += new System.EventHandler(this.cbxNiveau3eme_CheckedChanged);
+            this.lblAModifierNbrEleve.AutoSize = true;
+            this.lblAModifierNbrEleve.Location = new System.Drawing.Point(329, 81);
+            this.lblAModifierNbrEleve.Name = "lblAModifierNbrEleve";
+            this.lblAModifierNbrEleve.Size = new System.Drawing.Size(13, 13);
+            this.lblAModifierNbrEleve.TabIndex = 34;
+            this.lblAModifierNbrEleve.Text = "0";
             // 
-            // cbxNiveau4eme
+            // gbxFiltreParClasses
             // 
-            this.cbxNiveau4eme.AutoSize = true;
-            this.cbxNiveau4eme.Location = new System.Drawing.Point(373, 56);
-            this.cbxNiveau4eme.Name = "cbxNiveau4eme";
-            this.cbxNiveau4eme.Size = new System.Drawing.Size(87, 29);
-            this.cbxNiveau4eme.TabIndex = 2;
-            this.cbxNiveau4eme.Text = "4eme";
-            this.cbxNiveau4eme.UseVisualStyleBackColor = true;
-            this.cbxNiveau4eme.CheckedChanged += new System.EventHandler(this.cbxNiveau4eme_CheckedChanged);
+            this.gbxFiltreParClasses.Controls.Add(this.rdbParNiveaux);
+            this.gbxFiltreParClasses.Controls.Add(this.rdbParClasses);
+            this.gbxFiltreParClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxFiltreParClasses.ForeColor = System.Drawing.Color.White;
+            this.gbxFiltreParClasses.Location = new System.Drawing.Point(40, 112);
+            this.gbxFiltreParClasses.Name = "gbxFiltreParClasses";
+            this.gbxFiltreParClasses.Size = new System.Drawing.Size(406, 116);
+            this.gbxFiltreParClasses.TabIndex = 35;
+            this.gbxFiltreParClasses.TabStop = false;
+            this.gbxFiltreParClasses.Text = "Filtre de recherche : ";
+            this.gbxFiltreParClasses.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // cbxNiveau5eme
+            // rdbParNiveaux
             // 
-            this.cbxNiveau5eme.AutoSize = true;
-            this.cbxNiveau5eme.Location = new System.Drawing.Point(200, 56);
-            this.cbxNiveau5eme.Name = "cbxNiveau5eme";
-            this.cbxNiveau5eme.Size = new System.Drawing.Size(87, 29);
-            this.cbxNiveau5eme.TabIndex = 1;
-            this.cbxNiveau5eme.Text = "5eme";
-            this.cbxNiveau5eme.UseVisualStyleBackColor = true;
-            this.cbxNiveau5eme.CheckedChanged += new System.EventHandler(this.cbxNiveau5eme_CheckedChanged);
+            this.rdbParNiveaux.AutoSize = true;
+            this.rdbParNiveaux.Location = new System.Drawing.Point(222, 52);
+            this.rdbParNiveaux.Name = "rdbParNiveaux";
+            this.rdbParNiveaux.Size = new System.Drawing.Size(81, 17);
+            this.rdbParNiveaux.TabIndex = 1;
+            this.rdbParNiveaux.TabStop = true;
+            this.rdbParNiveaux.Text = "Par niveaux";
+            this.rdbParNiveaux.UseVisualStyleBackColor = true;
             // 
-            // cbxNiveau6eme
+            // rdbParClasses
             // 
-            this.cbxNiveau6eme.AutoSize = true;
-            this.cbxNiveau6eme.Location = new System.Drawing.Point(27, 56);
-            this.cbxNiveau6eme.Name = "cbxNiveau6eme";
-            this.cbxNiveau6eme.Size = new System.Drawing.Size(87, 29);
-            this.cbxNiveau6eme.TabIndex = 0;
-            this.cbxNiveau6eme.Text = "6eme";
-            this.cbxNiveau6eme.UseVisualStyleBackColor = true;
-            this.cbxNiveau6eme.CheckedChanged += new System.EventHandler(this.cbxNiveau6eme_CheckedChanged);
+            this.rdbParClasses.AutoSize = true;
+            this.rdbParClasses.Location = new System.Drawing.Point(27, 52);
+            this.rdbParClasses.Name = "rdbParClasses";
+            this.rdbParClasses.Size = new System.Drawing.Size(79, 17);
+            this.rdbParClasses.TabIndex = 0;
+            this.rdbParClasses.TabStop = true;
+            this.rdbParClasses.Text = "Par classes";
+            this.rdbParClasses.UseVisualStyleBackColor = true;
             // 
             // clbClasse6eme
             // 
@@ -294,7 +288,7 @@ namespace CartesAcces2024
             this.clbClasse6eme.FormattingEnabled = true;
             this.clbClasse6eme.Location = new System.Drawing.Point(27, 41);
             this.clbClasse6eme.Name = "clbClasse6eme";
-            this.clbClasse6eme.Size = new System.Drawing.Size(167, 364);
+            this.clbClasse6eme.Size = new System.Drawing.Size(212, 510);
             this.clbClasse6eme.TabIndex = 0;
             this.clbClasse6eme.SelectedIndexChanged += new System.EventHandler(this.clbClasses_SelectedIndexChanged);
             // 
@@ -304,9 +298,9 @@ namespace CartesAcces2024
             this.clbClasse5eme.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clbClasse5eme.ForeColor = System.Drawing.SystemColors.Window;
             this.clbClasse5eme.FormattingEnabled = true;
-            this.clbClasse5eme.Location = new System.Drawing.Point(200, 41);
+            this.clbClasse5eme.Location = new System.Drawing.Point(270, 41);
             this.clbClasse5eme.Name = "clbClasse5eme";
-            this.clbClasse5eme.Size = new System.Drawing.Size(167, 364);
+            this.clbClasse5eme.Size = new System.Drawing.Size(212, 510);
             this.clbClasse5eme.TabIndex = 36;
             this.clbClasse5eme.SelectedIndexChanged += new System.EventHandler(this.clbClasse5eme_SelectedIndexChanged);
             // 
@@ -316,9 +310,9 @@ namespace CartesAcces2024
             this.clbClasse4eme.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clbClasse4eme.ForeColor = System.Drawing.SystemColors.Window;
             this.clbClasse4eme.FormattingEnabled = true;
-            this.clbClasse4eme.Location = new System.Drawing.Point(373, 41);
+            this.clbClasse4eme.Location = new System.Drawing.Point(515, 41);
             this.clbClasse4eme.Name = "clbClasse4eme";
-            this.clbClasse4eme.Size = new System.Drawing.Size(167, 364);
+            this.clbClasse4eme.Size = new System.Drawing.Size(212, 510);
             this.clbClasse4eme.TabIndex = 37;
             // 
             // clbClasse3eme
@@ -327,9 +321,9 @@ namespace CartesAcces2024
             this.clbClasse3eme.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clbClasse3eme.ForeColor = System.Drawing.SystemColors.Window;
             this.clbClasse3eme.FormattingEnabled = true;
-            this.clbClasse3eme.Location = new System.Drawing.Point(546, 41);
+            this.clbClasse3eme.Location = new System.Drawing.Point(761, 41);
             this.clbClasse3eme.Name = "clbClasse3eme";
-            this.clbClasse3eme.Size = new System.Drawing.Size(167, 364);
+            this.clbClasse3eme.Size = new System.Drawing.Size(212, 510);
             this.clbClasse3eme.TabIndex = 38;
             // 
             // gpbTriParClasses
@@ -339,21 +333,23 @@ namespace CartesAcces2024
             this.gpbTriParClasses.Controls.Add(this.clbClasse5eme);
             this.gpbTriParClasses.Controls.Add(this.clbClasse6eme);
             this.gpbTriParClasses.ForeColor = System.Drawing.Color.White;
-            this.gpbTriParClasses.Location = new System.Drawing.Point(40, 449);
+            this.gpbTriParClasses.Location = new System.Drawing.Point(40, 252);
             this.gpbTriParClasses.Name = "gpbTriParClasses";
-            this.gpbTriParClasses.Size = new System.Drawing.Size(743, 439);
+            this.gpbTriParClasses.Size = new System.Drawing.Size(992, 582);
             this.gpbTriParClasses.TabIndex = 39;
             this.gpbTriParClasses.TabStop = false;
-            this.gpbTriParClasses.Text = "Recherche par classes : ";
+            this.gpbTriParClasses.Text = "Par classes : ";
             this.gpbTriParClasses.Enter += new System.EventHandler(this.gpbTriParClasses_Enter);
             // 
             // frmCarteParClasseNiveau
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1625, 1075);
+            this.ClientSize = new System.Drawing.Size(1467, 895);
             this.Controls.Add(this.gpbTriParClasses);
-            this.Controls.Add(this.gbxTriParNiveau);
+            this.Controls.Add(this.gbxFiltreParClasses);
+            this.Controls.Add(this.lblAModifierNbrEleve);
+            this.Controls.Add(this.lblNombreEleveImpr);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pbPhoto);
             this.Controls.Add(this.cbbImprClasse);
@@ -372,8 +368,8 @@ namespace CartesAcces2024
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCarteParClasseNiveau_FormClosed);
             this.Load += new System.EventHandler(this.frmCarteParClasseNiveau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
-            this.gbxTriParNiveau.ResumeLayout(false);
-            this.gbxTriParNiveau.PerformLayout();
+            this.gbxFiltreParClasses.ResumeLayout(false);
+            this.gbxFiltreParClasses.PerformLayout();
             this.gpbTriParClasses.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -395,15 +391,15 @@ namespace CartesAcces2024
         private System.Windows.Forms.ComboBox cbbImprClasse;
         private System.Windows.Forms.PictureBox pbPhoto;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox gbxTriParNiveau;
+        private System.Windows.Forms.Label lblNombreEleveImpr;
+        private System.Windows.Forms.Label lblAModifierNbrEleve;
+        private System.Windows.Forms.GroupBox gbxFiltreParClasses;
+        private System.Windows.Forms.RadioButton rdbParNiveaux;
+        private System.Windows.Forms.RadioButton rdbParClasses;
         private System.Windows.Forms.CheckedListBox clbClasse6eme;
         private System.Windows.Forms.CheckedListBox clbClasse5eme;
         private System.Windows.Forms.CheckedListBox clbClasse4eme;
         private System.Windows.Forms.CheckedListBox clbClasse3eme;
         private System.Windows.Forms.GroupBox gpbTriParClasses;
-        private System.Windows.Forms.CheckBox cbxNiveau3eme;
-        private System.Windows.Forms.CheckBox cbxNiveau4eme;
-        private System.Windows.Forms.CheckBox cbxNiveau5eme;
-        private System.Windows.Forms.CheckBox cbxNiveau6eme;
     }
 }
