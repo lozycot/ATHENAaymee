@@ -47,14 +47,14 @@ namespace CartesAcces2024
 
 
         /// <summary>
-        /// Methode générique utilisé lors d'un INSERT, UPDATE ou DELETE sur la base de données.
+        /// Methode générique utilisé pour exécuter une requête sql sur la base de données.
         /// </summary>
-        /// <param name="txt"></param>
-        private static void InsertUpdateDeleteUnElement(string txt)
+        /// <param name="txt">Requête SQL à exécuter.</param>
+        private static void executeRequete(string requeteSql)
         {
             using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
             {
-                using (SQLiteCommand commande = new SQLiteCommand(txt, connection))
+                using (SQLiteCommand commande = new SQLiteCommand(requeteSql, connection))
                 {
                     try
                     {
@@ -228,9 +228,131 @@ namespace CartesAcces2024
             return couleurs;
         }
 
+
+
+
+
+
+
+        // VULNERABLE A L'INJECTION SQL
         /// <summary>
-        /// Renvoie une liste comprenant les informations de l'établissement.
+        /// Vérifie si le champs spécifié existe dans la table spécifiée.
+        /// </summary>
+        /// <param name="nomTable"></param>
+        /// <param name="nomChamps"></param>
+        /// <returns>Revoie true si le champs spécifié existe dans la table spécifiée. Autrement, renvoie false.</returns>
+        public static bool champsExiste(string nomTable, string nomChamp)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+            {
+                
+                // PRAGMA table_info(table) renvoie un tableau contenant les champs de la table avec diverse information les concernant.
+                string sql = string.Format("PRAGMA table_info({0})", nomTable);
+
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                {
+
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        int nameIndex = reader.GetOrdinal("Name"); // Récupère l'index du champ 'Name' du tableau des informations des tables de la base de donnée.
+                        while (reader.Read()) // on lit tout les noms de colonnes
+                        {
+                            if (reader.GetString(nameIndex).Equals(nomChamp)) // si la colonne recherchée correspond au nom d'une colonne dans la table
+                            {
+                                connection.Close();
+                                return true; // renvoie vrais
+                            }
+                        }
+                        reader.Close();
+                    }
+
+                }
+                connection.Close();
+            }
+            return false; // si rien n'est trouvé, renvoie false
+        }
+
+
+        // VULNERABLE A L'INJECTION SQL
+        /// <summary>
+        /// Effectue un ALTER TABLE sur une table pour y rajouter un champs.
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="champ"></param>
+        public static void ajouteChampDansTable(string uneTable, string unNouveauChamps, string unType = "TEXT")
+        {
+
+            string sql = "ALTER TABLE {0} \n" +
+                         "   ADD {1} {2};\n";
+            sql = string.Format(sql, uneTable, unNouveauChamps, unType);
+
+            if (champsExiste(uneTable, unNouveauChamps) == false)       // si la colonne n'existe pas déjà
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+                {
+                    connection.Open();
+                    using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                    {
+
+                        try
+                        {
+                            command.ExecuteNonQuery();// on ajoute le champs entré par l'utilisateur dans la table Etablissement
+                        }
+                        catch (Exception err)
+                        {
+                            MessageBox.Show("Une erreur s'est produite lors de la création d'une nouvelle colonne.\n " +
+                                "Message d'erreur : " + err.Message);
+                        }
+
+
+                    }
+                    connection.Close();
+                }
+            }
+
+            if (champsExiste(uneTable, unNouveauChamps)==false) // on vérifie que la colonne à étée crée avec succès
+            {
+                MessageBox.Show("La création de la nouvelle colonne à échouée.");
+            }
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// Supprime les éléments de la table Eleve et Connection de la base de donnée. Met à jour les éléments de la table DatesImport à 'Aucune Importation' dans la base de données.
+        /// </summary>
+        public static void mdpOublié()
+        {
+            string sql = "DELETE FROM Eleve; " +
+                "DELETE FROM Connection; " +
+                "UPDATE DatesImport SET ImportPhoto = 'Aucune Importation'; " +
+                "UPDATE DatesImport SET ImportEleve = 'Aucune Importation'; " +
+                "UPDATE DatesImport SET ImportEdt = 'Aucune Importation';";
+            executeRequete(sql);
+            supprimerEtablissement();
+        }
+
+
+
+
+        //------------ETABLISSEMENT--------------
+
+
+        /// <summary>
+        /// Renvoie une liste certaines, pas toute, informations de l'établissement.
         /// Cette liste comprend: le nom de l'établissement, le nom de la rue, le numero de la rue, le code postal, la ville, l'adresse mail, l'url et la bordure.
+        /// Il peut exister des champs supplémentaires selon ce qui à été importé par l'utilisateur, voir <see cref="frmEtablissement.btnValider_Click"/>.
+        /// Ces champs-là ne sont pas retournés par cette fonction.
         /// </summary>
         /// <returns></returns>
         public static List<string> GetEtablissement()
@@ -255,9 +377,9 @@ namespace CartesAcces2024
             string EmailEtablissement = "";
             string urlEtablissement = "";
             string bordureEtablissement = "";
-            List<string> commands = new List<string> { etabName, rueName, numRue, codePost, ville, numTel, email, url, bordure};
+            List<string> commands = new List<string> { etabName, rueName, numRue, codePost, ville, numTel, email, url, bordure };
             List<string> results = new List<string> { NomEtablissement, NomRueEtablissement, NumeroRueEtablissement, CodePostalEtablissement, VilleEtablissement, NumeroTelephoneEtablissement, EmailEtablissement, urlEtablissement, bordureEtablissement };
-                                                     //      0                  1                   2                          3                       4                       5                         6                  7                   8
+            //                                              0                  1                   2                          3                       4                       5                         6                  7                   8
             using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
             {
                 connection.Open();
@@ -279,24 +401,242 @@ namespace CartesAcces2024
         }
 
 
-        
 
-        
+        //public static List<string> GetToutEtablissement()
+        //{
+        //    // requête pour récupérer les informations de l'établissement.
+        //    string etabName = "SELECT nomEtablissement FROM Etablissement";
+        //    string rueName = "SELECT nomRueEtablissement FROM Etablissement";
+        //    string numRue = "SELECT numeroRueEtablissement FROM Etablissement";
+        //    string codePost = "SELECT codePostalEtablissement FROM Etablissement";
+        //    string ville = "SELECT villeEtablissement FROM Etablissement";
+        //    string numTel = "SELECT numeroTelephoneEtablissement FROM Etablissement";
+        //    string email = "SELECT emailEtablissement FROM Etablissement";
+        //    string url = "SELECT urlEtablissement FROM Etablissement";
+        //    string hexa6eme = "SELECT codeHexa6eme FROM Etablissement";
+        //    string hexa5eme = "SELECT codeHexa5eme FROM Etablissement";
+        //    string hexa4eme = "SELECT codeHexa4eme FROM Etablissement";
+        //    string hexa3eme = "SELECT codeHexa3eme FROM Etablissement";
+        //    string bordure = "SELECT bordure FROM Etablissement";
+        //    string infos = "SELECT InfosCarte FROM Etablissement";
+        //    string logiciel = "SELECT LogicielEdt FROM Etablissement";
+        //    // informations de l'établissement récupérées dans la BDD.
+        //    string NomEtablissement = "";
+        //    string NomRueEtablissement = "";
+        //    string NumeroRueEtablissement = "";
+        //    string CodePostalEtablissement = "";
+        //    string VilleEtablissement = "";
+        //    string NumeroTelephoneEtablissement = "";
+        //    string EmailEtablissement = "";
+        //    string urlEtablissement = "";
+        //    string codeHexa6eme = "";
+        //    string codeHexa5eme = "";
+        //    string codeHexa4eme = "";
+        //    string codeHexa3eme = "";
+        //    string bordureEtablissement = "";
+        //    string InfosCarte = "";
+        //    string LogicielEdt = "";
+        //    List<string> commands = new List<string> { etabName, rueName, numRue, codePost, ville, numTel, email, url, hexa6eme, hexa5eme, hexa4eme, hexa3eme, bordure, infos, logiciel };
+        //    List<string> results = new List<string> { NomEtablissement, NomRueEtablissement, NumeroRueEtablissement, CodePostalEtablissement, VilleEtablissement, NumeroTelephoneEtablissement, EmailEtablissement, urlEtablissement, codeHexa6eme, codeHexa5eme, codeHexa4eme, codeHexa3eme, bordureEtablissement, InfosCarte, LogicielEdt };
+        //    //                                              0                  1                   2                          3                       4                       5                         6                  7                   8
+        //    using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+        //    {
+        //        connection.Open();
+        //        for (int i = 0; i < commands.Count-1; i++)
+        //        {
+        //            using (SQLiteCommand command = new SQLiteCommand(commands[i], connection))
+        //            {
+        //                using (SQLiteDataReader reader = command.ExecuteReader())
+        //                {
+        //                    if (reader.Read())
+        //                    {
+        //                        results[i] = reader.GetString(0);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return results;
+        //}
 
-        
 
+
+
+
+        // VULNERABLE A L'INJECTION SQL
+        /// <summary>
+        /// Effectue un INSERT INTO dans la table Etablissement dans la colonne unChamps avec la valeur uneValeur.
+        /// </summary>
+        /// <param name="uneTable"></param>
+        /// <param name="unChamps"></param>
+        /// <param name="uneValeur"></param>
+        public static void insereValeurDansChampsPersonnaliseeEtablissement(string unChamp, string uneValeur)
+        {
+            List<string> infoEtab = new List<string>(GetEtablissement());
+
+            string sql = "UPDATE Etablissement SET {0} = @uneValeur WHERE nomEtablissement = @nomEtab;";
+            sql = string.Format(sql, unChamp);
+
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+            {
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                {
+                    command.Parameters.Add(new SQLiteParameter("@uneValeur", uneValeur));
+                    command.Parameters.Add(new SQLiteParameter("@nomEtab", infoEtab[0]));
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("Une erreur s'est produite lors de l'insertion d'une valeur dans un champs spécifié.\n "
+                            + "Message d'erreur : " + err.Message + "\n"
+                            + "Stack trace : " + err.StackTrace.ToString());
+                    }
+
+                }
+                connection.Close();
+
+            }
+        }
 
 
 
 
         /// <summary>
-        /// Supprime les éléments de la table Eleve et Connection de la base de donnée. Met à jour les éléments de la table DatesImport à 'Aucune Importation' dans la base de données.
+        /// Récupère les champs ajoutés par l'utilisateur et leurs valeurs de la table Etablissement.
         /// </summary>
-        public static void mdpOublié()
+        /// <returns>
+        /// Un dicionnaire sous le format dict[nomDeLaColonne] = valeurDansLaColonne
+        /// </returns>
+        public static Dictionary<string, string> getEtablissementChampsPersonnalisee()
         {
-            string sql = "DELETE FROM Eleve; DELETE FROM Connection; UPDATE DatesImport SET ImportPhoto = 'Aucune Importation'; UPDATE DatesImport SET ImportEleve = 'Aucune Importation'; UPDATE DatesImport SET ImportEdt = 'Aucune Importation';";
-            InsertUpdateDeleteUnElement(sql);
+
+            // Toute les colonnes par défaut de la table Etablissement.
+            List<string> colonnesParDefautEtablissement = new List<string>();
+            colonnesParDefautEtablissement.Add("nomEtablissement");
+            colonnesParDefautEtablissement.Add("nomRueEtablissement");
+            colonnesParDefautEtablissement.Add("numeroRueEtablissement");
+            colonnesParDefautEtablissement.Add("codePostalEtablissement");
+            colonnesParDefautEtablissement.Add("villeEtablissement");
+            colonnesParDefautEtablissement.Add("numeroTelephoneEtablissement");
+            colonnesParDefautEtablissement.Add("emailEtablissement");
+            colonnesParDefautEtablissement.Add("urlEtablissement");
+            colonnesParDefautEtablissement.Add("codeHexa6eme");
+            colonnesParDefautEtablissement.Add("codeHexa5eme");
+            colonnesParDefautEtablissement.Add("codeHexa4eme");
+            colonnesParDefautEtablissement.Add("codeHexa3eme");
+            colonnesParDefautEtablissement.Add("bordure");
+            colonnesParDefautEtablissement.Add("InfosCarte");
+            colonnesParDefautEtablissement.Add("LogicielEdt");
+
+
+            Dictionary<string, string> rtrn = new Dictionary<string, string>();
+
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+            {
+                
+                // PRAGMA table_info(table) renvoie un tableau contenant les champs de la table avec diverse information les concernant.
+                string sql = "PRAGMA table_info(Etablissement)";
+
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                {
+
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        int nameIndex = reader.GetOrdinal("Name"); // Récupère l'index du champ 'Name' du tableau des informations des tables de la base de donnée.
+                        while (reader.Read()) // on lit tout les noms de colonnes
+                        {
+                            // si le nom de la colonne n'est pas dans les colonnes crées par défaut dans Etablissement
+                            if (colonnesParDefautEtablissement.Contains(reader.GetString(nameIndex)) == false)
+                            {
+                                // c'est un colonne ajoutée par l'utilisateur, on la récupère
+                                rtrn.Add(reader.GetString(nameIndex), "R I E N, recupérer le contenu de la table en question");
+                            }
+                        }
+                        reader.Close();
+                    }
+
+                }
+
+                // dictionnaire temporaire pour ne pas modifier rtrn pendant qu'on le parcour
+                Dictionary<string, string> temp = new Dictionary<string, string>();
+
+                //pour chaque champ ajouté par l'utilisateur
+                foreach (string champ in rtrn.Keys)
+                {
+                    sql = "SELECT " + champ + " FROM Etablissement";
+
+                    using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                    {
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            // on récupère la valeur dans ce champs
+                            if (reader.Read())
+                            {
+                                temp[champ] = reader.GetString(0); // on ajoute au dictionnaire temporaire
+                                reader.Close();
+                            }
+                        }
+                    }
+                }
+
+                // on met temp dans rtrn
+                rtrn = temp;
+
+                connection.Close();
+            }
+
+            // on renvoie rtrn
+            return rtrn;
         }
+
+
+
+        /// <summary>
+        /// DROP la table Etablissement puis la re-créer sans les champs ajoutés par les utilisateurs.
+        /// </summary>
+        public static void supprimerEtablissement()
+        {
+            // on nettoye les données dans la table établissement
+            if (ConnectDb.DbConnect.DbData("Etablissement"))
+            {
+                string sql = "DROP TABLE Etablissement;" +
+                    "CREATE TABLE IF NOT EXISTS 'Etablissement' (\n" +
+                    "	'nomEtablissement'	TEXT,\n" +
+                    "	'nomRueEtablissement'	TEXT,\n" +
+                    "	'numeroRueEtablissement'	TEXT,\n" +
+                    "	'codePostalEtablissement'	TEXT,\n" +
+                    "	'villeEtablissement'	TEXT,\n" +
+                    "	'numeroTelephoneEtablissement'	TEXT,\n" +
+                    "	'emailEtablissement'	TEXT,\n" +
+                    "	'urlEtablissement'	TEXT,\n" +
+                    "	'codeHexa6eme'	TEXT,\n" +
+                    "	'codeHexa5eme'	TEXT,\n" +
+                    "	'codeHexa4eme'	TEXT,\n" +
+                    "	'codeHexa3eme'	TEXT,\n" +
+                    "	'bordure'	TEXT,\n" +
+                    "	'InfosCarte'	TEXT,\n" +
+                    "	'LogicielEdt'	TEXT,\n" +
+                    "	PRIMARY KEY('nomEtablissement')\n" +
+                    ");\n";
+                using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+                {
+                    connection.Open();
+                    using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    connection.Close();
+                }
+            }
+        }
+
+
+
 
 
         //--------------------DATES IMPORTS--------------------
@@ -316,7 +656,7 @@ namespace CartesAcces2024
             {
                 sql = "UPDATE DatesImport SET ImportPhoto = '" + date + "';";
             }
-            InsertUpdateDeleteUnElement(sql);
+            executeRequete(sql);
         }
 
 
@@ -373,7 +713,7 @@ namespace CartesAcces2024
         public static void SetFolderPath(string path)
         {
             string sql = "DELETE FROM FolderPath; INSERT INTO FolderPath (Path) VALUES (\"" + path + "\");";
-            InsertUpdateDeleteUnElement(sql);
+            executeRequete(sql);
         }
 
         /// <summary>
@@ -458,7 +798,7 @@ namespace CartesAcces2024
             string[] Eleve = el.ClasseEleve.Split(' ');
             string txt = "INSERT INTO Eleve (Nom, Prenom, Classe, Niveau) VALUES (\"" + el.NomEleve + "\", \"" + el.PrenomEleve +
                 "\", \"" + Eleve[0] + "\", \"" + el.NiveauEleve + "eme\");";
-            InsertUpdateDeleteUnElement(txt);
+            executeRequete(txt);
         }
 
 
@@ -473,7 +813,7 @@ namespace CartesAcces2024
             string[] Eleve = el.ClasseEleve.Split(' ');
             string txt = "DELETE FROM Eleve WHERE Nom = \"" + el.NomEleve + "\" AND Prenom = \"" + el.PrenomEleve +
                 "\" AND Classe = \"" + Eleve[0] + "\";";
-            InsertUpdateDeleteUnElement(txt);
+            executeRequete(txt);
         }
 
 
@@ -564,7 +904,7 @@ namespace CartesAcces2024
         public static void deleteUneClasse(string nomClasse)
         {
             string txt = "DELETE FROM Eleve WHERE Classe = \"" + nomClasse + "\";";
-            InsertUpdateDeleteUnElement(txt);
+            executeRequete(txt);
         }
 
 
@@ -577,7 +917,7 @@ namespace CartesAcces2024
         public static void deleteUnNiveau(string niveau)
         {
             string txt = "DELETE FROM Eleve WHERE Niveau = \"" + niveau + "\";";
-            InsertUpdateDeleteUnElement(txt);
+            executeRequete(txt);
         }
 
 
@@ -642,7 +982,7 @@ namespace CartesAcces2024
             string[] Eleve = el.ClasseEleve.Split(' ');
             string txt = "DELETE FROM EleveNouvelleAnnee WHERE Nom = \"" + el.NomEleve + "\" AND Prenom = \"" + el.PrenomEleve +
                 "\" AND Classe = \"" + Eleve[0] + "\";";
-            InsertUpdateDeleteUnElement(txt);
+            executeRequete(txt);
         }
 
 
@@ -656,7 +996,7 @@ namespace CartesAcces2024
             string[] Eleve = el.ClasseEleve.Split(' ');
             string txt = "UPDATE EleveNouvelleAnnee SET Classe = \"" + nouvelleClasse + "\" WHERE Classe = \"" + Eleve[0] +
                 "\" AND Nom = \"" + el.NomEleve + "\" AND Prenom = \"" + el.PrenomEleve + "\";";
-            InsertUpdateDeleteUnElement(txt);
+            executeRequete(txt);
         }
 
 
@@ -690,7 +1030,7 @@ namespace CartesAcces2024
             string[] EleveList = el.ClasseEleve.Split(' ');
             string txt = "INSERT INTO EleveNouvelleAnnee (Nom, Prenom, Classe, Niveau, Profil) VALUES (\"" + el.NomEleve + "\", \"" + el.PrenomEleve +
                 "\", \"" + EleveList[0] + "\", \"" + el.NiveauEleve + "eme\", \"" + profil + "\");";
-            InsertUpdateDeleteUnElement(txt);
+            executeRequete(txt);
         }
 
 
@@ -779,7 +1119,7 @@ namespace CartesAcces2024
         {
             string[] ClasseList = classe.Split(' ');
             string txt = "DELETE FROM ClasseNouvelleAnnee WHERE Classe = \"" + ClasseList[0] + "\";";
-            InsertUpdateDeleteUnElement(txt);
+            executeRequete(txt);
         }
 
 
@@ -793,7 +1133,7 @@ namespace CartesAcces2024
         {
             string[] ClasseList = classe.Split(' ');
             string txt = "INSERT INTO ClasseNouvelleAnnee (Classe) VALUES (\"" + ClasseList[0] + "\");";
-            InsertUpdateDeleteUnElement(txt);
+            executeRequete(txt);
         }
 
 
