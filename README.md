@@ -2,6 +2,8 @@
 Athena est une application open source conçue pour moderniser et simplifier la gestion administrative des établissements scolaires.
 Cette solution tout-en-un permet notamment de gérer efficacement les cartes d'accès étudiantes, le trombinoscope et les emplois du temps.
 
+![Athena](https://github.com/user-attachments/assets/e95fee4a-ec3b-4fc5-ba11-a275a664a926)
+
 ## 🎯 Fonctionnalités principales
 ### 🎫 Gestion des cartes d'accès
 - Génération automatique des cartes par classe ou création personnalisée
