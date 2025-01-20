@@ -64,15 +64,6 @@ namespace CartesAcces2024
             this.label3 = new System.Windows.Forms.Label();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.panelBdd = new System.Windows.Forms.Panel();
-            this.btnGererClassesTemp = new System.Windows.Forms.Button();
-            this.btnToutAjouter = new System.Windows.Forms.Button();
-            this.btnToutRetirer = new System.Windows.Forms.Button();
-            this.btnRetirer = new System.Windows.Forms.Button();
-            this.btnAjouter = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBoxSel = new System.Windows.Forms.ListBox();
-            this.listBoxNonSel = new System.Windows.Forms.ListBox();
             this.cbSource = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.toolTipSource = new System.Windows.Forms.ToolTip(this.components);
@@ -80,10 +71,16 @@ namespace CartesAcces2024
             this.label5 = new System.Windows.Forms.Label();
             this.cbProfils = new System.Windows.Forms.CheckBox();
             this.tkbZoom = new System.Windows.Forms.TrackBar();
+            this.gbpElements = new System.Windows.Forms.GroupBox();
+            this.clbElements = new System.Windows.Forms.CheckedListBox();
+            this.btnReinitialiser = new System.Windows.Forms.Button();
+            this.btnToutSelectionner = new System.Windows.Forms.Button();
+            this.btnValider = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbDocument)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelBdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tkbZoom)).BeginInit();
+            this.gbpElements.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbDocument
@@ -188,141 +185,15 @@ namespace CartesAcces2024
             // 
             this.panelBdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.panelBdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBdd.Controls.Add(this.btnGererClassesTemp);
-            this.panelBdd.Controls.Add(this.btnToutAjouter);
-            this.panelBdd.Controls.Add(this.btnToutRetirer);
-            this.panelBdd.Controls.Add(this.btnRetirer);
-            this.panelBdd.Controls.Add(this.btnAjouter);
-            this.panelBdd.Controls.Add(this.label2);
-            this.panelBdd.Controls.Add(this.label1);
-            this.panelBdd.Controls.Add(this.listBoxSel);
-            this.panelBdd.Controls.Add(this.listBoxNonSel);
+            this.panelBdd.Controls.Add(this.btnReinitialiser);
+            this.panelBdd.Controls.Add(this.btnToutSelectionner);
+            this.panelBdd.Controls.Add(this.gbpElements);
+            this.panelBdd.Controls.Add(this.btnValider);
             this.panelBdd.Location = new System.Drawing.Point(41, 58);
             this.panelBdd.Margin = new System.Windows.Forms.Padding(2);
             this.panelBdd.Name = "panelBdd";
             this.panelBdd.Size = new System.Drawing.Size(309, 685);
             this.panelBdd.TabIndex = 19;
-            // 
-            // btnGererClassesTemp
-            // 
-            this.btnGererClassesTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnGererClassesTemp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGererClassesTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnGererClassesTemp.Location = new System.Drawing.Point(30, 529);
-            this.btnGererClassesTemp.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGererClassesTemp.Name = "btnGererClassesTemp";
-            this.btnGererClassesTemp.Size = new System.Drawing.Size(245, 45);
-            this.btnGererClassesTemp.TabIndex = 20;
-            this.btnGererClassesTemp.Text = "🛠 Gérer les classes temporaires";
-            this.btnGererClassesTemp.UseVisualStyleBackColor = false;
-            this.btnGererClassesTemp.Click += new System.EventHandler(this.btnGererClassesTemp_Click);
-            // 
-            // btnToutAjouter
-            // 
-            this.btnToutAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnToutAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnToutAjouter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnToutAjouter.Location = new System.Drawing.Point(161, 479);
-            this.btnToutAjouter.Margin = new System.Windows.Forms.Padding(2);
-            this.btnToutAjouter.Name = "btnToutAjouter";
-            this.btnToutAjouter.Size = new System.Drawing.Size(114, 32);
-            this.btnToutAjouter.TabIndex = 19;
-            this.btnToutAjouter.Text = "Tout ajouter >>";
-            this.btnToutAjouter.UseVisualStyleBackColor = false;
-            this.btnToutAjouter.Click += new System.EventHandler(this.btnToutAjouter_Click);
-            // 
-            // btnToutRetirer
-            // 
-            this.btnToutRetirer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnToutRetirer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnToutRetirer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnToutRetirer.Location = new System.Drawing.Point(30, 479);
-            this.btnToutRetirer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnToutRetirer.Name = "btnToutRetirer";
-            this.btnToutRetirer.Size = new System.Drawing.Size(118, 32);
-            this.btnToutRetirer.TabIndex = 18;
-            this.btnToutRetirer.Text = "<< Tout retirer";
-            this.btnToutRetirer.UseVisualStyleBackColor = false;
-            this.btnToutRetirer.Click += new System.EventHandler(this.btnToutRetirer_Click);
-            // 
-            // btnRetirer
-            // 
-            this.btnRetirer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnRetirer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRetirer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnRetirer.Location = new System.Drawing.Point(30, 428);
-            this.btnRetirer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRetirer.Name = "btnRetirer";
-            this.btnRetirer.Size = new System.Drawing.Size(118, 32);
-            this.btnRetirer.TabIndex = 17;
-            this.btnRetirer.Text = "< Retirer";
-            this.btnRetirer.UseVisualStyleBackColor = false;
-            this.btnRetirer.Click += new System.EventHandler(this.btnRetirer_Click);
-            // 
-            // btnAjouter
-            // 
-            this.btnAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAjouter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnAjouter.Location = new System.Drawing.Point(161, 428);
-            this.btnAjouter.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(114, 32);
-            this.btnAjouter.TabIndex = 16;
-            this.btnAjouter.Text = "Ajouter >";
-            this.btnAjouter.UseVisualStyleBackColor = false;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(159, 12);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.MaximumSize = new System.Drawing.Size(125, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 34);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Trombinoscopes à générer";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 17);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Liste classes";
-            // 
-            // listBoxSel
-            // 
-            this.listBoxSel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.listBoxSel.ForeColor = System.Drawing.Color.White;
-            this.listBoxSel.FormattingEnabled = true;
-            this.listBoxSel.ItemHeight = 16;
-            this.listBoxSel.Location = new System.Drawing.Point(161, 59);
-            this.listBoxSel.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxSel.Name = "listBoxSel";
-            this.listBoxSel.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBoxSel.Size = new System.Drawing.Size(127, 356);
-            this.listBoxSel.Sorted = true;
-            this.listBoxSel.TabIndex = 13;
-            // 
-            // listBoxNonSel
-            // 
-            this.listBoxNonSel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.listBoxNonSel.ForeColor = System.Drawing.Color.White;
-            this.listBoxNonSel.FormattingEnabled = true;
-            this.listBoxNonSel.ItemHeight = 16;
-            this.listBoxNonSel.Location = new System.Drawing.Point(19, 59);
-            this.listBoxNonSel.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxNonSel.Name = "listBoxNonSel";
-            this.listBoxNonSel.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBoxNonSel.Size = new System.Drawing.Size(129, 356);
-            this.listBoxNonSel.Sorted = true;
-            this.listBoxNonSel.TabIndex = 12;
             // 
             // cbSource
             // 
@@ -402,11 +273,78 @@ namespace CartesAcces2024
             this.tkbZoom.Value = 50;
             this.tkbZoom.Scroll += new System.EventHandler(this.tkbZoom_Scroll);
             // 
+            // gbpElements
+            // 
+            this.gbpElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.gbpElements.Controls.Add(this.clbElements);
+            this.gbpElements.ForeColor = System.Drawing.Color.White;
+            this.gbpElements.Location = new System.Drawing.Point(3, 3);
+            this.gbpElements.Name = "gbpElements";
+            this.gbpElements.Size = new System.Drawing.Size(301, 459);
+            this.gbpElements.TabIndex = 26;
+            this.gbpElements.TabStop = false;
+            this.gbpElements.Text = "TexteElementFiltre";
+            // 
+            // clbElements
+            // 
+            this.clbElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.clbElements.CheckOnClick = true;
+            this.clbElements.ForeColor = System.Drawing.Color.White;
+            this.clbElements.FormattingEnabled = true;
+            this.clbElements.Location = new System.Drawing.Point(6, 21);
+            this.clbElements.Name = "clbElements";
+            this.clbElements.Size = new System.Drawing.Size(289, 429);
+            this.clbElements.TabIndex = 0;
+            this.clbElements.SelectedIndexChanged += new System.EventHandler(this.clbElements_SelectedIndexChanged);
+            // 
+            // btnReinitialiser
+            // 
+            this.btnReinitialiser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnReinitialiser.Location = new System.Drawing.Point(9, 475);
+            this.btnReinitialiser.Name = "btnReinitialiser";
+            this.btnReinitialiser.Size = new System.Drawing.Size(289, 70);
+            this.btnReinitialiser.TabIndex = 15;
+            this.btnReinitialiser.Text = "Réinitialiser la sélection";
+            this.btnReinitialiser.UseVisualStyleBackColor = false;
+            this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
+            // 
+            // btnToutSelectionner
+            // 
+            this.btnToutSelectionner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnToutSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnToutSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnToutSelectionner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnToutSelectionner.Location = new System.Drawing.Point(9, 551);
+            this.btnToutSelectionner.Name = "btnToutSelectionner";
+            this.btnToutSelectionner.Size = new System.Drawing.Size(289, 55);
+            this.btnToutSelectionner.TabIndex = 16;
+            this.btnToutSelectionner.Text = "Tout sélectionner";
+            this.btnToutSelectionner.UseVisualStyleBackColor = false;
+            this.btnToutSelectionner.Click += new System.EventHandler(this.btnToutSelectionner_Click);
+            // 
+            // btnValider
+            // 
+            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnValider.Location = new System.Drawing.Point(10, 613);
+            this.btnValider.Margin = new System.Windows.Forms.Padding(4);
+            this.btnValider.Name = "btnValider";
+            this.btnValider.Size = new System.Drawing.Size(288, 55);
+            this.btnValider.TabIndex = 17;
+            this.btnValider.Text = "Gérer les classes temporaires";
+            this.btnValider.UseVisualStyleBackColor = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
+            // 
             // frmPlanches
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1074, 779);
+            this.ClientSize = new System.Drawing.Size(1069, 779);
             this.Controls.Add(this.tkbZoom);
             this.Controls.Add(this.cbProfils);
             this.Controls.Add(this.label5);
@@ -426,11 +364,12 @@ namespace CartesAcces2024
             this.Name = "frmPlanches";
             this.Text = "Athena - Creation de planches";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPlanches_FormClosed);
+            this.Load += new System.EventHandler(this.frmPlanches_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbDocument)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelBdd.ResumeLayout(false);
-            this.panelBdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tkbZoom)).EndInit();
+            this.gbpElements.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,21 +386,17 @@ namespace CartesAcces2024
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.Panel panelBdd;
-        private System.Windows.Forms.Button btnToutAjouter;
-        private System.Windows.Forms.Button btnToutRetirer;
-        private System.Windows.Forms.Button btnRetirer;
-        private System.Windows.Forms.Button btnAjouter;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBoxSel;
-        private System.Windows.Forms.ListBox listBoxNonSel;
         private System.Windows.Forms.ComboBox cbSource;
         private System.Windows.Forms.ToolTip toolTipSource;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnGererClassesTemp;
         private System.Windows.Forms.ComboBox cbFormat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbProfils;
         private System.Windows.Forms.TrackBar tkbZoom;
+        private System.Windows.Forms.GroupBox gbpElements;
+        private System.Windows.Forms.CheckedListBox clbElements;
+        private System.Windows.Forms.Button btnReinitialiser;
+        private System.Windows.Forms.Button btnToutSelectionner;
+        private System.Windows.Forms.Button btnValider;
     }
 }
