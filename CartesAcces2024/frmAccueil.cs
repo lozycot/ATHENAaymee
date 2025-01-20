@@ -8,178 +8,123 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
 namespace CartesAcces2024
 {
     public partial class frmAccueil : Form
     {
+        // Constructeur du formulaire
         public frmAccueil()
         {
-            InitializeComponent();
-            TailleControle.SetTailleBouton(this);
-            TailleControle.SetTailleControleTexte(this);
+            InitializeComponent(); // Initialisation des composants du formulaire
+            TailleControle.SetTailleBouton(this); // Ajustement de la taille des boutons
+            TailleControle.SetTailleControleTexte(this); // Ajustement de la taille du texte des contrôles
         }
 
+        // Méthode statique pour ouvrir un formulaire enfant
         public static void OpenChildForm(Form childForm)
         {
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.None;  // Changé de Fill à None pour permettre le scroll
+            childForm.TopLevel = false; // Indique que le formulaire enfant n'est pas de niveau supérieur
+            childForm.FormBorderStyle = FormBorderStyle.None; // Supprime la bordure du formulaire
+            childForm.Dock = DockStyle.None; // Permet le défilement
 
+            // Recherche le panneau de contenu dans le formulaire principal
             foreach (Control controle in Globale.Accueil.Controls)
             {
                 if (controle is Panel && controle.Name == "pnlContent")
                 {
                     var pnlContent = (Panel)controle;
-                    pnlContent.Controls.Clear();
-                    pnlContent.Controls.Add(childForm);
-                    pnlContent.Tag = childForm;
+                    pnlContent.Controls.Clear(); // Efface les contrôles existants dans le panneau
+                    pnlContent.Controls.Add(childForm); // Ajoute le nouveau formulaire enfant
+                    pnlContent.Tag = childForm; // Stocke le formulaire enfant dans le tag du panneau
 
-                    // Positionner le formulaire au début du panel
+                    // Positionne le formulaire au début du panneau
                     childForm.Location = new Point(0, 0);
-
-                    // S'assurer que le formulaire garde sa taille d'origine
-                    childForm.AutoSize = true;
-
-                    childForm.BringToFront();
-                    childForm.Show();
+                    childForm.AutoSize = true; // Assure que le formulaire garde sa taille d'origine
+                    childForm.BringToFront(); // Amène le formulaire au premier plan
+                    childForm.Show(); // Affiche le formulaire
                 }
             }
         }
 
+        // Gestionnaire d'événements pour le chargement du formulaire
         private void frmAcceuil_Load(object sender, EventArgs e)
         {
-            Globale.Accueil = this;
-            var etab = new frmEtablissement();
-            etab.GetInfosCarte();
-            etab.GetLogicielEdt();
-            this.MaximizeBox = true;
-            this.MinimizeBox = true;
+            Globale.Accueil = this; // Définit le formulaire actuel dans la classe Globale
+            var etab = new frmEtablissement(); // Crée une instance du formulaire d'établissement
+            etab.GetInfosCarte(); // Récupère les informations de la carte
+            etab.GetLogicielEdt(); // Récupère les informations du logiciel
 
+            this.MaximizeBox = true; // Permet de maximiser le formulaire
+            this.MinimizeBox = true; // Permet de minimiser le formulaire
+
+            // Ferme le formulaire actuel s'il existe
             if (Globale.Actuelle != null)
                 Globale.Actuelle.Close();
-            Globale.Actuelle = new frmImport();
-            Text = "Athena - Importation";
-            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
+
+            // Ouvre le formulaire d'importation directement
+            // OuvrirFormulaire(new frmBienvenue(), "Athena - Accueil");
         }
 
-        private void pnlMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        // A CHANGER
-        private void pictureBox3_Click(object sender, EventArgs e)
+        // Méthode pour ouvrir un formulaire
+        private void OuvrirFormulaire(Form nouveauFormulaire, string titre)
         {
             if (Globale.Actuelle != null)
-                Globale.Actuelle.Close();
-            Globale.Actuelle = new frmImport();
-            Text = "Athena - Accueil";
-            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
+                Globale.Actuelle.Close(); // Ferme le formulaire actuel
+            Globale.Actuelle = nouveauFormulaire; // Définit le nouveau formulaire comme actuel
+            Text = Application.ProductName + " - " + titre; // Définit le titre du formulaire
+            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); })); // Ouvre le nouveau formulaire
         }
 
-
-        private void btnCreerCarte_Click(object sender, EventArgs e)
+        // Section Importation : Gestionnaire d'événements pour le bouton d'importation
+        private void picLogo_Click(object sender, EventArgs e)
         {
-            if (Globale.Actuelle != null)
-                Globale.Actuelle.Close();
-            Globale.Actuelle = new frmCarteProvisoire();
-            Text = "Athena - Carte Provisoire";
-            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
+            // OuvrirFormulaire(new frmBienvenue(), "Athena - Accueil");
         }
 
-        private void btnParametres_Click(object sender, EventArgs e)
+        private void btnImpInformations_Click(object sender, EventArgs e)
         {
-            if (Globale.Actuelle != null)
-                Globale.Actuelle.Close();
-            Globale.Actuelle = new frmImport();
-            Text = "Athena - Importation";
-            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
+            OuvrirFormulaire(new frmImport(), "Importation d'Informations");
         }
 
-        private void pnlContent_Paint(object sender, PaintEventArgs e)
+        // Section Cartes d'accès : Gestionnaires d'événements pour les boutons de cartes
+        private void btnCartesClasseNiveau_Click(object sender, EventArgs e)
         {
-
+            OuvrirFormulaire(new frmCarteParClasseNiveau(), "Carte par Classe / Niveau");
         }
 
-        private void btnAfficheListeEleve_Click(object sender, EventArgs e)
+        private void btnCartesListePerso_Click(object sender, EventArgs e)
         {
-            if (Globale.Actuelle != null)
-                Globale.Actuelle.Close();
-            Globale.Actuelle = new frmCartesParListe();
-            Text = "Athena - Carte Par Liste";
-            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
+            OuvrirFormulaire(new frmCartesParListe(), "Carte par Liste Personnalisée");
         }
 
-        private void btnCarteParClasse_Click(object sender, EventArgs e)
+        private void btnCarteProvisoire_Click(object sender, EventArgs e)
         {
-            if (Globale.Actuelle != null)
-                Globale.Actuelle.Close();
-            Globale.Actuelle = new frmCarteParClasseNiveau();
-            Text = "Athena - Carte Par Liste";
-            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
+            OuvrirFormulaire(new frmCarteProvisoire(), "Carte Provisoire");
         }
 
-        private void btnChangeMdp_Click(object sender, EventArgs e)
+        // Section Trombinoscopes : Gestionnaires d'événements pour les boutons de trombinoscopes
+        private void btnPlancheClasse_Click(object sender, EventArgs e)
         {
-            if (Globale.Actuelle != null)
-                Globale.Actuelle.Close();
-            frmOptAvancees opt = new frmOptAvancees();
-            OpenChildForm(opt);
+            OuvrirFormulaire(new frmPlanches(), "Planches par Classe");
         }
 
-        private void btnPlanche_Click(object sender, EventArgs e)
+        // Section Autre : Gestionnaires d'événements pour les autres options
+        private void btnOptions_Click(object sender, EventArgs e)
         {
-            if (Globale.Actuelle != null)
-                Globale.Actuelle.Close();
-            Globale.Actuelle = new frmPlanches();
-            Text = "Athena - Trombinoscopes Photos";
-            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
-        }
-
-        private void btnNouvelleAnnee_Click(object sender, EventArgs e)
-        {
-            if (Globale.Actuelle != null)
-                Globale.Actuelle.Close();
-            Globale.Actuelle = new frmPlanches(frmPlanches.mode.classesNouvelleAnnee);
-            Text = "Athena - Nouvelle Annee";
-            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
-        }
-
-        private void pnlContent_Paint_1(object sender, PaintEventArgs e)
-        {
-
+            OuvrirFormulaire(new frmOptAvancees(), "Options");
         }
 
         private void btnAPropos_Click(object sender, EventArgs e)
         {
-            if (Globale.Actuelle != null)
-                Globale.Actuelle.Close();
-            Globale.Actuelle = new frmAPropos();
-            Text = "Athena - A Propos";
-            Globale.Accueil.Invoke(new MethodInvoker(delegate { OpenChildForm(Globale.Actuelle); }));
+            OuvrirFormulaire(new frmAPropos(), "A Propos");
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        // Méthodes vides : Gestionnaires d'événements non utilisés pour le moment
+        private void pnlMenu_Paint(object sender, PaintEventArgs e) { }
+        private void pictureBox1_Click(object sender, EventArgs e) { }
+        private void panel1_Paint(object sender, PaintEventArgs e) { }
+        private void pnlContent_Paint_1(object sender, PaintEventArgs e) { }
+        private void label1_Click(object sender, EventArgs e) { }
     }
 }
 

@@ -1,7 +1,7 @@
 ﻿/**
- * Ce fichier contient la classe ConnectDb qui gère la connexion à la base de données SQLite.
- * Il inclut des méthodes pour établir la connexion, créer la base de données et exécuter des requêtes.
- */
+* Ce fichier contient la classe ConnectDb qui gère la connexion à la base de données SQLite.
+* Il inclut des méthodes pour établir la connexion, créer la base de données et exécuter des requêtes.
+*/
 
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,10 @@ namespace CartesAcces2024
 
         public static class DbConnect
         {
-            // Méthode pour établir une connexion à la base de données
+            /// <summary>
+            /// Méthode pour établir une connexion à la base de données
+            /// </summary>
+            /// <returns></returns>
             public static SQLiteConnection connect()
             {
                 string dbPath = Chemin.CheminBdd;
@@ -68,7 +71,9 @@ namespace CartesAcces2024
                 return connection;
             }
 
-            // Méthode pour créer la base de données
+            /// <summary>
+            /// Méthode pour créer la base de données
+            /// </summary>
             public static void CreerDb()
             {
                 try
@@ -93,7 +98,10 @@ namespace CartesAcces2024
                 }
             }
 
-            // Méthode pour sélectionner une ligne dans la base de données
+            /// <summary>
+            /// Méthode pour sélectionner une ligne dans la base de données
+            /// </summary>
+            /// <returns></returns>
             public static string SelectRow()
             {
                 try
@@ -128,7 +136,11 @@ namespace CartesAcces2024
                 }
             }
 
-            // Méthode pour vérifier si des données existent dans la base de données
+            /// <summary>
+            /// Méthode pour vérifier si des données existent dans la base de données
+            /// </summary>
+            /// <param name="db"></param>
+            /// <returns></returns>
             public static bool DbData(string db)
             {
                 if (!File.Exists(Chemin.CheminBdd))
