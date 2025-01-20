@@ -83,7 +83,7 @@ namespace CartesAcces2024
             this.btnValider.Size = new System.Drawing.Size(150, 50);
             this.btnValider.TabIndex = 11;
             this.btnValider.Text = "Valider";
-            this.ToolTip.SetToolTip(this.btnValider, "Valider");
+            this.ToolTip.SetToolTip(this.btnValider, "Valider et continuer");
             this.btnValider.UseVisualStyleBackColor = false;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
@@ -152,7 +152,7 @@ namespace CartesAcces2024
             this.btnReset.Size = new System.Drawing.Size(222, 50);
             this.btnReset.TabIndex = 13;
             this.btnReset.Text = "Mot de passe oublié";
-            this.ToolTip.SetToolTip(this.btnReset, "Mot de passe oublié");
+            this.ToolTip.SetToolTip(this.btnReset, "Permet de réinitialiser le compte en créant un nouveau");
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -167,7 +167,7 @@ namespace CartesAcces2024
             this.button1.Size = new System.Drawing.Size(80, 50);
             this.button1.TabIndex = 12;
             this.button1.Text = "Quitter";
-            this.ToolTip.SetToolTip(this.button1, "Quitter");
+            this.ToolTip.SetToolTip(this.button1, "Quitter l\'application");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
