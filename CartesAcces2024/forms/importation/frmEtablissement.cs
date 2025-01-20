@@ -18,7 +18,7 @@ namespace CartesAcces2024
         /// <summary>
         /// Sert à compter le nombre de champs personnalisés crées par l'utilisateur. Utilisé pou gérer leur coordonnées lors de leurs création.
         /// </summary>
-        private int nbChampsPersonnalises = 0;
+        private int nbChampsPersonnalises;
 
         /// <summary>
         /// Contient en clé le Label d'un champ ajouté, et en valeur le TextBox associé.
@@ -28,7 +28,8 @@ namespace CartesAcces2024
         public frmEtablissement()
         {
             InitializeComponent();
-            
+            nbChampsPersonnalises = 0;
+
             string etabName = "SELECT nomEtablissement FROM Etablissement";
             string rueName = "SELECT nomRueEtablissement FROM Etablissement";
             string numRue = "SELECT numeroRueEtablissement FROM Etablissement";
@@ -403,7 +404,7 @@ namespace CartesAcces2024
             foreach (string nomChamps in tempChampsPeronnalisee.Keys)
             {
                 Label lbl = ajouterDansPnlChampsPersonnalisee(nomChamps);
-                // on ajoute le texte récupéré dans la base de données
+                // on ajoute le texte récupéré dans le dictionnaire
                 dictChampsPersonnalise[lbl].Text = tempChampsPeronnalisee[nomChamps];
             }
 

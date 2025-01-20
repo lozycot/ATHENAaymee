@@ -73,7 +73,8 @@ namespace CartesAcces2024
 
             if (Directory.Exists(_outputPath))
             {
-                foreach (var file in Directory.GetFiles(_outputPath)) File.Delete(file);
+                foreach (var file in Directory.GetFiles(_outputPath))
+                    File.Delete(file);
             }
             else
             {
@@ -118,7 +119,10 @@ namespace CartesAcces2024
                 string newName = "";
                 // si classe == toutes les classes sans élèves
                 if (classe == 7)
+                {
+                    MessageBox.Show("GetImageFromPdf "+Globale.ListeClasses[j - 1]);//===========================
                     newName = _outputPath + Globale.ListeClasses[j - 1] + ".jpg";
+                }
                 else if(classe == 8)
                 {
                     string pathTemp = Chemin.DossierEdtClassique;
@@ -376,7 +380,7 @@ namespace CartesAcces2024
                             line = line.Substring(posClasse);
                         string s = "";
 
-                        // elève 1 caractère sur 2 car les caractères sont en double
+                        // enlève 1 caractère sur 2 car les caractères sont en double
                         for (int j = 0; j < line.Length; j += 2)
                         {
                             s += line[j];
@@ -435,12 +439,22 @@ namespace CartesAcces2024
                     // -- Si la ligne contient la mention "Classe " .. -- 
                     if (line.Contains("Classe "))
                     {
+                        // pour une chaine '                  Classe 6HERGE [6HERGE]        '
                         string classe = "";
+
                         // On cherche l'emplacement de "Classe "
                         int posClasse = line.IndexOf("Classe ");
-                        int posAutre = line.IndexOf(" ");
+
+                        // On supprime tout ce qui existe avant "Classe "    ----> '6HERGE [6HERGE]        '
+                        string temp = line.Substring(posClasse + "Classe ".Length);
+
+                        // On coupe la chaine pour récupérer le texte avant le prochain espace ---->  '6HERGE'
+                        classe = temp.Split(' ')[0];
+
+                        //int length = line.IndexOf(" ");
                         // On supprime "Classe " et tout ce qu'il y avant
-                        classe = line.Substring(posClasse + "Classe ".Length, posAutre);
+                        //classe = line.Substring(posClasse + "Classe ".Length, length);
+
                         Globale.ListeClasses.Add(classe);
                     }
                     // -- La position de départ se place au début de la ligne suivante --
@@ -452,7 +466,9 @@ namespace CartesAcces2024
                 catch (Exception err)
                 {
                     MessageBox.Show(new Form { TopMost = true },
-                        "Erreur lors de la lecture des données classes dans le fichier PDF : " + err.Message);
+                        "Erreur lors de la lecture des données classes dans le fichier PDF : " + err.Message + "\n"
+                        + "Pile d'appel: " + err.StackTrace.ToString()
+                        );
                     return;
                 }
 
@@ -945,6 +961,7 @@ namespace CartesAcces2024
             // On utilise une liste de cas pour indiquer à frmChargement une suite d'actions à réaliser
             Globale.ListeCas.Clear();
             Globale.ListeCas.Add(Globale.CodeCas.extraitTextePdf);
+            // on vérifie quel logiciell EdT est utilisé par l'utilisateur
             if(Globale.LogicielEdt == Globale.LogicielsEdt.UnDeuxTemps)
                 Globale.ListeCas.Add(Globale.CodeCas.setLesClassesPdfUDT);
             else
