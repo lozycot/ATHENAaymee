@@ -114,7 +114,7 @@ namespace ATHENA
             // 
             // clbElements
             // 
-            this.clbElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.clbElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.clbElements.CheckOnClick = true;
             this.clbElements.ForeColor = System.Drawing.Color.White;
             this.clbElements.FormattingEnabled = true;
@@ -125,7 +125,7 @@ namespace ATHENA
             // 
             // gbpFiltres
             // 
-            this.gbpFiltres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.gbpFiltres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.gbpFiltres.Controls.Add(this.rdbNiveaux);
             this.gbpFiltres.Controls.Add(this.rdbClasses);
             this.gbpFiltres.Controls.Add(this.rdbEleve);
@@ -135,12 +135,12 @@ namespace ATHENA
             this.gbpFiltres.Size = new System.Drawing.Size(575, 122);
             this.gbpFiltres.TabIndex = 7;
             this.gbpFiltres.TabStop = false;
-            this.gbpFiltres.Text = "Filtre de recherche";
+            this.gbpFiltres.Text = "Filtres";
             // 
             // rdbNiveaux
             // 
             this.rdbNiveaux.AutoSize = true;
-            this.rdbNiveaux.Location = new System.Drawing.Point(400, 55);
+            this.rdbNiveaux.Location = new System.Drawing.Point(102, 55);
             this.rdbNiveaux.Name = "rdbNiveaux";
             this.rdbNiveaux.Size = new System.Drawing.Size(79, 21);
             this.rdbNiveaux.TabIndex = 2;
@@ -163,7 +163,7 @@ namespace ATHENA
             // 
             this.rdbEleve.AutoSize = true;
             this.rdbEleve.Checked = true;
-            this.rdbEleve.Location = new System.Drawing.Point(102, 55);
+            this.rdbEleve.Location = new System.Drawing.Point(400, 55);
             this.rdbEleve.Name = "rdbEleve";
             this.rdbEleve.Size = new System.Drawing.Size(71, 21);
             this.rdbEleve.TabIndex = 0;

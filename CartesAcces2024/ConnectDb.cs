@@ -60,10 +60,7 @@ namespace CartesAcces2024
 
         public static class DbConnect
         {
-            /// <summary>
-            /// Méthode pour établir une connexion à la base de données
-            /// </summary>
-            /// <returns></returns>
+            // Méthode pour établir une connexion à la base de données
             public static SQLiteConnection connect()
             {
                 string dbPath = Chemin.CheminBdd;
@@ -71,9 +68,7 @@ namespace CartesAcces2024
                 return connection;
             }
 
-            /// <summary>
-            /// Méthode pour créer la base de données
-            /// </summary>
+            // Méthode pour créer la base de données
             public static void CreerDb()
             {
                 try
@@ -98,10 +93,7 @@ namespace CartesAcces2024
                 }
             }
 
-            /// <summary>
-            /// Méthode pour sélectionner une ligne dans la base de données
-            /// </summary>
-            /// <returns></returns>
+            // Méthode pour sélectionner une ligne dans la base de données
             public static string SelectRow()
             {
                 try
@@ -136,11 +128,7 @@ namespace CartesAcces2024
                 }
             }
 
-            /// <summary>
-            /// Méthode pour vérifier si des données existent dans la base de données
-            /// </summary>
-            /// <param name="db"></param>
-            /// <returns></returns>
+            // Méthode pour vérifier si des données existent dans la base de données
             public static bool DbData(string db)
             {
                 if (!File.Exists(Chemin.CheminBdd))

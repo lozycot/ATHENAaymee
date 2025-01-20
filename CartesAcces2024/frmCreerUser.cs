@@ -19,50 +19,46 @@ namespace CartesAcces2024
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            // Vérifie si tous les champs sont remplis
-            switch (true)
+            if (txtIdentifiant.Text == "" || txtMdp1.Text == "" || txtMdp2.Text == "")
+                MessageBox.Show("Tous les champs doivent être remplis !", "Erreur de saisie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            else if (txtMdp1.Text != txtMdp2.Text)
             {
-                case bool _ when txtIdentifiant.Text == "" || txtMdp1.Text == "" || txtMdp2.Text == "":
-                    MessageBox.Show("Tous les champs doivent être remplis !", "Erreur de saisie",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-        
-                // Vérifie si les mots de passe correspondent
-                case bool _ when txtMdp1.Text != txtMdp2.Text:
-                    MessageBox.Show("Les deux mots de passe entrés ne sont pas identiques ! Recommencez.", "Erreur de saisie",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtMdp1.Text = "";
-                    txtMdp2.Text = "";
-                    break;
-        
-                // Vérifie si le nom d'utilisateur contient des caractères non valides
-                case bool _ when txtIdentifiant.Text.Any(ch => !char.IsLetterOrDigit(ch)):
-                    MessageBox.Show("Un nom d'utilisateur ne peut comporter que des chiffres et des lettres !", "Erreur de saisie",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtIdentifiant.Text = "";
-                    break;
-        
-                // Vérifie si le mot de passe contient des caractères non valides
-                case bool _ when txtMdp1.Text.Contains("'") || txtMdp1.Text.Contains("\""):
-                    MessageBox.Show("Le mot de passe ne peut pas contenir de caractère « \" » ou « ' ».", "Erreur de saisie",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtMdp1.Text = "";
-                    txtMdp2.Text = "";
-                    break;
-        
-                // Vérifie si l'utilisateur existe déjà
-                case bool _ when ConnectDb.DbConnect.DbData("Connection WHERE Connection.nomUtilisateur = '" + txtIdentifiant.Text + "';"):
-                    MessageBox.Show("Un utilisateur portant cet identifiant existe déjà, veuillez en utiliser un autre !", "Erreur de saisie",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-        
-                default:
-                    // Insère l'utilisateur dans la base de données
-                    if (UsersOperations.InsertUnUtilisateurDansBdd(txtIdentifiant.Text, txtMdp1.Text))
-                        MessageBox.Show("Utilisateur créé avec succès !", "Information",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
-                    break;
+                MessageBox.Show("Les deux mots de passe entrés ne sont pas identiques ! Recommencez.", "Erreur de saisie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMdp1.Text = "";
+                txtMdp2.Text = "";
+            }
+            else if (txtIdentifiant.Text.Any(ch => !char.IsLetterOrDigit(ch)))
+            {
+                MessageBox.Show("Un nom d'utilisateur ne peut comporter que des chiffres et des lettres !", "Erreur de saisie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtIdentifiant.Text = "";
+            }
+            else if (txtMdp1.Text.Contains("'") || txtMdp1.Text.Contains("\""))
+            {
+                MessageBox.Show("Le mot de passe ne peut pas contenir de caractère « \" » ou « ' ».", "Erreur de saisie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMdp1.Text = "";
+                txtMdp2.Text = "";
+            }
+            else if (ConnectDb.DbConnect.DbData("Connection WHERE Connection.nomUtilisateur = '" + txtIdentifiant.Text + "';"))
+            {
+                MessageBox.Show("Un utilisateur portant cet identifiant existe déjà, veuillez en utiliser un autre !", "Erreur de saisie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (UsersOperations.InsertUnUtilisateurDansBdd(txtIdentifiant.Text, txtMdp1.Text))
+                    MessageBox.Show("Utilisateur créé avec succès !", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Hide();
+                //frmAcceuil ac = new frmAcceuil();
+                //ac.Show();
+                //Application.Exit();
+                //Application.Run(new frmAcceuil());
+                Close();
             }
         }
 
@@ -71,9 +67,10 @@ namespace CartesAcces2024
             Environment.Exit(0);
         }
 
-        // Méthodes vides : Gestionnaires d'événements non utilisés pour le moment
-        private void frmCreerUser_Load(object sender, EventArgs e) { }
-        private void frmCreerUser_Load_1(object sender, EventArgs e) { }
+        private void frmCreerUser_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
 
