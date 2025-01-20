@@ -136,7 +136,7 @@ namespace CartesAcces2024
             this.btnValider.Size = new System.Drawing.Size(150, 50);
             this.btnValider.TabIndex = 5;
             this.btnValider.Text = "Valider";
-            this.ToolTip.SetToolTip(this.btnValider, "Valider");
+            this.ToolTip.SetToolTip(this.btnValider, "Valider et continuer");
             this.btnValider.UseVisualStyleBackColor = false;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
@@ -172,7 +172,7 @@ namespace CartesAcces2024
             this.btnQuitter.Size = new System.Drawing.Size(80, 50);
             this.btnQuitter.TabIndex = 8;
             this.btnQuitter.Text = "Quitter";
-            this.ToolTip.SetToolTip(this.btnQuitter, "Quitter");
+            this.ToolTip.SetToolTip(this.btnQuitter, "Quitter l\'application");
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 

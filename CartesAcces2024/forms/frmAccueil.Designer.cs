@@ -95,7 +95,7 @@ namespace CartesAcces2024
             this.btnOptions.Size = new System.Drawing.Size(247, 52);
             this.btnOptions.TabIndex = 25;
             this.btnOptions.Text = "Options";
-            this.ToolTip.SetToolTip(this.btnOptions, "Options");
+            this.ToolTip.SetToolTip(this.btnOptions, "Reglages supplementaires");
             this.btnOptions.UseVisualStyleBackColor = false;
             this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
@@ -112,7 +112,7 @@ namespace CartesAcces2024
             this.btnImpInformations.Size = new System.Drawing.Size(249, 52);
             this.btnImpInformations.TabIndex = 24;
             this.btnImpInformations.Text = "Importer des Informations";
-            this.ToolTip.SetToolTip(this.btnImpInformations, "Importer des Informations");
+            this.ToolTip.SetToolTip(this.btnImpInformations, "Importer des Informations pour le fonctionnement du reste des outils");
             this.btnImpInformations.UseVisualStyleBackColor = false;
             this.btnImpInformations.Click += new System.EventHandler(this.btnImpInformations_Click);
             // 
@@ -143,7 +143,7 @@ namespace CartesAcces2024
             this.btnCarteProvisoire.Size = new System.Drawing.Size(247, 52);
             this.btnCarteProvisoire.TabIndex = 22;
             this.btnCarteProvisoire.Text = "Carte Provisoire";
-            this.ToolTip.SetToolTip(this.btnCarteProvisoire, "Carte Provisoire");
+            this.ToolTip.SetToolTip(this.btnCarteProvisoire, "Permet de créer et d\'enregistrer des carte provisoire");
             this.btnCarteProvisoire.UseVisualStyleBackColor = false;
             this.btnCarteProvisoire.Click += new System.EventHandler(this.btnCarteProvisoire_Click);
             // 
@@ -160,7 +160,7 @@ namespace CartesAcces2024
             this.btnCartesListePerso.Size = new System.Drawing.Size(247, 52);
             this.btnCartesListePerso.TabIndex = 21;
             this.btnCartesListePerso.Text = "Cartes par Liste Personnalisé";
-            this.ToolTip.SetToolTip(this.btnCartesListePerso, "Cartes par Liste Personnalisé");
+            this.ToolTip.SetToolTip(this.btnCartesListePerso, "Permet de créer et d\'enregistrer des cartes grâce à une liste personnalisé");
             this.btnCartesListePerso.UseVisualStyleBackColor = false;
             this.btnCartesListePerso.Click += new System.EventHandler(this.btnCartesListePerso_Click);
             // 
@@ -177,7 +177,7 @@ namespace CartesAcces2024
             this.btnCartesClasseNiveau.Size = new System.Drawing.Size(249, 52);
             this.btnCartesClasseNiveau.TabIndex = 20;
             this.btnCartesClasseNiveau.Text = "Cartes par Classe / Niveau";
-            this.ToolTip.SetToolTip(this.btnCartesClasseNiveau, "Cartes par Classe / Niveau");
+            this.ToolTip.SetToolTip(this.btnCartesClasseNiveau, "Permet de créer et d\'enregistrer des cartes par classe ou niveau");
             this.btnCartesClasseNiveau.UseVisualStyleBackColor = false;
             this.btnCartesClasseNiveau.Click += new System.EventHandler(this.btnCartesClasseNiveau_Click);
             // 
@@ -246,7 +246,7 @@ namespace CartesAcces2024
             this.btnCodeBarreEleves.Size = new System.Drawing.Size(247, 52);
             this.btnCodeBarreEleves.TabIndex = 39;
             this.btnCodeBarreEleves.Text = "Code Barre d\'Eleves";
-            this.ToolTip.SetToolTip(this.btnCodeBarreEleves, "Code Barre d\'eleves");
+            this.ToolTip.SetToolTip(this.btnCodeBarreEleves, "Permet de créer et d\'enregistrer des code barre contenant les noms des eleves");
             this.btnCodeBarreEleves.UseVisualStyleBackColor = false;
             this.btnCodeBarreEleves.Click += new System.EventHandler(this.btnCodeBarreEleves_Click);
             // 
@@ -278,7 +278,7 @@ namespace CartesAcces2024
             this.btnAPropos.Size = new System.Drawing.Size(247, 52);
             this.btnAPropos.TabIndex = 36;
             this.btnAPropos.Text = "À Propos";
-            this.ToolTip.SetToolTip(this.btnAPropos, "A Propos");
+            this.ToolTip.SetToolTip(this.btnAPropos, "Informations sur l\'application");
             this.btnAPropos.UseVisualStyleBackColor = false;
             this.btnAPropos.Click += new System.EventHandler(this.btnAPropos_Click);
             // 
@@ -316,7 +316,7 @@ namespace CartesAcces2024
             this.btnPlancheClasse.Size = new System.Drawing.Size(247, 52);
             this.btnPlancheClasse.TabIndex = 33;
             this.btnPlancheClasse.Text = "Planches par Classe";
-            this.ToolTip.SetToolTip(this.btnPlancheClasse, "Planches par Classe");
+            this.ToolTip.SetToolTip(this.btnPlancheClasse, "Permet de créer et d\'enregistrer des planches de trombinoscopes par classe");
             this.btnPlancheClasse.UseVisualStyleBackColor = false;
             this.btnPlancheClasse.Click += new System.EventHandler(this.btnPlancheClasse_Click);
             // 
