@@ -119,6 +119,11 @@ namespace CartesAcces2024
             OuvrirFormulaire(new frmAPropos(), "A Propos");
         }
 
+        private void btnCodeBarreEleves_Click(object sender, EventArgs e)
+        {
+            OuvrirFormulaire(new frmCodeBarre(), "Code Barre d'Eleves");
+        }
+
         // Méthodes vides : Gestionnaires d'événements non utilisés pour le moment
         private void pnlMenu_Paint(object sender, PaintEventArgs e) { }
         private void pictureBox1_Click(object sender, EventArgs e) { }

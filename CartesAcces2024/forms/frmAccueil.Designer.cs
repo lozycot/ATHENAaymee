@@ -73,6 +73,7 @@ namespace CartesAcces2024
             this.lblNom = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.btnCodeBarreEleves = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -204,6 +205,7 @@ namespace CartesAcces2024
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.panel1.Controls.Add(this.btnCodeBarreEleves);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnOptions);
             this.panel1.Controls.Add(this.label1);
@@ -332,6 +334,22 @@ namespace CartesAcces2024
             this.pnlContent.TabIndex = 33;
             this.pnlContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContent_Paint_1);
             // 
+            // btnCodeBarreEleves
+            // 
+            this.btnCodeBarreEleves.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnCodeBarreEleves.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCodeBarreEleves.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCodeBarreEleves.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCodeBarreEleves.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnCodeBarreEleves.Location = new System.Drawing.Point(10, 461);
+            this.btnCodeBarreEleves.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCodeBarreEleves.Name = "btnCodeBarreEleves";
+            this.btnCodeBarreEleves.Size = new System.Drawing.Size(247, 52);
+            this.btnCodeBarreEleves.TabIndex = 39;
+            this.btnCodeBarreEleves.Text = "Code Barre d\'Eleves";
+            this.btnCodeBarreEleves.UseVisualStyleBackColor = false;
+            this.btnCodeBarreEleves.Click += new System.EventHandler(this.btnCodeBarreEleves_Click);
+            // 
             // frmAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -372,5 +390,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.Button btnAPropos;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCodeBarreEleves;
     }
 }
