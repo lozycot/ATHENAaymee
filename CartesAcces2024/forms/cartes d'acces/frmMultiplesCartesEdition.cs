@@ -457,6 +457,12 @@ namespace CartesAcces2024
         {
             Process.Start(@dernierCheminEnregistre);
         }
+
+        private void btnAjouterElementDansCartes_Click(object sender, EventArgs e)
+        {
+            // ouvrir form qui choisit l'élément à ajouter
+            
+        }
     }
 }
 
