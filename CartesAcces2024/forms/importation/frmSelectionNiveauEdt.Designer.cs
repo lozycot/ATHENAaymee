@@ -177,6 +177,7 @@ namespace CartesAcces2024
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gpbClasse);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSelectionNiveauEdt";
             this.Text = "Selection Niveau";
