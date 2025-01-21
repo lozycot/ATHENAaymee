@@ -105,7 +105,9 @@ namespace CartesAcces2024
             setLesClassesPdfIE,
             ajoutEdt,
             sauvegarderPlanchesPdf,
-            selectionZone
+            selectionZone,
+            genererCodesBarres,
+            sauvegarderCodesBarres
         };
 
         public static List<string> NomsFichiersPlanches { get; set; }

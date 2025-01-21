@@ -172,14 +172,6 @@ namespace CartesAcces2024
                 return;
             }
 
-            List<string> codesBarres = new List<string>();
-            foreach (var item in clbElements.CheckedItems)
-            {
-                string elementText = item.ToString();
-                string codeBarre = RemoveAccents(elementText.Split(' ')[0] + " " + elementText.Split(' ')[1]);
-                codesBarres.Add(codeBarre);
-            }
-
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
                 sfd.Filter = "PDF Files (*.pdf)|*.pdf";
@@ -188,14 +180,30 @@ namespace CartesAcces2024
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    try
+                    // Préparer les données pour le traitement
+                    List<string> codesBarres = new List<string>();
+                    foreach (var item in clbElements.CheckedItems)
                     {
-                        EditionCodeBarre.GenererPdfCodeBarres(codesBarres, sfd.FileName);
-                        MessageBox.Show("Le PDF a été généré avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string elementText = item.ToString();
+                        string codeBarre = RemoveAccents(elementText.Split(' ')[0] + " " + elementText.Split(' ')[1]);
+                        codesBarres.Add(codeBarre);
                     }
-                    catch (Exception ex)
+
+                    // Configurer les variables globales
+                    Globale.CheminDestination = sfd.FileName;
+                    Globale.ListeElevesString = codesBarres;
+                    Globale.ListeCas.Clear();
+                    Globale.ListeCas.Add(Globale.CodeCas.genererCodesBarres);
+                    Globale.ListeCas.Add(Globale.CodeCas.sauvegarderCodesBarres);
+
+                    // Lancer le formulaire de chargement
+                    using (frmChargement frm = new frmChargement())
                     {
-                        MessageBox.Show($"Une erreur est survenue lors de la génération du PDF : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        frm.ShowDialog();
+                        if (Globale.wokerFinished)
+                        {
+                            MessageBox.Show("Le PDF a été généré avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }
