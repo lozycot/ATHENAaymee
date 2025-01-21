@@ -206,6 +206,13 @@ namespace CartesAcces2024
             objGraphique.DrawImage(bmpFinal, new Point(1350, 80));
         }
 
+
+
+
+
+
+
+
         /// <summary>
         ///Preview carte provisoire si la carte n'a pas d'infos
         /// </summary>
@@ -214,12 +221,12 @@ namespace CartesAcces2024
         /// <param name="nomEleve"></param>
         /// <param name="prenomEleve"></param>
         /// <param name="classe"></param>
-        public static void fondCarteNiveau(PictureBox pbCarteFace, ComboBox cbbSection, string nomEleve, string prenomEleve, string classe)
+        public static void fondCarteNiveau(PictureBox pbCarteFace, string nomEleve, string prenomEleve, string classe)
         {
             var police = new Font("Calibri", 45, FontStyle.Bold);
             var police2 = new Font("Calibri", 22, FontStyle.Bold);
             var police3 = new Font("Calibri", 40, FontStyle.Bold);
-            var police4 = new Font("Calibri", 16, FontStyle.Bold);
+            var police4 = new Font("Calibri", 16, FontStyle.Bold); // police des informations de l'établissement
             var policenom = new Font("Calibri", 25, FontStyle.Bold);
             var policeprenom = new Font("Calibri", 25, FontStyle.Bold);
             if (File.Exists(Chemin.DossierCartesFace + Globale.CheminFaceCarte + "Face.png"))
@@ -293,35 +300,45 @@ namespace CartesAcces2024
             fondTexteCarteFace(objGraphique, classe, police, classe, 50, 70);
             objGraphique.DrawString(classe, police, pinceauNoir, 50, 70);
 
-            chaine = Etablissement[0];
-            var mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
+            // écriture des informations de l'étabmlissement
+            // tables par défauts :
+            chaine = Etablissement[0];  // nom établissement
+            //var mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 985);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 985);
 
             chaine = "Mail : " + Etablissement[6];
-            mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
+            //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1030);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1030);
 
             chaine = "Adresse : " + Etablissement[2] + " " + Etablissement[1];
-            mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
+            //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1075);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1075);
 
-            chaine = Etablissement[3] + " " + Etablissement[4];
-            mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
+            chaine = Etablissement[3] + " " + Etablissement[4]; // code postal, ville
+            //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1120);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1120);
 
             chaine = "Téléphone : " + Etablissement[5];
-            mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
+            //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1165);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1165);
+
+            // tables champs personnalisées:
+            // 
 
             pbCarteFace.Refresh();
 
             objGraphique.Dispose(); // Libère les ressources
         }
+
+
+
+
+
 
         /// <summary>
         /// Preview carteProvisoire si la carte a des infos
@@ -331,7 +348,7 @@ namespace CartesAcces2024
         /// <param name="nomEleve"></param>
         /// <param name="prenomEleve"></param>
         /// <param name="classe"></param>
-        public static void FondCarteNiveauInfos(PictureBox pbCarteFace, ComboBox cbbSection, string nomEleve, string prenomEleve, string classe)
+        public static void FondCarteNiveauInfos(PictureBox pbCarteFace, string nomEleve, string prenomEleve, string classe)
         {
             if (File.Exists(Chemin.DossierCartesFace + Globale.CheminFaceCarte + "Face.png"))
             {
@@ -412,13 +429,22 @@ namespace CartesAcces2024
             objGraphique.Dispose();
         }
 
+
+
+
+
+
+
         public static void qrCodeFace(Graphics objGraphique)
         {
             List<string> Etablissement = new List<string>(OperationsDb.GetEtablissement());
-            var bmpOriginal = QrCode.CreationQrCode(Etablissement[7]);
-            var bmpFinal = new Bitmap(bmpOriginal, new Size(275, 275));
+            if (Etablissement[7]!="") // Etablissement[7] est l'url de l'établissement
+            {
+                var bmpOriginal = QrCode.CreationQrCode(Etablissement[7]);
+                var bmpFinal = new Bitmap(bmpOriginal, new Size(175, 175));
 
-            objGraphique.DrawImage(bmpFinal, new Point(880, 990));
+                objGraphique.DrawImage(bmpFinal, new Point(880, 990));
+            }
         }
 
         public static void qrCodeFaceProvisoire(Graphics objGraphique)
@@ -430,7 +456,18 @@ namespace CartesAcces2024
             objGraphique.DrawImage(bmpFinal, new Point(875, 980));
         }
 
-        //Création de la carte face si elle n'a pas deja d'informations dessus
+
+
+
+
+
+        /// <summary>
+        ///Création de la carte face si elle n'a pas deja d'informations dessus
+        /// </summary>
+        /// <param name="eleve"></param>
+        /// <param name="policenom"></param>
+        /// <param name="policeprenom"></param>
+        /// <returns></returns>
         public static Image ImageCarteFace(Eleve eleve, Font policenom, Font policeprenom)
         {
             var image = Image.FromFile(Chemin.CheminFaceDefault);
@@ -455,7 +492,8 @@ namespace CartesAcces2024
             var police = new Font("Calibri", 45, FontStyle.Bold);
             var police2 = new Font("Calibri", 22, FontStyle.Bold);
             var police3 = new Font("Calibri", 40, FontStyle.Bold);
-            var police4 = new Font("Calibri", 25, FontStyle.Bold);
+            var police4 = new Font("Calibri", 16, FontStyle.Bold); // police des informations de l'établissement
+
 
             var date = DateTime.Today.ToShortDateString();
             List<string> Etablissement = new List<string>(OperationsDb.GetEtablissement());
@@ -502,10 +540,20 @@ namespace CartesAcces2024
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1165);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1165);
 
+            // ajout des champs personnalisées
+
             objGraphique.Dispose(); // Libère les ressources
 
             return image;
         }
+
+
+
+
+
+
+
+
         /// <summary>
         /// Création de la carte Face si elle a déja des infos dessus
         /// </summary>
@@ -528,7 +576,7 @@ namespace CartesAcces2024
 
             var objGraphique = Graphics.FromImage(image);
 
-            //qrCodeFace(objGraphique);
+            qrCodeFace(objGraphique);
 
             Brush pinceauNoir = new SolidBrush(Color.Black);
 
@@ -563,6 +611,12 @@ namespace CartesAcces2024
 
             return image;
         }
+
+
+
+
+
+
 
         public static void carteFace(Eleve eleve, string chemin)
         {
@@ -615,6 +669,17 @@ namespace CartesAcces2024
                 imageFace.Dispose();
         }
 
+
+
+
+
+
+
+        /// <summary>
+        /// Remplace l'image de pbcarteArriere par l'emploi du temps de l'élève, ou de l'emploi du temps de la classe si il n'en as pas.
+        /// </summary>
+        /// <param name="eleve"></param>
+        /// <param name="pbCarteArriere"></param>
         public static void carteArriere(Eleve eleve, PictureBox pbCarteArriere)
         {
             if (!eleve.SansEdt)
@@ -638,11 +703,27 @@ namespace CartesAcces2024
             }
         }
 
+
+
+
+
+
+
         public static void ReplacementPhotoClassique(int posx, int posy)
         {
             PosYClassique = posy;
             PosXClassique = posx;
         }
+
+
+
+
+
+
+
+
+
+
 
         public static Graphics importCarteFace(string chemin, Graphics objgraph, string classeEleve)
         {

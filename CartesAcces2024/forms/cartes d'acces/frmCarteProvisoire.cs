@@ -52,11 +52,11 @@ namespace CartesAcces2024
 
             if (Globale.InfosCarte == true)
             {
-                Edition.FondCarteNiveauInfos(pbCarteFace, cbbSection, nom, prenom, classex);
+                Edition.FondCarteNiveauInfos(pbCarteFace, nom, prenom, classex);
             }
             else
             {
-                Edition.fondCarteNiveau(pbCarteFace, cbbSection, nom, prenom, classex);
+                Edition.fondCarteNiveau(pbCarteFace, nom, prenom, classex);
             }
 
             //if (nom.Length < 15)
@@ -100,8 +100,8 @@ namespace CartesAcces2024
                     nouvelle_eleve.ClasseEleve = cbbClasse.Text;
                 // si cbbClasse est vide, chercher la classe de l'élève dans la base de données
                 else
-                    nouvelle_eleve.ClasseEleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve).ClasseEleve;
-                    //nouvelle_eleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve); // rendrait l'élève null si il n'existe pas
+                    //nouvelle_eleve.ClasseEleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve).ClasseEleve;
+                    nouvelle_eleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve); // rend l'élève null si il n'existe pas
 
             }
             else
@@ -185,6 +185,7 @@ namespace CartesAcces2024
 
             if (cbbSection.SelectedItem != null)
             {
+                // popule la comboBox de sélection des classes
                 foreach (var classe in ListClasses)
                 {
                     if (classe.Substring(0, 1) == cbbSection.Text.Substring(0, 1))
@@ -234,11 +235,11 @@ namespace CartesAcces2024
 
                     if (Globale.InfosCarte == true)
                     {
-                        Edition.FondCarteNiveauInfos(pbCarteFace, cbbSection, nom, prenom, classex);
+                        Edition.FondCarteNiveauInfos(pbCarteFace, nom, prenom, classex);
                     }
                     else
                     {
-                        Edition.fondCarteNiveau(pbCarteFace, cbbSection, nom, prenom, classex);
+                        Edition.fondCarteNiveau(pbCarteFace, nom, prenom, classex);
                     }
 
                     GC.Collect();

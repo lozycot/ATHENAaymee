@@ -386,5 +386,11 @@ namespace CartesAcces2024
         public static bool presetPath { get; set; } = false;
 
         public static string folderPath { get; set; }
+
+
+        // variables pour la passiation de données entre frmSelectionneAjoutDansCarteAcces et frmMultipleCartesedition
+        // (j'aurais bien passé les données via des variables publiques dans ces deux forms mais tout est déjà centralisé ici)
+
+        public static FrmMultiplesCartesEdition formMultipleCartes;
     }
 }

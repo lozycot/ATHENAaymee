@@ -19,7 +19,7 @@ namespace CartesAcces2024
     public static class Photo
     {
         /// <summary>
-        /// Vérifie si une photo existe pour un élève.
+        /// Remplace l'image de pbPhoto par l'image de l'élève correspondant, si l'image existe. Sinon, la remplace par une image par défaut.
         /// </summary>
         /// <param name="eleve">L'élève dont on vérifie la photo.</param>
         /// <param name="pbPhoto">PictureBox pour afficher la photo.</param>
@@ -54,7 +54,7 @@ namespace CartesAcces2024
         }
 
         /// <summary>
-        /// Obtient la date de la dernière importation des photos.
+        /// Remplace l'image de pbPhoto par un bitmap créer à partir du chemin.
         /// </summary>
         /// <param name="chemin"></param>
         /// <param name="pbPhoto"></param>
