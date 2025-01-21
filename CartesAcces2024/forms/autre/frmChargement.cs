@@ -133,6 +133,12 @@ namespace CartesAcces2024
                 case Globale.CodeCas.sauvegarderPlanchesPdf:
                     FichierWord.SauvegarderPlanche(Globale.NomsFichiersPlanches, Globale.DossierPlanches, worker, frmPlanches.format);
                     break;
+                case Globale.CodeCas.genererCodesBarres:
+                    EditionCodeBarre.GenererCodesBarres(Globale.ListeElevesString, worker);
+                    break;
+                case Globale.CodeCas.sauvegarderCodesBarres:
+                    EditionCodeBarre.SauvegarderPdfCodeBarres(Globale.CheminDestination, worker);
+                    break;
             }
         }
 

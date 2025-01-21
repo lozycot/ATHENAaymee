@@ -4,39 +4,115 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Text;
+using System.ComponentModel;
 
 namespace CartesAcces2024
 {
     public class EditionCodeBarre
     {
-        public static void GenererPdfCodeBarres(List<string> codesBarres, string cheminDestination)
+        private static List<ACTIVEBARCODELib.Barcode> codesBarresGeneres = new List<ACTIVEBARCODELib.Barcode>();
+        private static List<string> cheminsImagesTemp = new List<string>();
+
+        public static void GenererCodesBarres(List<string> codes, BackgroundWorker worker)
+        {
+            codesBarresGeneres.Clear();
+            cheminsImagesTemp.Clear();
+            int total = codes.Count;
+            int progress = 0;
+
+            foreach (string code in codes)
+            {
+                if (worker.CancellationPending)
+                {
+                    return;
+                }
+
+                try
+                {
+                    var barcodeControl = new ACTIVEBARCODELib.Barcode();
+                    ConfigureBarcode(barcodeControl, code);
+                    codesBarresGeneres.Add(barcodeControl);
+
+                    // Générer et sauvegarder l'image temporaire
+                    string tempImagePath = System.IO.Path.GetTempFileName() + ".png";
+                    barcodeControl.SaveAsBySize(tempImagePath, 356, 120);
+                    cheminsImagesTemp.Add(tempImagePath);
+
+                    progress++;
+                    worker.ReportProgress((int)((double)progress / total * 100));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erreur lors de la génération du code-barre: {ex.Message}");
+                }
+            }
+        }
+
+        public static void SauvegarderPdfCodeBarres(string cheminDestination, BackgroundWorker worker)
         {
             Word.Application wordApp = null;
             Word.Document doc = null;
 
             try
             {
-                // Créer une nouvelle instance de Word
                 wordApp = new Word.Application { Visible = false };
                 doc = wordApp.Documents.Add();
 
-                // Configuration des marges de la page
                 ConfigurePageMargins(doc, wordApp);
 
-                int rows = (int)Math.Ceiling(codesBarres.Count / 2.0);
+                int rows = (int)Math.Ceiling(cheminsImagesTemp.Count / 2.0);
                 Word.Table table = doc.Tables.Add(doc.Range(0, 0), rows, 2);
                 table.Borders.Enable = 0;
 
-                // Insérer les codes-barres dans le tableau
-                InsertBarcodesIntoTable(codesBarres, table);
+                int total = cheminsImagesTemp.Count;
+                for (int i = 0; i < total; i++)
+                {
+                    if (worker.CancellationPending)
+                    {
+                        return;
+                    }
 
-                // Sauvegarder en PDF
+                    int row = (i / 2) + 1;
+                    int col = (i % 2) + 1;
+
+                    Word.Cell cell = table.Cell(row, col);
+                    Word.Range cellRange = cell.Range;
+                    cellRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+
+                    InsertBarcodeImage(cellRange, cheminsImagesTemp[i]);
+
+                    worker.ReportProgress((int)((double)(i + 1) / total * 100));
+                }
+
                 doc.SaveAs2(cheminDestination, Word.WdSaveFormat.wdFormatPDF);
             }
             finally
             {
-                // Nettoyer les ressources
                 CleanUpResources(doc, wordApp);
+                // Nettoyer les fichiers temporaires
+                foreach (string tempFile in cheminsImagesTemp)
+                {
+                    if (System.IO.File.Exists(tempFile))
+                    {
+                        try
+                        {
+                            System.IO.File.Delete(tempFile);
+                        }
+                        catch { }
+                    }
+                }
+                cheminsImagesTemp.Clear();
+                
+                // Libérer les ressources des codes-barres
+                foreach (var barcode in codesBarresGeneres)
+                {
+                    try
+                    {
+                        Marshal.ReleaseComObject(barcode);
+                    }
+                    catch { }
+                }
+                codesBarresGeneres.Clear();
             }
         }
 
