@@ -158,11 +158,10 @@ namespace CartesAcces2024
         {
             Globale.ListeClasses.Clear();
             Globale.ListeClasses = OperationsDb.GetClasses();
-            listBoxNonSel.Items.Clear();
-            listBoxSel.Items.Clear();
+            clbElements.Items.Clear();
             foreach (var classe in Globale.ListeClasses)
             {
-                listBoxNonSel.Items.Add(classe);
+                clbElements.Items.Add(classe);
             }
         }
 
@@ -171,16 +170,15 @@ namespace CartesAcces2024
         /// </summary>
         private void updateClassesTemp()
         {
-            listBoxNonSel.Items.Clear();
-            listBoxSel.Items.Clear();
+            clbElements.Items.Clear();
             List<string> classesNA = OperationsDb.GetClassesNouvelleAnnee();
             foreach (string cl in classesNA)
             {
-                listBoxNonSel.Items.Add(cl);
+                clbElements.Items.Add(cl);
             }
-            if (listBoxNonSel.Items.Count > 0)
+            if (clbElements.Items.Count > 0)
             {
-                listBoxNonSel.SelectedIndex = 0;
+                clbElements.SelectedIndex = 0;
             }
         }
 
@@ -204,18 +202,19 @@ namespace CartesAcces2024
         /// <param name="type">Le type de planches (vides ou trombi avec photos).</param>
         private void GenererPlanches(EditionPlanche.typePlanche type)
         {
-            if (listBoxSel.Items.Count <= 0)
+            if (clbElements.CheckedItems.Count <= 0)
             {
                 MessageBox.Show("Vous devez d'abord sélectionner des classes !");
                 return;
             }
             List<string> classes = new List<string>();
-            foreach (var el in listBoxSel.Items)
+            foreach (var el in clbElements.CheckedItems)
             {
                 classes.Add(el.ToString());
             }
+
             // libère les ressources pour pouvoir vider le dossier des images
-            if(pbDocument.Image != null)
+            if (pbDocument.Image != null)
                 pbDocument.Image.Dispose();
             try
             {
@@ -314,38 +313,6 @@ namespace CartesAcces2024
                 pbDocument.Image.Dispose();
         }
 
-        private void btnAjouter_Click(object sender, EventArgs e)
-        {
-            int nb = listBoxNonSel.SelectedItems.Count;
-            for(int i = 0; i < nb; i++)
-            {
-                listBoxSel.Items.Add(listBoxNonSel.SelectedItem);
-                listBoxNonSel.Items.Remove(listBoxNonSel.SelectedItem);
-            }
-        }
-
-        private void btnRetirer_Click(object sender, EventArgs e)
-        {
-            int nb = listBoxSel.SelectedItems.Count;
-            for (int i = 0; i < nb; i++)
-            {
-                listBoxNonSel.Items.Add(listBoxSel.SelectedItem);
-                listBoxSel.Items.Remove(listBoxSel.SelectedItem);
-            }
-        }
-
-        private void btnToutAjouter_Click(object sender, EventArgs e)
-        {
-            listBoxSel.Items.AddRange(listBoxNonSel.Items);
-            listBoxNonSel.Items.Clear();
-        }
-
-        private void btnToutRetirer_Click(object sender, EventArgs e)
-        {
-            listBoxNonSel.Items.AddRange(listBoxSel.Items);
-            listBoxSel.Items.Clear();
-        }
-
         private void btnTrombi_Click(object sender, EventArgs e)
         {
             GenererPlanches(EditionPlanche.typePlanche.trombinoscope);
@@ -380,12 +347,10 @@ namespace CartesAcces2024
             {
                 cbSource.BackColor = System.Drawing.Color.FromArgb(129, 193, 232);
                 panelBdd.BackColor = System.Drawing.Color.FromArgb(0,115,186);
-                label1.ForeColor = System.Drawing.Color.White;
-                label2.ForeColor = System.Drawing.Color.White;
                 modeActuel = mode.classesNormales;
                 updateClassesNormales();
-                btnGererClassesTemp.Enabled = false;
-                btnGererClassesTemp.Visible = false;
+                btnValider.Enabled = false;
+                btnValider.Visible = false;
                 cbProfils.Enabled = false;
                 cbProfils.Checked = false;
             }
@@ -393,12 +358,10 @@ namespace CartesAcces2024
             {
                 cbSource.BackColor = System.Drawing.Color.FromArgb(247, 202, 131);
                 panelBdd.BackColor = System.Drawing.Color.FromArgb(247,202,131);
-                label1.ForeColor = System.Drawing.Color.Black;
-                label2.ForeColor = System.Drawing.Color.Black;
                 modeActuel = mode.classesNouvelleAnnee;
                 updateClassesTemp();
-                btnGererClassesTemp.Enabled = true;
-                btnGererClassesTemp.Visible = true;
+                btnValider.Enabled = true;
+                btnValider.Visible = true;
                 cbProfils.Enabled = true;
             }
         }
@@ -450,6 +413,50 @@ namespace CartesAcces2024
             {
                 MessageBox.Show(err.Message);
             }
+        }
+
+        private void clbElements_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReinitialiser_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < clbElements.Items.Count; i++) // déselectionné chque éléments de la liste
+            {
+                clbElements.SetItemChecked(i, false);
+            }
+        }
+
+        private void btnToutSelectionner_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < clbElements.Items.Count; i++)   // sélectionner chaque éléments de la liste
+            {
+                clbElements.SetItemChecked(i, true);
+            }
+        }
+
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+            frmModifClassesTemporaires frmmod = new frmModifClassesTemporaires();
+            frmmod.StartPosition = FormStartPosition.CenterScreen;
+            frmmod.ShowDialog();
+            updateClassesTemp();
+        }
+
+        private void frmPlanches_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxNonSel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxSel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

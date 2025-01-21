@@ -181,6 +181,12 @@
     <Compile Include="forms\autre\frmOptAvancees.Designer.cs">
       <DependentUpon>frmOptAvancees.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\autre\frmSelectionneAjoutDansCarteAcces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\autre\frmSelectionneAjoutDansCarteAcces.Designer.cs">
+      <DependentUpon>frmSelectionneAjoutDansCarteAcces.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\autre\frmSuppressionDeDonnées.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,12 @@
     <Compile Include="forms\test\frmCodeBarre.Designer.cs">
       <DependentUpon>frmCodeBarre.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\test\frmBienvenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\test\frmBienvenue.Designer.cs">
+      <DependentUpon>frmBienvenue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Photo.cs" />
     <Compile Include="FichierWord.cs" />
     <Compile Include="Edition.cs" />
@@ -330,6 +342,9 @@
     <Compile Include="UsersOperations.cs" />
     <EmbeddedResource Include="forms\autre\frmAPropos.resx">
       <DependentUpon>frmAPropos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\autre\frmSelectionneAjoutDansCarteAcces.resx">
+      <DependentUpon>frmSelectionneAjoutDansCarteAcces.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\cartes d%27acces\frmCarteParClasseNiveau.resx">
       <DependentUpon>frmCarteParClasseNiveau.cs</DependentUpon>
@@ -396,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\test\frmCodeBarre.resx">
       <DependentUpon>frmCodeBarre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\test\frmBienvenue.resx">
+      <DependentUpon>frmBienvenue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

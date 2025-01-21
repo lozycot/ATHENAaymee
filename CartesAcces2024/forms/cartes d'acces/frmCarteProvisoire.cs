@@ -100,15 +100,18 @@ namespace CartesAcces2024
                     nouvelle_eleve.ClasseEleve = cbbClasse.Text;
                 // si cbbClasse est vide, chercher la classe de l'élève dans la base de données
                 else
-                    nouvelle_eleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve);
+                    nouvelle_eleve.ClasseEleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve).ClasseEleve;
+                    //nouvelle_eleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve); // rendrait l'élève null si il n'existe pas
+
             }
             else
             {
                 nouvelle_eleve.ClasseEleve = "Profil particulier";
             }
 
-            if (nouvelle_eleve != null)
-            {
+            
+            //if (nouvelle_eleve != null)
+            //{
                 Globale.ListeEleveImpr.Add(nouvelle_eleve);
 
                 try
@@ -126,11 +129,11 @@ namespace CartesAcces2024
                 {
                     MessageBox.Show("Erreur : " + err.Message);
                 }
-            }
-            else
-            {
-                MessageBox.Show("L'élève n'existe pas: " + nouvelle_eleve.NomEleve + " " + nouvelle_eleve.PrenomEleve);
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("L'élève n'existe pas: " + nouvelle_eleve.NomEleve + " " + nouvelle_eleve.PrenomEleve);
+            //}
         }
 
 

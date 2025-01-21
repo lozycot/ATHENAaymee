@@ -62,7 +62,7 @@ namespace CartesAcces2024
                 Globale.Actuelle.Close();
 
             // Ouvre le formulaire d'importation directement
-            // OuvrirFormulaire(new frmBienvenue(), "Athena - Accueil");
+            OuvrirFormulaire(new frmBienvenue(), "Accueil");
         }
 
         // Méthode pour ouvrir un formulaire
@@ -78,7 +78,7 @@ namespace CartesAcces2024
         // Section Importation : Gestionnaire d'événements pour le bouton d'importation
         private void picLogo_Click(object sender, EventArgs e)
         {
-            // OuvrirFormulaire(new frmBienvenue(), "Athena - Accueil");
+            OuvrirFormulaire(new frmBienvenue(), "Accueil");
         }
 
         private void btnImpInformations_Click(object sender, EventArgs e)

@@ -74,6 +74,7 @@ namespace CartesAcces2024
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdbA5 = new System.Windows.Forms.RadioButton();
             this.rdbA4 = new System.Windows.Forms.RadioButton();
+            this.btnAjouterElementDansCartes = new System.Windows.Forms.Button();
             this.pnlEdtPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarteArriere)).BeginInit();
@@ -317,11 +318,22 @@ namespace CartesAcces2024
             this.rdbA4.Text = "A4";
             this.rdbA4.UseVisualStyleBackColor = true;
             // 
+            // btnAjouterElementDansCartes
+            // 
+            this.btnAjouterElementDansCartes.Location = new System.Drawing.Point(75, 515);
+            this.btnAjouterElementDansCartes.Name = "btnAjouterElementDansCartes";
+            this.btnAjouterElementDansCartes.Size = new System.Drawing.Size(256, 23);
+            this.btnAjouterElementDansCartes.TabIndex = 16;
+            this.btnAjouterElementDansCartes.Text = "btnAjouterElementDansCarte";
+            this.btnAjouterElementDansCartes.UseVisualStyleBackColor = true;
+            this.btnAjouterElementDansCartes.Click += new System.EventHandler(this.btnAjouterElementDansCartes_Click);
+            // 
             // FrmMultiplesCartesEdition
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1446, 492);
+            this.ClientSize = new System.Drawing.Size(1446, 603);
+            this.Controls.Add(this.btnAjouterElementDansCartes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlEdtPhoto);
             this.Controls.Add(this.groupBox3);
@@ -369,5 +381,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.RadioButton rdbA4;
         private System.Windows.Forms.Button btnOpenFolder;
         private System.Windows.Forms.ProgressBar progressBar1_compteur;
+        private System.Windows.Forms.Button btnAjouterElementDansCartes;
     }
 }
