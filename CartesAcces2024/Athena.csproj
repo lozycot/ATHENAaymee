@@ -163,6 +163,7 @@
     <Compile Include="Chemin.cs" />
     <Compile Include="Classe.cs" />
     <Compile Include="CopieImage.cs" />
+    <Compile Include="EditionCodeBarre.cs" />
     <Compile Include="forms\autre\frmAPropos.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -195,8 +195,7 @@ namespace CartesAcces2024
             // btnValider
             // 
             this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnValider.Cursor = System.Windows.Forms.Cursors.No;
-            this.btnValider.Enabled = false;
+            this.btnValider.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
@@ -209,7 +208,7 @@ namespace CartesAcces2024
             this.btnValider.TabIndex = 14;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
-            this.btnValider.Click += new System.EventHandler(this.btnValider_Click_1);
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // label1
             // 
