@@ -163,152 +163,53 @@ namespace CartesAcces2024
 
             return e;
         }
-        
+
         private void btnValider_Click(object sender, EventArgs e)
         {
-            try
+            if (clbElements.CheckedItems.Count == 0)
             {
-                Globale.ListeEleveImpr = ConvertionListeStringEleveEnEleve(EleveSelectionner);
-                Form frmMultipleCarteEdi = new FrmMultiplesCartesEdition();
-                frmMultipleCarteEdi.Show();
+                MessageBox.Show("Veuillez sélectionner au moins un élément.");
+                return;
             }
-            catch
+
+            List<string> codesBarres = new List<string>();
+            foreach (var item in clbElements.CheckedItems)
             {
+                string elementText = item.ToString();
+                string codeBarre = RemoveAccents(elementText.Split(' ')[0] + " " + elementText.Split(' ')[1]);
+                codesBarres.Add(codeBarre);
+            }
+
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "PDF Files (*.pdf)|*.pdf";
+                sfd.Title = "Enregistrer le fichier PDF";
+                sfd.DefaultExt = "pdf";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        EditionCodeBarre.GenererPdfCodeBarres(codesBarres, sfd.FileName);
+                        MessageBox.Show("Le PDF a été généré avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Une erreur est survenue lors de la génération du PDF : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
-
-        //private void RbChanged(object sender, EventArgs e)
-        //{
-        //    if (sender is RadioButton)
-        //        if ((sender as RadioButton).Checked)
-        //            switch ((sender as RadioButton).Name)
-        //            {
-        //                case "tout":
-        //                    ToutF();
-        //                    break;
-        //                case "Seme":
-        //                    SemeF();
-        //                    break;
-        //                case "Ceme":
-        //                    CemeF();
-        //                    break;
-        //                case "Qeme":
-        //                    QemeF();
-        //                    break;
-        //                case "Teme":
-        //                    TemeF();
-        //                    break;
-        //            }
-        //}
-
-        //private void ToutF()
-        //{
-        //    ListeEleve = Globale.ListeEleve;
-        //    NomPrenomEleve = new List<string>();
-        //    EleveEnString();
-        //    lblCount.Text = ListeEleve.Count.ToString();
-        //    Eleves.DataSource = NomPrenomEleve;
-        //}
-
-        //private void SemeF()
-        //{
-        //    ListeEleve = Globale.ListeEleves6Eme;
-        //    NomPrenomEleve = new List<string>();
-        //    EleveEnString();
-        //    lblCount.Text = ListeEleve.Count.ToString();
-        //    Eleves.DataSource = NomPrenomEleve;
-        //}
-
-        //private void CemeF()
-        //{
-        //    ListeEleve = Globale.ListeEleves5Eme;
-        //    NomPrenomEleve = new List<string>();
-        //    EleveEnString();
-        //    lblCount.Text = ListeEleve.Count.ToString();
-        //    Eleves.DataSource = NomPrenomEleve;
-        //}
-
-        //private void QemeF()
-        //{
-        //    ListeEleve = Globale.ListeEleves4Eme;
-        //    NomPrenomEleve = new List<string>();
-        //    EleveEnString();
-        //    lblCount.Text = ListeEleve.Count.ToString();
-        //    Eleves.DataSource = NomPrenomEleve;
-        //}
-
-        //private void TemeF()
-        //{
-        //    ListeEleve = Globale.ListeEleves3Eme;
-        //    NomPrenomEleve = new List<string>();
-        //    EleveEnString();
-        //    lblCount.Text = ListeEleve.Count.ToString();
-        //    Eleves.DataSource = NomPrenomEleve;
-        //}
 
         private void CheckedChanged(object sender, EventArgs e)
         {
             txtRecherche.Text = "";
         }
 
-        private void btnValider_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                // Initialiser EleveSelectionner
-                EleveSelectionner = new List<string>();
-
-                // Récupérer les éléments sélectionnés dans clbElements
-                foreach (var item in clbElements.CheckedItems)
-                {
-                    EleveSelectionner.Add(item.ToString());
-                }
-
-                // Vérifiez si EleveSelectionner est null ou vide
-                if (EleveSelectionner == null || EleveSelectionner.Count == 0)
-                {
-                    MessageBox.Show("Aucun élève sélectionné. Veuillez sélectionner au moins un élève.");
-                    return; // Sortir de la méthode si aucun élève n'est sélectionné
-                }
-
-                Globale.ListeEleveImpr = ConvertionListeStringEleveEnEleve(EleveSelectionner);
-                Form frmMultipleCarteEdi = new FrmMultiplesCartesEdition();
-                frmMultipleCarteEdi.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur : " + ex.Message);
-            }
-        }
-
         private void pbPhoto_Click(object sender, EventArgs e)
         {
             // Code pour gérer le clic sur l'image
         }
-
-        //private void Eleves_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    string path = "";
-        //    string Niveau = "";
-        //    string txt = Eleves.SelectedItem.ToString();
-
-        //    string[] eleve = txt.Split(' ');
-        //    Niveau = eleve[2].Substring(0, 1) + "eme";
-
-        //    path = Chemin.DossierPhotoEleve + Niveau + "/" + eleve[0] + " " + eleve[1] + ".jpg";
-        //    pbPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
-        //    if (pbPhoto.Image != null)
-        //        pbPhoto.Image.Dispose();
-        //    try
-        //    {
-        //        pbPhoto.Image = Image.FromFile(path);
-        //        corrigeRatioPhoto();
-        //    }
-        //    catch
-        //    {
-        //        pbPhoto.Image = Image.FromFile(Chemin.CheminPhotoDefault);
-        //    }
-        //}
 
         private void frmCodeBarre_FormClosed(object sender, FormClosedEventArgs e)
         {
