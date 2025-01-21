@@ -54,6 +54,7 @@ namespace CartesAcces2024
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreerUser));
             this.lblInfo = new System.Windows.Forms.Label();
             this.txtIdentifiant = new System.Windows.Forms.TextBox();
@@ -66,9 +67,10 @@ namespace CartesAcces2024
             this.btnQuitter = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNom = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInfo
@@ -134,6 +136,7 @@ namespace CartesAcces2024
             this.btnValider.Size = new System.Drawing.Size(150, 50);
             this.btnValider.TabIndex = 5;
             this.btnValider.Text = "Valider";
+            this.ToolTip.SetToolTip(this.btnValider, "Valider et continuer");
             this.btnValider.UseVisualStyleBackColor = false;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
@@ -169,6 +172,7 @@ namespace CartesAcces2024
             this.btnQuitter.Size = new System.Drawing.Size(80, 50);
             this.btnQuitter.TabIndex = 8;
             this.btnQuitter.Text = "Quitter";
+            this.ToolTip.SetToolTip(this.btnQuitter, "Quitter l\'application");
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
@@ -176,7 +180,7 @@ namespace CartesAcces2024
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.panel1.Controls.Add(this.lblNom);
-            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.picLogo);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 294);
@@ -196,18 +200,19 @@ namespace CartesAcces2024
             this.lblNom.Text = "Athena";
             this.lblNom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox3
+            // picLogo
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(4, 40);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 40;
-            this.pictureBox3.TabStop = false;
+            this.picLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(4, 40);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(250, 250);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 40;
+            this.picLogo.TabStop = false;
+            this.ToolTip.SetToolTip(this.picLogo, "Athena");
             // 
             // frmCreerUser
             // 
@@ -225,6 +230,7 @@ namespace CartesAcces2024
             this.Controls.Add(this.txtIdentifiant);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -232,7 +238,7 @@ namespace CartesAcces2024
             this.Text = "Athena - Création d\'utilisateurs";
             this.Load += new System.EventHandler(this.frmCreerUser_Load_1);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,6 +257,7 @@ namespace CartesAcces2024
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNom;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.ToolTip ToolTip;
     }
 }

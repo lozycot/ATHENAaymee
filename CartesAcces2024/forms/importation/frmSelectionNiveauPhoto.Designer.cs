@@ -183,6 +183,7 @@ namespace CartesAcces2024
             this.Controls.Add(this.gpdChoixImage);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.gpbClasse);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSelectionNiveauPhoto";
             this.Text = "Selection Niveau";

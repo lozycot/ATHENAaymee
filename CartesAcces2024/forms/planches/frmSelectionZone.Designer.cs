@@ -53,6 +53,7 @@ namespace CartesAcces2024
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectionZone));
             this.pbDoc = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbOver = new System.Windows.Forms.PictureBox();
@@ -427,6 +428,7 @@ namespace CartesAcces2024
             this.Controls.Add(this.numD);
             this.Controls.Add(this.numG);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSelectionZone";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
