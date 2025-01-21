@@ -224,6 +224,7 @@ namespace CartesAcces2024
             this.Controls.Add(this.txtMdp);
             this.Controls.Add(this.txtIdentifiant);
             this.Controls.Add(this.lblInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
