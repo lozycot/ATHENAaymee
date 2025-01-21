@@ -155,7 +155,7 @@ namespace CartesAcces2024
                         nomNouveauChamp = Regex.Replace(nomNouveauChamp, @"[^a-zA-Z0-9_]", "");
                         if (!Regex.IsMatch(nomNouveauChamp, @"^[a-zA-Z_]"))
                         {
-                            nomNouveauChamp = "_" + nomNouveauChamp; // Add a leading underscore if it starts with a digit or invalid character
+                            nomNouveauChamp = "_" + nomNouveauChamp; // Ajoute un underscore en premier charactère en cas de premier charactèreinvalide pour le nom d'une table SQLite
                         }
 
                         //on récupère le texte entré par l'utilisateur dans la TextBox correspondant
@@ -576,10 +576,13 @@ namespace CartesAcces2024
             //txtBox.Location = new Point(TextRenderer.MeasureText(lbl.Text, lbl.Font).Width + 5, (nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
             //lbl.Location = new Point(0, (this.nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
 
+            int yCoord = (nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value;
+
             // ces paramètres les ordonnent avec un espace à droite pré-déterminé
-            // coordonnées x sont nb de controls déjà créer * la taille du txt box + nb de controls créer * 5 pour laisser un espace entre chaque control - la valeur de scroll verticale du panel, car pour lui les coordonnées 0 ; 0 sont relatives à ce qui est actuellement affiché, pas ce qui existe
-            txtBox.Location = new Point(300, (nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
-            lbl.Location = new Point(0, (this.nbChampsPersonnalises * txtBox.Size.Height) + (this.nbChampsPersonnalises * 5) - pnlChampsPersonnalises.VerticalScroll.Value);
+            // coordonnées y sont nb de controls déjà créer * la taille du txt box + nb de controls créer * 5 pour laisser un espace entre chaque control - la valeur de scroll verticale du panel, car pour lui les coordonnées 0 ; 0 sont relatives à ce qui est actuellement affiché, pas ce qui existe
+            txtBox.Location = new Point(300, yCoord);
+            lbl.Location = new Point(0, yCoord);
+
 
             // on les ajoutent au panel
             pnlChampsPersonnalises.Controls.Add(txtBox);

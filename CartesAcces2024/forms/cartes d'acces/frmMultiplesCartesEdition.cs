@@ -5,6 +5,8 @@ using System.Net.NetworkInformation;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Collections.Generic;
+using Athena.forms.autre;
 
 
 namespace CartesAcces2024
@@ -26,8 +28,121 @@ namespace CartesAcces2024
         public static int defPhotoH = 0;
         public static double photoRatio = 0;
 
-        // Stocke le chemin du dernier dossier d'enregistrement
+        /// <summary>
+        /// Stocke le chemin du dernier dossier d'enregistrement
+        /// </summary>
         public static string dernierCheminEnregistre = "";
+
+        /// <summary>
+        /// Champs personnalisés ajoutés par l'utilisateur
+        /// </summary>
+        public Dictionary<string, string> elementsAjoutee = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Ajout un control de champs personnalisé dans la carte face selon l'option d'ajout du champs sélectionné dans <see cref="frmSelectionneAjoutDansCarteAcces"/> (texte, code QR ou code barre).
+        /// </summary>
+        public void ajouteControlChampPersonnalisee(string uneValeurDeChamp, string optionDAjoutDeLaValeur)
+        {
+            // on utilise une picturebox pour plus facilement l'ajouter à l'image de la face avant
+            PictureBox newCntrl = new PictureBox();
+
+
+            
+
+
+
+            if (optionDAjoutDeLaValeur == "Code QR")
+            {
+                var bmpOriginal = QrCode.CreationQrCode(uneValeurDeChamp);
+                var bmpFinal = new Bitmap(bmpOriginal, new Size(100, 100));
+                newCntrl.Image = bmpFinal;
+
+                newCntrl.Width = 100;
+                newCntrl.Height = 100;
+            }
+            else if (optionDAjoutDeLaValeur == "Code Barre")
+            {
+                //
+            } 
+            else if (optionDAjoutDeLaValeur == "Text")
+            {
+                var policeInfosEtablissement = new Font("Calibri", 16, FontStyle.Bold);
+                Brush pinceauNoir = new SolidBrush(Color.Black);
+
+                
+                using (Bitmap temp = new Bitmap(1, 1))
+                using (Graphics tempGraph = Graphics.FromImage(temp))
+                {
+                    // on mesure la taille du texte dessiné avec une certaine police
+                    SizeF tailleDeTexte = tempGraph.MeasureString(uneValeurDeChamp, policeInfosEtablissement);
+
+                    // on définit la taille du picturebox selon la longueur du text
+                    newCntrl.Width = (int)tailleDeTexte.Width;
+                    newCntrl.Height = (int)tailleDeTexte.Height;
+
+                    // on définit la taille de l'image selon la longueur du text
+                    newCntrl.Image = new Bitmap(newCntrl.Width, newCntrl.Height);
+
+                    using (Graphics graph = Graphics.FromImage(newCntrl.Image))
+                    {
+                        // on écrit la valeur de champ dans la picturebox, qui as la bonne taille
+                        graph.DrawString(uneValeurDeChamp, policeInfosEtablissement, pinceauNoir, new Point(0, 0));
+                    }
+                }
+                newCntrl.Refresh();
+            }
+
+            // paramètre du nouveaux control
+            newCntrl.Location = new Point(pbCarteFace.Location.X + (pbCarteFace.Width / 2), pbCarteFace.Location.Y + (pbCarteFace.Height / 2));
+            newCntrl.Visible = true;
+
+
+            // évènements du nouveaux control
+
+            //---------------- pour permetre de le bouger avec la sourie
+            newCntrl.MouseDown += (sender, e) => {
+                // Your code here
+                // -- Lorsque l'utilisateur clic, la position initiale est sauvegardée, drag passe a true
+                if (e.Button == MouseButtons.Left)
+                {
+                    Edition.PosX = e.X;
+                    Edition.PosY = e.Y;
+                    Edition.Drag = true;
+                }
+
+                // -- Actualisation pour voir le déplacement en temps réel --
+                Refresh();
+            };
+
+            newCntrl.MouseMove += (object sender, MouseEventArgs e) =>
+            {
+                // -- Lorsque l'utilisateur clique sur la photo de l'élève --
+                if (Edition.Drag)
+                {
+                    // -- La position de la photo change --
+                    newCntrl.Left = e.X + newCntrl.Left - Edition.PosX;
+                    newCntrl.Top = e.Y + newCntrl.Top - Edition.PosY;
+                }
+            };
+
+            newCntrl.MouseUp += (Object sender, MouseEventArgs e) =>
+            {
+                // -- Le drag est fini lorsque le clic est relevé  --
+                Edition.Drag = false;
+            };
+
+            //--------------------permet de supprimer le control en double-cliquant
+            newCntrl.MouseDoubleClick += (Object sender, MouseEventArgs e) =>
+            {
+                pnlEdtPhoto.Controls.Remove(newCntrl);
+            };
+
+
+            // On ajoute le control
+            pnlEdtPhoto.Controls.Add(newCntrl);
+            newCntrl.BringToFront(); // on le met au premier plan
+        }
+
         /// <summary>
         /// Permet de transmettre la photo de frmCarteProvisoire à L'IDENTIQUE avec les mêmes position
         /// et taille. Les paramètres transmis sont les valeurs à MULTIPLIER par les dimensions de pbCarteArriere.
@@ -396,6 +511,42 @@ namespace CartesAcces2024
             btnOpenFolder.Enabled = false;
             Edition.RognageX = 720;
             Edition.RognageY = 457;
+
+            // On affiche la face de la carte selon le premier élève
+            if (File.Exists(Chemin.DossierCartesFace + Globale.ListeEleveImpr[0].NiveauEleve + ".png"))
+            {
+                if (pbCarteFace.Image != null)
+                    pbCarteFace.Image.Dispose();
+                pbCarteFace.Image = null;
+                try
+                {
+                    // affiche la face de la carte dans la picturebox
+                    pbCarteFace.Image = Image.FromFile(Chemin.DossierCartesFace + Globale.ListeEleveImpr[0].NiveauEleve + ".png");
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show("Erreur + " + err);
+                }
+
+                // permet de générer la preview avec les informations personnalisés on non (selon le radiobouton dans frmEtablissement)
+                string prenom = Globale.ListeEleveImpr[0].PrenomEleve;
+                string nom = Globale.ListeEleveImpr[0].NomEleve;
+                string classex = Globale.ListeEleveImpr[0].ClasseEleve;
+
+                if (Globale.InfosCarte == true)
+                {
+                    Edition.FondCarteNiveauInfos(pbCarteFace, nom, prenom, classex);
+                }
+                else
+                {
+                    Edition.fondCarteNiveau(pbCarteFace, nom, prenom, classex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Aucune image pour le recto n'a été importée ! " +
+                    "Vous pouvez le faire depuis Importation > Importer des faces pour les cartes.");
+            }
         }
 
         private void pbCarteArriere_MouseUp(object sender, MouseEventArgs e)
@@ -460,8 +611,11 @@ namespace CartesAcces2024
 
         private void btnAjouterElementDansCartes_Click(object sender, EventArgs e)
         {
+
+            Globale.formMultipleCartes = this;
             // ouvrir form qui choisit l'élément à ajouter
-            
+            frmSelectionneAjoutDansCarteAcces frmSelection = new frmSelectionneAjoutDansCarteAcces();
+            frmSelection.Show();
         }
     }
 }
