@@ -54,6 +54,7 @@ namespace CartesAcces2024
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChargement));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lblChargement = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -106,6 +107,8 @@ namespace CartesAcces2024
             this.Controls.Add(this.lblChargement);
             this.Controls.Add(this.progressBar1);
             this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChargement";
             this.ShowInTaskbar = false;
             this.Text = "Chargement...";
