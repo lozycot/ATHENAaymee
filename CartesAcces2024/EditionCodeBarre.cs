@@ -60,8 +60,8 @@ namespace CartesAcces2024
 
                 ConfigurePageMargins(doc, wordApp);
 
-                int rows = (int)Math.Ceiling(cheminsImagesTemp.Count / 2.0);
-                Word.Table table = doc.Tables.Add(doc.Range(0, 0), rows, 2);
+                int rows = (int)Math.Ceiling(cheminsImagesTemp.Count / 3.0);
+                Word.Table table = doc.Tables.Add(doc.Range(0, 0), rows, 3);
                 table.Borders.Enable = 0;
 
                 int total = cheminsImagesTemp.Count;
@@ -72,8 +72,8 @@ namespace CartesAcces2024
                         return;
                     }
 
-                    int row = (i / 2) + 1;
-                    int col = (i % 2) + 1;
+                    int row = (i / 3) + 1;
+                    int col = (i % 3) + 1;
 
                     Word.Cell cell = table.Cell(row, col);
                     Word.Range cellRange = cell.Range;
@@ -228,13 +228,15 @@ namespace CartesAcces2024
         private static void InsertBarcodeImage(Word.Range cellRange, string tempImagePath)
         {
             Word.InlineShape shape = cellRange.InlineShapes.AddPicture(tempImagePath);
-            shape.Width = 200;
-            shape.Height = 75;
+            shape.Width = 160;
+            shape.Height = 60;
 
-            // Ajouter un espace après pour assurer un espacement uniforme
             cellRange.InsertParagraphAfter();
             cellRange.Paragraphs[1].SpaceAfter = 0;
-            cellRange.Paragraphs[1].SpaceBefore = 20; // Ajoute un peu d'espace au-dessus
+            cellRange.Paragraphs[1].SpaceBefore = 30;
+
+            cellRange.Cells[1].LeftPadding = 15;
+            cellRange.Cells[1].RightPadding = 15;
         }
 
         private static string RemoveAccents(string input)
