@@ -173,6 +173,9 @@ namespace CartesAcces2024
             applicationWord.ActiveDocument.PageSetup.BottomMargin = 15;
         }
 
+
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -180,7 +183,7 @@ namespace CartesAcces2024
         /// <param name="listeEleve"></param>
         /// <param name="pbPhoto"></param>
         /// <param name="pbCarteArriere"></param>
-        public static void SauvegardeCarteEnWord(string chemin, List<Eleve> listeEleve, PictureBox pbPhoto,PictureBox pbCarteArriere)
+        public static void SauvegardeCarteEnWord(string chemin, List<Eleve> listeEleve, PictureBox pbPhoto, PictureBox pbCarteArriere)
         {
             //FermerWord();
             var k = 0;
@@ -215,7 +218,7 @@ namespace CartesAcces2024
             Globale.LblCount.Visible = true;
             Globale.pgbCount.Visible = true;
             Globale.ListeEleveSansPhoto.Clear();
-            for (var compt = 1; compt <= listeEleve.Count; compt += 2)
+            for (var compt = 1; compt <= listeEleve.Count; compt += 2) // compt += 2 car les élèves sont gérés deux par deux --
             {
                 //Globale.LblCount.Text = compt + "/" + listeEleve.Count + " cartes réalisées"; // met à jour le compteur de cartes
                 Globale.LblCount.Text = ((compt * 100) / listeEleve.Count) + "%";

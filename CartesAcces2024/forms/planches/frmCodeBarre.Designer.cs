@@ -199,7 +199,7 @@ namespace CartesAcces2024
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnValider.Location = new System.Drawing.Point(1174, 588);
+            this.btnValider.Location = new System.Drawing.Point(1122, 588);
             this.btnValider.Margin = new System.Windows.Forms.Padding(4);
             this.btnValider.MaximumSize = new System.Drawing.Size(171, 55);
             this.btnValider.MinimumSize = new System.Drawing.Size(171, 55);
@@ -224,7 +224,7 @@ namespace CartesAcces2024
             // pbPhoto
             // 
             this.pbPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.pbPhoto.Location = new System.Drawing.Point(1174, 54);
+            this.pbPhoto.Location = new System.Drawing.Point(1122, 54);
             this.pbPhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbPhoto.MaximumSize = new System.Drawing.Size(171, 223);
             this.pbPhoto.Name = "pbPhoto";
@@ -264,7 +264,7 @@ namespace CartesAcces2024
             this.btnToutSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnToutSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnToutSelectionner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnToutSelectionner.Location = new System.Drawing.Point(1174, 526);
+            this.btnToutSelectionner.Location = new System.Drawing.Point(1122, 526);
             this.btnToutSelectionner.Name = "btnToutSelectionner";
             this.btnToutSelectionner.Size = new System.Drawing.Size(171, 55);
             this.btnToutSelectionner.TabIndex = 13;
@@ -278,7 +278,7 @@ namespace CartesAcces2024
             this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnReinitialiser.Location = new System.Drawing.Point(1174, 450);
+            this.btnReinitialiser.Location = new System.Drawing.Point(1122, 450);
             this.btnReinitialiser.Name = "btnReinitialiser";
             this.btnReinitialiser.Size = new System.Drawing.Size(171, 70);
             this.btnReinitialiser.TabIndex = 12;
@@ -289,10 +289,10 @@ namespace CartesAcces2024
             // cbreCodeBarre
             // 
             this.cbreCodeBarre.Enabled = true;
-            this.cbreCodeBarre.Location = new System.Drawing.Point(1083, 304);
+            this.cbreCodeBarre.Location = new System.Drawing.Point(1087, 309);
             this.cbreCodeBarre.Name = "cbreCodeBarre";
             this.cbreCodeBarre.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("cbreCodeBarre.OcxState")));
-            this.cbreCodeBarre.Size = new System.Drawing.Size(356, 120);
+            this.cbreCodeBarre.Size = new System.Drawing.Size(237, 120);
             this.cbreCodeBarre.TabIndex = 21;
             this.cbreCodeBarre.TypeChange += new AxACTIVEBARCODELib._DBarcodeEvents_TypeChangeEventHandler(this.cbreCodeBarre_TypeChange);
             // 
@@ -303,7 +303,7 @@ namespace CartesAcces2024
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1468, 662);
+            this.ClientSize = new System.Drawing.Size(1356, 662);
             this.Controls.Add(this.cbreCodeBarre);
             this.Controls.Add(this.btnReinitialiser);
             this.Controls.Add(this.btnToutSelectionner);

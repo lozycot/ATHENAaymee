@@ -120,7 +120,6 @@ namespace CartesAcces2024
                 // si classe == toutes les classes sans élèves
                 if (classe == 7)
                 {
-                    MessageBox.Show("GetImageFromPdf "+Globale.ListeClasses[j - 1]);//===========================
                     newName = _outputPath + Globale.ListeClasses[j - 1] + ".jpg";
                 }
                 else if(classe == 8)

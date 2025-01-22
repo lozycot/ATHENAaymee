@@ -267,7 +267,7 @@ namespace CartesAcces2024
 
         private void btnReinitialiser_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < clbElements.Items.Count - 1; i++) // déselectionné chque éléments de la liste
+            for (int i = 0; i < clbElements.Items.Count; i++) // déselectionné chque éléments de la liste
             {
                 clbElements.SetItemChecked(i, false);
             }
@@ -275,7 +275,7 @@ namespace CartesAcces2024
 
         private void btnToutSelectionner_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < clbElements.Items.Count - 1; i++)   // sélectionner chaque éléments de la liste
+            for (int i = 0; i < clbElements.Items.Count; i++)   // sélectionner chaque éléments de la liste
             {
                 clbElements.SetItemChecked(i, true);
             }
