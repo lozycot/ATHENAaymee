@@ -80,7 +80,8 @@ namespace CartesAcces2024
         public static void RognageEdt(PictureBox pbCarteArriere)
         {
             // Si la largeur à rogner est trop faible, on sort
-            if (Edition.RognageLargeur < 1) return;
+            if (Edition.RognageLargeur < 1) 
+                return;
 
             // Calcul des dimensions réelles pour le rognage
             var rLargeurReel = (double)Edition.RognageLargeur * pbCarteArriere.Image.Width / pbCarteArriere.Width;

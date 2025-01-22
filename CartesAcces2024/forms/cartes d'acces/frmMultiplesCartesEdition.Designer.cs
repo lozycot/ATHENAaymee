@@ -75,6 +75,7 @@ namespace CartesAcces2024
             this.rdbA5 = new System.Windows.Forms.RadioButton();
             this.rdbA4 = new System.Windows.Forms.RadioButton();
             this.btnAjouterElementDansCartes = new System.Windows.Forms.Button();
+            this.pbCarteFace = new System.Windows.Forms.PictureBox();
             this.pnlEdtPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarteArriere)).BeginInit();
@@ -82,16 +83,18 @@ namespace CartesAcces2024
             ((System.ComponentModel.ISupportInitialize)(this.tkbTaillePhoto)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarteFace)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEdtPhoto
             // 
             this.pnlEdtPhoto.Controls.Add(this.pbPhoto);
             this.pnlEdtPhoto.Controls.Add(this.pbCarteArriere);
-            this.pnlEdtPhoto.Location = new System.Drawing.Point(16, 15);
+            this.pnlEdtPhoto.Controls.Add(this.pbCarteFace);
+            this.pnlEdtPhoto.Location = new System.Drawing.Point(129, 15);
             this.pnlEdtPhoto.Margin = new System.Windows.Forms.Padding(4);
             this.pnlEdtPhoto.Name = "pnlEdtPhoto";
-            this.pnlEdtPhoto.Size = new System.Drawing.Size(720, 457);
+            this.pnlEdtPhoto.Size = new System.Drawing.Size(1423, 457);
             this.pnlEdtPhoto.TabIndex = 14;
             // 
             // pbPhoto
@@ -113,7 +116,7 @@ namespace CartesAcces2024
             this.pbCarteArriere.Location = new System.Drawing.Point(0, 0);
             this.pbCarteArriere.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbCarteArriere.Name = "pbCarteArriere";
-            this.pbCarteArriere.Size = new System.Drawing.Size(720, 457);
+            this.pbCarteArriere.Size = new System.Drawing.Size(685, 457);
             this.pbCarteArriere.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCarteArriere.TabIndex = 7;
             this.pbCarteArriere.TabStop = false;
@@ -131,7 +134,7 @@ namespace CartesAcces2024
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(744, 172);
+            this.groupBox3.Location = new System.Drawing.Point(172, 545);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -237,7 +240,7 @@ namespace CartesAcces2024
             this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Controls.Add(this.btnSelect);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(744, 15);
+            this.groupBox2.Location = new System.Drawing.Point(874, 480);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -289,7 +292,7 @@ namespace CartesAcces2024
             this.groupBox1.Controls.Add(this.rdbA5);
             this.groupBox1.Controls.Add(this.rdbA4);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(744, 107);
+            this.groupBox1.Location = new System.Drawing.Point(172, 480);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(687, 58);
             this.groupBox1.TabIndex = 15;
@@ -320,7 +323,7 @@ namespace CartesAcces2024
             // 
             // btnAjouterElementDansCartes
             // 
-            this.btnAjouterElementDansCartes.Location = new System.Drawing.Point(75, 515);
+            this.btnAjouterElementDansCartes.Location = new System.Drawing.Point(874, 572);
             this.btnAjouterElementDansCartes.Name = "btnAjouterElementDansCartes";
             this.btnAjouterElementDansCartes.Size = new System.Drawing.Size(256, 23);
             this.btnAjouterElementDansCartes.TabIndex = 16;
@@ -328,11 +331,21 @@ namespace CartesAcces2024
             this.btnAjouterElementDansCartes.UseVisualStyleBackColor = true;
             this.btnAjouterElementDansCartes.Click += new System.EventHandler(this.btnAjouterElementDansCartes_Click);
             // 
+            // pbCarteFace
+            // 
+            this.pbCarteFace.Location = new System.Drawing.Point(699, 0);
+            this.pbCarteFace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbCarteFace.Name = "pbCarteFace";
+            this.pbCarteFace.Size = new System.Drawing.Size(720, 457);
+            this.pbCarteFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCarteFace.TabIndex = 11;
+            this.pbCarteFace.TabStop = false;
+            // 
             // FrmMultiplesCartesEdition
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1446, 603);
+            this.ClientSize = new System.Drawing.Size(1617, 875);
             this.Controls.Add(this.btnAjouterElementDansCartes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlEdtPhoto);
@@ -355,6 +368,7 @@ namespace CartesAcces2024
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarteFace)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,5 +396,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.Button btnOpenFolder;
         private System.Windows.Forms.ProgressBar progressBar1_compteur;
         private System.Windows.Forms.Button btnAjouterElementDansCartes;
+        private System.Windows.Forms.PictureBox pbCarteFace;
     }
 }
