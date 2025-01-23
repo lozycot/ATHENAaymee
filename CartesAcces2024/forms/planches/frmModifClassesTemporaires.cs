@@ -1,29 +1,4 @@
-﻿/**
- * MIT License
- * 
- * Copyright (c) 2023, 2024 Collège Caroline Aigle
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
- */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,17 +21,17 @@ namespace CartesAcces2024
 
         private void updateClassesTemp()
         {
-            listBoxClassesTemp.Items.Clear();
+            cbClassesTemp.Items.Clear();
             cbDeplacement.Items.Clear();
             List<string> classesNA = OperationsDb.GetClassesNouvelleAnnee();
             foreach (string cl in classesNA)
             {
-                listBoxClassesTemp.Items.Add(cl);
+                cbClassesTemp.Items.Add(cl);
                 cbDeplacement.Items.Add(cl);
             }
-            if (listBoxClassesTemp.Items.Count > 0)
+            if (cbClassesTemp.Items.Count > 0)
             {
-                listBoxClassesTemp.SelectedIndex = 0;
+                cbClassesTemp.SelectedIndex = 0;
                 cbDeplacement.SelectedIndex = 0;
                 cbDeplacement.Enabled = true;
                 btnAddElTemp.Enabled = true;
@@ -69,9 +44,9 @@ namespace CartesAcces2024
                 btnDelElTemp.Enabled = false;
             }
 
-            if (listBoxClassesTemp.Items.Count > 0) // si il y as au moins une classes temporaires
+            if (cbClassesTemp.Items.Count > 0)
             {
-                if (listBoxClassesTemp.SelectedItem.ToString() == Globale.nom6emeSansClasse)
+                if (cbClassesTemp.SelectedItem.ToString() == Globale.nom6emeSansClasse)
                 {
                     btnDelClasseTemp.Enabled = false;
                 }
@@ -91,7 +66,7 @@ namespace CartesAcces2024
             //listBoxClassesTemp.Items.Add(frmClasseTemporaire.classeTemp + "_temp");
             //classesTemp.Add(frmClasseTemporaire.classeTemp + "_temp", new List<Eleve>());
 
-            listBoxClassesTemp.SelectedItem = frmClasseTemporaire.classeTemp;
+            cbClassesTemp.SelectedItem = frmClasseTemporaire.classeTemp;
             btnDelClasseTemp.Enabled = true;
             btnAddElTemp.Enabled = true;
         }
@@ -100,9 +75,9 @@ namespace CartesAcces2024
         {
             listBoxElTemp.Items.Clear();
 
-            if (listBoxClassesTemp.SelectedIndex != -1)
+            if (cbClassesTemp.SelectedIndex != -1)
             {
-                List<Eleve> eleves = OperationsDb.GetEleveNouvelleAnnee(new Classe(listBoxClassesTemp.SelectedItem.ToString()));
+                List<Eleve> eleves = OperationsDb.GetEleveNouvelleAnnee(new Classe(cbClassesTemp.SelectedItem.ToString()));
                 foreach (Eleve el in eleves)
                 {
                     string fullName = el.NomEleve + " " + el.PrenomEleve;
@@ -110,7 +85,7 @@ namespace CartesAcces2024
                 }
                 listBoxElTemp.SelectedIndex = -1;
                 cbDeplacement.Enabled = false;
-                cbDeplacement.SelectedIndex = listBoxClassesTemp.SelectedIndex;
+                cbDeplacement.SelectedIndex = cbClassesTemp.SelectedIndex;
                 if (listBoxElTemp.Items.Count > 0)
                 {
                     btnDelElTemp.Enabled = true;
@@ -132,27 +107,15 @@ namespace CartesAcces2024
             string nom = frmEleveTemporaire.nomTemp;
             string prenom = frmEleveTemporaire.prenomTemp;
             string fullName = nom + " " + prenom;
-            string classe = listBoxClassesTemp.SelectedItem.ToString();
+            string classe = cbClassesTemp.SelectedItem.ToString();
 
             OperationsDb.InsertUnEleveNouvelleAnneeDansBdd(new Eleve(nom, prenom, classe, classe[0] + "eme"));
             updateListBoxElTemp();
             btnDelElTemp.Enabled = true;
         }
 
-        private void listBoxClassesTemp_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbClassesTemp_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBoxElTemp.Items.Clear();
-            if (listBoxClassesTemp.SelectedIndex == -1)
-            {
-                if (listBoxClassesTemp.Items.Count == 0)
-                    return;
-                else
-                {
-                    listBoxClassesTemp.SelectedIndex = 0;
-                    return;
-                }
-            }
-            string classe = listBoxClassesTemp.SelectedItem.ToString();
             updateListBoxElTemp();
             if (listBoxElTemp.Items.Count == 0)
             {
@@ -163,7 +126,7 @@ namespace CartesAcces2024
                 btnDelElTemp.Enabled = true;
             }
 
-            if (listBoxClassesTemp.SelectedItem.ToString() == Globale.nom6emeSansClasse)
+            if (cbClassesTemp.SelectedItem.ToString() == Globale.nom6emeSansClasse)
                 btnDelClasseTemp.Enabled = false;
             else
                 btnDelClasseTemp.Enabled = true;
@@ -171,20 +134,20 @@ namespace CartesAcces2024
 
         private void btnDelClasseTemp_Click(object sender, EventArgs e)
         {
-            if (listBoxClassesTemp.Items.Count == 0 || listBoxClassesTemp.SelectedIndex == -1)
+            if (cbClassesTemp.Items.Count == 0 || cbClassesTemp.SelectedIndex == -1)
                 return;
-            string classe = listBoxClassesTemp.SelectedItem.ToString();
+            string classe = cbClassesTemp.SelectedItem.ToString();
             OperationsDb.DeleteUneClasseNouvelleAnneeDansBdd(classe);
             updateClassesTemp();
         }
 
         private void btnDelElTemp_Click(object sender, EventArgs e)
         {
-            if (listBoxElTemp.SelectedItems.Count == 0 || listBoxClassesTemp.Items.Count == 0)
+            if (listBoxElTemp.SelectedItems.Count == 0 || cbClassesTemp.Items.Count == 0)
                 return;
             ListBox.SelectedObjectCollection selected = listBoxElTemp.SelectedItems;
             int nbSelected = selected.Count;
-            Classe classe = new Classe(listBoxClassesTemp.SelectedItem.ToString());
+            Classe classe = new Classe(cbClassesTemp.SelectedItem.ToString());
             List<Eleve> elevesClasse = OperationsDb.GetEleveNouvelleAnnee(classe);
             for (int i = 0; i < nbSelected; i++)
             {
@@ -200,7 +163,7 @@ namespace CartesAcces2024
                 return;
             ListBox.SelectedObjectCollection selected = listBoxElTemp.SelectedItems;
             int nbSelected = selected.Count;
-            Classe classe = new Classe(listBoxClassesTemp.SelectedItem.ToString());
+            Classe classe = new Classe(cbClassesTemp.SelectedItem.ToString());
             List<Eleve> elevesClasse = OperationsDb.GetEleveNouvelleAnnee(classe);
             for (int i = 0; i < nbSelected; i++)
             {
@@ -238,7 +201,7 @@ namespace CartesAcces2024
                 else
                     MessageBox.Show("Opération terminée !");
             }
-            listBoxClassesTemp.SelectedItem = Globale.nom6emeSansClasse;
+            cbClassesTemp.SelectedItem = Globale.nom6emeSansClasse;
             cbDeplacement.SelectedItem = Globale.nom6emeSansClasse;
             updateListBoxElTemp();
         }
@@ -249,3 +212,28 @@ namespace CartesAcces2024
         }
     }
 }
+
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2023, 2024 Collège Caroline Aigle
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ */
