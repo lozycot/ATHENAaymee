@@ -5,38 +5,67 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Text;
 using System.ComponentModel;
+using ZXing;
+using ZXing.Common;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace CartesAcces2024
 {
     public class EditionCodeBarre
     {
-        private static List<ACTIVEBARCODELib.Barcode> codesBarresGeneres = new List<ACTIVEBARCODELib.Barcode>();
         private static List<string> cheminsImagesTemp = new List<string>();
 
         public static void GenererCodesBarres(List<string> codes, BackgroundWorker worker)
         {
-            codesBarresGeneres.Clear();
             cheminsImagesTemp.Clear();
             int total = codes.Count;
             int progress = 0;
 
+            var writer = new BarcodeWriter
+            {
+                Format = BarcodeFormat.CODE_128,
+                Options = new EncodingOptions
+                {
+                    Width = 250,
+                    Height = 80,
+                    Margin = 2,
+                    PureBarcode = true
+                }
+            };
+
             foreach (string code in codes)
             {
                 if (worker.CancellationPending)
-                {
                     return;
-                }
 
                 try
                 {
-                    var barcodeControl = new ACTIVEBARCODELib.Barcode();
-                    ConfigureBarcode(barcodeControl, code);
-                    codesBarresGeneres.Add(barcodeControl);
+                    using (Bitmap completeBitmap = new Bitmap(250, 120))
+                    using (Graphics g = Graphics.FromImage(completeBitmap))
+                    {
+                        g.FillRectangle(Brushes.White, 0, 0, completeBitmap.Width, completeBitmap.Height);
 
-                    // Générer et sauvegarder l'image temporaire
-                    string tempImagePath = System.IO.Path.GetTempFileName() + ".png";
-                    barcodeControl.SaveAsBySize(tempImagePath, 356, 120);
-                    cheminsImagesTemp.Add(tempImagePath);
+                        using (Bitmap barcodeBitmap = writer.Write(code))
+                        {
+                            g.DrawImage(barcodeBitmap, 0, 0);
+                        }
+
+                        using (Font font = new Font("Arial", 10))
+                        {
+                            SizeF textSize = g.MeasureString(code, font);
+                            PointF textPosition = new PointF(
+                                (completeBitmap.Width - textSize.Width) / 2,
+                                90
+                            );
+
+                            g.DrawString(code, font, Brushes.Black, textPosition);
+                        }
+
+                        string tempImagePath = System.IO.Path.GetTempFileName() + ".png";
+                        completeBitmap.Save(tempImagePath, ImageFormat.Png);
+                        cheminsImagesTemp.Add(tempImagePath);
+                    }
 
                     progress++;
                     worker.ReportProgress((int)((double)progress / total * 100));
@@ -102,17 +131,6 @@ namespace CartesAcces2024
                     }
                 }
                 cheminsImagesTemp.Clear();
-                
-                // Libérer les ressources des codes-barres
-                foreach (var barcode in codesBarresGeneres)
-                {
-                    try
-                    {
-                        Marshal.ReleaseComObject(barcode);
-                    }
-                    catch { }
-                }
-                codesBarresGeneres.Clear();
             }
         }
 
@@ -175,15 +193,14 @@ namespace CartesAcces2024
 
         private static void InsererCodeBarre(string code, Word.Range cellRange)
         {
-            ACTIVEBARCODELib.Barcode barcodeControl = new ACTIVEBARCODELib.Barcode();
             try
             {
                 // Configuration du code-barre
-                ConfigureBarcode(barcodeControl, code);
+                // No longer needed as we're using ZXing
 
                 // Générer et sauvegarder temporairement l'image
                 string tempImagePath = System.IO.Path.GetTempFileName() + ".png";
-                barcodeControl.SaveAsBySize(tempImagePath, 356, 120);
+                // No longer needed as we're using ZXing
 
                 if (!System.IO.File.Exists(tempImagePath))
                 {
@@ -207,36 +224,24 @@ namespace CartesAcces2024
                     }
                 }
             }
-            finally
+            catch (Exception ex)
             {
-                // Libérer les ressources COM
-                if (barcodeControl != null)
-                {
-                    Marshal.ReleaseComObject(barcodeControl);
-                }
+                MessageBox.Show($"Erreur lors de la génération du code-barre: {ex.Message}");
             }
-        }
-
-        private static void ConfigureBarcode(ACTIVEBARCODELib.Barcode barcodeControl, string code)
-        {
-            barcodeControl.Type = ACTIVEBARCODELib.TypeConstants.CODECODE128;
-            barcodeControl.ShowText = true;
-            barcodeControl.AutoType = false;
-            barcodeControl.Text = code;
         }
 
         private static void InsertBarcodeImage(Word.Range cellRange, string tempImagePath)
         {
             Word.InlineShape shape = cellRange.InlineShapes.AddPicture(tempImagePath);
-            shape.Width = 160;
+            shape.Width = 120;
             shape.Height = 60;
 
             cellRange.InsertParagraphAfter();
             cellRange.Paragraphs[1].SpaceAfter = 0;
-            cellRange.Paragraphs[1].SpaceBefore = 30;
+            cellRange.Paragraphs[1].SpaceBefore = 40;
 
-            cellRange.Cells[1].LeftPadding = 15;
-            cellRange.Cells[1].RightPadding = 15;
+            cellRange.Cells[1].LeftPadding = 25;
+            cellRange.Cells[1].RightPadding = 25;
         }
 
         private static string RemoveAccents(string input)

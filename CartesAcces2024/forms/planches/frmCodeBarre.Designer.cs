@@ -71,11 +71,11 @@ namespace CartesAcces2024
             this.clbElements = new System.Windows.Forms.CheckedListBox();
             this.btnToutSelectionner = new System.Windows.Forms.Button();
             this.btnReinitialiser = new System.Windows.Forms.Button();
-            this.cbreCodeBarre = new AxACTIVEBARCODELib.AxBarcode();
+            this.pbCodeBarre = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.gbpElements.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbreCodeBarre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCodeBarre)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -199,7 +199,7 @@ namespace CartesAcces2024
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnValider.Location = new System.Drawing.Point(1122, 588);
+            this.btnValider.Location = new System.Drawing.Point(1119, 588);
             this.btnValider.Margin = new System.Windows.Forms.Padding(4);
             this.btnValider.MaximumSize = new System.Drawing.Size(171, 55);
             this.btnValider.MinimumSize = new System.Drawing.Size(171, 55);
@@ -224,7 +224,7 @@ namespace CartesAcces2024
             // pbPhoto
             // 
             this.pbPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.pbPhoto.Location = new System.Drawing.Point(1122, 54);
+            this.pbPhoto.Location = new System.Drawing.Point(1120, 54);
             this.pbPhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbPhoto.MaximumSize = new System.Drawing.Size(171, 223);
             this.pbPhoto.Name = "pbPhoto";
@@ -264,7 +264,7 @@ namespace CartesAcces2024
             this.btnToutSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnToutSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnToutSelectionner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnToutSelectionner.Location = new System.Drawing.Point(1122, 526);
+            this.btnToutSelectionner.Location = new System.Drawing.Point(1119, 526);
             this.btnToutSelectionner.Name = "btnToutSelectionner";
             this.btnToutSelectionner.Size = new System.Drawing.Size(171, 55);
             this.btnToutSelectionner.TabIndex = 13;
@@ -278,7 +278,7 @@ namespace CartesAcces2024
             this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnReinitialiser.Location = new System.Drawing.Point(1122, 450);
+            this.btnReinitialiser.Location = new System.Drawing.Point(1119, 450);
             this.btnReinitialiser.Name = "btnReinitialiser";
             this.btnReinitialiser.Size = new System.Drawing.Size(171, 70);
             this.btnReinitialiser.TabIndex = 12;
@@ -286,15 +286,14 @@ namespace CartesAcces2024
             this.btnReinitialiser.UseVisualStyleBackColor = false;
             this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
             // 
-            // cbreCodeBarre
+            // pbCodeBarre
             // 
-            this.cbreCodeBarre.Enabled = true;
-            this.cbreCodeBarre.Location = new System.Drawing.Point(1087, 309);
-            this.cbreCodeBarre.Name = "cbreCodeBarre";
-            this.cbreCodeBarre.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("cbreCodeBarre.OcxState")));
-            this.cbreCodeBarre.Size = new System.Drawing.Size(237, 120);
-            this.cbreCodeBarre.TabIndex = 21;
-            this.cbreCodeBarre.TypeChange += new AxACTIVEBARCODELib._DBarcodeEvents_TypeChangeEventHandler(this.cbreCodeBarre_TypeChange);
+            this.pbCodeBarre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.pbCodeBarre.Location = new System.Drawing.Point(1069, 304);
+            this.pbCodeBarre.Name = "pbCodeBarre";
+            this.pbCodeBarre.Size = new System.Drawing.Size(269, 122);
+            this.pbCodeBarre.TabIndex = 21;
+            this.pbCodeBarre.TabStop = false;
             // 
             // frmCodeBarre
             // 
@@ -304,7 +303,7 @@ namespace CartesAcces2024
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1356, 662);
-            this.Controls.Add(this.cbreCodeBarre);
+            this.Controls.Add(this.pbCodeBarre);
             this.Controls.Add(this.btnReinitialiser);
             this.Controls.Add(this.btnToutSelectionner);
             this.Controls.Add(this.gbpElements);
@@ -324,7 +323,7 @@ namespace CartesAcces2024
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
             this.gbpElements.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbreCodeBarre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCodeBarre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,6 +347,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.CheckedListBox clbElements;
         private System.Windows.Forms.Button btnToutSelectionner;
         private System.Windows.Forms.Button btnReinitialiser;
-        private AxACTIVEBARCODELib.AxBarcode cbreCodeBarre;
+        private System.Windows.Forms.PictureBox pbCodeBarre;
     }
 }
