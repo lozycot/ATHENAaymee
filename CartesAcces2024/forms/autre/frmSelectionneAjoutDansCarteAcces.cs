@@ -104,7 +104,7 @@ namespace Athena.forms.autre
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            // On récupère ce que l'utilisateur veux ajouter
+            // On récupère ce que l'utilisateur veux ajouter (texte,code QR, code Barre)
             string optionChoisie = "Text";
             foreach (RadioButton rdb in pnlOptions.Controls.OfType<RadioButton>())
             {
@@ -114,12 +114,36 @@ namespace Athena.forms.autre
                 }
             }
 
-            // multipleCartesEdition ajoute un control
-            foreach (KeyValuePair<TextBox, RadioButton> pair in dictSelectionChampsPersonnalise)
+            // MultipleCartesEdition ajoute un controle.
+            // Pour chaque pair (TextBox / Radiobutton) de valeurs pour tout les champs personnalisées
+            foreach (KeyValuePair<TextBox, RadioButton> pairSelectionChampPersonnalisee in dictSelectionChampsPersonnalise)
             {
-                if (pair.Value.Checked == true)
+                if (pairSelectionChampPersonnalisee.Value.Checked == true) // si c'est la valeur que l'utilisateur veux ajouter
                 {
-                    Globale.formMultipleCartes.ajouteControlChampPersonnalisee(pair.Key.Text, optionChoisie);
+                    if (optionChoisie == "Text") // Si l'option est texte
+                    {
+                        // pour chaque pair (Label / TextBox) de tout les champs personnalisées
+                        foreach (KeyValuePair<Label, TextBox> pairChampPersonnalisee in dictChampsPersonnalise)
+                        {
+                            // si les textbox sont les même dans les daux paires, on peut récupérer le nom de champ correspondant
+                            if (pairChampPersonnalisee.Value == pairSelectionChampPersonnalisee.Key)
+                            {
+                                // On donne le texte à transformer et a ajouter
+                                Globale.formMultipleCartes.ajouteControlChampPersonnalisee(
+                                    // On donne le texte à transformer et ajouter ainsi que le nom du champs
+                                    pairChampPersonnalisee.Key.Text.Replace('_', ' ') + ": " + pairSelectionChampPersonnalisee.Key.Text,
+                                    optionChoisie,
+                                    new Font("Calibri", (int)numPoliceChampAjoutee.Value, FontStyle.Bold)
+                                );
+                            }
+
+                        }
+                    }
+                    else // Si l'option n'est pas texte
+                    {
+                        // On donne le texte à transformer et a ajouter
+                        Globale.formMultipleCartes.ajouteControlChampPersonnalisee(pairSelectionChampPersonnalisee.Key.Text, optionChoisie);
+                    }
                 }
             }
 

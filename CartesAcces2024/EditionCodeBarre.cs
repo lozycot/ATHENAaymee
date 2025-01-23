@@ -77,6 +77,21 @@ namespace CartesAcces2024
             }
         }
 
+        /// <summary>
+        /// Génère un code barre à partir d'un texte et le renvoie sous forme de BitMap.
+        /// </summary>
+        /// <param name="unTexte"></param>
+        /// <returns></returns>
+        public static Bitmap GenererUnCodeBarreEnBitmap(string unTexte)
+        {
+            IBarcodeWriterPixelData encodeurCodeBarre = new BarcodeWriterPixelData()  // pour lire le code barre
+            { 
+                Format = BarcodeFormat.CODE_128 // On doit spécifier le format, sinon le format est  et ce format est invalide (lève un exception)
+            };
+            Bitmap rtrn = encodeurCodeBarre.Write(unTexte).ToBitmap(); // on encode le texte et le converti en bitmap
+            return rtrn;
+        }
+
         public static void SauvegarderPdfCodeBarres(string cheminDestination, BackgroundWorker worker)
         {
             Word.Application wordApp = null;
