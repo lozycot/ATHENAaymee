@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using ZXing;
+using ZXing.Common;
 
 namespace CartesAcces2024
 {
@@ -285,47 +287,81 @@ namespace CartesAcces2024
         {
             if (clbElements.SelectedItem != null)
             {
-                string selectedText = clbElements.SelectedItem.ToString(); // Récupère le texte de l'élément sélectionné
-                string[] eleve = selectedText.Split(' '); // Supposons que le format soit "Nom Prenom Classe"
+                string selectedText = clbElements.SelectedItem.ToString();
+                string[] eleve = selectedText.Split(' ');
 
-                // Vérifiez que le tableau a au moins 3 éléments
                 if (eleve.Length >= 3)
                 {
-                    string niveau = eleve[2].Substring(0, 1) + "eme"; // Récupérer le niveau
-
-                    string path = Chemin.DossierPhotoEleve + niveau + "/" + eleve[0] + " " + eleve[1] + ".jpg"; // Construire le chemin de l'image
+                    string niveau = eleve[2].Substring(0, 1) + "eme";
+                    string path = Chemin.DossierPhotoEleve + niveau + "/" + eleve[0] + " " + eleve[1] + ".jpg";
                     pbPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
 
                     if (pbPhoto.Image != null)
-                        pbPhoto.Image.Dispose(); // Libérer l'ancienne image
+                        pbPhoto.Image.Dispose();
 
                     try
                     {
-                        pbPhoto.Image = Image.FromFile(path); // Charger l'image
-                        corrigeRatioPhoto(); // Ajuster le ratio de l'image
+                        pbPhoto.Image = Image.FromFile(path);
+                        corrigeRatioPhoto();
                     }
                     catch
                     {
-                        pbPhoto.Image = Image.FromFile(Chemin.CheminPhotoDefault); // Charger l'image par défaut si l'image n'est pas trouvée
+                        pbPhoto.Image = Image.FromFile(Chemin.CheminPhotoDefault);
                     }
 
-                    cbreCodeBarre.Text = RemoveAccents($"{eleve[0]} {eleve[1]}"); // Charger le Code Barre
+                    AfficherCodeBarre(RemoveAccents($"{eleve[0]} {eleve[1]}"), pbCodeBarre);
 
                     try
                     {
-                        pbPhoto.Image = Image.FromFile(path); // Charger l'image
-                        corrigeRatioPhoto(); // Ajuster le ratio de l'image
+                        pbPhoto.Image = Image.FromFile(path);
+                        corrigeRatioPhoto();
                     }
                     catch
                     {
-                        pbPhoto.Image = Image.FromFile(Chemin.CheminPhotoDefault); // Charger l'image par défaut si l'image n'est pas trouvée
+                        pbPhoto.Image = Image.FromFile(Chemin.CheminPhotoDefault);
                     }
                 }
                 else
                 {
-                    // Gérer le cas où le format n'est pas correct
                     MessageBox.Show("Le format de l'élément sélectionné est incorrect. Assurez-vous qu'il contient le nom, le prénom et la classe.");
                 }
+            }
+        }
+
+        private void AfficherCodeBarre(string texte, PictureBox pictureBox)
+        {
+            var writer = new BarcodeWriter
+            {
+                Format = BarcodeFormat.CODE_128,
+                Options = new EncodingOptions
+                {
+                    Width = 250,
+                    Height = 80,
+                    Margin = 2,
+                    PureBarcode = true
+                }
+            };
+
+            using (Bitmap barcodeBitmap = writer.Write(texte))
+            using (Bitmap completeBitmap = new Bitmap(250, 120))
+            using (Graphics g = Graphics.FromImage(completeBitmap))
+            {
+                g.FillRectangle(Brushes.White, 0, 0, completeBitmap.Width, completeBitmap.Height);
+                g.DrawImage(barcodeBitmap, 0, 0);
+
+                using (Font font = new Font("Arial", 10))
+                {
+                    SizeF textSize = g.MeasureString(texte, font);
+                    PointF textPosition = new PointF(
+                        (completeBitmap.Width - textSize.Width) / 2,
+                        90
+                    );
+                    g.DrawString(texte, font, Brushes.Black, textPosition);
+                }
+
+                pictureBox.Image?.Dispose();
+                pictureBox.Image = new Bitmap(completeBitmap);
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 
@@ -376,11 +412,6 @@ namespace CartesAcces2024
                 }
             }
             return normalizedString.ToString();
-        }
-
-        private void cbreCodeBarre_TypeChange(object sender, AxACTIVEBARCODELib._DBarcodeEvents_TypeChangeEvent e)
-        {
-
         }
     }
 }
