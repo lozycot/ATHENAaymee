@@ -41,40 +41,74 @@ namespace CartesAcces2024
         /// <summary>
         /// Ajout un control de champs personnalisé dans la carte face selon l'option d'ajout du champs sélectionné dans <see cref="frmSelectionneAjoutDansCarteAcces"/> (texte, code QR ou code barre).
         /// </summary>
-        public void ajouteControlChampPersonnalisee(string uneValeurDeChamp, string optionDAjoutDeLaValeur)
+        public void ajouteControlChampPersonnalisee(string uneValeurDeChamp, string optionDAjoutDeLaValeur, Font policeTextChampPersonnalisee = null)
         {
             // on utilise une picturebox pour plus facilement l'ajouter à l'image de la face avant
             PictureBox newCntrl = new PictureBox();
 
 
-            
-
-
 
             if (optionDAjoutDeLaValeur == "Code QR")
             {
+
                 var bmpOriginal = QrCode.CreationQrCode(uneValeurDeChamp);
                 var bmpFinal = new Bitmap(bmpOriginal, new Size(100, 100));
                 newCntrl.Image = bmpFinal;
 
                 newCntrl.Width = 100;
                 newCntrl.Height = 100;
+
             }
             else if (optionDAjoutDeLaValeur == "Code Barre")
             {
-                //
+
+                newCntrl.Image = EditionCodeBarre.GenererUnCodeBarreEnBitmap(uneValeurDeChamp);
+
             } 
             else if (optionDAjoutDeLaValeur == "Text")
             {
-                var policeInfosEtablissement = new Font("Calibri", 16, FontStyle.Bold);
+
+                if (policeTextChampPersonnalisee==null) // la police peut ou non être passée en paramètre
+                {
+                    policeTextChampPersonnalisee = new Font("Calibri", 16, FontStyle.Bold);
+                }
                 Brush pinceauNoir = new SolidBrush(Color.Black);
 
-                
+                // Gestion de la couleur de l'arrière plan
+                List<Color> couleurs = new List<Color> { };
+                couleurs = OperationsDb.GetColors();
+
+                Color couleurFondDuTexte;
+
+                // -- Couleur du rectangle en fonction de la section (donc de la couleur de la carte) --
+                switch (Globale.ListeEleveImpr[0].ClasseEleve)
+                {
+                    case "6eme":
+                        couleurFondDuTexte = couleurs[0];
+                        break;
+                    case "5eme":
+                        couleurFondDuTexte = couleurs[1];
+                        break;
+                    case "4eme":
+                        couleurFondDuTexte = couleurs[2];
+                        break;
+                    case "3eme":
+                        couleurFondDuTexte = couleurs[3];
+                        break;
+                    default:
+                        couleurFondDuTexte = Color.White;
+                        break;
+                }
+
+
                 using (Bitmap temp = new Bitmap(1, 1))
                 using (Graphics tempGraph = Graphics.FromImage(temp))
                 {
                     // on mesure la taille du texte dessiné avec une certaine police
-                    SizeF tailleDeTexte = tempGraph.MeasureString(uneValeurDeChamp, policeInfosEtablissement);
+                    SizeF tailleDeTexte = tempGraph.MeasureString(uneValeurDeChamp, policeTextChampPersonnalisee);
+                    Rectangle rectangelArrièrePlan = new Rectangle(0, 0, (int)tailleDeTexte.Width, (int)tailleDeTexte.Height);
+
+
 
                     // on définit la taille du picturebox selon la longueur du text
                     newCntrl.Width = (int)tailleDeTexte.Width;
@@ -85,8 +119,9 @@ namespace CartesAcces2024
 
                     using (Graphics graph = Graphics.FromImage(newCntrl.Image))
                     {
+                        graph.FillRectangle(new SolidBrush(Color.Yellow), rectangelArrièrePlan);
                         // on écrit la valeur de champ dans la picturebox, qui as la bonne taille
-                        graph.DrawString(uneValeurDeChamp, policeInfosEtablissement, pinceauNoir, new Point(0, 0));
+                        graph.DrawString(uneValeurDeChamp, policeTextChampPersonnalisee, pinceauNoir, new Point(0, 0));
                     }
                 }
                 newCntrl.Refresh();

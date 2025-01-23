@@ -20,17 +20,10 @@ Pour contribuer au projet, suivez ces étapes :
 
 1. Prérequis :
    - Visual Studio 2019 ou version ultérieure
-   - Extension ActiveBarcode (pour les tests des codes-barres)
-
-> L'extension ActiveBarcode est disponible sur [le site officiel](https://fr.activebarcode.com/download/).
 
 2. Installation :
    - Clonage direct avec Visual Studio ou GitHub Desktop
-     ou
-   - Clonage grâce à la commande git
-   ```bash
-   git clone https://github.com/College-Caroline-Aigle/Athena.git
-   ```
+   - Clonage grâce à la commande git `git clone https://github.com/College-Caroline-Aigle/Athena.git`
 
 3. Premier lancement :
    - Démarrez l'application une première fois (une erreur initiale est normale)

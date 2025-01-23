@@ -36,7 +36,9 @@ namespace Athena.forms.autre
             this.rdbQRCode = new System.Windows.Forms.RadioButton();
             this.pnlChampsPersonnalises = new System.Windows.Forms.Panel();
             this.pnlOptions = new System.Windows.Forms.Panel();
+            this.numPoliceChampAjoutee = new System.Windows.Forms.NumericUpDown();
             this.pnlOptions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceChampAjoutee)).BeginInit();
             this.SuspendLayout();
             // 
             // btnValider
@@ -102,6 +104,7 @@ namespace Athena.forms.autre
             // 
             // pnlOptions
             // 
+            this.pnlOptions.Controls.Add(this.numPoliceChampAjoutee);
             this.pnlOptions.Controls.Add(this.rdbText);
             this.pnlOptions.Controls.Add(this.rdbCodeBarre);
             this.pnlOptions.Controls.Add(this.rdbQRCode);
@@ -109,6 +112,18 @@ namespace Athena.forms.autre
             this.pnlOptions.Name = "pnlOptions";
             this.pnlOptions.Size = new System.Drawing.Size(200, 145);
             this.pnlOptions.TabIndex = 12;
+            // 
+            // numPoliceChampAjoutee
+            // 
+            this.numPoliceChampAjoutee.Location = new System.Drawing.Point(77, 115);
+            this.numPoliceChampAjoutee.Name = "numPoliceChampAjoutee";
+            this.numPoliceChampAjoutee.Size = new System.Drawing.Size(120, 22);
+            this.numPoliceChampAjoutee.TabIndex = 11;
+            this.numPoliceChampAjoutee.Value = new decimal(new int[] {
+            19,
+            0,
+            0,
+            0});
             // 
             // frmSelectionneAjoutDansCarteAcces
             // 
@@ -125,6 +140,7 @@ namespace Athena.forms.autre
             this.Load += new System.EventHandler(this.frmSelectionneAjoutDansCarteAcces_Load);
             this.pnlOptions.ResumeLayout(false);
             this.pnlOptions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPoliceChampAjoutee)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,5 +154,6 @@ namespace Athena.forms.autre
         private System.Windows.Forms.RadioButton rdbQRCode;
         private System.Windows.Forms.Panel pnlChampsPersonnalises;
         private System.Windows.Forms.Panel pnlOptions;
+        private System.Windows.Forms.NumericUpDown numPoliceChampAjoutee;
     }
 }
