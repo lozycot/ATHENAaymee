@@ -27,7 +27,7 @@ namespace CartesAcces2024
                 Format = BarcodeFormat.CODE_128,
                 Options = new EncodingOptions
                 {
-                    Width = 356,
+                    Width = 250,
                     Height = 80,
                     Margin = 2,
                     PureBarcode = true
@@ -41,7 +41,7 @@ namespace CartesAcces2024
 
                 try
                 {
-                    using (Bitmap completeBitmap = new Bitmap(356, 120))
+                    using (Bitmap completeBitmap = new Bitmap(250, 120))
                     using (Graphics g = Graphics.FromImage(completeBitmap))
                     {
                         g.FillRectangle(Brushes.White, 0, 0, completeBitmap.Width, completeBitmap.Height);
@@ -233,15 +233,15 @@ namespace CartesAcces2024
         private static void InsertBarcodeImage(Word.Range cellRange, string tempImagePath)
         {
             Word.InlineShape shape = cellRange.InlineShapes.AddPicture(tempImagePath);
-            shape.Width = 160;
+            shape.Width = 120;
             shape.Height = 60;
 
             cellRange.InsertParagraphAfter();
             cellRange.Paragraphs[1].SpaceAfter = 0;
-            cellRange.Paragraphs[1].SpaceBefore = 30;
+            cellRange.Paragraphs[1].SpaceBefore = 40;
 
-            cellRange.Cells[1].LeftPadding = 15;
-            cellRange.Cells[1].RightPadding = 15;
+            cellRange.Cells[1].LeftPadding = 25;
+            cellRange.Cells[1].RightPadding = 25;
         }
 
         private static string RemoveAccents(string input)
