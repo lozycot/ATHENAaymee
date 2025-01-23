@@ -56,8 +56,8 @@ namespace CartesAcces2024
             this.btnCsvNouvelleAnnee = new System.Windows.Forms.Button();
             this.btnAddClasseTemp = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbClassesTemp = new System.Windows.Forms.ComboBox();
             this.btnDelClasseTemp = new System.Windows.Forms.Button();
-            this.listBoxClassesTemp = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbDeplacement = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@ namespace CartesAcces2024
             this.btnCsvNouvelleAnnee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnCsvNouvelleAnnee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCsvNouvelleAnnee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnCsvNouvelleAnnee.Location = new System.Drawing.Point(687, 705);
+            this.btnCsvNouvelleAnnee.Location = new System.Drawing.Point(457, 671);
             this.btnCsvNouvelleAnnee.Margin = new System.Windows.Forms.Padding(2);
             this.btnCsvNouvelleAnnee.Name = "btnCsvNouvelleAnnee";
             this.btnCsvNouvelleAnnee.Size = new System.Drawing.Size(202, 61);
@@ -99,18 +99,27 @@ namespace CartesAcces2024
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbClassesTemp);
             this.groupBox1.Controls.Add(this.btnDelClasseTemp);
             this.groupBox1.Controls.Add(this.btnAddClasseTemp);
-            this.groupBox1.Controls.Add(this.listBoxClassesTemp);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(55, 59);
+            this.groupBox1.Location = new System.Drawing.Point(22, 22);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(279, 707);
+            this.groupBox1.Size = new System.Drawing.Size(279, 186);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Liste de classes nouvelle année";
+            // 
+            // cbClassesTemp
+            // 
+            this.cbClassesTemp.FormattingEnabled = true;
+            this.cbClassesTemp.Location = new System.Drawing.Point(5, 154);
+            this.cbClassesTemp.Name = "cbClassesTemp";
+            this.cbClassesTemp.Size = new System.Drawing.Size(269, 24);
+            this.cbClassesTemp.TabIndex = 19;
+            this.cbClassesTemp.SelectedIndexChanged += new System.EventHandler(this.cbClassesTemp_SelectedIndexChanged);
             // 
             // btnDelClasseTemp
             // 
@@ -127,20 +136,6 @@ namespace CartesAcces2024
             this.btnDelClasseTemp.UseVisualStyleBackColor = false;
             this.btnDelClasseTemp.Click += new System.EventHandler(this.btnDelClasseTemp_Click);
             // 
-            // listBoxClassesTemp
-            // 
-            this.listBoxClassesTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.listBoxClassesTemp.ForeColor = System.Drawing.Color.White;
-            this.listBoxClassesTemp.FormattingEnabled = true;
-            this.listBoxClassesTemp.ItemHeight = 16;
-            this.listBoxClassesTemp.Location = new System.Drawing.Point(4, 153);
-            this.listBoxClassesTemp.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxClassesTemp.Name = "listBoxClassesTemp";
-            this.listBoxClassesTemp.Size = new System.Drawing.Size(271, 548);
-            this.listBoxClassesTemp.Sorted = true;
-            this.listBoxClassesTemp.TabIndex = 12;
-            this.listBoxClassesTemp.SelectedIndexChanged += new System.EventHandler(this.listBoxClassesTemp_SelectedIndexChanged);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cbDeplacement);
@@ -149,11 +144,11 @@ namespace CartesAcces2024
             this.groupBox2.Controls.Add(this.listBoxElTemp);
             this.groupBox2.Controls.Add(this.btnDelElTemp);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(338, 59);
+            this.groupBox2.Location = new System.Drawing.Point(22, 212);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(279, 707);
+            this.groupBox2.Size = new System.Drawing.Size(279, 520);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Liste d\'élèves de la classe sélectionnée";
@@ -161,10 +156,10 @@ namespace CartesAcces2024
             // cbDeplacement
             // 
             this.cbDeplacement.FormattingEnabled = true;
-            this.cbDeplacement.Location = new System.Drawing.Point(4, 679);
+            this.cbDeplacement.Location = new System.Drawing.Point(4, 484);
             this.cbDeplacement.Margin = new System.Windows.Forms.Padding(2);
             this.cbDeplacement.Name = "cbDeplacement";
-            this.cbDeplacement.Size = new System.Drawing.Size(184, 24);
+            this.cbDeplacement.Size = new System.Drawing.Size(271, 24);
             this.cbDeplacement.Sorted = true;
             this.cbDeplacement.TabIndex = 23;
             this.cbDeplacement.SelectedIndexChanged += new System.EventHandler(this.cbDeplacement_SelectedIndexChanged);
@@ -172,7 +167,7 @@ namespace CartesAcces2024
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1, 626);
+            this.label7.Location = new System.Drawing.Point(4, 431);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.MaximumSize = new System.Drawing.Size(120, 0);
             this.label7.Name = "label7";
@@ -205,7 +200,7 @@ namespace CartesAcces2024
             this.listBoxElTemp.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxElTemp.Name = "listBoxElTemp";
             this.listBoxElTemp.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBoxElTemp.Size = new System.Drawing.Size(271, 468);
+            this.listBoxElTemp.Size = new System.Drawing.Size(271, 276);
             this.listBoxElTemp.Sorted = true;
             this.listBoxElTemp.TabIndex = 13;
             this.listBoxElTemp.SelectedIndexChanged += new System.EventHandler(this.listBoxElTemp_SelectedIndexChanged);
@@ -230,7 +225,7 @@ namespace CartesAcces2024
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.button1.Location = new System.Drawing.Point(687, 59);
+            this.button1.Location = new System.Drawing.Point(457, 22);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 61);
@@ -243,7 +238,7 @@ namespace CartesAcces2024
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(953, 817);
+            this.ClientSize = new System.Drawing.Size(676, 752);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCsvNouvelleAnnee);
             this.Controls.Add(this.groupBox1);
@@ -265,7 +260,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.Button btnAddClasseTemp;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDelClasseTemp;
-        private System.Windows.Forms.ListBox listBoxClassesTemp;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbDeplacement;
         private System.Windows.Forms.Label label7;
@@ -273,5 +267,6 @@ namespace CartesAcces2024
         private System.Windows.Forms.ListBox listBoxElTemp;
         private System.Windows.Forms.Button btnDelElTemp;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbClassesTemp;
     }
 }
