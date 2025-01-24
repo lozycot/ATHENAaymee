@@ -27,6 +27,11 @@ namespace CartesAcces2024
 
         // ** VARIABLES  : Déplacement de la photo
         public static bool Drag { get; set; } = false;
+
+        /// <summary>
+        /// Vrai si on est en train de changer la taille d'un controle.
+        /// </summary>
+        public static bool Resizing { get; set; } = false;
         public static int PosX { get; set; }
         public static int PosY { get; set; }
         public static int PosXDef { get; set; }
