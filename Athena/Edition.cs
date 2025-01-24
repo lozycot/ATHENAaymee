@@ -330,8 +330,6 @@ namespace CartesAcces2024
             // tables champs personnalisées:
             // 
 
-            MessageBox.Show("AAAAAAAAAAAAAAA  " + objGraphique.ClipBounds.Width + " " + objGraphique.ClipBounds.Height);
-
             pbCarteFace.Refresh();
 
             objGraphique.Dispose(); // Libère les ressources
@@ -519,6 +517,7 @@ namespace CartesAcces2024
 
             chaine = Etablissement[0]; // code postal
             //var mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
+
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 985);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 985);
 
@@ -647,7 +646,6 @@ namespace CartesAcces2024
         /// Créer la carte face, selon si oui ou non elle contient des informations sur l'établissement.
         /// </summary>
         /// <param name="eleve"></param>
-        /// <param name="chemin"></param>
         public static void carteFace(Eleve eleve, string chemin)
         {
             // -- Déclare l'image --

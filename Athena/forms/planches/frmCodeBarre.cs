@@ -308,7 +308,7 @@ namespace CartesAcces2024
                     {
                         pbPhoto.Image = Image.FromFile(Chemin.CheminPhotoDefault);
                     }
-
+*
                     EditionCodeBarre.AfficherCodeBarre(RemoveAccents($"{eleve[0]} {eleve[1]}"), pbCodeBarre);
 
                     try
@@ -328,7 +328,6 @@ namespace CartesAcces2024
             }
         }
 
-        
 
         public static string RemoveAccents(string input)
         {

@@ -52,7 +52,6 @@ namespace CartesAcces2024
             }
 
 
-
             if (optionDAjoutDeLaValeur == "Code QR")
             {
 
@@ -86,7 +85,6 @@ namespace CartesAcces2024
                 couleurs = OperationsDb.GetColors();
 
                 Color couleurFondDuTexte;
-
 
                 // -- Couleur du rectangle en fonction de la section (donc de la couleur de la carte) --
                 switch (Globale.ListeEleveImpr[0].NiveauEleve)
@@ -138,7 +136,6 @@ namespace CartesAcces2024
             // paramètre du nouveaux control
             newCntrl.Location = new Point(pbCarteFace.Location.X + (pbCarteFace.Width / 2), pbCarteFace.Location.Y + (pbCarteFace.Height / 2));
             newCntrl.Visible = true;
-
 
 
 
@@ -197,6 +194,8 @@ namespace CartesAcces2024
 
 
 
+
+
             //--------------------permet de supprimer le control en double-cliquant
             newCntrl.MouseDoubleClick += (Object sender, MouseEventArgs e) =>
             {
@@ -249,11 +248,11 @@ namespace CartesAcces2024
             pbPhoto.Size = new Size((int)(w * (double)pbCarteArriere.Width), (int)(h * (double)pbCarteArriere.Height));
             pbPhoto.Refresh();        
         }
-
-
-
-
-
+        
+        
+        
+        
+        
         /// <summary>
         ///     Constructeur de la classe
         /// </summary>
