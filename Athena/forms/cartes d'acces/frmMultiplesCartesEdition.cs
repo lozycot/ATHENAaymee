@@ -67,8 +67,6 @@ namespace CartesAcces2024
             {
 
                 EditionCodeBarre.AfficherCodeBarre(uneValeurDeChamp, newCntrl);
-                newCntrl.Width *= 2;
-                newCntrl.Height *= 2;
 
             } 
             else if (optionDAjoutDeLaValeur == "Text")
