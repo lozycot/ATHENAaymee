@@ -31,12 +31,12 @@ namespace CartesAcces2024
         /// <summary>
         /// Stocke le chemin du dernier dossier d'enregistrement
         /// </summary>
-        public static string dernierCheminEnregistre = "";
+        public static string dernierCheminEnregistre;
 
         /// <summary>
-        /// Champs personnalisés ajoutés par l'utilisateur
+        /// Champs personnalisés ajoutés par l'utilisateur sur la carte. Voir <see cref="Globale.donneesChampsPersonnalisee"/> pour une description de la structure.
         /// </summary>
-        public Dictionary<string, string> elementsAjoutee = new Dictionary<string, string>();
+        public List<Tuple<string, Image, Point, string, Font, PictureBox>> elementsAjoutee;
 
         /// <summary>
         /// Ajout un control de champs personnalisé dans la carte face selon l'option d'ajout du champs sélectionné dans <see cref="frmSelectionneAjoutDansCarteAcces"/> (texte, code QR ou code barre).
@@ -46,6 +46,10 @@ namespace CartesAcces2024
             // on utilise une picturebox pour plus facilement l'ajouter à l'image de la face avant
             PictureBox newCntrl = new PictureBox();
 
+            if (Globale.donneesChampsPersonnalisee == null)
+            {
+                Globale.donneesChampsPersonnalisee = new List<Tuple<string, Image, Point, string, Font, PictureBox>>();
+            }
 
 
             if (optionDAjoutDeLaValeur == "Code QR")
@@ -62,7 +66,9 @@ namespace CartesAcces2024
             else if (optionDAjoutDeLaValeur == "Code Barre")
             {
 
-                newCntrl.Image = EditionCodeBarre.GenererUnCodeBarreEnBitmap(uneValeurDeChamp);
+                EditionCodeBarre.AfficherCodeBarre(uneValeurDeChamp, newCntrl);
+                newCntrl.Width *= 2;
+                newCntrl.Height *= 2;
 
             } 
             else if (optionDAjoutDeLaValeur == "Text")
@@ -81,7 +87,7 @@ namespace CartesAcces2024
                 Color couleurFondDuTexte;
 
                 // -- Couleur du rectangle en fonction de la section (donc de la couleur de la carte) --
-                switch (Globale.ListeEleveImpr[0].ClasseEleve)
+                switch (Globale.ListeEleveImpr[0].NiveauEleve)
                 {
                     case "6eme":
                         couleurFondDuTexte = couleurs[0];
@@ -119,7 +125,7 @@ namespace CartesAcces2024
 
                     using (Graphics graph = Graphics.FromImage(newCntrl.Image))
                     {
-                        graph.FillRectangle(new SolidBrush(Color.Yellow), rectangelArrièrePlan);
+                        graph.FillRectangle(new SolidBrush(couleurFondDuTexte), rectangelArrièrePlan);
                         // on écrit la valeur de champ dans la picturebox, qui as la bonne taille
                         graph.DrawString(uneValeurDeChamp, policeTextChampPersonnalisee, pinceauNoir, new Point(0, 0));
                     }
@@ -130,6 +136,7 @@ namespace CartesAcces2024
             // paramètre du nouveaux control
             newCntrl.Location = new Point(pbCarteFace.Location.X + (pbCarteFace.Width / 2), pbCarteFace.Location.Y + (pbCarteFace.Height / 2));
             newCntrl.Visible = true;
+
 
 
             // évènements du nouveaux control
@@ -149,22 +156,45 @@ namespace CartesAcces2024
                 Refresh();
             };
 
+
+
             newCntrl.MouseMove += (object sender, MouseEventArgs e) =>
             {
                 // -- Lorsque l'utilisateur clique sur la photo de l'élève --
+
+                // On calcul la nouvelle position qu'auras lecontrol
+                int newLeft = e.X + newCntrl.Left - Edition.PosX;
+                int newTop = e.Y + newCntrl.Top - Edition.PosY;
+
+                // on récupère la surface de pbCarteFace
+                Rectangle boundingRect = pnlEdtPhoto.RectangleToClient(
+                    pbCarteFace.RectangleToScreen(pbCarteFace.ClientRectangle)
+                );
+
+                // si drag est vrais
                 if (Edition.Drag)
                 {
+                    // On restraint le control à la surface de pbCarteFace
+                    newLeft = Math.Max(boundingRect.Left, Math.Min(newLeft, boundingRect.Right - newCntrl.Width));
+                    newTop = Math.Max(boundingRect.Top, Math.Min(newTop, boundingRect.Bottom - newCntrl.Height));
+
                     // -- La position de la photo change --
-                    newCntrl.Left = e.X + newCntrl.Left - Edition.PosX;
-                    newCntrl.Top = e.Y + newCntrl.Top - Edition.PosY;
+                    newCntrl.Left = newLeft;
+                    newCntrl.Top = newTop;
                 }
             };
+
+
 
             newCntrl.MouseUp += (Object sender, MouseEventArgs e) =>
             {
                 // -- Le drag est fini lorsque le clic est relevé  --
                 Edition.Drag = false;
             };
+
+
+
+
 
             //--------------------permet de supprimer le control en double-cliquant
             newCntrl.MouseDoubleClick += (Object sender, MouseEventArgs e) =>
@@ -173,10 +203,30 @@ namespace CartesAcces2024
             };
 
 
+
             // On ajoute le control
             pnlEdtPhoto.Controls.Add(newCntrl);
             newCntrl.BringToFront(); // on le met au premier plan
+
+            // On ajoute le control dans la liste, afin de l'ajouter dans Globale.donneesChampsPersonnalisee avec les bonnes cordonnées lors de btnValiderImpr_Click
+            // car l'origine des cordonnées sont calculées à partir de pnlEdtPhoto, pas de pbCarteFace
+            elementsAjoutee.Add( new Tuple<string, Image, Point, string, Font, PictureBox >(optionDAjoutDeLaValeur, newCntrl.Image, newCntrl.Location, uneValeurDeChamp, policeTextChampPersonnalisee, newCntrl) );
+
         }
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
 
         /// <summary>
         /// Permet de transmettre la photo de frmCarteProvisoire à L'IDENTIQUE avec les mêmes position
@@ -198,6 +248,11 @@ namespace CartesAcces2024
             pbPhoto.Size = new Size((int)(w * (double)pbCarteArriere.Width), (int)(h * (double)pbCarteArriere.Height));
             pbPhoto.Refresh();        
         }
+        
+        
+        
+        
+        
         /// <summary>
         ///     Constructeur de la classe
         /// </summary>
@@ -207,7 +262,13 @@ namespace CartesAcces2024
             //Couleur.setCouleurFenetre(this);
             labelEnCoursValidation.Visible = false;
             labelEnCoursValidation.ForeColor = Color.Red;
+            dernierCheminEnregistre = "";
+            elementsAjoutee = new List<Tuple<string, Image, Point, string, Font, PictureBox>>();
         }
+
+
+
+
 
         private void pbPhoto_MouseMove(object sender, MouseEventArgs e)
         {
@@ -364,6 +425,31 @@ namespace CartesAcces2024
         private void btnValiderImpr_Click(object sender, EventArgs e)
         {
             Edition.ReplacementPhotoClassique(pbPhoto.Location.X, pbPhoto.Location.Y);
+
+
+            // On met à jour les coordonnées pour qu'elles soient relatives à pbcarteFace
+            foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneElementPersonnelisee in elementsAjoutee)
+            {
+                int relativeX = donneElementPersonnelisee.Item6.Location.X - pbCarteFace.Left;
+                int relativeY = donneElementPersonnelisee.Item6.Location.Y - pbCarteFace.Top;
+
+                MessageBox.Show( donneElementPersonnelisee.Item1 + " " + donneElementPersonnelisee.Item4 + " " + relativeX + " " + relativeY
+                    + "\n" + donneElementPersonnelisee.Item3.X + " " + donneElementPersonnelisee.Item3.Y);
+                MessageBox.Show("Sizes : " + donneElementPersonnelisee.Item6.Size.Width + " " + donneElementPersonnelisee.Item6.Size.Height);
+
+                Globale.donneesChampsPersonnalisee.Add(
+                        new Tuple<string, Image, Point, string, Font, PictureBox>(
+                                donneElementPersonnelisee.Item1,
+                                donneElementPersonnelisee.Item2,
+                                new Point(relativeX, relativeY),
+                                donneElementPersonnelisee.Item4,
+                                donneElementPersonnelisee.Item5,
+                                donneElementPersonnelisee.Item6
+
+                            )
+                    );
+            }
+
 
             if (rdbA4.Checked == false && rdbA5.Checked == false)
             {

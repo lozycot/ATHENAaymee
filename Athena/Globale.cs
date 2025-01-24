@@ -25,6 +25,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CartesAcces2024
@@ -392,5 +393,23 @@ namespace CartesAcces2024
         // (j'aurais bien passé les données via des variables publiques dans ces deux forms mais tout est déjà centralisé ici)
 
         public static FrmMultiplesCartesEdition formMultipleCartes;
+
+        // données pour imprimer les champs personnalisées sur la carte dans Edition.ImageCarteFace
+        // Pour chaque champ personnalisé
+        // l'option? codeQR, codeBarre, Texte
+        // l'image
+        // les coordonnées
+        // ou le texte
+        //  //  Font du texte
+        //  //  les coordonnées du texte
+        /// <summary>
+        /// Les données des champs personnalisées ajoutés sur la face de la carte.
+        /// Voir <see cref="FrmMultiplesCartesEdition.ajouteControlChampPersonnalisee(string, string, System.Drawing.Font)"/>
+        /// Contient si ils existent: l'option (codeQR, codeBarre, Texte) ; l'image ; les coodronnées sur la carte face ;
+        /// le texte ; la police du texte ; la pictureBox originel
+        /// </summary>
+        public static List<Tuple<string, Image, Point, string, Font, PictureBox>> donneesChampsPersonnalisee;
+
+
     }
 }

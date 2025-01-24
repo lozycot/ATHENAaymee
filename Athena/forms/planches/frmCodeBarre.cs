@@ -308,8 +308,8 @@ namespace CartesAcces2024
                     {
                         pbPhoto.Image = Image.FromFile(Chemin.CheminPhotoDefault);
                     }
-
-                    AfficherCodeBarre(RemoveAccents($"{eleve[0]} {eleve[1]}"), pbCodeBarre);
+*
+                    EditionCodeBarre.AfficherCodeBarre(RemoveAccents($"{eleve[0]} {eleve[1]}"), pbCodeBarre);
 
                     try
                     {
@@ -328,42 +328,6 @@ namespace CartesAcces2024
             }
         }
 
-        private void AfficherCodeBarre(string texte, PictureBox pictureBox)
-        {
-            var writer = new BarcodeWriter
-            {
-                Format = BarcodeFormat.CODE_128,
-                Options = new EncodingOptions
-                {
-                    Width = 250,
-                    Height = 80,
-                    Margin = 2,
-                    PureBarcode = true
-                }
-            };
-
-            using (Bitmap barcodeBitmap = writer.Write(texte))
-            using (Bitmap completeBitmap = new Bitmap(250, 120))
-            using (Graphics g = Graphics.FromImage(completeBitmap))
-            {
-                g.FillRectangle(Brushes.White, 0, 0, completeBitmap.Width, completeBitmap.Height);
-                g.DrawImage(barcodeBitmap, 0, 0);
-
-                using (Font font = new Font("Arial", 10))
-                {
-                    SizeF textSize = g.MeasureString(texte, font);
-                    PointF textPosition = new PointF(
-                        (completeBitmap.Width - textSize.Width) / 2,
-                        90
-                    );
-                    g.DrawString(texte, font, Brushes.Black, textPosition);
-                }
-
-                pictureBox.Image?.Dispose();
-                pictureBox.Image = new Bitmap(completeBitmap);
-                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            }
-        }
 
         public static string RemoveAccents(string input)
         {

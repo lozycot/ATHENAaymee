@@ -58,6 +58,7 @@ namespace CartesAcces2024
             this.pnlEdtPhoto = new System.Windows.Forms.Panel();
             this.pbPhoto = new System.Windows.Forms.PictureBox();
             this.pbCarteArriere = new System.Windows.Forms.PictureBox();
+            this.pbCarteFace = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.labelEnCoursValidation = new System.Windows.Forms.Label();
@@ -75,15 +76,14 @@ namespace CartesAcces2024
             this.rdbA5 = new System.Windows.Forms.RadioButton();
             this.rdbA4 = new System.Windows.Forms.RadioButton();
             this.btnAjouterElementDansCartes = new System.Windows.Forms.Button();
-            this.pbCarteFace = new System.Windows.Forms.PictureBox();
             this.pnlEdtPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarteArriere)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarteFace)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tkbTaillePhoto)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCarteFace)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlEdtPhoto
@@ -99,7 +99,7 @@ namespace CartesAcces2024
             // 
             // pbPhoto
             // 
-            this.pbPhoto.Location = new System.Drawing.Point(297, 255);
+            this.pbPhoto.Location = new System.Drawing.Point(289, 255);
             this.pbPhoto.Margin = new System.Windows.Forms.Padding(4);
             this.pbPhoto.Name = "pbPhoto";
             this.pbPhoto.Size = new System.Drawing.Size(112, 121);
@@ -123,6 +123,16 @@ namespace CartesAcces2024
             this.pbCarteArriere.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbCarteArriere_MouseDown);
             this.pbCarteArriere.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbCarteArriere_MouseMove);
             this.pbCarteArriere.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbCarteArriere_MouseUp);
+            // 
+            // pbCarteFace
+            // 
+            this.pbCarteFace.Location = new System.Drawing.Point(699, 0);
+            this.pbCarteFace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbCarteFace.Name = "pbCarteFace";
+            this.pbCarteFace.Size = new System.Drawing.Size(720, 457);
+            this.pbCarteFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCarteFace.TabIndex = 11;
+            this.pbCarteFace.TabStop = false;
             // 
             // groupBox3
             // 
@@ -331,16 +341,6 @@ namespace CartesAcces2024
             this.btnAjouterElementDansCartes.UseVisualStyleBackColor = true;
             this.btnAjouterElementDansCartes.Click += new System.EventHandler(this.btnAjouterElementDansCartes_Click);
             // 
-            // pbCarteFace
-            // 
-            this.pbCarteFace.Location = new System.Drawing.Point(699, 0);
-            this.pbCarteFace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbCarteFace.Name = "pbCarteFace";
-            this.pbCarteFace.Size = new System.Drawing.Size(720, 457);
-            this.pbCarteFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCarteFace.TabIndex = 11;
-            this.pbCarteFace.TabStop = false;
-            // 
             // FrmMultiplesCartesEdition
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -361,6 +361,7 @@ namespace CartesAcces2024
             this.pnlEdtPhoto.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarteArriere)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarteFace)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tkbTaillePhoto)).EndInit();
@@ -368,7 +369,6 @@ namespace CartesAcces2024
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCarteFace)).EndInit();
             this.ResumeLayout(false);
 
         }
