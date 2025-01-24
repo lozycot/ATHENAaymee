@@ -134,20 +134,34 @@ namespace CartesAcces2024
             // paramètre du nouveaux control
             newCntrl.Location = new Point(pbCarteFace.Location.X + (pbCarteFace.Width / 2), pbCarteFace.Location.Y + (pbCarteFace.Height / 2));
             newCntrl.Visible = true;
+            newCntrl.SizeMode = PictureBoxSizeMode.Zoom;
 
 
 
             // évènements du nouveaux control
+            // position précédente de la sourie
+            Point positionSourieInitiale = new Point(0,0);
+            // ratio que la picturebox devrais maintenir
+            double aspectRatio = (double)newCntrl.Image.Width / newCntrl.Image.Height;
 
             //---------------- pour permetre de le bouger avec la sourie
             newCntrl.MouseDown += (sender, e) => {
-                // Your code here
+
                 // -- Lorsque l'utilisateur clic, la position initiale est sauvegardée, drag passe a true
-                if (e.Button == MouseButtons.Left)
+                if (e.Button == MouseButtons.Left) // sic'est un clique gauche
                 {
-                    Edition.PosX = e.X;
-                    Edition.PosY = e.Y;
-                    Edition.Drag = true;
+                    if (EstDansZoneDeChamgementDeTaille(e.Location, newCntrl))
+                    {
+                        Edition.Resizing = true;
+                    }
+                    else
+                    {
+                        Edition.PosX = e.X;
+                        Edition.PosY = e.Y;
+                        Edition.Drag = true;
+                    }
+
+                    positionSourieInitiale = e.Location;
                 }
 
                 // -- Actualisation pour voir le déplacement en temps réel --
@@ -160,7 +174,7 @@ namespace CartesAcces2024
             {
                 // -- Lorsque l'utilisateur clique sur la photo de l'élève --
 
-                // On calcul la nouvelle position qu'auras lecontrol
+                // On calcul la nouvelle position qu'auras le control
                 int newLeft = e.X + newCntrl.Left - Edition.PosX;
                 int newTop = e.Y + newCntrl.Top - Edition.PosY;
 
@@ -180,6 +194,40 @@ namespace CartesAcces2024
                     newCntrl.Left = newLeft;
                     newCntrl.Top = newTop;
                 }
+                else if (Edition.Resizing)
+                {
+                    //// on calcule la taille de la picturebox
+                    //int dx = e.X - positionSourieInitiale.X;
+                    //int dy = e.Y - positionSourieInitiale.Y;
+
+                    //// On la modifie
+                    //newCntrl.Width = Math.Max(10, newCntrl.Width + dx);  // Minimum width of 10
+                    //newCntrl.Height = Math.Max(10, newCntrl.Height + dy); // Minimum height of 10
+
+                    
+
+                    // On calcule les nouvelle dimentions selon l'aspect ratio
+                    int dx = e.X - positionSourieInitiale.X;
+                    int newWidth = Math.Max(10, newCntrl.Width + dx); // La largeur minimumest 10
+                    int newHeight = (int)(newWidth / aspectRatio);
+                    
+                    newCntrl.Width = newWidth;
+                    newCntrl.Height = newHeight;
+
+
+                    // on sauvregarde la position initiale de la sourie
+                    positionSourieInitiale = e.Location;
+                }
+
+                // Affiche un curseur selon la position de la sourie
+                if (EstDansZoneDeChamgementDeTaille(e.Location, newCntrl))
+                {
+                    newCntrl.Cursor = Cursors.SizeNWSE; // Adjust cursor for resizing
+                }
+                else
+                {
+                    newCntrl.Cursor = Cursors.Default; // Default cursor for moving
+                }
             };
 
 
@@ -188,6 +236,8 @@ namespace CartesAcces2024
             {
                 // -- Le drag est fini lorsque le clic est relevé  --
                 Edition.Drag = false;
+                Edition.Resizing = false;
+
             };
 
 
@@ -219,8 +269,20 @@ namespace CartesAcces2024
 
 
 
+        /// <summary>
+        /// Si la sourie est à 10 pixels du bord du control et dans le control, renvoie vrais.
+        /// </summary>
+        /// <param name="positionSourie"></param>
+        /// <param name="unControl"></param>
+        /// <param name="zoneChangementDeTaille"></param>
+        /// <returns></returns>
+        bool EstDansZoneDeChamgementDeTaille(Point positionSourie, Control unControl, int zoneChangementDeTaille = 20)
+        {
+            return (positionSourie.X >= unControl.Width - zoneChangementDeTaille && positionSourie.Y >= unControl.Height - zoneChangementDeTaille);
+        }
 
- 
+
+
 
 
 
@@ -424,6 +486,7 @@ namespace CartesAcces2024
         {
             Edition.ReplacementPhotoClassique(pbPhoto.Location.X, pbPhoto.Location.Y);
 
+            Globale.donneesChampsPersonnalisee = new List<Tuple<string, Image, Point, string, Font, PictureBox>>();
 
             // On met à jour les coordonnées pour qu'elles soient relatives à pbcarteFace
             foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneElementPersonnelisee in elementsAjoutee)
@@ -435,10 +498,12 @@ namespace CartesAcces2024
                     + "\n" + donneElementPersonnelisee.Item3.X + " " + donneElementPersonnelisee.Item3.Y);
                 MessageBox.Show("Sizes : " + donneElementPersonnelisee.Item6.Size.Width + " " + donneElementPersonnelisee.Item6.Size.Height);
 
+                Bitmap resizedImage = new Bitmap(donneElementPersonnelisee.Item2, donneElementPersonnelisee.Item6.Size);
+
                 Globale.donneesChampsPersonnalisee.Add(
                         new Tuple<string, Image, Point, string, Font, PictureBox>(
                                 donneElementPersonnelisee.Item1,
-                                donneElementPersonnelisee.Item2,
+                                resizedImage,
                                 new Point(relativeX, relativeY),
                                 donneElementPersonnelisee.Item4,
                                 donneElementPersonnelisee.Item5,
