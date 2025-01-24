@@ -330,6 +330,8 @@ namespace CartesAcces2024
             // tables champs personnalisées:
             // 
 
+            MessageBox.Show("AAAAAAAAAAAAAAA  " + objGraphique.ClipBounds.Width + " " + objGraphique.ClipBounds.Height);
+
             pbCarteFace.Refresh();
 
             objGraphique.Dispose(); // Libère les ressources
@@ -515,32 +517,56 @@ namespace CartesAcces2024
             fondTexteCarteFace(objGraphique, eleve.ClasseEleve, police, classe, 50, 70);
             objGraphique.DrawString(eleve.ClasseEleve, police, pinceauNoir, 50, 70);
 
-            chaine = Etablissement[0];
-            var mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
+            chaine = Etablissement[0]; // code postal
+            //var mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 985);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 985);
 
             chaine = "Mail : " + Etablissement[6];
-            mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
+            //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1030);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1030);
 
             chaine = "Adresse : " + Etablissement[2] + " " + Etablissement[1];
-            mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
+            //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1075);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1075);
 
             chaine = Etablissement[3] + " " + Etablissement[4];
-            mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
+            //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1120);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1120);
 
             chaine = "Téléphone : " + Etablissement[5];
-            mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
+            //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1165);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1165);
 
             // ajout des champs personnalisées
+            // ==================================================================================
+
+            // Si l'utilisatuer à ajouté des elements personnalisee sur la carte
+            if (Globale.donneesChampsPersonnalisee != null)
+            {
+                // on les dessines sur le document à imprimer
+                foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneeUnChamp in Globale.donneesChampsPersonnalisee)
+                {
+                    MessageBox.Show(donneeUnChamp.Item3.X + " " + donneeUnChamp.Item3.Y);
+                    if (donneeUnChamp.Item1 == "Text")
+                    {
+                        fondTexteCarteFaceFixe(objGraphique, donneeUnChamp.Item4, donneeUnChamp.Item5, classe, donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y);
+                        objGraphique.DrawString(donneeUnChamp.Item4, donneeUnChamp.Item5, pinceauNoir, donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y);
+                    }
+                    else
+                    {
+                        objGraphique.DrawImage(donneeUnChamp.Item2, new Point(donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y));
+                    }
+
+                    MessageBox.Show("Sizes : " + donneeUnChamp.Item6.Size.Width + " " + donneeUnChamp.Item6.Size.Height);
+                }
+            }
+            
+
 
             objGraphique.Dispose(); // Libère les ressources
 
@@ -617,7 +643,11 @@ namespace CartesAcces2024
 
 
 
-
+        /// <summary>
+        /// Créer la carte face, selon si oui ou non elle contient des informations sur l'établissement.
+        /// </summary>
+        /// <param name="eleve"></param>
+        /// <param name="chemin"></param>
         public static void carteFace(Eleve eleve, string chemin)
         {
             // -- Déclare l'image --

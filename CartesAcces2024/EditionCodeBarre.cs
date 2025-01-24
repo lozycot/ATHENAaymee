@@ -77,20 +77,66 @@ namespace CartesAcces2024
             }
         }
 
+        ///// <summary>
+        ///// Génère un code barre à partir d'un texte et le renvoie sous forme de BitMap.
+        ///// </summary>
+        ///// <param name="unTexte"></param>
+        ///// <returns></returns>
+        //public static Bitmap GenererUnCodeBarreEnBitmap(string unTexte)
+        //{
+        //    IBarcodeWriterPixelData encodeurCodeBarre = new BarcodeWriterPixelData()  // pour lire le code barre
+        //    { 
+        //        Format = BarcodeFormat.CODE_128 // On doit spécifier le format, sinon le format est  et ce format est invalide (lève un exception)
+        //    };
+        //    Bitmap rtrn = encodeurCodeBarre.Write(unTexte).ToBitmap(); // on encode le texte et le converti en bitmap
+        //    return rtrn;
+        //}
+
         /// <summary>
-        /// Génère un code barre à partir d'un texte et le renvoie sous forme de BitMap.
+        /// Encode le texte en paramètre dans la picturebox passée en paramètre.
         /// </summary>
-        /// <param name="unTexte"></param>
-        /// <returns></returns>
-        public static Bitmap GenererUnCodeBarreEnBitmap(string unTexte)
+        /// <param name="texte"></param>
+        /// <param name="pictureBox"></param>
+        public static void AfficherCodeBarre(string texte, PictureBox pictureBox)
         {
-            IBarcodeWriterPixelData encodeurCodeBarre = new BarcodeWriterPixelData()  // pour lire le code barre
-            { 
-                Format = BarcodeFormat.CODE_128 // On doit spécifier le format, sinon le format est  et ce format est invalide (lève un exception)
+            var writer = new BarcodeWriter
+            {
+                Format = BarcodeFormat.CODE_128,
+                Options = new EncodingOptions
+                {
+                    Width = 250,
+                    Height = 80,
+                    Margin = 2,
+                    PureBarcode = true
+                }
             };
-            Bitmap rtrn = encodeurCodeBarre.Write(unTexte).ToBitmap(); // on encode le texte et le converti en bitmap
-            return rtrn;
+
+            using (Bitmap barcodeBitmap = writer.Write(texte))
+            //using (Bitmap completeBitmap = new Bitmap(250, 120))
+            using (Bitmap completeBitmap = new Bitmap(barcodeBitmap.Width + 20, barcodeBitmap.Height + 20))
+            using (Graphics g = Graphics.FromImage(completeBitmap))
+            {
+                g.FillRectangle(Brushes.White, 0, 0, completeBitmap.Width, completeBitmap.Height);
+                g.DrawImage(barcodeBitmap, 10, 10);
+
+                //using (Font font = new Font("Arial", 10))
+                //{
+                //    SizeF textSize = g.MeasureString(texte, font);
+                //    PointF textPosition = new PointF(
+                //        (completeBitmap.Width - textSize.Width) / 2,
+                //        90
+                //    );
+                //    g.DrawString(texte, font, Brushes.Black, textPosition);
+                //}
+
+                pictureBox.Height = completeBitmap.Height;
+                pictureBox.Width = completeBitmap.Width;
+                pictureBox.Image?.Dispose();
+                pictureBox.Image = new Bitmap(completeBitmap);
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
         }
+
 
         public static void SauvegarderPdfCodeBarres(string cheminDestination, BackgroundWorker worker)
         {

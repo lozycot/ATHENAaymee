@@ -105,7 +105,7 @@ namespace Athena.forms.autre
         private void btnValider_Click(object sender, EventArgs e)
         {
             // On récupère ce que l'utilisateur veux ajouter (texte,code QR, code Barre)
-            string optionChoisie = "Text";
+            string optionChoisie = "Texte";
             foreach (RadioButton rdb in pnlOptions.Controls.OfType<RadioButton>())
             {
                 if (rdb.Checked == true)
