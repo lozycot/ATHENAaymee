@@ -35,7 +35,8 @@ Pour contribuer au projet, suivez ces étapes :
    - Supprimez le fichier de base de données généré lors du premier lancement
    - Redémarrez l'application
 
-*Athena est maintenu par des stagiaires du Collège Caroline Aigle et la communauté. Toute contribution est la bienvenue !*
+*Athena est maintenu par des stagiaires du Collège Caroline Aigle et la communauté.
+Toute contribution est la bienvenue !*
 
 ---
 
@@ -45,6 +46,7 @@ Ce projet est distribué sous licence MIT. Pour plus d'informations, consultez l
 Voici une version corrigée et améliorée de votre texte :
 
 ## 🧷 Anciens liens
-Ce projet est un fork d’un projet anciennement appelé **CarteDaces2024**. Vous pouvez consulter les anciens liens ci-dessous :  
+Ce projet est un fork d’un projet anciennement appelé **CarteDaces2024**.
+Vous pouvez consulter les anciens liens ci-dessous :  
 - [CarteAccesAigle2024](https://github.com/TheoMas/CarteAccesAigle2024)  
 - [appStage](https://github.com/ValgulNecron/appStage)
