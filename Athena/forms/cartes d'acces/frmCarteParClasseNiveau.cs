@@ -105,14 +105,18 @@ namespace CartesAcces2024
             Globale.ListeEleveImpr.Clear();
             Globale.ListeEleve = OperationsDb.GetEleve();
             var listeEleveParClasse = new List<string>();
-            foreach (var eleve in Globale.ListeEleve)
-                if (eleve.ClasseEleve == clbClasse6eme.Text)
-                {
-                    listeEleveParClasse.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-                    Globale.ListeEleveImpr.Add(eleve);
-                }
 
-            if (clbClasse6eme.SelectedItem != null)
+            foreach (var classe in clbClasse6eme.CheckedItems)
+            {
+                foreach (var eleve in Globale.ListeEleve)
+                    if (eleve.ClasseEleve == classe.ToString())
+                    {
+                        listeEleveParClasse.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
+                        Globale.ListeEleveImpr.Add(eleve);
+                    }
+            }
+
+            if (clbClasse6eme.CheckedItems.Count > 0)
             {
                 listeEleveParClasse.Sort();
                 Globale.ImprNiveau = false;
