@@ -145,7 +145,7 @@
             // cbxNiveau3eme
             // 
             this.cbxNiveau3eme.AutoSize = true;
-            this.cbxNiveau3eme.Location = new System.Drawing.Point(546, 56);
+            this.cbxNiveau3eme.Location = new System.Drawing.Point(593, 56);
             this.cbxNiveau3eme.Name = "cbxNiveau3eme";
             this.cbxNiveau3eme.Size = new System.Drawing.Size(65, 21);
             this.cbxNiveau3eme.TabIndex = 3;
@@ -156,7 +156,7 @@
             // cbxNiveau4eme
             // 
             this.cbxNiveau4eme.AutoSize = true;
-            this.cbxNiveau4eme.Location = new System.Drawing.Point(373, 56);
+            this.cbxNiveau4eme.Location = new System.Drawing.Point(424, 56);
             this.cbxNiveau4eme.Name = "cbxNiveau4eme";
             this.cbxNiveau4eme.Size = new System.Drawing.Size(65, 21);
             this.cbxNiveau4eme.TabIndex = 2;
@@ -167,7 +167,7 @@
             // cbxNiveau5eme
             // 
             this.cbxNiveau5eme.AutoSize = true;
-            this.cbxNiveau5eme.Location = new System.Drawing.Point(200, 56);
+            this.cbxNiveau5eme.Location = new System.Drawing.Point(248, 56);
             this.cbxNiveau5eme.Name = "cbxNiveau5eme";
             this.cbxNiveau5eme.Size = new System.Drawing.Size(65, 21);
             this.cbxNiveau5eme.TabIndex = 1;
@@ -178,7 +178,7 @@
             // cbxNiveau6eme
             // 
             this.cbxNiveau6eme.AutoSize = true;
-            this.cbxNiveau6eme.Location = new System.Drawing.Point(27, 56);
+            this.cbxNiveau6eme.Location = new System.Drawing.Point(68, 56);
             this.cbxNiveau6eme.Name = "cbxNiveau6eme";
             this.cbxNiveau6eme.Size = new System.Drawing.Size(65, 21);
             this.cbxNiveau6eme.TabIndex = 0;
@@ -190,9 +190,10 @@
             // 
             this.clbClasse6eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.clbClasse6eme.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.clbClasse6eme.CheckOnClick = true;
             this.clbClasse6eme.ForeColor = System.Drawing.SystemColors.Window;
             this.clbClasse6eme.FormattingEnabled = true;
-            this.clbClasse6eme.Location = new System.Drawing.Point(27, 41);
+            this.clbClasse6eme.Location = new System.Drawing.Point(31, 45);
             this.clbClasse6eme.Name = "clbClasse6eme";
             this.clbClasse6eme.Size = new System.Drawing.Size(167, 357);
             this.clbClasse6eme.TabIndex = 0;
@@ -202,9 +203,10 @@
             // 
             this.clbClasse5eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.clbClasse5eme.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.clbClasse5eme.CheckOnClick = true;
             this.clbClasse5eme.ForeColor = System.Drawing.SystemColors.Window;
             this.clbClasse5eme.FormattingEnabled = true;
-            this.clbClasse5eme.Location = new System.Drawing.Point(200, 41);
+            this.clbClasse5eme.Location = new System.Drawing.Point(204, 45);
             this.clbClasse5eme.Name = "clbClasse5eme";
             this.clbClasse5eme.Size = new System.Drawing.Size(167, 357);
             this.clbClasse5eme.TabIndex = 36;
@@ -214,9 +216,10 @@
             // 
             this.clbClasse4eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.clbClasse4eme.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.clbClasse4eme.CheckOnClick = true;
             this.clbClasse4eme.ForeColor = System.Drawing.SystemColors.Window;
             this.clbClasse4eme.FormattingEnabled = true;
-            this.clbClasse4eme.Location = new System.Drawing.Point(373, 41);
+            this.clbClasse4eme.Location = new System.Drawing.Point(377, 45);
             this.clbClasse4eme.Name = "clbClasse4eme";
             this.clbClasse4eme.Size = new System.Drawing.Size(167, 357);
             this.clbClasse4eme.TabIndex = 37;
@@ -226,9 +229,10 @@
             // 
             this.clbClasse3eme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.clbClasse3eme.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.clbClasse3eme.CheckOnClick = true;
             this.clbClasse3eme.ForeColor = System.Drawing.SystemColors.Window;
             this.clbClasse3eme.FormattingEnabled = true;
-            this.clbClasse3eme.Location = new System.Drawing.Point(546, 41);
+            this.clbClasse3eme.Location = new System.Drawing.Point(550, 45);
             this.clbClasse3eme.Name = "clbClasse3eme";
             this.clbClasse3eme.Size = new System.Drawing.Size(167, 357);
             this.clbClasse3eme.TabIndex = 38;

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
@@ -194,16 +193,12 @@ namespace CartesAcces2024
                 lsbListeEleve.DataSource = listeEleveParClasse;
                 btnValiderImpr.Enabled = true;
             }
-            while (clbClasse5eme.CheckedIndices.Count > 0)
-                clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-            while (clbClasse4eme.CheckedIndices.Count > 0)
-                clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-            while (clbClasse3eme.CheckedIndices.Count > 0)
-                clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-            cbxNiveau6eme.Checked = false;
-            cbxNiveau5eme.Checked = false;
-            cbxNiveau4eme.Checked = false;
-            cbxNiveau3eme.Checked = false;
+            //while (clbClasse5eme.CheckedIndices.Count > 0)
+            //    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
+            //while (clbClasse4eme.CheckedIndices.Count > 0)
+            //    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
+            //while (clbClasse3eme.CheckedIndices.Count > 0)
+            //    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
         }
 
         private void clbClasse5eme_SelectedIndexChanged(object sender, EventArgs e)
@@ -226,16 +221,12 @@ namespace CartesAcces2024
                 lsbListeEleve.DataSource = listeEleveParClasse;
                 btnValiderImpr.Enabled = true;
             }
-            while (clbClasse6eme.CheckedIndices.Count > 0)
-                clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-            while (clbClasse4eme.CheckedIndices.Count > 0)
-                clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-            while (clbClasse3eme.CheckedIndices.Count > 0)
-                clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-            cbxNiveau6eme.Checked = false;
-            cbxNiveau5eme.Checked = false;
-            cbxNiveau4eme.Checked = false;
-            cbxNiveau3eme.Checked = false;
+            //while (clbClasse6eme.CheckedIndices.Count > 0)
+            //    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
+            //while (clbClasse4eme.CheckedIndices.Count > 0)
+            //    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
+            //while (clbClasse3eme.CheckedIndices.Count > 0)
+            //    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
         }
         private void clbClasse4eme_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -257,16 +248,12 @@ namespace CartesAcces2024
                 lsbListeEleve.DataSource = listeEleveParClasse;
                 btnValiderImpr.Enabled = true;
             }
-            while (clbClasse6eme.CheckedIndices.Count > 0)
-                clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-            while (clbClasse5eme.CheckedIndices.Count > 0)
-                clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-            while (clbClasse3eme.CheckedIndices.Count > 0)
-                clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-            cbxNiveau6eme.Checked = false;
-            cbxNiveau5eme.Checked = false;
-            cbxNiveau4eme.Checked = false;
-            cbxNiveau3eme.Checked = false;
+            //while (clbClasse6eme.CheckedIndices.Count > 0)
+            //    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
+            //while (clbClasse5eme.CheckedIndices.Count > 0)
+            //    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
+            //while (clbClasse3eme.CheckedIndices.Count > 0)
+            //    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
         }
 
         private void clbClasse3eme_SelectedIndexChanged(object sender, EventArgs e)
@@ -289,16 +276,12 @@ namespace CartesAcces2024
                 lsbListeEleve.DataSource = listeEleveParClasse;
                 btnValiderImpr.Enabled = true;
             }
-            while (clbClasse6eme.CheckedIndices.Count > 0)
-                clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-            while (clbClasse5eme.CheckedIndices.Count > 0)
-                clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-            while (clbClasse4eme.CheckedIndices.Count > 0)
-                clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-            cbxNiveau6eme.Checked = false;
-            cbxNiveau5eme.Checked = false;
-            cbxNiveau4eme.Checked = false;
-            cbxNiveau3eme.Checked = false;
+            //while (clbClasse6eme.CheckedIndices.Count > 0)
+            //    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
+            //while (clbClasse5eme.CheckedIndices.Count > 0)
+            //    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
+            //while (clbClasse4eme.CheckedIndices.Count > 0)
+            //    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -336,19 +319,16 @@ namespace CartesAcces2024
                 listeEleveParSection.Sort();
                 Globale.ImprNiveau = true;
                 lblCount.Text = listeEleveParSection.Count.ToString();
-                while (clbClasse6eme.CheckedIndices.Count > 0)
-                    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-                while (clbClasse5eme.CheckedIndices.Count > 0)
-                    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-                while (clbClasse4eme.CheckedIndices.Count > 0)
-                    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-                while (clbClasse3eme.CheckedIndices.Count > 0)
-                    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-                cbxNiveau5eme.Checked = false;
-                cbxNiveau4eme.Checked = false;
-                cbxNiveau3eme.Checked = false;
+                for (int i = 0; i < clbClasse6eme.Items.Count; i++)
+                    clbClasse6eme.SetItemChecked(i, true);
+
                 lsbListeEleve.DataSource = listeEleveParSection;
                 btnValiderImpr.Enabled = true;
+            }
+            else
+            {
+                for (int i = 0; i < clbClasse6eme.Items.Count; i++)
+                    clbClasse6eme.SetItemChecked(i, false);
             }
         }
 
@@ -372,20 +352,16 @@ namespace CartesAcces2024
                 listeEleveParSection.Sort();
                 Globale.ImprNiveau = true;
                 lblCount.Text = listeEleveParSection.Count.ToString();
-                while (clbClasse6eme.CheckedIndices.Count > 0)
-                    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-                while (clbClasse5eme.CheckedIndices.Count > 0)
-                    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-                while (clbClasse4eme.CheckedIndices.Count > 0)
-                    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-                while (clbClasse3eme.CheckedIndices.Count > 0)
-                    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-                cbxNiveau6eme.Checked = false;
-                cbxNiveau4eme.Checked = false;
-                cbxNiveau3eme.Checked = false;
+                for (int i = 0; i < clbClasse5eme.Items.Count; i++)
+                    clbClasse5eme.SetItemChecked(i, true);
 
                 lsbListeEleve.DataSource = listeEleveParSection;
                 btnValiderImpr.Enabled = true;
+            }
+            else
+            {
+                for (int i = 0; i < clbClasse5eme.Items.Count; i++)
+                    clbClasse5eme.SetItemChecked(i, false);
             }
         }
 
@@ -409,19 +385,16 @@ namespace CartesAcces2024
                 listeEleveParSection.Sort();
                 Globale.ImprNiveau = true;
                 lblCount.Text = listeEleveParSection.Count.ToString();
-                while (clbClasse6eme.CheckedIndices.Count > 0)
-                    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-                while (clbClasse5eme.CheckedIndices.Count > 0)
-                    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-                while (clbClasse4eme.CheckedIndices.Count > 0)
-                    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-                while (clbClasse3eme.CheckedIndices.Count > 0)
-                    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-                cbxNiveau6eme.Checked = false;
-                cbxNiveau5eme.Checked = false;
-                cbxNiveau3eme.Checked = false;
+                for (int i = 0; i < clbClasse4eme.Items.Count; i++)
+                    clbClasse4eme.SetItemChecked(i, true);
+
                 lsbListeEleve.DataSource = listeEleveParSection;
                 btnValiderImpr.Enabled = true;
+            }
+            else
+            {
+                for (int i = 0; i < clbClasse4eme.Items.Count; i++)
+                    clbClasse4eme.SetItemChecked(i, false);
             }
         }
 
@@ -445,19 +418,16 @@ namespace CartesAcces2024
                 listeEleveParSection.Sort();
                 Globale.ImprNiveau = true;
                 lblCount.Text = listeEleveParSection.Count.ToString();
-                while (clbClasse6eme.CheckedIndices.Count > 0)
-                    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-                while (clbClasse5eme.CheckedIndices.Count > 0)
-                    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-                while (clbClasse4eme.CheckedIndices.Count > 0)
-                    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-                while (clbClasse3eme.CheckedIndices.Count > 0)
-                    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
-                cbxNiveau6eme.Checked = false;
-                cbxNiveau5eme.Checked = false;
-                cbxNiveau4eme.Checked = false;
+                for (int i = 0; i < clbClasse3eme.Items.Count; i++)
+                    clbClasse3eme.SetItemChecked(i, true);
+
                 lsbListeEleve.DataSource = listeEleveParSection;
                 btnValiderImpr.Enabled = true;
+            }
+            else
+            {
+                for (int i = 0; i < clbClasse3eme.Items.Count; i++)
+                    clbClasse3eme.SetItemChecked(i, false);
             }
         }
 
