@@ -19,32 +19,6 @@ namespace CartesAcces2024
             //Couleur.setCouleurFenetre(this);
 
         }
-        // A ENLEVER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        private void cbbImprSection_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Globale.ListeEleveImpr.Clear();
-            //Globale.ListeEleve = OperationsDb.GetEleve();
-            //var listeEleveParSection = new List<string>();
-            //foreach (var eleve in Globale.ListeEleve)
-            //{
-            //    if (eleve.NiveauEleve == cbbImprSection.Text)
-            //    {
-            //        listeEleveParSection.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-            //        Globale.ListeEleveImpr.Add(eleve);
-            //    }
-            //}
-
-
-            //if (cbbImprSection.SelectedItem != null)
-            //{
-            //    listeEleveParSection.Sort();
-            //    Globale.ImprNiveau = true;
-            //    lblCount.Text = listeEleveParSection.Count.ToString();
-            //    cbbImprClasse.SelectedItem = null;
-            //    lsbListeEleve.DataSource = listeEleveParSection;
-            //    btnValiderImpr.Enabled = true;
-            //}
-        }
 
         private void btnValiderImpr_Click(object sender, EventArgs e)
         {
@@ -60,29 +34,12 @@ namespace CartesAcces2024
             }
         }
 
-        //private void frmcarteparclasseniveau_load(object sender, eventargs e)
-        //{
-        //    list<string> listclasses = operationsdb.getclasses();
-        //    cbbimprclasse.items.clear();
-
-        //    foreach (var classe in listclasses)
-        //    {
-        //        cbbimprclasse.items.add(classe);
-        //    }
-        //    cbbimprclasse.selecteditem = null;
-        //    lblcount.text = "";
-        //}
-        //// tentative
         private void gpbTriParClasses_Enter(object sender, EventArgs e)
         {
         }
         private void frmCarteParClasseNiveau_Load(object sender, EventArgs e)
         {
             List<string> ListClasses = OperationsDb.GetClasses();
-            clbClasse3eme.Items.Clear();
-            clbClasse4eme.Items.Clear();
-            clbClasse5eme.Items.Clear();
-            clbClasse6eme.Items.Clear();
 
             foreach (var classe in ListClasses)
             {
@@ -95,31 +52,6 @@ namespace CartesAcces2024
                 else if (classe.StartsWith("6"))
                     clbClasse6eme.Items.Add(classe);
             }
-        }
-        // fin tentative
-
-        // A ENLEVER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        private void cbbImprClasse_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            //Globale.ListeEleveImpr.Clear();
-            //Globale.ListeEleve = OperationsDb.GetEleve();
-            //var listeEleveParClasse = new List<string>();
-            //foreach (var eleve in Globale.ListeEleve)
-            //    if (eleve.ClasseEleve == cbbImprClasse.Text)
-            //    {
-            //        listeEleveParClasse.Add(eleve.NomEleve + " " + eleve.PrenomEleve);
-            //        Globale.ListeEleveImpr.Add(eleve);
-            //    }
-
-            //if (cbbImprClasse.SelectedItem != null)
-            //{
-            //    cbbImprSection.SelectedItem = null;
-            //    listeEleveParClasse.Sort();
-            //    Globale.ImprNiveau = false;
-            //    lblCount.Text = listeEleveParClasse.Count.ToString();
-            //    lsbListeEleve.DataSource = listeEleveParClasse;
-            //    btnValiderImpr.Enabled = true;  
-            //}
         }
 
         private void lsbListeEleve_SelectedIndexChanged(object sender, EventArgs e)
@@ -158,11 +90,6 @@ namespace CartesAcces2024
                 pbPhoto.Image.Dispose();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void groupBox1_Enter(object sender, EventArgs e) // groupbox type de filtrage classe ou niveau
         {
 
@@ -193,12 +120,6 @@ namespace CartesAcces2024
                 lsbListeEleve.DataSource = listeEleveParClasse;
                 btnValiderImpr.Enabled = true;
             }
-            //while (clbClasse5eme.CheckedIndices.Count > 0)
-            //    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-            //while (clbClasse4eme.CheckedIndices.Count > 0)
-            //    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-            //while (clbClasse3eme.CheckedIndices.Count > 0)
-            //    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
         }
 
         private void clbClasse5eme_SelectedIndexChanged(object sender, EventArgs e)
@@ -221,12 +142,6 @@ namespace CartesAcces2024
                 lsbListeEleve.DataSource = listeEleveParClasse;
                 btnValiderImpr.Enabled = true;
             }
-            //while (clbClasse6eme.CheckedIndices.Count > 0)
-            //    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-            //while (clbClasse4eme.CheckedIndices.Count > 0)
-            //    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-            //while (clbClasse3eme.CheckedIndices.Count > 0)
-            //    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
         }
         private void clbClasse4eme_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -248,12 +163,6 @@ namespace CartesAcces2024
                 lsbListeEleve.DataSource = listeEleveParClasse;
                 btnValiderImpr.Enabled = true;
             }
-            //while (clbClasse6eme.CheckedIndices.Count > 0)
-            //    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-            //while (clbClasse5eme.CheckedIndices.Count > 0)
-            //    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-            //while (clbClasse3eme.CheckedIndices.Count > 0)
-            //    clbClasse3eme.SetItemChecked(clbClasse3eme.CheckedIndices[0], false);
         }
 
         private void clbClasse3eme_SelectedIndexChanged(object sender, EventArgs e)
@@ -276,22 +185,6 @@ namespace CartesAcces2024
                 lsbListeEleve.DataSource = listeEleveParClasse;
                 btnValiderImpr.Enabled = true;
             }
-            //while (clbClasse6eme.CheckedIndices.Count > 0)
-            //    clbClasse6eme.SetItemChecked(clbClasse6eme.CheckedIndices[0], false);
-            //while (clbClasse5eme.CheckedIndices.Count > 0)
-            //    clbClasse5eme.SetItemChecked(clbClasse5eme.CheckedIndices[0], false);
-            //while (clbClasse4eme.CheckedIndices.Count > 0)
-            //    clbClasse4eme.SetItemChecked(clbClasse4eme.CheckedIndices[0], false);
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cbbImprSection_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
         }
 
         private void NbComptageEleveCS_Click(object sender, EventArgs e)
