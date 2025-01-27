@@ -48,5 +48,5 @@ Voici une version corrigée et améliorée de votre texte :
 ## 🧷 Anciens liens
 Ce projet est un fork d’un projet anciennement appelé **CarteDaces2024**.
 Vous pouvez consulter les anciens liens ci-dessous :  
-- [CarteAccesAigle2024](https://github.com/TheoMas/CarteAccesAigle2024)  
-- [appStage](https://github.com/ValgulNecron/appStage)
+- [CarteAccesAigle](https://github.com/TheoMas/CarteAccesAigle2024)  
+- [CarteDaces](https://github.com/ValgulNecron/appStage)
