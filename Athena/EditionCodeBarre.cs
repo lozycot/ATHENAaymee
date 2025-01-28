@@ -111,29 +111,83 @@ namespace CartesAcces2024
                 }
             };
 
-            using (Bitmap barcodeBitmap = writer.Write(texte))
-            //using (Bitmap completeBitmap = new Bitmap(250, 120))
-            using (Bitmap completeBitmap = new Bitmap(barcodeBitmap.Width + 20, barcodeBitmap.Height + 20))
-            using (Graphics g = Graphics.FromImage(completeBitmap))
+            texte = RemoveAccents(texte);
+            if (texte.Length <= 48)
             {
-                g.FillRectangle(Brushes.White, 0, 0, completeBitmap.Width, completeBitmap.Height);
-                g.DrawImage(barcodeBitmap, 10, 10);
+                using (Bitmap barcodeBitmap = writer.Write(texte))
+                //using (Bitmap completeBitmap = new Bitmap(250, 120))
+                using (Bitmap completeBitmap = new Bitmap(barcodeBitmap.Width + 20, barcodeBitmap.Height + 20))
+                using (Graphics g = Graphics.FromImage(completeBitmap))
+                {
+                    g.FillRectangle(Brushes.White, 0, 0, completeBitmap.Width, completeBitmap.Height);
+                    g.DrawImage(barcodeBitmap, 10, 10);
 
-                //using (Font font = new Font("Arial", 10))
-                //{
-                //    SizeF textSize = g.MeasureString(texte, font);
-                //    PointF textPosition = new PointF(
-                //        (completeBitmap.Width - textSize.Width) / 2,
-                //        90
-                //    );
-                //    g.DrawString(texte, font, Brushes.Black, textPosition);
-                //}
+                    // permet de'écrire le texte en dessous du code barre
+                    //using (Font font = new Font("Arial", 10))
+                    //{
+                    //    SizeF textSize = g.MeasureString(texte, font);
+                    //    PointF textPosition = new PointF(
+                    //        (completeBitmap.Width - textSize.Width) / 2,
+                    //        90
+                    //    );
+                    //    g.DrawString(texte, font, Brushes.Black, textPosition);
+                    //}
 
-                pictureBox.Height = completeBitmap.Height;
-                pictureBox.Width = completeBitmap.Width;
+                    pictureBox.Height = completeBitmap.Height;
+                    pictureBox.Width = completeBitmap.Width;
+                    pictureBox.Image?.Dispose();
+                    pictureBox.Image = new Bitmap(completeBitmap);
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+            }
+            else
+            {
+                MessageBox.Show("La limite de caractères pour un code barre est 48 caractères.");
+                pictureBox.Height = 180;
+                pictureBox.Width = 180;
                 pictureBox.Image?.Dispose();
-                pictureBox.Image = new Bitmap(completeBitmap);
+                pictureBox.Image = new Bitmap(Image.FromFile(Chemin.CheminPhotoDefault));
                 pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+        }
+
+        /// <summary>
+        /// Encode le texte passé en paramètre en code barre, et en renvoie le bitmap.
+        /// </summary>
+        public static Bitmap generrerBitMapDeCodeBarre(string texte)
+        {
+
+            var writer = new BarcodeWriter
+            {
+                Format = BarcodeFormat.CODE_128,
+                Options = new EncodingOptions
+                {
+                    Width = 250,
+                    Height = 80,
+                    Margin = 2,
+                    PureBarcode = true
+                }
+            };
+
+            texte = RemoveAccents(texte);
+            if (texte.Length <= 48)
+            {
+                using (Bitmap barcodeBitmap = writer.Write(texte))
+                {
+                    // Create the complete bitmap without a using statement since we're returning it
+                    Bitmap completeBitmap = new Bitmap(barcodeBitmap.Width + 20, barcodeBitmap.Height + 20);
+                    using (Graphics g = Graphics.FromImage(completeBitmap))
+                    {
+                        g.FillRectangle(Brushes.White, 0, 0, completeBitmap.Width, completeBitmap.Height);
+                        g.DrawImage(barcodeBitmap, 10, 10);
+                    }
+                    return completeBitmap;
+                }
+            }
+            else
+            {
+                MessageBox.Show("La limite de charactères pour un code barre est 48 caractères.");
+                return new Bitmap(Image.FromFile(Chemin.CheminPhotoDefault));
             }
         }
 
@@ -346,6 +400,8 @@ namespace CartesAcces2024
                     case 'û': normalizedString.Append('u'); break;
                     case 'ü': normalizedString.Append('u'); break;
                     case 'ç': normalizedString.Append('c'); break;
+
+                    case '-': normalizedString.Append(' '); break;
                     
                     default: normalizedString.Append(c); break;
                 }
