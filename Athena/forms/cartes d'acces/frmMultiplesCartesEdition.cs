@@ -488,17 +488,29 @@ namespace CartesAcces2024
 
             Globale.donneesChampsPersonnalisee = new List<Tuple<string, Image, Point, string, Font, PictureBox>>();
 
-            // On met à jour les coordonnées pour qu'elles soient relatives à pbcarteFace
+            // pour chaque champs personnalisé
             foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneElementPersonnelisee in elementsAjoutee)
             {
-                int relativeX = donneElementPersonnelisee.Item6.Location.X - pbCarteFace.Left;
-                int relativeY = donneElementPersonnelisee.Item6.Location.Y - pbCarteFace.Top;
+                Image imageCarteFace = Image.FromFile(Chemin.DossierCartesFace + Globale.ListeEleveImpr[0].NiveauEleve + ".png");
 
-                MessageBox.Show( donneElementPersonnelisee.Item1 + " " + donneElementPersonnelisee.Item4 + " " + relativeX + " " + relativeY
-                    + "\n" + donneElementPersonnelisee.Item3.X + " " + donneElementPersonnelisee.Item3.Y);
-                MessageBox.Show("Sizes : " + donneElementPersonnelisee.Item6.Size.Width + " " + donneElementPersonnelisee.Item6.Size.Height);
+                // On calcule la position que devrais avoir les images sur la carte face finale, qui n'as pas la même taille que pbCarteFace
+                // produit en croix
+                // (Coord PictureBox - Coord pbCarteFace) * taille carte face imprimée / taille pictureBox carte face
+                // taille pictureBox carte face ----> taille carte face imprimée
+                // Coord PictureBox champ perso ----> ???
+                int relativeX = ((donneElementPersonnelisee.Item6.Location.X - pbCarteFace.Location.X) * imageCarteFace.Width) / pbCarteFace.Width;
+                int relativeY = ((donneElementPersonnelisee.Item6.Location.Y - pbCarteFace.Location.Y) * imageCarteFace.Height) / pbCarteFace.Height;
 
-                Bitmap resizedImage = new Bitmap(donneElementPersonnelisee.Item2, donneElementPersonnelisee.Item6.Size);
+                // On calcule la taille que devrais avoir les images sur la carte face finale, qui n'as pas la même taille que pbCarteFace
+                // taille de champs personnalisee * taille de la carte face finale / taille de la picturebox carte face
+                // vvvv plus d'actualité vvvv
+                // les - 140 et - 25 sont une implémentation déguelasse pour corrifger un bug (la taille du champs personnalisée n'est pas correcte sur le word, les valeurs corrigent cette erreur.
+                // j'ai pas trouvé le problème et j'ai pas le temps là tout de suite, bonne chance au suivant
+                int relativeWidth = ((donneElementPersonnelisee.Item6.Width * (imageCarteFace.Width)) / pbCarteFace.Width); //-140
+                int relativeHeight = ((donneElementPersonnelisee.Item6.Height * (imageCarteFace.Height)) / pbCarteFace.Height); //-25
+                Size relativeSize = new Size(relativeWidth, relativeHeight);
+
+                Bitmap resizedImage = new Bitmap(donneElementPersonnelisee.Item2, relativeSize);
 
                 Globale.donneesChampsPersonnalisee.Add(
                         new Tuple<string, Image, Point, string, Font, PictureBox>(
@@ -704,8 +716,19 @@ namespace CartesAcces2024
                 pbCarteFace.Image = null;
                 try
                 {
+                    Image imgCarteFace = Image.FromFile(Chemin.CheminFaceDefault);
+                    // On récupère la face de la picturebox
+                    if (File.Exists(Chemin.DossierCartesFace + Globale.ListeEleveImpr[0].NiveauEleve + ".png"))
+                    {
+                        imgCarteFace = Image.FromFile(Chemin.DossierCartesFace + Globale.ListeEleveImpr[0].NiveauEleve + ".png");
+                    }
+
+                    // On modifie la taille du picturebox pour qu'il corresponde au ratio de l'image de fonds
+                    pbCarteFace.Width = (imgCarteFace.Width * 457) / imgCarteFace.Height;
+                    pbCarteFace.Height = 379;
+
                     // affiche la face de la carte dans la picturebox
-                    pbCarteFace.Image = Image.FromFile(Chemin.DossierCartesFace + Globale.ListeEleveImpr[0].NiveauEleve + ".png");
+                    pbCarteFace.Image = imgCarteFace;
                 }
                 catch (Exception err)
                 {
@@ -729,7 +752,7 @@ namespace CartesAcces2024
             else
             {
                 MessageBox.Show("Aucune image pour le recto n'a été importée ! " +
-                    "Vous pouvez le faire depuis Importation > Importer des faces pour les cartes.");
+                    "Vous pouvez le faire depuis Importation -> Importer des faces pour les cartes.");
             }
         }
 

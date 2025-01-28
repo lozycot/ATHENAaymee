@@ -94,7 +94,7 @@ namespace CartesAcces2024
             this.pnlEdtPhoto.Location = new System.Drawing.Point(129, 15);
             this.pnlEdtPhoto.Margin = new System.Windows.Forms.Padding(4);
             this.pnlEdtPhoto.Name = "pnlEdtPhoto";
-            this.pnlEdtPhoto.Size = new System.Drawing.Size(1423, 457);
+            this.pnlEdtPhoto.Size = new System.Drawing.Size(1483, 457);
             this.pnlEdtPhoto.TabIndex = 14;
             // 
             // pbPhoto
