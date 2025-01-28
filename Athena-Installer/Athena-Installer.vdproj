@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_018C850E5BBD4FA7A04140C5E4CC9678"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0529A3239F3F48AEBAEC37F83F57ADE2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -70,6 +76,12 @@
         "Entry"
         {
         "MsmKey" = "8:_3766AD5AD9B940F0A7FE7F04CA6EA69F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_447C748FFD064CF6BD58088D4FB13967"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -172,6 +184,12 @@
         "Entry"
         {
         "MsmKey" = "8:_A27511F118134C06963EDE31216BB9B3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A3C6F0FC1D1F41808DC94BF5E48143E9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -298,12 +316,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_068FC8DACD9FFEF1459CBC28A86BA575"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_CFEC20CCC6A5443C877719A7C42E34DF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -373,6 +385,12 @@
         "OwnerKey" = "8:_D29D809196B6B85F2C0D352CB46FFA7A"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_068FC8DACD9FFEF1459CBC28A86BA575"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -391,6 +409,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -407,6 +433,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -436,6 +478,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_018C850E5BBD4FA7A04140C5E4CC9678"
+            {
+            "SourcePath" = "8:..\\Athena\\bin\\Release\\x86\\SQLite.Interop.dll"
+            "TargetName" = "8:SQLite.Interop.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_9D2D0A7C1FBB4EFA95B3067955675DD5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0529A3239F3F48AEBAEC37F83F57ADE2"
             {
             "SourcePath" = "8:..\\Athena\\data\\FichierCartesFace\\Face.png"
@@ -624,6 +686,26 @@
             "TargetName" = "8:logo.png"
             "Tag" = "8:"
             "Folder" = "8:_6B2929A292524F06B3F537E9025C4B56"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_447C748FFD064CF6BD58088D4FB13967"
+            {
+            "SourcePath" = "8:..\\Athena\\Database\\myDatabase.db"
+            "TargetName" = "8:myDatabase.db"
+            "Tag" = "8:"
+            "Folder" = "8:_917E42C52E1D4A5E8919F32C58B1299C"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -977,6 +1059,26 @@
             "TargetName" = "8:emploi_du_temps_vierge.png"
             "Tag" = "8:"
             "Folder" = "8:_7E946C5BF09B48E188A2D291B80021C0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A3C6F0FC1D1F41808DC94BF5E48143E9"
+            {
+            "SourcePath" = "8:..\\Athena\\bin\\Release\\x64\\SQLite.Interop.dll"
+            "TargetName" = "8:SQLite.Interop.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_E6B52CFB695B442899C902BD04B4C2B2"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1430,6 +1532,28 @@
                             }
                         }
                     }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_917E42C52E1D4A5E8919F32C58B1299C"
+                    {
+                    "Name" = "8:Database"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_C1433224BE0745B3AC1CEE16E22674B8"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_9D2D0A7C1FBB4EFA95B3067955675DD5"
+                    {
+                    "Name" = "8:x86"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_04F6F5B597C34DABAC9DF1BBA62BC6FF"
+                        "Folders"
+                        {
+                        }
+                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_CE36E21D726242EBA6213D1E550DE059"
                     {
                     "Name" = "8:Ghostscript"
@@ -1437,6 +1561,17 @@
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_E12ADF601F014CFA88E45101FB06B5CB"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_E6B52CFB695B442899C902BD04B4C2B2"
+                    {
+                    "Name" = "8:x64"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_B493DF8315A648879144D2E240ECA34B"
                         "Folders"
                         {
                         }
@@ -1458,20 +1593,20 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Athena-Installer"
-        "ProductCode" = "8:{E6CE68DE-3D0B-4392-A2DF-2A4F536B31B2}"
-        "PackageCode" = "8:{8BADB6F7-C243-41F3-95A1-26FA00362E6D}"
+        "ProductName" = "8:Athena"
+        "ProductCode" = "8:{5AB5BFCD-EA2F-4504-AACD-6A1CED42C3CB}"
+        "PackageCode" = "8:{A0960B48-1AAE-455A-A45F-A6EBFA307FA0}"
         "UpgradeCode" = "8:{1F5D6C84-E971-4D9E-8047-1FFC61B3F013}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:2.0.0"
         "Manufacturer" = "8:Default Company Name"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Athena-Installer"
+        "Title" = "8:Athena"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Default Company Name"
         "Keywords" = "8:"
@@ -1481,7 +1616,7 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:0"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
@@ -2009,7 +2144,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CFEC20CCC6A5443C877719A7C42E34DF"
             {
-            "SourcePath" = "8:..\\Athena\\obj\\Debug\\Athena.exe"
+            "SourcePath" = "8:..\\Athena\\obj\\Release\\Athena.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_92F08EBBA4FC4C5BB6E9A79647EA8E45"
