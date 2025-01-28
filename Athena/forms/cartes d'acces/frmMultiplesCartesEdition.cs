@@ -488,26 +488,28 @@ namespace CartesAcces2024
 
             Globale.donneesChampsPersonnalisee = new List<Tuple<string, Image, Point, string, Font, PictureBox>>();
 
+            
             // pour chaque champs personnalisé
             foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneElementPersonnelisee in elementsAjoutee)
             {
                 Image imageCarteFace = Image.FromFile(Chemin.DossierCartesFace + Globale.ListeEleveImpr[0].NiveauEleve + ".png");
 
+                // permet d'ajouster la taille qui n'est pas calculée correctement
+                // il faut savoir que les dimenions des cartes et la dimension du png ajouté au word sont différents
+                const double SCALE_FACTOR_WIDTH = 0.79;
+                const double SCALE_FACTOR_HEIGHT = 0.79;
+
                 // On calcule la position que devrais avoir les images sur la carte face finale, qui n'as pas la même taille que pbCarteFace
-                // produit en croix
+                // Produit en croix
                 // (Coord PictureBox - Coord pbCarteFace) * taille carte face imprimée / taille pictureBox carte face
-                // taille pictureBox carte face ----> taille carte face imprimée
-                // Coord PictureBox champ perso ----> ???
-                int relativeX = ((donneElementPersonnelisee.Item6.Location.X - pbCarteFace.Location.X) * imageCarteFace.Width) / pbCarteFace.Width;
-                int relativeY = ((donneElementPersonnelisee.Item6.Location.Y - pbCarteFace.Location.Y) * imageCarteFace.Height) / pbCarteFace.Height;
+                int relativeX = (int)(((donneElementPersonnelisee.Item6.Location.X - pbCarteFace.Location.X) * imageCarteFace.Width) / pbCarteFace.Width);
+                int relativeY = (int)(((donneElementPersonnelisee.Item6.Location.Y - pbCarteFace.Location.Y) * imageCarteFace.Height) / pbCarteFace.Height);
 
                 // On calcule la taille que devrais avoir les images sur la carte face finale, qui n'as pas la même taille que pbCarteFace
                 // taille de champs personnalisee * taille de la carte face finale / taille de la picturebox carte face
-                // vvvv plus d'actualité vvvv
-                // les - 140 et - 25 sont une implémentation déguelasse pour corrifger un bug (la taille du champs personnalisée n'est pas correcte sur le word, les valeurs corrigent cette erreur.
-                // j'ai pas trouvé le problème et j'ai pas le temps là tout de suite, bonne chance au suivant
-                int relativeWidth = ((donneElementPersonnelisee.Item6.Width * (imageCarteFace.Width)) / pbCarteFace.Width); //-140
-                int relativeHeight = ((donneElementPersonnelisee.Item6.Height * (imageCarteFace.Height)) / pbCarteFace.Height); //-25
+                int relativeWidth = (int)((donneElementPersonnelisee.Item6.Width * imageCarteFace.Width * SCALE_FACTOR_WIDTH) / pbCarteFace.Width);
+                int relativeHeight = (int)((donneElementPersonnelisee.Item6.Height * imageCarteFace.Height * SCALE_FACTOR_HEIGHT) / pbCarteFace.Height);
+
                 Size relativeSize = new Size(relativeWidth, relativeHeight);
 
                 Bitmap resizedImage = new Bitmap(donneElementPersonnelisee.Item2, relativeSize);
@@ -617,6 +619,7 @@ namespace CartesAcces2024
                         OperationsDb.SetFolderPath(Globale.cheminImpressionFinal);
 
                         Globale.LblCount = lblCompteur;
+                        Globale.pgbCount = progressBar1_compteur;
 
                         pbPhoto.Visible = false;
                         FichierWord.SauvegardeCarteEnWordA5(Globale.cheminImpressionFinal, Globale.ListeEleveImpr, pbPhoto, pbCarteArriere);
