@@ -340,6 +340,11 @@
     <Compile Include="ConnectDb.cs" />
     <Compile Include="PdfGs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QRCode.cs" />
     <Compile Include="readCsv.cs" />
     <Compile Include="Recherche_Image.cs" />
@@ -424,14 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="CartesAcces2024_TemporaryKey.pfx" />
     <None Include="Ghostscript\COPYING">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -500,12 +500,12 @@
     <Content Include="data\FichierCartesFace\Face.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\FondAthena2024.png" />
+    <Content Include="data\FondAthena2025.png" />
     <Content Include="data\github.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\IconAthena2024.ico" />
-    <Content Include="data\IconAthena2024.png" />
+    <Content Include="data\IconAthena2025.ico" />
+    <Content Include="data\IconAthena2025.png" />
     <Content Include="data\image\bleu.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -519,7 +519,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data\logo.png" />
-    <Content Include="data\LogoAthena2024.png" />
+    <Content Include="data\LogoAthena2025.png" />
     <Content Include="Ghostscript\gsdll32.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

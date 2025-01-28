@@ -93,7 +93,7 @@ namespace CartesAcces2024
             // picbFond
             // 
             this.picbFond.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picbFond.Image = global::Athena.Properties.Resources.FondAthena2024;
+            this.picbFond.Image = global::Athena.Properties.Resources.FondAthena2025;
             this.picbFond.Location = new System.Drawing.Point(0, 0);
             this.picbFond.Name = "picbFond";
             this.picbFond.Size = new System.Drawing.Size(882, 499);
