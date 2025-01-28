@@ -394,14 +394,6 @@ namespace CartesAcces2024
 
         public static FrmMultiplesCartesEdition formMultipleCartes;
 
-        // données pour imprimer les champs personnalisées sur la carte dans Edition.ImageCarteFace
-        // Pour chaque champ personnalisé
-        // l'option? codeQR, codeBarre, Texte
-        // l'image
-        // les coordonnées
-        // ou le texte
-        //  //  Font du texte
-        //  //  les coordonnées du texte
         /// <summary>
         /// Les données des champs personnalisées ajoutés sur la face de la carte.
         /// Voir <see cref="FrmMultiplesCartesEdition.ajouteControlChampPersonnalisee(string, string, System.Drawing.Font)"/>
@@ -410,6 +402,13 @@ namespace CartesAcces2024
         /// </summary>
         public static List<Tuple<string, Image, Point, string, Font, PictureBox>> donneesChampsPersonnalisee;
 
-
+        /// <summary>
+        /// Largeur physique minimum d'un code barre en millimètre.
+        /// </summary>
+        public static double codeBarreLongueurMinimum { get; } = 0.33;
+        /// <summary>
+        /// Longueur physique minimum d'un code barre en millimètre.
+        /// </summary>
+        public static double codeBarreLargeurMinimum { get; } = 13;
     }
 }

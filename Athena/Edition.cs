@@ -295,6 +295,17 @@ namespace CartesAcces2024
 
             qrCodeFaceProvisoire(objGraphique);
 
+            string tempNom = nomEleve;
+            string tempPrenom = prenomEleve;
+            string tempClasse = classe;
+
+            //recoupage pour éviter d'avoir un code barre trop long
+            if (tempNom.Length > 9)
+                tempNom = tempNom.Substring(0, 8) + ".";
+            if (tempPrenom.Length > 12)
+                tempPrenom = tempPrenom.Substring(0, 11) + ".";
+            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+
             importCarteFace(chemin, objGraphique, classe.Substring(0, 1));
 
             fondTexteCarteFace(objGraphique, classe, police2, classe, 50, 70);
@@ -308,8 +319,9 @@ namespace CartesAcces2024
             fondTexteCarteFace(objGraphique, chaine, policeprenom, classe, 50, 1075);
             objGraphique.DrawString(chaine, policeprenom, pinceauNoir, 50, 1075);
 
-            fondTexteCarteFace(objGraphique, classe, police, classe, 50, 70);
-            objGraphique.DrawString(classe, police, pinceauNoir, 50, 70);
+            //Le classe de l'élève
+            fondTexteCarteFace(objGraphique, classe, new Font("Calibri", 45, FontStyle.Bold), classe, 50, 70);
+            objGraphique.DrawString(classe, new Font("Calibri", 45, FontStyle.Bold), pinceauNoir, 50, 70);
 
             // écriture des informations de l'étabmlissement
             // tables par défauts :
@@ -337,9 +349,6 @@ namespace CartesAcces2024
             //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1165);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1165);
-
-            // tables champs personnalisées:
-            // 
 
             pbCarteFace.Refresh();
 
@@ -423,6 +432,17 @@ namespace CartesAcces2024
 
             importCarteFace(chemin, objGraphique, classe.Substring(0, 1));
 
+            string tempNom = nomEleve;
+            string tempPrenom = prenomEleve;
+            string tempClasse = classe;
+
+            //recoupage pour éviter d'avoir un code barre trop long
+            if (tempNom.Length > 9)
+                tempNom = tempNom.Substring(0, 8) + ".";
+            if (tempPrenom.Length > 12)
+                tempPrenom = tempPrenom.Substring(0, 11) + ".";
+            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+
             //Dessine et rempli le fond pour l'écriture
             fondTexteCarteFace(objGraphique, classe, police2, classe, 25, 70);
 
@@ -435,8 +455,8 @@ namespace CartesAcces2024
             fondTexteCarteFace(objGraphique, chaine, policeprenom, classe, 25, 1075);
             objGraphique.DrawString(chaine, policeprenom, pinceauNoir, 25, 1075);
 
-            fondTexteCarteFace(objGraphique, classe, police, classe, 25, 70);
-            objGraphique.DrawString(classe, police, pinceauNoir, 25, 70);
+            fondTexteCarteFace(objGraphique, classe, new Font("Calibri", 45, FontStyle.Bold), classe, 25, 70);
+            objGraphique.DrawString(classe, new Font("Calibri", 45, FontStyle.Bold), pinceauNoir, 50, 70);
 
             pbCarteFace.Refresh();
 
@@ -470,7 +490,18 @@ namespace CartesAcces2024
             objGraphique.DrawImage(bmpFinal, new Point(875, 980));
         }
 
+        /// <summary>
+        /// Affiche le texte passé en paramètre sur la carte.
+        /// </summary>
+        /// <param name="objGraphique"></param>
+        /// <param name="texte"></param>
+        public static void codeBarreFace(Graphics objGraphique, string texte)
+        {
+            var bmpOriginal = EditionCodeBarre.generrerBitMapDeCodeBarre(texte);
+            var bmpFinal = new Bitmap(bmpOriginal, new Size((int)Math.Round(bmpOriginal.Width * 1.5), bmpOriginal.Height * 2));
 
+            objGraphique.DrawImage(bmpFinal, new Point(50, 700));
+        }
 
 
 
@@ -513,6 +544,19 @@ namespace CartesAcces2024
             List<string> Etablissement = new List<string>(OperationsDb.GetEtablissement());
 
             objGraphique = importCarteFace(chemin, objGraphique, eleve.NiveauEleve.Substring(0,1));
+
+            
+            string tempNom = eleve.NomEleve;
+            string tempPrenom = eleve.PrenomEleve;
+            string tempClasse = eleve.ClasseEleve;
+
+            //recoupage pour éviter d'avoir un code barre trop long
+            if (tempNom.Length > 9)
+                tempNom = tempNom.Substring(0, 8) + ".";
+            if (tempNom.Length + tempPrenom.Length > 13)
+                tempPrenom = tempPrenom.Substring(0, 12) + ".";
+
+            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
 
             //Dessine et rempli le fond pour l'écriture
             fondTexteCarteFace(objGraphique, classe, police2, classe, 50, 70);
@@ -617,6 +661,17 @@ namespace CartesAcces2024
             objGraphique = importCarteFace(chemin, objGraphique, eleve.NiveauEleve.Substring(0, 1));
 
             string classe = eleve.ClasseEleve;
+
+            string tempNom = eleve.NomEleve;
+            string tempPrenom = eleve.PrenomEleve;
+            string tempClasse = classe;
+
+            //recoupage pour éviter d'avoir un code barre trop long
+            if (tempNom.Length > 9)
+                tempNom = tempNom.Substring(0, 8) + ".";
+            if (tempPrenom.Length > 12)
+                tempPrenom = tempPrenom.Substring(0, 11) + ".";
+            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
 
             //Dessine et rempli le fond pour l'écriture
             fondTexteCarteFace(objGraphique, eleve.ClasseEleve, police2, classe, 50, 70);
