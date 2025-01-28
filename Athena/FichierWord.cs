@@ -96,7 +96,9 @@ namespace CartesAcces2024
         }
 
         /// <summary>
-        /// 
+        /// Le but ici est d'avoir un espace blanc d'environ 1cm au milieu de la page, entre les deux image, pour la découpe.
+        /// On définit la position de la deuxieme image par rapport au haut de la page afin d'ancrer celle au bas de la page.
+        /// Et enfin on gère la hauteur des deux images pour que celles ci aient les mêmes dimensions.
         /// </summary>
         /// <param name="applicationWord"></param>
         /// <param name="carteFace1"></param>
@@ -104,11 +106,6 @@ namespace CartesAcces2024
         public static void RectifPositionImages(Application applicationWord, Shape carteFace1, Shape carteFace2)
         {
             // -- Gestion de la hauteur et de la position des images --
-            /*
-             * Le but ici est d'avoir un espace blanc d'environ 1cm au milieu de la page, entre les deux image, pour la découpe.
-             * On définit la position de la deuxieme image par rapport au haut de la page afin d'ancrer celle au bas de la page.
-             * Et enfin on gère la hauteur des deux images pour que celles ci aient les mêmes dimensions.
-            */
 
             carteFace1.Height = 379;
 

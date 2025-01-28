@@ -4,6 +4,8 @@ Cette solution tout-en-un permet notamment de gérer efficacement les cartes d'a
 
 ![Athena](https://github.com/user-attachments/assets/e95fee4a-ec3b-4fc5-ba11-a275a664a926)
 
+---
+
 ## 🎯 Fonctionnalités principales
 ### 🎫 Gestion des cartes d'accès
 - Génération automatique des cartes par classe ou création personnalisée
@@ -14,6 +16,8 @@ Cette solution tout-en-un permet notamment de gérer efficacement les cartes d'a
 - Import simplifié des photos d'élèves
 - Génération automatique de trombinoscopes par classe
 - Export au format PDF ou impression directe
+
+---
 
 ## 💻 Guide d'installation
 Pour contribuer au projet, suivez ces étapes :
@@ -31,7 +35,18 @@ Pour contribuer au projet, suivez ces étapes :
    - Supprimez le fichier de base de données généré lors du premier lancement
    - Redémarrez l'application
 
-*Athena est maintenu par des stagiaires du Collège Caroline Aigle et la communauté. Toute contribution est la bienvenue !*
+*Athena est maintenu par des stagiaires du Collège Caroline Aigle et la communauté.
+Toute contribution est la bienvenue !*
+
+---
 
 ## 📝 Licence
 Ce projet est distribué sous licence MIT. Pour plus d'informations, consultez le fichier `LICENSE` inclus dans le dépôt.
+
+Voici une version corrigée et améliorée de votre texte :
+
+## 🧷 Anciens liens
+Ce projet est un fork d’un projet anciennement appelé **CarteDaces2024**.
+Vous pouvez consulter les anciens liens ci-dessous :  
+- [CarteAccesAigle](https://github.com/TheoMas/CarteAccesAigle2024)  
+- [CarteDaces](https://github.com/ValgulNecron/appStage)

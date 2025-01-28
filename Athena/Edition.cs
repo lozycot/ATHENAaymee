@@ -234,6 +234,9 @@ namespace CartesAcces2024
             var police4 = new Font("Calibri", 16, FontStyle.Bold); // police des informations de l'établissement
             var policenom = new Font("Calibri", 25, FontStyle.Bold);
             var policeprenom = new Font("Calibri", 25, FontStyle.Bold);
+
+            
+
             if (File.Exists(Chemin.DossierCartesFace + Globale.CheminFaceCarte + "Face.png"))
             {
                 var bmp = new Bitmap(Chemin.DossierCartesFace + Globale.CheminFaceCarte + "Face.png");
@@ -247,6 +250,7 @@ namespace CartesAcces2024
                 pbCarteFace.Image = bmp;
             }
 
+            // -- Gestion de la taille de la police --
             if (nomEleve.Length > 10 || prenomEleve.Length > 10)
             {
                 if (nomEleve.Length > 10 && prenomEleve.Length > 10)
@@ -268,6 +272,8 @@ namespace CartesAcces2024
             else
             {
                 police = new Font("Calibri", 40, FontStyle.Bold);
+                policenom = new Font("Calibri", 40, FontStyle.Bold);
+                policeprenom = new Font("Calibri", 40, FontStyle.Bold);
             }
 
             Brush pinceauNoir = new SolidBrush(Color.Black);
@@ -375,6 +381,7 @@ namespace CartesAcces2024
             var policenom = new Font("Calibri", 25, FontStyle.Bold);
             var policeprenom = new Font("Calibri", 25, FontStyle.Bold);
 
+            // -- Gestion de la taille de la police --
             if (nomEleve.Length > 10 || prenomEleve.Length > 10)
             {
                 if (nomEleve.Length > 10 && prenomEleve.Length > 10)
@@ -396,6 +403,8 @@ namespace CartesAcces2024
             else
             {
                 police = new Font("Calibri", 40, FontStyle.Bold);
+                policenom = new Font("Calibri", 40, FontStyle.Bold);
+                policeprenom = new Font("Calibri", 40, FontStyle.Bold);
             }
 
             Brush pinceauNoir = new SolidBrush(Color.Black);
@@ -546,8 +555,6 @@ namespace CartesAcces2024
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1165);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1165);
 
-            // ajout des champs personnalisées
-            // ==================================================================================
 
             // Si l'utilisatuer à ajouté des elements personnalisee sur la carte
             if (Globale.donneesChampsPersonnalisee != null)
@@ -555,18 +562,7 @@ namespace CartesAcces2024
                 // on les dessines sur le document à imprimer
                 foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneeUnChamp in Globale.donneesChampsPersonnalisee)
                 {
-                    MessageBox.Show(donneeUnChamp.Item3.X + " " + donneeUnChamp.Item3.Y);
-                    if (donneeUnChamp.Item1 == "Text")
-                    {
-                        fondTexteCarteFaceFixe(objGraphique, donneeUnChamp.Item4, donneeUnChamp.Item5, classe, donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y);
-                        objGraphique.DrawString(donneeUnChamp.Item4, donneeUnChamp.Item5, pinceauNoir, donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y);
-                    }
-                    else
-                    {
-                        objGraphique.DrawImage(donneeUnChamp.Item2, new Point(donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y));
-                    }
-
-                    MessageBox.Show("Sizes : " + donneeUnChamp.Item6.Size.Width + " " + donneeUnChamp.Item6.Size.Height);
+                    objGraphique.DrawImage(donneeUnChamp.Item2, new Point(donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y));
                 }
             }
             
@@ -637,6 +633,17 @@ namespace CartesAcces2024
             fondTexteCarteFace(objGraphique, eleve.ClasseEleve, police, classe, 50, 70);
             objGraphique.DrawString(eleve.ClasseEleve, police, pinceauNoir, 50, 70);
 
+            // ajout des champs personnalisées
+            // Si l'utilisatuer à ajouté des elements personnalisee sur la carte
+            if (Globale.donneesChampsPersonnalisee != null)
+            {
+                // on les dessines sur le document à imprimer
+                foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneeUnChamp in Globale.donneesChampsPersonnalisee)
+                {
+                    objGraphique.DrawImage(donneeUnChamp.Item2, new Point(donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y));
+                }
+            }
+
             objGraphique.Dispose(); // Libère les ressources
 
             return image;
@@ -656,45 +663,38 @@ namespace CartesAcces2024
             // -- Déclare l'image --
             Image imageFace = null;
 
+
             // -- Gestion de la taille de la police --
+            var policenom = new Font("Calibri", 1, FontStyle.Bold);
+            var policeprenom = new Font("Calibri", 1, FontStyle.Bold);
             if (eleve.NomEleve.Length > 10 || eleve.PrenomEleve.Length > 10)
             {
                 if (eleve.NomEleve.Length > 10 && eleve.PrenomEleve.Length > 10)
                 {
-                    var policenom = new Font("Calibri", 25, FontStyle.Bold);
-                    var policeprenom = new Font("Calibri", 25, FontStyle.Bold);
-                    if (Globale.InfosCarte == true)
-                        imageFace = imageCarteFaceInfos(eleve, policenom, policeprenom);
-                    else
-                        imageFace = ImageCarteFace(eleve, policenom, policeprenom);
+                    policenom = new Font("Calibri", 25, FontStyle.Bold);
+                    policeprenom = new Font("Calibri", 25, FontStyle.Bold);
                 }
                 else if (eleve.NomEleve.Length > 10)
                 {
-                    var policenom = new Font("Calibri", 25, FontStyle.Bold);
-                    var policeprenom = new Font("Calibri", 40, FontStyle.Bold);
-                    if (Globale.InfosCarte == true)
-                        imageFace = imageCarteFaceInfos(eleve, policenom, policeprenom);
-                    else
-                        imageFace = ImageCarteFace(eleve, policenom, policeprenom);
+                    policenom = new Font("Calibri", 25, FontStyle.Bold);
+                    policeprenom = new Font("Calibri", 40, FontStyle.Bold);
                 }
                 else
                 {
-                    var policenom = new Font("Calibri", 40, FontStyle.Bold);
-                    var policeprenom = new Font("Calibri", 25, FontStyle.Bold);
-                    if (Globale.InfosCarte == true)
-                        imageFace = imageCarteFaceInfos(eleve, policenom, policeprenom);
-                    else
-                        imageFace = ImageCarteFace(eleve, policenom, policeprenom);
+                    policenom = new Font("Calibri", 40, FontStyle.Bold);
+                    policeprenom = new Font("Calibri", 25, FontStyle.Bold);
                 }
             }
             else
             {
-                var police = new Font("Calibri", 40, FontStyle.Bold);
-                if (Globale.InfosCarte == true)
-                    imageFace = imageCarteFaceInfos(eleve, police, police);
-                else
-                    imageFace = ImageCarteFace(eleve, police, police);
+                policenom = new Font("Calibri", 40, FontStyle.Bold);
+                policeprenom = new Font("Calibri", 40, FontStyle.Bold);
             }
+
+            if (Globale.InfosCarte == true)
+                imageFace = imageCarteFaceInfos(eleve, policenom, policeprenom);
+            else
+                imageFace = ImageCarteFace(eleve, policenom, policeprenom);
 
             // -- Sauvegarde l'image --
             imageFace.Save(chemin + "/" + eleve.NomEleve + eleve.PrenomEleve + "Carte.png", ImageFormat.Png);
@@ -709,7 +709,7 @@ namespace CartesAcces2024
 
 
         /// <summary>
-        /// Remplace l'image de pbcarteArriere par l'emploi du temps de l'élève, ou de l'emploi du temps de la classe si il n'en as pas.
+        /// Remplace l'image de pbCarteArriere par l'emploi du temps de l'élève, ou de l'emploi du temps de la classe si il n'as pas son propre emplois du temps.
         /// </summary>
         /// <param name="eleve"></param>
         /// <param name="pbCarteArriere"></param>
