@@ -79,8 +79,15 @@ namespace CartesAcces2024
                 try
                 {
                     if (!Directory.Exists(Chemin.DossierBdd))
+                    {
                         Directory.CreateDirectory(Chemin.DossierBdd);
-                    SQLiteConnection.CreateFile(Chemin.CheminBdd);
+                    }
+
+                    if (!File.Exists(Chemin.CheminBdd))
+                    {
+                        SQLiteConnection.CreateFile(Chemin.CheminBdd);
+                    }
+
                     using (SQLiteConnection conn = new SQLiteConnection("Data source =" + Chemin.CheminBdd))
                     {
                         conn.Open();
@@ -89,6 +96,7 @@ namespace CartesAcces2024
                             command.CommandText = scriptSQL;
                             command.ExecuteNonQuery();
                             MessageBox.Show("Aucune base de données trouvée, une nouvelle a été générée. Vous devrez importer de nouvelles données.");
+                            Globale.premiereDbCree = true;
                         }
                     }
                 }
@@ -143,7 +151,7 @@ namespace CartesAcces2024
             /// <returns></returns>
             public static bool DbData(string db)
             {
-                if (!File.Exists(Chemin.CheminBdd))
+                if (!Globale.premiereDbCree)
                     CreerDb();
 
                 string sql = "SELECT * FROM " + db;

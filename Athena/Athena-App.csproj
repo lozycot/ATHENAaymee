@@ -433,6 +433,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="CartesAcces2024_TemporaryKey.pfx" />
+    <None Include="Database\myDatabase.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Ghostscript\COPYING">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
