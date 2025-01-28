@@ -81,12 +81,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_447C748FFD064CF6BD58088D4FB13967"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_45DBA65FA460FD68F39497702614A5AB"
         "OwnerKey" = "8:_CFEC20CCC6A5443C877719A7C42E34DF"
         "MsmSig" = "8:_UNDEFINED"
@@ -416,6 +410,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -686,26 +688,6 @@
             "TargetName" = "8:logo.png"
             "Tag" = "8:"
             "Folder" = "8:_6B2929A292524F06B3F537E9025C4B56"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_447C748FFD064CF6BD58088D4FB13967"
-            {
-            "SourcePath" = "8:..\\Athena\\Database\\myDatabase.db"
-            "TargetName" = "8:myDatabase.db"
-            "Tag" = "8:"
-            "Folder" = "8:_917E42C52E1D4A5E8919F32C58B1299C"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
