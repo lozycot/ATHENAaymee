@@ -40,6 +40,7 @@ namespace ATHENA
             this.rdbNiveaux = new System.Windows.Forms.RadioButton();
             this.rdbClasses = new System.Windows.Forms.RadioButton();
             this.rdbEleve = new System.Windows.Forms.RadioButton();
+            this.btnOuvrirEmpBDD = new System.Windows.Forms.Button();
             this.gbpElements.SuspendLayout();
             this.gbpFiltres.SuspendLayout();
             this.SuspendLayout();
@@ -172,12 +173,27 @@ namespace ATHENA
             this.rdbEleve.UseVisualStyleBackColor = true;
             this.rdbEleve.CheckedChanged += new System.EventHandler(this.rdbEleve_CheckedChanged);
             // 
+            // btnOuvrirEmpBDD
+            // 
+            this.btnOuvrirEmpBDD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnOuvrirEmpBDD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOuvrirEmpBDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnOuvrirEmpBDD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnOuvrirEmpBDD.Location = new System.Drawing.Point(632, 36);
+            this.btnOuvrirEmpBDD.Name = "btnOuvrirEmpBDD";
+            this.btnOuvrirEmpBDD.Size = new System.Drawing.Size(374, 40);
+            this.btnOuvrirEmpBDD.TabIndex = 13;
+            this.btnOuvrirEmpBDD.Text = "Ouvrir emplacement de la BDD";
+            this.btnOuvrirEmpBDD.UseVisualStyleBackColor = false;
+            this.btnOuvrirEmpBDD.Click += new System.EventHandler(this.btnOuvrirEmpBDD_Click);
+            // 
             // frmSuppressionDeDonnées
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1044, 512);
+            this.Controls.Add(this.btnOuvrirEmpBDD);
             this.Controls.Add(this.btnSupprimerLesDonneesSelectionnees);
             this.Controls.Add(this.btnToutSelectionner);
             this.Controls.Add(this.btnSupprimerTouteLesDonnees);
@@ -208,5 +224,6 @@ namespace ATHENA
         private System.Windows.Forms.RadioButton rdbNiveaux;
         private System.Windows.Forms.RadioButton rdbClasses;
         private System.Windows.Forms.RadioButton rdbEleve;
+        private System.Windows.Forms.Button btnOuvrirEmpBDD;
     }
 }

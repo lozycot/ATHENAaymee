@@ -178,5 +178,18 @@ namespace ATHENA
             // puis on met à jour l'affichage à la fin de la suppression
             changeAffichage();
         }
+
+        private void btnOuvrirEmpBDD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Ouvre l'explorateur de fichiers à l'emplacement de la base de données
+                Process.Start("explorer.exe", Path.GetDirectoryName(Chemin.CheminBdd));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l'ouverture de l'emplacement : " + ex.Message);
+            }
+        }
     }
 }
