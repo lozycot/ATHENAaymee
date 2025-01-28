@@ -1481,6 +1481,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_759372C14DEA41C380B053B31DBC2A60"
+                    {
+                    "Name" = "8:Database"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_C47E963B28A94A9EB87D164FEC4C8946"
+                        "Folders"
+                        {
+                        }
+                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_7E946C5BF09B48E188A2D291B80021C0"
                     {
                     "Name" = "8:data"
@@ -1512,17 +1523,6 @@
                                 {
                                 }
                             }
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_917E42C52E1D4A5E8919F32C58B1299C"
-                    {
-                    "Name" = "8:Database"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_C1433224BE0745B3AC1CEE16E22674B8"
-                        "Folders"
-                        {
                         }
                     }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_9D2D0A7C1FBB4EFA95B3067955675DD5"
@@ -1577,7 +1577,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Athena"
         "ProductCode" = "8:{5AB5BFCD-EA2F-4504-AACD-6A1CED42C3CB}"
-        "PackageCode" = "8:{A0960B48-1AAE-455A-A45F-A6EBFA307FA0}"
+        "PackageCode" = "8:{9CCA7CD9-6A32-4011-ACCD-E7FEF2525B7D}"
         "UpgradeCode" = "8:{1F5D6C84-E971-4D9E-8047-1FFC61B3F013}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
