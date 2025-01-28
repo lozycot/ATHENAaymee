@@ -79,15 +79,8 @@ namespace CartesAcces2024
                 try
                 {
                     if (!Directory.Exists(Chemin.DossierBdd))
-                    {
                         Directory.CreateDirectory(Chemin.DossierBdd);
-                    }
-
-                    if (!File.Exists(Chemin.CheminBdd))
-                    {
-                        SQLiteConnection.CreateFile(Chemin.CheminBdd);
-                    }
-
+                    SQLiteConnection.CreateFile(Chemin.CheminBdd);
                     using (SQLiteConnection conn = new SQLiteConnection("Data source =" + Chemin.CheminBdd))
                     {
                         conn.Open();
@@ -151,7 +144,7 @@ namespace CartesAcces2024
             /// <returns></returns>
             public static bool DbData(string db)
             {
-                if (!Globale.premiereDbCree)
+                if (!File.Exists(Chemin.CheminBdd))
                     CreerDb();
 
                 string sql = "SELECT * FROM " + db;
