@@ -41,6 +41,10 @@ namespace ATHENA
             this.rdbClasses = new System.Windows.Forms.RadioButton();
             this.rdbEleve = new System.Windows.Forms.RadioButton();
             this.btnOuvrirEmpBDD = new System.Windows.Forms.Button();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtRecherche = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.gbpElements.SuspendLayout();
             this.gbpFiltres.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +55,7 @@ namespace ATHENA
             this.btnSupprimerLesDonneesSelectionnees.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSupprimerLesDonneesSelectionnees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSupprimerLesDonneesSelectionnees.ForeColor = System.Drawing.Color.Red;
-            this.btnSupprimerLesDonneesSelectionnees.Location = new System.Drawing.Point(632, 388);
+            this.btnSupprimerLesDonneesSelectionnees.Location = new System.Drawing.Point(632, 482);
             this.btnSupprimerLesDonneesSelectionnees.Name = "btnSupprimerLesDonneesSelectionnees";
             this.btnSupprimerLesDonneesSelectionnees.Size = new System.Drawing.Size(374, 40);
             this.btnSupprimerLesDonneesSelectionnees.TabIndex = 12;
@@ -65,7 +69,7 @@ namespace ATHENA
             this.btnToutSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnToutSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnToutSelectionner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnToutSelectionner.Location = new System.Drawing.Point(632, 342);
+            this.btnToutSelectionner.Location = new System.Drawing.Point(632, 436);
             this.btnToutSelectionner.Name = "btnToutSelectionner";
             this.btnToutSelectionner.Size = new System.Drawing.Size(374, 40);
             this.btnToutSelectionner.TabIndex = 11;
@@ -79,7 +83,7 @@ namespace ATHENA
             this.btnSupprimerTouteLesDonnees.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSupprimerTouteLesDonnees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSupprimerTouteLesDonnees.ForeColor = System.Drawing.Color.Red;
-            this.btnSupprimerTouteLesDonnees.Location = new System.Drawing.Point(632, 434);
+            this.btnSupprimerTouteLesDonnees.Location = new System.Drawing.Point(632, 528);
             this.btnSupprimerTouteLesDonnees.Name = "btnSupprimerTouteLesDonnees";
             this.btnSupprimerTouteLesDonnees.Size = new System.Drawing.Size(374, 40);
             this.btnSupprimerTouteLesDonnees.TabIndex = 10;
@@ -93,7 +97,7 @@ namespace ATHENA
             this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnReinitialiser.Location = new System.Drawing.Point(632, 296);
+            this.btnReinitialiser.Location = new System.Drawing.Point(632, 390);
             this.btnReinitialiser.Name = "btnReinitialiser";
             this.btnReinitialiser.Size = new System.Drawing.Size(374, 40);
             this.btnReinitialiser.TabIndex = 9;
@@ -108,7 +112,7 @@ namespace ATHENA
             this.gbpElements.ForeColor = System.Drawing.Color.White;
             this.gbpElements.Location = new System.Drawing.Point(41, 169);
             this.gbpElements.Name = "gbpElements";
-            this.gbpElements.Size = new System.Drawing.Size(575, 305);
+            this.gbpElements.Size = new System.Drawing.Size(575, 405);
             this.gbpElements.TabIndex = 8;
             this.gbpElements.TabStop = false;
             this.gbpElements.Text = "TexteElementFiltre";
@@ -121,7 +125,7 @@ namespace ATHENA
             this.clbElements.FormattingEnabled = true;
             this.clbElements.Location = new System.Drawing.Point(6, 21);
             this.clbElements.Name = "clbElements";
-            this.clbElements.Size = new System.Drawing.Size(563, 276);
+            this.clbElements.Size = new System.Drawing.Size(563, 378);
             this.clbElements.TabIndex = 0;
             // 
             // gbpFiltres
@@ -180,7 +184,7 @@ namespace ATHENA
             this.btnOuvrirEmpBDD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOuvrirEmpBDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnOuvrirEmpBDD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnOuvrirEmpBDD.Location = new System.Drawing.Point(632, 36);
+            this.btnOuvrirEmpBDD.Location = new System.Drawing.Point(632, 344);
             this.btnOuvrirEmpBDD.Name = "btnOuvrirEmpBDD";
             this.btnOuvrirEmpBDD.Size = new System.Drawing.Size(374, 40);
             this.btnOuvrirEmpBDD.TabIndex = 13;
@@ -189,12 +193,61 @@ namespace ATHENA
             this.btnOuvrirEmpBDD.Visible = false;
             this.btnOuvrirEmpBDD.Click += new System.EventHandler(this.btnOuvrirEmpBDD_Click);
             // 
+            // lblCount
+            // 
+            this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount.ForeColor = System.Drawing.Color.White;
+            this.lblCount.Location = new System.Drawing.Point(797, 36);
+            this.lblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(133, 28);
+            this.lblCount.TabIndex = 20;
+            this.lblCount.Text = "none";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(628, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 28);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Nombre d\'élèves :";
+            // 
+            // txtRecherche
+            // 
+            this.txtRecherche.BackColor = System.Drawing.Color.White;
+            this.txtRecherche.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRecherche.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRecherche.Location = new System.Drawing.Point(769, 68);
+            this.txtRecherche.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRecherche.Name = "txtRecherche";
+            this.txtRecherche.Size = new System.Drawing.Size(237, 26);
+            this.txtRecherche.TabIndex = 22;
+            this.txtRecherche.TextChanged += new System.EventHandler(this.txtRecherche_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(628, 70);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 28);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Rechercher : ";
+            // 
             // frmSuppressionDeDonnées
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1044, 512);
+            this.ClientSize = new System.Drawing.Size(1044, 609);
+            this.Controls.Add(this.lblCount);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtRecherche);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnOuvrirEmpBDD);
             this.Controls.Add(this.btnSupprimerLesDonneesSelectionnees);
             this.Controls.Add(this.btnToutSelectionner);
@@ -211,6 +264,7 @@ namespace ATHENA
             this.gbpFiltres.ResumeLayout(false);
             this.gbpFiltres.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -227,5 +281,9 @@ namespace ATHENA
         private System.Windows.Forms.RadioButton rdbClasses;
         private System.Windows.Forms.RadioButton rdbEleve;
         private System.Windows.Forms.Button btnOuvrirEmpBDD;
+        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtRecherche;
+        private System.Windows.Forms.Label label3;
     }
 }

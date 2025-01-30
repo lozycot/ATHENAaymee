@@ -169,6 +169,7 @@ namespace CartesAcces2024
             this.txtRecherche.Name = "txtRecherche";
             this.txtRecherche.Size = new System.Drawing.Size(270, 26);
             this.txtRecherche.TabIndex = 17;
+            this.txtRecherche.TextChanged += new System.EventHandler(this.txtRecherche_TextChanged);
             // 
             // label3
             // 

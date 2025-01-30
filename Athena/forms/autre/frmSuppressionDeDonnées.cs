@@ -26,7 +26,10 @@ namespace ATHENA
             //Globale.ListeEleve.Clear();           // fait dans changeAffichage(), comme c'est systématique
             //Globale.ListeClasses = OperationsDb.GetClasses();
             //Globale.ListeEleve = OperationsDb.GetEleve();
-            changeAffichage(); // on met a jour l'affichage
+            changeAffichage(); // on met à jour l'affichage
+
+            // Mettre à jour le compteur d'élèves
+            lblCount.Text = $"{clbElements.Items.Count} élève(s) trouvé(s)"; // Afficher le nombre total d'élèves
         }
 
         /// <summary>
@@ -150,14 +153,14 @@ namespace ATHENA
         {
             if (rdbClasses.Checked == true) // selon le radiobouton sélectionné
             {
-                foreach(string clss in clbElements.CheckedItems)    // on regarde chaque élément concerné qui est coché
+                foreach (string clss in clbElements.CheckedItems)    // on regarde chaque élément concerné qui est coché
                 {
                     OperationsDb.deleteUneClasse(clss); // on effectue les opérations
                 }
             }
             else if (rdbEleve.Checked == true)
             {
-                for(int i = 0; i < Globale.ListeEleve.Count - 1; i++)   // pour chaque élève dans la base de donnée
+                for (int i = 0; i < Globale.ListeEleve.Count - 1; i++)   // pour chaque élève dans la base de donnée
                 {
                     // si les éléments cochés continents l'élève (son nom + prénom comme dans la methode changeAffichage)
                     if (clbElements.CheckedItems.Contains(Globale.ListeEleve[i].NomEleve + " " + Globale.ListeEleve[i].PrenomEleve))
@@ -169,7 +172,7 @@ namespace ATHENA
             }
             else if (rdbNiveaux.Checked == true)
             {
-                foreach(string niv in clbElements.CheckedItems)
+                foreach (string niv in clbElements.CheckedItems)
                 {
                     OperationsDb.deleteUnNiveau(niv);
                 }
@@ -177,6 +180,9 @@ namespace ATHENA
 
             // puis on met à jour l'affichage à la fin de la suppression
             changeAffichage();
+
+            // Mettre à jour le compteur d'élèves
+            lblCount.Text = $"{clbElements.Items.Count} élève(s) trouvé(s)"; // Afficher le nombre total d'élèves
         }
 
         private void btnOuvrirEmpBDD_Click(object sender, EventArgs e)
@@ -189,6 +195,22 @@ namespace ATHENA
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur lors de l'ouverture de l'emplacement : " + ex.Message);
+            }
+        }
+
+        private void txtRecherche_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtRecherche.Text.ToLower();
+            int count = 0; // Compteur d'éléves correspondants
+            for (int i = 0; i < clbElements.Items.Count; i++)
+            {
+                string itemText = clbElements.Items[i].ToString().ToLower();
+                if (itemText.Contains(searchText))
+                {
+                    clbElements.SelectedIndex = i; // Mettre à jour l'index sélectionné
+                    count++; // Incrémenter le compteur
+                    break; // Sortir de la boucle après avoir trouvé le premier élément correspondant
+                }
             }
         }
     }
