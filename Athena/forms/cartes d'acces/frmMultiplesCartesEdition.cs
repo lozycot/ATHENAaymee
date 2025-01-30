@@ -711,6 +711,9 @@ namespace CartesAcces2024
             Edition.RognageX = 720;
             Edition.RognageY = 457;
 
+            // Pour gérer les problèmes de dpi / scaling
+            this.AutoScaleMode = AutoScaleMode.Dpi;
+
             // On affiche la face de la carte selon le premier élève
             if (File.Exists(Chemin.DossierCartesFace + Globale.ListeEleveImpr[0].NiveauEleve + ".png"))
             {

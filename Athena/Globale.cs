@@ -410,7 +410,5 @@ namespace CartesAcces2024
         /// Longueur physique minimum d'un code barre en millimètre.
         /// </summary>
         public static double codeBarreLargeurMinimum { get; } = 13;
-
-        public static bool premiereDbCree = false;
     }
 }
