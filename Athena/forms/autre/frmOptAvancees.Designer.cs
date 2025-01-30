@@ -97,7 +97,7 @@ namespace CartesAcces2024
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(425, 429);
+            this.ClientSize = new System.Drawing.Size(472, 464);
             this.Controls.Add(this.btnDossier);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnRepartir);

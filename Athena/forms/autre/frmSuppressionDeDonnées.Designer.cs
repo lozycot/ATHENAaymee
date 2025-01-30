@@ -176,6 +176,7 @@ namespace ATHENA
             // btnOuvrirEmpBDD
             // 
             this.btnOuvrirEmpBDD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnOuvrirEmpBDD.Enabled = false;
             this.btnOuvrirEmpBDD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOuvrirEmpBDD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnOuvrirEmpBDD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
@@ -185,6 +186,7 @@ namespace ATHENA
             this.btnOuvrirEmpBDD.TabIndex = 13;
             this.btnOuvrirEmpBDD.Text = "Ouvrir emplacement de la BDD";
             this.btnOuvrirEmpBDD.UseVisualStyleBackColor = false;
+            this.btnOuvrirEmpBDD.Visible = false;
             this.btnOuvrirEmpBDD.Click += new System.EventHandler(this.btnOuvrirEmpBDD_Click);
             // 
             // frmSuppressionDeDonnées

@@ -76,6 +76,7 @@ namespace CartesAcces2024
             this.rdbA5 = new System.Windows.Forms.RadioButton();
             this.rdbA4 = new System.Windows.Forms.RadioButton();
             this.btnAjouterElementDansCartes = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pnlEdtPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarteArriere)).BeginInit();
@@ -84,6 +85,7 @@ namespace CartesAcces2024
             ((System.ComponentModel.ISupportInitialize)(this.tkbTaillePhoto)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEdtPhoto
@@ -137,6 +139,8 @@ namespace CartesAcces2024
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.groupBox3.Controls.Add(this.lblCompteur);
+            this.groupBox3.Controls.Add(this.progressBar1_compteur);
             this.groupBox3.Controls.Add(this.btnOpenFolder);
             this.groupBox3.Controls.Add(this.labelEnCoursValidation);
             this.groupBox3.Controls.Add(this.btnValiderImpr);
@@ -144,7 +148,7 @@ namespace CartesAcces2024
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(172, 545);
+            this.groupBox3.Location = new System.Drawing.Point(188, 544);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -171,11 +175,10 @@ namespace CartesAcces2024
             this.labelEnCoursValidation.AutoSize = true;
             this.labelEnCoursValidation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEnCoursValidation.ForeColor = System.Drawing.Color.Red;
-            this.labelEnCoursValidation.Location = new System.Drawing.Point(3, 234);
+            this.labelEnCoursValidation.Location = new System.Drawing.Point(95, 182);
             this.labelEnCoursValidation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelEnCoursValidation.MaximumSize = new System.Drawing.Size(400, 0);
             this.labelEnCoursValidation.Name = "labelEnCoursValidation";
-            this.labelEnCoursValidation.Size = new System.Drawing.Size(389, 50);
+            this.labelEnCoursValidation.Size = new System.Drawing.Size(511, 25);
             this.labelEnCoursValidation.TabIndex = 17;
             this.labelEnCoursValidation.Text = "En cours, veuillez attendre le message de validation";
             this.labelEnCoursValidation.Click += new System.EventHandler(this.labelEnCoursValidation_Click);
@@ -235,7 +238,7 @@ namespace CartesAcces2024
             this.lblCompteur.Enabled = false;
             this.lblCompteur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompteur.ForeColor = System.Drawing.Color.White;
-            this.lblCompteur.Location = new System.Drawing.Point(213, 10);
+            this.lblCompteur.Location = new System.Drawing.Point(18, 215);
             this.lblCompteur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCompteur.Name = "lblCompteur";
             this.lblCompteur.Size = new System.Drawing.Size(50, 29);
@@ -245,16 +248,14 @@ namespace CartesAcces2024
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.groupBox2.Controls.Add(this.progressBar1_compteur);
-            this.groupBox2.Controls.Add(this.lblCompteur);
             this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Controls.Add(this.btnSelect);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(874, 480);
+            this.groupBox2.Location = new System.Drawing.Point(883, 573);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(687, 85);
+            this.groupBox2.Size = new System.Drawing.Size(589, 85);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Edition Emploi du Temps";
@@ -262,9 +263,9 @@ namespace CartesAcces2024
             // progressBar1_compteur
             // 
             this.progressBar1_compteur.Enabled = false;
-            this.progressBar1_compteur.Location = new System.Drawing.Point(212, 42);
+            this.progressBar1_compteur.Location = new System.Drawing.Point(16, 247);
             this.progressBar1_compteur.Name = "progressBar1_compteur";
-            this.progressBar1_compteur.Size = new System.Drawing.Size(225, 23);
+            this.progressBar1_compteur.Size = new System.Drawing.Size(359, 23);
             this.progressBar1_compteur.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1_compteur.TabIndex = 20;
             // 
@@ -273,10 +274,10 @@ namespace CartesAcces2024
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnCancel.Location = new System.Drawing.Point(450, 23);
+            this.btnCancel.Location = new System.Drawing.Point(296, 23);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(228, 50);
+            this.btnCancel.Size = new System.Drawing.Size(280, 50);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "❌ &Annuler le rognagne";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -290,7 +291,7 @@ namespace CartesAcces2024
             this.btnSelect.Location = new System.Drawing.Point(8, 23);
             this.btnSelect.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(197, 50);
+            this.btnSelect.Size = new System.Drawing.Size(280, 50);
             this.btnSelect.TabIndex = 0;
             this.btnSelect.Text = "✂ &Sélectionnez la zone à rogner";
             this.btnSelect.UseVisualStyleBackColor = false;
@@ -302,7 +303,7 @@ namespace CartesAcces2024
             this.groupBox1.Controls.Add(this.rdbA5);
             this.groupBox1.Controls.Add(this.rdbA4);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(172, 480);
+            this.groupBox1.Location = new System.Drawing.Point(188, 479);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(687, 58);
             this.groupBox1.TabIndex = 15;
@@ -333,20 +334,38 @@ namespace CartesAcces2024
             // 
             // btnAjouterElementDansCartes
             // 
-            this.btnAjouterElementDansCartes.Location = new System.Drawing.Point(874, 572);
+            this.btnAjouterElementDansCartes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnAjouterElementDansCartes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAjouterElementDansCartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnAjouterElementDansCartes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnAjouterElementDansCartes.Location = new System.Drawing.Point(7, 22);
             this.btnAjouterElementDansCartes.Name = "btnAjouterElementDansCartes";
-            this.btnAjouterElementDansCartes.Size = new System.Drawing.Size(256, 23);
-            this.btnAjouterElementDansCartes.TabIndex = 16;
-            this.btnAjouterElementDansCartes.Text = "btnAjouterElementDansCarte";
-            this.btnAjouterElementDansCartes.UseVisualStyleBackColor = true;
+            this.btnAjouterElementDansCartes.Size = new System.Drawing.Size(570, 55);
+            this.btnAjouterElementDansCartes.TabIndex = 21;
+            this.btnAjouterElementDansCartes.Text = "Ajouter Element dans Cartes";
+            this.btnAjouterElementDansCartes.UseVisualStyleBackColor = false;
             this.btnAjouterElementDansCartes.Click += new System.EventHandler(this.btnAjouterElementDansCartes_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.groupBox4.Controls.Add(this.btnAjouterElementDansCartes);
+            this.groupBox4.ForeColor = System.Drawing.Color.White;
+            this.groupBox4.Location = new System.Drawing.Point(882, 480);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Size = new System.Drawing.Size(588, 85);
+            this.groupBox4.TabIndex = 13;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Edition Face de Carte";
             // 
             // FrmMultiplesCartesEdition
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1617, 875);
-            this.Controls.Add(this.btnAjouterElementDansCartes);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlEdtPhoto);
             this.Controls.Add(this.groupBox3);
@@ -366,9 +385,9 @@ namespace CartesAcces2024
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tkbTaillePhoto)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -395,7 +414,8 @@ namespace CartesAcces2024
         private System.Windows.Forms.RadioButton rdbA4;
         private System.Windows.Forms.Button btnOpenFolder;
         private System.Windows.Forms.ProgressBar progressBar1_compteur;
-        private System.Windows.Forms.Button btnAjouterElementDansCartes;
         private System.Windows.Forms.PictureBox pbCarteFace;
+        private System.Windows.Forms.Button btnAjouterElementDansCartes;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

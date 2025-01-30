@@ -57,7 +57,7 @@
             this.btnValiderImpr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValiderImpr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnValiderImpr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnValiderImpr.Location = new System.Drawing.Point(1184, 623);
+            this.btnValiderImpr.Location = new System.Drawing.Point(1184, 614);
             this.btnValiderImpr.MaximumSize = new System.Drawing.Size(300, 70);
             this.btnValiderImpr.MinimumSize = new System.Drawing.Size(300, 70);
             this.btnValiderImpr.Name = "btnValiderImpr";
@@ -193,9 +193,9 @@
             this.clbClasse6eme.CheckOnClick = true;
             this.clbClasse6eme.ForeColor = System.Drawing.SystemColors.Window;
             this.clbClasse6eme.FormattingEnabled = true;
-            this.clbClasse6eme.Location = new System.Drawing.Point(31, 45);
+            this.clbClasse6eme.Location = new System.Drawing.Point(29, 45);
             this.clbClasse6eme.Name = "clbClasse6eme";
-            this.clbClasse6eme.Size = new System.Drawing.Size(167, 357);
+            this.clbClasse6eme.Size = new System.Drawing.Size(167, 391);
             this.clbClasse6eme.TabIndex = 0;
             this.clbClasse6eme.SelectedIndexChanged += new System.EventHandler(this.clbClasses_SelectedIndexChanged);
             // 
@@ -206,9 +206,9 @@
             this.clbClasse5eme.CheckOnClick = true;
             this.clbClasse5eme.ForeColor = System.Drawing.SystemColors.Window;
             this.clbClasse5eme.FormattingEnabled = true;
-            this.clbClasse5eme.Location = new System.Drawing.Point(204, 45);
+            this.clbClasse5eme.Location = new System.Drawing.Point(202, 45);
             this.clbClasse5eme.Name = "clbClasse5eme";
-            this.clbClasse5eme.Size = new System.Drawing.Size(167, 357);
+            this.clbClasse5eme.Size = new System.Drawing.Size(167, 391);
             this.clbClasse5eme.TabIndex = 36;
             this.clbClasse5eme.SelectedIndexChanged += new System.EventHandler(this.clbClasse5eme_SelectedIndexChanged);
             // 
@@ -219,9 +219,9 @@
             this.clbClasse4eme.CheckOnClick = true;
             this.clbClasse4eme.ForeColor = System.Drawing.SystemColors.Window;
             this.clbClasse4eme.FormattingEnabled = true;
-            this.clbClasse4eme.Location = new System.Drawing.Point(377, 45);
+            this.clbClasse4eme.Location = new System.Drawing.Point(375, 45);
             this.clbClasse4eme.Name = "clbClasse4eme";
-            this.clbClasse4eme.Size = new System.Drawing.Size(167, 357);
+            this.clbClasse4eme.Size = new System.Drawing.Size(167, 391);
             this.clbClasse4eme.TabIndex = 37;
             this.clbClasse4eme.SelectedIndexChanged += new System.EventHandler(this.clbClasse4eme_SelectedIndexChanged_1);
             // 
@@ -232,9 +232,9 @@
             this.clbClasse3eme.CheckOnClick = true;
             this.clbClasse3eme.ForeColor = System.Drawing.SystemColors.Window;
             this.clbClasse3eme.FormattingEnabled = true;
-            this.clbClasse3eme.Location = new System.Drawing.Point(550, 45);
+            this.clbClasse3eme.Location = new System.Drawing.Point(548, 45);
             this.clbClasse3eme.Name = "clbClasse3eme";
-            this.clbClasse3eme.Size = new System.Drawing.Size(167, 357);
+            this.clbClasse3eme.Size = new System.Drawing.Size(167, 391);
             this.clbClasse3eme.TabIndex = 38;
             this.clbClasse3eme.SelectedIndexChanged += new System.EventHandler(this.clbClasse3eme_SelectedIndexChanged);
             // 
@@ -246,9 +246,9 @@
             this.gpbTriParClasses.Controls.Add(this.clbClasse5eme);
             this.gpbTriParClasses.Controls.Add(this.clbClasse6eme);
             this.gpbTriParClasses.ForeColor = System.Drawing.Color.White;
-            this.gpbTriParClasses.Location = new System.Drawing.Point(40, 254);
+            this.gpbTriParClasses.Location = new System.Drawing.Point(40, 217);
             this.gpbTriParClasses.Name = "gpbTriParClasses";
-            this.gpbTriParClasses.Size = new System.Drawing.Size(743, 439);
+            this.gpbTriParClasses.Size = new System.Drawing.Size(743, 467);
             this.gpbTriParClasses.TabIndex = 39;
             this.gpbTriParClasses.TabStop = false;
             this.gpbTriParClasses.Text = "Recherche par classes : ";
@@ -258,7 +258,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1510, 720);
+            this.ClientSize = new System.Drawing.Size(1510, 712);
             this.Controls.Add(this.gpbTriParClasses);
             this.Controls.Add(this.gbxTriParNiveau);
             this.Controls.Add(this.label4);
