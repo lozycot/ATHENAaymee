@@ -96,6 +96,7 @@ namespace CartesAcces2024
             nouvelle_eleve.NiveauEleve = cbbSection.Text;
             if (rdbParN.Checked)
             {
+                
                 if (cbbClasse.Text != "")
                     nouvelle_eleve.ClasseEleve = cbbClasse.Text;
                 // si cbbClasse est vide, chercher la classe de l'élève dans la base de données
