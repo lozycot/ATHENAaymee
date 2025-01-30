@@ -530,7 +530,7 @@
                     "_068FC8DACD9FFEF1459CBC28A86BA575"
                     {
                     "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
@@ -541,7 +541,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -641,7 +641,7 @@
                     "_26A937F4C52CEBE9089EACDBC18B7ED8"
                     {
                     "Name" = "8:zxing.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:zxing.dll"
@@ -652,7 +652,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -712,7 +712,7 @@
                     "_45DBA65FA460FD68F39497702614A5AB"
                     {
                     "Name" = "8:System.Data.SQLite.EF6.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:System.Data.SQLite.EF6.dll"
@@ -723,7 +723,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -763,7 +763,7 @@
                     "_4D5C4AB13B57397E861D425E75218B12"
                     {
                     "Name" = "8:System.Threading.Tasks.Extensions.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:System.Threading.Tasks.Extensions.dll"
@@ -774,7 +774,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -954,7 +954,7 @@
                     "_94C64480EFA13A89323DE05D62DEA873"
                     {
                     "Name" = "8:EntityFramework.SqlServer.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:EntityFramework.SqlServer.dll"
@@ -965,7 +965,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -1085,7 +1085,7 @@
                     "_A84F9378EF6DC8F4130C547E6A54BF0C"
                     {
                     "Name" = "8:Microsoft.Bcl.AsyncInterfaces.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:Microsoft.Bcl.AsyncInterfaces.dll"
@@ -1096,7 +1096,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -1156,7 +1156,7 @@
                     "_D29D809196B6B85F2C0D352CB46FFA7A"
                     {
                     "Name" = "8:EntityFramework.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:EntityFramework.dll"
@@ -1167,7 +1167,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -1207,7 +1207,7 @@
                     "_D8B22B5F1FA9E2F7C89CC84405E17B81"
                     {
                     "Name" = "8:System.Runtime.CompilerServices.Unsafe.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:System.Runtime.CompilerServices.Unsafe.dll"
@@ -1218,7 +1218,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -1238,7 +1238,7 @@
                     "_DE9321F57F3A09A6E66F80A9F1CC972B"
                     {
                     "Name" = "8:System.Data.SQLite.Linq.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:System.Data.SQLite.Linq.dll"
@@ -1249,7 +1249,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -1269,7 +1269,7 @@
                     "_E46FE969C9A149F7A8B24C892A09F3C8"
                     {
                     "Name" = "8:System.Data.SQLite.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:System.Data.SQLite.dll"
@@ -1280,7 +1280,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -1320,7 +1320,7 @@
                     "_E8C0E668ADC70740A645D5D7FD6127EA"
                     {
                     "Name" = "8:zxing.presentation.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:zxing.presentation.dll"
@@ -1331,7 +1331,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -1391,7 +1391,7 @@
                     "_F30BF10FCD1BF651E1AD42D55660AA67"
                     {
                     "Name" = "8:QRCoder.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:QRCoder.dll"
@@ -1402,7 +1402,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -2126,7 +2126,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CFEC20CCC6A5443C877719A7C42E34DF"
             {
-            "SourcePath" = "8:..\\Athena\\obj\\Release\\Athena.exe"
+            "SourcePath" = "8:..\\Athena\\obj\\Debug\\Athena.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_92F08EBBA4FC4C5BB6E9A79647EA8E45"
