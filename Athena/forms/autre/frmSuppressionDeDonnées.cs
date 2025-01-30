@@ -200,18 +200,88 @@ namespace ATHENA
 
         private void txtRecherche_TextChanged(object sender, EventArgs e)
         {
-            string searchText = txtRecherche.Text.ToLower();
-            int count = 0; // Compteur d'éléves correspondants
-            for (int i = 0; i < clbElements.Items.Count; i++)
+            string searchText = RemoveAccents(txtRecherche.Text.ToLower()); // Supprimer les accents et mettre en minuscule
+            lbRecherche.Items.Clear(); // Effacer les résultats précédents
+
+            // Vérifier si la barre de recherche n'est pas vide
+            if (!string.IsNullOrWhiteSpace(searchText))
             {
-                string itemText = clbElements.Items[i].ToString().ToLower();
-                if (itemText.Contains(searchText))
+                // Ajouter les éléments correspondants à lbRecherche
+                foreach (var item in clbElements.Items)
                 {
-                    clbElements.SelectedIndex = i; // Mettre à jour l'index sélectionné
-                    count++; // Incrémenter le compteur
-                    break; // Sortir de la boucle après avoir trouvé le premier élément correspondant
+                    string itemText = RemoveAccents(item.ToString().ToLower()); // Supprimer les accents et mettre en minuscule
+                    if (itemText.Contains(searchText))
+                    {
+                        lbRecherche.Items.Add(item); // Ajouter à la liste de recherche
+                    }
                 }
             }
+        }
+
+        private void lbRecherche_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbRecherche.SelectedItem != null)
+            {
+                string selectedText = lbRecherche.SelectedItem.ToString();
+                for (int i = 0; i < clbElements.Items.Count; i++)
+                {
+                    if (clbElements.Items[i].ToString() == selectedText)
+                    {
+                        clbElements.SetItemChecked(i, true); // Cocher l'élément correspondant
+                        clbElements.SelectedIndex = i; // Sélectionner l'élément
+                        break;
+                    }
+                }
+            }
+        }
+
+        public static string RemoveAccents(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return input;
+
+            StringBuilder normalizedString = new StringBuilder();
+            foreach (char c in input)
+            {
+                // Convertir les caractères accentués en non accentués
+                switch (c)
+                {
+                    case 'É': normalizedString.Append('E'); break;
+                    case 'È': normalizedString.Append('E'); break;
+                    case 'Ê': normalizedString.Append('E'); break;
+                    case 'Ë': normalizedString.Append('E'); break;
+                    case 'À': normalizedString.Append('A'); break;
+                    case 'Â': normalizedString.Append('A'); break;
+                    case 'Ä': normalizedString.Append('A'); break;
+                    case 'Î': normalizedString.Append('I'); break;
+                    case 'Ï': normalizedString.Append('I'); break;
+                    case 'Ô': normalizedString.Append('O'); break;
+                    case 'Ö': normalizedString.Append('O'); break;
+                    case 'Ù': normalizedString.Append('U'); break;
+                    case 'Û': normalizedString.Append('U'); break;
+                    case 'Ü': normalizedString.Append('U'); break;
+                    case 'Ç': normalizedString.Append('C'); break;
+
+                    case 'é': normalizedString.Append('e'); break;
+                    case 'è': normalizedString.Append('e'); break;
+                    case 'ê': normalizedString.Append('e'); break;
+                    case 'ë': normalizedString.Append('e'); break;
+                    case 'à': normalizedString.Append('a'); break;
+                    case 'â': normalizedString.Append('a'); break;
+                    case 'ä': normalizedString.Append('a'); break;
+                    case 'î': normalizedString.Append('i'); break;
+                    case 'ï': normalizedString.Append('i'); break;
+                    case 'ô': normalizedString.Append('o'); break;
+                    case 'ö': normalizedString.Append('o'); break;
+                    case 'ù': normalizedString.Append('u'); break;
+                    case 'û': normalizedString.Append('u'); break;
+                    case 'ü': normalizedString.Append('u'); break;
+                    case 'ç': normalizedString.Append('c'); break;
+
+                    default: normalizedString.Append(c); break;
+                }
+            }
+            return normalizedString.ToString();
         }
     }
 }

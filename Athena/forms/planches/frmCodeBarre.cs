@@ -380,18 +380,35 @@ namespace CartesAcces2024
 
         private void txtRecherche_TextChanged(object sender, EventArgs e)
         {
-            string searchText = txtRecherche.Text.ToLower();
-            for (int i = 0; i < clbElements.Items.Count; i++)
+            string searchText = RemoveAccents(txtRecherche.Text.ToLower());
+            lbRecherche.Items.Clear();
+
+            if (!string.IsNullOrWhiteSpace(searchText))
             {
-                string itemText = clbElements.Items[i].ToString().ToLower();
-                if (itemText.Contains(searchText))
+                foreach (var item in clbElements.Items)
                 {
-                    clbElements.SelectedIndex = i; // Mettre à jour l'index sélectionné
-                    break; // Sortir de la boucle après avoir trouvé le premier élément correspondant
+                    string itemText = RemoveAccents(item.ToString().ToLower());
+                    if (itemText.Contains(searchText))
+                    {
+                        lbRecherche.Items.Add(item);
+                    }
                 }
-                else
+            }
+        }
+
+        private void lbRecherche_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbRecherche.SelectedItem != null)
+            {
+                string selectedText = lbRecherche.SelectedItem.ToString();
+                for (int i = 0; i < clbElements.Items.Count; i++)
                 {
-                    clbElements.SetItemChecked(i, false); // Désélectionner les autres éléments
+                    if (clbElements.Items[i].ToString() == selectedText)
+                    {
+                        clbElements.SetItemChecked(i, true);
+                        clbElements.SelectedIndex = i;
+                        break;
+                    }
                 }
             }
         }

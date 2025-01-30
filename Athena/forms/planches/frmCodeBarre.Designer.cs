@@ -72,10 +72,13 @@ namespace CartesAcces2024
             this.btnToutSelectionner = new System.Windows.Forms.Button();
             this.btnReinitialiser = new System.Windows.Forms.Button();
             this.pbCodeBarre = new System.Windows.Forms.PictureBox();
+            this.gbpRecherche = new System.Windows.Forms.GroupBox();
+            this.lbRecherche = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.gbpElements.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCodeBarre)).BeginInit();
+            this.gbpRecherche.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -88,11 +91,11 @@ namespace CartesAcces2024
             this.groupBox1.Controls.Add(this.rdb6eme);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(17, 75);
+            this.groupBox1.Location = new System.Drawing.Point(17, 304);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(407, 568);
+            this.groupBox1.Size = new System.Drawing.Size(407, 339);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtre de recherche par niveau";
@@ -100,7 +103,7 @@ namespace CartesAcces2024
             // rdb5eme
             // 
             this.rdb5eme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb5eme.Location = new System.Drawing.Point(44, 144);
+            this.rdb5eme.Location = new System.Drawing.Point(45, 165);
             this.rdb5eme.Margin = new System.Windows.Forms.Padding(4);
             this.rdb5eme.Name = "rdb5eme";
             this.rdb5eme.Size = new System.Drawing.Size(125, 27);
@@ -113,7 +116,7 @@ namespace CartesAcces2024
             // 
             this.rdbTout.Checked = true;
             this.rdbTout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbTout.Location = new System.Drawing.Point(44, 54);
+            this.rdbTout.Location = new System.Drawing.Point(45, 75);
             this.rdbTout.Margin = new System.Windows.Forms.Padding(4);
             this.rdbTout.Name = "rdbTout";
             this.rdbTout.Size = new System.Drawing.Size(169, 27);
@@ -126,7 +129,7 @@ namespace CartesAcces2024
             // rdb3eme
             // 
             this.rdb3eme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb3eme.Location = new System.Drawing.Point(44, 234);
+            this.rdb3eme.Location = new System.Drawing.Point(45, 255);
             this.rdb3eme.Margin = new System.Windows.Forms.Padding(4);
             this.rdb3eme.Name = "rdb3eme";
             this.rdb3eme.Size = new System.Drawing.Size(125, 27);
@@ -138,7 +141,7 @@ namespace CartesAcces2024
             // rdb4eme
             // 
             this.rdb4eme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb4eme.Location = new System.Drawing.Point(44, 189);
+            this.rdb4eme.Location = new System.Drawing.Point(45, 210);
             this.rdb4eme.Margin = new System.Windows.Forms.Padding(4);
             this.rdb4eme.Name = "rdb4eme";
             this.rdb4eme.Size = new System.Drawing.Size(125, 27);
@@ -150,7 +153,7 @@ namespace CartesAcces2024
             // rdb6eme
             // 
             this.rdb6eme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb6eme.Location = new System.Drawing.Point(44, 99);
+            this.rdb6eme.Location = new System.Drawing.Point(45, 120);
             this.rdb6eme.Margin = new System.Windows.Forms.Padding(4);
             this.rdb6eme.Name = "rdb6eme";
             this.rdb6eme.Size = new System.Drawing.Size(125, 27);
@@ -296,6 +299,30 @@ namespace CartesAcces2024
             this.pbCodeBarre.TabIndex = 21;
             this.pbCodeBarre.TabStop = false;
             // 
+            // gbpRecherche
+            // 
+            this.gbpRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.gbpRecherche.Controls.Add(this.lbRecherche);
+            this.gbpRecherche.ForeColor = System.Drawing.Color.White;
+            this.gbpRecherche.Location = new System.Drawing.Point(17, 74);
+            this.gbpRecherche.Name = "gbpRecherche";
+            this.gbpRecherche.Size = new System.Drawing.Size(407, 223);
+            this.gbpRecherche.TabIndex = 10;
+            this.gbpRecherche.TabStop = false;
+            this.gbpRecherche.Text = "Resultat de la Recherche";
+            // 
+            // lbRecherche
+            // 
+            this.lbRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.lbRecherche.ForeColor = System.Drawing.Color.White;
+            this.lbRecherche.FormattingEnabled = true;
+            this.lbRecherche.ItemHeight = 16;
+            this.lbRecherche.Location = new System.Drawing.Point(8, 20);
+            this.lbRecherche.Name = "lbRecherche";
+            this.lbRecherche.Size = new System.Drawing.Size(392, 196);
+            this.lbRecherche.TabIndex = 1;
+            this.lbRecherche.SelectedIndexChanged += new System.EventHandler(this.lbRecherche_SelectedIndexChanged);
+            // 
             // frmCodeBarre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,6 +331,7 @@ namespace CartesAcces2024
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1356, 662);
+            this.Controls.Add(this.gbpRecherche);
             this.Controls.Add(this.pbCodeBarre);
             this.Controls.Add(this.btnReinitialiser);
             this.Controls.Add(this.btnToutSelectionner);
@@ -325,6 +353,7 @@ namespace CartesAcces2024
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
             this.gbpElements.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCodeBarre)).EndInit();
+            this.gbpRecherche.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +378,7 @@ namespace CartesAcces2024
         private System.Windows.Forms.Button btnToutSelectionner;
         private System.Windows.Forms.Button btnReinitialiser;
         private System.Windows.Forms.PictureBox pbCodeBarre;
+        private System.Windows.Forms.GroupBox gbpRecherche;
+        private System.Windows.Forms.ListBox lbRecherche;
     }
 }
