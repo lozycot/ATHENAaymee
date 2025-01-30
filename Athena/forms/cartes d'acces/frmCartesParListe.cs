@@ -407,6 +407,24 @@ namespace CartesAcces2024
                 }
             }
         }
+
+        private void txtRecherche_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtRecherche.Text.ToLower();
+            for (int i = 0; i < clbElements.Items.Count; i++)
+            {
+                string itemText = clbElements.Items[i].ToString().ToLower();
+                if (itemText.Contains(searchText))
+                {
+                    clbElements.SelectedIndex = i; // Mettre à jour l'index sélectionné
+                    break; // Sortir de la boucle après avoir trouvé le premier élément correspondant
+                }
+                else
+                {
+                    clbElements.SetItemChecked(i, false); // Désélectionner les autres éléments
+                }
+            }
+        }
     }
 }
 
