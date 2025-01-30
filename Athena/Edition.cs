@@ -569,9 +569,6 @@ namespace CartesAcces2024
         /// <param name="texte"></param>
         public static void codeBarreFace(Graphics objGraphique, string texte)
         {
-            GraphicsUnit defPageUnit = objGraphique.PageUnit;
-            float defPageScale = objGraphique.PageScale;
-
             // pour modifier lataille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
             float dpiScale;
             using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
@@ -602,10 +599,11 @@ namespace CartesAcces2024
                 (int)(bmpOriginal.Height * 2.0 * dpiScale)
             ));
 
-            objGraphique.DrawImage(bmpFinal, new Point(50, 700));
+            bmpFinal.RotateFlip(RotateFlipType.Rotate90FlipNone);
 
-            objGraphique.PageUnit = defPageUnit;
-            objGraphique.PageScale = defPageScale;
+            int yCoord = (1240 / 2) - (bmpFinal.Height);
+
+            objGraphique.DrawImage(bmpFinal, new Point(1500, yCoord));
         }
 
 

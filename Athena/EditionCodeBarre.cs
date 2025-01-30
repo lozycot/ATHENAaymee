@@ -162,7 +162,7 @@ namespace CartesAcces2024
                 Format = BarcodeFormat.CODE_128,
                 Options = new EncodingOptions
                 {
-                    Width = (int)(250),
+                    Width = (int)(350),
                     Height = (int)(80),
                     Margin = 2,
                     PureBarcode = true
