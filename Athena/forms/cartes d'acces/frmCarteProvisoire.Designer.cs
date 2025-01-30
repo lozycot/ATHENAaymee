@@ -92,7 +92,7 @@ namespace CartesAcces2024
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 40);
+            this.label7.Location = new System.Drawing.Point(37, 60);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(214, 17);
             this.label7.TabIndex = 31;
@@ -102,7 +102,7 @@ namespace CartesAcces2024
             // 
             this.cbbClasse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.cbbClasse.Location = new System.Drawing.Point(298, 85);
+            this.cbbClasse.Location = new System.Drawing.Point(311, 105);
             this.cbbClasse.Name = "cbbClasse";
             this.cbbClasse.Size = new System.Drawing.Size(130, 28);
             this.cbbClasse.TabIndex = 26;
@@ -117,7 +117,7 @@ namespace CartesAcces2024
             "5eme",
             "4eme",
             "3eme"});
-            this.cbbSection.Location = new System.Drawing.Point(79, 85);
+            this.cbbSection.Location = new System.Drawing.Point(92, 105);
             this.cbbSection.Name = "cbbSection";
             this.cbbSection.Size = new System.Drawing.Size(130, 28);
             this.cbbSection.TabIndex = 25;
@@ -126,7 +126,7 @@ namespace CartesAcces2024
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(231, 91);
+            this.label4.Location = new System.Drawing.Point(244, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 17);
             this.label4.TabIndex = 24;
@@ -137,7 +137,7 @@ namespace CartesAcces2024
             this.btnAnnulerPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnAnnulerPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAnnulerPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnAnnulerPhoto.Location = new System.Drawing.Point(254, 277);
+            this.btnAnnulerPhoto.Location = new System.Drawing.Point(227, 257);
             this.btnAnnulerPhoto.MaximumSize = new System.Drawing.Size(160, 40);
             this.btnAnnulerPhoto.MinimumSize = new System.Drawing.Size(180, 45);
             this.btnAnnulerPhoto.Name = "btnAnnulerPhoto";
@@ -153,10 +153,10 @@ namespace CartesAcces2024
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnSave.Location = new System.Drawing.Point(108, 328);
+            this.btnSave.Location = new System.Drawing.Point(500, 332);
             this.btnSave.MinimumSize = new System.Drawing.Size(180, 40);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(223, 64);
+            this.btnSave.Size = new System.Drawing.Size(440, 64);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Imprimer";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -180,7 +180,7 @@ namespace CartesAcces2024
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 91);
+            this.label3.Location = new System.Drawing.Point(26, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 17);
             this.label3.TabIndex = 23;
@@ -192,7 +192,7 @@ namespace CartesAcces2024
             this.txtPrenom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrenom.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtPrenom.Location = new System.Drawing.Point(298, 131);
+            this.txtPrenom.Location = new System.Drawing.Point(311, 151);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(130, 26);
             this.txtPrenom.TabIndex = 22;
@@ -204,7 +204,7 @@ namespace CartesAcces2024
             this.txtNom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNom.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtNom.Location = new System.Drawing.Point(79, 131);
+            this.txtNom.Location = new System.Drawing.Point(92, 151);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(130, 26);
             this.txtNom.TabIndex = 21;
@@ -215,7 +215,7 @@ namespace CartesAcces2024
             this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnReset.Location = new System.Drawing.Point(29, 234);
+            this.btnReset.Location = new System.Drawing.Point(41, 249);
             this.btnReset.MinimumSize = new System.Drawing.Size(180, 45);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(180, 61);
@@ -229,7 +229,7 @@ namespace CartesAcces2024
             this.btnEdtPerso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnEdtPerso.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdtPerso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnEdtPerso.Location = new System.Drawing.Point(248, 234);
+            this.btnEdtPerso.Location = new System.Drawing.Point(261, 249);
             this.btnEdtPerso.MinimumSize = new System.Drawing.Size(180, 45);
             this.btnEdtPerso.Name = "btnEdtPerso";
             this.btnEdtPerso.Size = new System.Drawing.Size(180, 61);
@@ -255,7 +255,7 @@ namespace CartesAcces2024
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(224, 137);
+            this.label2.Location = new System.Drawing.Point(237, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 1;
@@ -268,11 +268,10 @@ namespace CartesAcces2024
             this.groupBox3.Controls.Add(this.pictureBox1);
             this.groupBox3.Controls.Add(this.btnAjouterPhoto);
             this.groupBox3.Controls.Add(this.btnAnnulerPhoto);
-            this.groupBox3.Controls.Add(this.btnSave);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(515, 14);
+            this.groupBox3.Location = new System.Drawing.Point(501, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(440, 398);
+            this.groupBox3.Size = new System.Drawing.Size(440, 319);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ajout et Edition Photo";
@@ -280,7 +279,7 @@ namespace CartesAcces2024
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(128, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(131, 41);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(173, 194);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(173, 194);
@@ -295,7 +294,7 @@ namespace CartesAcces2024
             this.btnAjouterPhoto.Enabled = false;
             this.btnAjouterPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAjouterPhoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnAjouterPhoto.Location = new System.Drawing.Point(19, 277);
+            this.btnAjouterPhoto.Location = new System.Drawing.Point(31, 257);
             this.btnAjouterPhoto.MaximumSize = new System.Drawing.Size(180, 45);
             this.btnAjouterPhoto.MinimumSize = new System.Drawing.Size(180, 45);
             this.btnAjouterPhoto.Name = "btnAjouterPhoto";
@@ -308,7 +307,7 @@ namespace CartesAcces2024
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 137);
+            this.label1.Location = new System.Drawing.Point(37, 157);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 0;
@@ -347,7 +346,7 @@ namespace CartesAcces2024
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 14);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(482, 398);
             this.groupBox1.TabIndex = 13;
@@ -358,7 +357,7 @@ namespace CartesAcces2024
             // 
             this.rdbParN.AutoSize = true;
             this.rdbParN.Checked = true;
-            this.rdbParN.Location = new System.Drawing.Point(373, 40);
+            this.rdbParN.Location = new System.Drawing.Point(386, 60);
             this.rdbParN.Name = "rdbParN";
             this.rdbParN.Size = new System.Drawing.Size(55, 21);
             this.rdbParN.TabIndex = 35;
@@ -370,7 +369,7 @@ namespace CartesAcces2024
             // rdbParO
             // 
             this.rdbParO.AutoSize = true;
-            this.rdbParO.Location = new System.Drawing.Point(271, 40);
+            this.rdbParO.Location = new System.Drawing.Point(284, 60);
             this.rdbParO.Name = "rdbParO";
             this.rdbParO.Size = new System.Drawing.Size(51, 21);
             this.rdbParO.TabIndex = 34;
@@ -381,7 +380,7 @@ namespace CartesAcces2024
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(62, 315);
+            this.label8.Location = new System.Drawing.Point(74, 353);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(327, 17);
             this.label8.TabIndex = 33;
@@ -411,9 +410,10 @@ namespace CartesAcces2024
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Location = new System.Drawing.Point(15, 476);
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Location = new System.Drawing.Point(112, 490);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(958, 415);
+            this.panel2.Size = new System.Drawing.Size(944, 404);
             this.panel2.TabIndex = 20;
             // 
             // frmCarteProvisoire
