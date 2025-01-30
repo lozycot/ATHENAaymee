@@ -11,17 +11,47 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace CartesAcces2024
 {
     static class ConnectDb
     {
+        [DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
+
+        [DllImport("shcore.dll")]
+        private static extern int SetProcessDpiAwareness(PROCESS_DPI_AWARENESS awareness);
+
+        private enum PROCESS_DPI_AWARENESS
+        {
+            Process_DPI_Unaware = 0,
+            Process_System_DPI_Aware = 1,
+            Process_Per_Monitor_DPI_Aware = 2
+        }
+
+
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            // Add DPI awareness before any other initialization
+            if (Environment.OSVersion.Version.Major >= 6)
+            {
+                if (Environment.OSVersion.Version.Major >= 10)
+                {
+                    // Windows 10 and above
+                    SetProcessDpiAwareness(PROCESS_DPI_AWARENESS.Process_Per_Monitor_DPI_Aware);
+                }
+                else
+                {
+                    // Windows Vista through Windows 8.1
+                    SetProcessDPIAware();
+                }
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -89,7 +119,6 @@ namespace CartesAcces2024
                             command.CommandText = scriptSQL;
                             command.ExecuteNonQuery();
                             MessageBox.Show("Aucune base de données trouvée, une nouvelle a été générée. Vous devrez importer de nouvelles données.");
-                            Globale.premiereDbCree = true;
                         }
                     }
                 }

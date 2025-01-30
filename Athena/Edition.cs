@@ -45,6 +45,12 @@ namespace CartesAcces2024
         public static string CheminFichier { get; set; }
         public static string CheminImpressionFinal { get; set; }
 
+
+        public static float GetDpiScaleFactor(Graphics graphObjec)
+        {
+            return graphObjec.DpiX / 96.0f;  // 96 DPI is the baseline
+        }
+
         /// <summary>
         /// Dessine le rectangle de couleur derrière le texte pour une meilleure visibilité de celui-ci
         /// </summary>
@@ -201,19 +207,32 @@ namespace CartesAcces2024
         /// Récupère et place le QR code sur la face de la carte
         /// </summary>
         /// <param name="pbCarteFace"></param>
-        public static void qrCodeFace(PictureBox pbCarteFace)
+        //public static void qrCodeFace(PictureBox pbCarteFace)
+        //{
+        //    List<string> Etablissement = new List<string>(OperationsDb.GetEtablissement());
+        //    var bmpOriginal = QrCode.CreationQrCode(Etablissement[7]);
+        //    var bmpFinal = new Bitmap(bmpOriginal, new Size(220, 220));
+
+        //    var objGraphique = Graphics.FromImage(pbCarteFace.Image);
+        //    objGraphique.DrawImage(bmpFinal, new Point(1350, 80));
+        //}
+
+
+
+
+
+        private static void ajouterChampsPersonnaliseeSurLaCarte(Graphics objGraphique)
         {
-            List<string> Etablissement = new List<string>(OperationsDb.GetEtablissement());
-            var bmpOriginal = QrCode.CreationQrCode(Etablissement[7]);
-            var bmpFinal = new Bitmap(bmpOriginal, new Size(220, 220));
-
-            var objGraphique = Graphics.FromImage(pbCarteFace.Image);
-            objGraphique.DrawImage(bmpFinal, new Point(1350, 80));
+            // Si l'utilisatuer à ajouté des elements personnalisee sur la carte
+            if (Globale.donneesChampsPersonnalisee != null)
+            {
+                // on les dessines sur le document à imprimer
+                foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneeUnChamp in Globale.donneesChampsPersonnalisee)
+                {
+                    objGraphique.DrawImage(donneeUnChamp.Item2, new Point(donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y));
+                }
+            }
         }
-
-
-
-
 
 
 
@@ -350,6 +369,9 @@ namespace CartesAcces2024
             fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1165);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1165);
 
+
+            ajouterChampsPersonnaliseeSurLaCarte(objGraphique);
+
             pbCarteFace.Refresh();
 
             objGraphique.Dispose(); // Libère les ressources
@@ -458,6 +480,8 @@ namespace CartesAcces2024
             fondTexteCarteFace(objGraphique, classe, new Font("Calibri", 45, FontStyle.Bold), classe, 25, 70);
             objGraphique.DrawString(classe, new Font("Calibri", 45, FontStyle.Bold), pinceauNoir, 50, 70);
 
+            ajouterChampsPersonnaliseeSurLaCarte(objGraphique);
+
             pbCarteFace.Refresh();
 
             objGraphique.Dispose();
@@ -471,11 +495,35 @@ namespace CartesAcces2024
 
         public static void qrCodeFace(Graphics objGraphique)
         {
+            // pour modifier lataille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
+            float dpiScale;
+            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                switch (g.DpiX)
+                {
+                    case 96:  // 100% DPI
+                        dpiScale = 0.75f;
+                        break;
+                    case 120: // 125% DPI
+                        dpiScale = 1.0f;
+                        break;
+                    case 144: // 150% DPI
+                        dpiScale = 1.2f;
+                        break;
+                    case 168: // 175% DPI
+                        dpiScale = 1.4f;
+                        break;
+                    default:  // Default to 125% DPI scale
+                        dpiScale = 1.0f;
+                        break;
+                }
+            }
+
             List<string> Etablissement = new List<string>(OperationsDb.GetEtablissement());
             if (Etablissement[7]!="") // Etablissement[7] est l'url de l'établissement
             {
                 var bmpOriginal = QrCode.CreationQrCode(Etablissement[7]);
-                var bmpFinal = new Bitmap(bmpOriginal, new Size(175, 175));
+                var bmpFinal = new Bitmap(bmpOriginal, new Size((int)(175 * dpiScale), (int)(175 * dpiScale)));
 
                 objGraphique.DrawImage(bmpFinal, new Point(880, 990));
             }
@@ -483,9 +531,33 @@ namespace CartesAcces2024
 
         public static void qrCodeFaceProvisoire(Graphics objGraphique)
         {
+            // pour modifier lataille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
+            float dpiScale;
+            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                switch (g.DpiX)
+                {
+                    case 96:  // 100% DPI
+                        dpiScale = 0.75f;
+                        break;
+                    case 120: // 125% DPI
+                        dpiScale = 1.0f;
+                        break;
+                    case 144: // 150% DPI
+                        dpiScale = 1.2f;
+                        break;
+                    case 168: // 175% DPI
+                        dpiScale = 1.4f;
+                        break;
+                    default:  // Default to 125% DPI scale
+                        dpiScale = 1.0f;
+                        break;
+                }
+            }
+
             List<string> Etablissement = new List<string>(OperationsDb.GetEtablissement());
             var bmpOriginal = QrCode.CreationQrCode(Etablissement[7]);
-            var bmpFinal = new Bitmap(bmpOriginal, new Size(180, 180));
+            var bmpFinal = new Bitmap(bmpOriginal, new Size((int)(180 * dpiScale), (int)(180 * dpiScale)));
 
             objGraphique.DrawImage(bmpFinal, new Point(875, 980));
         }
@@ -497,13 +569,44 @@ namespace CartesAcces2024
         /// <param name="texte"></param>
         public static void codeBarreFace(Graphics objGraphique, string texte)
         {
+            GraphicsUnit defPageUnit = objGraphique.PageUnit;
+            float defPageScale = objGraphique.PageScale;
+
+            // pour modifier lataille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
+            float dpiScale;
+            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                switch (g.DpiX)
+                {
+                    case 96:  // 100% DPI
+                        dpiScale = 0.75f;
+                        break;
+                    case 120: // 125% DPI
+                        dpiScale = 1.0f;
+                        break;
+                    case 144: // 150% DPI
+                        dpiScale = 1.2f;
+                        break;
+                    case 168: // 175% DPI
+                        dpiScale = 1.4f;
+                        break;
+                    default:  // Default to 125% DPI scale
+                        dpiScale = 1.0f;
+                        break;
+                }
+            }
+
             var bmpOriginal = EditionCodeBarre.generrerBitMapDeCodeBarre(texte);
-            var bmpFinal = new Bitmap(bmpOriginal, new Size((int)Math.Round(bmpOriginal.Width * 1.5), bmpOriginal.Height * 2));
+            var bmpFinal = new Bitmap(bmpOriginal, new Size(
+                (int)(bmpOriginal.Width * 1.5 * dpiScale),
+                (int)(bmpOriginal.Height * 2.0 * dpiScale)
+            ));
 
             objGraphique.DrawImage(bmpFinal, new Point(50, 700));
+
+            objGraphique.PageUnit = defPageUnit;
+            objGraphique.PageScale = defPageScale;
         }
-
-
 
 
         /// <summary>
@@ -553,7 +656,7 @@ namespace CartesAcces2024
             //recoupage pour éviter d'avoir un code barre trop long
             if (tempNom.Length > 9)
                 tempNom = tempNom.Substring(0, 8) + ".";
-            if (tempNom.Length + tempPrenom.Length > 13)
+            if (tempPrenom.Length > 13)
                 tempPrenom = tempPrenom.Substring(0, 12) + ".";
 
             codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
@@ -600,15 +703,7 @@ namespace CartesAcces2024
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1165);
 
 
-            // Si l'utilisatuer à ajouté des elements personnalisee sur la carte
-            if (Globale.donneesChampsPersonnalisee != null)
-            {
-                // on les dessines sur le document à imprimer
-                foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneeUnChamp in Globale.donneesChampsPersonnalisee)
-                {
-                    objGraphique.DrawImage(donneeUnChamp.Item2, new Point(donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y));
-                }
-            }
+            ajouterChampsPersonnaliseeSurLaCarte(objGraphique);
             
 
 
@@ -688,16 +783,7 @@ namespace CartesAcces2024
             fondTexteCarteFace(objGraphique, eleve.ClasseEleve, police, classe, 50, 70);
             objGraphique.DrawString(eleve.ClasseEleve, police, pinceauNoir, 50, 70);
 
-            // ajout des champs personnalisées
-            // Si l'utilisatuer à ajouté des elements personnalisee sur la carte
-            if (Globale.donneesChampsPersonnalisee != null)
-            {
-                // on les dessines sur le document à imprimer
-                foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneeUnChamp in Globale.donneesChampsPersonnalisee)
-                {
-                    objGraphique.DrawImage(donneeUnChamp.Item2, new Point(donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y));
-                }
-            }
+            ajouterChampsPersonnaliseeSurLaCarte(objGraphique);
 
             objGraphique.Dispose(); // Libère les ressources
 
