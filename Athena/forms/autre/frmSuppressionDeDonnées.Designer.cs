@@ -45,8 +45,11 @@ namespace ATHENA
             this.label1 = new System.Windows.Forms.Label();
             this.txtRecherche = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.gbpRecherche = new System.Windows.Forms.GroupBox();
+            this.lbRecherche = new System.Windows.Forms.ListBox();
             this.gbpElements.SuspendLayout();
             this.gbpFiltres.SuspendLayout();
+            this.gbpRecherche.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSupprimerLesDonneesSelectionnees
@@ -238,12 +241,37 @@ namespace ATHENA
             this.label3.TabIndex = 21;
             this.label3.Text = "Rechercher : ";
             // 
+            // gbpRecherche
+            // 
+            this.gbpRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.gbpRecherche.Controls.Add(this.lbRecherche);
+            this.gbpRecherche.ForeColor = System.Drawing.Color.White;
+            this.gbpRecherche.Location = new System.Drawing.Point(625, 101);
+            this.gbpRecherche.Name = "gbpRecherche";
+            this.gbpRecherche.Size = new System.Drawing.Size(407, 223);
+            this.gbpRecherche.TabIndex = 24;
+            this.gbpRecherche.TabStop = false;
+            this.gbpRecherche.Text = "Resultat de la Recherche";
+            // 
+            // lbRecherche
+            // 
+            this.lbRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.lbRecherche.ForeColor = System.Drawing.Color.White;
+            this.lbRecherche.FormattingEnabled = true;
+            this.lbRecherche.ItemHeight = 16;
+            this.lbRecherche.Location = new System.Drawing.Point(8, 20);
+            this.lbRecherche.Name = "lbRecherche";
+            this.lbRecherche.Size = new System.Drawing.Size(392, 196);
+            this.lbRecherche.TabIndex = 1;
+            this.lbRecherche.SelectedIndexChanged += new System.EventHandler(this.lbRecherche_SelectedIndexChanged);
+            // 
             // frmSuppressionDeDonnées
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1044, 609);
+            this.Controls.Add(this.gbpRecherche);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtRecherche);
@@ -263,6 +291,7 @@ namespace ATHENA
             this.gbpElements.ResumeLayout(false);
             this.gbpFiltres.ResumeLayout(false);
             this.gbpFiltres.PerformLayout();
+            this.gbpRecherche.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +314,7 @@ namespace ATHENA
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtRecherche;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox gbpRecherche;
+        private System.Windows.Forms.ListBox lbRecherche;
     }
 }

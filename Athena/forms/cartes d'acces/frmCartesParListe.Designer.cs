@@ -45,9 +45,12 @@
             this.clbElements = new System.Windows.Forms.CheckedListBox();
             this.btnToutSelectionner = new System.Windows.Forms.Button();
             this.btnReinitialiser = new System.Windows.Forms.Button();
+            this.gbpRecherche = new System.Windows.Forms.GroupBox();
+            this.lbRecherche = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.gbpElements.SuspendLayout();
+            this.gbpRecherche.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -60,11 +63,11 @@
             this.groupBox1.Controls.Add(this.rdb6eme);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(17, 75);
+            this.groupBox1.Location = new System.Drawing.Point(17, 304);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(407, 568);
+            this.groupBox1.Size = new System.Drawing.Size(407, 339);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtre de recherche par niveau";
@@ -258,6 +261,30 @@
             this.btnReinitialiser.UseVisualStyleBackColor = false;
             this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
             // 
+            // gbpRecherche
+            // 
+            this.gbpRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.gbpRecherche.Controls.Add(this.lbRecherche);
+            this.gbpRecherche.ForeColor = System.Drawing.Color.White;
+            this.gbpRecherche.Location = new System.Drawing.Point(17, 74);
+            this.gbpRecherche.Name = "gbpRecherche";
+            this.gbpRecherche.Size = new System.Drawing.Size(407, 223);
+            this.gbpRecherche.TabIndex = 21;
+            this.gbpRecherche.TabStop = false;
+            this.gbpRecherche.Text = "Resultat de la Recherche";
+            // 
+            // lbRecherche
+            // 
+            this.lbRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.lbRecherche.ForeColor = System.Drawing.Color.White;
+            this.lbRecherche.FormattingEnabled = true;
+            this.lbRecherche.ItemHeight = 16;
+            this.lbRecherche.Location = new System.Drawing.Point(8, 20);
+            this.lbRecherche.Name = "lbRecherche";
+            this.lbRecherche.Size = new System.Drawing.Size(392, 196);
+            this.lbRecherche.TabIndex = 1;
+            this.lbRecherche.SelectedIndexChanged += new System.EventHandler(this.lbRecherche_SelectedIndexChanged);
+            // 
             // frmCartesParListe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -266,6 +293,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1251, 662);
+            this.Controls.Add(this.gbpRecherche);
             this.Controls.Add(this.btnReinitialiser);
             this.Controls.Add(this.btnToutSelectionner);
             this.Controls.Add(this.gbpElements);
@@ -285,6 +313,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
             this.gbpElements.ResumeLayout(false);
+            this.gbpRecherche.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,6 +337,8 @@
         private System.Windows.Forms.CheckedListBox clbElements;
         private System.Windows.Forms.Button btnToutSelectionner;
         private System.Windows.Forms.Button btnReinitialiser;
+        private System.Windows.Forms.GroupBox gbpRecherche;
+        private System.Windows.Forms.ListBox lbRecherche;
     }
 }
 
