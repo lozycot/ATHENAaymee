@@ -261,9 +261,9 @@ namespace CartesAcces2024
             this.btnToutSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnToutSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnToutSelectionner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnToutSelectionner.Location = new System.Drawing.Point(1063, 526);
+            this.btnToutSelectionner.Location = new System.Drawing.Point(1063, 511);
             this.btnToutSelectionner.Name = "btnToutSelectionner";
-            this.btnToutSelectionner.Size = new System.Drawing.Size(171, 55);
+            this.btnToutSelectionner.Size = new System.Drawing.Size(171, 70);
             this.btnToutSelectionner.TabIndex = 13;
             this.btnToutSelectionner.Text = "Tout sélectionner";
             this.btnToutSelectionner.UseVisualStyleBackColor = false;
@@ -275,7 +275,7 @@ namespace CartesAcces2024
             this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnReinitialiser.Location = new System.Drawing.Point(1063, 450);
+            this.btnReinitialiser.Location = new System.Drawing.Point(1063, 435);
             this.btnReinitialiser.Name = "btnReinitialiser";
             this.btnReinitialiser.Size = new System.Drawing.Size(171, 70);
             this.btnReinitialiser.TabIndex = 12;
