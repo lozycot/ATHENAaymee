@@ -33,7 +33,6 @@
             this.btnAddClasseTemp = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDelClasseTemp = new System.Windows.Forms.Button();
-            this.listBoxClassesTemp = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbDeplacement = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.listBoxElTemp = new System.Windows.Forms.ListBox();
             this.btnDelElTemp = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.cbClassesTemp = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -75,15 +75,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbClassesTemp);
             this.groupBox1.Controls.Add(this.btnDelClasseTemp);
             this.groupBox1.Controls.Add(this.btnAddClasseTemp);
-            this.groupBox1.Controls.Add(this.listBoxClassesTemp);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(55, 59);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(279, 707);
+            this.groupBox1.Size = new System.Drawing.Size(279, 180);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Liste de classes nouvelle année";
@@ -102,20 +102,6 @@
             this.btnDelClasseTemp.Text = "🗑 Supprimer une classe temporaire";
             this.btnDelClasseTemp.UseVisualStyleBackColor = false;
             this.btnDelClasseTemp.Click += new System.EventHandler(this.btnDelClasseTemp_Click);
-            // 
-            // listBoxClassesTemp
-            // 
-            this.listBoxClassesTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.listBoxClassesTemp.ForeColor = System.Drawing.Color.White;
-            this.listBoxClassesTemp.FormattingEnabled = true;
-            this.listBoxClassesTemp.ItemHeight = 16;
-            this.listBoxClassesTemp.Location = new System.Drawing.Point(4, 153);
-            this.listBoxClassesTemp.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxClassesTemp.Name = "listBoxClassesTemp";
-            this.listBoxClassesTemp.Size = new System.Drawing.Size(271, 548);
-            this.listBoxClassesTemp.Sorted = true;
-            this.listBoxClassesTemp.TabIndex = 12;
-            this.listBoxClassesTemp.SelectedIndexChanged += new System.EventHandler(this.listBoxClassesTemp_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -215,6 +201,16 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cbClassesTemp
+            // 
+            this.cbClassesTemp.FormattingEnabled = true;
+            this.cbClassesTemp.Location = new System.Drawing.Point(4, 153);
+            this.cbClassesTemp.Margin = new System.Windows.Forms.Padding(2);
+            this.cbClassesTemp.Name = "cbClassesTemp";
+            this.cbClassesTemp.Size = new System.Drawing.Size(271, 24);
+            this.cbClassesTemp.Sorted = true;
+            this.cbClassesTemp.TabIndex = 25;
+            // 
             // frmModifClassesTemporaires
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -241,7 +237,6 @@
         private System.Windows.Forms.Button btnAddClasseTemp;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDelClasseTemp;
-        private System.Windows.Forms.ListBox listBoxClassesTemp;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbDeplacement;
         private System.Windows.Forms.Label label7;
@@ -249,6 +244,7 @@
         private System.Windows.Forms.ListBox listBoxElTemp;
         private System.Windows.Forms.Button btnDelElTemp;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbClassesTemp;
     }
 }
 
