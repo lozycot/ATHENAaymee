@@ -92,7 +92,7 @@ namespace CartesAcces2024
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 60);
+            this.label7.Location = new System.Drawing.Point(37, 32);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(214, 17);
             this.label7.TabIndex = 31;
@@ -357,7 +357,7 @@ namespace CartesAcces2024
             // 
             this.rdbParN.AutoSize = true;
             this.rdbParN.Checked = true;
-            this.rdbParN.Location = new System.Drawing.Point(386, 60);
+            this.rdbParN.Location = new System.Drawing.Point(386, 32);
             this.rdbParN.Name = "rdbParN";
             this.rdbParN.Size = new System.Drawing.Size(55, 21);
             this.rdbParN.TabIndex = 35;
@@ -369,7 +369,7 @@ namespace CartesAcces2024
             // rdbParO
             // 
             this.rdbParO.AutoSize = true;
-            this.rdbParO.Location = new System.Drawing.Point(284, 60);
+            this.rdbParO.Location = new System.Drawing.Point(284, 32);
             this.rdbParO.Name = "rdbParO";
             this.rdbParO.Size = new System.Drawing.Size(51, 21);
             this.rdbParO.TabIndex = 34;

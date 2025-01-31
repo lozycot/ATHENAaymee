@@ -46,7 +46,10 @@ namespace CartesAcces2024
             var nom = txtNom.Text;
             string classex = "0";
             if (cbbSection.SelectedIndex != -1)
-                classex = cbbSection.Text;
+                if (rdbParO.Checked)
+                    classex = cbbSection.Text+" Profil Particulier";
+                else
+                    classex = cbbSection.Text;
             else if (cbbClasse.SelectedIndex != -1)
                 classex = cbbClasse.Text;
 
@@ -99,15 +102,19 @@ namespace CartesAcces2024
                 
                 if (cbbClasse.Text != "")
                     nouvelle_eleve.ClasseEleve = cbbClasse.Text;
+                else // je remplace par ça pc je comprends pas 0pourquoi on utiliserais l'autre, si une carte temporaire est un élève qui n'est pas encore dans la BDD
+                {
+                    MessageBox.Show("Selectionnez la classe de l'élève.");
+                    return;
+                }
                 // si cbbClasse est vide, chercher la classe de l'élève dans la base de données
-                else
+                //else
                     //nouvelle_eleve.ClasseEleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve).ClasseEleve;
-                    nouvelle_eleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve); // rend l'élève null si il n'existe pas
-
+                    //nouvelle_eleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve); // rend l'élève null si il n'existe pas
             }
             else
             {
-                nouvelle_eleve.ClasseEleve = "Profil particulier";
+                nouvelle_eleve.ClasseEleve = cbbSection.Text + " Profil particulier";
             }
 
             
@@ -297,7 +304,7 @@ namespace CartesAcces2024
         {
             Globale.CheminPdf = "";
             Globale.CheminEleve = "";
-            var frmSelectSection = new frmSelectionNiveauEdt();
+            var frmSelectSection = new frmSelectionNiveauEdt(false, false, false, false, true, false);
             frmSelectSection.StartPosition = FormStartPosition.CenterScreen;
             frmSelectSection.ShowDialog();
             if (pbCarteArriere.Image != null)

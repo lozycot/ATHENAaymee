@@ -303,7 +303,7 @@ namespace CartesAcces2024
             var objGraphique = Graphics.FromImage(pbCarteFace.Image);
             string niveauel = classe.Substring(0, 1) + "eme";
             string chemin = "";
-            if (niveauel == "0eme")
+            if (niveauel == "0eme" || classe == "Profil particulier")
             {
                 chemin = Chemin.DossierCartesFace + "default.png";
             }
@@ -324,7 +324,7 @@ namespace CartesAcces2024
             if (tempPrenom.Length > 12)
                 tempPrenom = tempPrenom.Substring(0, 11) + ".";
             codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
-
+            
             importCarteFace(chemin, objGraphique, classe.Substring(0, 1));
 
             fondTexteCarteFace(objGraphique, classe, police2, classe, 50, 70);
@@ -569,7 +569,7 @@ namespace CartesAcces2024
         /// <param name="texte"></param>
         public static void codeBarreFace(Graphics objGraphique, string texte)
         {
-            // pour modifier lataille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
+            // pour modifier la taille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
             float dpiScale;
             using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
             {
@@ -601,9 +601,23 @@ namespace CartesAcces2024
 
             bmpFinal.RotateFlip(RotateFlipType.Rotate90FlipNone);
 
-            int yCoord = (1240 / 2) - (bmpFinal.Height);
+            //int yCoord = (1240 / 2) - (bmpFinal.Height);
 
-            objGraphique.DrawImage(bmpFinal, new Point(1500, yCoord));
+            //objGraphique.DrawImage(bmpFinal, new Point(1500, yCoord));
+
+            // Dimensions de l'image de destination (carte)
+            int cardHeight = 1240;
+            int cardWidth = 1754;
+
+            // Position relative en pourcentage de la taille de la carte
+            float xPositionPercent = 0.855f; // 1500/1754 ≈ 0.855
+            float yPositionPercent = 0.4f;   // Centre vertical
+
+            // Calcul des coordonnées absolues
+            int xPos = (int)(cardWidth * xPositionPercent);
+            int yPos = (int)((cardHeight * yPositionPercent) - (bmpFinal.Height / 2));
+
+            objGraphique.DrawImage(bmpFinal, new Point(xPos, yPos));
         }
 
 
@@ -899,6 +913,7 @@ namespace CartesAcces2024
 
         public static Graphics importCarteFace(string chemin, Graphics objgraph, string classeEleve)
         {
+
             var img = Image.FromFile(chemin);
             var bmp = new Bitmap(img, new Size(1754, 1240));
             List<Color> couleurs = new List<Color> { };

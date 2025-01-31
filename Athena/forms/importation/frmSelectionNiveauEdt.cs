@@ -13,9 +13,40 @@ namespace CartesAcces2024
 {
     public partial class frmSelectionNiveauEdt : Form
     {
-        public frmSelectionNiveauEdt()
+        /// <summary>
+        /// Utilisez les paramètres pour cacher certains radiobuttons.a
+        /// </summary>
+        /// <param name="sixiemeVisible"></param>
+        /// <param name="cinqemeVisible"></param>
+        /// <param name="quatriemeVisible"></param>
+        /// <param name="troisiemeVisible"></param>
+        /// <param name="classeUniquementVisible"></param>
+        /// <param name="ttLesElevesVisible"></param>
+        public frmSelectionNiveauEdt(bool sixiemeVisible = true, bool cinqemeVisible = true, bool quatriemeVisible = true, bool troisiemeVisible = true, bool classeUniquementVisible = true, bool ttLesElevesVisible = true)
         {
             InitializeComponent();
+            rdb6eme.Visible = sixiemeVisible;
+            rdb5eme.Visible = cinqemeVisible;
+            rdb4eme.Visible = quatriemeVisible;
+            rdb3eme.Visible = troisiemeVisible;
+            rdbClasses.Visible = classeUniquementVisible;
+            rdbTousEleves.Visible = ttLesElevesVisible;
+
+            //bool temp = false;
+            //int i = 0;
+            //while (temp==false)
+            //{
+            //    if (this.Controls.OfType<RadioButton>().ToList<RadioButton>()[i].Visible == true)
+            //    {
+            //        temp = true;
+            //        this.Controls.OfType<RadioButton>().ToList<RadioButton>()[i].Checked = true;
+            //    }
+            //    else
+            //    {
+            //        this.Controls.OfType<RadioButton>().ToList<RadioButton>()[i].Checked = false;
+            //    }
+            //    i++;
+            //}
         }
 
         private void btnValider_Click(object sender, EventArgs e)
