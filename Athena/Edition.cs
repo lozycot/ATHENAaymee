@@ -913,6 +913,7 @@ namespace CartesAcces2024
 
         public static Graphics importCarteFace(string chemin, Graphics objgraph, string classeEleve)
         {
+
             var img = Image.FromFile(chemin);
             var bmp = new Bitmap(img, new Size(1754, 1240));
             List<Color> couleurs = new List<Color> { };
