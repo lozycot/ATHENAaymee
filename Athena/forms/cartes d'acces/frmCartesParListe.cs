@@ -71,7 +71,9 @@ namespace CartesAcces2024
 
         private void frmCartesParListe_Load(object sender, EventArgs e)
         {
-            changeAffichage();
+            // Initialiser la liste des élèves ici
+            Globale.ListeEleve = OperationsDb.GetEleve();
+            changeAffichage(); // Appeler pour afficher les élèves selon les cases cochées
         }
 
         /// <summary>
@@ -89,13 +91,22 @@ namespace CartesAcces2024
             Globale.ListeEleves4Eme = OperationsDb.GetEleve("4");
             Globale.ListeEleves3Eme = OperationsDb.GetEleve("3");
 
-            // Selon l'option sélectionnée
+            // Selon les options sélectionnées
             clbElements.Items.Clear();
-            List<Eleve> listeAUtiliser = rdbTout.Checked ? Globale.ListeEleve :
-                                          rdb6eme.Checked ? Globale.ListeEleves6Eme :
-                                          rdb5eme.Checked ? Globale.ListeEleves5Eme :
-                                          rdb4eme.Checked ? Globale.ListeEleves4Eme :
-                                          Globale.ListeEleves3Eme;
+            List<Eleve> listeAUtiliser = new List<Eleve>();
+
+            // Vérifiez si au moins une case est cochée
+            if (cbxNiveau6eme.Checked) listeAUtiliser.AddRange(Globale.ListeEleves6Eme);
+            if (cbxNiveau5eme.Checked) listeAUtiliser.AddRange(Globale.ListeEleves5Eme);
+            if (cbxNiveau4eme.Checked) listeAUtiliser.AddRange(Globale.ListeEleves4Eme);
+            if (cbxNiveau3eme.Checked) listeAUtiliser.AddRange(Globale.ListeEleves3Eme);
+
+            // Si aucune case n'est cochée, ne rien afficher
+            if (listeAUtiliser.Count == 0)
+            {
+                // Optionnel : Vous pouvez afficher un message ou une indication que rien n'est sélectionné
+                return; // Sortir de la méthode si aucune case n'est cochée
+            }
 
             foreach (Eleve elv in listeAUtiliser)
             {
@@ -105,6 +116,8 @@ namespace CartesAcces2024
                     clbElements.Items.Add(element);
                 }
             }
+
+            lblCount.Text = listeAUtiliser.Count.ToString(); // Mettre à jour le label avec le nombre d'élèves
         }
 
         //private bool VerifDoublon(string ajout)
@@ -331,31 +344,6 @@ namespace CartesAcces2024
             }
         }
 
-        private void rdbTout_CheckedChanged(object sender, EventArgs e)
-        {
-            changeAffichage();
-        }
-
-        private void rdb6eme_CheckedChanged(object sender, EventArgs e)
-        {
-            changeAffichage();
-        }
-
-        private void rdb5eme_CheckedChanged(object sender, EventArgs e)
-        {
-            changeAffichage();
-        }
-
-        private void rdb4eme_CheckedChanged(object sender, EventArgs e)
-        {
-            changeAffichage();
-        }
-
-        private void rdb3eme_CheckedChanged(object sender, EventArgs e)
-        {
-            changeAffichage();
-        }
-
         private void btnReinitialiser_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < clbElements.Items.Count - 1; i++) // déselectionné chque éléments de la liste
@@ -490,6 +478,26 @@ namespace CartesAcces2024
                 }
             }
             return normalizedString.ToString();
+        }
+
+        private void cbxNiveau6eme_CheckedChanged(object sender, EventArgs e)
+        {
+            changeAffichage(); // Mettre à jour l'affichage lorsque la case est cochée/décochée
+        }
+
+        private void cbxNiveau5eme_CheckedChanged(object sender, EventArgs e)
+        {
+            changeAffichage(); // Mettre à jour l'affichage lorsque la case est cochée/décochée
+        }
+
+        private void cbxNiveau4eme_CheckedChanged(object sender, EventArgs e)
+        {
+            changeAffichage(); // Mettre à jour l'affichage lorsque la case est cochée/décochée
+        }
+
+        private void cbxNiveau3eme_CheckedChanged(object sender, EventArgs e)
+        {
+            changeAffichage(); // Mettre à jour l'affichage lorsque la case est cochée/décochée
         }
     }
 }

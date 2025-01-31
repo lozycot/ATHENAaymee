@@ -32,6 +32,7 @@
             this.btnCsvNouvelleAnnee = new System.Windows.Forms.Button();
             this.btnAddClasseTemp = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbClassesTemp = new System.Windows.Forms.ComboBox();
             this.btnDelClasseTemp = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbDeplacement = new System.Windows.Forms.ComboBox();
@@ -40,7 +41,6 @@
             this.listBoxElTemp = new System.Windows.Forms.ListBox();
             this.btnDelElTemp = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.cbClassesTemp = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             this.btnCsvNouvelleAnnee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnCsvNouvelleAnnee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCsvNouvelleAnnee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnCsvNouvelleAnnee.Location = new System.Drawing.Point(687, 705);
+            this.btnCsvNouvelleAnnee.Location = new System.Drawing.Point(436, 733);
             this.btnCsvNouvelleAnnee.Margin = new System.Windows.Forms.Padding(2);
             this.btnCsvNouvelleAnnee.Name = "btnCsvNouvelleAnnee";
             this.btnCsvNouvelleAnnee.Size = new System.Drawing.Size(202, 61);
@@ -79,7 +79,7 @@
             this.groupBox1.Controls.Add(this.btnDelClasseTemp);
             this.groupBox1.Controls.Add(this.btnAddClasseTemp);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(55, 59);
+            this.groupBox1.Location = new System.Drawing.Point(23, 28);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -87,6 +87,16 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Liste de classes nouvelle année";
+            // 
+            // cbClassesTemp
+            // 
+            this.cbClassesTemp.FormattingEnabled = true;
+            this.cbClassesTemp.Location = new System.Drawing.Point(4, 153);
+            this.cbClassesTemp.Margin = new System.Windows.Forms.Padding(2);
+            this.cbClassesTemp.Name = "cbClassesTemp";
+            this.cbClassesTemp.Size = new System.Drawing.Size(271, 24);
+            this.cbClassesTemp.Sorted = true;
+            this.cbClassesTemp.TabIndex = 25;
             // 
             // btnDelClasseTemp
             // 
@@ -111,11 +121,11 @@
             this.groupBox2.Controls.Add(this.listBoxElTemp);
             this.groupBox2.Controls.Add(this.btnDelElTemp);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(338, 59);
+            this.groupBox2.Location = new System.Drawing.Point(23, 212);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(279, 707);
+            this.groupBox2.Size = new System.Drawing.Size(279, 582);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Liste d\'élèves de la classe sélectionnée";
@@ -123,7 +133,7 @@
             // cbDeplacement
             // 
             this.cbDeplacement.FormattingEnabled = true;
-            this.cbDeplacement.Location = new System.Drawing.Point(4, 679);
+            this.cbDeplacement.Location = new System.Drawing.Point(7, 548);
             this.cbDeplacement.Margin = new System.Windows.Forms.Padding(2);
             this.cbDeplacement.Name = "cbDeplacement";
             this.cbDeplacement.Size = new System.Drawing.Size(184, 24);
@@ -134,7 +144,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1, 626);
+            this.label7.Location = new System.Drawing.Point(4, 495);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.MaximumSize = new System.Drawing.Size(120, 0);
             this.label7.Name = "label7";
@@ -167,7 +177,7 @@
             this.listBoxElTemp.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxElTemp.Name = "listBoxElTemp";
             this.listBoxElTemp.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBoxElTemp.Size = new System.Drawing.Size(271, 468);
+            this.listBoxElTemp.Size = new System.Drawing.Size(271, 340);
             this.listBoxElTemp.Sorted = true;
             this.listBoxElTemp.TabIndex = 13;
             this.listBoxElTemp.SelectedIndexChanged += new System.EventHandler(this.listBoxElTemp_SelectedIndexChanged);
@@ -192,30 +202,20 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.button1.Location = new System.Drawing.Point(687, 59);
+            this.button1.Location = new System.Drawing.Point(494, 28);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 61);
+            this.button1.Size = new System.Drawing.Size(144, 61);
             this.button1.TabIndex = 27;
             this.button1.Text = "❌ Fermer";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cbClassesTemp
-            // 
-            this.cbClassesTemp.FormattingEnabled = true;
-            this.cbClassesTemp.Location = new System.Drawing.Point(4, 153);
-            this.cbClassesTemp.Margin = new System.Windows.Forms.Padding(2);
-            this.cbClassesTemp.Name = "cbClassesTemp";
-            this.cbClassesTemp.Size = new System.Drawing.Size(271, 24);
-            this.cbClassesTemp.Sorted = true;
-            this.cbClassesTemp.TabIndex = 25;
-            // 
             // frmModifClassesTemporaires
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(953, 817);
+            this.ClientSize = new System.Drawing.Size(659, 817);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCsvNouvelleAnnee);
             this.Controls.Add(this.groupBox1);

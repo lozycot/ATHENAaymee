@@ -204,7 +204,7 @@
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(133, 28);
             this.lblCount.TabIndex = 20;
-            this.lblCount.Text = "none";
+            this.lblCount.Text = "aucuin";
             // 
             // label1
             // 
@@ -215,7 +215,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 28);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Nombre d'élèves :";
+            this.label1.Text = "Nombre d\'élèves :";
             // 
             // txtRecherche
             // 

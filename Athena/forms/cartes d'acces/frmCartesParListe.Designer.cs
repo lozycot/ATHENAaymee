@@ -30,11 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCartesParListe));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdb5eme = new System.Windows.Forms.RadioButton();
-            this.rdbTout = new System.Windows.Forms.RadioButton();
-            this.rdb3eme = new System.Windows.Forms.RadioButton();
-            this.rdb4eme = new System.Windows.Forms.RadioButton();
-            this.rdb6eme = new System.Windows.Forms.RadioButton();
+            this.cbxNiveau3eme = new System.Windows.Forms.CheckBox();
+            this.cbxNiveau4eme = new System.Windows.Forms.CheckBox();
+            this.cbxNiveau6eme = new System.Windows.Forms.CheckBox();
+            this.cbxNiveau5eme = new System.Windows.Forms.CheckBox();
             this.txtRecherche = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
@@ -56,11 +55,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.groupBox1.Controls.Add(this.rdb5eme);
-            this.groupBox1.Controls.Add(this.rdbTout);
-            this.groupBox1.Controls.Add(this.rdb3eme);
-            this.groupBox1.Controls.Add(this.rdb4eme);
-            this.groupBox1.Controls.Add(this.rdb6eme);
+            this.groupBox1.Controls.Add(this.cbxNiveau3eme);
+            this.groupBox1.Controls.Add(this.cbxNiveau4eme);
+            this.groupBox1.Controls.Add(this.cbxNiveau6eme);
+            this.groupBox1.Controls.Add(this.cbxNiveau5eme);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(17, 304);
@@ -72,67 +70,49 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtre de recherche par niveau";
             // 
-            // rdb5eme
+            // cbxNiveau3eme
             // 
-            this.rdb5eme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb5eme.Location = new System.Drawing.Point(44, 144);
-            this.rdb5eme.Margin = new System.Windows.Forms.Padding(4);
-            this.rdb5eme.Name = "rdb5eme";
-            this.rdb5eme.Size = new System.Drawing.Size(125, 27);
-            this.rdb5eme.TabIndex = 4;
-            this.rdb5eme.Text = "5eme";
-            this.rdb5eme.UseVisualStyleBackColor = true;
-            this.rdb5eme.CheckedChanged += new System.EventHandler(this.rdb5eme_CheckedChanged);
+            this.cbxNiveau3eme.AutoSize = true;
+            this.cbxNiveau3eme.Location = new System.Drawing.Point(160, 258);
+            this.cbxNiveau3eme.Name = "cbxNiveau3eme";
+            this.cbxNiveau3eme.Size = new System.Drawing.Size(76, 24);
+            this.cbxNiveau3eme.TabIndex = 25;
+            this.cbxNiveau3eme.Text = "3eme";
+            this.cbxNiveau3eme.UseVisualStyleBackColor = true;
+            this.cbxNiveau3eme.CheckedChanged += new System.EventHandler(this.cbxNiveau3eme_CheckedChanged);
             // 
-            // rdbTout
+            // cbxNiveau4eme
             // 
-            this.rdbTout.Checked = true;
-            this.rdbTout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbTout.Location = new System.Drawing.Point(44, 54);
-            this.rdbTout.Margin = new System.Windows.Forms.Padding(4);
-            this.rdbTout.Name = "rdbTout";
-            this.rdbTout.Size = new System.Drawing.Size(169, 27);
-            this.rdbTout.TabIndex = 3;
-            this.rdbTout.TabStop = true;
-            this.rdbTout.Text = "tous les niveaux";
-            this.rdbTout.UseVisualStyleBackColor = true;
-            this.rdbTout.CheckedChanged += new System.EventHandler(this.rdbTout_CheckedChanged);
+            this.cbxNiveau4eme.AutoSize = true;
+            this.cbxNiveau4eme.Location = new System.Drawing.Point(160, 198);
+            this.cbxNiveau4eme.Name = "cbxNiveau4eme";
+            this.cbxNiveau4eme.Size = new System.Drawing.Size(76, 24);
+            this.cbxNiveau4eme.TabIndex = 24;
+            this.cbxNiveau4eme.Text = "4eme";
+            this.cbxNiveau4eme.UseVisualStyleBackColor = true;
+            this.cbxNiveau4eme.CheckedChanged += new System.EventHandler(this.cbxNiveau4eme_CheckedChanged);
             // 
-            // rdb3eme
+            // cbxNiveau6eme
             // 
-            this.rdb3eme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb3eme.Location = new System.Drawing.Point(44, 234);
-            this.rdb3eme.Margin = new System.Windows.Forms.Padding(4);
-            this.rdb3eme.Name = "rdb3eme";
-            this.rdb3eme.Size = new System.Drawing.Size(125, 27);
-            this.rdb3eme.TabIndex = 2;
-            this.rdb3eme.Text = "3eme";
-            this.rdb3eme.UseVisualStyleBackColor = true;
-            this.rdb3eme.CheckedChanged += new System.EventHandler(this.rdb3eme_CheckedChanged);
+            this.cbxNiveau6eme.AutoSize = true;
+            this.cbxNiveau6eme.Location = new System.Drawing.Point(160, 78);
+            this.cbxNiveau6eme.Name = "cbxNiveau6eme";
+            this.cbxNiveau6eme.Size = new System.Drawing.Size(76, 24);
+            this.cbxNiveau6eme.TabIndex = 22;
+            this.cbxNiveau6eme.Text = "6eme";
+            this.cbxNiveau6eme.UseVisualStyleBackColor = true;
+            this.cbxNiveau6eme.CheckedChanged += new System.EventHandler(this.cbxNiveau6eme_CheckedChanged);
             // 
-            // rdb4eme
+            // cbxNiveau5eme
             // 
-            this.rdb4eme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb4eme.Location = new System.Drawing.Point(44, 189);
-            this.rdb4eme.Margin = new System.Windows.Forms.Padding(4);
-            this.rdb4eme.Name = "rdb4eme";
-            this.rdb4eme.Size = new System.Drawing.Size(125, 27);
-            this.rdb4eme.TabIndex = 1;
-            this.rdb4eme.Text = "4eme";
-            this.rdb4eme.UseVisualStyleBackColor = true;
-            this.rdb4eme.CheckedChanged += new System.EventHandler(this.rdb4eme_CheckedChanged);
-            // 
-            // rdb6eme
-            // 
-            this.rdb6eme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb6eme.Location = new System.Drawing.Point(44, 99);
-            this.rdb6eme.Margin = new System.Windows.Forms.Padding(4);
-            this.rdb6eme.Name = "rdb6eme";
-            this.rdb6eme.Size = new System.Drawing.Size(125, 27);
-            this.rdb6eme.TabIndex = 0;
-            this.rdb6eme.Text = "6eme";
-            this.rdb6eme.UseVisualStyleBackColor = true;
-            this.rdb6eme.CheckedChanged += new System.EventHandler(this.rdb6eme_CheckedChanged);
+            this.cbxNiveau5eme.AutoSize = true;
+            this.cbxNiveau5eme.Location = new System.Drawing.Point(160, 138);
+            this.cbxNiveau5eme.Name = "cbxNiveau5eme";
+            this.cbxNiveau5eme.Size = new System.Drawing.Size(76, 24);
+            this.cbxNiveau5eme.TabIndex = 23;
+            this.cbxNiveau5eme.Text = "5eme";
+            this.cbxNiveau5eme.UseVisualStyleBackColor = true;
+            this.cbxNiveau5eme.CheckedChanged += new System.EventHandler(this.cbxNiveau5eme_CheckedChanged);
             // 
             // txtRecherche
             // 
@@ -166,7 +146,7 @@
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(133, 28);
             this.lblCount.TabIndex = 15;
-            this.lblCount.Text = "none";
+            this.lblCount.Text = "aucuin";
             // 
             // btnValider
             // 
@@ -311,6 +291,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCartesParListe_FormClosed);
             this.Load += new System.EventHandler(this.frmCartesParListe_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
             this.gbpElements.ResumeLayout(false);
             this.gbpRecherche.ResumeLayout(false);
@@ -322,11 +303,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdb5eme;
-        private System.Windows.Forms.RadioButton rdbTout;
-        private System.Windows.Forms.RadioButton rdb3eme;
-        private System.Windows.Forms.RadioButton rdb4eme;
-        private System.Windows.Forms.RadioButton rdb6eme;
         private System.Windows.Forms.TextBox txtRecherche;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCount;
@@ -339,6 +315,10 @@
         private System.Windows.Forms.Button btnReinitialiser;
         private System.Windows.Forms.GroupBox gbpRecherche;
         private System.Windows.Forms.ListBox lbRecherche;
+        private System.Windows.Forms.CheckBox cbxNiveau3eme;
+        private System.Windows.Forms.CheckBox cbxNiveau4eme;
+        private System.Windows.Forms.CheckBox cbxNiveau6eme;
+        private System.Windows.Forms.CheckBox cbxNiveau5eme;
     }
 }
 
