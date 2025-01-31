@@ -196,8 +196,9 @@ namespace CartesAcces2024
                 pbCarteArriere.Image = Image.FromFile(Chemin.DossierEdtClassique + "classes/" + listeEleve[0].ClasseEleve + ".jpg");
             else
             {
-                pbCarteArriere.Image = new Bitmap(297, 210);
-                throw new Exception("Aucune image d'emploi du temps trouvée, avez-vous importé les emplois du temps de classes ?");
+                //pbCarteArriere.Image = new Bitmap(297, 210);
+                //throw new Exception("Aucune image d'emploi du temps trouvée, avez-vous importé les emplois du temps de classes ?");
+                pbCarteArriere.Image = Image.FromFile(Chemin.CheminEdtVierge);
             }
         }
     }
