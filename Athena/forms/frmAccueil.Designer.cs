@@ -1,30 +1,4 @@
-﻿/**
- * MIT License
- * 
- * Copyright (c) 2023, 2024 Collège Caroline Aigle
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
- */
-
-
-namespace CartesAcces2024
+﻿namespace CartesAcces2024
 {
     partial class frmAccueil
     {
@@ -94,7 +68,7 @@ namespace CartesAcces2024
             this.btnOptions.Name = "btnOptions";
             this.btnOptions.Size = new System.Drawing.Size(247, 52);
             this.btnOptions.TabIndex = 25;
-            this.btnOptions.Text = "Options";
+            this.btnOptions.Text = "Paramètres";
             this.ToolTip.SetToolTip(this.btnOptions, "Reglages supplementaires");
             this.btnOptions.UseVisualStyleBackColor = false;
             this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
@@ -111,7 +85,7 @@ namespace CartesAcces2024
             this.btnImpInformations.Name = "btnImpInformations";
             this.btnImpInformations.Size = new System.Drawing.Size(249, 52);
             this.btnImpInformations.TabIndex = 24;
-            this.btnImpInformations.Text = "Importer des Informations";
+            this.btnImpInformations.Text = "Importer des données";
             this.ToolTip.SetToolTip(this.btnImpInformations, "Importer des Informations pour le fonctionnement du reste des outils");
             this.btnImpInformations.UseVisualStyleBackColor = false;
             this.btnImpInformations.Click += new System.EventHandler(this.btnImpInformations_Click);
@@ -126,7 +100,7 @@ namespace CartesAcces2024
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 29);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Importation ⤵️";
+            this.label1.Text = "Importer des données ⤵️";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -142,7 +116,7 @@ namespace CartesAcces2024
             this.btnCarteProvisoire.Name = "btnCarteProvisoire";
             this.btnCarteProvisoire.Size = new System.Drawing.Size(247, 52);
             this.btnCarteProvisoire.TabIndex = 22;
-            this.btnCarteProvisoire.Text = "Carte Provisoire";
+            this.btnCarteProvisoire.Text = "Créer une carte temporaire";
             this.ToolTip.SetToolTip(this.btnCarteProvisoire, "Permet de créer et d\'enregistrer des carte provisoire");
             this.btnCarteProvisoire.UseVisualStyleBackColor = false;
             this.btnCarteProvisoire.Click += new System.EventHandler(this.btnCarteProvisoire_Click);
@@ -159,7 +133,7 @@ namespace CartesAcces2024
             this.btnCartesListePerso.Name = "btnCartesListePerso";
             this.btnCartesListePerso.Size = new System.Drawing.Size(247, 52);
             this.btnCartesListePerso.TabIndex = 21;
-            this.btnCartesListePerso.Text = "Cartes par Liste Personnalisé";
+            this.btnCartesListePerso.Text = "Cartes personnalisées";
             this.ToolTip.SetToolTip(this.btnCartesListePerso, "Permet de créer et d\'enregistrer des cartes grâce à une liste personnalisé");
             this.btnCartesListePerso.UseVisualStyleBackColor = false;
             this.btnCartesListePerso.Click += new System.EventHandler(this.btnCartesListePerso_Click);
@@ -176,7 +150,7 @@ namespace CartesAcces2024
             this.btnCartesClasseNiveau.Name = "btnCartesClasseNiveau";
             this.btnCartesClasseNiveau.Size = new System.Drawing.Size(249, 52);
             this.btnCartesClasseNiveau.TabIndex = 20;
-            this.btnCartesClasseNiveau.Text = "Cartes par Classe / Niveau";
+            this.btnCartesClasseNiveau.Text = "Cartes par classe/niveau";
             this.ToolTip.SetToolTip(this.btnCartesClasseNiveau, "Permet de créer et d\'enregistrer des cartes par classe ou niveau");
             this.btnCartesClasseNiveau.UseVisualStyleBackColor = false;
             this.btnCartesClasseNiveau.Click += new System.EventHandler(this.btnCartesClasseNiveau_Click);
@@ -206,7 +180,7 @@ namespace CartesAcces2024
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 29);
             this.label2.TabIndex = 30;
-            this.label2.Text = "Cartes d\'accès 🪪";
+            this.label2.Text = "Cartes d'accès 🪪";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -261,7 +235,7 @@ namespace CartesAcces2024
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 29);
             this.label4.TabIndex = 38;
-            this.label4.Text = "Autre ℹ️";
+            this.label4.Text = "Autres informations ℹ️";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAPropos
@@ -405,3 +379,28 @@ namespace CartesAcces2024
         private System.Windows.Forms.ToolTip ToolTip;
     }
 }
+
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2023, 2024 Collège Caroline Aigle
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ */
