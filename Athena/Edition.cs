@@ -477,7 +477,8 @@ namespace CartesAcces2024
             fondTexteCarteFace(objGraphique, chaine, policeprenom, classe, 25, 1075);
             objGraphique.DrawString(chaine, policeprenom, pinceauNoir, 25, 1075);
 
-            fondTexteCarteFace(objGraphique, classe, new Font("Calibri", 45, FontStyle.Bold), classe, 25, 70);
+            //Classe
+            fondTexteCarteFace(objGraphique, classe, new Font("Calibri", 45, FontStyle.Bold), classe, 50, 70);
             objGraphique.DrawString(classe, new Font("Calibri", 45, FontStyle.Bold), pinceauNoir, 50, 70);
 
             ajouterChampsPersonnaliseeSurLaCarte(objGraphique);
@@ -792,6 +793,7 @@ namespace CartesAcces2024
             fondTexteCarteFace(objGraphique, chaine, policeprenom, classe, 50, 1075);
             objGraphique.DrawString(chaine, policeprenom, pinceauNoir, 50, 1075);
 
+            // classe
             fondTexteCarteFace(objGraphique, eleve.ClasseEleve, police, classe, 50, 70);
             objGraphique.DrawString(eleve.ClasseEleve, police, pinceauNoir, 50, 70);
 
