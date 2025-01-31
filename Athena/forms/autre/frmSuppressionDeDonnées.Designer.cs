@@ -1,5 +1,4 @@
-﻿
-namespace ATHENA
+﻿namespace ATHENA
 {
     partial class frmSuppressionDeDonnées
     {
@@ -118,7 +117,7 @@ namespace ATHENA
             this.gbpElements.Size = new System.Drawing.Size(575, 405);
             this.gbpElements.TabIndex = 8;
             this.gbpElements.TabStop = false;
-            this.gbpElements.Text = "TexteElementFiltre";
+            this.gbpElements.Text = "Éléments à filtrer";
             // 
             // clbElements
             // 
@@ -143,7 +142,7 @@ namespace ATHENA
             this.gbpFiltres.Size = new System.Drawing.Size(575, 122);
             this.gbpFiltres.TabIndex = 7;
             this.gbpFiltres.TabStop = false;
-            this.gbpFiltres.Text = "Filtre de recherche";
+            this.gbpFiltres.Text = "Filtres de recherche";
             // 
             // rdbNiveaux
             // 
@@ -216,7 +215,7 @@ namespace ATHENA
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 28);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Nombre d\'élèves :";
+            this.label1.Text = "Nombre d'élèves :";
             // 
             // txtRecherche
             // 
@@ -239,7 +238,7 @@ namespace ATHENA
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 28);
             this.label3.TabIndex = 21;
-            this.label3.Text = "Rechercher : ";
+            this.label3.Text = "Rechercher :";
             // 
             // gbpRecherche
             // 
@@ -318,3 +317,28 @@ namespace ATHENA
         private System.Windows.Forms.ListBox lbRecherche;
     }
 }
+
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2023, 2024 Collège Caroline Aigle
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ */
