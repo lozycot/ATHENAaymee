@@ -1,5 +1,4 @@
-﻿
-namespace Athena.forms.autre
+﻿namespace Athena.forms.autre
 {
     partial class frmSelectionneAjoutDansCarteAcces
     {
@@ -52,7 +51,7 @@ namespace Athena.forms.autre
             this.rdbText.Size = new System.Drawing.Size(56, 21);
             this.rdbText.TabIndex = 10;
             this.rdbText.TabStop = true;
-            this.rdbText.Text = "Text";
+            this.rdbText.Text = "Texte";
             this.rdbText.UseVisualStyleBackColor = true;
             // 
             // rdbCodeBarre
@@ -63,7 +62,7 @@ namespace Athena.forms.autre
             this.rdbCodeBarre.Name = "rdbCodeBarre";
             this.rdbCodeBarre.Size = new System.Drawing.Size(101, 21);
             this.rdbCodeBarre.TabIndex = 8;
-            this.rdbCodeBarre.Text = "Code Barre";
+            this.rdbCodeBarre.Text = "Code-barres";
             this.rdbCodeBarre.UseVisualStyleBackColor = true;
             // 
             // rdbQRCode
@@ -168,3 +167,28 @@ namespace Athena.forms.autre
         private System.Windows.Forms.Button btnValider;
     }
 }
+
+/**
+ * MIT License
+ * 
+ * Copyright (c) 2023, 2024 Collège Caroline Aigle
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ */
