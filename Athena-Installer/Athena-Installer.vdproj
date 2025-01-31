@@ -15,12 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_018C850E5BBD4FA7A04140C5E4CC9678"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_0529A3239F3F48AEBAEC37F83F57ADE2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -105,6 +99,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_53750CEF84354E28A63F3A4929D00ED5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5B54C656939A44ECBC845D1CC08E46A7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -183,14 +183,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A3C6F0FC1D1F41808DC94BF5E48143E9"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_A84F9378EF6DC8F4130C547E6A54BF0C"
+        "OwnerKey" = "8:_CFEC20CCC6A5443C877719A7C42E34DF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A84F9378EF6DC8F4130C547E6A54BF0C"
-        "OwnerKey" = "8:_CFEC20CCC6A5443C877719A7C42E34DF"
+        "MsmKey" = "8:_AB1154B8B7784158AF8F7729A1E5650F"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -480,26 +480,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_018C850E5BBD4FA7A04140C5E4CC9678"
-            {
-            "SourcePath" = "8:..\\Athena\\bin\\Release\\x86\\SQLite.Interop.dll"
-            "TargetName" = "8:SQLite.Interop.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_9D2D0A7C1FBB4EFA95B3067955675DD5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0529A3239F3F48AEBAEC37F83F57ADE2"
             {
             "SourcePath" = "8:..\\Athena\\data\\FichierCartesFace\\Face.png"
@@ -784,6 +764,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_53750CEF84354E28A63F3A4929D00ED5"
+            {
+            "SourcePath" = "8:..\\Athena\\SQLite\\x86\\SQLite.Interop.dll"
+            "TargetName" = "8:SQLite.Interop.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_B4B4ACFECC6244A094E7F81E2C4B7165"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5B54C656939A44ECBC845D1CC08E46A7"
             {
             "SourcePath" = "8:..\\Athena\\data\\BMPAthena2024.bmp"
@@ -1055,26 +1055,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A3C6F0FC1D1F41808DC94BF5E48143E9"
-            {
-            "SourcePath" = "8:..\\Athena\\bin\\Release\\x64\\SQLite.Interop.dll"
-            "TargetName" = "8:SQLite.Interop.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_E6B52CFB695B442899C902BD04B4C2B2"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A84F9378EF6DC8F4130C547E6A54BF0C"
             {
             "AssemblyRegister" = "3:1"
@@ -1104,6 +1084,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AB1154B8B7784158AF8F7729A1E5650F"
+            {
+            "SourcePath" = "8:..\\Athena\\SQLite\\x64\\SQLite.Interop.dll"
+            "TargetName" = "8:SQLite.Interop.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_AE951E84526D41DB9E04D1982674689F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C23D0E8471354FFAAA346C8B0EB46524"
@@ -1525,13 +1525,24 @@
                             }
                         }
                     }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_9D2D0A7C1FBB4EFA95B3067955675DD5"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_AE951E84526D41DB9E04D1982674689F"
+                    {
+                    "Name" = "8:x64"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_64E4DB3858CE44568CB5C75CC0506AED"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B4B4ACFECC6244A094E7F81E2C4B7165"
                     {
                     "Name" = "8:x86"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
-                    "Property" = "8:_04F6F5B597C34DABAC9DF1BBA62BC6FF"
+                    "Property" = "8:_AC09D1D566754AEF9B0822BA30E10D7A"
                         "Folders"
                         {
                         }
@@ -1543,17 +1554,6 @@
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_E12ADF601F014CFA88E45101FB06B5CB"
-                        "Folders"
-                        {
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_E6B52CFB695B442899C902BD04B4C2B2"
-                    {
-                    "Name" = "8:x64"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_B493DF8315A648879144D2E240ECA34B"
                         "Folders"
                         {
                         }
@@ -1577,7 +1577,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Athena"
         "ProductCode" = "8:{5AB5BFCD-EA2F-4504-AACD-6A1CED42C3CB}"
-        "PackageCode" = "8:{9CCA7CD9-6A32-4011-ACCD-E7FEF2525B7D}"
+        "PackageCode" = "8:{28024D27-153D-4138-87F6-5F055A356149}"
         "UpgradeCode" = "8:{1F5D6C84-E971-4D9E-8047-1FFC61B3F013}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
