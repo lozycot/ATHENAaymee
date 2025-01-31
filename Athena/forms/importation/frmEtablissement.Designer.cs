@@ -690,18 +690,20 @@ namespace CartesAcces2024
             this.gpbLogicielEdt.ForeColor = System.Drawing.Color.White;
             this.gpbLogicielEdt.Location = new System.Drawing.Point(96, 532);
             this.gpbLogicielEdt.Name = "gpbLogicielEdt";
-            this.gpbLogicielEdt.Size = new System.Drawing.Size(288, 44);
+            this.gpbLogicielEdt.Size = new System.Drawing.Size(356, 44);
             this.gpbLogicielEdt.TabIndex = 29;
             this.gpbLogicielEdt.TabStop = false;
             // 
             // rdbEDT
             // 
             this.rdbEDT.AutoSize = true;
+            this.rdbEDT.Checked = true;
             this.rdbEDT.Location = new System.Drawing.Point(211, 16);
             this.rdbEDT.Name = "rdbEDT";
-            this.rdbEDT.Size = new System.Drawing.Size(62, 22);
+            this.rdbEDT.Size = new System.Drawing.Size(139, 22);
             this.rdbEDT.TabIndex = 1;
-            this.rdbEDT.Text = "EDT";
+            this.rdbEDT.TabStop = true;
+            this.rdbEDT.Text = "Pronote (EDT)";
             this.rdbEDT.UseVisualStyleBackColor = true;
             this.rdbEDT.CheckedChanged += new System.EventHandler(this.rdbEDT_CheckedChanged);
             // 
@@ -729,10 +731,12 @@ namespace CartesAcces2024
             // rdbNon
             // 
             this.rdbNon.AutoSize = true;
+            this.rdbNon.Checked = true;
             this.rdbNon.Location = new System.Drawing.Point(67, 14);
             this.rdbNon.Name = "rdbNon";
             this.rdbNon.Size = new System.Drawing.Size(60, 22);
             this.rdbNon.TabIndex = 1;
+            this.rdbNon.TabStop = true;
             this.rdbNon.Text = "Non";
             this.rdbNon.UseVisualStyleBackColor = true;
             // 
