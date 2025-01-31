@@ -24,6 +24,7 @@ Pour contribuer au projet, suivez ces étapes :
 
 1. Prérequis :
    - Visual Studio 2019 ou version ultérieure
+   - L'Extention "Microsoft Visual Studio Installer Projects" pour créer ou modifier l'installer
 
 2. Installation :
    - Clonage direct avec Visual Studio ou GitHub Desktop
