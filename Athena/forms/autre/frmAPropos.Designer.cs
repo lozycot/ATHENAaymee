@@ -49,7 +49,7 @@ namespace CartesAcces2024
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(602, 301);
+            this.richTextBox1.Size = new System.Drawing.Size(602, 392);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "# À propos\n\n**Athena** est une application développée par :\n\n- Yann C.\n- David TA" +
     ".\n- Ian B.\n- Adélia B.\n- Gaëtan K.\n- Théo M.\n- Enes O.\n- Alexandru C.\n- Alix M.\n" +
@@ -61,11 +61,11 @@ namespace CartesAcces2024
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox2.ForeColor = System.Drawing.Color.White;
-            this.richTextBox2.Location = new System.Drawing.Point(13, 376);
+            this.richTextBox2.Location = new System.Drawing.Point(13, 467);
             this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(602, 484);
+            this.richTextBox2.Size = new System.Drawing.Size(602, 546);
             this.richTextBox2.TabIndex = 2;
             this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
             // 
@@ -79,7 +79,7 @@ namespace CartesAcces2024
             this.richTextBox3.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(835, 789);
+            this.richTextBox3.Size = new System.Drawing.Size(835, 942);
             this.richTextBox3.TabIndex = 3;
             this.richTextBox3.Text = resources.GetString("richTextBox3.Text");
             // 
