@@ -602,10 +602,6 @@ namespace CartesAcces2024
 
             bmpFinal.RotateFlip(RotateFlipType.Rotate90FlipNone);
 
-            //int yCoord = (1240 / 2) - (bmpFinal.Height);
-
-            //objGraphique.DrawImage(bmpFinal, new Point(1500, yCoord));
-
             // Dimensions de l'image de destination (carte)
             int cardHeight = 1240;
             int cardWidth = 1754;
