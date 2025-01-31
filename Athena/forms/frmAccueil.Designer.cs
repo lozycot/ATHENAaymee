@@ -180,7 +180,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 29);
             this.label2.TabIndex = 30;
-            this.label2.Text = "Cartes d'accès 🪪";
+            this.label2.Text = "Cartes d\'accès 🪪";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -274,7 +274,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(199, 29);
             this.label3.TabIndex = 35;
-            this.label3.Text = "Trombinoscopes 🖼️";
+            this.label3.Text = "Planches 🖼️";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnPlancheClasse

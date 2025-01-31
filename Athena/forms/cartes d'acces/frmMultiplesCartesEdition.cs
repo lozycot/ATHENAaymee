@@ -195,16 +195,7 @@ namespace CartesAcces2024
                     newCntrl.Top = newTop;
                 }
                 else if (Edition.Resizing)
-                {
-                    //// on calcule la taille de la picturebox
-                    //int dx = e.X - positionSourieInitiale.X;
-                    //int dy = e.Y - positionSourieInitiale.Y;
-
-                    //// On la modifie
-                    //newCntrl.Width = Math.Max(10, newCntrl.Width + dx);  // Minimum width of 10
-                    //newCntrl.Height = Math.Max(10, newCntrl.Height + dy); // Minimum height of 10
-
-                    
+                {   
 
                     // On calcule les nouvelle dimentions selon l'aspect ratio
                     int dx = e.X - positionSourieInitiale.X;
@@ -488,7 +479,30 @@ namespace CartesAcces2024
 
             Globale.donneesChampsPersonnalisee = new List<Tuple<string, Image, Point, string, Font, PictureBox>>();
 
-            
+            // pour modifier lataille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
+            float dpiScale;
+            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                switch (g.DpiX)
+                {
+                    case 96:  // 100% DPI
+                        dpiScale = 0.75f;
+                        break;
+                    case 120: // 125% DPI
+                        dpiScale = 1.0f;
+                        break;
+                    case 144: // 150% DPI
+                        dpiScale = 1.2f;
+                        break;
+                    case 168: // 175% DPI
+                        dpiScale = 1.4f;
+                        break;
+                    default:  // Default to 125% DPI scale
+                        dpiScale = 1.0f;
+                        break;
+                }
+            }
+
             // pour chaque champs personnalisé
             foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneElementPersonnelisee in elementsAjoutee)
             {
@@ -502,13 +516,13 @@ namespace CartesAcces2024
                 // On calcule la position que devrais avoir les images sur la carte face finale, qui n'as pas la même taille que pbCarteFace
                 // Produit en croix
                 // (Coord PictureBox - Coord pbCarteFace) * taille carte face imprimée / taille pictureBox carte face
-                int relativeX = (int)(((donneElementPersonnelisee.Item6.Location.X - pbCarteFace.Location.X) * imageCarteFace.Width) / pbCarteFace.Width);
-                int relativeY = (int)(((donneElementPersonnelisee.Item6.Location.Y - pbCarteFace.Location.Y) * imageCarteFace.Height) / pbCarteFace.Height);
+                int relativeX = (int)( (( (donneElementPersonnelisee.Item6.Location.X - pbCarteFace.Location.X) * imageCarteFace.Width) / pbCarteFace.Width) );
+                int relativeY = (int)( (( (donneElementPersonnelisee.Item6.Location.Y - pbCarteFace.Location.Y) * imageCarteFace.Height) / pbCarteFace.Height)  );
 
                 // On calcule la taille que devrais avoir les images sur la carte face finale, qui n'as pas la même taille que pbCarteFace
                 // taille de champs personnalisee * taille de la carte face finale / taille de la picturebox carte face
-                int relativeWidth = (int)((donneElementPersonnelisee.Item6.Width * imageCarteFace.Width * SCALE_FACTOR_WIDTH) / pbCarteFace.Width);
-                int relativeHeight = (int)((donneElementPersonnelisee.Item6.Height * imageCarteFace.Height * SCALE_FACTOR_HEIGHT) / pbCarteFace.Height);
+                int relativeWidth = (int)( ((donneElementPersonnelisee.Item6.Width * imageCarteFace.Width * SCALE_FACTOR_WIDTH) / pbCarteFace.Width));
+                int relativeHeight = (int)( ((donneElementPersonnelisee.Item6.Height * imageCarteFace.Height * SCALE_FACTOR_HEIGHT) / pbCarteFace.Height));
 
                 Size relativeSize = new Size(relativeWidth, relativeHeight);
 
