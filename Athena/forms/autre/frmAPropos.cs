@@ -16,6 +16,16 @@ namespace CartesAcces2024
         {
             InitializeComponent();
         }
+
+        private void btnGitHub_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/College-Caroline-Aigle/Athena");
+        }
+
+        private void btnRapporterBug_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/College-Caroline-Aigle/Athena/issues/new/choose");
+        }
     }
 }
 
