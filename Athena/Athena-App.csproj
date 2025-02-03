@@ -166,6 +166,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\cartes d%27acces\ChampPersonnalisee.cs" />
     <Compile Include="Chemin.cs" />
     <Compile Include="Classe.cs" />
     <Compile Include="CopieImage.cs" />
