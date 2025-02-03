@@ -13,6 +13,9 @@ namespace CartesAcces2024
     /// </summary>
     public class ChampPersonnalisee
     {
+        /// <summary>
+        /// Option du champs, 'Texte', 'Code-Barres' ou 'Code QR'
+        /// </summary>
         private string optionDuChamps;
         private Image imageDuChamp;
         private Point coordonneeDuChamp;
