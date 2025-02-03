@@ -530,8 +530,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="IconAthena2024.ico" />
-    <Content Include="SQLite\x64\SQLite.Interop.dll" />
-    <Content Include="SQLite\x86\SQLite.Interop.dll" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="stdole">
