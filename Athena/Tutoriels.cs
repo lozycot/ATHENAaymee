@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.Windows.Controls;
 
 namespace Athena
 {
@@ -59,11 +60,12 @@ namespace Athena
 
         //}
 
-        public void afficheExplications()
+        public void setExplications(Button btn, string txt)// parametres : bouton, explications
         {
-            // créée un -label- !TOOLTIP! qui contient les explications du bouton ou autre, 
-            // parametres : bouton, explications
-            // gère : le nom du bouton pour récupérer les explications correspondantes
+
+            ToolTip toolTip = new ToolTip();// créée un -label- !TOOLTIP! qui contient les explications du bouton ou autre, 
+            toolTip.SetToolTip(btn, txt);// gère : le nom du bouton pour récupérer les explications correspondantes
+            // les tooltip seront "active" si le bouton 
         }
     }
 }
