@@ -45,21 +45,30 @@ namespace CartesAcces2024
             var prenom = txtPrenom.Text;
             var nom = txtNom.Text;
             string classex = "0";
+            string niveau = "0";
             if (cbbSection.SelectedIndex != -1)
+            {
                 if (rdbParO.Checked)
-                    classex = cbbSection.Text+" Profil Particulier";
+                {
+                    classex = cbbSection.Text + " Profil Particulier";
+                    niveau = cbbSection.Text;
+                }
                 else
+                {
                     classex = cbbSection.Text;
+                    niveau = cbbSection.Text;
+                }
+            }
             else if (cbbClasse.SelectedIndex != -1)
                 classex = cbbClasse.Text;
 
             if (Globale.InfosCarte == true)
             {
-                Edition.FondCarteNiveauInfos(pbCarteFace, nom, prenom, classex);
+                Edition.FondCarteNiveauInfos(pbCarteFace, new Eleve(nom, prenom, classex, niveau));
             }
             else
             {
-                Edition.fondCarteNiveau(pbCarteFace, nom, prenom, classex);
+                Edition.fondCarteNiveau(pbCarteFace, new Eleve(nom, prenom, classex, niveau));
             }
 
             //if (nom.Length < 15)
@@ -236,18 +245,22 @@ namespace CartesAcces2024
                     string prenom = txtPrenom.Text;
                     string nom = txtNom.Text;
                     string classex = "0";
+                    string niveau = "0";
                     if (cbbSection.SelectedIndex != -1)
+                    {
                         classex = cbbSection.Text;
+                        niveau = cbbSection.Text;
+                    }
                     if (cbbClasse.SelectedIndex != -1)
                         classex = cbbClasse.Text;
 
                     if (Globale.InfosCarte == true)
                     {
-                        Edition.FondCarteNiveauInfos(pbCarteFace, nom, prenom, classex);
+                        Edition.FondCarteNiveauInfos(pbCarteFace, new Eleve(nom, prenom, classex, niveau));
                     }
                     else
                     {
-                        Edition.fondCarteNiveau(pbCarteFace, nom, prenom, classex);
+                        Edition.fondCarteNiveau(pbCarteFace, new Eleve(nom, prenom, classex, niveau));
                     }
 
                     GC.Collect();
