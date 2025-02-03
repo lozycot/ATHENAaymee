@@ -1523,6 +1523,17 @@
                                 {
                                 }
                             }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_CCB670B2952445FD8043C19D82EF91C0"
+                            {
+                            "Name" = "8:photoEleve"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_FD474BA660A748F78BF538223BBE83CC"
+                                "Folders"
+                                {
+                                }
+                            }
                         }
                     }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_AE951E84526D41DB9E04D1982674689F"
@@ -1577,7 +1588,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Athena"
         "ProductCode" = "8:{0592B976-E701-40A7-86EB-A833C7BD3BEF}"
-        "PackageCode" = "8:{2EC2FCDA-4022-4A9C-9395-394312E21025}"
+        "PackageCode" = "8:{BE8B95EC-64DD-4BF9-A735-98CEEA5AE81B}"
         "UpgradeCode" = "8:{1F5D6C84-E971-4D9E-8047-1FFC61B3F013}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -2126,7 +2137,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CFEC20CCC6A5443C877719A7C42E34DF"
             {
-            "SourcePath" = "8:..\\Athena\\obj\\Release\\Athena.exe"
+            "SourcePath" = "8:..\\Athena\\obj\\Debug\\Athena.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_92F08EBBA4FC4C5BB6E9A79647EA8E45"
