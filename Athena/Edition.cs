@@ -465,9 +465,6 @@ namespace CartesAcces2024
                 tempPrenom = tempPrenom.Substring(0, 11) + ".";
             codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
 
-            //Dessine et rempli le fond pour l'écriture
-            fondTexteCarteFace(objGraphique, classe, police2, classe, 25, 70);
-
             //Dessine la saisie en textbox
             var chaine = "Nom : " + nomEleve;
             fondTexteCarteFace(objGraphique, chaine, policenom, classe, 25, 960);
@@ -601,6 +598,10 @@ namespace CartesAcces2024
             ));
 
             bmpFinal.RotateFlip(RotateFlipType.Rotate90FlipNone);
+
+            //int yCoord = (1240 / 2) - (bmpFinal.Height);
+
+            //objGraphique.DrawImage(bmpFinal, new Point(1500, yCoord));
 
             // Dimensions de l'image de destination (carte)
             int cardHeight = 1240;
