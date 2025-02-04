@@ -105,7 +105,7 @@ namespace Athena.forms.autre
         private void btnValider_Click(object sender, EventArgs e)
         {
             // On récupère ce que l'utilisateur veux ajouter (texte,code QR, code Barre)
-            string optionChoisie = "Text";
+            string optionChoisie = "Texte";
             foreach (RadioButton rdb in pnlOptions.Controls.OfType<RadioButton>())
             {
                 if (rdb.Checked == true)
@@ -120,7 +120,7 @@ namespace Athena.forms.autre
             {
                 if (pairSelectionChampPersonnalisee.Value.Checked == true) // si c'est la valeur que l'utilisateur veux ajouter
                 {
-                    if (optionChoisie == "Text") // Si l'option est texte
+                    if (optionChoisie == "Texte") // Si l'option est texte
                     {
                         // pour chaque pair (Label / TextBox) de tout les champs personnalisées
                         foreach (KeyValuePair<Label, TextBox> pairChampPersonnalisee in dictChampsPersonnalise)
@@ -142,7 +142,9 @@ namespace Athena.forms.autre
                     else // Si l'option n'est pas texte
                     {
                         // On donne le texte à transformer et a ajouter
-                        Globale.formMultipleCartes.ajouteControlChampPersonnalisee(pairSelectionChampPersonnalisee.Key.Text, optionChoisie);
+                        Globale.formMultipleCartes.ajouteControlChampPersonnalisee(
+                            pairSelectionChampPersonnalisee.Key.Text, 
+                            optionChoisie);
                     }
                 }
             }

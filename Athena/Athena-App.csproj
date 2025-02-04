@@ -166,6 +166,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\cartes d%27acces\ChampPersonnalisee.cs" />
     <Compile Include="Chemin.cs" />
     <Compile Include="Classe.cs" />
     <Compile Include="CopieImage.cs" />
@@ -547,6 +548,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\" />
+    <Folder Include="data\photoEleve\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
