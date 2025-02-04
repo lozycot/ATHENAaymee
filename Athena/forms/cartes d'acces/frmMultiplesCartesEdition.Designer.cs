@@ -34,15 +34,15 @@
             this.pbCarteArriere = new System.Windows.Forms.PictureBox();
             this.pbCarteFace = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblCompteur = new System.Windows.Forms.Label();
+            this.progressBar1_compteur = new System.Windows.Forms.ProgressBar();
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.labelEnCoursValidation = new System.Windows.Forms.Label();
             this.btnValiderImpr = new System.Windows.Forms.Button();
             this.tkbTaillePhoto = new System.Windows.Forms.TrackBar();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblCompteur = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.progressBar1_compteur = new System.Windows.Forms.ProgressBar();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -51,6 +51,9 @@
             this.rdbA4 = new System.Windows.Forms.RadioButton();
             this.btnAjouterElementDansCartes = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.rdbAjoutCodeBarreNon = new System.Windows.Forms.RadioButton();
+            this.rdbAjoutCodeBarreOui = new System.Windows.Forms.RadioButton();
             this.pnlEdtPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarteArriere)).BeginInit();
@@ -60,6 +63,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEdtPhoto
@@ -130,6 +134,28 @@
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ajout et Edition Photo";
+            // 
+            // lblCompteur
+            // 
+            this.lblCompteur.AutoSize = true;
+            this.lblCompteur.Enabled = false;
+            this.lblCompteur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompteur.ForeColor = System.Drawing.Color.White;
+            this.lblCompteur.Location = new System.Drawing.Point(18, 215);
+            this.lblCompteur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCompteur.Name = "lblCompteur";
+            this.lblCompteur.Size = new System.Drawing.Size(50, 29);
+            this.lblCompteur.TabIndex = 18;
+            this.lblCompteur.Text = "0%";
+            // 
+            // progressBar1_compteur
+            // 
+            this.progressBar1_compteur.Enabled = false;
+            this.progressBar1_compteur.Location = new System.Drawing.Point(16, 247);
+            this.progressBar1_compteur.Name = "progressBar1_compteur";
+            this.progressBar1_compteur.Size = new System.Drawing.Size(359, 23);
+            this.progressBar1_compteur.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1_compteur.TabIndex = 20;
             // 
             // btnOpenFolder
             // 
@@ -206,26 +232,13 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Redefinir la taille";
             // 
-            // lblCompteur
-            // 
-            this.lblCompteur.AutoSize = true;
-            this.lblCompteur.Enabled = false;
-            this.lblCompteur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompteur.ForeColor = System.Drawing.Color.White;
-            this.lblCompteur.Location = new System.Drawing.Point(18, 215);
-            this.lblCompteur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCompteur.Name = "lblCompteur";
-            this.lblCompteur.Size = new System.Drawing.Size(50, 29);
-            this.lblCompteur.TabIndex = 18;
-            this.lblCompteur.Text = "0%";
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Controls.Add(this.btnSelect);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(883, 573);
+            this.groupBox2.Location = new System.Drawing.Point(883, 637);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -233,15 +246,6 @@
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Edition Emploi du Temps";
-            // 
-            // progressBar1_compteur
-            // 
-            this.progressBar1_compteur.Enabled = false;
-            this.progressBar1_compteur.Location = new System.Drawing.Point(16, 247);
-            this.progressBar1_compteur.Name = "progressBar1_compteur";
-            this.progressBar1_compteur.Size = new System.Drawing.Size(359, 23);
-            this.progressBar1_compteur.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1_compteur.TabIndex = 20;
             // 
             // btnCancel
             // 
@@ -325,7 +329,7 @@
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox4.Controls.Add(this.btnAjouterElementDansCartes);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(882, 480);
+            this.groupBox4.Location = new System.Drawing.Point(882, 544);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
@@ -334,11 +338,49 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Edition Face de Carte";
             // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.groupBox5.Controls.Add(this.rdbAjoutCodeBarreNon);
+            this.groupBox5.Controls.Add(this.rdbAjoutCodeBarreOui);
+            this.groupBox5.ForeColor = System.Drawing.Color.White;
+            this.groupBox5.Location = new System.Drawing.Point(881, 479);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(687, 58);
+            this.groupBox5.TabIndex = 16;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Ajouter un code barre?";
+            // 
+            // rdbAjoutCodeBarreNon
+            // 
+            this.rdbAjoutCodeBarreNon.AutoSize = true;
+            this.rdbAjoutCodeBarreNon.Location = new System.Drawing.Point(430, 21);
+            this.rdbAjoutCodeBarreNon.Name = "rdbAjoutCodeBarreNon";
+            this.rdbAjoutCodeBarreNon.Size = new System.Drawing.Size(55, 21);
+            this.rdbAjoutCodeBarreNon.TabIndex = 1;
+            this.rdbAjoutCodeBarreNon.Text = "Non";
+            this.rdbAjoutCodeBarreNon.UseVisualStyleBackColor = true;
+            this.rdbAjoutCodeBarreNon.CheckedChanged += new System.EventHandler(this.rdbAjoutCodeBarreNon_CheckedChanged);
+            // 
+            // rdbAjoutCodeBarreOui
+            // 
+            this.rdbAjoutCodeBarreOui.AutoSize = true;
+            this.rdbAjoutCodeBarreOui.Checked = true;
+            this.rdbAjoutCodeBarreOui.Location = new System.Drawing.Point(179, 21);
+            this.rdbAjoutCodeBarreOui.Name = "rdbAjoutCodeBarreOui";
+            this.rdbAjoutCodeBarreOui.Size = new System.Drawing.Size(51, 21);
+            this.rdbAjoutCodeBarreOui.TabIndex = 0;
+            this.rdbAjoutCodeBarreOui.TabStop = true;
+            this.rdbAjoutCodeBarreOui.Text = "Oui";
+            this.rdbAjoutCodeBarreOui.UseVisualStyleBackColor = true;
+            this.rdbAjoutCodeBarreOui.CheckedChanged += new System.EventHandler(this.rdbAjoutCodeBarreOui_CheckedChanged);
+            // 
             // FrmMultiplesCartesEdition
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1617, 875);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlEdtPhoto);
@@ -362,6 +404,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -391,6 +435,9 @@
         private System.Windows.Forms.PictureBox pbCarteFace;
         private System.Windows.Forms.Button btnAjouterElementDansCartes;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RadioButton rdbAjoutCodeBarreNon;
+        private System.Windows.Forms.RadioButton rdbAjoutCodeBarreOui;
     }
 }
 

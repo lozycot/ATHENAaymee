@@ -411,5 +411,10 @@ namespace CartesAcces2024
         /// Longueur physique minimum d'un code barre en millimètre.
         /// </summary>
         public static double codeBarreLargeurMinimum { get; } = 13;
+
+        /// <summary>
+        /// Permet de savoir si l'utilistaeur shouaite ajouter un code barre avec le nom, prenom, classe de l'élève.
+        /// </summary>
+        public static bool ajouterCodeBarre = false;
     }
 }

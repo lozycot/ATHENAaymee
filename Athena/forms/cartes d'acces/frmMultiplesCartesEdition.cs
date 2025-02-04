@@ -740,6 +740,16 @@ namespace CartesAcces2024
             Edition.RognageX = 720;
             Edition.RognageY = 457;
 
+            // Si l'utilisateur veux ou non ajouter des codes barres
+            if (rdbAjoutCodeBarreOui.Checked)
+            {
+                Globale.ajouterCodeBarre = true;
+            }
+            else if (rdbAjoutCodeBarreNon.Checked)
+            {
+                Globale.ajouterCodeBarre = false;
+            }
+
             // Pour gérer les problèmes de dpi / scaling
             this.AutoScaleMode = AutoScaleMode.Dpi;
 
@@ -857,6 +867,52 @@ namespace CartesAcces2024
             // ouvrir form qui choisit l'élément à ajouter
             frmSelectionneAjoutDansCarteAcces frmSelection = new frmSelectionneAjoutDansCarteAcces();
             frmSelection.Show();
+        }
+
+        private void rdbAjoutCodeBarreOui_CheckedChanged(object sender, EventArgs e)
+        {
+            // Si l'utilisateur veux ou non ajouter des codes barres
+            if (rdbAjoutCodeBarreOui.Checked)
+            {
+                Globale.ajouterCodeBarre = true;
+            }
+            else if (rdbAjoutCodeBarreNon.Checked)
+            {
+                Globale.ajouterCodeBarre = false;
+            }
+
+            // Gestion de la preview selon le choix de l'utilisateur
+            if (Globale.InfosCarte == true)
+            {
+                Edition.FondCarteNiveauInfos(pbCarteFace, Globale.ListeEleveImpr[0]);
+            }
+            else
+            {
+                Edition.fondCarteNiveau(pbCarteFace, Globale.ListeEleveImpr[0]);
+            }
+        }
+
+        private void rdbAjoutCodeBarreNon_CheckedChanged(object sender, EventArgs e)
+        {
+            // Si l'utilisateur veux ou non ajouter des codes barres
+            if (rdbAjoutCodeBarreOui.Checked)
+            {
+                Globale.ajouterCodeBarre = true;
+            }
+            else if (rdbAjoutCodeBarreNon.Checked)
+            {
+                Globale.ajouterCodeBarre = false;
+            }
+
+            // Gestion de la preview selon le choix de l'utilisateur
+            if (Globale.InfosCarte == true)
+            {
+                Edition.FondCarteNiveauInfos(pbCarteFace, Globale.ListeEleveImpr[0]);
+            }
+            else
+            {
+                Edition.fondCarteNiveau(pbCarteFace, Globale.ListeEleveImpr[0]);
+            }
         }
     }
 }
