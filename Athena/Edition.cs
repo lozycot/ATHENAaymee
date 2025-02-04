@@ -320,7 +320,9 @@ namespace CartesAcces2024
                 chemin = Chemin.DossierCartesFace + niveauel + ".png";
             }
 
-            qrCodeFaceProvisoire(objGraphique);
+            qrCodeFaceProvisoire(objGraphique, eleve.ClasseEleve);
+
+            importCarteFace(chemin, objGraphique, eleve.ClasseEleve.Substring(0, 1));
 
             string tempNom = eleve.NomEleve;
             string tempPrenom = eleve.PrenomEleve;
@@ -335,7 +337,6 @@ namespace CartesAcces2024
                 codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
             }
 
-            importCarteFace(chemin, objGraphique, eleve.ClasseEleve.Substring(0, 1));
 
             fondTexteCarteFace(objGraphique, eleve.ClasseEleve, police2, eleve.ClasseEleve, 50, 70);
 
@@ -504,7 +505,7 @@ namespace CartesAcces2024
 
 
 
-        public static void qrCodeFace(Graphics objGraphique)
+        public static void qrCodeFace(Graphics objGraphique, string classeEleve)
         {
             // pour modifier lataille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
             float dpiScale;
@@ -537,10 +538,22 @@ namespace CartesAcces2024
                 var bmpFinal = new Bitmap(bmpOriginal, new Size((int)(175 * dpiScale), (int)(175 * dpiScale)));
 
                 objGraphique.DrawImage(bmpFinal, new Point(880, 990));
+
+                try
+                {
+                    // on affcihe un partie de l'url
+                    string texte = "Code QR: " + new Uri(Etablissement[7]).Host;
+                    fondTexteCarteFace(objGraphique, texte, new Font("Calibri", 16, FontStyle.Bold), classeEleve, 875, 940);
+                    objGraphique.DrawString(texte, new Font("Calibri", 16, FontStyle.Bold), new SolidBrush(Color.Black), 875, 940);
+                }
+                catch
+                {
+
+                }
             }
         }
 
-        public static void qrCodeFaceProvisoire(Graphics objGraphique)
+        public static void qrCodeFaceProvisoire(Graphics objGraphique, string classeEleve)
         {
             // pour modifier lataille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
             float dpiScale;
@@ -571,6 +584,18 @@ namespace CartesAcces2024
             var bmpFinal = new Bitmap(bmpOriginal, new Size((int)(180 * dpiScale), (int)(180 * dpiScale)));
 
             objGraphique.DrawImage(bmpFinal, new Point(875, 980));
+            try
+            {
+                // on affcihe un partie de l'url qui représente l'hôte
+                string texte = "Code QR: " + new Uri(Etablissement[7]).Host;
+                fondTexteCarteFace(objGraphique, texte, new Font("Calibri", 16, FontStyle.Bold), classeEleve, 875, 940);
+                objGraphique.DrawString(texte, new Font("Calibri", 16, FontStyle.Bold), new SolidBrush(Color.Black), 875, 940);
+            }
+            catch
+            {
+                //do nothing
+            }
+            
         }
 
         /// <summary>
@@ -654,7 +679,7 @@ namespace CartesAcces2024
             var objGraphique = Graphics.FromImage(image);
 
             
-            qrCodeFace(objGraphique);
+            qrCodeFace(objGraphique, eleve.ClasseEleve);
 
             Brush pinceauNoir = new SolidBrush(Color.Black);
 
@@ -766,7 +791,7 @@ namespace CartesAcces2024
 
             var objGraphique = Graphics.FromImage(image);
 
-            qrCodeFace(objGraphique);
+            qrCodeFace(objGraphique, eleve.ClasseEleve);
 
             Brush pinceauNoir = new SolidBrush(Color.Black);
 
