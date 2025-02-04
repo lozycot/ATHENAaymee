@@ -27,7 +27,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Athena;
 
 namespace CartesAcces2024
 {
@@ -401,7 +400,7 @@ namespace CartesAcces2024
         /// Contient si ils existent: l'option (codeQR, codeBarre, Texte) ; l'image ; les coodronnées sur la carte face ;
         /// le texte ; la police du texte ; la pictureBox originel
         /// </summary>
-        public static List<ChampPersonnalisee> donneesChampsPersonnalisee;
+        public static List<Tuple<string, Image, Point, string, Font, PictureBox>> donneesChampsPersonnalisee;
 
         /// <summary>
         /// Largeur physique minimum d'un code barre en millimètre.
