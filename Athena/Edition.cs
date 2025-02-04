@@ -325,14 +325,16 @@ namespace CartesAcces2024
             string tempNom = eleve.NomEleve;
             string tempPrenom = eleve.PrenomEleve;
             string tempClasse = eleve.ClasseEleve;
+            if (Globale.ajouterCodeBarre)
+            {
+                //recoupage pour éviter d'avoir un code barre trop long
+                if (tempNom.Length > 9)
+                    tempNom = tempNom.Substring(0, 8) + ".";
+                if (tempPrenom.Length > 12)
+                    tempPrenom = tempPrenom.Substring(0, 11) + ".";
+                codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            }
 
-            //recoupage pour éviter d'avoir un code barre trop long
-            if (tempNom.Length > 9)
-                tempNom = tempNom.Substring(0, 8) + ".";
-            if (tempPrenom.Length > 12)
-                tempPrenom = tempPrenom.Substring(0, 11) + ".";
-            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
-            
             importCarteFace(chemin, objGraphique, eleve.ClasseEleve.Substring(0, 1));
 
             fondTexteCarteFace(objGraphique, eleve.ClasseEleve, police2, eleve.ClasseEleve, 50, 70);
@@ -466,12 +468,15 @@ namespace CartesAcces2024
             string tempPrenom = eleve.PrenomEleve;
             string tempClasse = eleve.ClasseEleve;
 
-            //recoupage pour éviter d'avoir un code barre trop long
-            if (tempNom.Length > 9)
-                tempNom = tempNom.Substring(0, 8) + ".";
-            if (tempPrenom.Length > 12)
-                tempPrenom = tempPrenom.Substring(0, 11) + ".";
-            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            if (Globale.ajouterCodeBarre)
+            {
+                //recoupage pour éviter d'avoir un code barre trop long
+                if (tempNom.Length > 9)
+                    tempNom = tempNom.Substring(0, 8) + ".";
+                if (tempPrenom.Length > 12)
+                    tempPrenom = tempPrenom.Substring(0, 11) + ".";
+                codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            }
 
             //Dessine la saisie en textbox
             var chaine = "Nom : " + eleve.NomEleve;
@@ -670,14 +675,16 @@ namespace CartesAcces2024
             string tempNom = eleve.NomEleve;
             string tempPrenom = eleve.PrenomEleve;
             string tempClasse = eleve.ClasseEleve;
+            if (Globale.ajouterCodeBarre)
+            {
+                //recoupage pour éviter d'avoir un code barre trop long
+                if (tempNom.Length > 9)
+                    tempNom = tempNom.Substring(0, 8) + ".";
+                if (tempPrenom.Length > 13)
+                    tempPrenom = tempPrenom.Substring(0, 12) + ".";
 
-            //recoupage pour éviter d'avoir un code barre trop long
-            if (tempNom.Length > 9)
-                tempNom = tempNom.Substring(0, 8) + ".";
-            if (tempPrenom.Length > 13)
-                tempPrenom = tempPrenom.Substring(0, 12) + ".";
-
-            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+                codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            }
 
             //Dessine et rempli le fond pour l'écriture
             fondTexteCarteFace(objGraphique, classe, police2, classe, 50, 70);
@@ -778,13 +785,15 @@ namespace CartesAcces2024
             string tempNom = eleve.NomEleve;
             string tempPrenom = eleve.PrenomEleve;
             string tempClasse = classe;
-
-            //recoupage pour éviter d'avoir un code barre trop long
-            if (tempNom.Length > 9)
-                tempNom = tempNom.Substring(0, 8) + ".";
-            if (tempPrenom.Length > 12)
-                tempPrenom = tempPrenom.Substring(0, 11) + ".";
-            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            if (Globale.ajouterCodeBarre)
+            {
+                //recoupage pour éviter d'avoir un code barre trop long
+                if (tempNom.Length > 9)
+                    tempNom = tempNom.Substring(0, 8) + ".";
+                if (tempPrenom.Length > 12)
+                    tempPrenom = tempPrenom.Substring(0, 11) + ".";
+                codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            }
 
             //Dessine et rempli le fond pour l'écriture
             fondTexteCarteFace(objGraphique, eleve.ClasseEleve, police2, classe, 50, 70);
