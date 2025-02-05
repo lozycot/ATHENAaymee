@@ -105,7 +105,13 @@ namespace CartesAcces2024
             }
             else
             {
-
+                // On nettoye la table des dsipositifs personnalisees.
+                OperationsDb.supprimerDispositifsPersonnalisee();
+                // On les récupères de la listbox.
+                foreach (string item in lsbDispositifsPersonnalisee.Items)
+                {
+                    OperationsDb.ajouteDispositifPersonnalise(item);
+                }
 
                 // il faut re-créer la table Etablissement, pour détruire les champs personnalisés existants
                 // pour éviter de les cumuler
@@ -398,6 +404,12 @@ namespace CartesAcces2024
 
         private void frmEtablissement_Load(object sender, EventArgs e)
         {
+            // Dispositifs personnalisees
+            foreach (string str in OperationsDb.GetDispositifsPersonnalisee())
+            {
+                lsbDispositifsPersonnalisee.Items.Add(str);
+            }
+
             // recharger les champs personnalisés qui se trouvent dans la base de données
             Dictionary<string, string> tempChampsPeronnalisee = OperationsDb.getEtablissementChampsPersonnalisee();
 
@@ -595,6 +607,15 @@ namespace CartesAcces2024
             dictChampsPersonnalise.Add(lbl, txtBox);
 
             return lbl;
+        }
+
+        private void btnDispositifsPersonnalisee_Click(object sender, EventArgs e)
+        {
+            // si la textBox n'est pas vide
+            if (txtDispositifPersonnalisee.Text != "")
+            {
+                lsbDispositifsPersonnalisee.Items.Add(txtDispositifPersonnalisee.Text);
+            }
         }
     }
 }

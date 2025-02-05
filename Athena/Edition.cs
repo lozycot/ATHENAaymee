@@ -925,6 +925,8 @@ namespace CartesAcces2024
                 pbCarteArriere.Image = null;
                 if (File.Exists(Chemin.DossierEdtClassique + "/classes/" + eleve.ClasseEleve + ".jpg"))
                     pbCarteArriere.Image = Image.FromFile(Chemin.DossierEdtClassique + "/classes/" + eleve.ClasseEleve + ".jpg");
+                else if (File.Exists(Chemin.CheminEdtVierge)) // Si on trouve pas le dossier de classes, on affiche l'emploie du temps vierge.
+                    pbCarteArriere.Image = Image.FromFile(Chemin.CheminEdtVierge);
                 else
                     pbCarteArriere.Image = new Bitmap(297, 210);
             }
