@@ -215,12 +215,22 @@ namespace CartesAcces2024
                     pbCarteFace.RectangleToScreen(pbCarteFace.ClientRectangle)
                 );
 
+                // Définir les limites verticales (en pixels depuis le haut de pbCarteFace)
+                const int MIN_Y = 60;  // Limite supérieure 
+                const int MAX_Y = 288; // Limite inférieure
+
+                // Définir les limites horizontales (en pixels depuis la droite de pbCarteFace)
+                const int MIN_X = 0;  // Limite gauche 
+                const int MAX_X = 553; // Limite droite
+
                 // si drag est vrais
                 if (Edition.Drag)
                 {
+
                     // On restraint le control à la surface de pbCarteFace
-                    newLeft = Math.Max(boundingRect.Left, Math.Min(newLeft, boundingRect.Right - newCntrl.Width));
-                    newTop = Math.Max(boundingRect.Top, Math.Min(newTop, boundingRect.Bottom - newCntrl.Height));
+                    newLeft = Math.Max(boundingRect.Left + MIN_X, Math.Min(newLeft, boundingRect.Left + MAX_X - newCntrl.Width));
+                    newTop = Math.Max(boundingRect.Top + MIN_Y, Math.Min(newTop, boundingRect.Top + MAX_Y - newCntrl.Height));
+
 
                     // -- La position de la photo change --
                     newCntrl.Left = newLeft;
@@ -230,12 +240,21 @@ namespace CartesAcces2024
                 {
                     // On calcule les nouvelle dimentions selon l'aspect ratio
                     int dx = e.X - positionSourieInitiale.X;
-                    int newWidth = Math.Max(10, newCntrl.Width + dx); // La largeur minimumest 10
-                    int newHeight = (int)(newWidth / aspectRatio);
-                    
-                    newCntrl.Width = newWidth;
-                    newCntrl.Height = newHeight;
 
+                    // Calculer la nouvelle largeur proposée
+                    int newWidth = Math.Max(10, newCntrl.Width + dx); // La largeur minimum est 10
+                    int newHeight = (int)(newWidth / aspectRatio);
+
+                    // Vérifier si les nouvelles dimensions dépassent les limites
+                    bool exceedsWidth = (newCntrl.Left + newWidth) > (boundingRect.Left + MAX_X);
+                    bool exceedsHeight = (newCntrl.Top + newHeight) > (boundingRect.Top + MAX_Y);
+
+                    // N'appliquer les nouvelles dimensions que si elles respectent les limites
+                    if (!exceedsWidth && !exceedsHeight)
+                    {
+                        newCntrl.Width = newWidth;
+                        newCntrl.Height = newHeight;
+                    }
 
                     // on sauvregarde la position initiale de la sourie
                     positionSourieInitiale = e.Location;
