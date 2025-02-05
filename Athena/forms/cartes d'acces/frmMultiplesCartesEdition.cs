@@ -39,9 +39,11 @@ namespace CartesAcces2024
         public List<ChampPersonnalisee> elementsAjoutee;
 
         /// <summary>
-        /// Ajout un control de champs personnalisé dans la carte face selon l'option d'ajout du champs sélectionné dans <see cref="frmSelectionneAjoutDansCarteAcces"/> (texte, code QR ou code barre).
+        /// Ajout un control de champs personnalisé dans la carte face selon l'option d'ajout du champs sélectionné dans <see cref="frmSelectionneAjoutDansCarteAcces"/> 
+        /// (texte, code QR, code barre ou image).
+        /// Si l'option n'est pas Image, imageAAjouter doit être null.
         /// </summary>
-        public void ajouteControlChampPersonnalisee(string uneValeurDeChamp, string optionDAjoutDeLaValeur, Font policeTextChampPersonnalisee = null)
+        public void ajouteControlChampPersonnalisee(string uneValeurDeChamp, string optionDAjoutDeLaValeur, Font policeTextChampPersonnalisee = null, Image imageAAjouter = null)
         {
             // on utilise une picturebox pour plus facilement l'ajouter à l'image de la face avant
             PictureBox newCntrl = new PictureBox();
@@ -55,6 +57,10 @@ namespace CartesAcces2024
             }
 
 
+            if (optionDAjoutDeLaValeur == "Image")
+            {
+                newCntrl.Image = imageAAjouter;
+            }
             if (optionDAjoutDeLaValeur == "Code QR")
             {
 
