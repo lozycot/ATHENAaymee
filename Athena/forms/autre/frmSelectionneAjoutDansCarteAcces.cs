@@ -152,5 +152,23 @@ namespace Athena.forms.autre
             // On ferme ce formulaire
             this.Close();
         }
+
+        private void btnChoisirImage_Click(object sender, EventArgs e)
+        {
+            // Create an instance of OpenFileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Set filters to allow only image file formats
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+
+            // Show the dialog and check if the user clicked OK
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Display the selected image in the PictureBox
+                //pictureBox1.Image = new Bitmap(openFileDialog.FileName);
+                Globale.formMultipleCartes.ajouteControlChampPersonnalisee("", "Image", null, Image.FromFile(openFileDialog.FileName));
+                this.Close();
+            }
+        }
     }
 }

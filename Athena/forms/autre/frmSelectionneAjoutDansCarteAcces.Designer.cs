@@ -48,7 +48,7 @@
             this.rdbText.ForeColor = System.Drawing.Color.White;
             this.rdbText.Location = new System.Drawing.Point(3, 77);
             this.rdbText.Name = "rdbText";
-            this.rdbText.Size = new System.Drawing.Size(56, 21);
+            this.rdbText.Size = new System.Drawing.Size(64, 21);
             this.rdbText.TabIndex = 10;
             this.rdbText.TabStop = true;
             this.rdbText.Text = "Texte";
@@ -60,7 +60,7 @@
             this.rdbCodeBarre.ForeColor = System.Drawing.Color.White;
             this.rdbCodeBarre.Location = new System.Drawing.Point(3, 39);
             this.rdbCodeBarre.Name = "rdbCodeBarre";
-            this.rdbCodeBarre.Size = new System.Drawing.Size(101, 21);
+            this.rdbCodeBarre.Size = new System.Drawing.Size(108, 21);
             this.rdbCodeBarre.TabIndex = 8;
             this.rdbCodeBarre.Text = "Code-barres";
             this.rdbCodeBarre.UseVisualStyleBackColor = true;
@@ -120,6 +120,7 @@
             this.btnChoisirImage.TabIndex = 14;
             this.btnChoisirImage.Text = "Choisir une image";
             this.btnChoisirImage.UseVisualStyleBackColor = false;
+            this.btnChoisirImage.Click += new System.EventHandler(this.btnChoisirImage_Click);
             // 
             // btnValider
             // 
