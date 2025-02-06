@@ -133,7 +133,7 @@
             this.btnCartesListePerso.Name = "btnCartesListePerso";
             this.btnCartesListePerso.Size = new System.Drawing.Size(247, 52);
             this.btnCartesListePerso.TabIndex = 21;
-            this.btnCartesListePerso.Text = "Cartes personnalisées";
+            this.btnCartesListePerso.Text = "Cartes par liste personnalisées";
             this.ToolTip.SetToolTip(this.btnCartesListePerso, "Permet de créer et d\'enregistrer des cartes grâce à une liste personnalisé");
             this.btnCartesListePerso.UseVisualStyleBackColor = false;
             this.btnCartesListePerso.Click += new System.EventHandler(this.btnCartesListePerso_Click);

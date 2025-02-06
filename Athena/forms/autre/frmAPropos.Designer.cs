@@ -113,7 +113,7 @@ namespace CartesAcces2024
             this.btnRapporterBug.Name = "btnRapporterBug";
             this.btnRapporterBug.Size = new System.Drawing.Size(247, 52);
             this.btnRapporterBug.TabIndex = 27;
-            this.btnRapporterBug.Text = "Rapporter un Problemme";
+            this.btnRapporterBug.Text = "Signaler un Problemme";
             this.btnRapporterBug.UseVisualStyleBackColor = false;
             this.btnRapporterBug.Click += new System.EventHandler(this.btnRapporterBug_Click);
             // 
