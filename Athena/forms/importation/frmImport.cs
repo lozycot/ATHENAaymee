@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Athena.forms.autre;
 
 namespace CartesAcces2024
 {
@@ -100,6 +101,12 @@ namespace CartesAcces2024
         private void lblImportEleve_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTuto_Click(object sender, EventArgs e)
+        {
+            frmTuto Tuto2 = new frmTuto(this.GetType().Name);
+            Tuto2.Show();
         }
     }
 }

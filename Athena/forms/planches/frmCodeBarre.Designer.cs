@@ -47,6 +47,7 @@
             this.pbCodeBarre = new System.Windows.Forms.PictureBox();
             this.gbpRecherche = new System.Windows.Forms.GroupBox();
             this.lbRecherche = new System.Windows.Forms.ListBox();
+            this.btnTuto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.gbpElements.SuspendLayout();
@@ -63,7 +64,7 @@
             this.groupBox1.Controls.Add(this.cbxNiveau5eme);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(17, 304);
+            this.groupBox1.Location = new System.Drawing.Point(34, 344);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -121,7 +122,7 @@
             this.txtRecherche.BackColor = System.Drawing.Color.White;
             this.txtRecherche.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRecherche.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecherche.Location = new System.Drawing.Point(154, 41);
+            this.txtRecherche.Location = new System.Drawing.Point(171, 81);
             this.txtRecherche.Margin = new System.Windows.Forms.Padding(4);
             this.txtRecherche.Name = "txtRecherche";
             this.txtRecherche.Size = new System.Drawing.Size(270, 26);
@@ -132,7 +133,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(13, 43);
+            this.label3.Location = new System.Drawing.Point(30, 83);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 28);
@@ -143,12 +144,12 @@
             // 
             this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount.ForeColor = System.Drawing.Color.White;
-            this.lblCount.Location = new System.Drawing.Point(182, 9);
+            this.lblCount.Location = new System.Drawing.Point(199, 49);
             this.lblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(133, 28);
             this.lblCount.TabIndex = 15;
-            this.lblCount.Text = "aucuin";
+            this.lblCount.Text = "aucun";
             // 
             // btnValider
             // 
@@ -157,7 +158,7 @@
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnValider.Location = new System.Drawing.Point(1119, 588);
+            this.btnValider.Location = new System.Drawing.Point(1136, 628);
             this.btnValider.Margin = new System.Windows.Forms.Padding(4);
             this.btnValider.MaximumSize = new System.Drawing.Size(171, 55);
             this.btnValider.MinimumSize = new System.Drawing.Size(171, 55);
@@ -172,7 +173,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 9);
+            this.label1.Location = new System.Drawing.Point(30, 49);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 28);
@@ -182,7 +183,7 @@
             // pbPhoto
             // 
             this.pbPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.pbPhoto.Location = new System.Drawing.Point(1120, 54);
+            this.pbPhoto.Location = new System.Drawing.Point(1137, 94);
             this.pbPhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbPhoto.MaximumSize = new System.Drawing.Size(171, 223);
             this.pbPhoto.Name = "pbPhoto";
@@ -197,7 +198,7 @@
             this.gbpElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.gbpElements.Controls.Add(this.clbElements);
             this.gbpElements.ForeColor = System.Drawing.Color.White;
-            this.gbpElements.Location = new System.Drawing.Point(436, 12);
+            this.gbpElements.Location = new System.Drawing.Point(453, 52);
             this.gbpElements.Name = "gbpElements";
             this.gbpElements.Size = new System.Drawing.Size(614, 631);
             this.gbpElements.TabIndex = 9;
@@ -222,7 +223,7 @@
             this.btnToutSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnToutSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnToutSelectionner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnToutSelectionner.Location = new System.Drawing.Point(1119, 526);
+            this.btnToutSelectionner.Location = new System.Drawing.Point(1136, 566);
             this.btnToutSelectionner.Name = "btnToutSelectionner";
             this.btnToutSelectionner.Size = new System.Drawing.Size(171, 55);
             this.btnToutSelectionner.TabIndex = 13;
@@ -236,7 +237,7 @@
             this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnReinitialiser.Location = new System.Drawing.Point(1119, 450);
+            this.btnReinitialiser.Location = new System.Drawing.Point(1136, 490);
             this.btnReinitialiser.Name = "btnReinitialiser";
             this.btnReinitialiser.Size = new System.Drawing.Size(171, 70);
             this.btnReinitialiser.TabIndex = 12;
@@ -247,7 +248,7 @@
             // pbCodeBarre
             // 
             this.pbCodeBarre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.pbCodeBarre.Location = new System.Drawing.Point(1069, 304);
+            this.pbCodeBarre.Location = new System.Drawing.Point(1086, 344);
             this.pbCodeBarre.Name = "pbCodeBarre";
             this.pbCodeBarre.Size = new System.Drawing.Size(269, 122);
             this.pbCodeBarre.TabIndex = 21;
@@ -258,7 +259,7 @@
             this.gbpRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.gbpRecherche.Controls.Add(this.lbRecherche);
             this.gbpRecherche.ForeColor = System.Drawing.Color.White;
-            this.gbpRecherche.Location = new System.Drawing.Point(17, 74);
+            this.gbpRecherche.Location = new System.Drawing.Point(34, 114);
             this.gbpRecherche.Name = "gbpRecherche";
             this.gbpRecherche.Size = new System.Drawing.Size(407, 223);
             this.gbpRecherche.TabIndex = 10;
@@ -277,6 +278,20 @@
             this.lbRecherche.TabIndex = 1;
             this.lbRecherche.SelectedIndexChanged += new System.EventHandler(this.lbRecherche_SelectedIndexChanged);
             // 
+            // btnTuto
+            // 
+            this.btnTuto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnTuto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTuto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnTuto.Location = new System.Drawing.Point(1254, 23);
+            this.btnTuto.Name = "btnTuto";
+            this.btnTuto.Size = new System.Drawing.Size(101, 40);
+            this.btnTuto.TabIndex = 22;
+            this.btnTuto.Text = "Tutoriel";
+            this.btnTuto.UseVisualStyleBackColor = false;
+            this.btnTuto.Click += new System.EventHandler(this.btnTuto_Click);
+            // 
             // frmCodeBarre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -284,7 +299,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1356, 662);
+            this.ClientSize = new System.Drawing.Size(1414, 767);
+            this.Controls.Add(this.btnTuto);
             this.Controls.Add(this.gbpRecherche);
             this.Controls.Add(this.pbCodeBarre);
             this.Controls.Add(this.btnReinitialiser);
@@ -334,6 +350,7 @@
         private System.Windows.Forms.CheckBox cbxNiveau4eme;
         private System.Windows.Forms.CheckBox cbxNiveau6eme;
         private System.Windows.Forms.CheckBox cbxNiveau5eme;
+        private System.Windows.Forms.Button btnTuto;
     }
 }
 

@@ -34,15 +34,15 @@
             this.pbCarteArriere = new System.Windows.Forms.PictureBox();
             this.pbCarteFace = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblCompteur = new System.Windows.Forms.Label();
+            this.progressBar1_compteur = new System.Windows.Forms.ProgressBar();
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.labelEnCoursValidation = new System.Windows.Forms.Label();
             this.btnValiderImpr = new System.Windows.Forms.Button();
             this.tkbTaillePhoto = new System.Windows.Forms.TrackBar();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblCompteur = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.progressBar1_compteur = new System.Windows.Forms.ProgressBar();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -51,6 +51,7 @@
             this.rdbA4 = new System.Windows.Forms.RadioButton();
             this.btnAjouterElementDansCartes = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlEdtPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarteArriere)).BeginInit();
@@ -131,6 +132,28 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ajout et Edition Photo";
             // 
+            // lblCompteur
+            // 
+            this.lblCompteur.AutoSize = true;
+            this.lblCompteur.Enabled = false;
+            this.lblCompteur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompteur.ForeColor = System.Drawing.Color.White;
+            this.lblCompteur.Location = new System.Drawing.Point(18, 215);
+            this.lblCompteur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCompteur.Name = "lblCompteur";
+            this.lblCompteur.Size = new System.Drawing.Size(50, 29);
+            this.lblCompteur.TabIndex = 18;
+            this.lblCompteur.Text = "0%";
+            // 
+            // progressBar1_compteur
+            // 
+            this.progressBar1_compteur.Enabled = false;
+            this.progressBar1_compteur.Location = new System.Drawing.Point(16, 247);
+            this.progressBar1_compteur.Name = "progressBar1_compteur";
+            this.progressBar1_compteur.Size = new System.Drawing.Size(359, 23);
+            this.progressBar1_compteur.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1_compteur.TabIndex = 20;
+            // 
             // btnOpenFolder
             // 
             this.btnOpenFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -206,19 +229,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Redefinir la taille";
             // 
-            // lblCompteur
-            // 
-            this.lblCompteur.AutoSize = true;
-            this.lblCompteur.Enabled = false;
-            this.lblCompteur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompteur.ForeColor = System.Drawing.Color.White;
-            this.lblCompteur.Location = new System.Drawing.Point(18, 215);
-            this.lblCompteur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCompteur.Name = "lblCompteur";
-            this.lblCompteur.Size = new System.Drawing.Size(50, 29);
-            this.lblCompteur.TabIndex = 18;
-            this.lblCompteur.Text = "0%";
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
@@ -233,15 +243,6 @@
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Edition Emploi du Temps";
-            // 
-            // progressBar1_compteur
-            // 
-            this.progressBar1_compteur.Enabled = false;
-            this.progressBar1_compteur.Location = new System.Drawing.Point(16, 247);
-            this.progressBar1_compteur.Name = "progressBar1_compteur";
-            this.progressBar1_compteur.Size = new System.Drawing.Size(359, 23);
-            this.progressBar1_compteur.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1_compteur.TabIndex = 20;
             // 
             // btnCancel
             // 
@@ -334,11 +335,26 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Edition Face de Carte";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.button1.Location = new System.Drawing.Point(1632, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 44);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "&Tutoriel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmMultiplesCartesEdition
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1617, 875);
+            this.ClientSize = new System.Drawing.Size(1771, 874);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlEdtPhoto);
@@ -391,6 +407,7 @@
         private System.Windows.Forms.PictureBox pbCarteFace;
         private System.Windows.Forms.Button btnAjouterElementDansCartes;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button1;
     }
 }
 

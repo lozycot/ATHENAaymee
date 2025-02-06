@@ -39,6 +39,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.panelBdd = new System.Windows.Forms.Panel();
+            this.btnReinitialiser = new System.Windows.Forms.Button();
+            this.btnToutSelectionner = new System.Windows.Forms.Button();
+            this.gbpElements = new System.Windows.Forms.GroupBox();
+            this.clbElements = new System.Windows.Forms.CheckedListBox();
+            this.btnValider = new System.Windows.Forms.Button();
             this.cbSource = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.toolTipSource = new System.Windows.Forms.ToolTip(this.components);
@@ -46,16 +51,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbProfils = new System.Windows.Forms.CheckBox();
             this.tkbZoom = new System.Windows.Forms.TrackBar();
-            this.gbpElements = new System.Windows.Forms.GroupBox();
-            this.clbElements = new System.Windows.Forms.CheckedListBox();
-            this.btnReinitialiser = new System.Windows.Forms.Button();
-            this.btnToutSelectionner = new System.Windows.Forms.Button();
-            this.btnValider = new System.Windows.Forms.Button();
+            this.btnTuto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbDocument)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelBdd.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tkbZoom)).BeginInit();
             this.gbpElements.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tkbZoom)).BeginInit();
             this.SuspendLayout();
             // 
             // pbDocument
@@ -170,6 +171,73 @@
             this.panelBdd.Size = new System.Drawing.Size(309, 685);
             this.panelBdd.TabIndex = 19;
             // 
+            // btnReinitialiser
+            // 
+            this.btnReinitialiser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnReinitialiser.Location = new System.Drawing.Point(9, 475);
+            this.btnReinitialiser.Name = "btnReinitialiser";
+            this.btnReinitialiser.Size = new System.Drawing.Size(289, 70);
+            this.btnReinitialiser.TabIndex = 15;
+            this.btnReinitialiser.Text = "Réinitialiser la sélection";
+            this.btnReinitialiser.UseVisualStyleBackColor = false;
+            this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
+            // 
+            // btnToutSelectionner
+            // 
+            this.btnToutSelectionner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnToutSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnToutSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnToutSelectionner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnToutSelectionner.Location = new System.Drawing.Point(9, 551);
+            this.btnToutSelectionner.Name = "btnToutSelectionner";
+            this.btnToutSelectionner.Size = new System.Drawing.Size(289, 55);
+            this.btnToutSelectionner.TabIndex = 16;
+            this.btnToutSelectionner.Text = "Tout sélectionner";
+            this.btnToutSelectionner.UseVisualStyleBackColor = false;
+            this.btnToutSelectionner.Click += new System.EventHandler(this.btnToutSelectionner_Click);
+            // 
+            // gbpElements
+            // 
+            this.gbpElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.gbpElements.Controls.Add(this.clbElements);
+            this.gbpElements.ForeColor = System.Drawing.Color.White;
+            this.gbpElements.Location = new System.Drawing.Point(3, 3);
+            this.gbpElements.Name = "gbpElements";
+            this.gbpElements.Size = new System.Drawing.Size(301, 459);
+            this.gbpElements.TabIndex = 26;
+            this.gbpElements.TabStop = false;
+            this.gbpElements.Text = "TexteElementFiltre";
+            // 
+            // clbElements
+            // 
+            this.clbElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.clbElements.CheckOnClick = true;
+            this.clbElements.ForeColor = System.Drawing.Color.White;
+            this.clbElements.FormattingEnabled = true;
+            this.clbElements.Location = new System.Drawing.Point(6, 21);
+            this.clbElements.Name = "clbElements";
+            this.clbElements.Size = new System.Drawing.Size(405, 565);
+            this.clbElements.TabIndex = 0;
+            this.clbElements.SelectedIndexChanged += new System.EventHandler(this.clbElements_SelectedIndexChanged);
+            // 
+            // btnValider
+            // 
+            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnValider.Location = new System.Drawing.Point(10, 613);
+            this.btnValider.Margin = new System.Windows.Forms.Padding(4);
+            this.btnValider.Name = "btnValider";
+            this.btnValider.Size = new System.Drawing.Size(288, 55);
+            this.btnValider.TabIndex = 17;
+            this.btnValider.Text = "Gérer les classes temporaires";
+            this.btnValider.UseVisualStyleBackColor = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
+            // 
             // cbSource
             // 
             this.cbSource.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -186,6 +254,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(38, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -248,78 +317,27 @@
             this.tkbZoom.Value = 50;
             this.tkbZoom.Scroll += new System.EventHandler(this.tkbZoom_Scroll);
             // 
-            // gbpElements
+            // btnTuto
             // 
-            this.gbpElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.gbpElements.Controls.Add(this.clbElements);
-            this.gbpElements.ForeColor = System.Drawing.Color.White;
-            this.gbpElements.Location = new System.Drawing.Point(3, 3);
-            this.gbpElements.Name = "gbpElements";
-            this.gbpElements.Size = new System.Drawing.Size(301, 459);
-            this.gbpElements.TabIndex = 26;
-            this.gbpElements.TabStop = false;
-            this.gbpElements.Text = "TexteElementFiltre";
-            // 
-            // clbElements
-            // 
-            this.clbElements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.clbElements.CheckOnClick = true;
-            this.clbElements.ForeColor = System.Drawing.Color.White;
-            this.clbElements.FormattingEnabled = true;
-            this.clbElements.Location = new System.Drawing.Point(6, 21);
-            this.clbElements.Name = "clbElements";
-            this.clbElements.Size = new System.Drawing.Size(289, 429);
-            this.clbElements.TabIndex = 0;
-            this.clbElements.SelectedIndexChanged += new System.EventHandler(this.clbElements_SelectedIndexChanged);
-            // 
-            // btnReinitialiser
-            // 
-            this.btnReinitialiser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnReinitialiser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReinitialiser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnReinitialiser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnReinitialiser.Location = new System.Drawing.Point(9, 475);
-            this.btnReinitialiser.Name = "btnReinitialiser";
-            this.btnReinitialiser.Size = new System.Drawing.Size(289, 70);
-            this.btnReinitialiser.TabIndex = 15;
-            this.btnReinitialiser.Text = "Réinitialiser la sélection";
-            this.btnReinitialiser.UseVisualStyleBackColor = false;
-            this.btnReinitialiser.Click += new System.EventHandler(this.btnReinitialiser_Click);
-            // 
-            // btnToutSelectionner
-            // 
-            this.btnToutSelectionner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnToutSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnToutSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnToutSelectionner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnToutSelectionner.Location = new System.Drawing.Point(9, 551);
-            this.btnToutSelectionner.Name = "btnToutSelectionner";
-            this.btnToutSelectionner.Size = new System.Drawing.Size(289, 55);
-            this.btnToutSelectionner.TabIndex = 16;
-            this.btnToutSelectionner.Text = "Tout sélectionner";
-            this.btnToutSelectionner.UseVisualStyleBackColor = false;
-            this.btnToutSelectionner.Click += new System.EventHandler(this.btnToutSelectionner_Click);
-            // 
-            // btnValider
-            // 
-            this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
-            this.btnValider.Location = new System.Drawing.Point(10, 613);
-            this.btnValider.Margin = new System.Windows.Forms.Padding(4);
-            this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(288, 55);
-            this.btnValider.TabIndex = 17;
-            this.btnValider.Text = "Gérer les classes temporaires";
-            this.btnValider.UseVisualStyleBackColor = false;
-            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
+            this.btnTuto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnTuto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTuto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnTuto.Location = new System.Drawing.Point(1077, 16);
+            this.btnTuto.Name = "btnTuto";
+            this.btnTuto.Size = new System.Drawing.Size(101, 40);
+            this.btnTuto.TabIndex = 26;
+            this.btnTuto.Text = "Tutoriel";
+            this.btnTuto.UseVisualStyleBackColor = false;
+            this.btnTuto.Click += new System.EventHandler(this.btnTuto_Click);
             // 
             // frmPlanches
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1069, 779);
+            this.ClientSize = new System.Drawing.Size(1190, 784);
+            this.Controls.Add(this.btnTuto);
             this.Controls.Add(this.tkbZoom);
             this.Controls.Add(this.cbProfils);
             this.Controls.Add(this.label5);
@@ -343,8 +361,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDocument)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelBdd.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tkbZoom)).EndInit();
             this.gbpElements.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tkbZoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,6 +391,7 @@
         private System.Windows.Forms.Button btnReinitialiser;
         private System.Windows.Forms.Button btnToutSelectionner;
         private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.Button btnTuto;
     }
 }
 

@@ -77,6 +77,7 @@
             // 
             this.btnImpInformations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnImpInformations.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnImpInformations.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.btnImpInformations.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImpInformations.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImpInformations.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));

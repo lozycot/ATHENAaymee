@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
-
+using Athena.forms.autre;
 
 namespace CartesAcces2024
 {
@@ -677,6 +677,12 @@ namespace CartesAcces2024
         private void pbCarteFace_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmTuto Tuto2 = new frmTuto(this.GetType().Name);
+            Tuto2.Show();
         }
     }
 }

@@ -45,6 +45,7 @@
             this.clbClasse4eme = new System.Windows.Forms.CheckedListBox();
             this.clbClasse3eme = new System.Windows.Forms.CheckedListBox();
             this.gpbTriParClasses = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.gbxTriParNiveau.SuspendLayout();
             this.gpbTriParClasses.SuspendLayout();
@@ -254,11 +255,26 @@
             this.gpbTriParClasses.Text = "Recherche par classes : ";
             this.gpbTriParClasses.Enter += new System.EventHandler(this.gpbTriParClasses_Enter);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.button1.Location = new System.Drawing.Point(1357, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 44);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "&Tutoriel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmCarteParClasseNiveau
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1510, 712);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gpbTriParClasses);
             this.Controls.Add(this.gbxTriParNiveau);
             this.Controls.Add(this.label4);
@@ -300,6 +316,7 @@
         private System.Windows.Forms.CheckBox cbxNiveau4eme;
         private System.Windows.Forms.CheckBox cbxNiveau5eme;
         private System.Windows.Forms.CheckBox cbxNiveau6eme;
+        private System.Windows.Forms.Button button1;
     }
 }
 

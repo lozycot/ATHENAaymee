@@ -844,6 +844,12 @@ namespace CartesAcces2024
             frmSelectionneAjoutDansCarteAcces frmSelection = new frmSelectionneAjoutDansCarteAcces();
             frmSelection.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmTuto Tuto2 = new frmTuto(this.GetType().Name);
+            Tuto2.Show();
+        }
     }
 }
 

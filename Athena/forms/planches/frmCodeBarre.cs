@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using ZXing;
 using ZXing.Common;
+using Athena.forms.autre;
 
 namespace CartesAcces2024
 {
@@ -444,6 +445,12 @@ namespace CartesAcces2024
         private void cbxNiveau3eme_CheckedChanged(object sender, EventArgs e)
         {
             changeAffichage(); // Mettre à jour l'affichage lorsque la case est cochée/décochée
+        }
+
+        private void btnTuto_Click(object sender, EventArgs e)
+        {
+            frmTuto Tuto2 = new frmTuto(this.GetType().Name);
+            Tuto2.Show();
         }
     }
 }
