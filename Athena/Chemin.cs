@@ -21,6 +21,8 @@ namespace CartesAcces2024
         public static string DossierListeEleve { get; set; } = DossierData + "ImportListeEleve/";
         // Dossier pour les photos des élèves
         public static string DossierPhotoEleve { get; set; } = DossierData + "photoEleve/";
+        // Dossier pour les photos des tutos
+        public static string DossierPhotosTutos { get; set; } = DossierData + "PhotosTutos/";
         // Dossier pour les emplois du temps classiques
         public static string DossierEdtClassique { get; set; } = DossierData + "FichierEdtClasse/";
         // Chemin vers un emploi du temps vierge

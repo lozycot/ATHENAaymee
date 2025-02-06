@@ -51,6 +51,7 @@
             this.rdbA4 = new System.Windows.Forms.RadioButton();
             this.btnAjouterElementDansCartes = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.rdbAjoutCodeBarreNon = new System.Windows.Forms.RadioButton();
             this.rdbAjoutCodeBarreOui = new System.Windows.Forms.RadioButton();
@@ -338,6 +339,19 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Edition Face de Carte";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.button1.Location = new System.Drawing.Point(1632, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 44);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "&Tutoriel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
@@ -379,6 +393,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(1771, 874);
+            this.Controls.Add(this.button1);
             this.ClientSize = new System.Drawing.Size(1617, 875);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -435,6 +451,7 @@
         private System.Windows.Forms.PictureBox pbCarteFace;
         private System.Windows.Forms.Button btnAjouterElementDansCartes;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RadioButton rdbAjoutCodeBarreNon;
         private System.Windows.Forms.RadioButton rdbAjoutCodeBarreOui;

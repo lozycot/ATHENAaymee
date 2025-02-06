@@ -28,28 +28,28 @@ namespace CartesAcces2024
                     MessageBox.Show("Tous les champs doivent être remplis !", "Erreur de saisie",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
-        
+
                 // Vérifie si le nom d'utilisateur contient des caractères non valides
                 case bool _ when txtIdentifiant.Text.Any(ch => !char.IsLetterOrDigit(ch)):
                     MessageBox.Show("Un nom d'utilisateur ne peut comporter que des chiffres et des lettres !", "Erreur de saisie",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtIdentifiant.Text = "";
                     break;
-        
+
                 // Vérifie si le mot de passe contient des caractères non valides
                 case bool _ when txtMdp.Text.Contains("'") || txtMdp.Text.Contains("\""):
                     MessageBox.Show("Le mot de passe ne peut pas contenir de caractère « \" » ou « ' ».", "Erreur de saisie",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtMdp.Text = "";
                     break;
-        
+
                 // Vérifie les informations de connexion
                 case bool _ when !ConnectDb.DbConnect.DbData("Connection WHERE Connection.nomUtilisateur = '" + txtIdentifiant.Text + "' AND " +
                     "Connection.MotDePasse = '" + txtMdp.Text + "';"):
                     MessageBox.Show("L'identifiant ou le mot de passe est incorrect. Réessayez.", "Erreur de saisie",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
-        
+
                 default:
                     // Connexion réussie
                     Globale.EstConnecte = true;
@@ -65,7 +65,7 @@ namespace CartesAcces2024
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("La réinitialisation du mot de passe entrainera la suppression des données sur les élèves, il faudra donc les réimporter, êtes vous sur de vouloir réinitialiser le mot de passe ?","Mot de passe oublié", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("La réinitialisation du mot de passe entrainera la suppression des données sur les élèves, il faudra donc les réimporter, êtes vous sur de vouloir réinitialiser le mot de passe ?", "Mot de passe oublié", MessageBoxButtons.YesNo);
             switch (dr)
             {
                 case DialogResult.Yes:
@@ -103,7 +103,7 @@ namespace CartesAcces2024
                     frmCreerUser.StartPosition = FormStartPosition.CenterScreen;
                     frmCreerUser.FormClosed += (s, args) => this.Show();
                     frmCreerUser.Show();
-                    
+
                     break;
                 case DialogResult.No:
                     break;

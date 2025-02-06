@@ -158,64 +158,38 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
-      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.dll</HintPath>
-    </Reference>
-    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
-      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.presentation.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chemin.cs" />
     <Compile Include="Classe.cs" />
     <Compile Include="CopieImage.cs" />
     <Compile Include="EditionCodeBarre.cs" />
-    <Compile Include="forms\autre\frmAPropos.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\autre\frmAPropos.cs" />
     <Compile Include="forms\autre\frmAPropos.Designer.cs">
       <DependentUpon>frmAPropos.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\autre\frmMonterNiveau.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\autre\frmMonterNiveau.cs" />
     <Compile Include="forms\autre\frmMonterNiveau.Designer.cs">
       <DependentUpon>frmMonterNiveau.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\autre\frmOptAvancees.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\autre\frmOptAvancees.cs" />
     <Compile Include="forms\autre\frmOptAvancees.Designer.cs">
       <DependentUpon>frmOptAvancees.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\autre\frmSelectionneAjoutDansCarteAcces.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\autre\frmSelectionneAjoutDansCarteAcces.cs" />
     <Compile Include="forms\autre\frmSelectionneAjoutDansCarteAcces.Designer.cs">
       <DependentUpon>frmSelectionneAjoutDansCarteAcces.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\autre\frmSuppressionDeDonnées.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\autre\frmSuppressionDeDonnées.cs" />
     <Compile Include="forms\autre\frmSuppressionDeDonnées.Designer.cs">
       <DependentUpon>frmSuppressionDeDonnées.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\autre\frmTuto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\autre\frmTuto.Designer.cs">
-      <DependentUpon>frmTuto.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\planches\EditionPlanche.cs" />
-    <Compile Include="forms\planches\frmSelectionZone.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\planches\frmSelectionZone.cs" />
     <Compile Include="forms\planches\frmSelectionZone.Designer.cs">
       <DependentUpon>frmSelectionZone.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\planches\frmClasseTemporaire.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\planches\frmClasseTemporaire.cs" />
     <Compile Include="forms\planches\frmClasseTemporaire.Designer.cs">
       <DependentUpon>frmClasseTemporaire.cs</DependentUpon>
     </Compile>
@@ -225,9 +199,7 @@
     <Compile Include="forms\planches\frmImportPlanches.Designer.cs">
       <DependentUpon>frmImportPlanches.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\planches\frmEleveTemporaire.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\planches\frmEleveTemporaire.cs" />
     <Compile Include="forms\planches\frmEleveTemporaire.Designer.cs">
       <DependentUpon>frmEleveTemporaire.cs</DependentUpon>
     </Compile>
@@ -237,52 +209,36 @@
     <Compile Include="forms\planches\frmModifClassesTemporaires.Designer.cs">
       <DependentUpon>frmModifClassesTemporaires.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\planches\frmPlanches.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\planches\frmPlanches.cs" />
     <Compile Include="forms\planches\frmPlanches.Designer.cs">
       <DependentUpon>frmPlanches.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\cartes d%27acces\frmCarteParClasseNiveau.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\cartes d%27acces\frmCarteParClasseNiveau.cs" />
     <Compile Include="forms\cartes d%27acces\frmCarteParClasseNiveau.Designer.cs">
       <DependentUpon>frmCarteParClasseNiveau.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmConnection.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\frmConnection.cs" />
     <Compile Include="forms\frmConnection.Designer.cs">
       <DependentUpon>frmConnection.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmCreerUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\frmCreerUser.cs" />
     <Compile Include="forms\frmCreerUser.Designer.cs">
       <DependentUpon>frmCreerUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\cartes d%27acces\frmMultiplesCartesEdition.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\cartes d%27acces\frmMultiplesCartesEdition.cs" />
     <Compile Include="forms\cartes d%27acces\frmMultiplesCartesEdition.Designer.cs">
       <DependentUpon>frmMultiplesCartesEdition.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\importation\frmSelectionNiveauEdt.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\importation\frmSelectionNiveauEdt.cs" />
     <Compile Include="forms\importation\frmSelectionNiveauEdt.Designer.cs">
       <DependentUpon>frmSelectionNiveauEdt.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\importation\frmSelectionNiveauPhoto.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\importation\frmSelectionNiveauPhoto.cs" />
     <Compile Include="forms\importation\frmSelectionNiveauPhoto.Designer.cs">
       <DependentUpon>frmSelectionNiveauPhoto.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\planches\LecturePlanches.cs" />
-    <Compile Include="forms\planches\frmCodeBarre.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\planches\frmCodeBarre.cs" />
     <Compile Include="forms\planches\frmCodeBarre.Designer.cs">
       <DependentUpon>frmCodeBarre.cs</DependentUpon>
     </Compile>
@@ -295,9 +251,7 @@
     <Compile Include="Photo.cs" />
     <Compile Include="FichierWord.cs" />
     <Compile Include="Edition.cs" />
-    <Compile Include="forms\cartes d%27acces\frmCartesParListe.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\cartes d%27acces\frmCartesParListe.cs" />
     <Compile Include="forms\cartes d%27acces\frmCartesParListe.Designer.cs">
       <DependentUpon>frmCartesParListe.cs</DependentUpon>
     </Compile>
@@ -312,30 +266,22 @@
     <Compile Include="Couleur.cs" />
     <Compile Include="Edt.cs" />
     <Compile Include="Eleve.cs" />
-    <Compile Include="forms\importation\frmImport.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\importation\frmImport.cs" />
     <Compile Include="forms\importation\frmImport.Designer.cs">
       <DependentUpon>frmImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmAccueil.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\frmAccueil.cs" />
     <Compile Include="forms\cartes d%27acces\frmCarteProvisoire.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\cartes d%27acces\frmCarteProvisoire.Designer.cs">
       <DependentUpon>frmCarteProvisoire.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\autre\frmChargement.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\autre\frmChargement.cs" />
     <Compile Include="forms\autre\frmChargement.Designer.cs">
       <DependentUpon>frmChargement.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\importation\frmEtablissement.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\importation\frmEtablissement.cs" />
     <Compile Include="forms\frmAccueil.Designer.cs">
       <DependentUpon>frmAccueil.cs</DependentUpon>
     </Compile>
@@ -346,11 +292,6 @@
     <Compile Include="ConnectDb.cs" />
     <Compile Include="PdfGs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="QRCode.cs" />
     <Compile Include="readCsv.cs" />
     <Compile Include="Recherche_Image.cs" />
@@ -364,9 +305,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\autre\frmSelectionneAjoutDansCarteAcces.resx">
       <DependentUpon>frmSelectionneAjoutDansCarteAcces.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\autre\frmTuto.resx">
-      <DependentUpon>frmTuto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\cartes d%27acces\frmCarteParClasseNiveau.resx">
       <DependentUpon>frmCarteParClasseNiveau.cs</DependentUpon>
@@ -439,9 +377,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <None Include="CartesAcces2024_TemporaryKey.pfx" />
     <None Include="Ghostscript\COPYING">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -510,12 +453,12 @@
     <Content Include="data\FichierCartesFace\Face.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\FondAthena2025.png" />
+    <Content Include="data\FondAthena2024.png" />
     <Content Include="data\github.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\IconAthena2025.ico" />
-    <Content Include="data\IconAthena2025.png" />
+    <Content Include="data\IconAthena2024.ico" />
+    <Content Include="data\IconAthena2024.png" />
     <Content Include="data\image\bleu.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -529,31 +472,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data\logo.png" />
-    <Content Include="data\LogoAthena2025.png" />
-    <Content Include="data\PhotosTutos\photo_frmCarteParClasseNiveau.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\PhotosTutos\photo_frmCartesParListe.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\PhotosTutos\photo_frmCarteProvisoire.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\PhotosTutos\photo_frmCodeBarre.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\PhotosTutos\photo_frmImport.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\PhotosTutos\photo_frmMultiplesCartesEdition.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\PhotosTutos\photo_frmPlanches0.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\PhotosTutos\photo_frmPlanches1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="data\LogoAthena2024.png" />
     <Content Include="Ghostscript\gsdll32.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -564,10 +483,25 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="IconAthena2024.ico" />
-    <Content Include="SQLite\x64\SQLite.Interop.dll" />
-    <Content Include="SQLite\x86\SQLite.Interop.dll" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="ACTIVEBARCODELib">
+      <Guid>{0BFA85A1-F9B8-11CF-8939-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxACTIVEBARCODELib">
+      <Guid>{0BFA85A1-F9B8-11CF-8939-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="stdole">
       <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>2</VersionMajor>
@@ -577,9 +511,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

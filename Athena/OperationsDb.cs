@@ -1,27 +1,27 @@
 ﻿/**
- * MIT License
- * 
- * Copyright (c) 2023, 2024 Collège Caroline Aigle
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
- */
+* MIT License
+* 
+* Copyright (c) 2023, 2024 Collège Caroline Aigle
+* 
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+* 
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+* 
+*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -245,7 +245,7 @@ namespace CartesAcces2024
         {
             using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
             {
-                
+
                 // PRAGMA table_info(table) renvoie un tableau contenant les champs de la table avec diverse information les concernant.
                 string sql = string.Format("PRAGMA table_info({0})", nomTable);
 
@@ -311,13 +311,13 @@ namespace CartesAcces2024
                 }
             }
 
-            if (champsExiste(uneTable, unNouveauChamps)==false) // on vérifie que la colonne à étée crée avec succès
+            if (champsExiste(uneTable, unNouveauChamps) == false) // on vérifie que la colonne à étée crée avec succès
             {
                 MessageBox.Show("La création de la nouvelle colonne à échouée.");
             }
         }
 
-        
+
 
 
 
@@ -482,7 +482,7 @@ namespace CartesAcces2024
 
             using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
             {
-                
+
                 // PRAGMA table_info(table) renvoie un tableau contenant les champs de la table avec diverse information les concernant.
                 string sql = "PRAGMA table_info(Etablissement)";
 

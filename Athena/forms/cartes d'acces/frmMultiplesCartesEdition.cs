@@ -36,7 +36,7 @@ namespace CartesAcces2024
         /// <summary>
         /// Champs personnalisés ajoutés par l'utilisateur sur la carte. Voir <see cref="Globale.donneesChampsPersonnalisee"/> pour une description de la structure.
         /// </summary>
-        public List<ChampPersonnalisee> elementsAjoutee;
+        public List<Tuple<string, Image, Point, string, Font, PictureBox>> elementsAjoutee;
 
         /// <summary>
         /// Ajout un control de champs personnalisé dans la carte face selon l'option d'ajout du champs sélectionné dans <see cref="frmSelectionneAjoutDansCarteAcces"/> 
@@ -48,12 +48,9 @@ namespace CartesAcces2024
             // on utilise une picturebox pour plus facilement l'ajouter à l'image de la face avant
             PictureBox newCntrl = new PictureBox();
 
-            // pour les image selon la couleur de l'arrière plan, utilisé plus tard
-            Dictionary<string, Image> imageParCouleur = new Dictionary<string, Image>();
-
             if (Globale.donneesChampsPersonnalisee == null)
             {
-                Globale.donneesChampsPersonnalisee = new List<ChampPersonnalisee>();
+                Globale.donneesChampsPersonnalisee = new List<Tuple<string, Image, Point, string, Font, PictureBox>>();
             }
 
 
@@ -72,13 +69,13 @@ namespace CartesAcces2024
                 newCntrl.Height = 100;
 
             }
-            else if (optionDAjoutDeLaValeur == "Code-barres")
+            else if (optionDAjoutDeLaValeur == "Code Barre")
             {
 
                 EditionCodeBarre.AfficherCodeBarre(uneValeurDeChamp, newCntrl);
 
             } 
-            else if (optionDAjoutDeLaValeur == "Texte")
+            else if (optionDAjoutDeLaValeur == "Text")
             {
 
                 if (policeTextChampPersonnalisee==null) // la police peut ou non être passée en paramètre
@@ -88,7 +85,7 @@ namespace CartesAcces2024
                 Brush pinceauNoir = new SolidBrush(Color.Black);
 
                 // Gestion de la couleur de l'arrière plan
-                List<Color> couleurs = new List<Color>();
+                List<Color> couleurs = new List<Color> { };
                 couleurs = OperationsDb.GetColors();
 
                 Color couleurFondDuTexte;
@@ -112,7 +109,7 @@ namespace CartesAcces2024
                         couleurFondDuTexte = Color.White;
                         break;
                 }
-                
+
 
                 using (Bitmap temp = new Bitmap(1, 1))
                 using (Graphics tempGraph = Graphics.FromImage(temp))
@@ -132,32 +129,9 @@ namespace CartesAcces2024
 
                     using (Graphics graph = Graphics.FromImage(newCntrl.Image))
                     {
-                        // créer des texte avec le fond de la couleur de chaque niveau
-                        // sinon, on enregistre le texte avec le fond qui correspond au premier élève, mais pas les autres
-                        // pour la 6eme
-                        graph.FillRectangle(new SolidBrush(couleurs[0]), rectangelArrièrePlan);
-                        graph.DrawString(uneValeurDeChamp, policeTextChampPersonnalisee, pinceauNoir, new Point(0, 0));
-                        imageParCouleur["6eme"] = new Bitmap(newCntrl.Image);
-                        // pour la 5eme
-                        graph.FillRectangle(new SolidBrush(couleurs[1]), rectangelArrièrePlan);
-                        graph.DrawString(uneValeurDeChamp, policeTextChampPersonnalisee, pinceauNoir, new Point(0, 0));
-                        imageParCouleur["5eme"] = new Bitmap(newCntrl.Image); ;
-                        // pour la 4eme
-                        graph.FillRectangle(new SolidBrush(couleurs[2]), rectangelArrièrePlan);
-                        graph.DrawString(uneValeurDeChamp, policeTextChampPersonnalisee, pinceauNoir, new Point(0, 0));
-                        imageParCouleur["4eme"] = new Bitmap(newCntrl.Image); ;
-                        // pour la 3eme
-                        graph.FillRectangle(new SolidBrush(couleurs[3]), rectangelArrièrePlan);
-                        graph.DrawString(uneValeurDeChamp, policeTextChampPersonnalisee, pinceauNoir, new Point(0, 0));
-                        imageParCouleur["3eme"] = new Bitmap(newCntrl.Image); ;
-
-
-                        // ensuite on créer l'image à aficher dans la preview quand même
                         graph.FillRectangle(new SolidBrush(couleurFondDuTexte), rectangelArrièrePlan);
                         // on écrit la valeur de champ dans la picturebox, qui as la bonne taille
                         graph.DrawString(uneValeurDeChamp, policeTextChampPersonnalisee, pinceauNoir, new Point(0, 0));
-
-                        
                     }
                 }
                 newCntrl.Refresh();
@@ -237,7 +211,8 @@ namespace CartesAcces2024
                     newCntrl.Top = newTop;
                 }
                 else if (Edition.Resizing)
-                {
+                {   
+
                     // On calcule les nouvelle dimentions selon l'aspect ratio
                     int dx = e.X - positionSourieInitiale.X;
 
@@ -299,9 +274,7 @@ namespace CartesAcces2024
 
             // On ajoute le control dans la liste, afin de l'ajouter dans Globale.donneesChampsPersonnalisee avec les bonnes cordonnées lors de btnValiderImpr_Click
             // car l'origine des cordonnées sont calculées à partir de pnlEdtPhoto, pas de pbCarteFace
-            ChampPersonnalisee champPerso = new ChampPersonnalisee(optionDAjoutDeLaValeur, newCntrl.Image, newCntrl.Location, uneValeurDeChamp, policeTextChampPersonnalisee, newCntrl);
-            champPerso.ImageParCouleur = imageParCouleur;
-            elementsAjoutee.Add( champPerso );
+            elementsAjoutee.Add( new Tuple<string, Image, Point, string, Font, PictureBox >(optionDAjoutDeLaValeur, newCntrl.Image, newCntrl.Location, uneValeurDeChamp, policeTextChampPersonnalisee, newCntrl) );
 
         }
 
@@ -366,7 +339,7 @@ namespace CartesAcces2024
             labelEnCoursValidation.Visible = false;
             labelEnCoursValidation.ForeColor = Color.Red;
             dernierCheminEnregistre = "";
-            elementsAjoutee = new List<ChampPersonnalisee>();
+            elementsAjoutee = new List<Tuple<string, Image, Point, string, Font, PictureBox>>();
         }
 
 
@@ -529,12 +502,34 @@ namespace CartesAcces2024
         {
             Edition.ReplacementPhotoClassique(pbPhoto.Location.X, pbPhoto.Location.Y);
 
-            Globale.donneesChampsPersonnalisee = new List<ChampPersonnalisee>();
+            Globale.donneesChampsPersonnalisee = new List<Tuple<string, Image, Point, string, Font, PictureBox>>();
 
+            // pour modifier lataille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
+            float dpiScale;
+            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                switch (g.DpiX)
+                {
+                    case 96:  // 100% DPI
+                        dpiScale = 0.75f;
+                        break;
+                    case 120: // 125% DPI
+                        dpiScale = 1.0f;
+                        break;
+                    case 144: // 150% DPI
+                        dpiScale = 1.2f;
+                        break;
+                    case 168: // 175% DPI
+                        dpiScale = 1.4f;
+                        break;
+                    default:  // Default to 125% DPI scale
+                        dpiScale = 1.0f;
+                        break;
+                }
+            }
 
             // pour chaque champs personnalisé
-            //foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneElementPersonnelisee in elementsAjoutee)
-            foreach (ChampPersonnalisee donneElementPersonnelisee in elementsAjoutee)
+            foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneElementPersonnelisee in elementsAjoutee)
             {
                 Image imageCarteFace = Image.FromFile(Chemin.DossierCartesFace + Globale.ListeEleveImpr[0].NiveauEleve + ".png");
 
@@ -546,39 +541,29 @@ namespace CartesAcces2024
                 // On calcule la position que devrais avoir les images sur la carte face finale, qui n'as pas la même taille que pbCarteFace
                 // Produit en croix
                 // (Coord PictureBox - Coord pbCarteFace) * taille carte face imprimée / taille pictureBox carte face
-                int relativeX = (int)(((donneElementPersonnelisee.PictureBoxDuChamp.Location.X - pbCarteFace.Location.X) * imageCarteFace.Width) / pbCarteFace.Width);
-                int relativeY = (int)(((donneElementPersonnelisee.PictureBoxDuChamp.Location.Y - pbCarteFace.Location.Y) * imageCarteFace.Height) / pbCarteFace.Height);
+                int relativeX = (int)( (( (donneElementPersonnelisee.Item6.Location.X - pbCarteFace.Location.X) * imageCarteFace.Width) / pbCarteFace.Width) );
+                int relativeY = (int)( (( (donneElementPersonnelisee.Item6.Location.Y - pbCarteFace.Location.Y) * imageCarteFace.Height) / pbCarteFace.Height)  );
 
                 // On calcule la taille que devrais avoir les images sur la carte face finale, qui n'as pas la même taille que pbCarteFace
                 // taille de champs personnalisee * taille de la carte face finale / taille de la picturebox carte face
-                int relativeWidth = (int)((donneElementPersonnelisee.PictureBoxDuChamp.Width * imageCarteFace.Width * SCALE_FACTOR_WIDTH) / pbCarteFace.Width);
-                int relativeHeight = (int)((donneElementPersonnelisee.PictureBoxDuChamp.Height * imageCarteFace.Height * SCALE_FACTOR_HEIGHT) / pbCarteFace.Height);
+                int relativeWidth = (int)( ((donneElementPersonnelisee.Item6.Width * imageCarteFace.Width * SCALE_FACTOR_WIDTH) / pbCarteFace.Width));
+                int relativeHeight = (int)( ((donneElementPersonnelisee.Item6.Height * imageCarteFace.Height * SCALE_FACTOR_HEIGHT) / pbCarteFace.Height));
 
                 Size relativeSize = new Size(relativeWidth, relativeHeight);
 
-                Bitmap resizedImage = new Bitmap(donneElementPersonnelisee.ImageDuChamp, relativeSize);
+                Bitmap resizedImage = new Bitmap(donneElementPersonnelisee.Item2, relativeSize);
 
-                ChampPersonnalisee champPerso = new ChampPersonnalisee
-                    (
-                        donneElementPersonnelisee.OptionDuChamps,
-                        resizedImage,
-                        new Point(relativeX, relativeY),
-                        donneElementPersonnelisee.ValeurDuChamp,
-                        donneElementPersonnelisee.PoliceDuChamp,
-                        donneElementPersonnelisee.PictureBoxDuChamp
+                Globale.donneesChampsPersonnalisee.Add(
+                        new Tuple<string, Image, Point, string, Font, PictureBox>(
+                                donneElementPersonnelisee.Item1,
+                                resizedImage,
+                                new Point(relativeX, relativeY),
+                                donneElementPersonnelisee.Item4,
+                                donneElementPersonnelisee.Item5,
+                                donneElementPersonnelisee.Item6
+
+                            )
                     );
-
-                // on modifie aussi la taille des champs textes des bonnes couleurs
-                if (donneElementPersonnelisee.OptionDuChamps == "Texte")
-                {
-                    champPerso.ImageParCouleur = new Dictionary<string, Image>();
-                    foreach (KeyValuePair<string, Image> pair in donneElementPersonnelisee.ImageParCouleur) 
-                    {
-                        champPerso.ImageParCouleur[pair.Key] = new Bitmap(pair.Value, relativeSize);
-                    }
-                }
-
-                Globale.donneesChampsPersonnalisee.Add(champPerso);
             }
 
 
@@ -812,11 +797,11 @@ namespace CartesAcces2024
 
                 if (Globale.InfosCarte == true)
                 {
-                    Edition.FondCarteNiveauInfos(pbCarteFace, Globale.ListeEleveImpr[0]);
+                    Edition.FondCarteNiveauInfos(pbCarteFace, nom, prenom, classex);
                 }
                 else
                 {
-                    Edition.fondCarteNiveau(pbCarteFace, Globale.ListeEleveImpr[0]);
+                    Edition.fondCarteNiveau(pbCarteFace, nom, prenom, classex);
                 }
             }
             else
@@ -888,10 +873,17 @@ namespace CartesAcces2024
 
         private void btnAjouterElementDansCartes_Click(object sender, EventArgs e)
         {
+
             Globale.formMultipleCartes = this;
             // ouvrir form qui choisit l'élément à ajouter
             frmSelectionneAjoutDansCarteAcces frmSelection = new frmSelectionneAjoutDansCarteAcces();
             frmSelection.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmTuto Tuto2 = new frmTuto(this.GetType().Name);
+            Tuto2.Show();
         }
 
         private void rdbAjoutCodeBarreOui_CheckedChanged(object sender, EventArgs e)

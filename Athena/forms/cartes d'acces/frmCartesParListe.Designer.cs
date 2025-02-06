@@ -46,6 +46,7 @@
             this.btnReinitialiser = new System.Windows.Forms.Button();
             this.gbpRecherche = new System.Windows.Forms.GroupBox();
             this.lbRecherche = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.gbpElements.SuspendLayout();
@@ -146,7 +147,7 @@
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(133, 28);
             this.lblCount.TabIndex = 15;
-            this.lblCount.Text = "aucuin";
+            this.lblCount.Text = "aucun";
             // 
             // btnValider
             // 
@@ -209,7 +210,7 @@
             this.clbElements.FormattingEnabled = true;
             this.clbElements.Location = new System.Drawing.Point(6, 21);
             this.clbElements.Name = "clbElements";
-            this.clbElements.Size = new System.Drawing.Size(600, 599);
+            this.clbElements.Size = new System.Drawing.Size(600, 582);
             this.clbElements.TabIndex = 0;
             this.clbElements.SelectedIndexChanged += new System.EventHandler(this.clbElements_SelectedIndexChanged);
             // 
@@ -265,6 +266,20 @@
             this.lbRecherche.TabIndex = 1;
             this.lbRecherche.SelectedIndexChanged += new System.EventHandler(this.lbRecherche_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.button1.Location = new System.Drawing.Point(1107, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 44);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "&Tutoriel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmCartesParListe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -273,6 +288,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1251, 662);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gbpRecherche);
             this.Controls.Add(this.btnReinitialiser);
             this.Controls.Add(this.btnToutSelectionner);
@@ -319,6 +335,7 @@
         private System.Windows.Forms.CheckBox cbxNiveau4eme;
         private System.Windows.Forms.CheckBox cbxNiveau6eme;
         private System.Windows.Forms.CheckBox cbxNiveau5eme;
+        private System.Windows.Forms.Button button1;
     }
 }
 

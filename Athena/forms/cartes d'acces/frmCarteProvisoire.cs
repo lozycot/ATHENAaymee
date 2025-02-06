@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
-
+using Athena.forms.autre;
 
 namespace CartesAcces2024
 {
@@ -45,30 +45,21 @@ namespace CartesAcces2024
             var prenom = txtPrenom.Text;
             var nom = txtNom.Text;
             string classex = "0";
-            string niveau = "0";
             if (cbbSection.SelectedIndex != -1)
-            {
                 if (rdbParO.Checked)
-                {
-                    classex = cbbSection.Text + " Profil Particulier";
-                    niveau = cbbSection.Text;
-                }
+                    classex = cbbSection.Text+" Profil Particulier";
                 else
-                {
                     classex = cbbSection.Text;
-                    niveau = cbbSection.Text;
-                }
-            }
             else if (cbbClasse.SelectedIndex != -1)
                 classex = cbbClasse.Text;
 
             if (Globale.InfosCarte == true)
             {
-                Edition.FondCarteNiveauInfos(pbCarteFace, new Eleve(nom, prenom, classex, niveau));
+                Edition.FondCarteNiveauInfos(pbCarteFace, nom, prenom, classex);
             }
             else
             {
-                Edition.fondCarteNiveau(pbCarteFace, new Eleve(nom, prenom, classex, niveau));
+                Edition.fondCarteNiveau(pbCarteFace, nom, prenom, classex);
             }
 
             //if (nom.Length < 15)
@@ -269,22 +260,18 @@ namespace CartesAcces2024
                     string prenom = txtPrenom.Text;
                     string nom = txtNom.Text;
                     string classex = "0";
-                    string niveau = "0";
                     if (cbbSection.SelectedIndex != -1)
-                    {
                         classex = cbbSection.Text;
-                        niveau = cbbSection.Text;
-                    }
                     if (cbbClasse.SelectedIndex != -1)
                         classex = cbbClasse.Text;
 
                     if (Globale.InfosCarte == true)
                     {
-                        Edition.FondCarteNiveauInfos(pbCarteFace, new Eleve(nom, prenom, classex, niveau));
+                        Edition.FondCarteNiveauInfos(pbCarteFace, nom, prenom, classex);
                     }
                     else
                     {
-                        Edition.fondCarteNiveau(pbCarteFace, new Eleve(nom, prenom, classex, niveau));
+                        Edition.fondCarteNiveau(pbCarteFace, nom, prenom, classex);
                     }
 
                     GC.Collect();
@@ -738,6 +725,12 @@ namespace CartesAcces2024
         private void pbCarteFace_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmTuto Tuto2 = new frmTuto(this.GetType().Name);
+            Tuto2.Show();
         }
     }
 }

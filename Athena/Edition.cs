@@ -10,7 +10,6 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 using System.Data.SQLite;
-using Athena;
 
 namespace CartesAcces2024
 {
@@ -222,22 +221,15 @@ namespace CartesAcces2024
 
 
 
-        private static void ajouterChampsPersonnaliseeSurLaCarte(Graphics objGraphique,string niveauEleve)
+        private static void ajouterChampsPersonnaliseeSurLaCarte(Graphics objGraphique)
         {
             // Si l'utilisatuer à ajouté des elements personnalisee sur la carte
             if (Globale.donneesChampsPersonnalisee != null)
             {
                 // on les dessines sur le document à imprimer
-                foreach (ChampPersonnalisee donneeUnChamp in Globale.donneesChampsPersonnalisee)
+                foreach (Tuple<string, Image, Point, string, Font, PictureBox> donneeUnChamp in Globale.donneesChampsPersonnalisee)
                 {
-                    if (donneeUnChamp.OptionDuChamps=="Texte")
-                    {
-                        objGraphique.DrawImage(donneeUnChamp.ImageParCouleur[niveauEleve], new Point(donneeUnChamp.CoordonneeDuChamp.X, donneeUnChamp.CoordonneeDuChamp.Y));
-                    }
-                    else
-                    {
-                        objGraphique.DrawImage(donneeUnChamp.ImageDuChamp, new Point(donneeUnChamp.CoordonneeDuChamp.X, donneeUnChamp.CoordonneeDuChamp.Y));
-                    }
+                    objGraphique.DrawImage(donneeUnChamp.Item2, new Point(donneeUnChamp.Item3.X, donneeUnChamp.Item3.Y));
                 }
             }
         }
@@ -253,7 +245,7 @@ namespace CartesAcces2024
         /// <param name="nomEleve"></param>
         /// <param name="prenomEleve"></param>
         /// <param name="classe"></param>
-        public static void fondCarteNiveau(PictureBox pbCarteFace, Eleve eleve)
+        public static void fondCarteNiveau(PictureBox pbCarteFace, string nomEleve, string prenomEleve, string classe)
         {
             var police = new Font("Calibri", 45, FontStyle.Bold);
             var police2 = new Font("Calibri", 22, FontStyle.Bold);
@@ -278,14 +270,14 @@ namespace CartesAcces2024
             }
 
             // -- Gestion de la taille de la police --
-            if (eleve.NomEleve.Length > 10 || eleve.PrenomEleve.Length > 10)
+            if (nomEleve.Length > 10 || prenomEleve.Length > 10)
             {
-                if (eleve.NomEleve.Length > 10 && eleve.PrenomEleve.Length > 10)
+                if (nomEleve.Length > 10 && prenomEleve.Length > 10)
                 {
                     policenom = new Font("Calibri", 25, FontStyle.Bold);
                     policeprenom = new Font("Calibri", 25, FontStyle.Bold);
                 }
-                else if (eleve.NomEleve.Length > 10)
+                else if (nomEleve.Length > 10)
                 {
                     policenom = new Font("Calibri", 25, FontStyle.Bold);
                     policeprenom = new Font("Calibri", 40, FontStyle.Bold);
@@ -309,9 +301,9 @@ namespace CartesAcces2024
             var date = DateTime.Today.ToShortDateString();
 
             var objGraphique = Graphics.FromImage(pbCarteFace.Image);
-            string niveauel = eleve.ClasseEleve.Substring(0, 1) + "eme";
+            string niveauel = classe.Substring(0, 1) + "eme";
             string chemin = "";
-            if (niveauel == "0eme" || eleve.ClasseEleve == "Profil particulier")
+            if (niveauel == "0eme" || classe == "Profil particulier")
             {
                 chemin = Chemin.DossierCartesFace + "default.png";
             }
@@ -323,6 +315,7 @@ namespace CartesAcces2024
             qrCodeFaceProvisoire(objGraphique, eleve.ClasseEleve);
 
             importCarteFace(chemin, objGraphique, eleve.ClasseEleve.Substring(0, 1));
+
 
             string tempNom = eleve.NomEleve;
             string tempPrenom = eleve.PrenomEleve;
@@ -338,50 +331,50 @@ namespace CartesAcces2024
             }
 
 
-            fondTexteCarteFace(objGraphique, eleve.ClasseEleve, police2, eleve.ClasseEleve, 50, 70);
+            fondTexteCarteFace(objGraphique, classe, police2, classe, 50, 70);
 
             //Dessine la saisie en textbox
-            var chaine = "Nom : " + eleve.NomEleve;
-            fondTexteCarteFace(objGraphique, chaine, policenom, eleve.ClasseEleve, 50, 960);
+            var chaine = "Nom : " + nomEleve;
+            fondTexteCarteFace(objGraphique, chaine, policenom, classe, 50, 960);
             objGraphique.DrawString(chaine, policenom, pinceauNoir, 50, 960);
 
-            chaine = "Prenom : " + eleve.PrenomEleve;
-            fondTexteCarteFace(objGraphique, chaine, policeprenom, eleve.ClasseEleve, 50, 1075);
+            chaine = "Prenom : " + prenomEleve;
+            fondTexteCarteFace(objGraphique, chaine, policeprenom, classe, 50, 1075);
             objGraphique.DrawString(chaine, policeprenom, pinceauNoir, 50, 1075);
 
             //Le classe de l'élève
-            fondTexteCarteFace(objGraphique, eleve.ClasseEleve, new Font("Calibri", 45, FontStyle.Bold), eleve.ClasseEleve, 50, 70);
-            objGraphique.DrawString(eleve.ClasseEleve, new Font("Calibri", 45, FontStyle.Bold), pinceauNoir, 50, 70);
+            fondTexteCarteFace(objGraphique, classe, new Font("Calibri", 45, FontStyle.Bold), classe, 50, 70);
+            objGraphique.DrawString(classe, new Font("Calibri", 45, FontStyle.Bold), pinceauNoir, 50, 70);
 
             // écriture des informations de l'étabmlissement
             // tables par défauts :
             chaine = Etablissement[0];  // nom établissement
             //var mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
-            fondTexteCarteFaceFixe(objGraphique, chaine, police4, eleve.ClasseEleve, 1100, 985);
+            fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 985);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 985);
 
             chaine = "Mail : " + Etablissement[6];
             //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
-            fondTexteCarteFaceFixe(objGraphique, chaine, police4, eleve.ClasseEleve, 1100, 1030);
+            fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1030);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1030);
 
             chaine = "Adresse : " + Etablissement[2] + " " + Etablissement[1];
             //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
-            fondTexteCarteFaceFixe(objGraphique, chaine, police4, eleve.ClasseEleve, 1100, 1075);
+            fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1075);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1075);
 
             chaine = Etablissement[3] + " " + Etablissement[4]; // code postal, ville
             //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
-            fondTexteCarteFaceFixe(objGraphique, chaine, police4, eleve.ClasseEleve, 1100, 1120);
+            fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1120);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1120);
 
             chaine = "Téléphone : " + Etablissement[5];
             //mesure = Convert.ToInt32(objGraphique.MeasureString(chaine, police4).Width);
-            fondTexteCarteFaceFixe(objGraphique, chaine, police4, eleve.ClasseEleve, 1100, 1165);
+            fondTexteCarteFaceFixe(objGraphique, chaine, police4, classe, 1100, 1165);
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1165);
 
 
-            ajouterChampsPersonnaliseeSurLaCarte(objGraphique, niveauel);
+            ajouterChampsPersonnaliseeSurLaCarte(objGraphique);
 
             pbCarteFace.Refresh();
 
@@ -401,7 +394,7 @@ namespace CartesAcces2024
         /// <param name="nomEleve"></param>
         /// <param name="prenomEleve"></param>
         /// <param name="classe"></param>
-        public static void FondCarteNiveauInfos(PictureBox pbCarteFace, Eleve eleve)
+        public static void FondCarteNiveauInfos(PictureBox pbCarteFace, string nomEleve, string prenomEleve, string classe)
         {
             if (File.Exists(Chemin.DossierCartesFace + Globale.CheminFaceCarte + "Face.png"))
             {
@@ -424,14 +417,14 @@ namespace CartesAcces2024
             var policeprenom = new Font("Calibri", 25, FontStyle.Bold);
 
             // -- Gestion de la taille de la police --
-            if (eleve.NomEleve.Length > 10 || eleve.PrenomEleve.Length > 10)
+            if (nomEleve.Length > 10 || prenomEleve.Length > 10)
             {
-                if (eleve.NomEleve.Length > 10 && eleve.PrenomEleve.Length > 10)
+                if (nomEleve.Length > 10 && prenomEleve.Length > 10)
                 {
                     policenom = new Font("Calibri", 25, FontStyle.Bold);
                     policeprenom = new Font("Calibri", 25, FontStyle.Bold);
                 }
-                else if (eleve.NomEleve.Length > 10)
+                else if (nomEleve.Length > 10)
                 {
                     policenom = new Font("Calibri", 25, FontStyle.Bold);
                     policeprenom = new Font("Calibri", 40, FontStyle.Bold);
@@ -452,7 +445,7 @@ namespace CartesAcces2024
             Brush pinceauNoir = new SolidBrush(Color.Black);
 
             var objGraphique = Graphics.FromImage(pbCarteFace.Image);
-            string niveauel = eleve.ClasseEleve.Substring(0, 1) + "eme";
+            string niveauel = classe.Substring(0, 1) + "eme";
             string chemin = "";
             if (niveauel == "0eme")
             {
@@ -463,11 +456,11 @@ namespace CartesAcces2024
                 chemin = Chemin.DossierCartesFace + niveauel + ".png";
             }
 
-            importCarteFace(chemin, objGraphique, eleve.ClasseEleve.Substring(0, 1));
+            importCarteFace(chemin, objGraphique, classe.Substring(0, 1));
 
-            string tempNom = eleve.NomEleve;
-            string tempPrenom = eleve.PrenomEleve;
-            string tempClasse = eleve.ClasseEleve;
+            string tempNom = nomEleve;
+            string tempPrenom = prenomEleve;
+            string tempClasse = classe;
 
             if (Globale.ajouterCodeBarre)
             {
@@ -480,19 +473,19 @@ namespace CartesAcces2024
             }
 
             //Dessine la saisie en textbox
-            var chaine = "Nom : " + eleve.NomEleve;
-            fondTexteCarteFace(objGraphique, chaine, policenom, eleve.ClasseEleve, 25, 960);
+            var chaine = "Nom : " + nomEleve;
+            fondTexteCarteFace(objGraphique, chaine, policenom, classe, 25, 960);
             objGraphique.DrawString(chaine, policenom, pinceauNoir, 25, 960);
 
-            chaine = "Prénom : " + eleve.PrenomEleve;
-            fondTexteCarteFace(objGraphique, chaine, policeprenom, eleve.ClasseEleve, 25, 1075);
+            chaine = "Prénom : " + prenomEleve;
+            fondTexteCarteFace(objGraphique, chaine, policeprenom, classe, 25, 1075);
             objGraphique.DrawString(chaine, policeprenom, pinceauNoir, 25, 1075);
 
             //Classe
-            fondTexteCarteFace(objGraphique, eleve.ClasseEleve, new Font("Calibri", 45, FontStyle.Bold), eleve.ClasseEleve, 50, 70);
-            objGraphique.DrawString(eleve.ClasseEleve, new Font("Calibri", 45, FontStyle.Bold), pinceauNoir, 50, 70);
+            fondTexteCarteFace(objGraphique, classe, new Font("Calibri", 45, FontStyle.Bold), classe, 50, 70);
+            objGraphique.DrawString(classe, new Font("Calibri", 45, FontStyle.Bold), pinceauNoir, 50, 70);
 
-            ajouterChampsPersonnaliseeSurLaCarte(objGraphique, niveauel);
+            ajouterChampsPersonnaliseeSurLaCarte(objGraphique);
 
             pbCarteFace.Refresh();
 
@@ -753,7 +746,7 @@ namespace CartesAcces2024
             objGraphique.DrawString(chaine, police4, pinceauNoir, 1100, 1165);
 
 
-            ajouterChampsPersonnaliseeSurLaCarte(objGraphique, eleve.NiveauEleve);
+            ajouterChampsPersonnaliseeSurLaCarte(objGraphique);
             
 
 
@@ -836,7 +829,7 @@ namespace CartesAcces2024
             fondTexteCarteFace(objGraphique, eleve.ClasseEleve, police, classe, 50, 70);
             objGraphique.DrawString(eleve.ClasseEleve, police, pinceauNoir, 50, 70);
 
-            ajouterChampsPersonnaliseeSurLaCarte(objGraphique, eleve.NiveauEleve);
+            ajouterChampsPersonnaliseeSurLaCarte(objGraphique);
 
             objGraphique.Dispose(); // Libère les ressources
 

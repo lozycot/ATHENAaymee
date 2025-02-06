@@ -45,6 +45,7 @@
             this.toolTipFaces = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipTrombis = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipEtab = new System.Windows.Forms.ToolTip(this.components);
+            this.btnTuto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEtab
@@ -191,6 +192,20 @@
             // 
             this.toolTipEtab.ToolTipTitle = "Importer un établissement";
             // 
+            // btnTuto
+            // 
+            this.btnTuto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnTuto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTuto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnTuto.Location = new System.Drawing.Point(769, 12);
+            this.btnTuto.Name = "btnTuto";
+            this.btnTuto.Size = new System.Drawing.Size(101, 40);
+            this.btnTuto.TabIndex = 23;
+            this.btnTuto.Text = "Tutoriel";
+            this.btnTuto.UseVisualStyleBackColor = false;
+            this.btnTuto.Click += new System.EventHandler(this.btnTuto_Click);
+            // 
             // frmImport
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -198,6 +213,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(882, 463);
+            this.Controls.Add(this.btnTuto);
             this.Controls.Add(this.btnImportPlanches);
             this.Controls.Add(this.lblImportPhotos);
             this.Controls.Add(this.lblImportEdt);
@@ -234,6 +250,7 @@
         private System.Windows.Forms.ToolTip toolTipFaces;
         private System.Windows.Forms.ToolTip toolTipPhotos;
         private System.Windows.Forms.ToolTip toolTipTrombis;
+        private System.Windows.Forms.Button btnTuto;
     }
 }
 

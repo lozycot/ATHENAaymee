@@ -1,7 +1,7 @@
 ﻿/**
- * Ce fichier contient la classe ConnectDb qui gère la connexion à la base de données SQLite.
- * Il inclut des méthodes pour établir la connexion, créer la base de données et exécuter des requêtes.
- */
+* Ce fichier contient la classe ConnectDb qui gère la connexion à la base de données SQLite.
+* Il inclut des méthodes pour établir la connexion, créer la base de données et exécuter des requêtes.
+*/
 
 using System;
 using System.Collections.Generic;

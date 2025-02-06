@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Linq;
+using Athena.forms.autre;
 
 namespace CartesAcces2024
 {
@@ -232,5 +233,11 @@ namespace CartesAcces2024
         private void clbClasse5eme_SelectedIndexChanged(object sender, EventArgs e) { }
         private void clbClasse4eme_SelectedIndexChanged_1(object sender, EventArgs e) { }
         private void clbClasse3eme_SelectedIndexChanged(object sender, EventArgs e) { }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmTuto Tuto1 = new frmTuto(this.GetType().Name);
+            Tuto1.Show();
+        }
     }
 }

@@ -35,6 +35,7 @@ using System.IO;
 using System.Diagnostics;
 using Microsoft.Office.Interop.Word;
 using Application = Microsoft.Office.Interop.Word.Application;
+using Athena.forms.autre;
 
 namespace CartesAcces2024
 {
@@ -457,6 +458,21 @@ namespace CartesAcces2024
         private void listBoxSel_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTuto_Click(object sender, EventArgs e)
+        {
+            string frmName = this.GetType().Name;
+            if (cbSource.SelectedIndex == 0)
+            {
+                frmName = frmName + 0;
+            }
+            else
+            {
+                frmName = frmName + 1;
+            }
+            frmTuto Tuto2 = new frmTuto(frmName);
+            Tuto2.Show();
         }
     }
 }

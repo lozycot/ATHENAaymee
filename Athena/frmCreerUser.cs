@@ -26,7 +26,7 @@ namespace CartesAcces2024
                     MessageBox.Show("Tous les champs doivent être remplis !", "Erreur de saisie",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
-        
+
                 // Vérifie si les mots de passe correspondent
                 case bool _ when txtMdp1.Text != txtMdp2.Text:
                     MessageBox.Show("Les deux mots de passe entrés ne sont pas identiques ! Recommencez.", "Erreur de saisie",
@@ -34,14 +34,14 @@ namespace CartesAcces2024
                     txtMdp1.Text = "";
                     txtMdp2.Text = "";
                     break;
-        
+
                 // Vérifie si le nom d'utilisateur contient des caractères non valides
                 case bool _ when txtIdentifiant.Text.Any(ch => !char.IsLetterOrDigit(ch)):
                     MessageBox.Show("Un nom d'utilisateur ne peut comporter que des chiffres et des lettres !", "Erreur de saisie",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtIdentifiant.Text = "";
                     break;
-        
+
                 // Vérifie si le mot de passe contient des caractères non valides
                 case bool _ when txtMdp1.Text.Contains("'") || txtMdp1.Text.Contains("\""):
                     MessageBox.Show("Le mot de passe ne peut pas contenir de caractère « \" » ou « ' ».", "Erreur de saisie",
@@ -49,13 +49,13 @@ namespace CartesAcces2024
                     txtMdp1.Text = "";
                     txtMdp2.Text = "";
                     break;
-        
+
                 // Vérifie si l'utilisateur existe déjà
                 case bool _ when ConnectDb.DbConnect.DbData("Connection WHERE Connection.nomUtilisateur = '" + txtIdentifiant.Text + "';"):
                     MessageBox.Show("Un utilisateur portant cet identifiant existe déjà, veuillez en utiliser un autre !", "Erreur de saisie",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
-        
+
                 default:
                     // Insère l'utilisateur dans la base de données
                     if (UsersOperations.InsertUnUtilisateurDansBdd(txtIdentifiant.Text, txtMdp1.Text))
