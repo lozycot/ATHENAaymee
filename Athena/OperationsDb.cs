@@ -402,62 +402,6 @@ namespace CartesAcces2024
 
 
 
-        //public static List<string> GetToutEtablissement()
-        //{
-        //    // requête pour récupérer les informations de l'établissement.
-        //    string etabName = "SELECT nomEtablissement FROM Etablissement";
-        //    string rueName = "SELECT nomRueEtablissement FROM Etablissement";
-        //    string numRue = "SELECT numeroRueEtablissement FROM Etablissement";
-        //    string codePost = "SELECT codePostalEtablissement FROM Etablissement";
-        //    string ville = "SELECT villeEtablissement FROM Etablissement";
-        //    string numTel = "SELECT numeroTelephoneEtablissement FROM Etablissement";
-        //    string email = "SELECT emailEtablissement FROM Etablissement";
-        //    string url = "SELECT urlEtablissement FROM Etablissement";
-        //    string hexa6eme = "SELECT codeHexa6eme FROM Etablissement";
-        //    string hexa5eme = "SELECT codeHexa5eme FROM Etablissement";
-        //    string hexa4eme = "SELECT codeHexa4eme FROM Etablissement";
-        //    string hexa3eme = "SELECT codeHexa3eme FROM Etablissement";
-        //    string bordure = "SELECT bordure FROM Etablissement";
-        //    string infos = "SELECT InfosCarte FROM Etablissement";
-        //    string logiciel = "SELECT LogicielEdt FROM Etablissement";
-        //    // informations de l'établissement récupérées dans la BDD.
-        //    string NomEtablissement = "";
-        //    string NomRueEtablissement = "";
-        //    string NumeroRueEtablissement = "";
-        //    string CodePostalEtablissement = "";
-        //    string VilleEtablissement = "";
-        //    string NumeroTelephoneEtablissement = "";
-        //    string EmailEtablissement = "";
-        //    string urlEtablissement = "";
-        //    string codeHexa6eme = "";
-        //    string codeHexa5eme = "";
-        //    string codeHexa4eme = "";
-        //    string codeHexa3eme = "";
-        //    string bordureEtablissement = "";
-        //    string InfosCarte = "";
-        //    string LogicielEdt = "";
-        //    List<string> commands = new List<string> { etabName, rueName, numRue, codePost, ville, numTel, email, url, hexa6eme, hexa5eme, hexa4eme, hexa3eme, bordure, infos, logiciel };
-        //    List<string> results = new List<string> { NomEtablissement, NomRueEtablissement, NumeroRueEtablissement, CodePostalEtablissement, VilleEtablissement, NumeroTelephoneEtablissement, EmailEtablissement, urlEtablissement, codeHexa6eme, codeHexa5eme, codeHexa4eme, codeHexa3eme, bordureEtablissement, InfosCarte, LogicielEdt };
-        //    //                                              0                  1                   2                          3                       4                       5                         6                  7                   8
-        //    using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
-        //    {
-        //        connection.Open();
-        //        for (int i = 0; i < commands.Count-1; i++)
-        //        {
-        //            using (SQLiteCommand command = new SQLiteCommand(commands[i], connection))
-        //            {
-        //                using (SQLiteDataReader reader = command.ExecuteReader())
-        //                {
-        //                    if (reader.Read())
-        //                    {
-        //                        results[i] = reader.GetString(0);
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //    return results;
-        //}
 
 
 
@@ -531,6 +475,7 @@ namespace CartesAcces2024
             colonnesParDefautEtablissement.Add("bordure");
             colonnesParDefautEtablissement.Add("InfosCarte");
             colonnesParDefautEtablissement.Add("LogicielEdt");
+            colonnesParDefautEtablissement.Add("dispositifsPersonnalisee");
 
 
             Dictionary<string, string> rtrn = new Dictionary<string, string>();
@@ -641,6 +586,7 @@ namespace CartesAcces2024
 
         //--------------------DATES IMPORTS--------------------
 
+        //VULNERABLE AUX INJECTIONS SQL
         public static void ImportDates(string import, string date)
         {
             string sql = "";
@@ -706,6 +652,7 @@ namespace CartesAcces2024
 
         //----------------FOLDER PATH----------------
 
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Met à jour la table FolderPath de la base de données.
         /// </summary>
@@ -789,6 +736,7 @@ namespace CartesAcces2024
 
         //--------------------ELEVE----------------
 
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Insère un élève dans la base de données.
         /// </summary>
@@ -803,7 +751,7 @@ namespace CartesAcces2024
 
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Supprime un élève de la base de données.
         /// </summary>
@@ -818,7 +766,7 @@ namespace CartesAcces2024
 
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Insère les élèves de Globale.ListeEleve dans la base de données.
         /// </summary>
@@ -846,7 +794,7 @@ namespace CartesAcces2024
 
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Récupère un élève de la base de donnée. Return null si l'élève n'existe pas.
         /// </summary>
@@ -882,7 +830,7 @@ namespace CartesAcces2024
 
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Récupères tout les élèves d'un certain niveau de la base de données.
         /// </summary>
@@ -896,7 +844,7 @@ namespace CartesAcces2024
 
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Supprime tout les élèves appartenant à une certaine classe.
         /// </summary>
@@ -909,7 +857,7 @@ namespace CartesAcces2024
 
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Supprime tout les élèves appartenant à un cerains niveau.
         /// </summary>
@@ -973,6 +921,7 @@ namespace CartesAcces2024
 
         //--------------------ELEVE NOUVELLE ANNEE----------------
 
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Supprime un élève nouvelle année de la base de données.
         /// </summary>
@@ -986,7 +935,7 @@ namespace CartesAcces2024
         }
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Met à jour la classe d'un élève de la nouvelle année
         /// </summary>
@@ -1001,7 +950,7 @@ namespace CartesAcces2024
 
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Insère un élève nouvelle année dans la base de données.
         /// </summary>
@@ -1035,7 +984,7 @@ namespace CartesAcces2024
 
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Insère les élèves de Globale.ListeElve dans la table EleveNouvelleAnnee de la base de données.
         /// </summary>
@@ -1077,7 +1026,7 @@ namespace CartesAcces2024
 
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Récupères tout les élèves de la nouvelle année d'un certain niveau de la base de données.
         /// </summary>
@@ -1091,7 +1040,7 @@ namespace CartesAcces2024
 
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Récupères tout les élèves de la nouvelle année d'une certaine classe de la base de données.
         /// </summary>
@@ -1110,7 +1059,7 @@ namespace CartesAcces2024
 
 
         // ----------------CLASSE NOUVELLE ANNEE--------------
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Supprime une classe de la nouvelle année de la base de données. Ne supprime pas les élèves de cette classe nouvelle année.
         /// </summary>
@@ -1124,7 +1073,7 @@ namespace CartesAcces2024
 
 
 
-
+        //VULNERABLE AUX INJECTIONS SQL
         /// <summary>
         /// Insère une classe nouvelle année dans la base de données.
         /// </summary>
@@ -1175,5 +1124,97 @@ namespace CartesAcces2024
             }
             return results;
         }
+
+
+
+        /// <summary>
+        /// Récupère tout les dispositifs personnalisés.
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetDispositifsPersonnalisee()
+        {
+            string sql = "SELECT nomDispositif FROM dispositifsPersonnalisee";
+            List<string> results = new List<string> { };
+
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+            {
+                connection.Open();
+                {
+                    using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                    {
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                results.Add(reader.GetString(0));
+                            }
+                        }
+                    }
+                }
+                connection.Close();
+            }
+
+            return results;
+        }
+
+
+
+        /// <summary>
+        /// Ajoute un stringdans la table dispositifPersonnalisee de la BDD.
+        /// </summary>
+        /// <param name="uneValeur"></param>
+        public static void ajouteDispositifPersonnalise(string uneValeur)
+        {
+            string sql = "INSERT INTO dispositifsPersonnalisee (nomDispositif) VALUES (@uneValeur);";
+
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+            {
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                {
+                    command.Parameters.Add(new SQLiteParameter("@uneValeur", uneValeur));
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("Une erreur s'est produite lors de l'insertion d'une valeur dans dispositifsPersonnalisee.\n "
+                            + "Message d'erreur : " + err.Message + "\n"
+                            + "Stack trace : " + err.StackTrace.ToString());
+                    }
+
+                }
+                connection.Close();
+
+            }
+        }
+
+        /// <summary>
+        /// Supprime et re-créer la table dispositifsPersonnalisee sans données.
+        /// </summary>
+        public static void supprimerDispositifsPersonnalisee()
+        {
+            // on nettoye les données dans la table établissement
+            if (ConnectDb.DbConnect.DbData("Etablissement"))
+            {
+                string sql = "DROP TABLE dispositifsPersonnalisee;" +
+                    "CREATE TABLE IF NOT EXISTS 'dispositifsPersonnalisee' (\n" +
+                    "	'nomDispositif'	TEXT\n" +
+                    ");\n";
+                using (SQLiteConnection connection = new SQLiteConnection(ConnectDb.DbConnect.connect()))
+                {
+                    connection.Open();
+                    using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    connection.Close();
+                }
+            }
+        }
+
     }
 }

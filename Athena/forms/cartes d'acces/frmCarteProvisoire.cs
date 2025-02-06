@@ -97,12 +97,11 @@ namespace CartesAcces2024
             nouvelle_eleve.NomEleve = txtNom.Text;
             nouvelle_eleve.PrenomEleve = txtPrenom.Text;
             nouvelle_eleve.NiveauEleve = cbbSection.Text;
-            if (rdbParN.Checked)
-            {
-                
+            //if (rdbParN.Checked)
+            //{
                 if (cbbClasse.Text != "")
                     nouvelle_eleve.ClasseEleve = cbbClasse.Text;
-                else // je remplace par ça pc je comprends pas 0pourquoi on utiliserais l'autre, si une carte temporaire est un élève qui n'est pas encore dans la BDD
+                else // je remplace par ça pc je comprends pas pourquoi on utiliserais l'autre si une carte temporaire est un élève qui n'est pas encore dans la BDD
                 {
                     MessageBox.Show("Selectionnez la classe de l'élève.");
                     return;
@@ -111,11 +110,23 @@ namespace CartesAcces2024
                 //else
                     //nouvelle_eleve.ClasseEleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve).ClasseEleve;
                     //nouvelle_eleve = OperationsDb.GetUnEleve(nouvelle_eleve.NomEleve, nouvelle_eleve.PrenomEleve); // rend l'élève null si il n'existe pas
-            }
-            else
-            {
-                nouvelle_eleve.ClasseEleve = cbbSection.Text + " Profil particulier";
-            }
+
+                if (cbbSection.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Selectionnez le niveau de l'élève.");
+                    return;
+                }
+
+                // On récupère le niveau dans la classe.
+                if (rdbParO.Checked)
+                {
+                    nouvelle_eleve.ClasseEleve = cbbSection.Text.Substring(0, 1) + cbbClasse.Text;
+                }
+            //}
+            //else
+            //{
+            //    nouvelle_eleve.ClasseEleve = cbbSection.Text + " Profil particulier";
+            //}
 
             
             //if (nouvelle_eleve != null)
@@ -188,29 +199,42 @@ namespace CartesAcces2024
         private void cbbSection_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+
             List<string> ListClasses = OperationsDb.GetClasses();
             cbbClasse.Items.Clear();
 
             if (cbbSection.SelectedItem != null)
             {
-                // popule la comboBox de sélection des classes
-                foreach (var classe in ListClasses)
+                if (rdbParN.Checked)
                 {
-                    if (classe.Substring(0, 1) == cbbSection.Text.Substring(0, 1))
+                    // popule la comboBox de sélection des classes
+                    foreach (var classe in ListClasses)
                     {
-                        string[] listClasse1 = classe.Split(' ');
-                        cbbClasse.Items.Add(listClasse1[0]);
+                        if (classe.Substring(0, 1) == cbbSection.Text.Substring(0, 1))
+                        {
+                            string[] listClasse1 = classe.Split(' ');
+                            cbbClasse.Items.Add(listClasse1[0]);
+                        }
+                    }
+                } 
+                else if (rdbParO.Checked)
+                {
+                    foreach (string dispoPerso in OperationsDb.GetDispositifsPersonnalisee())
+                    {
+                        cbbClasse.Items.Add(dispoPerso);
                     }
                 }
                 cbbClasse.SelectedItem = null;
             }
+
+            //On enlève l'image de pbCarteArrière
             if(cbbSection.SelectedItem == null)
             {
                 if(pbCarteArriere.Image != null)
                     pbCarteArriere.Image.Dispose();
                 pbCarteArriere.Image = null;
             }
-            else
+            else // Ou on retrouve la carte de la section
             {
                 if (File.Exists(Chemin.DossierCartesFace + cbbSection.Text + ".png"))
                 {
@@ -270,6 +294,10 @@ namespace CartesAcces2024
                             classeEleve = -1;
                             break;
                     }
+                }
+                else if (File.Exists(Chemin.CheminFaceDefault))
+                {
+                    pbCarteFace.Image = Image.FromFile(Chemin.CheminFaceDefault);
                 }
                 else
                 {
@@ -340,19 +368,34 @@ namespace CartesAcces2024
 
         private void cbbClasse_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Debug.Assert(Directory.GetCreationTime(Chemin.DossierEdtClassique + "classes") == Directory.GetCreationTime("./data/FichierEdtClasse/classes"));
-            Recherche_Image searchers = new Recherche_Image(Chemin.DossierEdtClassique + "classes");
-            try
+            if (rdbParN.Checked)
             {
-                Image images = searchers.SearchImageByName(cbbClasse.Text);
-                if (pbCarteArriere.Image != null)
-                    pbCarteArriere.Image.Dispose();
-                pbCarteArriere.Image = images;
-                pbPhoto.Visible = true;
+                Debug.Assert(Directory.GetCreationTime(Chemin.DossierEdtClassique + "classes") == Directory.GetCreationTime("./data/FichierEdtClasse/classes"));
+                Recherche_Image searchers = new Recherche_Image(Chemin.DossierEdtClassique + "classes");
+                try
+                {
+                    Image images = searchers.SearchImageByName(cbbClasse.Text);
+                    if (pbCarteArriere.Image != null)
+                        pbCarteArriere.Image.Dispose();
+                    pbCarteArriere.Image = images;
+                    pbPhoto.Visible = true;
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show("Erreur : " + err.Message);
+                }
             }
-            catch (Exception err)
+            else if (rdbParO.Checked)
             {
-                MessageBox.Show("Erreur : " + err.Message);
+                try
+                {
+                    Debug.Assert(Directory.GetCreationTime(Chemin.CheminEdtVierge) == Directory.GetCreationTime("./data/emploi_du_temps_vierge.png"));
+                    pbCarteArriere.Image = Image.FromFile(Chemin.CheminEdtVierge);
+                }
+                catch (Exception Err)
+                {
+                    MessageBox.Show("Erreur : " + Err.Message);
+                }
             }
         }
 
@@ -615,8 +658,13 @@ namespace CartesAcces2024
         {
             if (rdbParO.Checked == true)
             {
-                cbbClasse.Enabled = false;
-                cbbClasse.Items.Clear();
+                //cbbClasse.Enabled = false;
+                //cbbClasse.Items.Clear();
+                foreach (string dispoPerso in OperationsDb.GetDispositifsPersonnalisee())
+                {
+                    cbbClasse.Items.Add(dispoPerso);
+                }
+
                 if (pbCarteArriere.Image != null)
                     pbCarteArriere.Image.Dispose();
                 pbCarteArriere.Image = null;

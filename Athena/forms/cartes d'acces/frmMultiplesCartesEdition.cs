@@ -39,9 +39,11 @@ namespace CartesAcces2024
         public List<Tuple<string, Image, Point, string, Font, PictureBox>> elementsAjoutee;
 
         /// <summary>
-        /// Ajout un control de champs personnalisé dans la carte face selon l'option d'ajout du champs sélectionné dans <see cref="frmSelectionneAjoutDansCarteAcces"/> (texte, code QR ou code barre).
+        /// Ajout un control de champs personnalisé dans la carte face selon l'option d'ajout du champs sélectionné dans <see cref="frmSelectionneAjoutDansCarteAcces"/> 
+        /// (texte, code QR, code barre ou image).
+        /// Si l'option n'est pas Image, imageAAjouter doit être null.
         /// </summary>
-        public void ajouteControlChampPersonnalisee(string uneValeurDeChamp, string optionDAjoutDeLaValeur, Font policeTextChampPersonnalisee = null)
+        public void ajouteControlChampPersonnalisee(string uneValeurDeChamp, string optionDAjoutDeLaValeur, Font policeTextChampPersonnalisee = null, Image imageAAjouter = null)
         {
             // on utilise une picturebox pour plus facilement l'ajouter à l'image de la face avant
             PictureBox newCntrl = new PictureBox();
@@ -52,6 +54,10 @@ namespace CartesAcces2024
             }
 
 
+            if (optionDAjoutDeLaValeur == "Image")
+            {
+                newCntrl.Image = imageAAjouter;
+            }
             if (optionDAjoutDeLaValeur == "Code QR")
             {
 
@@ -183,12 +189,22 @@ namespace CartesAcces2024
                     pbCarteFace.RectangleToScreen(pbCarteFace.ClientRectangle)
                 );
 
+                // Définir les limites verticales (en pixels depuis le haut de pbCarteFace)
+                const int MIN_Y = 60;  // Limite supérieure 
+                const int MAX_Y = 288; // Limite inférieure
+
+                // Définir les limites horizontales (en pixels depuis la droite de pbCarteFace)
+                const int MIN_X = 0;  // Limite gauche 
+                const int MAX_X = 553; // Limite droite
+
                 // si drag est vrais
                 if (Edition.Drag)
                 {
+
                     // On restraint le control à la surface de pbCarteFace
-                    newLeft = Math.Max(boundingRect.Left, Math.Min(newLeft, boundingRect.Right - newCntrl.Width));
-                    newTop = Math.Max(boundingRect.Top, Math.Min(newTop, boundingRect.Bottom - newCntrl.Height));
+                    newLeft = Math.Max(boundingRect.Left + MIN_X, Math.Min(newLeft, boundingRect.Left + MAX_X - newCntrl.Width));
+                    newTop = Math.Max(boundingRect.Top + MIN_Y, Math.Min(newTop, boundingRect.Top + MAX_Y - newCntrl.Height));
+
 
                     // -- La position de la photo change --
                     newCntrl.Left = newLeft;
@@ -199,12 +215,21 @@ namespace CartesAcces2024
 
                     // On calcule les nouvelle dimentions selon l'aspect ratio
                     int dx = e.X - positionSourieInitiale.X;
-                    int newWidth = Math.Max(10, newCntrl.Width + dx); // La largeur minimumest 10
-                    int newHeight = (int)(newWidth / aspectRatio);
-                    
-                    newCntrl.Width = newWidth;
-                    newCntrl.Height = newHeight;
 
+                    // Calculer la nouvelle largeur proposée
+                    int newWidth = Math.Max(10, newCntrl.Width + dx); // La largeur minimum est 10
+                    int newHeight = (int)(newWidth / aspectRatio);
+
+                    // Vérifier si les nouvelles dimensions dépassent les limites
+                    bool exceedsWidth = (newCntrl.Left + newWidth) > (boundingRect.Left + MAX_X);
+                    bool exceedsHeight = (newCntrl.Top + newHeight) > (boundingRect.Top + MAX_Y);
+
+                    // N'appliquer les nouvelles dimensions que si elles respectent les limites
+                    if (!exceedsWidth && !exceedsHeight)
+                    {
+                        newCntrl.Width = newWidth;
+                        newCntrl.Height = newHeight;
+                    }
 
                     // on sauvregarde la position initiale de la sourie
                     positionSourieInitiale = e.Location;
@@ -725,6 +750,16 @@ namespace CartesAcces2024
             Edition.RognageX = 720;
             Edition.RognageY = 457;
 
+            // Si l'utilisateur veux ou non ajouter des codes barres
+            if (rdbAjoutCodeBarreOui.Checked)
+            {
+                Globale.ajouterCodeBarre = true;
+            }
+            else if (rdbAjoutCodeBarreNon.Checked)
+            {
+                Globale.ajouterCodeBarre = false;
+            }
+
             // Pour gérer les problèmes de dpi / scaling
             this.AutoScaleMode = AutoScaleMode.Dpi;
 
@@ -849,6 +884,52 @@ namespace CartesAcces2024
         {
             frmTuto Tuto2 = new frmTuto(this.GetType().Name);
             Tuto2.Show();
+        }
+
+        private void rdbAjoutCodeBarreOui_CheckedChanged(object sender, EventArgs e)
+        {
+            // Si l'utilisateur veux ou non ajouter des codes barres
+            if (rdbAjoutCodeBarreOui.Checked)
+            {
+                Globale.ajouterCodeBarre = true;
+            }
+            else if (rdbAjoutCodeBarreNon.Checked)
+            {
+                Globale.ajouterCodeBarre = false;
+            }
+
+            // Gestion de la preview selon le choix de l'utilisateur
+            if (Globale.InfosCarte == true)
+            {
+                Edition.FondCarteNiveauInfos(pbCarteFace, Globale.ListeEleveImpr[0]);
+            }
+            else
+            {
+                Edition.fondCarteNiveau(pbCarteFace, Globale.ListeEleveImpr[0]);
+            }
+        }
+
+        private void rdbAjoutCodeBarreNon_CheckedChanged(object sender, EventArgs e)
+        {
+            // Si l'utilisateur veux ou non ajouter des codes barres
+            if (rdbAjoutCodeBarreOui.Checked)
+            {
+                Globale.ajouterCodeBarre = true;
+            }
+            else if (rdbAjoutCodeBarreNon.Checked)
+            {
+                Globale.ajouterCodeBarre = false;
+            }
+
+            // Gestion de la preview selon le choix de l'utilisateur
+            if (Globale.InfosCarte == true)
+            {
+                Edition.FondCarteNiveauInfos(pbCarteFace, Globale.ListeEleveImpr[0]);
+            }
+            else
+            {
+                Edition.fondCarteNiveau(pbCarteFace, Globale.ListeEleveImpr[0]);
+            }
         }
     }
 }

@@ -117,7 +117,7 @@
             this.btnCarteProvisoire.Name = "btnCarteProvisoire";
             this.btnCarteProvisoire.Size = new System.Drawing.Size(247, 52);
             this.btnCarteProvisoire.TabIndex = 22;
-            this.btnCarteProvisoire.Text = "Créer une carte temporaire";
+            this.btnCarteProvisoire.Text = "Carte temporaire";
             this.ToolTip.SetToolTip(this.btnCarteProvisoire, "Permet de créer et d\'enregistrer des carte provisoire");
             this.btnCarteProvisoire.UseVisualStyleBackColor = false;
             this.btnCarteProvisoire.Click += new System.EventHandler(this.btnCarteProvisoire_Click);
@@ -134,7 +134,7 @@
             this.btnCartesListePerso.Name = "btnCartesListePerso";
             this.btnCartesListePerso.Size = new System.Drawing.Size(247, 52);
             this.btnCartesListePerso.TabIndex = 21;
-            this.btnCartesListePerso.Text = "Cartes personnalisées";
+            this.btnCartesListePerso.Text = "Cartes par liste personnalisées";
             this.ToolTip.SetToolTip(this.btnCartesListePerso, "Permet de créer et d\'enregistrer des cartes grâce à une liste personnalisé");
             this.btnCartesListePerso.UseVisualStyleBackColor = false;
             this.btnCartesListePerso.Click += new System.EventHandler(this.btnCartesListePerso_Click);
@@ -220,7 +220,7 @@
             this.btnCodeBarreEleves.Name = "btnCodeBarreEleves";
             this.btnCodeBarreEleves.Size = new System.Drawing.Size(247, 52);
             this.btnCodeBarreEleves.TabIndex = 39;
-            this.btnCodeBarreEleves.Text = "Code Barre d\'Eleves";
+            this.btnCodeBarreEleves.Text = "Code Barre d\'eleves";
             this.ToolTip.SetToolTip(this.btnCodeBarreEleves, "Permet de créer et d\'enregistrer des code barre contenant les noms des eleves");
             this.btnCodeBarreEleves.UseVisualStyleBackColor = false;
             this.btnCodeBarreEleves.Click += new System.EventHandler(this.btnCodeBarreEleves_Click);
@@ -290,7 +290,7 @@
             this.btnPlancheClasse.Name = "btnPlancheClasse";
             this.btnPlancheClasse.Size = new System.Drawing.Size(247, 52);
             this.btnPlancheClasse.TabIndex = 33;
-            this.btnPlancheClasse.Text = "Planches par Classe";
+            this.btnPlancheClasse.Text = "Planches Photo par classe";
             this.ToolTip.SetToolTip(this.btnPlancheClasse, "Permet de créer et d\'enregistrer des planches de trombinoscopes par classe");
             this.btnPlancheClasse.UseVisualStyleBackColor = false;
             this.btnPlancheClasse.Click += new System.EventHandler(this.btnPlancheClasse_Click);

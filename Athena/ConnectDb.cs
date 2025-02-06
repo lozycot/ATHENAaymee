@@ -37,6 +37,7 @@ namespace CartesAcces2024
         [STAThread]
         static void Main()
         {
+
             // Add DPI awareness before any other initialization
             if (Environment.OSVersion.Version.Major >= 6)
             {
@@ -253,6 +254,9 @@ namespace CartesAcces2024
                 "	'ImportEleve' TEXT,\n" +
                 "	'ImportPhoto' TEXT\n" +
                 ");\n" +
+                "CREATE TABLE IF NOT EXISTS 'dispositifsPersonnalisee' (\n" +
+                "	'nomDispositif'	TEXT\n" +
+                ");\n" +
                 "\n" +
                 "CREATE TABLE IF NOT EXISTS 'FolderPath' (\n" +
                 "	'Path'	TEXT\n" +
@@ -260,6 +264,7 @@ namespace CartesAcces2024
                 "INSERT INTO 'DatesImport' VALUES ('Aucune Importation' , 'Aucune Importation' , 'Aucune Importation');\n" +
                 "INSERT INTO 'ConnTest' VALUES ('Connecté');\n" +
                 "INSERT INTO 'ClasseNouvelleAnnee' VALUES ('6emeAZ');\n" +
+                "INSERT INTO 'dispositifsPersonnalisee' VALUES ('SEGPA');\n" +
                 "COMMIT;";
         }
     }

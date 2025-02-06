@@ -312,20 +312,24 @@ namespace CartesAcces2024
                 chemin = Chemin.DossierCartesFace + niveauel + ".png";
             }
 
-            qrCodeFaceProvisoire(objGraphique);
+            qrCodeFaceProvisoire(objGraphique, eleve.ClasseEleve);
 
-            string tempNom = nomEleve;
-            string tempPrenom = prenomEleve;
-            string tempClasse = classe;
+            importCarteFace(chemin, objGraphique, eleve.ClasseEleve.Substring(0, 1));
 
-            //recoupage pour éviter d'avoir un code barre trop long
-            if (tempNom.Length > 9)
-                tempNom = tempNom.Substring(0, 8) + ".";
-            if (tempPrenom.Length > 12)
-                tempPrenom = tempPrenom.Substring(0, 11) + ".";
-            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
-            
-            importCarteFace(chemin, objGraphique, classe.Substring(0, 1));
+
+            string tempNom = eleve.NomEleve;
+            string tempPrenom = eleve.PrenomEleve;
+            string tempClasse = eleve.ClasseEleve;
+            if (Globale.ajouterCodeBarre)
+            {
+                //recoupage pour éviter d'avoir un code barre trop long
+                if (tempNom.Length > 9)
+                    tempNom = tempNom.Substring(0, 8) + ".";
+                if (tempPrenom.Length > 12)
+                    tempPrenom = tempPrenom.Substring(0, 11) + ".";
+                codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            }
+
 
             fondTexteCarteFace(objGraphique, classe, police2, classe, 50, 70);
 
@@ -458,12 +462,15 @@ namespace CartesAcces2024
             string tempPrenom = prenomEleve;
             string tempClasse = classe;
 
-            //recoupage pour éviter d'avoir un code barre trop long
-            if (tempNom.Length > 9)
-                tempNom = tempNom.Substring(0, 8) + ".";
-            if (tempPrenom.Length > 12)
-                tempPrenom = tempPrenom.Substring(0, 11) + ".";
-            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            if (Globale.ajouterCodeBarre)
+            {
+                //recoupage pour éviter d'avoir un code barre trop long
+                if (tempNom.Length > 9)
+                    tempNom = tempNom.Substring(0, 8) + ".";
+                if (tempPrenom.Length > 12)
+                    tempPrenom = tempPrenom.Substring(0, 11) + ".";
+                codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            }
 
             //Dessine la saisie en textbox
             var chaine = "Nom : " + nomEleve;
@@ -491,7 +498,7 @@ namespace CartesAcces2024
 
 
 
-        public static void qrCodeFace(Graphics objGraphique)
+        public static void qrCodeFace(Graphics objGraphique, string classeEleve)
         {
             // pour modifier lataille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
             float dpiScale;
@@ -524,10 +531,22 @@ namespace CartesAcces2024
                 var bmpFinal = new Bitmap(bmpOriginal, new Size((int)(175 * dpiScale), (int)(175 * dpiScale)));
 
                 objGraphique.DrawImage(bmpFinal, new Point(880, 990));
+
+                try
+                {
+                    // on affcihe un partie de l'url
+                    string texte = "Code QR: " + new Uri(Etablissement[7]).Host;
+                    fondTexteCarteFace(objGraphique, texte, new Font("Calibri", 16, FontStyle.Bold), classeEleve, 875, 940);
+                    objGraphique.DrawString(texte, new Font("Calibri", 16, FontStyle.Bold), new SolidBrush(Color.Black), 875, 940);
+                }
+                catch
+                {
+
+                }
             }
         }
 
-        public static void qrCodeFaceProvisoire(Graphics objGraphique)
+        public static void qrCodeFaceProvisoire(Graphics objGraphique, string classeEleve)
         {
             // pour modifier lataille de l'image selon le dpi (dans windows, paramètre -> system -> écrans -> modifier la taille du texte, des applications, et d'autres éléments.
             float dpiScale;
@@ -558,6 +577,18 @@ namespace CartesAcces2024
             var bmpFinal = new Bitmap(bmpOriginal, new Size((int)(180 * dpiScale), (int)(180 * dpiScale)));
 
             objGraphique.DrawImage(bmpFinal, new Point(875, 980));
+            try
+            {
+                // on affcihe un partie de l'url qui représente l'hôte
+                string texte = "Code QR: " + new Uri(Etablissement[7]).Host;
+                fondTexteCarteFace(objGraphique, texte, new Font("Calibri", 16, FontStyle.Bold), classeEleve, 875, 940);
+                objGraphique.DrawString(texte, new Font("Calibri", 16, FontStyle.Bold), new SolidBrush(Color.Black), 875, 940);
+            }
+            catch
+            {
+                //do nothing
+            }
+            
         }
 
         /// <summary>
@@ -630,7 +661,7 @@ namespace CartesAcces2024
         {
             var image = Image.FromFile(Chemin.CheminFaceDefault);
             string chemin = Chemin.DossierCartesFace + Globale.CheminFaceCarte + "Face.png";
-
+            
             if (File.Exists(chemin)) 
             {
                 if (image != null)
@@ -641,7 +672,7 @@ namespace CartesAcces2024
             var objGraphique = Graphics.FromImage(image);
 
             
-            qrCodeFace(objGraphique);
+            qrCodeFace(objGraphique, eleve.ClasseEleve);
 
             Brush pinceauNoir = new SolidBrush(Color.Black);
 
@@ -662,14 +693,16 @@ namespace CartesAcces2024
             string tempNom = eleve.NomEleve;
             string tempPrenom = eleve.PrenomEleve;
             string tempClasse = eleve.ClasseEleve;
+            if (Globale.ajouterCodeBarre)
+            {
+                //recoupage pour éviter d'avoir un code barre trop long
+                if (tempNom.Length > 9)
+                    tempNom = tempNom.Substring(0, 8) + ".";
+                if (tempPrenom.Length > 13)
+                    tempPrenom = tempPrenom.Substring(0, 12) + ".";
 
-            //recoupage pour éviter d'avoir un code barre trop long
-            if (tempNom.Length > 9)
-                tempNom = tempNom.Substring(0, 8) + ".";
-            if (tempPrenom.Length > 13)
-                tempPrenom = tempPrenom.Substring(0, 12) + ".";
-
-            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+                codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            }
 
             //Dessine et rempli le fond pour l'écriture
             fondTexteCarteFace(objGraphique, classe, police2, classe, 50, 70);
@@ -741,7 +774,7 @@ namespace CartesAcces2024
             var image = Image.FromFile(Chemin.CheminFaceDefault);
 
             string chemin = Chemin.DossierCartesFace + eleve.NiveauEleve + ".png";
-
+            
             if (File.Exists(chemin))
             {
                 if (image != null)
@@ -751,7 +784,7 @@ namespace CartesAcces2024
 
             var objGraphique = Graphics.FromImage(image);
 
-            qrCodeFace(objGraphique);
+            qrCodeFace(objGraphique, eleve.ClasseEleve);
 
             Brush pinceauNoir = new SolidBrush(Color.Black);
 
@@ -770,13 +803,15 @@ namespace CartesAcces2024
             string tempNom = eleve.NomEleve;
             string tempPrenom = eleve.PrenomEleve;
             string tempClasse = classe;
-
-            //recoupage pour éviter d'avoir un code barre trop long
-            if (tempNom.Length > 9)
-                tempNom = tempNom.Substring(0, 8) + ".";
-            if (tempPrenom.Length > 12)
-                tempPrenom = tempPrenom.Substring(0, 11) + ".";
-            codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            if (Globale.ajouterCodeBarre)
+            {
+                //recoupage pour éviter d'avoir un code barre trop long
+                if (tempNom.Length > 9)
+                    tempNom = tempNom.Substring(0, 8) + ".";
+                if (tempPrenom.Length > 12)
+                    tempPrenom = tempPrenom.Substring(0, 11) + ".";
+                codeBarreFace(objGraphique, tempNom + " " + tempPrenom + " " + tempClasse);
+            }
 
             //Dessine et rempli le fond pour l'écriture
             fondTexteCarteFace(objGraphique, eleve.ClasseEleve, police2, classe, 50, 70);
@@ -883,6 +918,8 @@ namespace CartesAcces2024
                 pbCarteArriere.Image = null;
                 if (File.Exists(Chemin.DossierEdtClassique + "/classes/" + eleve.ClasseEleve + ".jpg"))
                     pbCarteArriere.Image = Image.FromFile(Chemin.DossierEdtClassique + "/classes/" + eleve.ClasseEleve + ".jpg");
+                else if (File.Exists(Chemin.CheminEdtVierge)) // Si on trouve pas le dossier de classes, on affiche l'emploie du temps vierge.
+                    pbCarteArriere.Image = Image.FromFile(Chemin.CheminEdtVierge);
                 else
                     pbCarteArriere.Image = new Bitmap(297, 210);
             }
@@ -915,7 +952,7 @@ namespace CartesAcces2024
 
             var img = Image.FromFile(chemin);
             var bmp = new Bitmap(img, new Size(1754, 1240));
-            List<Color> couleurs = new List<Color> { };
+            List<Color> couleurs = new List<Color>();
             couleurs = OperationsDb.GetColors();
 
             Brush brush6 = new SolidBrush(couleurs[0]);

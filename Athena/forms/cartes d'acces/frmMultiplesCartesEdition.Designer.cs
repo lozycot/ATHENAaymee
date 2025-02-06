@@ -52,6 +52,9 @@
             this.btnAjouterElementDansCartes = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.rdbAjoutCodeBarreNon = new System.Windows.Forms.RadioButton();
+            this.rdbAjoutCodeBarreOui = new System.Windows.Forms.RadioButton();
             this.pnlEdtPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarteArriere)).BeginInit();
@@ -61,6 +64,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEdtPhoto
@@ -235,7 +239,7 @@
             this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Controls.Add(this.btnSelect);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(883, 573);
+            this.groupBox2.Location = new System.Drawing.Point(883, 637);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -326,7 +330,7 @@
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.groupBox4.Controls.Add(this.btnAjouterElementDansCartes);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(882, 480);
+            this.groupBox4.Location = new System.Drawing.Point(882, 544);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
@@ -348,6 +352,42 @@
             this.button1.Text = "&Tutoriel";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.groupBox5.Controls.Add(this.rdbAjoutCodeBarreNon);
+            this.groupBox5.Controls.Add(this.rdbAjoutCodeBarreOui);
+            this.groupBox5.ForeColor = System.Drawing.Color.White;
+            this.groupBox5.Location = new System.Drawing.Point(881, 479);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(687, 58);
+            this.groupBox5.TabIndex = 16;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Ajouter un code barre?";
+            // 
+            // rdbAjoutCodeBarreNon
+            // 
+            this.rdbAjoutCodeBarreNon.AutoSize = true;
+            this.rdbAjoutCodeBarreNon.Location = new System.Drawing.Point(430, 21);
+            this.rdbAjoutCodeBarreNon.Name = "rdbAjoutCodeBarreNon";
+            this.rdbAjoutCodeBarreNon.Size = new System.Drawing.Size(55, 21);
+            this.rdbAjoutCodeBarreNon.TabIndex = 1;
+            this.rdbAjoutCodeBarreNon.Text = "Non";
+            this.rdbAjoutCodeBarreNon.UseVisualStyleBackColor = true;
+            this.rdbAjoutCodeBarreNon.CheckedChanged += new System.EventHandler(this.rdbAjoutCodeBarreNon_CheckedChanged);
+            // 
+            // rdbAjoutCodeBarreOui
+            // 
+            this.rdbAjoutCodeBarreOui.AutoSize = true;
+            this.rdbAjoutCodeBarreOui.Checked = true;
+            this.rdbAjoutCodeBarreOui.Location = new System.Drawing.Point(179, 21);
+            this.rdbAjoutCodeBarreOui.Name = "rdbAjoutCodeBarreOui";
+            this.rdbAjoutCodeBarreOui.Size = new System.Drawing.Size(51, 21);
+            this.rdbAjoutCodeBarreOui.TabIndex = 0;
+            this.rdbAjoutCodeBarreOui.TabStop = true;
+            this.rdbAjoutCodeBarreOui.Text = "Oui";
+            this.rdbAjoutCodeBarreOui.UseVisualStyleBackColor = true;
+            this.rdbAjoutCodeBarreOui.CheckedChanged += new System.EventHandler(this.rdbAjoutCodeBarreOui_CheckedChanged);
             // 
             // FrmMultiplesCartesEdition
             // 
@@ -355,6 +395,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1771, 874);
             this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1617, 875);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlEdtPhoto);
@@ -378,6 +420,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -408,6 +452,9 @@
         private System.Windows.Forms.Button btnAjouterElementDansCartes;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RadioButton rdbAjoutCodeBarreNon;
+        private System.Windows.Forms.RadioButton rdbAjoutCodeBarreOui;
     }
 }
 

@@ -87,6 +87,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnDispositifsPersonnalisee = new System.Windows.Forms.Button();
+            this.txtDispositifPersonnalisee = new System.Windows.Forms.TextBox();
+            this.lsbDispositifsPersonnalisee = new System.Windows.Forms.ListBox();
             this.gb6eme.SuspendLayout();
             this.gb5eme.SuspendLayout();
             this.gb4eme.SuspendLayout();
@@ -828,11 +832,60 @@
             this.label6.TabIndex = 32;
             this.label6.Text = "Les champs avec un \" * \" sont obligatoires";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(93, 650);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(173, 18);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Dispositifs peronnalisés :";
+            // 
+            // btnDispositifsPersonnalisee
+            // 
+            this.btnDispositifsPersonnalisee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnDispositifsPersonnalisee.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDispositifsPersonnalisee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDispositifsPersonnalisee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(135)))));
+            this.btnDispositifsPersonnalisee.Location = new System.Drawing.Point(387, 733);
+            this.btnDispositifsPersonnalisee.Name = "btnDispositifsPersonnalisee";
+            this.btnDispositifsPersonnalisee.Size = new System.Drawing.Size(227, 33);
+            this.btnDispositifsPersonnalisee.TabIndex = 36;
+            this.btnDispositifsPersonnalisee.Text = "ajouter un dispositif";
+            this.btnDispositifsPersonnalisee.UseVisualStyleBackColor = false;
+            this.btnDispositifsPersonnalisee.Click += new System.EventHandler(this.btnDispositifsPersonnalisee_Click);
+            // 
+            // txtDispositifPersonnalisee
+            // 
+            this.txtDispositifPersonnalisee.BackColor = System.Drawing.Color.White;
+            this.txtDispositifPersonnalisee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDispositifPersonnalisee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDispositifPersonnalisee.Location = new System.Drawing.Point(96, 737);
+            this.txtDispositifPersonnalisee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtDispositifPersonnalisee.Name = "txtDispositifPersonnalisee";
+            this.txtDispositifPersonnalisee.Size = new System.Drawing.Size(284, 24);
+            this.txtDispositifPersonnalisee.TabIndex = 37;
+            // 
+            // lsbDispositifsPersonnalisee
+            // 
+            this.lsbDispositifsPersonnalisee.FormattingEnabled = true;
+            this.lsbDispositifsPersonnalisee.ItemHeight = 18;
+            this.lsbDispositifsPersonnalisee.Location = new System.Drawing.Point(95, 673);
+            this.lsbDispositifsPersonnalisee.Name = "lsbDispositifsPersonnalisee";
+            this.lsbDispositifsPersonnalisee.Size = new System.Drawing.Size(408, 58);
+            this.lsbDispositifsPersonnalisee.TabIndex = 38;
+            // 
             // frmEtablissement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1481, 797);
+            this.Controls.Add(this.lsbDispositifsPersonnalisee);
+            this.Controls.Add(this.txtDispositifPersonnalisee);
+            this.Controls.Add(this.btnDispositifsPersonnalisee);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.gpbInfosEtab);
@@ -891,6 +944,7 @@
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -953,6 +1007,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnDispositifsPersonnalisee;
+        private System.Windows.Forms.TextBox txtDispositifPersonnalisee;
+        private System.Windows.Forms.ListBox lsbDispositifsPersonnalisee;
     }
 }
 
