@@ -668,7 +668,7 @@ namespace CartesAcces2024
         {
             var image = Image.FromFile(Chemin.CheminFaceDefault);
             string chemin = Chemin.DossierCartesFace + Globale.CheminFaceCarte + "Face.png";
-
+            
             if (File.Exists(chemin)) 
             {
                 if (image != null)
@@ -781,7 +781,7 @@ namespace CartesAcces2024
             var image = Image.FromFile(Chemin.CheminFaceDefault);
 
             string chemin = Chemin.DossierCartesFace + eleve.NiveauEleve + ".png";
-
+            
             if (File.Exists(chemin))
             {
                 if (image != null)
@@ -959,7 +959,7 @@ namespace CartesAcces2024
 
             var img = Image.FromFile(chemin);
             var bmp = new Bitmap(img, new Size(1754, 1240));
-            List<Color> couleurs = new List<Color> { };
+            List<Color> couleurs = new List<Color>();
             couleurs = OperationsDb.GetColors();
 
             Brush brush6 = new SolidBrush(couleurs[0]);
